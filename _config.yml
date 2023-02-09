@@ -19,8 +19,8 @@
 # in the templates via {{ site.myvariable }}.
 
 
-baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://simply-jekyll.netlify.app/" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://notes.joshbeckman.org" # the base hostname & protocol for your site, e.g. http://example.com
 
 #######################################################################
 # Settings related to the Header and your About page go here,such as 
@@ -28,14 +28,14 @@ url: "https://simply-jekyll.netlify.app/" # the base hostname & protocol for you
 # your social media links etc
 #######################################################################
 
-heading: Simply Jekyll
+heading: Josh's Notes
 subheading: # subheading won't work without a tagline, 
           # tagline is mandatory if you want the 
           # suheading to appear. The reason is
           # having a heading and a subheading looks 
           # ridiculous.
-  enabled: true
-  name: Notes and Thoughts
+  enabled: false
+  name: SUbheading.name
 tagline: # subheading won't work without a tagline, 
          # tagline is mandatory if you want the 
          # suheading to appear. The reason is
@@ -44,32 +44,26 @@ tagline: # subheading won't work without a tagline,
          # Although you can have the tagline without 
          # the subheading to support the main heading
          # which in this case is 'Knowledge Continuum'
-  enabled: true
-  name: An experiment to spark conversations
+  enabled: false
+  name: Collected from online and elsewhere
 copyright: 
-  year: 2020
-  msg: Raghuveer S # This is a mandatory attribute for copyright to be displayed
+  year: 2023
+  msg: Josh Beckman
 
 user:
   display: true # setting it to false will remove the header image and bio
                 # Note that user settings come wholesale, it does not have the 
                 # granular enabling or disabling as with the 'preferences'
                 # or the site-wide settings.
-  name: Raghuveer S
-  bio: Programmer ∪ Writer. Interested in constraints and correspondences.
-  email: raghu-veer@outlook.com
+  name: Josh Beckman
+  bio: Writing about the practice of software engineering and other projects
+  email: josh@joshbeckman.org
   photo: /assets/img/profile.png
-  alt_link: rgvr.me
+  alt_link: www.joshbeckman.org
   social: # just leave the field blank or type in null, if you don't have a
           # particular social media account and it won't appear
-    enabled: false  # turn this to true
-    twitter: rgvrme
-    github: rgvr 
-    youtube: rgvr 
-    linkedin: rgvr  
-    twitch: null
-    facebook: null 
-    instagram: null
+    enabled: true  # turn this to true
+    github: andjosh
 
 
 
@@ -125,13 +119,13 @@ theme: null
 plugins:
   - jekyll-feed 
   - jekyll-sitemap 
-  - jekyll-tidy
+    # - jekyll-tidy
 
 # Disqus Comments
-disqus:
+# disqus:
     # Leave shortname blank to disable comments site-wide.
     # Disable comments for any post by adding `comments: false` to that post's YAML Front Matter.
-    shortname: rgvr
+    # shortname: foobar
 
 markdown: kramdown
 
@@ -151,7 +145,7 @@ defaults:
       type: posts
     values:
       layout: Post
-      permalink: /posts/:title
+      permalink: /notes/:title
       content-type: post
 
 
