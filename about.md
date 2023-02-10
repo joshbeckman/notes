@@ -16,7 +16,7 @@ You can [read more on my main website](https://www.joshbeckman.org/about).
 ### Features:
 
 [[***Changelog***<br/>
-\- 09-02-20 Forked from Original Theme<br/>
+\- 09-02-23 Forked from Original Theme<br/>
 \- 14-05-20 Context Menu <br/>
 \- 08-05-20 Trivial Spaced Repetition <br/>
 \- 04-05-20 Removed Theming. <br/>
@@ -50,6 +50,6 @@ Other Details:
 
 - The site lives on [[Github::https://github.com/andjosh/notes]] and is served using GitHub Pages
 - This website is statically generated using Jekyll from a set of Markdown files.
-- Except lunrjs and katex, there are no third party libraries. I strongly believe in user privacy.
+- Except lunrjs and katex, there are no third party libraries.
 
 
