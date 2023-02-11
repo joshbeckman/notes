@@ -29,9 +29,9 @@ layout: Stylesheet
     --anchor-link-color: hsl(205, 12%, 70%);
     --search-placeholder-color: hsl(var(--main-hue), 0%, 60.0%);
     --searchbox-shadow-color:  hsl(204, 63.0%, 78.8%);
-    --heading-font-family: Georgia, serif;
-    --primary-font-family: sans-serif;
-    --secondary-font-family: sans-serif;
+    --heading-font-family: Mulish,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;
+    --primary-font-family: Mulish,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;
+    --secondary-font-family: Lora,Times,serif;
 }
 
 
