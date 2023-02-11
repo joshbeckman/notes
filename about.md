@@ -20,6 +20,7 @@ The site theme is forked from [Simply Jekyll](https://github.com/raghudotcc/simp
 ### Features:
 
 [[***Changelog***<br/>
+\- 11-02-23 Added Random Note page<br/>
 \- 11-02-23 Search-via-URL-query support<br/>
 \- 11-02-23 Tags added to search results<br/>
 \- 09-02-23 Forked from Original Theme<br/>
