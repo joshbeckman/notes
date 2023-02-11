@@ -20,6 +20,7 @@ The site theme is forked from [Simply Jekyll](https://github.com/raghudotcc/simp
 ### Features:
 
 [[***Changelog***<br/>
+\- 11-02-23 Search-via-URL-query support<br/>
 \- 11-02-23 Tags added to search results<br/>
 \- 09-02-23 Forked from Original Theme<br/>
 \- 14-05-20 Context Menu <br/>
@@ -49,10 +50,6 @@ Some Less know features:
 - Go back to the blog home or to the notes page, and try to right click on any of the entry. [Hint: Zettelkasten]
 
 - Press 'Shift + s' to trigger search
-
-### Upcoming
-
-- [ ] Build auto-launching search UI on page load with query string
 
 ### Infrastructure
 

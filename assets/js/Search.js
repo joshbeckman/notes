@@ -365,6 +365,16 @@
                 parent.appendChild(span);
             }
         }
+
+        function searchViaQuery() {
+          var search = new URLSearchParams(window.location.search).get("q");
+          if (!search) { return; }
+
+          var searchInput = document.getElementById("search-input");
+          searchInput.value = search;
+          searchInput.focus();
+          update();
+        }
         
         sj.addEvent(searchInput, 'focus', function(){
             setTimeout(update, 0);
@@ -439,6 +449,9 @@
             }
         });
 
+        sj.onReady(function(){
+            searchViaQuery();
+        });
     }
 
     function searchInitListener() {
@@ -451,7 +464,6 @@
         }
       };
     }
-
 
     sj.onReady(function(){
         searchInitListener();
