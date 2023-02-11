@@ -1,0 +1,186 @@
+#!/usr/bin/env ruby
+
+require 'time'
+require 'json'
+require 'net/http'
+require 'readwise'
+require 'debug'
+
+TOKEN = File.read('.readwise_token').strip
+
+class Notification
+  def self.send(title: 'Computer Says', message: '', sound: 'Sosumi')
+    cmd = <<~OASCRIPT
+    /usr/bin/osascript -e "display notification \\"#{message.gsub(/\"|`/, "'")}\\" with title \\"#{title.gsub(/\"|`/, "'")}\\" sound name \\"#{sound}\\""
+    OASCRIPT
+    system cmd
+  end
+end
+
+class Jekyll
+  def self.import_book(book)
+    File.open("_posts/#{book.formatted_date}-#{book.book_id}.md", 'w') do |f|
+      f.write book.post_text
+    end
+  end
+
+  def self.import_book_highlights(book)
+    book.highlights.each do |highlight|
+      import_highlight(highlight, book)
+    end
+  end
+
+  def self.import_highlight(highlight, book)
+    return unless highlight.should_import?(book)
+
+    File.open("_posts/#{highlight.formatted_date}-#{highlight.highlight_id}.md", 'w') do |f|
+      f.write highlight.post_text(book)
+    end
+  end
+end
+
+module ReadwiseExtras
+  module Book
+    def has_image?
+      cover_image_name && download_image
+    end
+
+    def download_image
+      return false unless cover_image_name
+      return true if File.exist?(cover_image_name)
+
+      system "curl '#{cover_image_url}' -o #{cover_image_name}"
+    end
+
+    def cleanup_image
+      return true unless has_image?
+
+      system "rm #{cover_image_name}"
+    end
+
+    def cover_image_name
+      return if cover_image_url.nil?
+
+      extension = URI.parse(cover_image_url).path.split('/').last.match(/\.[a-z|A-Z]*$/)&.to_a&.first || '.jpg'
+      book_id + extension
+    end
+
+    def post_text
+      [
+        "---",
+        "title: \"#{readable_title}\"",
+        "tags: #{formatted_tags}",
+        "canonical: #{source_url}",
+        "---",
+        "",
+        "Full Title: #{title}",
+        "",
+        "Author: #{author}"\
+          " - [Source URL](#{source_url}){:target=\"_blank\"}",
+        "",
+        "[Readwise URL](#{readwise_url}){:target=\"_blank\"}",
+        "",
+        "## Highlights",
+      ].concat(highlights.map { |h| h.formatted_text + "\n---\n" }).compact.join("\n")
+    end
+
+    def formatted_tags
+      tags.map { |t| t['name'] }
+        .concat([category])
+        .concat(highlights.map { |h| h.tags.map { |ht| ht['name'] } })
+        .flatten.join(' ')
+    end
+
+    def formatted_date
+      highlighted_at_time.to_date.to_s
+    end
+
+    def should_import?
+      return false if highlights.empty?
+
+      true
+    end
+  end
+
+  module Highlight
+    def post_text(book)
+      [
+        "---",
+        "title: \"#{book.readable_title.gsub('"', "'")} (#{highlight_id})\"",
+        "tags: #{formatted_tags(book)}",
+        "canonical: #{book.source_url}",
+        "---",
+        "",
+        "Source Title: #{book.title}",
+        "",
+        "Author: #{book.author}"\
+        " - [Source URL](#{book.source_url}){:target=\"_blank\"}",
+        "",
+        "[Readwise URL](#{readwise_url}){:target=\"_blank\"}",
+        "",
+        "---",
+        "",
+        formatted_text,
+      ].compact.join("\n")
+    end
+
+    def formatted_tags(book)
+      tags.map { |t| t['name'] }
+        .concat(["#{book.category}-#{book.book_id}"])
+        .flatten.join(' ')
+    end
+
+    def formatted_text
+      pieces = [text]
+      unless note.nil? || note.empty?
+        pieces << "[[#{note}::rmn]]"
+      end
+
+      pieces << ""
+      pieces.join("\n")
+    end
+
+    def formatted_date
+      Time.parse(highlighted_at || updated_at).to_date.to_s
+    end
+
+    def should_import?(book)
+      return false if book.category == "supplementals" && tags.empty?
+      return false if tags.map { |t| t['name'] }.include?("discard")
+
+      true
+    end
+  end
+end
+Readwise::Book.include(ReadwiseExtras::Book)
+Readwise::Highlight.include(ReadwiseExtras::Highlight)
+
+
+# Steps:
+# - Wipe out old _posts
+# - Import highlights into _posts
+# - Copy over _manual_posts into _posts
+class Importer
+  def self.import
+    clean_posts
+    client = Readwise::Client.new(token: TOKEN)
+    client.export(updated_after: Time.parse("2000-01-01").iso8601).filter do |book|
+      book.should_import?
+    end.each do |book|
+      Jekyll.import_book_highlights(book)
+    end
+    copy_manual_posts
+  rescue => e
+    Notification.send(title: 'Import Failed', message: e.message)
+  end
+
+  def self.clean_posts
+    system 'rm _posts/*.md'
+  end
+
+  def self.copy_manual_posts
+    system 'cp _manual_posts/*.md _posts/'
+  end
+end
+
+Importer.import

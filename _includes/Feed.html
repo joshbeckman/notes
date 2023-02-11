@@ -32,7 +32,8 @@
 {%- endcomment -%}
 
 {%- if page.permalink == "/" -%}
-    {%- for item in site.posts -%}
+  <h1 style="margin-left:20px">Latest Notes</h1>
+    {%- for item in site.posts limit:50 -%}
         <div class="feed-title-excerpt-block disable-select" data-url="{{site.url}}{{item.url}}">
             <a href="{{item.url}}" style="text-decoration: none; color: #555555;">
             {%- if item.status == "Ongoing" or item.status == "ongoing" -%}

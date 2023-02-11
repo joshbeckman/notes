@@ -62,7 +62,7 @@ user:
   alt_link: www.joshbeckman.org
   social: # just leave the field blank or type in null, if you don't have a
           # particular social media account and it won't appear
-    enabled: true  # turn this to true
+    enabled: false  # turn this to true
     github: andjosh
 
 
@@ -145,7 +145,7 @@ defaults:
       type: posts
     values:
       layout: Post
-      permalink: /notes/:slug
+      permalink: /notes/:title
       content-type: post
 
 

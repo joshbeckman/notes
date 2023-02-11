@@ -4,6 +4,16 @@ permalink: /assets/js/SearchData.json
 
 {
   {%- assign i = 0 -%}
+  {%- for tag in site.tags -%}
+
+    "{{ i }}": {
+       "doc":  {{ tag | first | escape | jsonify }},
+       "title": {{ tag | first | escape | jsonify }},
+       "content": {{ tag | first | escape | jsonify }},
+       "url": "/tags/#{{ tag | first }}"
+    },{%- assign i = i | plus: 1 -%}
+    
+  {% endfor %}
   {%- for post in site.posts -%}
 
     "{{ i }}": {
