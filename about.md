@@ -13,13 +13,14 @@ You can [read more on my main website](https://www.joshbeckman.org/about).
 
 ## About This Site
 
-This site is an export and reformatting of my highlights and notes of my online (and some offline) reading.
+This site is an export and reformatting of my highlights and notes of my online (and some offline) reading ([script here](https://github.com/andjosh/notes/blob/master/utilities/import)).
 
 The site theme is forked from [Simply Jekyll](https://github.com/raghudotcc/simply-jekyll).
 
 ### Features:
 
 [[***Changelog***<br/>
+\- 11-02-23 Tags added to search results<br/>
 \- 09-02-23 Forked from Original Theme<br/>
 \- 14-05-20 Context Menu <br/>
 \- 08-05-20 Trivial Spaced Repetition <br/>
@@ -52,7 +53,6 @@ Some Less know features:
 ### Upcoming
 
 - [ ] Build auto-launching search UI on page load with query string
-- [ ] Add tag pages to search results
 
 ### Infrastructure
 
