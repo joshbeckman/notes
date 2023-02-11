@@ -111,13 +111,13 @@ module ReadwiseExtras
         "canonical: #{book.source_url}",
         "---",
         "",
+        formatted_text,
+        "",
         "[[_Source_: #{book.title}"\
           " - [Source URL](#{book.source_url}){:target=\"_blank\"}<br>",
         "_Author_: #{book.author}<br>",
         "[Readwise URL](#{readwise_url}){:target=\"_blank\"}",
         "::wrap]]",
-        "",
-        formatted_text,
       ].compact.join("\n")
     end
 
