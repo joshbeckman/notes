@@ -4,6 +4,9 @@ title: Random Note
 permalink: /random/
 content-type: eg
 ---
+
+Loading...
+
 <script>
 async function getSearchData(dataUrl) {
     let response = await fetch(dataUrl);
