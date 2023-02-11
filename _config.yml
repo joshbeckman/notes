@@ -139,6 +139,12 @@ kramdown:
 sass:
   style: compressed
 
+collections_dir: collections
+collections:
+  highlights:
+    output: true
+    highlight: true
+
 defaults:
   - scope:
       path: ""
@@ -146,6 +152,13 @@ defaults:
     values:
       layout: Post
       permalink: /notes/:title
+      content-type: post
+  - scope:
+      path: ""
+      type: highlights
+    values:
+      layout: Post
+      permalink: /highlights/:slug
       content-type: post
 
 

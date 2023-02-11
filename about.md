@@ -13,6 +13,10 @@ You can [read more on my main website](https://www.joshbeckman.org/about).
 
 ## About This Site
 
+This site is an export and reformatting of my highlights and notes of my online (and some offline) reading.
+
+The site theme is forked from [Simply Jekyll](https://github.com/raghudotcc/simply-jekyll).
+
 ### Features:
 
 [[***Changelog***<br/>
@@ -45,8 +49,12 @@ Some Less know features:
 
 - Press 'Shift + s' to trigger search
 
+### Upcoming
 
-Other Details:
+- [ ] Build auto-launching search UI on page load with query string
+- [ ] Add tag pages to search results
+
+### Infrastructure
 
 - The site lives on [[Github::https://github.com/andjosh/notes]] and is served using GitHub Pages
 - This website is statically generated using Jekyll from a set of Markdown files.
