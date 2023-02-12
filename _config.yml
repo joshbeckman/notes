@@ -160,6 +160,7 @@ defaults:
 exclude:
   - utilities/
   - .readwise_token
+  - README.md
 #   - .jekyll-cache/
 #   - gemfiles/
 #   - Gemfile
