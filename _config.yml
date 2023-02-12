@@ -157,8 +157,9 @@ defaults:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-# exclude:
-#   - .sass-cache/
+exclude:
+  - utilities/
+  - .readwise_token
 #   - .jekyll-cache/
 #   - gemfiles/
 #   - Gemfile
