@@ -9,11 +9,13 @@ I'm an experienced startup operator with a history of scaling tech and teams. I'
 
 I'm currently building as a Senior Staff Developer at Shopify.
 
-You can [read more on my main website](https://www.joshbeckman.org/about).
+You can [read more about me on my main website](https://www.joshbeckman.org/about).
 
 ## About This Site
 
 This site is an export and reformatting of my highlights and notes of my online (and some offline) reading ([script here](https://github.com/andjosh/notes/blob/master/utilities/import)).
+
+I use it to jostle loose ideas when I'm researching a particular problem in software design or writing topic. I usually either ask it for a random note or search by keyword.
 
 The site theme is forked from [Simply Jekyll](https://github.com/raghudotcc/simply-jekyll).
 

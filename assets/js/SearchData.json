@@ -8,7 +8,7 @@ permalink: /assets/js/SearchData.json
 
     "{{ i }}": {
        "doc":  {{ tag | first | escape | jsonify }},
-       "title": {{ tag | first | escape | jsonify }},
+       "title": {{ tag | first | append: " (tag)" | escape | jsonify }},
        "content": {{ tag | first | escape | jsonify }},
        "url": "/tags/#{{ tag | first }}"
     },{%- assign i = i | plus: 1 -%}
