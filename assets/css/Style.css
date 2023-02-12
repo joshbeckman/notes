@@ -857,7 +857,6 @@ hr {
 
 .content a {
     color: var(--anchor-text-color);
-    text-decoration: none;
 }
 
 .content a:hover {
@@ -1442,4 +1441,28 @@ label.margin-toggle:not(.sidenote-number) {
 }
 
 @media (prefers-color-scheme: dark) {
+:root {
+    --primary-bg-color: hsl(var(--main-hue), 0%, 20%);
+    --secondary-bg-color: hsl(var(--main-hue), 0%, 23.9%);
+    --ternary-bg-color: hsl(var(--main-hue), 0%, 10.4%);
+    --quaternary-bg-color: hsl(var(--main-hue), 0%, 13%);
+    --quinary-bg-color: hsl(var(--main-hue), 0%, 20%);
+
+    --primary-border-color: hsl(var(--main-hue), 0%, 30.9%);
+    --secondary-border-color: hsl(var(--main-hue), 0%, 35.4%);
+    --ternary-border-color: hsl(var(--main-hue), 0%, 40.5%);
+
+    --primary-box-shadow-color: hsl(var(--main-hue), 0%, 86.7%);
+    --secondary-box-shadow-color: hsl(var(--main-hue), 0%, 81.2%);
+
+    --primary-text-color: hsl(var(--main-hue), 0%, 93.3%);
+    --secondary-text-color: hsl(var(--main-hue), 0%, 83.3%);
+    --tertiary-text-color: hsl(var(--main-hue), 0%, 73.4%);
+
+    --horizontal-rule-color: rgb(228, 227, 226);
+    --anchor-text-color: hsl(210, 72.8%, 71.0%);
+    --anchor-link-color: hsl(205, 12%, 70%);
+    --search-placeholder-color: hsl(var(--main-hue), 0%, 60.0%);
+    --searchbox-shadow-color:  hsl(204, 63.0%, 78.8%);
+}
 }

@@ -44,7 +44,6 @@ The site theme is forked from [Simply Jekyll](https://github.com/raghudotcc/simp
 - **Transclusion**: Allows you to see a partial view of the contents of the website to the right or the left of the margin.
 - **Sidenotes** (Changelog you see on the left is an example of this).
 - **Wiki-style link:** Usually wikis allow you to specify links using double bracket, I added it here using liquid. Also added bad-link highlighting
-   - Good link: [[Lorem ipsum dolor sit amet]]
    - Bad link: [[Title of a page that doesn't exist]]
 
 
