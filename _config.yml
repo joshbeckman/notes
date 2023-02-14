@@ -47,8 +47,8 @@ tagline: # subheading won't work without a tagline,
   enabled: false
   name: Collected from online and elsewhere
 copyright: 
-  year: 2023
-  msg: Josh Beckman
+  # year: 2023
+  # msg: Josh Beckman
 
 user:
   display: true # setting it to false will remove the header image and bio
