@@ -6,18 +6,13 @@ content-type: eg
 ---
 
 
-<br>
-<div>
 {%- assign tags = site.tags | sort %}
 {% for tag in tags %}
   {%- assign conc = tag | first -%}
-  {%- if conc != 'Favorite' -%}
-    <h2 id="{{ conc }}">{{ conc }}</h2>
-    {% for post in tag.last %} 
-      <li id="category-content" style="padding-bottom: 0.6em; list-style: none;"><a href="{{post.url}}">{{ post.title }}</a></li>
-    {% endfor %}
-  {%- endif -%}
+  <h3 id="{{ conc }}">{{ conc }}</h3>
+  <ul class="">
+  {% for post in tag.last %} 
+    <li id="" style="padding-bottom: 0.6em; list-style: none;"><a href="{{post.url}}">{{ post.title }}</a></li>
+  {% endfor %}
+  </ul>
 {% endfor %}
-</div>
-<br/>
-<br/>

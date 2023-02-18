@@ -17,11 +17,12 @@ This site is an export and reformatting of my highlights and notes of my online 
 
 I use it to jostle loose ideas when I'm researching a particular problem in software design or writing topic. I usually either ask it for a random note or search by keyword.
 
-The site theme is forked from [Simply Jekyll](https://github.com/raghudotcc/simply-jekyll).
+The site theme is forked from [Simply Jekyll](https://github.com/raghudotcc/simply-jekyll), with alternative styling taken from [Tufte.css](https://edwardtufte.github.io/tufte-css/). The site fonts are [Libertinus](https://github.com/alerque/libertinus/).
 
 ### Features:
 
 [[***Changelog***<br/>
+\- 16-02-23 Styled with Tufte.css<br/>
 \- 11-02-23 Added Random Note page<br/>
 \- 11-02-23 Search-via-URL-query support<br/>
 \- 11-02-23 Tags added to search results<br/>
@@ -40,22 +41,14 @@ The site theme is forked from [Simply Jekyll](https://github.com/raghudotcc/simp
 \- 12-10-19 Searchbar. <br/>
 ::rmn]]
 
-- **Page preview** (Move your mouse over the link): [[Lorem ipsum dolor sit amet]]
-- **Transclusion**: Allows you to see a partial view of the contents of the website to the right or the left of the margin.
-- **Sidenotes** (Changelog you see on the left is an example of this).
+- **Margin notes** (Changelog you see on the left is an example of this).
 - **Wiki-style link:** Usually wikis allow you to specify links using double bracket, I added it here using liquid. Also added bad-link highlighting
    - Bad link: [[Title of a page that doesn't exist]]
-
-
-Some Less know features:
-
-- Go back to the blog home or to the notes page, and try to right click on any of the entry. [Hint: Zettelkasten]
-
-- Press 'Shift + s' to trigger search
+- Press `Shift + s` to trigger search
 
 ### Infrastructure
 
-- The site lives on [[Github::https://github.com/andjosh/notes]] and is served using GitHub Pages
+- The site lives on [[Github::https://github.com/andjosh/notes]] and is served using GitHub Pages.
 - This website is statically generated using Jekyll from a set of Markdown files.
 - Except lunrjs and katex, there are no third party libraries.
 

@@ -106,6 +106,13 @@ module ReadwiseExtras
     def post_text(book)
       title = text.split(' ').first(10).concat(['...']).join(' ')
         .gsub(/\]\(\S*\)/, "]").gsub('"', "'")
+      source = if !book.source_url
+                 book.title
+               elsif book.source_url.match?(/^mailto:/)
+                 "#{book.title} _(via email)_"
+               else
+                 "[#{book.title}](#{book.source_url}){:target=\"_blank\"}"
+               end
       [
         "---",
         "title: \"#{title}\"",
@@ -116,10 +123,9 @@ module ReadwiseExtras
         "",
         formatted_text,
         "",
-        "[[_Source_: #{book.title}"\
-          " - [Source URL](#{book.source_url}){:target=\"_blank\"}<br>",
+        "[[_Source_: #{source}<br>",
         "_Author_: #{book.author}<br>",
-        "[Readwise URL](#{readwise_url}){:target=\"_blank\"}",
+        "_More_: [Readwise URL](#{readwise_url}){:target=\"_blank\"}",
         "::wrap]]",
       ].compact.join("\n")
     end

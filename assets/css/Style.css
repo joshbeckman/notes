@@ -29,14 +29,15 @@ layout: Stylesheet
     --anchor-link-color: hsl(205, 12%, 70%);
     --search-placeholder-color: hsl(var(--main-hue), 0%, 60.0%);
     --searchbox-shadow-color:  hsl(204, 63.0%, 78.8%);
-    --heading-font-family: Mulish,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;
-    --primary-font-family: Mulish,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;
-    --secondary-font-family: Lora,Times,serif;
+    --heading-font-family: "Libertinus Sans",sans-serif;
+    --primary-font-family: "Libertinus Sans",sans-serif;
+    --secondary-font-family: "Libertinus Serif",serif;
 }
 
 
 html {
     scroll-behavior: smooth;
+    font-size: 15px;
 }
 
 body {
@@ -84,27 +85,27 @@ main {
 /* Phrasing Style: H1, H2, H3, H4, H5, H6, P, A, UL, LI */
 
 h1 {
-    font-size: 27px;
+    font-size: 3.2rem;
 }
 
 h2 {
-    font-size: 22px;
+    font-size: 2.2rem;
 }
 
 h3 {
-    font-size: 16.6px;
+    font-size: 1.7rem;
 }
 
 h4 {
-    font-size: 16.5px;
+    font-size: 1.5rem;
 }
 
 h5 {
-    font-size: 16px;
+    font-size: 1.2rem;
 }
 
 h6 {
-    font-size: 13px;
+    font-size: 0.8rem;
 }
 
 h1, h2 {
@@ -127,7 +128,7 @@ h3, h4, h5, h6 {
 a, p, ul, li, ol, table, span, blockquote {
     color: var(--primary-text-color);
     font-family:   var(--secondary-font-family);
-    font-size: 16px;  /* Let's set the font-size to something old-man friendly */
+    font-size: 1.4rem;
 }
 
 p a,
@@ -169,8 +170,8 @@ img {
 
 
 code {
-    font-family: Consolas, 'Courier New', Courier, monospace;
-    font-family: Consolas, 'Courier New', Courier, monospace;
+    font-family: "Libertinus Mono", 'Courier New', Courier, monospace;
+    font-family: "Libertinus Mono", 'Courier New', Courier, monospace;
     display: inline-block;
     overflow: auto !important;
     white-space: pre-line !important;       
@@ -195,12 +196,12 @@ code {
     background-color: var(--secondary-bg-color);
     border-radius: 5px;
     border: none;
-    font-family: 'EB Garamond', Georgia, serif !important;
+    font-family: 'Libertinus Mono', Georgia, serif !important;
 }
 
 
 pre code {
-    font-family: Consolas, 'Courier New', Courier, monospace;
+    font-family: 'Libertinus Mono', 'Courier New', Courier, monospace;
     display: inline-block;
     overflow: auto !important;
     white-space: pre-line !important;       
@@ -237,7 +238,7 @@ cite {
 
 blockquote p {
     font-family: inherit;
-    font-size: 16px;
+    font-size: 1.4rem;
 }
 
 table {
@@ -248,11 +249,11 @@ th, td {
     color: var(--primary-text-color);
     padding: 8px;
     text-align: left;
-    font-size: 12px;
+    font-size: 0.8rem;
 }
 
 td {
-   font-size: 14px;
+   font-size: 0.8rem;
 }
 
 td a {
@@ -853,7 +854,7 @@ hr {
 }
 
 .content {
-  line-height: 22px;
+  line-height: 2rem;
 }
 
 .content a {
@@ -869,7 +870,8 @@ hr {
     float: right;
     clear: right;
     font-family:  var(--secondary-font-family) !important;
-    font-size: 15px;
+    font-size: 1.1rem;
+    line-height: 1.3;
     margin-right: -45%;
     width: 40%;
     margin-top: 0;
@@ -884,7 +886,8 @@ hr {
     float: left;
     clear: left;
     font-family:  var(--secondary-font-family) !important;
-    font-size: 14px;
+    font-size: 1.1rem;
+    line-height: 1.3;
     margin-left: -45%;
     width: 40%;
     margin-top: 0;
@@ -1443,15 +1446,15 @@ label.margin-toggle:not(.sidenote-number) {
 
 @media (prefers-color-scheme: dark) {
 :root {
-    --primary-bg-color: hsl(var(--main-hue), 0%, 20%);
-    --secondary-bg-color: hsl(var(--main-hue), 0%, 23.9%);
-    --ternary-bg-color: hsl(var(--main-hue), 0%, 10.4%);
-    --quaternary-bg-color: hsl(var(--main-hue), 0%, 13%);
-    --quinary-bg-color: hsl(var(--main-hue), 0%, 20%);
+    --primary-bg-color: hsl(var(--main-hue), 0%, 10%);
+    --secondary-bg-color: hsl(var(--main-hue), 0%, 13.9%);
+    --ternary-bg-color: hsl(var(--main-hue), 0%, 1%);
+    --quaternary-bg-color: hsl(var(--main-hue), 0%, 3%);
+    --quinary-bg-color: hsl(var(--main-hue), 0%, 10%);
 
-    --primary-border-color: hsl(var(--main-hue), 0%, 30.9%);
-    --secondary-border-color: hsl(var(--main-hue), 0%, 35.4%);
-    --ternary-border-color: hsl(var(--main-hue), 0%, 40.5%);
+    --primary-border-color: hsl(var(--main-hue), 0%, 20.9%);
+    --secondary-border-color: hsl(var(--main-hue), 0%, 25.4%);
+    --ternary-border-color: hsl(var(--main-hue), 0%, 30.5%);
 
     --primary-box-shadow-color: hsl(var(--main-hue), 0%, 86.7%);
     --secondary-box-shadow-color: hsl(var(--main-hue), 0%, 81.2%);
