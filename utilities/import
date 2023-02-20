@@ -19,6 +19,8 @@ end
 
 class Jekyll
   def self.import_book(book)
+    return unless book.should_import?
+
     File.open("_posts/#{book.formatted_date}-#{book.book_id}.md", 'w') do |f|
       f.write book.post_text
     end
@@ -66,29 +68,35 @@ module ReadwiseExtras
     end
 
     def post_text
+      source = if source_url
+                 title
+               elsif source_url.match?(/^mailto:/)
+                 "#{title} _(via email)_"
+               else
+                 "[#{title}](#{source_url}){:target=\"_blank\"}"
+               end
       [
         "---",
         "title: \"#{readable_title}\"",
         "tags: #{formatted_tags}",
         "canonical: #{source_url}",
+        "hide_title: true",
         "---",
         "",
-        "Full Title: #{title}",
+        note,
         "",
-        "Author: #{author}"\
-          " - [Source URL](#{source_url}){:target=\"_blank\"}",
-        "",
-        "[Readwise URL](#{readwise_url}){:target=\"_blank\"}",
-        "",
-        "## Highlights",
-      ].concat(highlights.map { |h| h.formatted_text + "\n---\n" }).compact.join("\n")
+        "[[_Noted From_: #{source}<br>",
+        "_Author_: #{author}<br>",
+        "_More_: [Readwise URL](#{readwise_url}){:target=\"_blank\"}",
+        "::wrap]]",
+      ].compact.join("\n")
     end
 
     def formatted_tags
       tags.map { |t| t['name'] }
-        .concat([category])
+        .concat(["#{category}-#{book_id}"])
         .concat(highlights.map { |h| h.tags.map { |ht| ht['name'] } })
-        .flatten.join(' ')
+        .flatten.uniq.join(' ')
     end
 
     def formatted_date
@@ -96,9 +104,9 @@ module ReadwiseExtras
     end
 
     def should_import?
-      return false if highlights.empty?
+      return true if note&.length&.positive?
 
-      true
+      false
     end
   end
 
@@ -170,9 +178,8 @@ class Importer
   def self.import
     clean_posts
     client = Readwise::Client.new(token: TOKEN)
-    client.export(updated_after: Time.parse("2000-01-01").iso8601).filter do |book|
-      book.should_import?
-    end.each do |book|
+    client.export(updated_after: Time.parse("2000-01-01").iso8601).each do |book|
+      Jekyll.import_book(book)
       Jekyll.import_book_highlights(book)
     end
     copy_manual_posts
