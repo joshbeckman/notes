@@ -1,10 +1,11 @@
 #!/usr/bin/env ruby
 
-require 'time'
+require 'debug'
 require 'json'
 require 'net/http'
 require 'readwise'
-require 'debug'
+require 'time'
+require 'uri'
 
 TOKEN = File.read('.readwise_token').strip
 
@@ -68,13 +69,6 @@ module ReadwiseExtras
     end
 
     def post_text
-      source = if source_url
-                 title
-               elsif source_url.match?(/^mailto:/)
-                 "#{title} _(via email)_"
-               else
-                 "[#{title}](#{source_url}){:target=\"_blank\"}"
-               end
       [
         "---",
         "title: \"#{readable_title}\"",
@@ -85,8 +79,8 @@ module ReadwiseExtras
         "",
         note,
         "",
-        "[[_Noted From_: #{source}<br>",
-        "_Author_: #{author}<br>",
+        "[[_Noted From_: #{source_md}<br>",
+        "_Author_: #{author_md}<br>",
         "_More_: [Readwise URL](#{readwise_url}){:target=\"_blank\"}",
         "::wrap]]",
       ].compact.join("\n")
@@ -108,19 +102,44 @@ module ReadwiseExtras
 
       false
     end
+
+    def source_md
+      if !source_url
+        title
+      elsif source_url.match?(/^mailto:/)
+        "#{title} _(via email)_"
+      else
+        "[#{title}](#{source_url}){:target=\"_blank\"}"
+      end
+    end
+
+    def author_md
+      image_tag = if favicon_url
+                    "![favicon](#{favicon_url}){:style=\"vertical-align:middle\"} "
+                  elsif source_url&.match?(/^mailto:/)
+                    "✉️ "
+                  elsif category == 'books' || category == 'supplementals'
+                    "📕 "
+                  else
+                    " "
+                  end
+      image_tag + author.to_s
+    end
+
+    def favicon_url
+      return nil unless source_url&.match?(/^https{0,1}:\/\//)
+
+      hostname = URI.parse(source_url).hostname
+      return nil unless hostname
+
+      "https://s2.googleusercontent.com/s2/favicons?domain=#{hostname}"
+    end
   end
 
   module Highlight
     def post_text(book)
       title = text.split(' ').first(10).concat(['...']).join(' ')
         .gsub(/\]\(\S*\)/, "]").gsub('"', "'")
-      source = if !book.source_url
-                 book.title
-               elsif book.source_url.match?(/^mailto:/)
-                 "#{book.title} _(via email)_"
-               else
-                 "[#{book.title}](#{book.source_url}){:target=\"_blank\"}"
-               end
       [
         "---",
         "title: \"#{title}\"",
@@ -131,8 +150,8 @@ module ReadwiseExtras
         "",
         formatted_text,
         "",
-        "[[_Source_: #{source}<br>",
-        "_Author_: #{book.author}<br>",
+        "[[_Source_: #{book.source_md}<br>",
+        "_Author_: #{book.author_md}<br>",
         "_More_: [Readwise URL](#{readwise_url}){:target=\"_blank\"}",
         "::wrap]]",
       ].compact.join("\n")
