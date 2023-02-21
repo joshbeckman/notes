@@ -79,8 +79,7 @@ module ReadwiseExtras
         "",
         note,
         "",
-        "[[_Noted From_: #{source_md}<br>",
-        "_Author_: #{author_md}<br>",
+        "[[Noted from <cite>#{source_md}</cite> by #{author_md}<br>",
         "_More_: [Readwise URL](#{readwise_url}){:target=\"_blank\"}",
         "::wrap]]",
       ].compact.join("\n")
@@ -104,26 +103,27 @@ module ReadwiseExtras
     end
 
     def source_md
-      if !source_url
-        title
-      elsif source_url.match?(/^mailto:/)
-        "#{title} _(via email)_"
-      else
-        "[#{title}](#{source_url}){:target=\"_blank\"}"
-      end
+      title_str = if !source_url
+                    title
+                  elsif source_url.match?(/^mailto:/)
+                    "#{title} _(via email)_"
+                  else
+                    "[#{title}](#{source_url}){:target=\"_blank\"}"
+                  end
+      "_#{title_str}_"
     end
 
     def author_md
       image_tag = if favicon_url
-                    "![favicon](#{favicon_url}){:style=\"vertical-align:middle\"} "
+                    "![favicon](#{favicon_url}){:class=\"source-favicon\"}"
                   elsif source_url&.match?(/^mailto:/)
-                    "✉️ "
+                    "✉️"
                   elsif category == 'books' || category == 'supplementals'
-                    "📕 "
+                    "📕"
                   else
-                    " "
+                    ""
                   end
-      image_tag + author.to_s
+      [author.to_s, image_tag].join(' ')
     end
 
     def favicon_url
@@ -150,8 +150,7 @@ module ReadwiseExtras
         "",
         formatted_text,
         "",
-        "[[_Source_: #{book.source_md}<br>",
-        "_Author_: #{book.author_md}<br>",
+        "[[<cite>#{book.source_md}</cite> by #{book.author_md}<br>",
         "_More_: [Readwise URL](#{readwise_url}){:target=\"_blank\"}",
         "::wrap]]",
       ].compact.join("\n")

@@ -43,6 +43,11 @@ ul.tags li:last-child:after {
   display: none;
 }
 
+.source-favicon {
+  width: 16px;
+  vertical-align: middle;
+}
+
 .boxit {
     padding: 20px;
     width: calc(55% - 40px);
@@ -719,6 +724,9 @@ p.svg {
 
     img {
         width: 100%;
+    }
+    img.source-favicon {
+      width: 16px;
     }
     .boxit {
       width: calc(100% - 40px);
