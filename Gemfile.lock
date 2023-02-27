@@ -13,8 +13,6 @@ GEM
     ffi (1.15.5)
     forwardable-extended (2.6.0)
     google-protobuf (3.21.12)
-    htmlbeautifier (1.4.2)
-    htmlcompressor (0.4.0)
     http_parser.rb (0.8.0)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
@@ -40,10 +38,6 @@ GEM
       sass-embedded (~> 1.54)
     jekyll-sitemap (1.4.0)
       jekyll (>= 3.7, < 5.0)
-    jekyll-tidy (0.2.2)
-      htmlbeautifier
-      htmlcompressor
-      jekyll
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     katex (0.9.0)
@@ -83,7 +77,6 @@ DEPENDENCIES
   jekyll
   jekyll-feed
   jekyll-sitemap
-  jekyll-tidy
   kramdown-math-katex
 
 BUNDLED WITH

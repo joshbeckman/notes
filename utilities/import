@@ -74,6 +74,8 @@ module ReadwiseExtras
         "title: \"#{readable_title}\"",
         "tags: #{formatted_tags}",
         "canonical: #{source_url}",
+        "author: #{author_stripped}",
+        "book: #{book_id}",
         "hide_title: true",
         "---",
         "",
@@ -111,6 +113,10 @@ module ReadwiseExtras
       "_#{title_str}_"
     end
 
+    def author_stripped
+      author.to_s.split("\n").reject { |a| a.empty? }.join(" ")
+    end
+
     def author_md
       image_tag = if favicon_url
                     "![favicon](#{favicon_url}){:class=\"source-favicon\"}"
@@ -121,7 +127,7 @@ module ReadwiseExtras
                   else
                     ""
                   end
-      [author.to_s, image_tag].join(' ')
+      [author_stripped, image_tag].join(' ')
     end
 
     def favicon_url
@@ -143,6 +149,8 @@ module ReadwiseExtras
         "title: \"#{title}\"",
         "tags: #{formatted_tags(book)}",
         "canonical: #{book.source_url}",
+        "author: #{book.author_stripped}",
+        "book: #{book.book_id}",
         "hide_title: true",
         "---",
         "",

@@ -71,7 +71,12 @@
           {%- if sameTagCount >= minCommonTags -%}
             <li>
               <a href="{{post.url}}">
-                {{ post.content | markdownify | strip_html | truncate: 140 }}
+                {{ post.title | markdownify | strip_html }}
+                {%- if post.book == page.book -%}
+                  <em>from this source</em>
+                {%- else -%}
+                  <em>from {{ post.author }}</em>
+                {%- endif -%}
               </a>
             </li>
             {%- assign maxRelatedCounter = maxRelatedCounter | plus: 1 -%}

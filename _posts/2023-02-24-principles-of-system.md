@@ -1,6 +1,7 @@
 ---
 title: Principles of Good Systems &#x2B22;
 tags: systems scaling observability safety
+author: Josh Beckman
 ---
 
 These are qualities of a good system that we should strive to fulfill with what we design. Without fulfilling each of these attributes, the system is much more likely to fail in its goal.
