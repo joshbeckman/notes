@@ -191,6 +191,10 @@ li.search-results-list-item {
     padding-left: 0.75rem; 
 }
 
+.webmention-button {
+  margin-left: 1rem;
+}
+
 /* Tufte CSS styles */
 html {
     font-size: 15px;

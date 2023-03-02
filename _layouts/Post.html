@@ -45,11 +45,7 @@
 
     <title>{{site.heading}}: {{page.title}}</title>
 
-    {%- if page.canonical -%}
-    <link rel="canonical" href="{{page.canonical}}"/>
-    {%- else -%}
     <link rel="canonical" href="{{site.url}}{{page.url}}"/>
-    {%- endif -%}
     <link rel="apple-touch-icon" href="/assets/img/profile.png">
     <link rel="icon" href="/assets/img/favicon.png" type="image/png" sizes="16x16"/>
     <link href="/assets/css/tufte.css" rel="stylesheet" media="all" class="default" />
@@ -80,7 +76,7 @@
 
         {%- if page.content-type == "notes" 
             or page.content-type == "post"  -%}
-        <section>
+        <section class="note-post">
             {%- include Content.html -%}
             {%- include Backlinks.html -%}
             {%- include Related.html -%}
@@ -95,5 +91,6 @@
         {%- include Footer.html -%}
     </article>
     <!-- Load KaTeX -->
+    <script src="/assets/js/webmention.js"></script>
 </body>
 </html>
