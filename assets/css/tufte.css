@@ -192,7 +192,30 @@ li.search-results-list-item {
 }
 
 .webmention-button {
+  margin: 0;
   margin-left: 1rem;
+  background-color: rgb(235, 236, 240);
+  border-radius: 6px;
+  border: 1px solid rgba(27, 31, 36, 0.15);
+  box-shadow: rgba(27, 31, 36, 0.04) 0px 1px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-family: "Libertinus Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: normal;
+  padding: 0.25rem 0.75rem;
+  text-align: center;
+  text-decoration: none;
+  text-decoration-line: none;
+  text-indent: 0px;
+  text-shadow: none;
+  text-transform: none;
+  transition-delay: 0s;
+  transition-duration: 0.1s;
+  transition-property: color, background-color, box-shadow, border-color;
+  transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+  vertical-align: bottom;
 }
 
 /* Tufte CSS styles */
@@ -239,6 +262,13 @@ body {
     .search-result:hover > .svg-doc,
     .search-result.active > .svg-doc {
         stroke: #fff !important;
+    }
+
+    .webmention-button {
+      background-color: rgb(55, 62, 71);
+      border-color: rgba(205, 217, 229, 0.1);
+      color: #ddd;
+      box-shadow: none;
     }
 
     figure.grayscale-diagram svg, figure.grayscale-diagram img, img.grayscale {

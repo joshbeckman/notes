@@ -76,7 +76,7 @@ function enableWebmentions(rootContainer) {
     }
 
     webmentionDiv.className = 'webmention-container';
-    webmentionTitle.innerText = 'Mentions from around the web:';
+    webmentionTitle.innerText = 'Note Mentions';
     webmentionTitle.className = 'webmention-title';
     webmentionButton.innerText = 'View';
     webmentionButton.className = 'webmention-button';
