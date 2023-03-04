@@ -19,6 +19,7 @@ group :jekyll_plugins do
   # gem "jekyll-tidy"
 end
 
+gem 'readwise'
 gem 'jekyll-sitemap'
 gem 'kramdown-math-katex'
 gem "jekyll-sass-converter", "~> 2.0"
