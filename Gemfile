@@ -21,3 +21,4 @@ end
 
 gem 'jekyll-sitemap'
 gem 'kramdown-math-katex'
+gem "jekyll-sass-converter", "~> 2.0"
