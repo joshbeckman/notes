@@ -128,12 +128,16 @@
 {%- endif -%}
 {%- if page.content-type == "post" -%}
 <hr>
-<a class="p-author" style="display: none;" href="https://notes.joshbeckman.org/about">
+<a class="p-author h-card" style="display: none;" href="https://notes.joshbeckman.org/about">
     Josh Beckman
 </a>
 <ul class="toc toc-level-1">
     <li class="toc toc-level-1">
-      <a href="/dates/#{{ page.date | date: '%d-%B-%Y' }}" class="tag dt-published">{{ page.date | date: '%B-%d-%Y' }}</a>
+      <a href="/dates/#{{ page.date | date: '%d-%B-%Y' }}">
+          <time class="dt-published" datetime="{{ page.date | date:'%Y-%m-%d' }}">
+              {{ page.date | date: '%B-%d-%Y' }}
+          </time>
+      </a>
     </li>
 </ul>
 <ul class="toc toc-level-1 tags">
