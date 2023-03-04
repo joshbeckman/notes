@@ -128,15 +128,18 @@
 {%- endif -%}
 {%- if page.content-type == "post" -%}
 <hr>
+<a class="p-author" style="display: none;" href="https://notes.joshbeckman.org/about">
+    Josh Beckman
+</a>
 <ul class="toc toc-level-1">
     <li class="toc toc-level-1">
-      <a href="/dates/#{{ page.date | date: '%d-%B-%Y' }}" class="tag">{{ page.date | date: '%B-%d-%Y' }}</a>
+      <a href="/dates/#{{ page.date | date: '%d-%B-%Y' }}" class="tag dt-published">{{ page.date | date: '%B-%d-%Y' }}</a>
     </li>
 </ul>
 <ul class="toc toc-level-1 tags">
     <!-- Loop through page categories and print them in tags -->
     {%- for tag in page.tags -%}
-        <li class="toc toc-level-2 tag"><a href="/tags/#{{ tag }}" class="tag">#{{ tag }}</a></li>
+        <li class="toc toc-level-2 tag"><a href="/tags/#{{ tag }}" class="tag p-category">#{{ tag }}</a></li>
     {%- endfor -%}
 </ul>
 {%- endif -%}
