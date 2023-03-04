@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 
-require 'debug'
 require 'json'
 require 'net/http'
 require 'readwise'
