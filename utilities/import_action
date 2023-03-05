@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 
 require 'json'
-require 'net/http'
 require 'readwise'
 require 'time'
 require 'uri'
@@ -69,7 +68,7 @@ module ReadwiseExtras
         "",
         note,
         "",
-        "[[Noted from <cite>#{source_md}</cite> by #{author_md}<br>",
+        "[[Noted from <cite class=\"h-cite\">#{source_md}</cite> by #{author_md}<br>",
         "_More_: [Readwise URL](#{readwise_url}){:target=\"_blank\"}",
         "::wrap]]",
       ].compact.join("\n")
@@ -96,9 +95,9 @@ module ReadwiseExtras
       title_str = if !source_url || source_url.match?(/^mailto:/)
                     title
                   else
-                    "[#{title}](#{source_url}){:target=\"_blank\"}"
+                    "<a href=\"#{source_url}\" class=\"h-url p-name\" target=\"_blank\">#{title}</a>"
                   end
-      "_#{title_str}_"
+      "<em>#{title_str}</em>"
     end
 
     def author_stripped
@@ -144,7 +143,7 @@ module ReadwiseExtras
         "",
         formatted_text,
         "",
-        "[[<cite>#{book.source_md}</cite> by #{book.author_md}<br>",
+        "[[<cite class=\"h-cite\">#{book.source_md}</cite> by #{book.author_md}<br>",
         "_More_: [Readwise URL](#{readwise_url}){:target=\"_blank\"}",
         "::wrap]]",
       ].compact.join("\n")

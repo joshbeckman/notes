@@ -28,6 +28,7 @@ url: "https://notes.joshbeckman.org" # the base hostname & protocol for your sit
 # your social media links etc
 #######################################################################
 
+title: Josh's Notes
 heading: Josh's Notes
 subheading: # subheading won't work without a tagline, 
           # tagline is mandatory if you want the 
@@ -35,7 +36,7 @@ subheading: # subheading won't work without a tagline,
           # having a heading and a subheading looks 
           # ridiculous.
   enabled: false
-  name: SUbheading.name
+  name: Subheading.name
 tagline: # subheading won't work without a tagline, 
          # tagline is mandatory if you want the 
          # suheading to appear. The reason is
@@ -45,11 +46,14 @@ tagline: # subheading won't work without a tagline,
          # the subheading to support the main heading
          # which in this case is 'Knowledge Continuum'
   enabled: false
-  name: Collected from online and elsewhere
+  name: Notes collected from online and elsewhere
+description: Notes collected from online and elsewhere
 copyright: 
   # year: 2023
   # msg: Josh Beckman
-
+author:
+  name: Josh Beckman
+  uri: https://notes.joshbeckman.org/about
 user:
   display: true # setting it to false will remove the header image and bio
                 # Note that user settings come wholesale, it does not have the 
@@ -117,9 +121,11 @@ encoding: utf-8
 # Build settings
 theme: null
 plugins:
-  - jekyll-feed 
-  - jekyll-sitemap 
+  - jekyll-feed
+  - jekyll-sitemap
     # - jekyll-tidy
+feed:
+  posts_limit: 50
 
 # Disqus Comments
 # disqus:
