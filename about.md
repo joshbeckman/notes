@@ -22,6 +22,9 @@ The site theme is forked from [Simply Jekyll](https://github.com/raghudotcc/simp
 ### Features:
 
 [[***Changelog***<br/>
+\- 05-03-23 Send Webmentions with GitHub Actions<br/>
+\- 04-03-23 Switch to GitHub Actions for build<br/>
+\- 01-03-23 Add Webmention display support<br/>
 \- 16-02-23 Styled with Tufte.css<br/>
 \- 11-02-23 Added Random Note page<br/>
 \- 11-02-23 Search-via-URL-query support<br/>
