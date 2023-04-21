@@ -11,27 +11,27 @@ This details here are a work-in-progress.
 ## Safety
 
 Nothing bad can happen.
-[[Access Control Logic, Resource Limits::rsn]]
+[[Access Control Logic, Resource Limits, [interlocks](https://notes.joshbeckman.org/notes/487349097), [jigs/poka-yoke](https://notes.joshbeckman.org/notes/487680878)::rsn]]
 
 ## Liveness
 
 Something good happens, eventually.
-[[Desired State interfaces, Slack capacity::rsn]]
+[[Desired State interfaces, Slack capacity, ([more about safety and liveness](https://en.m.wikipedia.org/wiki/Safety_and_liveness_properties))::rsn]]
 
 ## Observability
 
 Activity, configuration, and behavior within the system is legible and actionable by the user.
-[[Data used to scale the system is a first-class entity::rsn]]
+[[Data used to scale the system is a first-class entity, logs-as-data, ::rsn]]
 
 ## Controllability
 
 Users and administrators can cleanly and clearly tune the system to operate within bounds.
-[[Feedback mechanisms, tenacy-based limits::rsn]]
+[[Feedback mechanisms, tenacy-based limits, progressive disclosure of manual overrides::rsn]]
 
 ## Composability
 
 Complex behavior can be created with the system by assembling components. Pieces can be swapped, edited, etc. in isolation (without considering the full state of the system).
-[[Declarative interfaces, Narrow waist protocols, Domain Driven Design::rsn]]
+[[Desired state and declarative interfaces, Narrow waist protocols, Domain Driven Design::rsn]]
 
 ## Scalability
 
