@@ -1,5 +1,5 @@
 ---
-title: Leadership Framework to Challenge and Support
+title: Challenge and Support
 tags: leadership managing
 author: Ken Britton
 ---
