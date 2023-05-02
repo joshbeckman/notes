@@ -106,7 +106,7 @@ module ReadwiseExtras
       return source_url unless text_fragment
 
       text_start = text_fragment.split("\n").first.split("[").first.split(" ").first(10).join(" ").strip
-      "#{source_url}#:~:text=#{URI.encode_uri_component(text_start)}"
+      "#{source_url}#:~:text=#{URI::Parser.new.escape(text_start)}"
     end
 
     def author_stripped
