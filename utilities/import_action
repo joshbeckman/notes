@@ -64,12 +64,12 @@ module ReadwiseExtras
         "author: #{author_stripped}",
         "book: #{book_id}",
         "hide_title: true",
+        "readwise_url: #{readwise_url}",
         "---",
         "",
         note,
         "",
         "[[Noted from <cite class=\"h-cite\">#{source_md}</cite> by #{author_md}<br>",
-        "_More_: [Readwise URL](#{readwise_url}){:target=\"_blank\"}",
         "::wrap]]",
       ].compact.join("\n")
     end
@@ -91,13 +91,22 @@ module ReadwiseExtras
       false
     end
 
-    def source_md
+    def source_md(text_fragment: nil)
+      href = outbound_url(text_fragment: text_fragment)
       title_str = if !source_url || source_url.match?(/^mailto:/)
                     title
                   else
-                    "<a href=\"#{source_url}\" class=\"h-url p-name\" target=\"_blank\">#{title}</a>"
+                    "<a href=\"#{href}\" class=\"h-url p-name\" target=\"_blank\">#{title}</a>"
                   end
       "<em>#{title_str}</em>"
+    end
+
+    # Ref: https://developer.mozilla.org/en-US/docs/Web/Text_fragments
+    def outbound_url(text_fragment: nil)
+      return source_url unless text_fragment
+
+      text_start = text_fragment.split("\n").first.split("[").first.split(" ").first(10).join(" ").strip
+      "#{source_url}#:~:text=#{URI.encode_uri_component(text_start)}"
     end
 
     def author_stripped
@@ -131,6 +140,7 @@ module ReadwiseExtras
     def post_text(book)
       title = text.split(' ').first(10).concat(['...']).join(' ')
         .gsub(/\]\(\S*\)/, "]").gsub('"', "'")
+      citation = book.source_md(text_fragment: text)
       [
         "---",
         "title: \"#{title}\"",
@@ -139,12 +149,12 @@ module ReadwiseExtras
         "author: #{book.author_stripped}",
         "book: #{book.book_id}",
         "hide_title: true",
+        "readwise_url: #{readwise_url}",
         "---",
         "",
         formatted_text,
         "",
-        "[[<cite class=\"h-cite\">#{book.source_md}</cite> by #{book.author_md}<br>",
-        "_More_: [Readwise URL](#{readwise_url}){:target=\"_blank\"}",
+        "[[<cite class=\"h-cite\">#{citation}</cite> by #{book.author_md}<br>",
         "::wrap]]",
       ].compact.join("\n")
     end
