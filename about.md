@@ -13,7 +13,7 @@ You can [read more about me on my main website](https://www.joshbeckman.org/abou
 
 ## About This Site
 
-I [wrote up the process and theory behind this website](https://www.joshbeckman.org/opening-up-my-highlights-notes/), but basically it's an export and reformatting of my highlights and notes of my online (and some offline) reading ([script here](https://github.com/andjosh/notes/blob/master/utilities/import)).
+I [wrote up the process and theory behind this website](https://www.joshbeckman.org/opening-up-my-highlights-notes/), but basically it's an export and reformatting of my highlights and notes of my online (and some offline) reading ([script here](https://github.com/joshbeckman/notes/blob/master/utilities/import)).
 
 I use it to jostle loose ideas when I'm researching a particular problem in software design or writing topic. I usually either ask it for a random note or search by keyword.
 
@@ -52,7 +52,7 @@ The site theme is forked from [Simply Jekyll](https://github.com/raghudotcc/simp
 
 ### Infrastructure
 
-- The site lives on [[Github::https://github.com/andjosh/notes]] and is served using GitHub Pages.
+- The site lives on [[Github::https://github.com/joshbeckman/notes]] and is served using GitHub Pages.
 - This website is statically generated using Jekyll from a set of Markdown files.
 - Except lunrjs and katex, there are no third party libraries.
 
