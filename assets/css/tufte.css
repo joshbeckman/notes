@@ -218,6 +218,10 @@ li.search-results-list-item {
   vertical-align: bottom;
 }
 
+.highlighted-text {
+  background-color: #fbf5d4;
+}
+
 /* Tufte CSS styles */
 html {
     font-size: 15px;
@@ -269,6 +273,9 @@ body {
       border-color: rgba(205, 217, 229, 0.1);
       color: #ddd;
       box-shadow: none;
+    }
+    .highlighted-text {
+      background-color: #332e0e;
     }
 
     figure.grayscale-diagram svg, figure.grayscale-diagram img, img.grayscale {
