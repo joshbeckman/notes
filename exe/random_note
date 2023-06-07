@@ -1,0 +1,39 @@
+#!/usr/bin/env ruby
+
+require 'net/http'
+require 'json'
+require 'securerandom'
+
+def print(str)
+  str.split(' ').inject([[]]) do |memo, word|
+  (memo.last.join(' ').length + word.length < 80) ? memo.last << word : memo << [word]
+    memo
+  end.each { |line| puts line.join(' ') }
+end
+
+base_url = 'https://notes.joshbeckman.org'
+data_url = "#{base_url}/assets/js/SearchData.json"
+uri = URI.parse(data_url)
+req = Net::HTTP::Get.new(uri)
+res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
+  http.request(req)
+end
+raise StandardError, 'Notes data request failed' unless res.is_a?(Net::HTTPSuccess)
+
+data = JSON.parse(res.body)
+items = data.values.reject { |item| item['url'].match(/tags/) }
+item = items[SecureRandom.rand(items.count)]
+note_regex = /\[\[(.*)::rmn\]\]/
+citattion_regex = /\[\[(.*)::wrap\]\].*\./
+content = item['content']
+  .gsub(note_regex, '')
+  .gsub(citattion_regex, '')
+
+note = item['content'].match(note_regex)
+citation = item['content'].match(citattion_regex)
+
+print content
+puts ''
+print '- ' + note[1] if note
+print '# ' + citation[1] if citation
+print "#{base_url}#{item['url']}"
