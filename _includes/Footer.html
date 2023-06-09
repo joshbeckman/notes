@@ -33,3 +33,17 @@
     <p id="copyright-notice">© {{site.copyright.msg}}. {{site.copyright.year}}</p>
 </div> 
 {%- endif -%}
+{%- if page.content-type == "post" -%}
+<script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+<div id="qrcode" class="print-only"></div>
+<script>
+var qrcode = new QRCode(document.getElementById('qrcode'), {
+  text: document.location.href,
+  width: 128,
+  height: 128,
+  colorDark: '#000',
+  colorLight: '#fff',
+  correctLevel: QRCode.CorrectLevel.H
+});
+</script>
+{%- endif -%}
