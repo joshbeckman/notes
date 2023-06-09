@@ -19,9 +19,10 @@ I use it to jostle loose ideas when I'm researching a particular problem in soft
 
 The site theme is forked from [Simply Jekyll](https://github.com/raghudotcc/simply-jekyll), with alternative styling taken from [Tufte.css](https://edwardtufte.github.io/tufte-css/). The site fonts are [Libertinus](https://github.com/alerque/libertinus/).
 
-### Features:
+### Features
 
 [[***Changelog***<br/>
+\- 09-06-23 Printable styling and QRCodes<br/>
 \- 01-05-23 Highlight text fragments in outbound links<br/>
 \- 05-03-23 Send Webmentions with GitHub Actions<br/>
 \- 04-03-23 Switch to GitHub Actions for build<br/>
