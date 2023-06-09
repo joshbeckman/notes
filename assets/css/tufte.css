@@ -789,7 +789,7 @@ p.svg {
 @media print {
   header,
   section.related,
-  div.webmentions-container {
+  div.webmention-container {
     display: none !important;
   }
   .print-only {
