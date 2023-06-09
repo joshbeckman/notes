@@ -221,6 +221,9 @@ li.search-results-list-item {
 .highlighted-text {
   background-color: #fbf5d4;
 }
+.print-only {
+    display: none;
+}
 
 /* Tufte CSS styles */
 html {
@@ -788,5 +791,8 @@ p.svg {
   section.related,
   div.webmentions-container {
     display: none !important;
+  }
+  .print-only {
+    display: block !important;
   }
 }
