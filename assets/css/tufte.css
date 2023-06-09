@@ -783,3 +783,10 @@ p.svg {
       width: calc(100% - 4.4rem);
     }
 }
+@media print {
+  header,
+  section.related,
+  div.webmentions-container {
+    display: none !important;
+  }
+}
