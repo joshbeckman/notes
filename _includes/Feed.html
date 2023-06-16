@@ -32,8 +32,13 @@
 {%- endcomment -%}
 
 {%- if page.permalink == "/" -%}
+  <p>
+    <em>
+        {{ site.data.proverbs | sample }}
+    </em>
+  </p>
   <h1>Latest Notes 🍃</h1>
-    {%- for item in site.posts limit:25 -%}
+    {%- for item in site.posts limit:10 -%}
         <section class="feed-title-excerpt-block disable-select" data-url="{{site.url}}{{item.url}}">
           <p class="feed-excerpt">
             <a href="{{item.url}}" style="text-decoration: none;">
