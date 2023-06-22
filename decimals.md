@@ -10,7 +10,9 @@ There are categories; they are used as tags.
 Any note can be tagged with one or more categories.
 The numbers don't matter; what matters is that they are numerically sorted and numerically related.
 </p>
-
+<p>
+  Add or remove categories <a href="https://github.com/joshbeckman/notes/blob/master/_data/decimals.yml">here</a>.
+</p>
 <p>
 Alternatively, notes are <a href="/dates">indexed by date</a>.
 </p>
