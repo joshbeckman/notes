@@ -1,0 +1,290 @@
+# - 00-09 The-system
+# - 00 Index
+- 01 Inbox
+# - 02 Notes
+# - 03 To-do-and-checklists
+# - 04 Bookmarks
+# - 05 Templates
+  # - 06
+  # - 07
+# - 08 Someday
+# - 09 Archive
+- 10-19 Technology
+- 10 Computer-science
+- 10.01 Machine-learning
+- 10.02 Caching
+- 10.03 LLM
+- 10.04 Compilers
+- 10.05 Data
+- 10.06 Domain-driven-design
+- 10.07 End-user-programming
+- 10.08 Software
+- 10.09 Software-engineering
+- 10.10 Geists
+- 10.11 GraphQL
+- 10.12 SQL
+- 10.13 Access-control
+- 10.14 Stream-processing
+- 10.15 Types
+- 10.16 Parsing
+- 10.17 Validation
+- 11 Medicine-and-health
+- 11.01 Medicine
+- 11.02 Health
+- 11.03 Breathing
+- 11.04 Epidemiology
+- 11.05 Exercise
+- 11.06 Pathology
+- 11.07 Recreational-drugs
+- 11.08 Weight-training
+- 12 Physical-engineering
+- 12.01 Physical-engineering
+- 12.02 Accessibility
+- 13 Agriculture
+- 13.01 Agriculture
+- 14 Technology
+- 14.01 Automation
+- 14.02 Building
+- 14.03 Hacking
+- 14.04 Interfaces
+- 14.05 Infrastructure
+- 14.06 Logistics
+- 14.07 Open-source
+- 14.08 Platforms
+- 14.09 Product
+- 14.10 Recycling
+- 14.11 Renewable-energy
+- 14.12 Search
+- 14.13 Spaceflight
+- 14.14 Tools
+- 15 Machines
+- 15.01 Machines
+- 15.02 Cameras
+- 15.03 Robots
+  # - 16
+  # - 17
+  # - 18
+  # - 19
+- 20-29 History-and-geography
+- 20 History
+- 20.01 History
+- 20.02 COVID-19
+- 21 Geography
+- 21.01 Geography
+- 23 United States
+- 23.01 United-States
+- 23.02 Chicago
+  # - 24
+  # - 25
+  # - 26
+  # - 27
+  # - 28
+  # - 29
+- 30-39 People
+- 30 People
+- 30.01 Groups-of-people
+- 30.02 Leadership
+- 30.03 Audience
+- 30.04 Collectives
+- 30.05 Management
+- 30.06 Meetings
+- 30.07 Social-networks
+- 30.08 Work
+- 31 Political-science
+- 31.01 Political-science
+- 31.02 Antagonism
+- 32 Government
+- 32.01 State-government
+- 32.02 Commons
+- 32.03 Legal
+- 32.04 Compliance
+- 32.05 Crime
+- 32.06 Elections
+- 32.07 Taxes
+- 32.08 Police
+- 32.09 Republican-party
+- 32.10 Surveillance
+- 32.11 Urban-planning
+- 33 Competition
+- 33.01 Competition
+- 33.02 Professional
+- 33.03 Amateur
+- 33.04 Conflict
+- 33.05 Negotiation
+- 33.06 War
+- 34 Education
+- 34.01 Education
+- 34.02 Evangelism
+- 35 Culture
+- 35.01 Culture
+- 35.02 Folk-creations
+- 35.03 Hunting
+- 35.04 Foraging
+- 35.05 Parenting
+- 35.06 Religion
+- 35.07 Sports
+  # - 36
+  # - 37
+  # - 38
+  # - 39
+- 40-49 Arts-and-recreation
+- 40 Arts
+- 40.01 Art
+- 40.02 Photography
+- 40.03 Music
+- 41 Recreation
+- 41.01 Entertainment
+- 42 Architecture
+- 42.01 Physical-architecture
+- 43 Food-and-drink
+- 43.01 Cooking
+- 43.02 Cocktails
+- 43.03 Seasoning
+- 44 Exploration
+- 44.01 Exploration
+  # - 45
+  # - 46
+  # - 47
+  # - 48
+  # - 49
+- 50-59 Science
+- 50 Science
+- 50.01 Science
+- 50.02 Research
+- 51 Biology
+- 51.01 Adaptation
+- 51.02 Biomes
+- 51.03 Survivalism
+- 52 Environmental-science
+- 52.01 Environment
+- 52.02 Climate-change
+- 52.03 Flora
+- 52.04 Fauna
+- 53 Math
+- 53.01 Mathematics
+- 53.02 Napkin-math
+- 53.03 Information-theory
+- 53.04 Network-theory
+- 53.05 Noise
+- 53.06 Probability
+- 54 Measurement
+- 54.01 Metrics
+- 54.02 Units
+- 55 Psychology
+- 55.01 Human-psychology
+  # - 56
+  # - 57
+  # - 58
+  # - 59
+- 60-69 Systems
+- 60 Systems
+- 60.01 Safety
+- 60.02 Liveness
+- 60.03 Observability
+- 60.04 Controllability
+- 60.05 Composability
+- 60.06 Scalability
+- 60.07 Checklists
+- 60.08 System-design
+- 60.09 Optimization
+- 60.10 Feedback
+- 60.11 Incentives
+- 60.12 Performance
+- 60.13 Queues
+- 60.14 Reliability
+- 60.15 Efficiency
+- 60.16 Risk
+- 60.17 Taxonomy
+- 60.18 Tolerance
+- 61 Representation
+- 61.01 Abstraction
+- 61.02 Estimation
+- 61.03 Strategy
+- 62 Habits
+- 62.01 Habits
+- 62.02 Commute
+- 62.03 Consumption
+- 62.04 Practice-and-training
+- 62 Economics
+- 62.01 Economics
+- 62.02 Capitalism
+- 62.03 Finance
+- 62.04 Money
+- 62.05 Cryptocurrency
+- 62.06 Funding
+- 62.07 Game-theory
+- 62.08 Marketplaces
+- 62.09 Venture-capital
+- 63 Mental-models
+- 63.01 Decisions
+- 63.02 Defaults
+- 63.03 Goals
+- 63.04 Side-effects
+- 63.05 Stochastic-management
+- 64 Process
+- 64.01 Incident-management
+- 64.02 Root-cause-analysis
+  # - 65
+  # - 66
+- 67 Language
+- 67.01 Language
+- 67.02 Notation
+- 67.03 Writing
+- 67.04 Communication
+- 67.05 Maps
+- 67.06 Note-taking
+- 67.07 Pattern-languages
+- 67.08 RFC
+  # - 68
+  # - 69
+  # - 70-79
+  # - 70
+  # - 71
+  # - 72
+  # - 73
+  # - 74
+  # - 75
+  # - 76
+  # - 77
+  # - 78
+  # - 79
+- 80-89 Philosophy
+- 80 Philosophy
+- 80.01 Philosophy
+- 80.02 Attention
+- 80.03 Beliefs
+- 80.04 Epistemology
+- 80.05 Equanimity
+- 80.06 Identity
+- 80.07 Meaning
+- 80.08 Motivation
+- 81 Intelligence
+- 81.01 AI
+- 81.02 Intelligence
+- 81.03 Curiosity
+- 82 Ethics
+- 82.01 Ethics
+- 83 Mind
+- 83.01 Memory
+- 83.02 Perception
+- 83.03 Proximity
+  # - 84
+  # - 85
+  # - 86
+  # - 87
+  # - 88
+  # - 89
+- 90-99 Literature
+- 90 Literature
+- 90.01 Fiction
+- 90.02 Non-fiction
+- 91 Journalism
+- 91.01 Journalism
+  # - 92
+  # - 93
+  # - 94
+  # - 95
+  # - 96
+  # - 97
+  # - 98
+  # - 99

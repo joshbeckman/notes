@@ -1,6 +1,6 @@
 ---
 layout: Post
-title: By Tags
+title: Tags Index
 permalink: /tags/
 content-type: eg
 ---
@@ -12,7 +12,7 @@ content-type: eg
   <h3 id="{{ conc }}">{{ conc }}</h3>
   <ul class="">
   {% for post in tag.last %} 
-    <li id="" style="padding-bottom: 0.6em; list-style: none;"><a href="{{post.url}}">{{ post.title }}</a></li>
+    <li style="padding-bottom: 0.6em; list-style: none;"><a href="{{post.url}}">{{ post.title }}</a></li>
   {% endfor %}
   </ul>
 {% endfor %}
