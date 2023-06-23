@@ -1,6 +1,6 @@
 ---
 title: A model of driving change
-tags: managing product
+tags: management product
 author: Ken Britton
 ---
 

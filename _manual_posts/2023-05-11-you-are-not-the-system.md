@@ -1,6 +1,6 @@
 ---
 title: You are not the system
-tags: systems self
+tags: systems identity
 author: Josh Beckman
 ---
 
