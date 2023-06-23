@@ -126,22 +126,34 @@
 <a class="p-author h-card" style="display: none;" href="https://notes.joshbeckman.org/about">
     Josh Beckman
 </a>
-<ul class="toc toc-level-1 tags">
-    <li class="toc toc-level-2 tag">
+<h4>
+Filed under:
+</h4>
+<ul class="toc">
+    <!-- Loop through page categories and print them in tags -->
+    {%- for item in site.data.decimals -%}
+        {%- assign slug = item | split: ' ' | last | downcase -%}
+        {%- for tag in page.tags -%}
+            {%- if tag == slug -%}
+                <li class="toc">
+                    <a href="/tags/#{{ tag }}" class="">
+                        {{ item }}
+                    </a>
+                </li>
+            {%- endif -%}
+        {%- endfor -%}
+    {%- endfor -%}
+    <li class="toc">
       <a href="/dates/#{{ page.date | date: '%d-%B-%Y' }}">
           <time class="dt-published" datetime="{{ page.date | date:'%Y-%m-%d' }}">
               {{ page.date | date: '%B-%d-%Y' }}
           </time>
       </a>
     </li>
-    <!-- Loop through page categories and print them in tags -->
-    {%- for tag in page.tags -%}
-        <li class="toc toc-level-2 tag"><a href="/tags/#{{ tag }}" class="tag p-category">#{{ tag }}</a></li>
-    {%- endfor -%}
     {%- if page.readwise_url -%}
-    <li class="toc toc-level-2 tag">
+    <li class="toc edit">
       <a href="{{ page.readwise_url }}" target="_blank">
-        ✎ Edit
+        Edit
       </a>
     </li>
     {%- endif -%}

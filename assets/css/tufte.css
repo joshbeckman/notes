@@ -12,35 +12,30 @@ h5{
     hyphens: none;
 }
 
+ul.toc {
+    padding-left: 0px;
+}
+
 li.toc {
     list-style: none;
     line-height: 1.2rem;
 }
+li.toc:before {
+  position: relative;
+  content: "#";
+  vertical-align: middle;
+}
+li.toc.edit:before {
+  position: relative;
+  content: "✎";
+  vertical-align: middle;
+}
 
-ul.toc a {
-    text-decoration: none;
+li.toc a {
     font-size: 1rem;
     font-feature-settings: normal;
     text-transform: initial;
     font-family: "Libertinus Sans", sans-serif;
-}
-
-ul.toc-level-1 {
-    padding-left: 0px;
-}
-
-ul.tags li {
-  display: inline;
-  margin-right: 2rem;
-}
-ul.tags li:after {
-  position: absolute;
-  /* content: "-"; */
-  margin-top: 0.5rem;
-  margin-left: 0.75rem;
-}
-ul.tags li:last-child:after {
-  display: none;
 }
 
 .source-favicon {
