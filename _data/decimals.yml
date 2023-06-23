@@ -40,7 +40,7 @@
 - 12 Physical-engineering
 - 12.01 Physical-engineering
 - 12.02 Accessibility
-- 13 Agriculture
+- 13 Agriculture-and-cultivation
 - 13.01 Agriculture
 - 14 Technology
 - 14.01 Automation
@@ -57,7 +57,7 @@
 - 14.12 Search
 - 14.13 Spaceflight
 - 14.14 Tools
-- 15 Machines
+- 15 Machinery
 - 15.01 Machines
 - 15.02 Cameras
 - 15.03 Robots
@@ -66,10 +66,10 @@
   # - 18
   # - 19
 - 20-29 History-and-geography
-- 20 History
+- 20 Historical-study
 - 20.01 History
 - 20.02 COVID-19
-- 21 Geography
+- 21 Geography-and-nations
 - 21.01 Geography
 - 23 United States
 - 23.01 United-States
@@ -80,7 +80,7 @@
   # - 27
   # - 28
   # - 29
-- 30-39 People
+- 30-39 People and organization
 - 30 People
 - 30.01 Groups-of-people
 - 30.02 Leadership
@@ -90,7 +90,7 @@
 - 30.06 Meetings
 - 30.07 Social-networks
 - 30.08 Work
-- 31 Political-science
+- 31 Political-sciences
 - 31.01 Political-science
 - 31.02 Antagonism
 - 32 Government
@@ -105,17 +105,17 @@
 - 32.09 Republican-party
 - 32.10 Surveillance
 - 32.11 Urban-planning
-- 33 Competition
+- 33 Competition and opposition
 - 33.01 Competition
 - 33.02 Professional
 - 33.03 Amateur
 - 33.04 Conflict
 - 33.05 Negotiation
 - 33.06 War
-- 34 Education
+- 34 Education practices
 - 34.01 Education
 - 34.02 Evangelism
-- 35 Culture
+- 35 Cultural practices
 - 35.01 Culture
 - 35.02 Folk-creations
 - 35.03 Hunting
@@ -140,15 +140,15 @@
 - 43.01 Cooking
 - 43.02 Cocktails
 - 43.03 Seasoning
-- 44 Exploration
+- 44 Exploration and travel
 - 44.01 Exploration
   # - 45
   # - 46
   # - 47
   # - 48
   # - 49
-- 50-59 Science
-- 50 Science
+- 50-59 Sciences
+- 50 Science-practice
 - 50.01 Science
 - 50.02 Research
 - 51 Biology
@@ -202,7 +202,7 @@
 - 61.01 Abstraction
 - 61.02 Estimation
 - 61.03 Strategy
-- 62 Habits
+- 62 Habits-and-practice
 - 62.01 Habits
 - 62.02 Commute
 - 62.03 Consumption
@@ -229,7 +229,7 @@
 - 64.02 Root-cause-analysis
   # - 65
   # - 66
-- 67 Language
+- 67 Language-and-communication
 - 67.01 Language
 - 67.02 Notation
 - 67.03 Writing
@@ -251,8 +251,8 @@
   # - 77
   # - 78
   # - 79
-- 80-89 Philosophy
-- 80 Philosophy
+- 80-89 Philosophy-and-mind
+- 80 Philosophy-topics
 - 80.01 Philosophy
 - 80.02 Attention
 - 80.03 Beliefs
@@ -277,11 +277,11 @@
   # - 87
   # - 88
   # - 89
-- 90-99 Literature
+- 90-99 Literature-and-publication
 - 90 Literature
 - 90.01 Fiction
 - 90.02 Non-fiction
-- 91 Journalism
+- 91 Journalism-practice
 - 91.01 Journalism
   # - 92
   # - 93
