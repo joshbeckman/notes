@@ -22,6 +22,7 @@ The site theme is forked from [Simply Jekyll](https://github.com/raghudotcc/simp
 ### Features
 
 [[***Changelog***<br/>
+\- 22-06-23 Implemented decimal index<br/>
 \- 09-06-23 Printable styling and QRCodes<br/>
 \- 01-05-23 Highlight text fragments in outbound links<br/>
 \- 05-03-23 Send Webmentions with GitHub Actions<br/>

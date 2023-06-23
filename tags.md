@@ -1,18 +1,76 @@
 ---
 layout: Post
-title: Tags Index
+title: Index
 permalink: /tags/
 content-type: eg
 ---
 
+<p>
+There are categories; they are used as tags.
+Any note can be tagged with one or more categories.
+The numbers don't matter; what matters is that they are numerically sorted and numerically related.
+</p>
+[[***About***<br/>
+The system structure and theory is roughly based on the ideas of <a href="https://johnnydecimal.com" target="_blank">Johnny.Decimal</a>.<br/>
+I initially took inspiration from <a href="https://en.wikipedia.org/wiki/Dewey_Decimal_Classification" target="_blank">Dewey Decimal Classification</a>, but diverged when I saw its racist/sexist grouping and when I started embracing my own focus.<br/>
+  Categories are maintained <a href="https://github.com/joshbeckman/notes/blob/master/_data/decimals.yml">here</a>.<br/>
+::rmn]]
+<p>
+Alternatively, notes are <a href="/dates">indexed by date</a>.
+</p>
 
-{%- assign tags = site.tags | sort %}
-{% for tag in tags %}
-  {%- assign conc = tag | first -%}
-  <h3 id="{{ conc }}">{{ conc }}</h3>
-  <ul class="">
-  {% for post in tag.last %} 
-    <li style="padding-bottom: 0.6em; list-style: none;"><a href="{{post.url}}">{{ post.title }}</a></li>
-  {% endfor %}
-  </ul>
-{% endfor %}
+{%- for item in site.data.decimals -%}
+  {%- assign slug = item | split: ' ' | last | downcase -%}
+  {%- assign decimal = item | split: ' ' | first -%}
+  {%- assign top = item | match: '^\d\d-\d\d ' -%}
+  {%- assign mid = item | match: '^\d\d ' -%}
+  {%- if top -%}
+    <h2 id="{{ slug }}">{{ item }}</h2>
+  {%- elsif mid -%}
+    <h2 id="{{ slug }}" style="margin-left:1.5rem">{{ item }}</h2>
+    {%- for tag in site.tags %}
+      {%- if tag.first == slug -%}
+      <ul class="">
+        {% for post in tag.last %}
+          <li style="padding-bottom: 0.6em; list-style: none;">
+            <a href="{{post.url}}">
+              {{ post.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+      {%- endif -%}
+    {% endfor %}
+  {%- else -%}
+    <h3 id="{{ slug }}" style="margin-left:3rem">{{ item }}</h3>
+    {%- for tag in site.tags %}
+      {%- if tag.first == slug -%}
+      <ul class="">
+        {% for post in tag.last %}
+          <li style="padding-bottom: 0.6em; list-style: none;">
+            <a href="{{post.url}}">
+              {{ post.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+      {%- endif -%}
+    {% endfor %}
+  {%- endif -%}
+
+  {%- if slug == 'inbox' -%}
+    {% for tag in site.tags %}
+      {%- assign is_in_inbox = tag.first | tag_in_inbox -%}
+      {%- if is_in_inbox -%}
+      <ul class="">
+        {% for post in tag.last %}
+          <li style="padding-bottom: 0.6em; list-style: none;"><a href="{{post.url}}">
+            {{ post.title }} <em id="{{ tag.first }}">({{ tag.first }})</em>
+          </a></li>
+        {% endfor %}
+      </ul>
+      {%- endif -%}
+    {% endfor %}
+  {%- endif -%}
+
+{%- endfor -%}

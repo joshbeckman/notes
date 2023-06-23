@@ -1,6 +1,6 @@
 ---
 title: Challenge and Support
-tags: leadership managing
+tags: leadership management
 author: Ken Britton
 ---
 
