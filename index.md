@@ -4,4 +4,5 @@
 
 layout: Post
 permalink: /
+hide_title: true
 ---
