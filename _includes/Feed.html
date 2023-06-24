@@ -57,11 +57,11 @@
     {%- endfor -%}
   <section>
     <p>
-      <em>
+      <strong>
           {{ site.data.proverbs | sample }}
-      </em>
+      </strong>
       <span class="marginnote">
-          Updated: {{ site.time | date_to_rfc822 }}
+          Updated {{ site.time | date_to_rfc822 }}
       </span>
     </p>
   </section>
