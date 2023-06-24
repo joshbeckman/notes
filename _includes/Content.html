@@ -126,10 +126,10 @@
 <a class="p-author h-card" style="display: none;" href="https://notes.joshbeckman.org/about">
     Josh Beckman
 </a>
-<h4>
+<h4 class="print-hidden">
 Filed under:
 </h4>
-<ul class="toc">
+<ul class="toc print-hidden">
     <!-- Loop through page categories and print them in tags -->
     {%- for item in site.data.decimals -%}
         {%- assign slug = item | split: ' ' | last | downcase -%}

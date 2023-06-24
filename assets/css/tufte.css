@@ -787,6 +787,9 @@ p.svg {
   div.webmention-container {
     display: none !important;
   }
+  .print-hidden {
+    display: none !important;
+  }
   .print-only {
     display: block !important;
   }
