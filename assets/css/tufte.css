@@ -46,8 +46,8 @@ li.toc a {
 .boxit {
     padding: 20px;
     width: calc(55% - 40px);
-    background-color: rgba(0,0,0,0.05);
     border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
 ul.arrows>li:before {
