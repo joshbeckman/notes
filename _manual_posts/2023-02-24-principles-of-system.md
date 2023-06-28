@@ -37,3 +37,13 @@ Complex behavior can be created with the system by assembling components. Pieces
 
 More work can be done by the system by adding resources. The system does no impede its own expansion.
 [[Caching layers, horizontal load balancing::rsn]]
+
+---
+
+## Related
+
+Often, people will say that they want to optimize a system for "reliability."
+In my experience, this term really is a combination of both _safety_ and _liveness_.
+What's reliable?
+A system that _does what I want_ (liveness) and _doesn't do the things I don't want_ (safety).
+![Untitled-2023-05-18-1052](https://github.com/joshbeckman/notes/assets/2358584/aaf8ec03-e4ee-4e3c-9a11-ecbb7d654911)
