@@ -2,6 +2,7 @@
 title: Challenge and Support
 tags: leadership management
 author: Ken Britton
+manual_post: true
 ---
 
 A great framework for delegating work or encouraging a team member to identify and own new work:

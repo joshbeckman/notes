@@ -121,6 +121,13 @@
 {%- else -%}
     {{content}}
 {%- endif -%}
+{%- if page.manual_post && page.author -%}
+<p class="boxit">
+<cite class="h-cite">
+    <em><small>from</small></em> {{page.author}} 📝
+</cite>
+</p>
+{%- endif -%}
 {%- if page.content-type == "post" -%}
 <a class="p-author h-card" style="display: none;" href="https://notes.joshbeckman.org/about">
     Josh Beckman

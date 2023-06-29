@@ -2,6 +2,7 @@
 title: A model of driving change
 tags: management product
 author: Ken Britton
+manual_post: true
 ---
 
 To determine what actions you can take to drive meaningful change in a system or product, consider:

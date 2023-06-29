@@ -2,6 +2,7 @@
 title: Challenge to Unlock Stalemate Debates
 tags: decisions
 author: Jeff Bruton
+manual_post: true
 ---
 
 If you’re debating a decision point and you find yourself in a stalemate, one really powerful question to use is “What would cause you to change your mind?”.

@@ -2,6 +2,7 @@
 title: Decision Momentum
 tags: decisions
 author: Josh Beckman
+manual_post: true
 ---
 
 Something I've been framing to myself and my team is 'momentum' on decisions/problems.

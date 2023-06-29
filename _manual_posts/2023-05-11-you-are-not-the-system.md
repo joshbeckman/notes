@@ -2,6 +2,7 @@
 title: You are not the system
 tags: systems identity
 author: Josh Beckman
+manual_post: true
 ---
 
 Words matter, and the words you say about yourself and other people matter more than most. It’s important to make a distinction between talking about yourself and talking about the systems and products you build or operate.
