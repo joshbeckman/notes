@@ -2,7 +2,6 @@
 title: A model of driving change
 tags: management product
 author: Ken Britton
-manual_post: true
 ---
 
 To determine what actions you can take to drive meaningful change in a system or product, consider:
@@ -15,3 +14,5 @@ Evidence that an outcome has occurred
 
 ### Outputs
 A list of candidate product/system changes that can cause the desired behavior changes
+
+[[<em><small>from</small></em> Ken Britton 📝::wrap]]

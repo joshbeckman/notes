@@ -2,7 +2,6 @@
 title: You are not the system
 tags: systems identity
 author: Josh Beckman
-manual_post: true
 ---
 
 Words matter, and the words you say about yourself and other people matter more than most. It’s important to make a distinction between talking about yourself and talking about the systems and products you build or operate.
@@ -14,3 +13,5 @@ Instead of saying “we can’t handle that load”, say “the system can’t h
 Instead of saying “[the product] could build that in the future”, say “we could build that into [the product] in the future.”
 
 You will be making changes to _the system_. And it’s important to remember that _the system_ will always have deficiencies and changes to be made, but they are not _your_ qualities.
+
+[[<em><small>from</small></em> Josh Beckman 📝::wrap]]

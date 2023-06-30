@@ -2,7 +2,6 @@
 title: Principles of Good Systems &#x2B22;
 tags: system-design scalability observability safety
 author: Josh Beckman
-manual_post: true
 ---
 
 These are qualities of a good system that we should strive to fulfill with what we design. Without fulfilling each of these attributes, the system is much more likely to fail in its goal.
@@ -48,3 +47,5 @@ In my experience, this term really is a combination of both _safety_ and _livene
 What's reliable?
 A system that _does what I want_ (liveness) and _doesn't do the things I don't want_ (safety).
 ![Untitled-2023-05-18-1052](https://github.com/joshbeckman/notes/assets/2358584/aaf8ec03-e4ee-4e3c-9a11-ecbb7d654911)
+
+[[<em><small>from</small></em> Josh Beckman 📝::wrap]]
