@@ -3,7 +3,6 @@
 <head>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Josh Beckman's Notes" property="og:site_name"/>
-    <meta content="Notes and thoughts collected from online articles, books, and elsewhere" property="og:description">
     <meta content="{{ site.url }}/about/" property="article:author">
 
     {%- if page.title -%}
@@ -13,6 +12,12 @@
     {%- else -%}
     <meta content="website" property="og:type">
     <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+    {%- endif -%}
+    {%- if page.content-type == "notes" 
+        or page.content-type == "post"  -%}
+    <meta content="{{ post.content | strip_html | strip | escape | truncate: 248}}" property="og:description">
+    {%- else -%}
+    <meta content="Notes and thoughts collected from online articles, books, and elsewhere" property="og:description">
     {%- endif -%}
 
     <title>{{site.heading}}: {{page.title}}</title>
