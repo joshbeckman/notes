@@ -69,7 +69,7 @@ module ReadwiseExtras
         "",
         note,
         "",
-        "[[Noted from <cite class=\"h-cite\">#{source_md}</cite> <br/><em><small>by</small></em> #{author_md}<br>",
+        "[[Noted from <cite class=\"\">#{source_md}</cite> <br/><em><small>by</small></em> <span class=\"p-author h-card\">#{author_md}</span><br>",
         "::wrap]]",
       ].compact.join("\n")
     end
@@ -96,7 +96,7 @@ module ReadwiseExtras
       title_str = if !source_url || source_url.match?(/^mailto:/)
                     title
                   else
-                    "<a href=\"#{href}\" class=\"h-url p-name\" target=\"_blank\">#{title}</a>"
+                    "<a href=\"#{href}\" class=\"u-url\" target=\"_blank\">#{title}</a>"
                   end
       "<em>#{title_str}</em>"
     end
@@ -154,7 +154,7 @@ module ReadwiseExtras
         "",
         formatted_text,
         "",
-        "[[<cite class=\"h-cite\">#{citation}</cite> <br/><em><small>by</small></em> #{book.author_md}<br>",
+        "[[<cite class=\"\">#{citation}</cite> <br/><em><small>by</small></em> <span class=\"p-author h-card\">#{book.author_md}</span><br>",
         "::wrap]]",
       ].compact.join("\n")
     end
