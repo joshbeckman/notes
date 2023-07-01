@@ -200,7 +200,10 @@ class Importer
   def self.import
     clean_posts
     client = Readwise::Client.new(token: ENV['READWISE_TOKEN'])
-    client.export(updated_after: Time.parse("2000-01-01").iso8601).each do |book|
+    limit = ENV['READWISE_LIMIT']&.to_i
+    books = client.export(updated_after: Time.parse("2000-01-01").iso8601)
+    books = books.sample(limit) if limit
+    books.each do |book|
       Jekyll.import_book(book)
       Jekyll.import_book_highlights(book)
     end
