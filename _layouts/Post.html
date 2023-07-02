@@ -15,7 +15,7 @@
     {%- endif -%}
     {%- if page.content-type == "notes" 
         or page.content-type == "post"  -%}
-    <meta content="{{ post.content | strip_html | strip | escape | truncate: 248}}" property="og:description">
+    <meta content="{{ page.content | strip_html | strip | escape | truncate: 248}}" property="og:description">
     {%- else -%}
     <meta content="Notes and thoughts collected from online articles, books, and elsewhere" property="og:description">
     {%- endif -%}
