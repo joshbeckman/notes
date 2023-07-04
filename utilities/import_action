@@ -138,8 +138,8 @@ module ReadwiseExtras
 
   module Highlight
     def post_text(book)
-      title = text.split(' ').first(10).concat(['...']).join(' ')
-        .gsub(/\]\(\S*\)/, "]").gsub('"', "'")
+      title = text.split(' ').first(25).join(' ')
+        .gsub(/\]\(\S*\)/, "]").gsub('"', "'") + '...'
       citation = book.source_md(text_fragment: text)
       [
         "---",
