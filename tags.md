@@ -16,7 +16,7 @@ I initially took inspiration from <a href="https://en.wikipedia.org/wiki/Dewey_D
   Categories are maintained <a href="https://github.com/joshbeckman/notes/blob/master/_data/decimals.yml">here</a>.<br/>
 ::rmn]]
 <p>
-Alternatively, notes are <a href="/dates">indexed by date</a>.
+Alternatively, notes are <a href="/dates">indexed by date</a> or <a href="/sources">by source</a>.
 </p>
 
 {%- for item in site.data.decimals -%}
@@ -32,9 +32,10 @@ Alternatively, notes are <a href="/dates">indexed by date</a>.
       {%- if tag.first == slug -%}
       <ul class="">
         {% for post in tag.last %}
-          <li style="padding-bottom: 0.6em; list-style: none;">
+          <li style="">
             <a href="{{post.url}}">
-              {{ post.title }}
+              {{ post.content | strip_html | strip | escape | truncate: 70}}
+              <em>from {{ post.author }}</em>
             </a>
           </li>
         {% endfor %}
@@ -47,9 +48,10 @@ Alternatively, notes are <a href="/dates">indexed by date</a>.
       {%- if tag.first == slug -%}
       <ul class="">
         {% for post in tag.last %}
-          <li style="padding-bottom: 0.6em; list-style: none;">
+          <li style="">
             <a href="{{post.url}}">
-              {{ post.title }}
+              {{ post.content | strip_html | strip | escape | truncate: 70}}
+              <em>from {{ post.author }}</em>
             </a>
           </li>
         {% endfor %}
@@ -64,8 +66,8 @@ Alternatively, notes are <a href="/dates">indexed by date</a>.
       {%- if is_in_inbox -%}
       <ul class="">
         {% for post in tag.last %}
-          <li style="padding-bottom: 0.6em; list-style: none;"><a href="{{post.url}}">
-            {{ post.title }} <em id="{{ tag.first }}">({{ tag.first }})</em>
+          <li style=""><a href="{{post.url}}">
+            {{ post.content | strip_html | strip | escape | truncate: 70}} <em id="{{ tag.first }}">({{ tag.first }})</em>
           </a></li>
         {% endfor %}
       </ul>

@@ -11,7 +11,12 @@ site.posts | group_by_exp:"post", "post.date | date: '%d-%B-%Y'" %}
   <h3 id="{{ day.name }}">{{ day.name }}</h3>
   <ul class="">
       {% for post in day.items %}
-        <li id="" style="padding-bottom: 0.6em; list-style: none;"><a href="{{ post.url }}">{{ post.title }}</a></li>
+        <li style="">
+          <a href="{{post.url}}">
+            {{ post.content | strip_html | strip | escape | truncate: 70}}
+            <em>from {{ post.author }}</em>
+          </a>
+        </li>
       {% endfor %}
   </ul>
 {% endfor %}
