@@ -8,22 +8,22 @@
     {%- if page.title -%}
     <meta content="{{ page.title }}" property="og:title">
     <meta content="article" property="og:type">
-    <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+    <title>{{site.heading}}: {{page.title}}</title>
     {%- else -%}
+    <meta content="{{ site.heading }}" property="og:title">
+    <title>{{site.heading}}</title>
     <meta content="website" property="og:type">
-    <meta content="{{ site.url }}{{ page.url }}" property="og:url">
     {%- endif -%}
+    <meta content="{{ site.url }}{{ page.url }}" property="og:url">
     {%- if page.content-type == "notes" 
         or page.content-type == "post"  -%}
     <meta content="{{ page.content | strip_html | strip | escape | truncate: 248}}" property="og:description">
     {%- else -%}
     <meta content="Notes and thoughts collected from online articles, books, and elsewhere" property="og:description">
     {%- endif -%}
-
-    <title>{{site.heading}}: {{page.title}}</title>
-    <meta property="og:image" content="/assets/img/notes-img.png">
+    <meta property="og:image" content="{{site.url}}/assets/img/notes-img.png">
     <link rel="canonical" href="{{site.url}}{{page.url}}"/>
-    <link rel="apple-touch-icon" href="/assets/img/profile.png">
+    <link rel="apple-touch-icon" href="{{site.url}}/assets/img/profile.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="#fffff8">
     <link rel="icon" href="/assets/img/favicon.png" type="image/png" sizes="16x16"/>
