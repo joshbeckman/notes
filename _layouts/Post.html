@@ -21,7 +21,11 @@
     {%- else -%}
     <meta content="Notes and thoughts collected from online articles, books, and elsewhere" property="og:description">
     {%- endif -%}
+    {%- if page.cover_image_url -%}
+    <meta property="og:image" content="{{page.cover_image_url}}">
+    {%- else -%}
     <meta property="og:image" content="{{site.url}}/assets/img/notes-img.png">
+    {%- endif -%}
     <link rel="canonical" href="{{site.url}}{{page.url}}"/>
     <link rel="apple-touch-icon" href="{{site.url}}/assets/img/profile.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
