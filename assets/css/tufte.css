@@ -50,6 +50,25 @@ li.toc a {
     border: 1px solid #ccc;
 }
 
+ul.similar {
+}
+ul.similar>li:before {
+  position: absolute;
+  margin-left: -24px;
+  content: "∼";
+}
+ul.similar>li {
+  list-style: none;
+}
+ul.asymp>li:before {
+  position: absolute;
+  margin-left: -24px;
+  content: "≈";
+}
+ul.asymp>li {
+  list-style: none;
+}
+
 ul.arrows>li:before {
   position: absolute;
   margin-left: -2.5rem;
@@ -57,9 +76,6 @@ ul.arrows>li:before {
 }
 ul.arrows>li {
   list-style: none;
-}
-section.related a {
-    text-decoration: none;
 }
 
 .blog-title {
@@ -412,12 +428,11 @@ section>table {
     width: 55%;
 }
 
-/* 50 + 5 == 55, to be the same width as paragraph */
 section>dl,
 section>ol,
 section>ul {
-    width: 50%;
-    -webkit-padding-start: 5%;
+    width: calc(55% - 40px);
+    -webkit-padding-start: 40px;
 }
 
 dt:not(:first-child),
