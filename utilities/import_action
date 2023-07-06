@@ -70,7 +70,7 @@ module ReadwiseExtras
         "",
         note,
         "",
-        "[[Noted from <cite class=\"\">#{source_md}</cite> <br/><em><small>by</small></em> <span class=\"p-author h-card\">#{author_md}</span><br>",
+        "[[Noted about <cite class=\"\">#{source_md}</cite> <br/><em><small>from</small></em> <span class=\"p-author h-card\">#{author_md}</span><br>",
         "::wrap]]",
       ].compact.join("\n")
     end
@@ -156,7 +156,7 @@ module ReadwiseExtras
         "",
         formatted_text,
         "",
-        "[[<cite class=\"\">#{citation}</cite> <br/><em><small>by</small></em> <span class=\"p-author h-card\">#{book.author_md}</span><br>",
+        "[[<cite class=\"\">#{citation}</cite> <br/><em><small>from</small></em> <span class=\"p-author h-card\">#{book.author_md}</span><br>",
         "::wrap]]",
       ].compact.join("\n")
     end
