@@ -27,7 +27,7 @@ Alternatively, notes are <a href="/dates">indexed by date</a> or <a href="/sourc
   {%- if top -%}
     <h2 id="{{ slug }}">{{ item }}</h2>
   {%- elsif mid -%}
-    <h2 id="{{ slug }}" style="margin-left:1.5rem">{{ item }}</h2>
+    <h2 id="{{ slug }}">{{ item }}</h2>
     {%- for tag in site.tags %}
       {%- if tag.first == slug -%}
       <ul class="">
@@ -43,7 +43,7 @@ Alternatively, notes are <a href="/dates">indexed by date</a> or <a href="/sourc
       {%- endif -%}
     {% endfor %}
   {%- else -%}
-    <h3 id="{{ slug }}" style="margin-left:3rem">{{ item }}</h3>
+    <h3 id="{{ slug }}" style="margin-left:1rem">{{ item }}</h3>
     {%- for tag in site.tags %}
       {%- if tag.first == slug -%}
       <ul class="">
