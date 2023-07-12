@@ -24,3 +24,5 @@ gem 'jekyll-sitemap'
 gem 'kramdown-math-katex'
 gem 'readwise'
 gem 'webmention'
+
+gem "jekyll-mastodon_webfinger", "~> 1.0"

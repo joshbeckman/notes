@@ -123,6 +123,7 @@ theme: null
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll/mastodon_webfinger
     # - jekyll-tidy
 feed:
   posts_limit: 50
@@ -176,3 +177,8 @@ exclude:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+# config jekyll-mastodon_webfinger
+mastodon:
+  username: joshbeckman
+  instance: mastodon.social
