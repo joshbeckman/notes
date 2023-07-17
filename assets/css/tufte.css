@@ -95,6 +95,9 @@ nav li {
 nav li a {
   text-decoration: none;
 }
+a:link, a:visited {
+    text-decoration-color: #999;
+}
 .searchbar input[type=text] {
   font-family: "Libertinus Sans", sans-serif;
   font-size: inherit;
