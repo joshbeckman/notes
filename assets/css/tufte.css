@@ -24,11 +24,14 @@ li.toc:before {
   position: relative;
   content: "#";
   vertical-align: middle;
+  color: #999;
 }
 li.toc.edit:before {
   position: relative;
   content: "✎";
   vertical-align: middle;
+  color: #999;
+  font-size: 0.6em;
 }
 
 li.toc a {
@@ -56,6 +59,7 @@ ul.similar>li:before {
   position: absolute;
   margin-left: -24px;
   content: "∼";
+  color: #999;
 }
 ul.similar>li {
   list-style: none;
@@ -64,6 +68,7 @@ ul.asymp>li:before {
   position: absolute;
   margin-left: -24px;
   content: "≈";
+  color: #999;
 }
 ul.asymp>li {
   list-style: none;
