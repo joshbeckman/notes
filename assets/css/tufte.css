@@ -99,9 +99,20 @@ nav li {
 }
 nav li a {
   text-decoration: none;
+  background-image: none;
 }
-a:link, a:visited {
+a {
     text-decoration-color: #999;
+    text-decoration: none;
+    background-image: linear-gradient(90deg,#ddd 0,#333 100%);
+    background-repeat: no-repeat;
+    background-position-y: bottom 2px;
+    background-size: 100% 1px;
+    width: fit-content;
+    text-shadow: -1px 0px 0px #fffff8, 1px 0px 0px #fffff8, -2px 0 0 #fffff8, 2px 0 0 #fffff8;
+}
+a:hover {
+    background-image: linear-gradient(90deg,#333 0,#333 100%);
 }
 .lighter-icon {
     color: #999;
@@ -145,6 +156,7 @@ li.search-results-list-item {
   padding-bottom: 0.25rem;
   padding-left: 20px;
   text-decoration: none;
+  background-image: none;
 }
 .search-result:hover, 
 .search-result.active { 
@@ -229,6 +241,7 @@ li.search-results-list-item {
   padding: 0.25rem 0.75rem;
   text-align: center;
   text-decoration: none;
+  background-image: none;
   text-decoration-line: none;
   text-indent: 0px;
   text-shadow: none;
@@ -487,7 +500,6 @@ a:visited {
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
 
-    a:link,
     .tufte-underline,
     .hover-tufte-underline:hover {
         background-position-y: 87%, 87%, 87%;
