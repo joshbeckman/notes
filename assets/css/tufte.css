@@ -161,7 +161,8 @@ li.search-results-list-item {
 }
 .search-result:hover, 
 .search-result.active { 
-    background-color: #eeeee8; 
+    background-color: #eeeee8;
+    text-shadow: none;
 }
 
 .search-result:hover > .search-result-title,
