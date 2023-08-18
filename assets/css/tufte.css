@@ -783,7 +783,7 @@ p.svg {
     .margin-toggle:checked+.sidenote,
     .margin-toggle:checked+.marginnote {
         display: block;
-        float: left;
+        float: none;
         left: 1rem;
         clear: both;
         width: 95%;
