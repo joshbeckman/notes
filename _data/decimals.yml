@@ -111,6 +111,8 @@
 - 32.09 Republican-party
 - 32.10 Surveillance
 - 32.11 Urban-planning
+- 32.12 Protest
+- 32.13 Rights
 - 33 Competition and opposition
 - 33.01 Competition
 - 33.02 Professional
@@ -129,6 +131,7 @@
 - 35.05 Parenting
 - 35.06 Religion
 - 35.07 Sports
+- 35.08 Racism
   # - 36
   # - 37
   # - 38
@@ -295,7 +298,8 @@
 - 90.02 Non-fiction
 - 91 Journalism-practice
 - 91.01 Journalism
-  # - 92
+- 92 Editorial
+- 92.01 Publishing
   # - 93
   # - 94
   # - 95
