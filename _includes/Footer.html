@@ -10,7 +10,7 @@
 </div> 
 {%- endif -%}
 {%- if page.content-type == "post" -%}
-<script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+<script async src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
 <div id="qrcode" class="print-only" style="width: 130px;height: 130px"></div>
 <script>
 var qrcode = new QRCode(document.getElementById('qrcode'), {
