@@ -2,6 +2,7 @@
   font-family: "Libertinus Serif";
   font-style:  normal;
   font-weight: 400;
+  font-display: swap;
   src: local(Libertinum Serif),
        url("/assets/fonts/LibertinusSerif-Regular.otf") format("opentype"), 
        url("/assets/fonts/LibertinusSerif-Regular.woff2") format("woff2");
@@ -12,6 +13,7 @@
   font-family: "Libertinus Serif";
   font-style:  italic;
   font-weight: 400;
+  font-display: swap;
   src: local(Libertinus Serif Italic), 
        url("/assets/fonts/LibertinusSerif-Italic.otf") format("opentype"), 
        url("/assets/fonts/LibertinusSerif-Italic.woff2") format("woff2");
@@ -21,6 +23,7 @@
   font-family: "Libertinus Serif";
   font-style: bold;
   font-weight: 700;
+  font-display: swap;
   src: local("Libertinus Serif Bold"),
        url("/assets/fonts/LibertinusSerif-Bold.otf") format("opentype"),
        url("/assets/fonts/LibertinusSerif-Bold.woff2") format("woff2");
@@ -30,6 +33,7 @@
   font-family: "Libertinus Sans";
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
   src: local("Libertinus Sans"),
        url("/assets/fonts/LibertinusSans-Regular.otf") format("opentype"),
        url("/assets/fonts/LibertinusSans-Regular.woff2") format("woff2");
@@ -39,6 +43,7 @@
   font-family: "Libertinus Sans";
   font-style: italic;
   font-weight: 400;
+  font-display: swap;
   src: local("Libertinus Sans Italic"),
        url("/assets/fonts/LibertinusSans-Italic.otf") format("opentype"),
        url("/assets/fonts/LibertinusSans-Italic.woff2") format("woff2");
@@ -48,6 +53,7 @@
   font-family: "Libertinus Mono";
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
   src: local("Libertinus Mono"),
        local("Linux Biolinum O"),
        url("/assets/fonts/LibertinusMono-Regular.otf") format("opentype"),
