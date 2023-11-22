@@ -8,7 +8,6 @@ h2,
 h3,
 h4,
 h5{
-    font-family: "Libertinus Sans", sans-serif;
     hyphens: none;
 }
 
@@ -36,9 +35,8 @@ li.toc.edit:before {
 
 li.toc a {
     font-size: 1rem;
-    font-feature-settings: normal;
+    /* font-feature-settings: normal; */
     text-transform: initial;
-    font-family: "Libertinus Sans", sans-serif;
 }
 
 img.source-favicon {
@@ -117,7 +115,7 @@ dt {
 nav li {
     display: inline;
     margin: 0 1.5em 0 0;
-    font-feature-settings: "smcp" on;
+    /* font-feature-settings: "smcp" on; */
 }
 nav li a {
   text-decoration: none;
@@ -140,7 +138,6 @@ a:hover {
     color: #999;
 }
 .searchbar input[type=text] {
-  font-family: "Libertinus Sans", sans-serif;
   font-size: inherit;
   padding:0.4rem 2.2rem;
   border-radius: 4px;
@@ -257,7 +254,6 @@ li.search-results-list-item {
   box-shadow: rgba(27, 31, 36, 0.04) 0px 1px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset;
   box-sizing: border-box;
   cursor: pointer;
-  font-family: "Libertinus Sans", sans-serif;
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: normal;
@@ -285,7 +281,7 @@ li.search-results-list-item {
 
 /* Tufte CSS styles */
 html {
-    font-size: 15px;
+    font-size: 16px;
 }
 
 body {
@@ -293,7 +289,10 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding-left: 12.5%;
-    font-family: "Libertinus Serif", et-book, Palatino, serif;
+    font-family: "IBM Plex Sans", sans-serif;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'liga' on, 'clig' on, 'zero';
+    -webkit-font-smoothing: antialiased;
     background-color: #fffff8;
     color: #111;
     max-width: 1400px;
@@ -345,7 +344,7 @@ body {
 }
 
 h1 {
-    font-weight: 400;
+    font-weight: 500;
     margin-top: 4rem;
     margin-bottom: 1.5rem;
     font-size: 3.2rem;
@@ -353,8 +352,7 @@ h1 {
 }
 
 h2 {
-    font-style: italic;
-    font-weight: 400;
+    font-weight: 500;
     margin-top: 2.1rem;
     margin-bottom: 1.4rem;
     font-size: 2.2rem;
@@ -362,7 +360,7 @@ h2 {
 }
 
 h1 a, h2 a, h3 a {
-    font-feature-settings: normal;
+    /* font-feature-settings: normal; */
     text-transform: initial;
 }
 
@@ -394,10 +392,6 @@ p.subtitle {
     line-height: 1;
 }
 
-.numeral {
-    font-family: et-book-roman-old-style;
-}
-
 .danger {
     color: red;
 }
@@ -415,8 +409,8 @@ p,
 dl,
 ol,
 ul {
-    font-size: 1.4rem;
-    line-height: 2rem;
+    font-size: 1.2rem;
+    line-height: 1.75rem;
 }
 
 p {
@@ -570,7 +564,6 @@ img {
 
 .sidenote-number:after,
 .sidenote:before {
-    font-family: et-book-roman-old-style;
     position: relative;
     vertical-align: baseline;
 }
@@ -602,7 +595,6 @@ table.fullwidth {
 
 div.table-wrapper {
     overflow-x: auto;
-    font-family: "Trebuchet MS", "Gill Sans", "Gill Sans MT", sans-serif;
 }
 
 table {
@@ -640,17 +632,22 @@ table > tbody > tr:first-child > th {
 }
 
 .sans {
-    font-family: "Libertinus Sans", "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
     letter-spacing: .03em;
 }
 
 .fun {
     font-family: "Comic Sans Mono", "Comic Sans", cursive;
 }
+.frac {
+    font-feature-settings: "frac" 1;
+}
+.ordn {
+    font-feature-settings: "ordn" 1;
+}
 
 code,
 pre>code {
-    font-family: monospace;
+    font-family: "Berkeley Mono", monospace;
     font-size: 1.0rem;
     line-height: 1.42;
     -webkit-text-size-adjust: 100%;
