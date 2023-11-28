@@ -30,6 +30,7 @@
 - 10.17 Validation
 - 10.18 Programming-languages
 - 10.19 Service-architecture
+- 10.20 Events
 - 11 Medicine-and-health
 - 11.01 Medicine
 - 11.02 Health
@@ -150,7 +151,7 @@
 - 43.02 Cocktails
 - 43.03 Seasoning
 - 43.04 Food
-- 44 Exploration and travel
+- 44 Exploration-and-travel
 - 44.01 Exploration
 - 44.02 Walking
   # - 45
@@ -182,6 +183,7 @@
 - 54 Measurement
 - 54.01 Metrics
 - 54.02 Units
+- 54.03 Time
 - 55 Psychology
 - 55.01 Human-psychology
   # - 56
