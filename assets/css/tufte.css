@@ -41,9 +41,31 @@ li.toc a {
     font-family: "Libertinus Sans", sans-serif;
 }
 
-.source-favicon {
-  width: 16px;
+img.source-favicon {
+  width: 1.5rem;
+  border-radius: 10%;
   vertical-align: middle;
+}
+cite {
+    display: block;
+    margin: 3rem 0;
+    font-style: italic;
+}
+cite .source-emoji {
+    vertical-align: middle;
+}
+cite .p-author {
+    vertical-align: middle;
+    font-weight: bold;
+    margin-left: 1.5rem;
+}
+cite .bar {
+    vertical-align: middle;
+    margin: 0 1rem;
+    font-style: normal;
+}
+cite .u-url, cite .non-url {
+    vertical-align: middle;
 }
 
 .boxit {
@@ -773,6 +795,7 @@ p.svg {
 
     label.margin-toggle:not(.sidenote-number) {
         display: inline;
+        font-size: 2rem;
     }
 
     .sidenote,
@@ -803,9 +826,6 @@ p.svg {
 
     img {
         width: 100%;
-    }
-    img.source-favicon {
-      width: 16px;
     }
     .boxit {
       width: calc(100% - 40px);

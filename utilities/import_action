@@ -58,7 +58,7 @@ module ReadwiseExtras
     def post_text
       [
         "---",
-        "title: \"#{readable_title}\"",
+        "title: \"#{stripped_title}\"",
         "tags: #{formatted_tags}",
         "canonical: #{source_url}",
         "author: #{author_stripped}",
@@ -66,12 +66,13 @@ module ReadwiseExtras
         "hide_title: true",
         "readwise_url: #{readwise_url}",
         "cover_image_url: #{cover_image_url}",
+        "favicon_url: #{favicon_url}",
+        "source_emoji: #{source_emoji}",
         "---",
+        "General notes:",
+        "> #{note}",
         "",
-        note,
-        "",
-        "[[Noted about <cite class=\"\">#{source_md}</cite> <br/><em><small>from</small></em> <span class=\"p-author h-card\">#{author_md}</span><br>",
-        "::wrap]]",
+        citation_html,
       ].compact.join("\n")
     end
 
@@ -86,20 +87,36 @@ module ReadwiseExtras
       highlighted_at_time.to_date.to_s
     end
 
+    def stripped_title
+      @stripped_title ||= readable_title.gsub('"', "'")
+    end
+
     def should_import?
       return true if note&.length&.positive?
 
       false
     end
 
+    def citation_html
+      "<cite>#{image_html}#{author_html}<span class=\"bar\"> | </span>#{title_html}</cite>"
+    end
+
     def source_md(text_fragment: nil)
-      href = outbound_url(text_fragment: text_fragment)
-      title_str = if !source_url || source_url.match?(/^mailto:/)
-                    title
-                  else
-                    "<a href=\"#{href}\" class=\"u-url\" target=\"_blank\">#{title}</a>"
-                  end
-      "<em>#{title_str}</em>"
+      "<em>#{title_html(text_fragment: text_fragment)}</em>"
+    end
+
+    def title_html(text_fragment: nil)
+      if navigable_url?
+        "<a href=\"#{outbound_url(text_fragment: text_fragment)}\" class=\"u-url\" target=\"_blank\">#{title}</a>"
+      else
+        "<span class=\"non-url\">#{title}</span>"
+      end
+    end
+
+    def navigable_url?
+      return true if source_url && !source_url.match?(/^mailto:/)
+
+      false
     end
 
     # Ref: https://developer.mozilla.org/en-US/docs/Web/Text_fragments
@@ -114,17 +131,38 @@ module ReadwiseExtras
       author.to_s.split("\n").reject { |a| a.empty? }.join(" ")
     end
 
+    def author_html
+      "<span class=\"p-author h-card\">#{author_stripped}</span>"
+    end
+
+    def image_html
+      if favicon_url
+        "<img alt=\"favicon\" src=\"#{favicon_url}\" class=\"source-favicon\"/>"
+      else
+        "<span class=\"source-emoji\">#{source_emoji}</span>"
+      end
+    end
+
     def author_md
-      image_tag = if favicon_url
-                    "![favicon](#{favicon_url}){:class=\"source-favicon\"}"
-                  elsif source_url&.match?(/^mailto:/)
-                    "✉️"
-                  elsif category == 'books' || category == 'supplementals'
-                    "📕"
-                  else
-                    ""
-                  end
-      [author_stripped, image_tag].join(' ')
+      [author_stripped, image_md].join(' ')
+    end
+
+    def image_md
+      if favicon_url
+        "![favicon](#{favicon_url}){:class=\"source-favicon\"}"
+      else
+        source_emoji
+      end
+    end
+
+    def source_emoji
+      if source_url&.match?(/^mailto:/)
+        "✉️"
+      elsif category == 'books' || category == 'supplementals'
+        "📕"
+      else
+        "🌐"
+      end
     end
 
     def favicon_url
@@ -139,9 +177,6 @@ module ReadwiseExtras
 
   module Highlight
     def post_text(book)
-      title = text.split(' ').first(25).join(' ')
-        .gsub(/\]\(\S*\)/, "]").gsub('"', "'") + '...'
-      citation = book.source_md(text_fragment: text)
       [
         "---",
         "title: \"#{title}\"",
@@ -149,6 +184,7 @@ module ReadwiseExtras
         "canonical: #{book.source_url}",
         "author: #{book.author_stripped}",
         "book: #{book.book_id}",
+        "book_title: \"#{book.stripped_title}\"",
         "hide_title: true",
         "readwise_url: #{readwise_url}",
         "cover_image_url: #{book.cover_image_url}",
@@ -156,9 +192,16 @@ module ReadwiseExtras
         "",
         formatted_text,
         "",
-        "[[<cite class=\"\">#{citation}</cite> <br/><em><small>from</small></em> <span class=\"p-author h-card\">#{book.author_md}</span><br>",
-        "::wrap]]",
+        citation_html(book),
       ].compact.join("\n")
+    end
+
+    def title
+      @title ||= text.split(' ').first(25).join(' ').gsub(/\]\(\S*\)/, "]").gsub('"', "'") + '...'
+    end
+
+    def citation_html(book)
+      "<cite>#{book.image_html}#{book.author_html}<span class=\"bar\"> | </span>#{book.title_html(text_fragment: title)}</cite>"
     end
 
     def formatted_tags(book)
