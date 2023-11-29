@@ -128,8 +128,7 @@ a {
     text-decoration: none;
     background-image: linear-gradient(90deg,#ddd 0,#333 100%);
     background-repeat: no-repeat;
-    background-position-y: bottom;
-    background-position-y: bottom 2px;
+    background-position: bottom 2px right 0;
     background-size: 100% 1px;
     width: fit-content;
     text-shadow: -1px 0px 0px #fffff8, 1px 0px 0px #fffff8, -2px 0 0 #fffff8, 2px 0 0 #fffff8;
