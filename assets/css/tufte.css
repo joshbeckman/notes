@@ -516,9 +516,11 @@ figure.fullwidth figcaption {
 }
 
 /* Links: replicate underline that clears descenders */
-a:link,
+a:link {
+    color: rgb(9,105,218);
+}
 a:visited {
-    color: inherit;
+    color: rebeccapurple;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
@@ -536,6 +538,12 @@ a:visited {
     .tufte-underline,
     .hover-tufte-underline:hover {
         text-shadow: 0.03em 0 #151515, -0.03em 0 #151515, 0 0.03em #151515, 0 -0.03em #151515, 0.06em 0 #151515, -0.06em 0 #151515, 0.09em 0 #151515, -0.09em 0 #151515, 0.12em 0 #151515, -0.12em 0 #151515, 0.15em 0 #151515, -0.15em 0 #151515;
+    }
+    a:link {
+        color: cornflowerblue;
+    }
+    a:visited {
+        color: mediumpurple;
     }
 }
 
