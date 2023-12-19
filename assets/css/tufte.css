@@ -451,6 +451,7 @@ blockquote {
 blockquote p {
     width: 55%;
     margin-right: 40px;
+    hyphens: auto;
 }
 
 blockquote footer {
@@ -466,6 +467,7 @@ section>div.advice,
 section>footer,
 section>table {
     width: 55%;
+    hyphens: auto;
 }
 
 section>dl,
