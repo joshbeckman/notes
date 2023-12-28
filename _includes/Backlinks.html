@@ -14,9 +14,11 @@
             {%- endif -%}
 {%- endfor -%}
 {%- for note in site.pages -%}
+    {%- unless note.url contains '/assets/' -%}
             {%- if note.content contains md_link_url -%}
                 {%- assign link_count = link_count | plus:1 -%}
             {%- endif -%}
+    {%- endunless -%}
 {%- endfor -%}
 {%- if link_count > 0 -%}
 <div class="backlinks" id="jekyll-seamless-backlinks">
@@ -33,6 +35,7 @@
             {%- endif -%}
         {%- endfor -%}
         {%- for note in site.pages -%}
+            {%- unless note.url contains '/assets/' -%}
             {%- if note.content contains md_link_url -%}
             <li>
               <a href="{{note.url}}">
@@ -40,6 +43,7 @@
               </a>
             </li>
             {%- endif -%}
+            {%- endunless -%}
         {%- endfor -%}
     </ul>
     </p>
