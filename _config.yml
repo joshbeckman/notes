@@ -1,24 +1,3 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you: 
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-
-
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://notes.joshbeckman.org" # the base hostname & protocol for your site, e.g. http://example.com
 
@@ -67,7 +46,7 @@ user:
   social: # just leave the field blank or type in null, if you don't have a
           # particular social media account and it won't appear
     enabled: false  # turn this to true
-    github: andjosh
+    github: joshbeckman
 
 
 
@@ -124,6 +103,7 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll/mastodon_webfinger
+  - jekyll-toc
     # - jekyll-tidy
 feed:
   posts_limit: 50
@@ -140,7 +120,7 @@ kramdown:
   input: GFM
   hard_wrap: false
   math_engine: katex
-  smart_quotes: ["apos", "apos", "quot", "quot"]
+  # smart_quotes: ["apos", "apos", "quot", "quot"]
   syntax_highlighter: rouge
   
 sass:
@@ -182,3 +162,14 @@ exclude:
 mastodon:
   username: joshbeckman
   instance: mastodon.social
+# config jekyll-toc
+toc:
+  min_level: 1
+  max_level: 6
+  ordered_list: false
+  no_toc_section_class: no_toc_section
+  list_id: toc
+  list_class: section-nav
+  sublist_class: ''
+  item_class: toc-entry
+  item_prefix: toc-

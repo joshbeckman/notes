@@ -3,7 +3,7 @@
   font-style:  normal;
   font-weight: 400;
   font-display: swap;
-  src: local(Libertinum Serif),
+  src: local(Libertinus Serif),
        url("/assets/fonts/LibertinusSerif-Regular.otf") format("opentype"), 
        url("/assets/fonts/LibertinusSerif-Regular.woff2") format("woff2");
 }

@@ -1,8 +1,9 @@
 ---
-layout: Post
+layout: Page
 title: Index
 permalink: /tags/
 content-type: eg
+toc: true
 ---
 
 <p>
@@ -10,11 +11,13 @@ There are categories; they are used as tags.
 Any note can be tagged with one or more categories.
 The numbers don't matter; what matters is that they are numerically sorted and numerically related.
 </p>
-[[***About***<br/>
-The system structure and theory is roughly based on the ideas of <a href="https://johnnydecimal.com" target="_blank">Johnny.Decimal</a>.<br/>
-I initially took inspiration from <a href="https://en.wikipedia.org/wiki/Dewey_Decimal_Classification" target="_blank">Dewey Decimal Classification</a>, but diverged when I saw its racist/sexist grouping and when I started embracing my own focus.<br/>
-  Categories are maintained <a href="https://github.com/joshbeckman/notes/blob/master/_data/decimals.yml">here</a>.<br/>
-::rmn]]
+
+<p>
+The system structure and theory is roughly based on the ideas of <a href="https://johnnydecimal.com" target="_blank">Johnny.Decimal</a>.
+I initially took inspiration from <a href="https://en.wikipedia.org/wiki/Dewey_Decimal_Classification" target="_blank">Dewey Decimal Classification</a>, but diverged when I saw its racist/sexist grouping and when I started embracing my own focus.
+  Categories are maintained <a href="https://github.com/joshbeckman/notes/blob/master/_data/decimals.yml">here</a>.
+</p>
+
 <p>
 Alternatively, notes are <a href="/dates">indexed by date</a> or <a href="/sources">by source</a>.
 </p>
@@ -43,7 +46,7 @@ Alternatively, notes are <a href="/dates">indexed by date</a> or <a href="/sourc
       {%- endif -%}
     {% endfor %}
   {%- else -%}
-    <h3 id="{{ slug }}" style="margin-left:1rem">{{ item }}</h3>
+    <h3 id="{{ slug }}">{{ item }}</h3>
     {%- for tag in site.tags %}
       {%- if tag.first == slug -%}
       <ul class="">
