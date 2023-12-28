@@ -17,7 +17,7 @@
         {%- include Toc.html -%}
     </header>
     <article class="">
-        <section class="h-entry note-post">
+        <section>
             <div class="page-title hidden-on-mobile">
               {%- if page.hide_title != true -%} 
                   <h1 class="p-name">{{page.title}}</h1>
@@ -26,17 +26,12 @@
                   <p class="subtitle">{{page.subtitle}}</p>
               {%- endif -%}
             </div>
-          {%- include BookMeta.html -%}
-          <section class="u-in-reply-to h-cite">
             {%- include Content.html -%}
-          </section>
             {%- include Backlinks.html -%}
-            {%- include SameSource.html -%}
-            {%- include Related.html -%}
         </section>
         {%- include Footer.html -%}
     </article>
   </div>
-  <script async src="/assets/js/webmention.js"></script>
+<script async src="/assets/js/webmention.js"></script>
 </body>
 </html>

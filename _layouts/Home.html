@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+{%- include head.html -%}
+
+<body>
+  <div class="with-sidebar">
+    <header>
+        {%- include Header.html -%}
+        <div class="page-title display-on-mobile">
+          {%- if page.hide_title != true -%} 
+              <h1 class="p-name">{{page.title}}</h1>
+          {%- endif -%}
+        </div>
+    </header>
+    <article class="">
+        <section>
+            <div class="page-title hidden-on-mobile">
+              {%- if page.hide_title != true -%} 
+                  <h1 class="p-name">{{page.title}}</h1>
+              {%- endif -%}
+            </div>
+            {%- include Content.html -%}
+        </section>
+        <section>
+          <p>
+          This is Josh's site with {{site.posts.size}} notes and {{site.pages.size}} pages, grouped among {{site.tags.size}} categories. It was last updated {{ site.time | date_to_rfc822 }}. Subscribe (via RSS) if you want to see new additions ~daily. Browsing is encouraged - you can pick one <a href="/random">at random</a>.
+          </p>
+          <h3>Today's Proverb</h3>
+          <blockquote>
+            <p>
+              {{ site.data.proverbs | sample }}
+            </p>
+          </blockquote>
+          <h3>Search</h3>
+          <br/>
+        {%- include Search.html -%}
+          <h3>Latest Entry</h3>
+          {%- for post in site.posts limit:1 -%}
+                <p class="feed-excerpt">
+                  <a href="{{post.url}}">
+                    {{ post.content | strip_html | strip | escape | truncate: 200}}
+                    <em>from {{ post.author }}</em>
+                  </a>
+                </p>
+          {%- endfor -%}
+        </section>
+        {%- include Footer.html -%}
+    </article>
+  </div>
+</body>
+</html>

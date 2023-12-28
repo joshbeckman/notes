@@ -7,51 +7,41 @@
 
 <!-- Add backlinks to the current page --> 
 {%- assign link_count = 0 -%}
-{%- assign wiki_link_title = '[' | append: page.title | append: ']' -%}
+{%- assign md_link_url = '' | append: page.url -%}
 {%- for note in site.posts -%}
-        {%- if note.url != page.url -%}
-            {%- if note.content contains wiki_link_title -%}
+            {%- if note.content contains md_link_url -%}
                 {%- assign link_count = link_count | plus:1 -%}
             {%- endif -%}
-    {%- endif -%}
 {%- endfor -%}
 {%- for note in site.pages -%}
-        {%- if note.url != page.url -%}
-            {%- if note.content contains wiki_link_title -%}
+            {%- if note.content contains md_link_url -%}
                 {%- assign link_count = link_count | plus:1 -%}
             {%- endif -%}
-    {%- endif -%}
 {%- endfor -%}
 {%- if link_count > 0 -%}
-{%- assign wiki_link_title = '[' | append: page.title | append: ']' -%}
-{%- assign display_class = 'hide' -%}
-{%- if site.preferences.backlinks.enabled -%}
-{%- assign display_class = 'show' -%}
-{%- endif -%}
-<div class="related {{display_class}}" id="jekyll-seamless-backlinks">
-    <h4 class="medium-small">Links to this note</h4>
-    <div class="related-wrapper">
+<div class="backlinks" id="jekyll-seamless-backlinks">
+    <h3 class="">Links to This</h3>
+    <p class="">
+    <ul class="asymp">
         {%- for note in site.posts -%}
-        {%- if note.url != page.url -%}
-            {%- if note.content contains wiki_link_title -%}
-            <div class="related-group"><a href="{{note.url}}">
-                <p class="related-title">{{ note.title }}</p>
-                <p class="related-excerpt">{{ note.content | markdownify | strip_html | truncate: 140 }}</p>
-            </a></div>
+            {%- if note.content contains md_link_url -%}
+            <li>
+              <a href="{{note.url}}">
+                {{ note.title | truncate: 70}}
+              </a>
+            </li>
             {%- endif -%}
-        {%- endif -%}
         {%- endfor -%}
         {%- for note in site.pages -%}
-        {%- if note.url != page.url -%}
-            {%- if note.content contains wiki_link_title -%}
-            <div class="related-group"><a href="{{note.url}}">
-                <p class="related-title">{{ note.title }}</p>
-                <p class="related-excerpt">{{ note.content | markdownify | strip_html | truncate: 140 }}</p>
-            </a></div>
+            {%- if note.content contains md_link_url -%}
+            <li>
+              <a href="{{note.url}}">
+                {{ note.title | truncate: 70}}
+              </a>
+            </li>
             {%- endif -%}
-        {%- endif -%}
         {%- endfor -%}
-    </div>
-    <br/>
+    </ul>
+    </p>
 </div>
 {%- endif -%}

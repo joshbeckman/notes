@@ -63,16 +63,17 @@ module ReadwiseExtras
         "canonical: #{source_url}",
         "author: #{author_stripped}",
         "book: #{book_id}",
+        "book_title: \"#{stripped_title}\"",
         "hide_title: true",
         "readwise_url: #{readwise_url}",
         "cover_image_url: #{cover_image_url}",
         "favicon_url: #{favicon_url}",
         "source_emoji: #{source_emoji}",
+        "source_url: \"#{outbound_url(text_fragment: title)}\"",
         "---",
-        "General notes:",
-        "> #{note}",
+        "### Margin Notes",
         "",
-        citation_html,
+        note,
       ].compact.join("\n")
     end
 
@@ -188,11 +189,13 @@ module ReadwiseExtras
         "hide_title: true",
         "readwise_url: #{readwise_url}",
         "cover_image_url: #{book.cover_image_url}",
+        "favicon_url: #{book.favicon_url}",
+        "source_emoji: #{book.source_emoji}",
+        "source_url: \"#{book.navigable_url? ? book.outbound_url(text_fragment: title) : ""}\"",
+        "toc: #{note.nil? || note.empty? ? 'false' : 'true'}",
         "---",
         "",
         formatted_text,
-        "",
-        citation_html(book),
       ].compact.join("\n")
     end
 
@@ -214,10 +217,11 @@ module ReadwiseExtras
     def formatted_text
       pieces = [text]
       unless note.nil? || note.empty?
-        pieces << "[[#{note}::rmn]]"
+        pieces << ""
+        pieces << "### Margin Notes"
+        pieces << note
       end
 
-      pieces << ""
       pieces.join("\n")
     end
 

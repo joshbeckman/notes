@@ -1,0 +1,1021 @@
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+
+[hidden] {
+  display: none;
+}
+
+/* Custom Styles
+ * ========================================================================== */
+@font-face {
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: local("IBM Plex Sans"), local("IBMPlexSans"), url("../IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-Regular.woff2") format("woff2"), url("../IBM-Plex-Sans/fonts/complete/woff/IBMPlexSans-Regular.woff") format("woff");
+}
+@font-face {
+    font-family: "IBM Plex Sans";
+    font-style: italic;
+    font-weight: 400;
+    src: local("IBM Plex Sans Italic"), local("IBMPlexSans-Italic"), url("../IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-Italic.woff2") format("woff2"), url("../IBM-Plex-Sans/fonts/complete/woff/IBMPlexSans-Italic.woff") format("woff");
+}
+@font-face {
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 700;
+    src: local("IBM Plex Sans Bold"), local("IBMPlexSans-Bold"), url("../IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-Bold.woff2") format("woff2"), url("../IBM-Plex-Sans/fonts/complete/woff/IBMPlexSans-Bold.woff") format("woff");
+}
+body {
+    font-family: "IBM Plex Sans", sans-serif;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'liga' on, 'clig' on, 'zero';
+    -webkit-font-smoothing: antialiased;
+    background-color: #fffff8;
+    color: #111;
+    counter-reset: sidenote-counter;
+    font-size: 16px;
+    padding: 0 2ch;
+}
+
+a {
+    width: fit-content;
+    text-shadow: -1px 0px 0px #fffff8, 1px 0px 0px #fffff8, -2px 0 0 #fffff8, 2px 0 0 #fffff8;
+}
+a:link {
+   color: rgb(9,105,218);
+}
+a:visited {
+   color: rebeccapurple;
+}
+a:hover {
+  text-decoration-color: #903465;
+}
+
+.frac {
+    font-feature-settings: "frac" 1;
+}
+.ordn {
+    font-feature-settings: "ordn" 1;
+}
+.strikethrough {
+    text-decoration: line-through;
+}
+.smallcaps {
+    font-variant: small-caps;
+}
+
+code,
+pre>code {
+    font-family: "Berkeley Mono", monospace;
+}
+pre {
+  overflow-x: scroll;
+  padding: 1ch;
+}
+
+pre,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+hr,
+table,
+math,
+blockquote,
+figcaption {
+  max-inline-size: 70ch;
+}
+img {
+  max-inline-size: 100%;
+}
+p,
+li,
+blockquote {
+  line-height: 1.4;
+}
+p,
+li,
+figcaption,
+table,
+blockquote {
+  hyphens: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+table,
+figcaption {
+  line-height: 1.2;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0;
+}
+ol li::marker {
+  font-variant-numeric: tabular-nums;
+}
+hr {
+  margin-inline: 0;
+}
+blockquote {
+  border-left: 1px solid grey;
+  color: darkslateblue;
+}
+
+.with-sidebar article h1,
+.with-sidebar article h2,
+.with-sidebar article h3,
+.with-sidebar article h4,
+.with-sidebar article h5,
+.with-sidebar article h6,
+.with-sidebar article pre,
+.with-sidebar article ul,
+.with-sidebar article ol,
+.with-sidebar article math,
+.with-sidebar article table,
+.with-sidebar article blockquote,
+.with-sidebar article hr,
+.with-sidebar article dl,
+.with-sidebar article p {
+  width: 614px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.with-sidebar article ol,
+.with-sidebar article ul {
+  padding-inline-start: 0;
+}
+.with-sidebar article ol li {
+  margin-left: 2ch;
+}
+.with-sidebar article ul li {
+  margin-left: 1em;
+}
+.with-sidebar blockquote p {
+  margin-left: 1em;
+}
+.with-sidebar header {
+  width: 22ch;
+  position: absolute;
+  top: 0;
+  right: 50%;
+  margin-right: 33ch;
+}
+.footer {
+  padding: 2em 0;
+}
+
+/* Header */
+.header nav ul {
+  list-style: none;
+  padding: 0;
+}
+.header nav ul li {
+  margin-bottom: 0.5em;
+}
+.header nav ul li a {
+  margin-left: 0.5ch;
+}
+.header .blog-title {
+  font-size: larger;
+  font-weight: bolder;
+}
+.header .masthead-home-link {
+  text-decoration: none;
+  background-image: none;
+  text-shadow: none;
+}
+.header .name-svg {
+  width: 11ch;
+  height: auto;
+  margin-left: -1em;
+  vertical-align: top;
+}
+a.masthead-home-link {
+  color: #903465 !important;
+}
+.name-svg g path {
+  stroke: #903465;
+}
+.header .favicon {
+  float: right;
+  width: 5em;
+  margin-top: 0.5em;
+  border-radius: 4px;
+}
+
+/* TOC - table of contents */
+#toc-and-metadata #toc {
+  padding-inline-start: 0;
+  padding-bottom: 1em;
+}
+#toc ul {
+  padding-inline-start: 2ch;
+}
+#toc ul ul {
+  padding-inline-start: 4ch;
+}
+#toc li {
+  list-style: none;
+  border-left: 1px solid gray;
+}
+#toc li::before {
+  content: "—";
+  display: inline-block;
+  padding-right: 1ch;
+  margin-left: -1px;
+  color: gray;
+}
+.header header {
+  position: sticky;
+  top: 2ch;
+}
+
+/* Source metadata */
+cite img.source-favicon {
+  width: 1.5rem;
+  border-radius: 10%;
+  vertical-align: middle;
+}
+cite {
+    display: block;
+    font-style: italic;
+}
+cite .source-emoji {
+    vertical-align: middle;
+}
+cite .p-author {
+    vertical-align: middle;
+    margin-left: 1ch;
+}
+cite .u-url, cite .non-url {
+    vertical-align: middle;
+}
+
+/* post/page */
+.footnotes {
+  font-size: 0.9em;
+}
+.footnotes ol {
+  border-top: 1px dashed gray;
+  border-bottom: 1px dashed gray;
+}
+article ul li.filed {
+    list-style: none;
+    margin-left: 0;
+}
+li.filed:before {
+  position: relative;
+  content: "#";
+  vertical-align: middle;
+  color: #999;
+}
+li.filed.edit:before {
+  position: relative;
+  content: "✎";
+  vertical-align: middle;
+  color: #999;
+}
+ul.similar>li:before {
+  position: absolute;
+  margin-left: -1.5ch;
+  content: "∼";
+  color: #999;
+}
+ul.similar>li {
+  list-style: none;
+}
+ul.asymp>li:before {
+  position: absolute;
+  margin-left: -1.5ch;
+  content: "≈";
+  color: #999;
+}
+ul.asymp>li {
+  list-style: none;
+}
+
+/* Webmention */
+.webmention-button {
+  margin-left: 1rem;
+  font-size: 1rem;
+}
+
+/* Search */
+.with-sidebar article .search-container {
+  width: 614px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.searchbar input[type=text] {
+  font-size: inherit;
+  padding:0.4rem 2.5ch;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: calc(100% - 5ch);
+}
+.search-active .search-results {
+  display: block;
+}
+.search-results {
+  display: none;
+  z-index: 100;
+  max-height: 50vh;
+  overflow-y: auto;
+  background-color: #ffffff;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.12),0 3px 10px rgba(0,0,0,0.08);
+  position: absolute;
+}
+ul.search-results-list {
+  padding-left: 0;
+  margin-bottom: 0.25rem;
+  list-style: none;
+}
+li.search-results-list-item {
+  padding: 0;
+  margin: 0;
+}
+.search-result {
+  display: block;
+  padding-top: 0.25rem;
+  padding-right: 0.75rem;
+  padding-bottom: 0.25rem;
+  padding-left: 2.5ch;
+  text-decoration: none;
+  background-image: none;
+}
+.search-result:hover, 
+.search-result.active { 
+    background-color: #eeeee8;
+    text-shadow: none;
+}
+
+.search-result:hover > .search-result-title,
+.search-result.active > .search-result-title {
+    font-weight: 500;
+}
+
+.svg-doc {
+    padding-right: 2px;
+    stroke: #111 !important;
+}
+
+.search-result:hover > .svg-doc,
+.search-result.active > .svg-doc {
+    stroke: #000 !important;
+}
+
+.search-result-doc { 
+    display: flex; 
+    align-items: center; 
+    word-wrap: break-word; 
+}
+
+.search-result-doc.search-result-doc-parent { 
+}
+
+.search-result-doc .search-result-doc-title { 
+    padding-left: 0.1rem; 
+    overflow: auto; 
+}
+
+.search-result-section { 
+    margin-left: 1.5rem; 
+    word-wrap: break-word; 
+}
+
+.search-result-previews { 
+    display: block; 
+    padding-top: 0.5rem; 
+    padding-bottom: 0.5rem; 
+    padding-left: 1rem; 
+    margin-left: 0.5rem; 
+    word-wrap: break-word; 
+    border-left: 1px solid; 
+}
+
+.search-result-preview span {
+}
+
+.search-result-preview + .search-result-preview { 
+    margin-top: 0.25rem; 
+}
+
+.search-result-highlight { 
+    font-weight: bold; 
+}
+
+.search-no-result { 
+    padding-top: 0.5rem; 
+    padding-right: 0.75rem; 
+    padding-bottom: 0.5rem; 
+    padding-left: 0.75rem; 
+}
+.highlighted-text {
+  background-color: #fbf5d4;
+}
+/* Syntax highlighting */
+.highlight .hll { background-color: #ffffcc }
+.highlight .c { color: #aaaaaa; font-style: italic } /* Comment */
+.highlight .err { color: #F00000; background-color: #F0A0A0 } /* Error */
+.highlight .k { color: #0000aa } /* Keyword */
+.highlight .cm { color: #aaaaaa; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #4c8317 } /* Comment.Preproc */
+.highlight .c1 { color: #aaaaaa; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #0000aa; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #aa0000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: 600 } /* Generic.Heading */
+.highlight .gi { color: #00aa00 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: 600 } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: 600 } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { color: #0000aa } /* Keyword.Constant */
+.highlight .kd { color: #0000aa } /* Keyword.Declaration */
+.highlight .kn { color: #0000aa } /* Keyword.Namespace */
+.highlight .kp { color: #0000aa } /* Keyword.Pseudo */
+.highlight .kr { color: #0000aa } /* Keyword.Reserved */
+.highlight .kt { color: #00aaaa } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #aa5500 } /* Literal.String */
+.highlight .na { color: #1e90ff } /* Name.Attribute */
+.highlight .nb { color: #00aaaa } /* Name.Builtin */
+.highlight .nc { color: #00aa00; text-decoration: underline } /* Name.Class */
+.highlight .no { color: #aa0000 } /* Name.Constant */
+.highlight .nd { color: #888888 } /* Name.Decorator */
+.highlight .ni { color: #800000; font-weight: 600 } /* Name.Entity */
+.highlight .nf { color: #00aa00 } /* Name.Function */
+.highlight .nn { color: #00aaaa; text-decoration: underline } /* Name.Namespace */
+.highlight .nt { color: #1e90ff; font-weight: 600 } /* Name.Tag */
+.highlight .nv { color: #aa0000 } /* Name.Variable */
+.highlight .ow { color: #0000aa } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #aa5500 } /* Literal.String.Backtick */
+.highlight .sc { color: #aa5500 } /* Literal.String.Char */
+.highlight .sd { color: #aa5500 } /* Literal.String.Doc */
+.highlight .s2 { color: #aa5500 } /* Literal.String.Double */
+.highlight .se { color: #aa5500 } /* Literal.String.Escape */
+.highlight .sh { color: #aa5500 } /* Literal.String.Heredoc */
+.highlight .si { color: #aa5500 } /* Literal.String.Interpol */
+.highlight .sx { color: #aa5500 } /* Literal.String.Other */
+.highlight .sr { color: #009999 } /* Literal.String.Regex */
+.highlight .s1 { color: #aa5500 } /* Literal.String.Single */
+.highlight .ss { color: #0000aa } /* Literal.String.Symbol */
+.highlight .bp { color: #00aaaa } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #aa0000 } /* Name.Variable.Class */
+.highlight .vg { color: #aa0000 } /* Name.Variable.Global */
+.highlight .vi { color: #aa0000 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+
+.display-on-mobile {
+  display: none;
+}
+@media (max-width: 1100px) {
+  .hidden-on-mobile {
+    display: none;
+  }
+  .display-on-mobile {
+    display: block;
+  }
+  .with-sidebar header {
+    position: static;
+    width: 614px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .header nav ul {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .header nav ul li {
+    flex-basis: 33%;
+  }
+}
+@media (max-width: 650px) {
+  .with-sidebar article h1,
+  .with-sidebar article h2,
+  .with-sidebar article h3,
+  .with-sidebar article h4,
+  .with-sidebar article h5,
+  .with-sidebar article h6,
+  .with-sidebar article pre,
+  .with-sidebar article ul,
+  .with-sidebar article ol,
+  .with-sidebar article math,
+  .with-sidebar article table,
+  .with-sidebar article blockquote,
+  .with-sidebar article hr,
+  .with-sidebar article dl,
+  .with-sidebar article p {
+    width: 100%;
+  }
+}
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #151515;
+        color: #ddd;
+    }
+    blockquote {
+        color: lightblue;
+    }
+
+    .boxit {
+        background-color: rgba(255,255,255,0.1);
+    }
+    .searchbar input[type=text] {
+      background-color: #353535;
+      color: #ddd;
+    }
+    .search-results {
+        background-color: #000;
+        color: #ddd;
+    }
+    .search-result.active {
+      background-color: #222;
+    }
+    .svg-doc {
+        stroke: #eee !important;
+    }
+    .search-result:hover > .svg-doc,
+    .search-result.active > .svg-doc {
+        stroke: #fff !important;
+    }
+
+    .webmention-button {
+      background-color: rgb(55, 62, 71);
+      border-color: rgba(205, 217, 229, 0.1);
+      color: #ddd;
+      box-shadow: none;
+    }
+    .highlighted-text {
+      background-color: #332e0e;
+    }
+    figure.grayscale-diagram svg, figure.grayscale-diagram img, img.grayscale {
+        filter: invert(100%);
+    }
+    a:link {
+        color: cornflowerblue;
+    }
+    a:visited {
+        color: mediumpurple;
+    }
+    a:link {
+        text-shadow: 0.03em 0 #151515, -0.03em 0 #151515, 0 0.03em #151515, 0 -0.03em #151515, 0.06em 0 #151515, -0.06em 0 #151515, 0.09em 0 #151515, -0.09em 0 #151515, 0.12em 0 #151515, -0.12em 0 #151515, 0.15em 0 #151515, -0.15em 0 #151515;
+    }
+    .highlight table td { padding: 5px; }
+    .highlight table pre { margin: 0; }
+    .highlight, .highlight .w {
+      color: #f8f8f2;
+    }
+    .highlight .err {
+      color: #272822;
+      background-color: #f92672;
+    }
+    .highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
+      color: #75715e;
+    }
+    .highlight .cp {
+      color: #f4bf75;
+    }
+    .highlight .nt {
+      color: #f4bf75;
+    }
+    .highlight .o, .highlight .ow {
+      color: #f8f8f2;
+    }
+    .highlight .p, .highlight .pi {
+      color: #f8f8f2;
+    }
+    .highlight .gi {
+      color: #a6e22e;
+    }
+    .highlight .gd {
+      color: #f92672;
+    }
+    .highlight .gh {
+      color: #66d9ef;
+      background-color: #272822;
+      font-weight: bold;
+    }
+    .highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+      color: #ae81ff;
+    }
+    .highlight .kc {
+      color: #fd971f;
+    }
+    .highlight .kt {
+      color: #fd971f;
+    }
+    .highlight .kd {
+      color: #fd971f;
+    }
+    .highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+      color: #a6e22e;
+    }
+    .highlight .sr {
+      color: #a1efe4;
+    }
+    .highlight .si {
+      color: #cc6633;
+    }
+    .highlight .se {
+      color: #cc6633;
+    }
+    .highlight .nn {
+      color: #f4bf75;
+    }
+    .highlight .nc {
+      color: #f4bf75;
+    }
+    .highlight .no {
+      color: #f4bf75;
+    }
+    .highlight .na {
+      color: #66d9ef;
+    }
+    .highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+      color: #a6e22e;
+    }
+    .highlight .ss {
+      color: #a6e22e;
+    }
+}
+@media print {
+  header,
+  section.related,
+  div.webmention-container {
+    display: none !important;
+  }
+  .print-hidden {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}

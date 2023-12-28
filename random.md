@@ -1,6 +1,7 @@
 ---
-layout: Post
-title: Random Note
+layout: Page
+title: Redirecting to Random Note...
+hide_title: true
 permalink: /random/
 content-type: eg
 ---
