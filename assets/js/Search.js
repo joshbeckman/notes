@@ -433,6 +433,7 @@
     function searchInitListener() {
       let searchInput = document.getElementById("search-input");
       if (window.location.pathname == "/search/") {
+        searchInit();
         searchInput.focus();
       }
       document.onkeyup = function (e) {
@@ -440,6 +441,7 @@
         let key = evt.keyCode || evt.which;
         if (e.shiftKey && key == 83) {
           if (searchInput) {
+            searchInit();
             searchInput.focus();
           } else {
               window.location.href = "/search";
@@ -450,7 +452,6 @@
 
     sj.onReady(function(){
         searchInitListener();
-        searchInit();
     });
 })(window.sj = window.sj || {});
 
