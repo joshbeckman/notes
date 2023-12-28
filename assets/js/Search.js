@@ -431,12 +431,19 @@
     }
 
     function searchInitListener() {
+      let searchInput = document.getElementById("search-input");
+      if (window.location.pathname == "/search/") {
+        searchInput.focus();
+      }
       document.onkeyup = function (e) {
         var evt = window.event || e;
-        let searchInput = document.getElementById("search-input");
         let key = evt.keyCode || evt.which;
         if (e.shiftKey && key == 83) {
-          searchInput.focus();
+          if (searchInput) {
+            searchInput.focus();
+          } else {
+              window.location.href = "/search";
+          }
         }
       };
     }
