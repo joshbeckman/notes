@@ -4,6 +4,7 @@ title: About
 permalink: /about/
 content-type: eg
 toc: true
+searchable: true
 ---
 
 I [wrote up the process and theory behind this website](https://www.joshbeckman.org/opening-up-my-highlights-notes/), but basically it's an export and reformatting of my highlights and notes of my online (and some offline) reading ([script here](https://github.com/joshbeckman/notes/blob/master/utilities/import_action)).

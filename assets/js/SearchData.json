@@ -15,7 +15,7 @@ permalink: /assets/js/SearchData.json
     
   {% endfor %}
   {%- for page in site.pages -%}
-  {%- unless page.url contains '/assets/' -%}
+  {%- if page.searchable -%}
 
     "{{ i }}": {
        "doc":  {{ page.title | strip_html | escape | jsonify }},
@@ -24,7 +24,7 @@ permalink: /assets/js/SearchData.json
        "url": "{{ page.url }}"
     },{%- assign i = i | plus: 1 -%}
     
-  {% endunless %}
+  {% endif %}
   {% endfor %}
   {%- for post in site.posts -%}
 
