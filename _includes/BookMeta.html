@@ -15,7 +15,11 @@
         </span>
       </p>
       <h4>
-        <a href="{{page.canonical}}" class="u-url" target="_blank">{{page.book_title}}</a>
+        {%- if page.canonical -%}
+          <a href="{{page.canonical}}" class="u-url" target="_blank">{{page.book_title}}</a>
+        {%- else -%}
+          {{page.book_title}}
+        {%- endif -%}
       </h4>
     </cite>
   </div>
