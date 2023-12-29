@@ -244,12 +244,9 @@ Readwise::Highlight.include(ReadwiseExtras::Highlight)
 
 
 # Steps:
-# - Wipe out old _posts
 # - Import highlights into _posts
-# - Copy over _manual_posts into _posts
 class Importer
   def self.import
-    clean_posts
     client = Readwise::Client.new(token: ENV['READWISE_TOKEN'])
     limit = ENV['READWISE_LIMIT']&.to_i
     books = client.export(updated_after: Time.parse("2000-01-01").iso8601)
@@ -258,17 +255,13 @@ class Importer
       Jekyll.import_book(book)
       Jekyll.import_book_highlights(book)
     end
-    copy_manual_posts
   rescue => e
     puts "Import Failed: #{e.message}"
   end
 
   def self.clean_posts
     system 'rm _posts/*.md'
-  end
-
-  def self.copy_manual_posts
-    system 'cp _manual_posts/*.md _posts/'
+    system 'git checkout -- _posts'
   end
 end
 
