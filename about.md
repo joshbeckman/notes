@@ -30,6 +30,7 @@ This site's source code lives on [[Github::https://github.com/joshbeckman/notes]
 This website is statically generated using [Jekyll](https://jekyllrb.com) from a set of Markdown files.
 
 Search is powered by [lunrjs](https://lunrjs.com).
+Photo galleries and zoom are powered by [PhotoSwipe](https://photoswipe.com).
 The site fonts are [IBM Plex](https://www.ibm.com/plex/).
 Webmentions are supported via [webmention.io](https://webmention.io).
 
@@ -46,12 +47,15 @@ You can [read more about me on my main website](https://www.joshbeckman.org/abou
 ### Unreleased
 * change styling/colors by season
 * Move webmentions into static ingestion and rendering
-* featured image on post
-* photo gallery support
+* featured image on posts
 * move content markup into liquid filters instead of liquid logic
 * make backlinks and related/same-source rendering more efficient
 - Sitemap page
-- Rotating image on homepage
+- Random image on homepage
+
+### 2023-12-29
+* Photo gallery and zoom support
+- Linking books via Amazon ASIN (though we hate Amazon, it's all we can get from Readwise's API)
 
 ### 2023-12-27
 - New theme implemented (major simplification)

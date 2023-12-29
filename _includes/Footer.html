@@ -4,7 +4,9 @@
     <p id="copyright-notice">© {{site.copyright.msg}}. {{site.copyright.year}}</p>
 </div> 
 {%- endif -%}
-</div> 
+</div>
+<script async src="/assets/js/photoswipe.umd.min.js"></script>
+<script async src="/assets/js/photoswipe-lightbox.umd.min.js"></script>
 <script>
 function searchInitListener() {
   let searchInput = document.getElementById("search-input");
@@ -24,4 +26,25 @@ function searchInitListener() {
   };
 }
 searchInitListener();
+
+function prepareImagesForLightbox() {
+    let images = document.querySelectorAll('article section img');
+    for (let i = 0; i < images.length; i++) {
+        let img = images[i];
+        let a = document.createElement('a');
+        a.href = img.src;
+        a.classList.add('ps');
+        a.dataset.pswpWidth = img.naturalWidth;
+        a.dataset.pswpHeight = img.naturalHeight;
+        img.parentNode.insertBefore(a, img);
+        a.appendChild(img);
+    }
+    var lightbox = new PhotoSwipeLightbox({
+        gallery: 'article section',
+        children: 'a.ps',
+        pswpModule: PhotoSwipe
+    });
+    lightbox.init();
+}
+window.addEventListener('load', prepareImagesForLightbox);
 </script>
