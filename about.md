@@ -50,6 +50,8 @@ You can [read more about me on my main website](https://www.joshbeckman.org/abou
 * photo gallery support
 * move content markup into liquid filters instead of liquid logic
 * make backlinks and related/same-source rendering more efficient
+- Sitemap page
+- Rotating image on homepage
 
 ### 2023-12-27
 - New theme implemented (major simplification)

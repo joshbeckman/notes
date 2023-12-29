@@ -5,4 +5,23 @@
 </div> 
 {%- endif -%}
 </div> 
-<script async src="/assets/js/Search.js"></script>
+<script>
+function searchInitListener() {
+  let searchInput = document.getElementById("search-input");
+  if (window.location.pathname == "/search/") {
+    searchInput.focus();
+  }
+  document.onkeyup = function (e) {
+    var evt = window.event || e;
+    let key = evt.keyCode || evt.which;
+    if (e.shiftKey && key == 83) {
+      if (searchInput) {
+        searchInput.focus();
+      } else {
+          window.location.href = "/search";
+      }
+    }
+  };
+}
+searchInitListener();
+</script>
