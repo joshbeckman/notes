@@ -19,7 +19,7 @@ This allows for two-way linking of ideas.
 
 Search (on the homepage and on a [dedicated page](/search)) allows you to find anything without having to use an external search engine.
 
-Pages and posts support table-of-contents rendering, metadata about citation/sourcing, Readwise integration, `h-card` markup (for webmention support), and more coming soon.
+Pages and posts support table-of-contents rendering, metadata about citation/sourcing, Readwise integration, `h-card` markup (for webmention support), and more.
 
 ## Infrastructure
 
@@ -45,13 +45,21 @@ You can [read more about me on my main website](https://www.joshbeckman.org/abou
 ## Changelog
 
 ### Unreleased
+* featured image on posts
+- create a category page for the blog
+- merge the blog content into this site
+- create a category for books
+- create a category for concerts
+- create a category for movies
+- create a category for desks
+- create a category for photos
+- create a category for presentations/talks
+- Random image on homepage
+* make backlinks and related/same-source rendering more efficient
+* move content markup into liquid filters instead of liquid logic
 * change styling/colors by season
 * Move webmentions into static ingestion and rendering
-* featured image on posts
-* move content markup into liquid filters instead of liquid logic
-* make backlinks and related/same-source rendering more efficient
 - Sitemap page
-- Random image on homepage
 
 ### 2023-12-29
 * Photo gallery and zoom support
