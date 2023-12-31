@@ -132,7 +132,7 @@ defaults:
       type: posts
     values:
       layout: Post
-      permalink: /notes/:title
+      permalink: /:categories/:title
       content-type: post
 
 

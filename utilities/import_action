@@ -9,7 +9,7 @@ class Jekyll
   def self.import_book(book)
     return unless book.should_import?
 
-    File.open("_posts/#{book.formatted_date}-#{book.book_id}.md", 'w') do |f|
+    File.open("notes/_posts/#{book.formatted_date}-#{book.book_id}.md", 'w') do |f|
       f.write book.post_text
     end
   end
@@ -23,7 +23,7 @@ class Jekyll
   def self.import_highlight(highlight, book)
     return unless highlight.should_import?(book)
 
-    File.open("_posts/#{highlight.formatted_date}-#{highlight.highlight_id}.md", 'w') do |f|
+    File.open("notes/_posts/#{highlight.formatted_date}-#{highlight.highlight_id}.md", 'w') do |f|
       f.write highlight.post_text(book)
     end
   end
@@ -244,7 +244,7 @@ Readwise::Highlight.include(ReadwiseExtras::Highlight)
 
 
 # Steps:
-# - Import highlights into _posts
+# - Import highlights into notes/_posts
 class Importer
   def self.import
     client = Readwise::Client.new(token: ENV['READWISE_TOKEN'])
@@ -260,8 +260,8 @@ class Importer
   end
 
   def self.clean_posts
-    system 'rm _posts/*.md'
-    system 'git checkout -- _posts'
+    system 'rm notes/_posts/*.md'
+    system 'git checkout -- notes/_posts'
   end
 end
 
