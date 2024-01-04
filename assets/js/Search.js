@@ -351,6 +351,16 @@
           searchInput.focus();
           update();
         }
+        function searchVia404() {
+          var shouldSearch = document.title.indexOf("404 - Page not found") >= 0;
+          if (!shouldSearch) { return; }
+
+          var search = window.location.pathname.split("/").join(" ").trim().split("-").join(" ");
+          var searchInput = document.getElementById("search-input");
+          searchInput.value = search;
+          searchInput.focus();
+          update();
+        }
         
         sj.addEvent(searchInput, 'focus', function(){
             setTimeout(update, 0);
@@ -427,6 +437,7 @@
 
         sj.onReady(function(){
             searchViaQuery();
+          searchVia404();
         });
     }
 
