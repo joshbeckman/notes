@@ -23,7 +23,21 @@
         </a>
     <ul>
       <li>🛟 <a href="/about">About</a></li>
+      {% if page.categories contains 'blog' %}
+      <li>🌸 <a href="/blog">Blog</a></li>
+      {% elsif page.categories contains 'desks' %}
+      <li>🌸 <a href="/desks">Desks</a></li>
+      {% elsif page.categories contains 'books' %}
+      <li>🌸 <a href="/books">Books</a></li>
+      {% elsif page.categories contains 'concerts' %}
+      <li>🌸 <a href="/concerts">Concerts</a></li>
+      {% elsif page.categories contains 'movies' %}
+      <li>🌸 <a href="/movies">Movies</a></li>
+      {% elsif page.categories contains 'photos' %}
+      <li>🌸 <a href="/photos">Photos</a></li>
+      {% else %}
       <li>📚 <a href="/tags">Index</a></li>
+      {% endif %}
       <li>🔀 <a href="/random">Random</a></li>
       <li>🛜 <a href="/feed.xml">RSS Feed</a></li>
       <li>💌 <a href="https://www.joshbeckman.org/subscribe">Newsletter</a></li>

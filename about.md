@@ -54,6 +54,10 @@ You can [read more about me on my main website](https://www.joshbeckman.org/abou
 - create a category for desks
 - create a category for photos
 - create a category for presentations/talks
+- blogroll
+- podroll
+- `/now` page
+- `/uses` page
 - Random image on homepage
 * make backlinks and related/same-source rendering more efficient
 * move content markup into liquid filters instead of liquid logic

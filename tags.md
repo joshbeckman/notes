@@ -19,7 +19,7 @@ I initially took inspiration from <a href="https://en.wikipedia.org/wiki/Dewey_D
 </p>
 
 <p>
-Alternatively, notes are <a href="/dates">indexed by date</a> or <a href="/sources">by source</a>.
+Alternatively, things are <a href="/dates">indexed by date</a> or <a href="/sources">by source</a>.
 </p>
 
 {%- for item in site.data.decimals -%}
