@@ -80,8 +80,7 @@ module ReadwiseExtras
 
     def formatted_tags
       base_tags = tags.map { |t| t['name'] }
-      base_tags.concat(["#{category}-#{book_id}"])
-        .concat(highlights.map { |h| h.tags.map { |ht| ht['name'] } })
+      base_tags.concat(highlights.map { |h| h.tags.map { |ht| ht['name'] } })
         .flatten.uniq.join(' ')
     end
 
@@ -212,8 +211,7 @@ module ReadwiseExtras
     def formatted_tags(book)
       base_tags = tags.map { |t| t['name'] }
       base_tags << 'inbox' if base_tags.empty?
-      base_tags.concat(["#{book.category}-#{book.book_id}"])
-        .flatten.join(' ')
+      base_tags.flatten.join(' ')
     end
 
     def formatted_text

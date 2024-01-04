@@ -5,12 +5,13 @@ permalink: /sources/
 content-type: eg
 ---
 
-{% for tag in site.tags %}
-  {%- if tag.first contains "articles-" or tag.first contains "books-" or tag.first contains "supplementals-" -%}
-  {%- assign id = tag.first | split: '-' | last -%}
-  <h3 id="{{ id }}">{{ tag.first }} from {{ tag.last.first.author }}</h3>
+{% assign postsBySource = 
+site.posts | group_by_exp:"post", "post.book" %}
+{% for source in postsBySource %}
+{% if source.name %}
+  <h3 id="{{ source.name }}">{{ source.items.first.book_title }}</h3>
   <ul class="">
-      {% for post in tag.last %}
+      {% for post in source.items %}
         <li style="">
           <a href="{{post.url}}">
             {{ post.content | strip_html | strip | escape | truncate: 70}}
@@ -18,5 +19,5 @@ content-type: eg
         </li>
       {% endfor %}
   </ul>
-  {%- endif -%}
+{% endif %}
 {% endfor %}
