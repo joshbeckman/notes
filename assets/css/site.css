@@ -478,6 +478,19 @@ blockquote {
   border-left: 1px solid grey;
   color: darkslateblue;
 }
+table {
+    border: 1px solid;
+    border-collapse: collapse;
+    table-layout: fixed;
+    text-align: left;
+    width: 100%;
+}
+table caption { margin: 2rem 0; }
+table tr { border-bottom: 1px solid; }
+table thead { position: sticky; top: 0; }
+table tbody tr:nth-child(even) { background: rgba(0, 0, 0, 0.05); }
+table th, table thead { background: #fffff8; font-weight: bold; }
+table th, table thead, table td { padding: 0.5rem; }
 
 .with-sidebar article h1,
 .with-sidebar article h2,
@@ -887,6 +900,7 @@ li.search-results-list-item {
     blockquote {
         color: lightblue;
     }
+    table th, table thead { background: #151515; }
 
     .boxit {
         background-color: rgba(255,255,255,0.1);
