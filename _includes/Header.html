@@ -44,27 +44,3 @@
     </ul>
   </nav>
 </div>
-<script>
-var paths = document.querySelectorAll('.name-svg path');
-var lastPathIndex = paths.length - 1;
-[].slice.call(paths).map(function(path) {
-  path.setAttribute('stroke-dasharray', path.getTotalLength());
-  path.setAttribute('stroke-dashoffset', path.getTotalLength());
-});
-animateNamePath(paths[0], 0);
-function animateNamePath(path, index) {
-  function step() {
-        var value = parseFloat(path.getAttribute('stroke-dashoffset'));
-        if (value <= 1) {
-          if (index < lastPathIndex) {
-            animateNamePath(paths[index + 1], index + 1);
-          }
-          return;
-        }
-        var speed = value > 100 ? 12 : (value > 75 ? 10 : (value > 50 ? 8 : (value > 25 ? 6 : 1)));
-        path.setAttribute('stroke-dashoffset', value - speed);
-        requestAnimationFrame(step);
-      }
-      requestAnimationFrame(step);
-    }
-    </script>
