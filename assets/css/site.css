@@ -410,15 +410,6 @@ a:hover {
     font-variant: small-caps;
 }
 
-code,
-pre>code {
-    font-family: "Berkeley Mono", monospace;
-}
-pre {
-  overflow-x: scroll;
-  padding: 1ch;
-}
-
 pre,
 p,
 h1,
@@ -474,9 +465,21 @@ ol li::marker {
 hr {
   margin-inline: 0;
 }
+code,
+pre>code {
+    font-family: "Berkeley Mono", monospace;
+}
+div.highlight {
+  overflow-x: auto;
+  padding: 0 1em;
+  margin: 1em 0;
+}
+div.highlight,
 blockquote {
-  border-left: 1px solid grey;
-  color: darkslateblue;
+  border: 1px solid lightgrey;
+  box-shadow: 0 1px 3px 0 rgb(0,0,0,.05);
+  border-radius: 5px;
+  background: white;
 }
 table {
     border: 1px solid;
@@ -499,6 +502,7 @@ table th, table thead, table td { padding: 0.5rem; }
 .with-sidebar article h5,
 .with-sidebar article h6,
 .with-sidebar article pre,
+.with-sidebar article div.highlight,
 .with-sidebar article ul,
 .with-sidebar article ol,
 .with-sidebar article math,
@@ -522,8 +526,12 @@ table th, table thead, table td { padding: 0.5rem; }
 .with-sidebar article ul li {
   margin-left: 1em;
 }
-.with-sidebar blockquote p {
+.with-sidebar article blockquote p {
   margin-left: 1em;
+  width: calc(100% - 2em);
+}
+.with-sidebar article div.highlight {
+  width: calc(614px - 2em);
 }
 .with-sidebar header {
   width: 22ch;
@@ -789,6 +797,40 @@ li.search-results-list-item {
   background-color: #fbf5d4;
 }
 /* Syntax highlighting */
+div.highlighter-rouge .highlight {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border-top: 0;
+}
+div.highlighter-rouge::before {
+  content: "Code";
+  display: block;
+  padding: 0.5em;
+  background-color: rgba(0, 0, 0 , 0.05);
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  font-size: 0.8em;
+  font-weight: bold;
+  position: relative;
+  bottom: -1rem;
+  width: calc(614px - 1em);
+  margin-left: auto;
+  margin-right: auto;
+}
+div.highlighter-rouge.language-md::before {
+  content: "Markdown";
+}
+div.highlighter-rouge.language-javascript::before {
+  content: "JavaScript";
+}
+div.highlighter-rouge.language-python::before {
+  content: "Python";
+}
+div.highlighter-rouge.language-ruby::before {
+  content: "Ruby";
+}
 .highlight .hll { background-color: #ffffcc }
 .highlight .c { color: #aaaaaa; font-style: italic } /* Comment */
 .highlight .err { color: #F00000; background-color: #F0A0A0 } /* Error */
@@ -891,14 +933,21 @@ li.search-results-list-item {
   .with-sidebar article p {
     width: 100%;
   }
+  .with-sidebar article div.highlight {
+    width: calc(100% - 2em);
+  }
+  div.highlighter-rouge::before {
+    width: calc(100% - 1em);
+  }
 }
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #151515;
         color: #ddd;
     }
+    div.highlight,
     blockquote {
-        color: lightblue;
+        background: black;
     }
     table th, table thead { background: #151515; }
 
