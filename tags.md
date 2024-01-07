@@ -37,8 +37,14 @@ Alternatively, things are <a href="/dates">indexed by date</a> or <a href="/sour
         {% for post in tag.last %}
           <li style="">
             <a href="{{post.url}}">
-              {{ post.content | strip_html | strip | escape | truncate: 70}}
-              <em>from {{ post.author }}</em>
+            {% if post.hide_title %}
+            {{ post.content | strip_html | strip | escape | truncate: 70}}
+            {% else %}
+            {{ post.title }}
+            {% endif %}
+            {% if post.author %}
+            <em>from {{ post.author }}</em>
+            {% endif %}
             </a>
           </li>
         {% endfor %}
@@ -53,8 +59,14 @@ Alternatively, things are <a href="/dates">indexed by date</a> or <a href="/sour
         {% for post in tag.last %}
           <li style="">
             <a href="{{post.url}}">
-              {{ post.content | strip_html | strip | escape | truncate: 70}}
-              <em>from {{ post.author }}</em>
+            {% if post.hide_title %}
+            {{ post.content | strip_html | strip | escape | truncate: 70}}
+            {% else %}
+            {{ post.title }}
+            {% endif %}
+            {% if post.author %}
+            <em>from {{ post.author }}</em>
+            {% endif %}
             </a>
           </li>
         {% endfor %}

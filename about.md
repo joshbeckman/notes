@@ -7,6 +7,21 @@ toc: true
 searchable: true
 ---
 
+I'm an experienced startup operator with a history of scaling tech and teams. I'm a self-taught software developer, (and tech lead, and manager, yadda yadda) with a much wider-ranging career and education before that. I strive to bring curiosity, encouragement, and first-principles thinking to the work I'm doing.
+
+I'm currently working as a Senior Staff Engineer at [Shopify](//shopify.com).
+I live in Chicago.
+
+My email address is `josh@joshbeckman.org`. I strongly prefer email as a communication method, so email me if you have a comment about something I've written - or write a post on your own site (and send a webmention!).
+
+> Want help with something? Here are [ways I'm able to help](/blog/ways-im-available-to-help/).
+
+## Support
+
+I'm [@joshbeckman on Github](//github.com/joshbeckman), where I maintain open-source software projects. I welcome any issues or ideas you may open there and _especially_ any code you can contribute. Creating and _maintaining_ open-source software and open writing takes a lot of time and money, so fund my software maintenance and writing [via GitHub Sponsors](https://github.com/sponsors/joshbeckman).
+
+## About This Site
+
 I [wrote up the process and theory behind this website](https://www.joshbeckman.org/opening-up-my-highlights-notes/), but basically it's an export and reformatting of my highlights and notes of my online (and some offline) reading ([script here](https://github.com/joshbeckman/notes/blob/master/utilities/import_action)).
 
 I use it to jostle loose ideas when I'm researching a particular problem in software design or writing topic.
@@ -34,36 +49,35 @@ Photo galleries and zoom are powered by [PhotoSwipe](https://photoswipe.com).
 The site fonts are [IBM Plex](https://www.ibm.com/plex/).
 Webmentions are supported via [webmention.io](https://webmention.io).
 
-## About Me
-
-I'm an experienced startup operator with a history of scaling tech and teams. I'm a self-taught software developer, (and tech lead, and manager, yadda yadda) with a much wider-ranging career and education before that. I strive to bring curiosity, encouragement, and first-principles thinking to the work I'm doing.
-
-I'm currently working as a Senior Staff Developer at Shopify.
-
-You can [read more about me on my main website](https://www.joshbeckman.org/about).
-
 ## Changelog
 
 ### Unreleased
-* featured image on posts
-- create a category page for the blog
-- merge the blog content into this site
-- create a category for books
-- create a category for concerts
-- create a category for movies
-- create a category for desks
-- create a category for photos
-- create a category for presentations/talks
 - blogroll
 - podroll
+- h-card markup for posts
+- `/projects` page
 - `/now` page
 - `/uses` page
 - Random image on homepage
+- podcast rendering
 * make backlinks and related/same-source rendering more efficient
 * move content markup into liquid filters instead of liquid logic
 * change styling/colors by season
 * Move webmentions into static ingestion and rendering
 - Sitemap page
+
+### 2024-01-06
+* Featured image support on posts
+- Migrate the blog content from Ghost into this site
+  - Create a category page for the blog
+  - create a category for books
+  - create a category for concerts
+  - create a category for movies
+  - create a category for desks
+  - create a category for talks
+  - `/subscribe` page
+  - `/narro` page
+  - `/contact` page
 
 ### 2023-12-29
 * Photo gallery and zoom support

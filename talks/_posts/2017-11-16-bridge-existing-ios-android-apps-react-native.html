@@ -1,0 +1,835 @@
+---
+title: Bridge Existing iOS & Android Apps with React Native
+date: 2017-11-16 00:00:00 Z
+redirect_to: "https://ghpages.joshbeckman.org/presents/bridge-existing-ios-android-apps-react-native"
+presented_at: Chicago React Native Meetup, Chicago React Meetup
+---
+
+<section data-markdown>
+
+# Bridge Existing iOS & Android Apps with React Native
+
+</section>
+<section data-markdown>
+
+## Today
+- Our path to React Native
+- Overview of Embedded React Native
+- Problems
+- Solutions
+- Problems
+- Solutions
+- Thoughts on our future
+
+</section>
+<section data-markdown>
+
+## We Needed
+- A screen rewrite existing in iOS/Android companion apps
+- Nearly double the screens in those apps
+- On both platforms
+- Within ~3 weeks
+
+</section>
+<section data-markdown>
+
+## What About React Native?
+- Consolidate UI
+- Double developer resources
+- Leverage Yoga (_flexbox_) to fit our design
+- Remotely affect UI/functionality?
+
+</section>
+<section>
+
+    <h2>Demo</h2>
+    <p>Which parts are React Native?</p>
+ <video class="stretch" data-autoplay src="https://www.dropbox.com/s/6hjtzeo2z73j1xs/ScreenRecording_11-15-2017%2018%3A02.mp4?raw=1"></video>
+
+</section>
+<section data-markdown>
+
+## Where Is Best?
+
+- Leave existing code intact
+- New UIViewControllers, Activities
+- New UIViews, Fragments
+
+</section>
+<section data-markdown>
+
+## Where Is Trouble?
+
+- Installation will [probably] be a pain
+    - Days in our case
+- Heavy API integration within the UI
+    - Slows integration
+- Support of very old Android devices
+    - Erodes features & responsiveness
+
+</section>
+<section>
+<section data-markdown>
+
+## The Installation Process
+
+- Generally able to
+    - [Follow docs on facebook.github.io][0]
+- But...
+
+[0]: http://facebook.github.io/react-native/releases/0.46/docs/integration-with-existing-apps.html
+</section>
+<section data-markdown>
+
+## Separate Repos
+
+- To leverage React testing
+- To accomodate separate languages/structures
+- To allow for separate release cycles
+
+~~~
+~/src/
+|_ ios-field-staff
+|_ android-field-staff
+|_ rn-field-staff
+~~~
+
+</section>
+<section data-markdown>
+
+## iOS Installation
+
+- Clone iOS
+- Install latest cocoapods
+- Clone RN
+- Install node modules
+- Symlink to iOS repo
+- Start RN bundle server
+- Run iOS simulator
+
+</section>
+<section data-markdown>
+
+## Android Installation
+
+- Clone Android
+- Update and gradle install
+- Clone RN
+- Install node modules
+- Symlink to Android repo
+- Start RN bundle server
+- Run Android simulator
+
+</section>
+</section>
+<section data-markdown>
+
+## Embedded React Native
+
+An overview of React Native and native communication
+~~~
+                                   Props
++----------------+ <----------------+
+|                |                  |
+|  React Native  |                  |
+|      View      |         +--------+---------+
+|                |         |                  |
++-------+--------+         |  Native Control  |
+        |                  |                  |
+        |    +----------+  +------------------+
+        +--> |          |
+             |  Native  |
+             |  Bridge  |
+             |          |
+             +----------+
+
+~~~
+
+</section>
+<section data-markdown>
+
+## Where Is Your Time Spent?
+
+- 1/3 in React Native
+- 1/3 building bridges
+- 1/3 massaging props
+
+</section>
+<section>
+<section data-markdown>
+
+## Loading RN Views
+
+- Construct with the native lifecycle in mind
+- Build a dedicated function to create props
+    - With empty state as default
+
+</section>
+<section data-markdown>
+
+## Loading iOS RN View
+
+Instantiate the RN view with [bare] props
+~~~swift
+class RunningLateViewController: UIViewController {
+    var runningLateViewRN: RCTRootView?
+    var runningLateViewRNURL = "an URL or bundle"
+
+    override func loadView() {
+        super.loadView()
+        self.runningLateViewRN = RCTRootView(
+            bundleURL:           self.runningLateViewRNURL,
+            moduleName:          "RunningLate",
+            initialProperties:   self.buildProps()
+                as [NSObject : AnyObject],
+            launchOptions:       nil
+        )
+        self.view = self.runningLateViewRN!
+    }
+    // ...
+}
+~~~
+
+</section>
+<section data-markdown>
+
+## Loading iOS RN View, Continued
+
+Asynchronous loading of new props
+~~~swift
+//...
+class RunningLateViewController: UIViewController {
+    // ...
+    func buildProps(cleaning) -> NSDictionary {
+        // build our props here...
+    }
+
+    func fetchAPICall() {
+        // call our api, then...
+        DispatchQueue.main.async() {
+            (self.view as! RCTRootView).appProperties =
+                self.buildProps() as [NSObject : AnyObject]
+        }
+    }
+}
+~~~
+
+</section>
+<section data-markdown>
+
+## Loading Android RN View
+
+Instantiate the RN view with [bare] props
+~~~java
+public class RNRunningLateActivity  extends AppCompatActivity {
+    private ReactRootView mReactRootView;
+    private ReactInstanceManager mReactInstanceManager;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_rn_running_late);
+        mReactInstanceManager = ReactInstanceManagerAPI.getInstance()
+                .buildReactInstanceManager("running-late.shared.bundle",
+                        "running-late.shared.js");
+        mReactRootView = (ReactRootView) findViewById(R.id.react_root);
+        mReactRootView.startReactApplication(mReactInstanceManager,
+                "RunningLateShared", this.buildProps(null));
+    }
+    // ...
+}
+~~~
+
+</section>
+<section data-markdown>
+
+## Loading Android RN View, Continued
+
+Asynchronous loading of new props
+~~~java
+public class RNRunningLateActivity  extends AppCompatActivity {
+    // ...
+    private Bundle buildProps(JSONArray data) {
+        // Build props...
+    }
+
+    void fetchAPICall() {
+        // call api, then...
+        Bundle props = buildProps(data);
+        mReactRootView.setAppProperties(props);
+    }
+    // ...
+}
+~~~
+
+</section>
+<section data-markdown>
+
+## Loading Android RN View, Continued
+
+Start asynchronous props in native lifecycle
+~~~java
+public class RNRunningLateActivity  extends AppCompatActivity {
+    // ...
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (mReactInstanceManager != null) {
+            mReactInstanceManager.onHostResume(this, this);
+        }
+        fetchAPICall();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (mReactInstanceManager != null) {
+            mReactInstanceManager.onHostPause(this);
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mReactInstanceManager != null) {
+            mReactInstanceManager.onHostDestroy();
+        }
+    }
+
+    @Override
+    public void invokeDefaultOnBackPressed() {
+        if (mReactInstanceManager != null) {
+            mReactInstanceManager.onBackPressed();
+        } else {
+            super.onBackPressed();
+        }
+    }
+}
+~~~
+
+</section>
+<section data-markdown>
+## Example RN View
+
+Such lovely, concise UI logic
+~~~js
+export default class RunningLateShared
+extends React.PureComponent {
+    // ...
+    render() {
+        return (
+            &lt;View style={styles.container}&gt;
+                &lt;Text style={styles.shiftTime}&gt;
+                    {formatTime(this.props.shift.start)}
+                &lt;/Text&gt;
+                {this.renderAvatar(styles.staffImageWrapTop)}
+                &lt;View style={styles.noteView}&gt;
+                    {!this.state.submitted &&
+                        // ...
+                    }
+                    {this.state.submitted &&
+                        // ...
+                    }
+                &lt;/View&gt;
+            &lt;/View&gt;
+        );
+    }
+}
+~~~
+</section>
+</section>
+<section data-markdown>
+
+## Building Bridges
+
+- Get in.
+- Get out.
+- Embrace the _single direction_ of props
+
+</section>
+<section >
+<section data-markdown>
+
+## Example React Native Bridge
+
+Always check for bridge methods
+~~~js
+import { NativeModules } from 'react-native';
+const bridge = NativeModules.CurrentCleaningBridge;
+const isImplemented = (name) => {
+    if (!bridge || !bridge[name]) {
+        console.log(name, 'bridge not implemented');
+        return false;
+    }
+    return true;
+}
+export const componentDidMount = () => {
+    if (!isImplemented('componentDidMount')) return;
+    bridge.componentDidMount();
+};
+~~~
+
+</section>
+<section data-markdown>
+
+## Example React Native Bridge With Args
+
+Always fall back to default args
+~~~js
+import { NativeModules } from 'react-native';
+const bridge = NativeModules.CurrentCleaningBridge;
+export const onSubmit = (note) => {
+    if (!isImplemented('onSubmit')) return;
+    bridge.onSubmit(note || '');
+};
+export const onRootLayout = (x, y, width, height) => {
+    if (!isImplemented('onRootLayout')) return;
+    bridge.onRootLayout(x || 0, y || 0, width || 0, height || 0);
+};
+~~~
+
+</section>
+<section data-markdown>
+
+## Example React Native Bridge Usage
+
+Call the bridge as you would HTTP
+~~~js
+export default class Foo extends React.PureComponent {
+    _onLayout = (event) => {
+        const { x, y, width, height } =
+            event.nativeEvent.layout;
+        bridge.onRootLayout(x, y, width, height);
+    }
+    render() {
+        return (
+            &lt;View onLayout={this._onLayout}&gt;
+            &lt;/View&gt;
+    }
+}
+~~~
+
+</section>
+</section>
+<section>
+<section data-markdown>
+
+## Example Swift iOS Bridge
+- Leverage Swift
+- Expose modules in Objective-C
+
+</section>
+<section data-markdown>
+
+## Obj-C Bridge Implementation
+
+Decalre visisble methods and args
+~~~objc
+#import "CurrentCleaningBridgingHeader.h"
+#import "React/RCTBridgeModule.h"
+
+@interface RCT_EXTERN_MODULE(CurrentCleaningBridge, NSObject)
+
+RCT_EXTERN_METHOD(onSubmit:(NSString * __nonnull)note)
+RCT_EXTERN_METHOD(onRootLayout:(NSNumber * __nonnull)x y:(NSNumber * __nonnull)y width:(NSNumber * __nonnull)width height:(NSNumber * __nonnull)height)
+RCT_EXTERN_METHOD(componentDidMount)
+
+@end
+~~~
+
+</section>
+<section data-markdown>
+
+## Obj-C Bridge Header
+
+Defer to Swift auto-gen headers
+~~~objc
+// Look to the Swift definition...
+#ifndef CurrentCleaningBridgingHeader_h
+#define CurrentCleaningBridgingHeader_h
+
+#import "React/RCTBridge.h"
+#import "React/RCTBridgeModule.h"
+#import "React/RCTEventDispatcher.h"
+
+#endif
+~~~
+
+</section>
+<section data-markdown>
+
+## Swift Bridge
+
+Handle basic message passing
+~~~swift
+import Foundation
+import Firebase
+
+@objc(CurrentCleaningBridge)
+class CurrentCleaningBridge: NSObject {
+
+    @objc func componentDidMount() -> Void {
+        // good for nothing...
+    }
+    @objc func onRootLayout(_ x: NSNumber, y: NSNumber, width: NSNumber, height: NSNumber) -> Void {
+        RNEmbeddedViews.shared()
+            .triggeredLayout(RootView: "CurrentCleaning",
+                x: x, y: y, width: width, height: height)
+    }
+}
+~~~
+
+</section>
+<section data-markdown>
+
+## Swift Bridge, Continued
+
+Delegate actual logic to other objects
+~~~swift
+@objc(CurrentCleaningBridge)
+class CurrentCleaningBridge: NSObject {
+    //...
+    @objc func onSubmit(_ note: NSString) -> Void {
+        FIRAnalytics.logEvent(withName: Constant.Analytics.Events.updateCheckinNote,
+            parameters: [:])
+        StaffAPIClient.sharedClient()
+            .updateCurrentCheckinNote(note: note as String)
+        { (checkin, error) in
+            if (error != nil) {
+                // Handle err....
+            }
+        }
+    }
+}
+~~~
+
+</section>
+</section>
+<section>
+<section data-markdown>
+
+## Example Java Android Bridge
+
+Declare namespace and accept context
+~~~java
+// import ...
+public class CurrentCleaningBridge extends ReactContextBaseJavaModule {
+    private static final String TAG = "CurrentCleaningBridge";
+    public CurrentCleaningBridge(ReactApplicationContext reactContext) {
+        super(reactContext);
+    }
+
+    @Override
+    public String getName() {
+        return "CurrentCleaningBridge";
+    }
+}
+
+~~~
+
+</section>
+<section data-markdown>
+
+## Example Java Android Bridge, Continued
+
+Handle basic message passing
+~~~java
+public class CurrentCleaningBridge extends ReactContextBaseJavaModule {
+    // ...
+    @ReactMethod
+    public void componentDidMount() {
+        // good for nothing...
+    }
+
+    @ReactMethod
+    public void onRootLayout(float x, float y, float width, float height) {
+        CurrentCleaningSingleton.getInstance()
+            .onRootLayout("CurrentCleaning", x, y, width, height);
+    }
+}
+
+~~~
+
+</section>
+<section data-markdown>
+
+## Example Java Android Bridge, Continued
+
+Delegate actual logic to other objects
+~~~java
+public class CurrentCleaningBridge extends ReactContextBaseJavaModule {
+    // ...
+    @ReactMethod
+    public void onSubmitNote(String note) {
+        StaffAPI.getInstance()
+            .updateCheckinNote(getReactApplicationContext(), note,
+            new APICallbackInterface() {
+            @Override
+            public void onResponse(VolleyError error, JSONObject response) {
+                if (error != null) {
+                    // handle error...
+                }
+            }
+        });
+    }
+}
+
+~~~
+
+</section>
+</section>
+<section data-markdown>
+
+## Communicating to Parent View
+- Special bridge case
+- Bridges are ad-hoc instances
+- How to tell a parent of variable resize?
+
+</section>
+<section data-markdown>
+
+## RN Bridge Singleton
+
+A way to communicate back to our parent
+~~~
+                                   Props
++----------------+ <----------------+
+|                |                  |
+|  React Native  |                  |
+|      View      |         +--------+---------+
+|                |         |                  |
++-------+--------+         |  Native Control  |
+        |                  |                  |
+        |    +----------+  +------------------+
+        +--> |          |
+             |  Native  |           ^
+             |  Bridge  |           |
+             |          +-----------+
+             +----------+      Bridge Singleton
+
+~~~
+
+</section>
+<section>
+<section data-markdown>
+
+## Example Java Embedded View Singleton
+
+Declare interface and create singleton
+~~~java
+public interface RNEmbeddedViewInterface {
+    void onRootLayout(String rootView, float x, float y, float width, float height);
+}
+public class RNEmbeddedViewSingleton {
+
+    private static final RNEmbeddedViewSingleton ourInstance
+        = new RNEmbeddedViewSingleton();
+
+    public static RNEmbeddedViewSingleton getInstance() {
+        return ourInstance;
+    }
+
+    private RNEmbeddedViewSingleton() {
+    }
+    // ...
+}
+~~~
+
+</section>
+<section data-markdown>
+
+## Example Java Embedded View Singleton
+
+Handle listener registration
+~~~java
+// ...
+public class RNEmbeddedViewSingleton {
+    // ...
+    private RNEmbeddedViewInterface mListener;
+
+    public void registerListener(RNEmbeddedViewInterface listener) {
+        this.mListener = listener;
+    }
+
+    public void removeListener(RNEmbeddedViewInterface listener) {
+        if (mListener == listener) {
+            this.mListener = null;
+        }
+    }
+    // ...
+}
+~~~
+
+</section>
+<section data-markdown>
+
+## Example Java Embedded View Singleton, Continued
+
+Call listener with bridge method
+~~~java
+// RNEmbeddedViewSingleton.getInstance().registerListener(this);
+
+public class RNEmbeddedViewSingleton {
+    //...
+    public void onRootLayout(String rootView, float x, float y, float width, float height) {
+        if (mListener == null) {
+            return;
+        }
+        mListener.onRootLayout(rootView, x, y, width, height);
+    }
+}
+~~~
+
+</section>
+</section>
+<section>
+<section data-markdown>
+
+## Example Swift Embedded View Singleton
+
+Declare interface and class
+~~~swift
+struct RNViewLayout {
+    let x: NSNumber
+    let y: NSNumber
+    let width: NSNumber
+    let height: NSNumber
+}
+
+protocol RNEmbeddedViewsDelegate {
+    func onLayout(RootView: NSString, dimensions: RNViewLayout)
+}
+
+class RNEmbeddedViews: NSObject {
+    // ...
+}
+~~~
+
+</section>
+<section data-markdown>
+
+## Example Swift Embedded View Singleton, Continued
+
+Configure delegate registration
+~~~swift
+// ...
+class RNEmbeddedViews: NSObject {
+    var delegate: RNEmbeddedViewsDelegate?
+
+    class func shared() -> RNEmbeddedViews {
+        struct Singleton {
+            static let instance = RNEmbeddedViews()
+        }
+        return Singleton.instance
+    }
+    // ...
+    // RNEmbeddedViews.shared().delegate = self
+}
+~~~
+
+</section>
+<section data-markdown>
+
+## Example Swift Embedded View Singleton, Continued
+
+Call delegate with bridge method
+~~~swift
+// ...
+class RNEmbeddedViews: NSObject {
+    // ...
+    func triggeredLayout(RootView: NSString, x: NSNumber, y: NSNumber, width: NSNumber, height: NSNumber) {
+        let dimensions = RNViewLayout(x: x, y: y, width: width, height: height)
+        self.delegate?.onLayout(RootView: RootView, dimensions: dimensions)
+    }
+}
+~~~
+
+</section>
+</section>
+<section data-markdown>
+
+## Finding Platform Differences
+
+- Custom navigation control
+- Text inputs
+- Tactile inputs
+- Accessibility features
+- Some flexbox layouts
+    - Overlapping fails on Android
+    - Conflicts with Flat UI
+
+</section>
+<section data-markdown>
+
+## Juggling Platform Differences
+
+- Platform wrappers with shared.js within
+
+~~~
+     ____________   ___________
+    | android.js | |  ios.js   |
+    |            | |           |
+    | loads  ____|_|____ loads |
+    |_______| shared.js |______|
+            |           |
+            |  Main UI  |
+            |___________|
+
+
+~~~
+
+</section>
+<section data-markdown>
+
+## Debugging Crash Reports
+
+- iOS has been easy
+- Pain & confusion
+    - `Caused by: java.lang.IllegalArgumentException:`
+    - Serialization too large?
+    - Bad memory cleanup?
+
+</section>
+<section data-markdown>
+
+## Future Requests
+
+- Break down the debug wall
+- Better docs on embedded usage
+- Reproducible installations
+- Upgrade paths
+- Ability to pre-render views
+
+</section>
+<section data-markdown>
+
+## Future Prospects
+
+- All apps in React Native?
+- Is native development still relevant?
+- What will our next app contain?
+
+_We are not enemies, but friends. We must not be enemies._
+
+</section>
+<section data-markdown>
+
+## Get Started
+
+- Create a RN repo
+- Link to your native app(s)
+- Choose a simple view/fragment
+- Rewrite it in React
+- Pass it props
+- Build a bridge
+- Repeat!
+
+</section>
+<section data-markdown>
+
+## Thanks!
+
+https://www.andjosh.com/presents
+
+https://officeluv.github.io
+
+</section>

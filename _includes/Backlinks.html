@@ -15,9 +15,11 @@
 {%- endfor -%}
 {%- for note in site.pages -%}
     {%- unless note.url contains '/assets/' -%}
+    {%- unless note.url contains '.json' -%}
             {%- if note.content contains md_link_url -%}
                 {%- assign link_count = link_count | plus:1 -%}
             {%- endif -%}
+    {%- endunless -%}
     {%- endunless -%}
 {%- endfor -%}
 {%- if link_count > 0 -%}
@@ -36,6 +38,7 @@
         {%- endfor -%}
         {%- for note in site.pages -%}
             {%- unless note.url contains '/assets/' -%}
+            {%- unless note.url contains '.json' -%}
             {%- if note.content contains md_link_url -%}
             <li>
               <a href="{{note.url}}">
@@ -43,6 +46,7 @@
               </a>
             </li>
             {%- endif -%}
+            {%- endunless -%}
             {%- endunless -%}
         {%- endfor -%}
     </ul>

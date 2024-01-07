@@ -1,0 +1,24 @@
+<div class="post-list-item" style="{% if include.post.cover_image_url %}background-image: url({{include.post.cover_image_url}}){% endif %}">
+  <div class="post-list-item-details">
+    <h3 id="">
+      <a href="{{include.post.url}}">
+          {% if include.post.hide_title %}
+          {{ include.post.content | strip_html | strip | escape | truncate: 70}}
+          {% else %}
+          {{ include.post.title }}
+          {% endif %}
+      </a>
+    </h3>
+    <p>
+      {% if include.post.custom_excerpt %}
+        {{ include.post.custom_excerpt }}
+      {% elsif include.post.hide_title %}
+        {% if include.post.author %}
+        from {{ include.post.author }}
+        {% endif %}
+      {% else %}
+        {{ include.post.content | strip_html | strip | escape | truncate: 70}}
+      {% endif %}
+    </p>
+  </div>
+</div>

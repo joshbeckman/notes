@@ -19,28 +19,10 @@
     <path d="m398.98 392.13q-0.203 0.457-0.304 0.527-0.102 0.07-0.196 0.199-0.093 0.129-0.195 0.229-0.101 0.1-0.172 0.234-0.07 0.135-0.101 0.235-0.032 0.099-0.063 0.199-0.031 0.099 0.235 0.234 0.265 0.135 0.664 0.135 0.398 0 0.796 0 0.399 0 1.063-0.199t1.289-0.498 1.391-0.768q0.765-0.469 1.531-1.096 0.766-0.626 1.625-1.423t1.687-1.659q0.828-0.861 1.696-1.857 0.867-0.996 1.625-1.992 0.757-0.996 1.625-2.192 0.867-1.195 1.664-2.355t1.625-2.555q0.828-1.394 1.422-2.291 0.593-0.896 1.226-2.056 0.633-1.161 1.031-1.987 0.399-0.826 0.766-1.623t0.695-1.594q0.329-0.796 0.461-1.294 0.133-0.498 0.203-0.862 0.071-0.363 0.071-0.597 0-0.235 0-0.37 0-0.134-0.133-0.134t-0.5 0.07-1 0.662-1.391 1.389-1.726 2.027q-0.969 1.231-1.86 2.525-0.89 1.295-1.851 2.854t-1.961 3.281q-1 1.723-1.891 3.381-0.89 1.658-1.726 3.451t-1.727 3.914q-0.89 2.121-1.461 3.452-0.57 1.33-1.062 2.789-0.493 1.459-0.891 2.888-0.398 1.43-0.633 2.754-0.234 1.324-0.265 2.256-0.032 0.932-0.032 1.922t0.164 1.787 0.532 1.465q0.367 0.668 0.961 1.195 0.593 0.527 1.195 0.861l0.602 0.334" stroke-width="2.822" stroke-dasharray="94.8585205078125" stroke-dashoffset="0.8585205078125"></path>
     </g>
     </svg>
-    <em>Notes</em>
         </a>
     <ul>
-      <li>🛟 <a href="/about">About</a></li>
-      {% if page.categories contains 'blog' %}
-      <li>🌸 <a href="/blog">Blog</a></li>
-      {% elsif page.categories contains 'desks' %}
-      <li>🌸 <a href="/desks">Desks</a></li>
-      {% elsif page.categories contains 'books' %}
-      <li>🌸 <a href="/books">Books</a></li>
-      {% elsif page.categories contains 'concerts' %}
-      <li>🌸 <a href="/concerts">Concerts</a></li>
-      {% elsif page.categories contains 'movies' %}
-      <li>🌸 <a href="/movies">Movies</a></li>
-      {% elsif page.categories contains 'photos' %}
-      <li>🌸 <a href="/photos">Photos</a></li>
-      {% else %}
-      <li>📚 <a href="/tags">Index</a></li>
-      {% endif %}
-      <li>🔀 <a href="/random">Random</a></li>
-      <li>🛜 <a href="/feed.xml">RSS Feed</a></li>
-      <li>💌 <a href="https://www.joshbeckman.org/subscribe">Newsletter</a></li>
+      <li>🌸 / <a href="/">Home</a>{% for category in page.categories %} / <a href="/{{ category | slugify }}">{{ category | capitalize }}</a>{% endfor %}
+      </li>
     </ul>
   </nav>
 </div>

@@ -9,33 +9,169 @@
     </header>
     <article class="">
         <section>
-          <p>
-          This is Josh's site with {{site.posts.size}} posts and {{site.pages.size}} pages, indexed by {{site.tags.size}} tags.
-          It was last updated {{ site.time | date_to_rfc822 }}.
-          </p>
-          <p>
-          Subscribe (via RSS) if you want to see new additions ~daily.
-          </p>
-          <p>
-          Browsing is encouraged - enter <a href="/random">at random</a>.
-          </p>
-          <h3>Today's Proverb</h3>
-          <blockquote>
             <p>
-              {{ site.data.proverbs | sample }}
+                I'm <a href="/about">Josh</a>, hi!
             </p>
-          </blockquote>
-          <h3>Search</h3>
+            <p>
+                I write about software engineering and systems and trips I've taken and things I've learned.
+                (<a href="/about">Read more about me</a>)
+            </p>
+        <!-- list out the collections in a table -->
+        <table>
+            <thead>
+                <tr>
+                    <th colspan=2>
+                        Collections
+                    </th>
+                </tr>
+            </thead>
+            <tr>
+                <td>
+                    📄
+                    <a href="/blog">
+                        Blog
+                    </a>
+                </td>
+                <td>
+                    {{ site.categories['blog'].size }} posts I've written
+                </td>
+            </tr>
+            <tr>
+                <td>
+                  🏞️
+                    <a href="/photos">
+                        Photos
+                    </a>
+                </td>
+                <td>
+                    {{ site.categories['photos'].size }} photos I've taken
+                </td>
+            </tr>
+            <tr>
+                <td>
+              📝
+                    <a href="/notes">
+                        Notes
+                    </a>
+                </td>
+                <td>
+                    {{ site.categories['notes'].size }} notes on things I've found
+                </td>
+            </tr>
+            <tr>
+                <td>
+              📚
+                    <a href="/books">
+                        Books
+                    </a>
+                </td>
+                <td>
+                    {{ site.categories['books'].size }} books I've read
+                </td>
+            </tr>
+            <tr>
+                <td>
+              🎟
+                    <a href="/concerts">
+                        Concerts
+                    </a>
+                </td>
+                <td>
+                    {{ site.categories['concerts'].size }} concerts I've attended
+                </td>
+            </tr>
+            <tr>
+                <td>
+              🎬
+                    <a href="/movies">
+                        Movies
+                    </a>
+                </td>
+                <td>
+                    {{ site.categories['movies'].size }} movies I've watched
+                </td>
+            </tr>
+            <tr>
+                <td>
+              🪑
+                    <a href="/desks">
+                        Desks
+                    </a>
+                </td>
+                <td>
+                    {{ site.categories['desks'].size }} desks where I have worked
+                </td>
+            </tr>
+            <tr>
+                <td>
+              🗣
+                    <a href="/talks">
+                        Talks
+                    </a>
+                </td>
+                <td>
+                    {{ site.categories['talks'].size }} talks I've given
+                </td>
+            </tr>
+        </table>
+        <br/>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan=2>
+                            Information
+                        </th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>
+                        🛟
+                        <a href="/about">
+                            About
+                        </a>
+                    </td>
+                    <td>
+                        Updated {{ site.time | date_to_rfc822 }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        📖
+                        <a href="/tags">
+                            Index
+                        </a>
+                    </td>
+                    <td>
+                        {{site.posts.size}} posts, {{ site.tags.size }} topics
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        🛜
+                        <a href="/subscribe">
+                            Subscribe
+                        </a>
+                    </td>
+                    <td>
+                        Subscribe to new posts
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        💭
+                            Today's proverb
+                    </td>
+                    <td>
+                          {{ site.data.proverbs | sample }}
+                    </td>
+                </tr>
+            </table>
+          <h2>Search</h2>
           <br/>
-        {%- include Search.html -%}
-          <h3>Latest Entry</h3>
+          {%- include Search.html -%}
+          <h2>Latest Post</h2>
           {%- for post in site.posts limit:1 -%}
-                <p class="feed-excerpt">
-                  <a href="{{post.url}}">
-                    {{ post.content | strip_html | strip | escape | truncate: 200}}
-                    <em>from {{ post.author }}</em>
-                  </a>
-                </p>
+          {%- include PostListItem.html post=post -%}
           {%- endfor -%}
         </section>
         {%- include Footer.html -%}

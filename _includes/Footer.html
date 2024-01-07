@@ -1,9 +1,9 @@
 <div class="footer">
-{%- if site.copyright.msg != nil and site.copyright.msg != empty and site.copyright.msg != null -%}
-<div id="copyright">
-    <p id="copyright-notice">© {{site.copyright.msg}}. {{site.copyright.year}}</p>
-</div> 
-{%- endif -%}
+    <ul>
+      <li>📖 <a href="/tags">Index</a></li>
+      <li>🔀 <a href="/random">Random</a></li>
+      <li>🛜 <a href="/subscribe">Subscribe</a></li>
+    </ul>
 </div>
 <script async src="/assets/js/photoswipe.umd.min.js"></script>
 <script async src="/assets/js/photoswipe-lightbox.umd.min.js"></script>
@@ -30,6 +30,9 @@ searchInitListener();
 function prepareImagesForLightbox() {
     let images = document.querySelectorAll('article section img');
     for (let i = 0; i < images.length; i++) {
+        if (images[i].classList.contains('no-lightbox')) {
+            continue;
+        }
         let img = images[i];
         let a = document.createElement('a');
         a.href = img.src;

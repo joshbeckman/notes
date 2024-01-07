@@ -16,12 +16,13 @@ gem "jekyll"
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem "jekyll-feed"
+  gem 'jekyll-redirect-from'
+  gem 'jekyll-sitemap'
+  gem 'jekyll-toc'
   # gem "jekyll-tidy"
 end
 
 gem "jekyll-sass-converter", "~> 2.0"
-gem 'jekyll-sitemap'
-gem 'jekyll-toc'
 gem 'kramdown-math-katex'
 gem 'readwise'
 gem 'webmention'

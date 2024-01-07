@@ -11,7 +11,7 @@
   {%- assign minCommonTags = 1 -%}
   {%- for post in site.posts -%}
         {%- if post.url != page.url -%}
-          {%- if page.book == post.book -%}
+          {%- if page.book and page.book == post.book -%}
             {%- unless post.content contains page.title -%}
               {%- assign sameTagCount = sameTagCount | plus: 1 -%}
             {%- endunless -%}
@@ -29,7 +29,7 @@
       {%- assign maxRelated = 7 -%}
       {%- assign maxRelatedCounter = 0 -%}
       {%- for post in site.posts -%}
-          {%- if page.book == post.book -%}
+          {%- if page.book and page.book == post.book -%}
           {%- if post.url != page.url -%}
             <li>
               <a href="{{post.url}}">

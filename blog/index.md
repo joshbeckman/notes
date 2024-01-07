@@ -1,7 +1,8 @@
 ---
 layout: Page
 title: Blog
-toc: true
+categories:
+- blog
 ---
 
 This is a general blog.
@@ -10,13 +11,7 @@ This is a general blog.
 site.categories['blog'] | group_by_exp:"post", "post.date | date: '%Y %B'" %}
 {% for day in postsByMonth %}
   <h3 id="{{ day.name }}">{{ day.name }}</h3>
-  <ul class="">
-      {% for post in day.items %}
-        <li style="">
-          <a href="{{post.url}}">
-            {{ post.title }}
-          </a>
-        </li>
-      {% endfor %}
-  </ul>
+  {% for post in day.items %}
+  {%- include PostListItem.html post=post -%}
+  {% endfor %}
 {% endfor %}

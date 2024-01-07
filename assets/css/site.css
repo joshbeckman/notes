@@ -426,8 +426,14 @@ blockquote,
 figcaption {
   max-inline-size: 70ch;
 }
+figure,
+video,
 img {
   max-inline-size: 100%;
+  height: auto;
+}
+figure {
+  margin-inline: 0;
 }
 p,
 li,
@@ -474,6 +480,7 @@ div.highlight {
   padding: 0 1em;
   margin: 1em 0;
 }
+table,
 div.highlight,
 blockquote {
   border: 1px solid lightgrey;
@@ -482,17 +489,21 @@ blockquote {
   background: white;
 }
 table {
-    border: 1px solid;
     border-collapse: collapse;
     table-layout: fixed;
     text-align: left;
     width: 100%;
 }
 table caption { margin: 2rem 0; }
-table tr { border-bottom: 1px solid; }
-table thead { position: sticky; top: 0; }
-table tbody tr:nth-child(even) { background: rgba(0, 0, 0, 0.05); }
-table th, table thead { background: #fffff8; font-weight: bold; }
+table tr { border-bottom: 1px solid lightgrey; }
+table tbody tr:nth-child(even) { background: rgba(0, 0, 0, 0.02); }
+table th, table thead {
+  background: rgba(0, 0, 0, 0.03);
+  font-weight: bold;
+}
+table th tr, table thead tr {
+  border-bottom: 2px solid darkgrey;
+}
 table th, table thead, table td { padding: 0.5rem; }
 
 .with-sidebar article h1,
@@ -503,6 +514,7 @@ table th, table thead, table td { padding: 0.5rem; }
 .with-sidebar article h6,
 .with-sidebar article pre,
 .with-sidebar article div.highlight,
+.with-sidebar article div.post-list-item,
 .with-sidebar article ul,
 .with-sidebar article ol,
 .with-sidebar article math,
@@ -510,6 +522,7 @@ table th, table thead, table td { padding: 0.5rem; }
 .with-sidebar article blockquote,
 .with-sidebar article hr,
 .with-sidebar article dl,
+.with-sidebar article figure,
 .with-sidebar article p {
   width: 614px;
   max-width: 100%;
@@ -526,6 +539,8 @@ table th, table thead, table td { padding: 0.5rem; }
 .with-sidebar article ul li {
   margin-left: 1em;
 }
+.with-sidebar article blockquote ol,
+.with-sidebar article blockquote ul,
 .with-sidebar article blockquote p {
   margin-left: 1em;
   width: calc(100% - 2em);
@@ -540,8 +555,19 @@ table th, table thead, table td { padding: 0.5rem; }
   right: 50%;
   margin-right: 33ch;
 }
+
+/* Footer */
 .footer {
   padding: 2em 0;
+}
+.footer ul {
+  list-style: none;
+  padding-inline-start: 0;
+  text-align: center;
+}
+.footer ul li {
+  display: inline-block;
+  margin: 0 1em;
 }
 
 /* Header */
@@ -551,9 +577,6 @@ table th, table thead, table td { padding: 0.5rem; }
 }
 .header nav ul li {
   margin-bottom: 0.5em;
-}
-.header nav ul li a {
-  margin-left: 0.5ch;
 }
 .header .blog-title {
   font-size: larger;
@@ -672,6 +695,43 @@ ul.asymp>li:before {
 }
 ul.asymp>li {
   list-style: none;
+}
+
+/* Post lists */
+.post-list-item {
+  margin-bottom: 1em;
+  margin-top: 1em;
+  background-image: url(/assets/img/noise.svg);
+  background-position-x: 0;
+  background-size: 25%;
+  background-repeat: no-repeat;
+  background-position-y: 50%;
+}
+.post-list-item-cover {
+  display: inline-block;
+  width: 25%;
+  vertical-align: top;
+}
+.post-list-item-emoji {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 5em;
+  width: 25%;
+  text-align: center;
+}
+.post-list-item-details {
+  width: calc(75% - 2em);
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 1em;
+  margin-left: 25%;
+}
+.post-list-item-details.post-list-item-with-emoji {
+  margin-left: 0;
+  vertical-align: middle;
+}
+.post-list-item-details h3 {
+  margin-top: 0;
 }
 
 /* Webmention */
@@ -890,6 +950,12 @@ div.highlighter-rouge.language-ruby::before {
 .highlight .vi { color: #aa0000 } /* Name.Variable.Instance */
 .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
 
+/* ghost import styling */
+.kg-bookmark-thumbnail,
+.kg-bookmark-metadata {
+  display: none;
+}
+
 .display-on-mobile {
   display: none;
 }
@@ -928,8 +994,10 @@ div.highlighter-rouge.language-ruby::before {
   .with-sidebar article math,
   .with-sidebar article table,
   .with-sidebar article blockquote,
+  .with-sidebar article div.post-list-item,
   .with-sidebar article hr,
   .with-sidebar article dl,
+  .with-sidebar article figure,
   .with-sidebar article p {
     width: 100%;
   }
@@ -945,11 +1013,11 @@ div.highlighter-rouge.language-ruby::before {
         background-color: #151515;
         color: #ddd;
     }
+    table,
     div.highlight,
     blockquote {
         background: black;
     }
-    table th, table thead { background: #151515; }
 
     .boxit {
         background-color: rgba(255,255,255,0.1);

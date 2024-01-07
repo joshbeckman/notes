@@ -104,6 +104,7 @@ plugins:
   - jekyll-sitemap
   - jekyll/mastodon_webfinger
   - jekyll-toc
+  - jekyll-redirect-from
     # - jekyll-tidy
 feed:
   posts_limit: 50
