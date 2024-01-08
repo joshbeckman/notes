@@ -1,5 +1,5 @@
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://notes.joshbeckman.org" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://www.joshbeckman.org" # the base hostname & protocol for your site, e.g. http://example.com
 
 #######################################################################
 # Settings related to the Header and your About page go here,such as 
@@ -7,8 +7,8 @@ url: "https://notes.joshbeckman.org" # the base hostname & protocol for your sit
 # your social media links etc
 #######################################################################
 
-title: Josh's Notes
-heading: Josh's Notes
+title: Josh's Site
+heading: Josh's Site
 subheading: # subheading won't work without a tagline, 
           # tagline is mandatory if you want the 
           # suheading to appear. The reason is
@@ -25,14 +25,14 @@ tagline: # subheading won't work without a tagline,
          # the subheading to support the main heading
          # which in this case is 'Knowledge Continuum'
   enabled: false
-  name: Notes collected from online and elsewhere
-description: Notes collected from online and elsewhere
+  name: Things collected from online and elsewhere
+description: Things collected from online and elsewhere
 copyright: 
   # year: 2023
   # msg: Josh Beckman
 author:
   name: Josh Beckman
-  uri: https://notes.joshbeckman.org/about
+  uri: https://www.joshbeckman.org/about
 user:
   display: true # setting it to false will remove the header image and bio
                 # Note that user settings come wholesale, it does not have the 
