@@ -3,9 +3,10 @@ toc: true
 title: 'After Reading: The Making of Prince of Persia'
 cover_image_url: "/assets/images/E8227A17-3DCB-4C75-8EEE-8F260147BDC2.jpeg"
 date: '2020-05-30 00:00:00'
+rating: 4
 tags:
-- media-log
-- books
+- non-fiction
+- software-engineering
 redirect_from:
 - "/after-reading-the-making-of-prince-of-persia"
 - "/after-reading-the-making-of-prince-of-persia/"

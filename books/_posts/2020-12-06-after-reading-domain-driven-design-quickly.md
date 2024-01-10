@@ -2,8 +2,9 @@
 toc: true
 title: 'After Reading: Domain Driven Design, Quickly'
 date: '2020-12-06 06:00:00'
+rating: 2
 tags:
-- media-log
+- software-engineering
 redirect_from:
 - "/after-reading-domain-driven-design-quickly"
 - "/after-reading-domain-driven-design-quickly/"

@@ -2,8 +2,10 @@
 toc: true
 title: 'After Reading: The Color of Law'
 date: '2020-07-31 05:00:00'
+rating: 4
 tags:
-- media-log
+- racism
+- non-fiction
 redirect_from:
 - "/after-reading-the-color-of-law"
 - "/after-reading-the-color-of-law/"

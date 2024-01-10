@@ -2,9 +2,9 @@
 toc: true
 title: The Great Discontent Issue One - First Look
 date: '2014-07-14 00:00:00'
+rating: 4
 tags:
-- media-log
-- books
+- non-fiction
 redirect_from:
 - "/the-great-discontent-issue-one"
 - "/the-great-discontent-issue-one/"

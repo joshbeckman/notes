@@ -2,8 +2,10 @@
 toc: true
 title: 'After Reading: The Art of Doing Science and Engineering'
 date: '2020-06-30 05:00:00'
+rating: 3
 tags:
-- media-log
+- non-fiction
+- software-engineering
 redirect_from:
 - "/after-reading-the-art-of-doing-science-and-engineering"
 - "/after-reading-the-art-of-doing-science-and-engineering/"

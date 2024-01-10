@@ -2,8 +2,10 @@
 toc: true
 title: 'After Reading: Recursion'
 date: '2019-12-17 06:00:00'
+rating: 4
 tags:
-- media-log
+- books
+- fiction
 redirect_from:
 - "/after-reading-recursion"
 - "/after-reading-recursion/"

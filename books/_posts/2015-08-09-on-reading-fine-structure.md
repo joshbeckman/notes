@@ -2,8 +2,9 @@
 toc: true
 title: On Reading Fine Structure
 date: '2015-08-09 00:00:00'
+rating: 5
 tags:
-- media-log
+- fiction
 redirect_from:
 - "/on-reading-fine-structure"
 - "/on-reading-fine-structure/"

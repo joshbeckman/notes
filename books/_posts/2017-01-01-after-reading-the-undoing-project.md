@@ -2,8 +2,10 @@
 toc: true
 title: After Reading The Undoing Project
 date: '2017-01-01 00:00:00'
+rating: 3
 tags:
-- media-log
+- non-fiction
+- human-psychology
 redirect_from:
 - "/after-reading-the-undoing-project"
 - "/after-reading-the-undoing-project/"

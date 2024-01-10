@@ -1,6 +1,6 @@
 ---
 layout: Page
-title: Books Read
+title: Reading
 categories:
 - books
 ---
@@ -8,10 +8,18 @@ categories:
 These are books I've been reading.
 
 {% assign postsByMonth = 
-site.categories['books'] | group_by_exp:"post", "post.date | date: '%Y %B'" %}
+site.categories['books'] | group_by_exp:"post", "post.date | date: '%Y'" %}
 {% for day in postsByMonth %}
-  <h3 id="{{ day.name }}">{{ day.name }}</h3>
+  <table>
+      <thead>
+        <tr>
+            <td colspan="3">
+                <span id="{{ day.name }}">{{ day.name }}</span>
+            </td>
+        </tr>
+      </thead>
   {% for post in day.items %}
-  {%- include PostListItem.html post=post -%}
+  {%- include PostTableRow.html post=post -%}
   {% endfor %}
+  </table>
 {% endfor %}

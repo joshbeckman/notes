@@ -2,8 +2,10 @@
 toc: true
 title: After Reading "Life in Code"
 date: '2017-10-24 00:00:00'
+rating: 3
 tags:
-- media-log
+- non-fiction
+- software-engineering
 redirect_from:
 - "/after-reading-life-in-code"
 - "/after-reading-life-in-code/"

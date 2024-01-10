@@ -3,9 +3,11 @@ toc: true
 title: 'After Reading: Working in Public'
 cover_image_url: "/assets/images/E0B3D1A6-2CFD-4AED-B1B4-9D871A7FAA43.jpeg"
 date: '2020-11-24 06:00:00'
+rating: 3
 tags:
-- media-log
-- books
+- non-fiction
+- open-source
+- software-engineering
 redirect_from:
 - "/after-reading-working-in-public"
 - "/after-reading-working-in-public/"
