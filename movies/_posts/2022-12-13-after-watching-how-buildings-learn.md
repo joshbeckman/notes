@@ -3,9 +3,13 @@ toc: true
 title: 'After Watching: How Buildings Learn'
 cover_image_url: "/assets/images/Screenshot-2022-12-12-at-9.57.54-PM.png"
 custom_excerpt: On watching the deconstruction of high-minded architecture
+imdb_id: tt5253202
+omdb_id: tt5253202
+rating: 4
 date: '2022-12-13 04:03:36'
 tags:
-- media-log
+- movies
+- physical-architecture
 redirect_from:
 - "/after-watching-how-buildings-learn"
 - "/after-watching-how-buildings-learn/"

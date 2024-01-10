@@ -565,9 +565,9 @@ table th, table thead, table td { padding: 0.5rem; }
   padding-inline-start: 0;
   text-align: center;
 }
-.footer ul li {
+article .footer ul li {
   display: inline-block;
-  margin: 0 1em;
+  margin: 0 0.5em;
 }
 
 /* Header */
@@ -972,13 +972,6 @@ div.highlighter-rouge.language-ruby::before {
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
-  }
-  .header nav ul {
-    display: flex;
-    flex-flow: row wrap;
-  }
-  .header nav ul li {
-    flex-basis: 33%;
   }
 }
 @media (max-width: 650px) {

@@ -1,0 +1,17 @@
+<tr>
+    <td>
+      <a href="{{include.post.url}}">
+          {% if include.post.hide_title %}
+          {{ include.post.content | strip_html | strip | escape | truncate: 70}}
+          {% else %}
+          {{ include.post.title }}
+          {% endif %}
+      </a>
+    </td>
+    <td>
+        {{ include.post.date | date: '%B %d %Y' }}
+    </td>
+    <td>
+      {%- include PostRating.html post=post -%}
+    </td>
+</tr>

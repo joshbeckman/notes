@@ -1,6 +1,8 @@
 ---
 layout: Page
-title: Movies Watched
+title: Watching
+categories:
+- movies
 ---
 
 These are movies I've been watching.
@@ -8,8 +10,16 @@ These are movies I've been watching.
 {% assign postsByMonth = 
 site.categories['movies'] | group_by_exp:"post", "post.date | date: '%Y %B'" %}
 {% for day in postsByMonth %}
-  <h3 id="{{ day.name }}">{{ day.name }}</h3>
+  <table>
+      <thead>
+        <tr>
+            <td colspan="3">
+                <span id="{{ day.name }}">{{ day.name }}</span>
+            </td>
+        </tr>
+      </thead>
   {% for post in day.items %}
-  {%- include PostListItem.html post=post -%}
+  {%- include PostTableRow.html post=post -%}
   {% endfor %}
+  </table>
 {% endfor %}

@@ -1,6 +1,6 @@
 ---
 layout: Page
-title: Photos
+title: Photographing
 categories:
 - photos
 ---

@@ -1,6 +1,6 @@
 ---
 layout: Page
-title: Concerts Attended
+title: Attending
 categories:
 - concerts
 ---

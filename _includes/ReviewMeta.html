@@ -1,0 +1,20 @@
+{%- if page.rating -%}
+  <div class="review-metadata">
+    <h3 class="">
+      Rating: {%- include PostRating.html post=page -%}
+    </h3>
+    <cite class="source">
+      <p>
+        {%- if page.imdb_id -%}
+          <a href="https://www.imdb.com/title/{{page.imdb_id}}/" target="_blank">
+            View on IMDB
+          </a>
+        {%- elsif page.book_asin -%}
+          <a href="https://www.amazon.com/foo/dp/{{page.book_asin}}/" target="_blank">
+            View on Amazon
+          </a>
+        {%- endif -%}
+      </p>
+    </cite>
+  </div>
+{%- endif -%}

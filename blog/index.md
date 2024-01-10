@@ -1,6 +1,6 @@
 ---
 layout: Page
-title: Blog
+title: Writing
 categories:
 - blog
 ---
