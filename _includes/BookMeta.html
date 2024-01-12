@@ -15,7 +15,9 @@
         </span>
       </p>
       <h4>
-        {%- if page.canonical -%}
+        {%- if page.source_url -%}
+          <a href="{{page.source_url}}" class="u-url" target="_blank">{{page.book_title}}</a>
+        {%- elsif page.canonical -%}
           <a href="{{page.canonical}}" class="u-url" target="_blank">{{page.book_title}}</a>
         {%- elsif page.book_asin -%}
           <a href="https://www.amazon.com/foo/dp/{{page.book_asin}}/" target="_blank">{{page.book_title}}</a>
