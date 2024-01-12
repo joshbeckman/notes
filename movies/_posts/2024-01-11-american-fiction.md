@@ -1,7 +1,9 @@
 ---
 title: American Fiction
 tags:
+- racism
 - movies
+- fiction
 toc: true
 imdb_id: tt23561236
 cover_image_url: https://m.media-amazon.com/images/M/MV5BZDlkZmRlYTctNGJmNy00MjVkLThjZDQtMWY5Zjg2NjlhZDZkXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_SX300.jpg
