@@ -545,6 +545,14 @@ table th, table thead, table td { padding: 0.5rem; }
   margin-left: 1em;
   width: calc(100% - 2em);
 }
+.with-sidebar article blockquote blockquote {
+  margin: 0 1em;
+  width: calc(100% - 2em);
+  box-shadow: none;
+  border-radius: 0;
+  border: none;
+  border-left: 1px solid gray;
+}
 .with-sidebar article div.highlight {
   width: calc(614px - 2em);
 }
@@ -649,6 +657,9 @@ cite .source-emoji {
 cite .p-author {
     vertical-align: middle;
     margin-left: 1ch;
+}
+cite h4 {
+  font-style: normal;
 }
 cite .u-url, cite .non-url {
     vertical-align: middle;
@@ -1010,6 +1021,7 @@ div.highlighter-rouge.language-ruby::before {
     div.highlight,
     blockquote {
         background: black;
+        border-color: darkgray;
     }
 
     .boxit {

@@ -215,7 +215,10 @@ module ReadwiseExtras
     end
 
     def formatted_text
-      pieces = [text]
+      # split text by newline and add a '> ' to each line
+      pieces = text.split("\n").map do |t|
+        "> #{t}"
+      end
       unless note.nil? || note.empty?
         pieces << ""
         pieces << "### Margin Notes"
