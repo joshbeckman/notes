@@ -2,12 +2,12 @@
 
 require './utilities/send_mentions_from_rss'
 
-notes_site_config = SendMentionsFromRss::Config.new(
-  feed_url: 'https://notes.joshbeckman.org/feed.xml',
+site_config = SendMentionsFromRss::Config.new(
+  feed_url: 'https://www.joshbeckman.org/feed.xml',
   item_selector: 'entry link',
   item_href_proc: -> (link) { link['href'] },
   excluded_url_matcher: [
-    /www.joshbeckman.org\/subscribe/,
+    /www.joshbeckman.org\//,
     /notes.joshbeckman.org\//,
     /readwise.io\/open\//,
     /readwise.io\/reader\//,
@@ -15,18 +15,4 @@ notes_site_config = SendMentionsFromRss::Config.new(
     /gravatar.com\/avatar/,
   ].join('|'),
 )
-www_site_config = SendMentionsFromRss::Config.new(
-  feed_url: 'https://www.joshbeckman.org/rss/',
-  item_selector: 'item link',
-  item_href_proc: -> (link) { link.content },
-  excluded_url_matcher: [
-    /www.joshbeckman.org/,
-    /notes.joshbeckman.org\/$/,
-    /readwise.io\/open\//,
-    /readwise.io\/reader\//,
-    /s2.googleusercontent.com/,
-    /gravatar.com\/avatar/,
-  ].join('|'),
-)
-SendMentionsFromRss.execute(notes_site_config)
-SendMentionsFromRss.execute(www_site_config)
+SendMentionsFromRss.execute(site_config)
