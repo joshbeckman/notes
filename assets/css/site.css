@@ -582,6 +582,8 @@ article .footer ul li {
 .header nav ul {
   list-style: none;
   padding: 0;
+  vertical-align: middle;
+  display: inline-block;
 }
 .header nav ul li {
   margin-bottom: 0.5em;
@@ -594,6 +596,8 @@ article .footer ul li {
   text-decoration: none;
   background-image: none;
   text-shadow: none;
+  vertical-align: middle;
+  display: inline-block;
 }
 .header .name-svg {
   width: 11ch;

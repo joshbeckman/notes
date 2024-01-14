@@ -4,3 +4,4 @@ _site/
 .jekyll-metadata/
 *.DS_Store
 .readwise_token
+.omdb_token
