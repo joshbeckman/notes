@@ -67,6 +67,11 @@ Webmentions are supported via [webmention.io](https://webmention.io).
 * Move webmentions into static ingestion and rendering
 - Sitemap page
 
+### 2024-01-15
+- Redesign the site to double-column layout
+- Add notepad to posts and pages
+- Introduced seasons
+
 ### 2024-01-06
 * Featured image support on posts
 - Migrate the blog content from Ghost into this site

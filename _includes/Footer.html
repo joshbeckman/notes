@@ -73,4 +73,12 @@ function animateNamePath(path, index) {
       }
       requestAnimationFrame(step);
     }
+
+var notepad = document.getElementById("notepad");
+if (notepad) {
+  notepad.innerHTML = localStorage.getItem("notepad");
+  setInterval(function() {
+    localStorage.setItem("notepad", notepad.innerHTML);
+  }, 1000);
+}
 </script>
