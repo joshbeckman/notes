@@ -1,0 +1,4 @@
+<nav>
+  {% assign month = site.time | date: "%m" | plus: 0 %}
+  {{ site.data.seasons[month].emoji }} / <a href="/">Home</a>{% for category in page.categories %} / <a href="/{{ category | slugify }}">{{ category | capitalize }}</a>{% endfor %}
+</nav>

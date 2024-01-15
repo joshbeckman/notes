@@ -380,7 +380,6 @@ body {
     color: #111;
     counter-reset: sidenote-counter;
     font-size: 16px;
-    padding: 0 2ch;
 }
 
 a {
@@ -408,6 +407,9 @@ a:hover {
 }
 .smallcaps {
     font-variant: small-caps;
+}
+.centered {
+    text-align: center;
 }
 
 pre,
@@ -506,46 +508,51 @@ table th tr, table thead tr {
 }
 table th, table thead, table td { padding: 0.5rem; }
 
-.with-sidebar article h1,
-.with-sidebar article h2,
-.with-sidebar article h3,
-.with-sidebar article h4,
-.with-sidebar article h5,
-.with-sidebar article h6,
-.with-sidebar article pre,
-.with-sidebar article div.highlight,
-.with-sidebar article div.post-list-item,
-.with-sidebar article ul,
-.with-sidebar article ol,
-.with-sidebar article math,
-.with-sidebar article table,
-.with-sidebar article blockquote,
-.with-sidebar article hr,
-.with-sidebar article dl,
-.with-sidebar article figure,
-.with-sidebar article p {
-  width: 614px;
+.row {
+  display: flex;
+  height: 100vh;
+}
+.column {
+  flex: 1;
+  padding: 2em;
+  overflow: auto;
+  display: inherit;
+}
+.column.accent {
+  background-color: white;
+  box-shadow: 0 1px 3px 0 rgb(0,0,0,.25);
+}
+.column.accent img {
+  box-shadow: 0 1px 3px 0 rgb(0,0,0,.05);
+}
+.column .content {
   max-width: 100%;
+  width: 614px;
+  padding: 100px 0px;
+  margin: auto;
+}
+
+article blockquote {
   margin-left: auto;
   margin-right: auto;
 }
-.with-sidebar article ol,
-.with-sidebar article ul {
+article ol,
+article ul {
   padding-inline-start: 0;
 }
-.with-sidebar article ol li {
+article ol li {
   margin-left: 2ch;
 }
-.with-sidebar article ul li {
+article ul li {
   margin-left: 1em;
 }
-.with-sidebar article blockquote ol,
-.with-sidebar article blockquote ul,
-.with-sidebar article blockquote p {
+article blockquote ol,
+article blockquote ul,
+article blockquote p {
   margin-left: 1em;
   width: calc(100% - 2em);
 }
-.with-sidebar article blockquote blockquote {
+article blockquote blockquote {
   margin: 0 1em;
   width: calc(100% - 2em);
   box-shadow: none;
@@ -553,15 +560,8 @@ table th, table thead, table td { padding: 0.5rem; }
   border: none;
   border-left: 1px solid gray;
 }
-.with-sidebar article div.highlight {
-  width: calc(614px - 2em);
-}
-.with-sidebar header {
-  width: 22ch;
-  position: absolute;
-  top: 0;
-  right: 50%;
-  margin-right: 33ch;
+article div.highlight {
+  width: calc(100% - 2em);
 }
 
 /* Footer */
@@ -592,7 +592,7 @@ article .footer ul li {
   font-size: larger;
   font-weight: bolder;
 }
-.header .masthead-home-link {
+.masthead-home-link {
   text-decoration: none;
   background-image: none;
   text-shadow: none;
@@ -616,6 +616,34 @@ a.masthead-home-link {
   width: 5em;
   margin-top: 0.5em;
   border-radius: 4px;
+}
+.season-row {
+  display: flex;
+  justify-content: center;
+}
+.season-row .season-column {
+  flex: 1;
+  padding: 0;
+  position: relative;
+}
+.season-row .season-column:first-child {
+  text-align: right;
+}
+.season-row .season-column:last-child {
+  text-align: left;
+  list-style: none;
+}
+.season-column .season-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+}
+.josh-seasons {
+  height: 7em;
+  overflow: hidden;
 }
 
 /* TOC - table of contents */
@@ -694,7 +722,7 @@ li.filed.edit:before {
   color: #999;
 }
 ul.similar>li:before {
-  position: absolute;
+  position: relative;
   margin-left: -1.5ch;
   content: "∼";
   color: #999;
@@ -703,7 +731,7 @@ ul.similar>li {
   list-style: none;
 }
 ul.asymp>li:before {
-  position: absolute;
+  position: relative;
   margin-left: -1.5ch;
   content: "≈";
   color: #999;
@@ -756,12 +784,6 @@ ul.asymp>li {
 }
 
 /* Search */
-.with-sidebar article .search-container {
-  width: 614px;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
 .searchbar input[type=text] {
   font-size: inherit;
   padding:0.4rem 2.5ch;
@@ -890,7 +912,7 @@ div.highlighter-rouge::before {
   font-weight: bold;
   position: relative;
   bottom: -1rem;
-  width: calc(614px - 1em);
+  width: calc(100% - 1em);
   margin-left: auto;
   margin-right: auto;
 }
@@ -974,46 +996,19 @@ div.highlighter-rouge.language-ruby::before {
 .display-on-mobile {
   display: none;
 }
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   .hidden-on-mobile {
     display: none;
   }
   .display-on-mobile {
     display: block;
   }
-  .with-sidebar header {
-    position: static;
-    width: 614px;
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+  .row {
+    display: block;
+    height: auto;
   }
-}
-@media (max-width: 650px) {
-  .with-sidebar article h1,
-  .with-sidebar article h2,
-  .with-sidebar article h3,
-  .with-sidebar article h4,
-  .with-sidebar article h5,
-  .with-sidebar article h6,
-  .with-sidebar article pre,
-  .with-sidebar article ul,
-  .with-sidebar article ol,
-  .with-sidebar article math,
-  .with-sidebar article table,
-  .with-sidebar article blockquote,
-  .with-sidebar article div.post-list-item,
-  .with-sidebar article hr,
-  .with-sidebar article dl,
-  .with-sidebar article figure,
-  .with-sidebar article p {
-    width: 100%;
-  }
-  .with-sidebar article div.highlight {
-    width: calc(100% - 2em);
-  }
-  div.highlighter-rouge::before {
-    width: calc(100% - 1em);
+  .column .content {
+    padding: 2em 0;
   }
 }
 @media (prefers-color-scheme: dark) {
@@ -1028,6 +1023,12 @@ div.highlighter-rouge.language-ruby::before {
         border-color: darkgray;
     }
 
+    .column.accent {
+      background-color: black;
+    }
+    .season-column .season-cover {
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1));
+    }
     .boxit {
         background-color: rgba(255,255,255,0.1);
     }

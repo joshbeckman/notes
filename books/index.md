@@ -5,7 +5,24 @@ categories:
 - books
 ---
 
-These are books I've been reading.
+## Current
+
+_[Things Become Other Things](https://craigmod.com/ridgeline/174/)_ by Craig Mod
+
+## Antilibrary
+
+- _You Deserve a Tech Union_ by Ethan Marcotte
+- _Dust_ by Jay Owens
+- _The Left Hand of Darkness_ by Ursula K. Le Guin
+- _Mostly False Reports_ by Stephen Leslie
+- _Working_ by Studs Terkel
+- _The Power Broker_ by Robert Caro
+- _Can You Imagine?_ by Sari Azout
+- _Outlive_ by Peter Attia
+
+## Read
+
+These are books I've read in the past and made notes about.
 
 {% assign postsByMonth = 
 site.categories['books'] | group_by_exp:"post", "post.date | date: '%Y'" %}

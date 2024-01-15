@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 {%- include head.html -%}
-
 <body>
-  <div class="with-sidebar">
-    <header>
-        {%- include Header.html -%}
-        <div class="page-title display-on-mobile">
-          {%- if page.hide_title != true -%} 
-              <h1 class="p-name">{{page.title}}</h1>
-          {%- endif -%}
-          {%- if page.subtitle -%} 
-              <p class="subtitle">{{page.subtitle}}</p>
-          {%- endif -%}
-        </div>
-        {%- include Toc.html -%}
-    </header>
-    <article class="">
-        <section class="h-entry note-post">
-            <div class="page-title hidden-on-mobile">
+  <div class="row">
+    <div class="column accent centered">
+      <header class="content">
+        {% if page.cover_image_url %}
+          <img class="cover-image" src="{{ page.cover_image_url }}" alt="{{ page.title }}">
+        {% else %}
+          {%- include Masthead.html -%}
+        {% endif %}
+      </header>
+    </div>
+    <div class="column">
+      <article class="content">
+        {%- include Nav.html -%}
+        <section class="h-entry {% for category in page.categories %}{{category}} {% endfor %}">
+            <div class="page-title">
               {%- if page.hide_title != true -%} 
                   <h1 class="p-name">{{page.title}}</h1>
               {%- endif -%}
-              {%- if page.subtitle -%} 
+              {%- if page.subtitle -%}
                   <p class="subtitle">{{page.subtitle}}</p>
               {%- endif -%}
             </div>
+          {%- include Toc.html -%}
           {%- include BookMeta.html -%}
           {%- include ReviewMeta.html -%}
           <section class="u-in-reply-to h-cite">
@@ -36,7 +35,8 @@
             {%- include Related.html -%}
         </section>
         {%- include Footer.html -%}
-    </article>
+      </article>
+    </div>
   </div>
   <script async src="/assets/js/webmention.js"></script>
 </body>

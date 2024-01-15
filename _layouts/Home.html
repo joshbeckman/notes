@@ -3,12 +3,17 @@
 {%- include head.html -%}
 
 <body>
-  <div class="with-sidebar">
-    <header>
-        {%- include Header.html -%}
-    </header>
-    <article class="">
-        <section>
+  <div class="row">
+    <div class="column accent">
+      <header class="content centered">
+        {%- include Masthead.html -%}
+        {%- include Seasons.html -%}
+      </header>
+    </div>
+    <div class="column">
+      <article class="content">
+        {%- include Nav.html -%}
+        <section class="home">
             <p>
                 I'm <a href="/about">Josh</a>, hi!
             </p>
@@ -175,7 +180,8 @@
           {%- endfor -%}
         </section>
         {%- include Footer.html -%}
-    </article>
+      </article>
+    </div>
   </div>
 </body>
 </html>

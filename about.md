@@ -5,8 +5,8 @@ permalink: /about/
 content-type: eg
 toc: true
 searchable: true
+cover_image_url: /assets/images/FBFE9CF8-7D9A-4B63-9816-3A5D2F31B959.jpeg
 ---
-![Josh against a wall](/assets/images/FBFE9CF8-7D9A-4B63-9816-3A5D2F31B959.jpeg)
 
 I'm an experienced startup operator with a history of scaling tech and teams. I'm a self-taught software developer, (and tech lead, and manager, yadda yadda) with a much wider-ranging career and education before that. I strive to bring curiosity, encouragement, and first-principles thinking to the work I'm doing.
 
