@@ -1,6 +1,7 @@
 ---
 layout: Page
 title: Talks
+cover_image_url: /assets/images/talks.jpeg
 categories:
 - talks
 ---
