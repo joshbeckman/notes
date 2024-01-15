@@ -11,6 +11,8 @@ _[Things Become Other Things](https://craigmod.com/ridgeline/174/)_ by Craig Mod
 
 ## Antilibrary
 
+I keep this [anitlibrary](/notes/660552124) to allow my interest to project forward.
+
 - _You Deserve a Tech Union_ by Ethan Marcotte
 - _Dust_ by Jay Owens
 - _The Left Hand of Darkness_ by Ursula K. Le Guin
