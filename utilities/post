@@ -47,9 +47,6 @@ class Poster
       file.puts "tags: "
       file.puts "---"
       file.puts ""
-      if cover_image_url
-        file.puts "![#{title}](#{cover_image_url})"
-      end
     end
     exec('e ' + filename)
   end
