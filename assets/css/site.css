@@ -1008,7 +1008,7 @@ div.highlighter-rouge.language-ruby::before {
     height: auto;
   }
   .column .content {
-    padding: 2em 0;
+    padding: 0;
   }
 }
 @media (prefers-color-scheme: dark) {
