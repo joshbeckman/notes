@@ -141,7 +141,7 @@
                 </tr>
                 <tr>
                     <td>
-                        📖
+                        #️⃣ 
                         <a href="/tags">
                             Index
                         </a>
@@ -152,13 +152,24 @@
                 </tr>
                 <tr>
                     <td>
-                        🛜
+                        📶
                         <a href="/subscribe">
                             Subscribe
                         </a>
                     </td>
                     <td>
                         Subscribe to new posts
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        🕹️
+                            Keyboard shortcuts
+                    </td>
+                    <td>
+                        <kbd>Ctrl</kbd> + <kbd>S</kbd> = Search
+                        <br/>
+                        <kbd>Ctrl</kbd> + <kbd>R</kbd> = Random
                     </td>
                 </tr>
                 <tr>
@@ -171,9 +182,6 @@
                     </td>
                 </tr>
             </table>
-          <h2>Search</h2>
-          <br/>
-          {%- include Search.html -%}
           <h2>Latest Post</h2>
           {%- for post in site.posts limit:1 -%}
           {%- include PostListItem.html post=post -%}

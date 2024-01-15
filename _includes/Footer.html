@@ -1,8 +1,9 @@
 <div class="footer">
     <ul>
-      <li>📖 <a href="/tags">Index</a></li>
+      <li>*️⃣ <a href="/search">Search</a></li>
+      <li>#️⃣ <a href="/tags">Index</a></li>
       <li>🔀 <a href="/random">Random</a></li>
-      <li>🛜 <a href="/subscribe">Subscribe</a></li>
+      <li>📶 <a href="/subscribe">Subscribe</a></li>
     </ul>
 </div>
 <script async src="/assets/js/photoswipe.umd.min.js"></script>
@@ -16,12 +17,14 @@ function searchInitListener() {
   document.onkeyup = function (e) {
     var evt = window.event || e;
     let key = evt.keyCode || evt.which;
-    if (e.shiftKey && key == 83) {
+    if (e.ctrlKey && key == 83) {
       if (searchInput) {
         searchInput.focus();
       } else {
           window.location.href = "/search";
       }
+    } else if (e.ctrlKey && key == 82) {
+      window.location.href = "/random";
     }
   };
 }

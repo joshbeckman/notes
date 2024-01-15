@@ -662,7 +662,7 @@ a.masthead-home-link {
   padding-bottom: 1em;
 }
 #toc ul {
-  padding-inline-start: 2ch;
+  padding-inline-start: 0;
 }
 #toc ul ul {
   padding-inline-start: 4ch;
