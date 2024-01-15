@@ -22,22 +22,24 @@ Luckily, [Readwise has a good API](https://readwise.io/api_deets) and [pre-confi
 
 Luckily, [Day One has a [rudimentary] command line interface](https://dayoneapp.com/guides/tips-and-tutorials/command-line-interface-cli/) that I could write a [rudimentary] Ruby script around:
 
-    # Change this to your preferred journal
-    journal = 'Media Log'
-    
-    command = "dayone2 -j '#{journal}' new"
-    
-    # This assumes you have downloaded your Readwise highlights
-    # exported as markdown into a folder named 'Readwise'.
-    files = Dir["Readwise/*/*.md"]
-    
-    files.each do |filename|
-      IO.popen(command, 'r+') do |cmd_io|
-        file = File.open(filename)
-        cmd_io.puts file.read
-        cmd_io.close
-      end
-    end
+```ruby
+# Change this to your preferred journal
+journal = 'Media Log'
+
+command = "dayone2 -j '#{journal}' new"
+
+# This assumes you have downloaded your Readwise highlights
+# exported as markdown into a folder named 'Readwise'.
+files = Dir["Readwise/*/*.md"]
+
+files.each do |filename|
+  IO.popen(command, 'r+') do |cmd_io|
+    file = File.open(filename)
+    cmd_io.puts file.read
+    cmd_io.close
+  end
+end
+```
 
 You can save this into a file in the same directory where you have downloaded the markdown export and execute as `ruby file.rb` or you can just open up an interactive session via `irb` and paste in the code.
 

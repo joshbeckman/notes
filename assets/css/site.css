@@ -928,6 +928,15 @@ div.highlighter-rouge.language-python::before {
 div.highlighter-rouge.language-ruby::before {
   content: "Ruby";
 }
+div.highlighter-rouge.language-obj-c::before {
+  content: "Objective-C";
+}
+div.highlighter-rouge.language-swift::before {
+  content: "Swift";
+}
+div.highlighter-rouge.language-go::before {
+  content: "Go";
+}
 .highlight .hll { background-color: #ffffcc }
 .highlight .c { color: #aaaaaa; font-style: italic } /* Comment */
 .highlight .err { color: #F00000; background-color: #F0A0A0 } /* Error */

@@ -20,86 +20,90 @@ Here is a brief scaffold of how I’m doing this. I’ll use `mgo` and a mongoDB
 
 ### middleware.go
 
-    package main
-    
-    import (
-            "fmt"
-            "gopkg.in/mgo.v2" // our DB driver
-            "os"
-    )
-    
-    type Controller struct {
-            // This will be our extensible type that will
-            // be used as a common context type for our routes
-            session *mgo.Session // our cloneable session
-    }
-    
-    func NewController() (*Controller, error) {
-            // This function will return to us a 
-            // Controller that has our common DB context.
-            // We can then use it for multiple routes
-            uri := os.Getenv("MONGO_URI")
-            if uri == "" {
-                    return nil, fmt.Errorf("no DB connection string provided")
-            }
-            session, err := mgo.Dial(uri)
-            if err != nil {
-                    return nil, err
-            }
-            return &Controller{
-                    session: session,
-            }, nil
-    }
+```go
+package main
+
+import (
+        "fmt"
+        "gopkg.in/mgo.v2" // our DB driver
+        "os"
+)
+
+type Controller struct {
+        // This will be our extensible type that will
+        // be used as a common context type for our routes
+        session *mgo.Session // our cloneable session
+}
+
+func NewController() (*Controller, error) {
+        // This function will return to us a 
+        // Controller that has our common DB context.
+        // We can then use it for multiple routes
+        uri := os.Getenv("MONGO_URI")
+        if uri == "" {
+                return nil, fmt.Errorf("no DB connection string provided")
+        }
+        session, err := mgo.Dial(uri)
+        if err != nil {
+                return nil, err
+        }
+        return &Controller{
+            session: session,
+    }, nil
+}
+```
 
 ### main.go
 
-    package main
-    
-    import (
-            "fmt"
-            "gopkg.in/mgo.v2"
-            "labix.org/v2/mgo/bson"
-            "log"
-            "net/http"
-            "os"
-    )
-    
-    func main() {
-            // Our main func, of course, will
-            // Initialize our DB connection with 
-            // a call to NewController and will
-            // defer our session closing until we finish
-            // running completely
-            ctl, err := NewController()
-            if err != nil {
-                    log.Fatal(err)
-            }
-    
-            http.handleFunc("/", ctl.renderHello)
-            http.ListenAndServe(":80", nil)
-    }
-    
-    // Our response method will be called on our controller context
-    func (ctl *Controller) renderHello(w http.ResponseWriter, r *http.Request) {
-            // First, we will clone a session and connect to our 
-            // desired database
-            // Remember, ctl holds our persistent DB connection
-            // already.
-            session := ctl.session.Clone()
-            defer session.Close()
-            db := session.DB(os.Getenv("MONGO_DB"))
-            // Here, we'll simply retrieve one account from 
-            // our Accounts collection, using the Account type
-            // which I wrote out elsewhere.
-            result := Account{}
-            err := db.C("accounts").Find(bson.M{"name": r.URL.Query().Get("name")}).One(&result)
-            if err != nil {
-                    http.Error(w, err.Error(), http.StatusNotFound)
-                    return
-            } else {
-                    fmt.Fprintf(w, "Hello, %s", result.name)
-            }
-    }
+```go
+package main
+
+import (
+        "fmt"
+        "gopkg.in/mgo.v2"
+        "labix.org/v2/mgo/bson"
+        "log"
+        "net/http"
+        "os"
+)
+
+func main() {
+        // Our main func, of course, will
+        // Initialize our DB connection with 
+        // a call to NewController and will
+        // defer our session closing until we finish
+        // running completely
+        ctl, err := NewController()
+        if err != nil {
+                log.Fatal(err)
+        }
+
+        http.handleFunc("/", ctl.renderHello)
+        http.ListenAndServe(":80", nil)
+}
+
+// Our response method will be called on our controller context
+func (ctl *Controller) renderHello(w http.ResponseWriter, r *http.Request) {
+        // First, we will clone a session and connect to our 
+        // desired database
+        // Remember, ctl holds our persistent DB connection
+        // already.
+        session := ctl.session.Clone()
+        defer session.Close()
+        db := session.DB(os.Getenv("MONGO_DB"))
+        // Here, we'll simply retrieve one account from 
+        // our Accounts collection, using the Account type
+        // which I wrote out elsewhere.
+        result := Account{}
+        err := db.C("accounts").Find(bson.M{"name": r.URL.Query().Get("name")}).One(&result)
+        if err != nil {
+                http.Error(w, err.Error(), http.StatusNotFound)
+                return
+        } else {
+                fmt.Fprintf(w, "Hello, %s", result.name)
+        }
+}
+```
 
 With the middleware and context separated out like this, you can easily set up a context or multiple contexts in which to handle your responses. Otherwise, you’re stuck connecting on every request. If you do that, you’re gonna have a bad time.
 

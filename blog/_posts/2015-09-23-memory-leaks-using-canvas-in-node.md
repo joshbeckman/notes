@@ -18,10 +18,12 @@ Either way, the behavior was the same. We saw `canvas` instances created, used c
 
 After trying eplicit calls with `delete` and setting values to `null`, this is what finally did the trick:
 
-    var canvas = fabric.createCanvasForNode(); // or whatever you do to create a context
-    // blah blah canvas manipulation
-    // place images, etc
-    canvas.clear();
-    canvas.dispoose();
-    // Now, your garbage collection will reclaim memory
+```js
+var canvas = fabric.createCanvasForNode(); // or whatever you do to create a context
+// blah blah canvas manipulation
+// place images, etc
+canvas.clear();
+canvas.dispoose();
+// Now, your garbage collection will reclaim memory
+```
 
