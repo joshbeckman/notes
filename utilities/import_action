@@ -201,7 +201,7 @@ module ReadwiseExtras
     end
 
     def title
-      @title ||= text.split(' ').first(25).join(' ').gsub(/\]\(\S*\)/, "]").gsub('"', "'") + '...'
+      @title ||= text.gsub(/\]\(\S*\)/, "]").gsub('"', "'").slice(0, 60) + '...'
     end
 
     def citation_html(book)
