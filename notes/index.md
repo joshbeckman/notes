@@ -2,7 +2,7 @@
 layout: Page
 title: Notes
 categories:
-- note-taking
+- notes
 ---
 
 I collect notes from things I read and hear.
