@@ -3,7 +3,7 @@ toc: true
 title: A Recommendation of Vaibhav Krishna Guruswamy
 date: '2015-02-05 00:00:00'
 tags:
-- recommendation
+- aggrego
 redirect_from:
 - "/vaibhav-krishna-guruswamy-recommendation"
 - "/vaibhav-krishna-guruswamy-recommendation/"

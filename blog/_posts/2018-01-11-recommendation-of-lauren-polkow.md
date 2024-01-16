@@ -4,7 +4,7 @@ title: A Recommendation of Lauren Polkow
 cover_image_url: "/assets/images/IMG_0024.jpg"
 date: '2018-01-11 00:00:00'
 tags:
-- recommendation
+- officeluv
 redirect_from:
 - "/recommendation-of-lauren-polkow"
 - "/recommendation-of-lauren-polkow/"

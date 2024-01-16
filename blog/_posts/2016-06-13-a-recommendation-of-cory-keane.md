@@ -3,7 +3,7 @@ toc: true
 title: A Recommendation of Cory Keane
 date: '2016-06-13 00:00:00'
 tags:
-- recommendation
+- threadmeup
 redirect_from:
 - "/a-recommendation-of-cory-keane"
 - "/a-recommendation-of-cory-keane/"

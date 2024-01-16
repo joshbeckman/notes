@@ -3,7 +3,7 @@ toc: true
 title: Scaling Queue Workers Efficiently with AppSignal Metrics
 date: '2020-07-11 00:00:00'
 tags:
-- ruby
+- queues
 redirect_from:
 - "/scaling-queue-workers-efficiently-with-appsignal-metrics"
 - "/scaling-queue-workers-efficiently-with-appsignal-metrics/"

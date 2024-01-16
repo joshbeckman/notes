@@ -3,7 +3,7 @@ toc: true
 title: A Recommendation of Vasyl Stetsyuk
 date: '2016-06-13 00:00:00'
 tags:
-- recommendation
+- threadmeup
 redirect_from:
 - "/a-recommendation-of-vasyl-stetsyuk"
 - "/a-recommendation-of-vasyl-stetsyuk/"

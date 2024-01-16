@@ -4,7 +4,7 @@ title: A Recommendation of Nevzat Cubukcu
 cover_image_url: "/assets/images/IMG_0465.jpg"
 date: '2018-02-25 00:00:00'
 tags:
-- recommendation
+- officeluv
 redirect_from:
 - "/a-recommendation-of-nevzat-cubukcu"
 - "/a-recommendation-of-nevzat-cubukcu/"
