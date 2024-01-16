@@ -3,7 +3,7 @@ toc: true
 title: Note about the death of the author
 date: '2020-07-19 05:00:00'
 tags:
-- notes
+- publishing
 redirect_from:
 - "/deathoftheauthor"
 - "/deathoftheauthor/"

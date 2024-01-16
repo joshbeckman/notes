@@ -3,7 +3,7 @@ toc: true
 title: Note on data opposing narrative
 date: '2020-06-14 00:00:00'
 tags:
-- notes
+- data
 redirect_from:
 - "/data-opposing-narrative"
 - "/data-opposing-narrative/"

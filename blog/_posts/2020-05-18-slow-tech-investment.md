@@ -3,7 +3,7 @@ toc: true
 title: Note on slow tech investment
 date: '2020-05-18 00:00:00'
 tags:
-- notes
+- maintenance
 redirect_from:
 - "/slow-tech-investment"
 - "/slow-tech-investment/"

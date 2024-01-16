@@ -6,7 +6,7 @@ custom_excerpt: Examining my options to become a bit more socially engaged onlin
 date: '2023-07-06 03:38:20'
 tags:
 - tools
-- notes
+- publishing
 redirect_from:
 - "/getting-social-online"
 - "/getting-social-online/"

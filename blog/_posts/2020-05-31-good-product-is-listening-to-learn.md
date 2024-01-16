@@ -3,7 +3,7 @@ toc: true
 title: Note on listening to learn
 date: '2020-05-31 00:00:00'
 tags:
-- notes
+- meetings
 redirect_from:
 - "/good-product-is-listening-to-learn"
 - "/good-product-is-listening-to-learn/"
