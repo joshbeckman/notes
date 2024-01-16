@@ -3,7 +3,7 @@ toc: true
 title: On Adding React Native to Existing iOS and Android Apps
 date: '2017-08-10 00:00:00'
 tags:
-- javascript
+- software-engineering
 redirect_from:
 - "/on-adding-react-native-to-android-ios"
 - "/on-adding-react-native-to-android-ios/"

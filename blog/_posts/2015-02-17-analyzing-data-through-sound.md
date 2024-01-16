@@ -3,7 +3,10 @@ toc: true
 title: Analyzing Data Through Sound
 date: '2015-02-17 00:00:00'
 tags:
-- data-analysis
+- data
+- music
+- interfaces
+- research
 redirect_from:
 - "/analyzing-data-through-sound"
 - "/analyzing-data-through-sound/"

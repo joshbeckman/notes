@@ -3,7 +3,8 @@ toc: true
 title: Timestamp - Chicago Startup Tech Dinner
 date: '2017-09-26 00:00:00'
 tags:
-- timestamp
+- chicago
+- collectives
 redirect_from:
 - "/timestamp---chicago-startup-tech-dinner"
 - "/timestamp---chicago-startup-tech-dinner/"

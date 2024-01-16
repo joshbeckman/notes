@@ -6,8 +6,9 @@ custom_excerpt: On reading the street photography touchstone way past when I sho
   have.
 date: '2022-12-12 04:29:10'
 tags:
-- books
-- media-log
+- photography
+- racism
+- united-states
 redirect_from:
 - "/after-reading-the-americans"
 - "/after-reading-the-americans/"

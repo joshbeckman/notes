@@ -5,9 +5,7 @@ cover_image_url: "/assets/images/IMG_0140.jpeg"
 custom_excerpt: On re-reading one of my earliest introductions to software design.
 date: '2022-12-10 21:00:03'
 tags:
-- books
-- media-log
-- infrastructure
+- system-design
 redirect_from:
 - "/after-re-reading-the-systems-bible"
 - "/after-re-reading-the-systems-bible/"

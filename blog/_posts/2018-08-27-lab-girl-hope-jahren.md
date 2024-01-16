@@ -3,8 +3,9 @@ toc: true
 title: After Reading "Lab Girl"
 date: '2018-08-27 00:00:00'
 tags:
-- books
-- media-log
+- non-fiction
+- science
+- research
 redirect_from:
 - "/lab-girl-hope-jahren"
 - "/lab-girl-hope-jahren/"

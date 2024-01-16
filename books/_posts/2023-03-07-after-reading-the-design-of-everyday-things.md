@@ -5,7 +5,7 @@ cover_image_url: "/assets/images/IMG_0459.jpeg"
 custom_excerpt: Notes after finishing the classic 20th century design book.
 date: '2023-03-07 13:55:19'
 tags:
-- media-log
+- interfaces
 redirect_from:
 - "/after-reading-the-design-of-everyday-things"
 - "/after-reading-the-design-of-everyday-things/"

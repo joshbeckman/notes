@@ -7,6 +7,8 @@ custom_excerpt: 'A call to embrace the creative process: the continuous cycle of
 date: '2023-07-16 22:45:25'
 tags:
 - books
+- art
+- publishing
 redirect_from:
 - "/after-reading-the-creative-act"
 - "/after-reading-the-creative-act/"

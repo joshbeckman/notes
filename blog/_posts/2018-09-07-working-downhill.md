@@ -3,7 +3,8 @@ toc: true
 title: Weeknote of September 05, 2018
 date: '2018-09-07 00:00:00'
 tags:
-- recently
+- data
+- research
 redirect_from:
 - "/working-downhill"
 - "/working-downhill/"

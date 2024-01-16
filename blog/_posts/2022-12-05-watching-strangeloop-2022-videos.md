@@ -3,7 +3,7 @@ toc: true
 title: Watching Strangeloop 2022 Videos
 date: '2022-12-05 22:21:00'
 tags:
-- media-log
+- software-engineering
 redirect_from:
 - "/watching-strangeloop-2022-videos"
 - "/watching-strangeloop-2022-videos/"

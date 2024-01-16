@@ -3,7 +3,7 @@ toc: true
 title: Timestamp - Chicago Tech Meetup
 date: '2015-07-22 00:00:00'
 tags:
-- timestamp
+- chicago
 redirect_from:
 - "/timestamp-chicago-tech-meetup"
 - "/timestamp-chicago-tech-meetup/"

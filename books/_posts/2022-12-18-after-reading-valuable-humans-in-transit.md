@@ -5,8 +5,7 @@ cover_image_url: "/assets/images/IMG_0164.jpeg"
 custom_excerpt: On reading the latest paperback by my favorite internet fiction writer.
 date: '2022-12-18 19:37:22'
 tags:
-- books
-- media-log
+- fiction
 redirect_from:
 - "/after-reading-valuable-humans-in-transit"
 - "/after-reading-valuable-humans-in-transit/"

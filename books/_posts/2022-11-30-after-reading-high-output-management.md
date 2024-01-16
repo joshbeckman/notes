@@ -5,8 +5,9 @@ cover_image_url: "/assets/images/IMG_0124.jpeg"
 custom_excerpt: In reading the classic management book of the '90s
 date: '2022-11-30 05:02:02'
 tags:
-- books
-- media-log
+- management
+- meetings
+- leadership
 redirect_from:
 - "/after-reading-high-output-management"
 - "/after-reading-high-output-management/"

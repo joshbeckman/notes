@@ -3,7 +3,7 @@ toc: true
 title: What Is a Timestamp Post?
 date: '2015-07-25 00:00:00'
 tags:
-- timestamp
+- note-taking
 redirect_from:
 - "/timestamp-posts"
 - "/timestamp-posts/"

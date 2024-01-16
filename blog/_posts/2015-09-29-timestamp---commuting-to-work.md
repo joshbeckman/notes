@@ -3,7 +3,7 @@ toc: true
 title: Timestamp - Commuting to Work
 date: '2015-09-29 00:00:00'
 tags:
-- timestamp
+- commute
 redirect_from:
 - "/timestamp---commuting-to-work"
 - "/timestamp---commuting-to-work/"

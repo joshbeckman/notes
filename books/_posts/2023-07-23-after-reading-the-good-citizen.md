@@ -7,6 +7,9 @@ custom_excerpt: A woven history of violated and reclaimed citizenship in the Uni
 date: '2023-07-23 18:13:33'
 tags:
 - books
+- photography
+- united-states
+- racism
 redirect_from:
 - "/after-reading-the-good-citizen"
 - "/after-reading-the-good-citizen/"

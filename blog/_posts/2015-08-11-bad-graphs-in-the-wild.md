@@ -5,7 +5,8 @@ featured: true
 cover_image_url: "/assets/images/1.jpg"
 date: '2015-08-11 00:00:00'
 tags:
-- dataviz
+- data
+- interfaces
 redirect_from:
 - "/bad-graphs-in-the-wild"
 - "/bad-graphs-in-the-wild/"
