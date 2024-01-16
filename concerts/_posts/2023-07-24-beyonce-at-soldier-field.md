@@ -4,7 +4,7 @@ title: Beyoncé at Soldier Field
 cover_image_url: "/assets/images/IMG_1547.jpeg"
 date: '2023-07-24 04:07:00'
 tags:
-- concerts
+- music
 redirect_from:
 - "/beyonce-at-soldier-field"
 - "/beyonce-at-soldier-field/"

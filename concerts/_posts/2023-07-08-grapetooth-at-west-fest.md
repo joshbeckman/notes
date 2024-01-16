@@ -5,7 +5,7 @@ cover_image_url: "/assets/images/IMG_1443.jpeg"
 custom_excerpt: Grapetooth was a fun, tongue in cheek show on a perfect sticky summer night
 date: '2023-07-08 03:11:00'
 tags:
-- concerts
+- music
 redirect_from:
 - "/grapetooth-at-west-fest"
 - "/grapetooth-at-west-fest/"

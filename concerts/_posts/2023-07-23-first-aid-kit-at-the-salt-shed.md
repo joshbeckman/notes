@@ -4,7 +4,7 @@ title: First Aid Kit at The Salt Shed
 cover_image_url: "/assets/images/IMG_1530.jpeg"
 date: '2023-07-23 01:48:00'
 tags:
-- concerts
+- music
 redirect_from:
 - "/first-aid-kit-at-the-salt-shed"
 - "/first-aid-kit-at-the-salt-shed/"

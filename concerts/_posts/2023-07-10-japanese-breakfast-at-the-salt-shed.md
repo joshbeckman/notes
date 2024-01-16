@@ -5,7 +5,7 @@ cover_image_url: "/assets/images/IMG_1473.jpeg"
 custom_excerpt: A great evening seeing Japanese Breakfast perform a second time
 date: '2023-07-10 03:07:00'
 tags:
-- concerts
+- music
 redirect_from:
 - "/japanese-breakfast-at-the-salt-shed"
 - "/japanese-breakfast-at-the-salt-shed/"

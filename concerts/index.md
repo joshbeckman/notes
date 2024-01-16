@@ -2,7 +2,7 @@
 layout: Page
 title: Attending
 categories:
-- concerts
+- music
 ---
 
 These are concerts I've been attending.

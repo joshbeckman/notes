@@ -6,7 +6,7 @@ custom_excerpt: LCD Soundsystem, Jaime XX, and Idles at the last day of the firs
   year of this festival
 date: '2023-06-26 03:23:00'
 tags:
-- concerts
+- music
 redirect_from:
 - "/final-day-of-re-set-chicago"
 - "/final-day-of-re-set-chicago/"
