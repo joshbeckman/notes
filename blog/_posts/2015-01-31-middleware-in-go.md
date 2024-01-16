@@ -3,8 +3,7 @@ toc: true
 title: Writing Database Middleware in Go
 date: '2015-01-31 00:00:00'
 tags:
-- go
-- code
+- code-snippets
 redirect_from:
 - "/middleware-in-go"
 - "/middleware-in-go/"

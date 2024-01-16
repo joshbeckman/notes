@@ -3,8 +3,7 @@ toc: true
 title: Rate-Limit Your Node.js API in Mongo
 date: '2016-03-13 00:00:00'
 tags:
-- code
-- javascript
+- code-snippets
 redirect_from:
 - "/rate-limit-node-mongodb"
 - "/rate-limit-node-mongodb/"

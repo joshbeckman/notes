@@ -3,7 +3,7 @@ toc: true
 title: The texture of your code
 date: '2015-02-08 00:00:00'
 tags:
-- code
+- software-engineering
 redirect_from:
 - "/the-texture-of-your-code"
 - "/the-texture-of-your-code/"

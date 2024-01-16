@@ -3,7 +3,7 @@ toc: true
 title: Fix to Enable Display Features - Google Analytics iOS SDK
 date: '2014-09-23 00:00:00'
 tags:
-- code
+- code-snippets
 redirect_from:
 - "/fix-enable-display-features"
 - "/fix-enable-display-features/"

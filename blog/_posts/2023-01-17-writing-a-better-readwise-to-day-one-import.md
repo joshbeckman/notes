@@ -5,9 +5,9 @@ cover_image_url: "/assets/images/Screenshot-2023-01-16-at-7.31.03-PM.png"
 custom_excerpt: Contributing to open-source on the first public holiday of the year.
 date: '2023-01-17 01:31:46'
 tags:
-- ruby
-- code
-- media-log
+- readwise-ruby
+- note-taking
+- code-snippets
 redirect_from:
 - "/writing-a-better-readwise-to-day-one-import"
 - "/writing-a-better-readwise-to-day-one-import/"

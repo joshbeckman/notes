@@ -3,8 +3,7 @@ toc: true
 title: Memory Leaks Using Canvas in Node
 date: '2015-09-23 00:00:00'
 tags:
-- code
-- javascript
+- code-snippets
 redirect_from:
 - "/memory-leaks-using-canvas-in-node"
 - "/memory-leaks-using-canvas-in-node/"

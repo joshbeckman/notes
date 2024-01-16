@@ -4,7 +4,7 @@ title: To Pick a Nectarine
 cover_image_url: "/assets/images/Screenshot-2023-07-30-at-9.14.53-PM-2.png"
 date: '2023-07-31 22:56:20'
 tags:
-- garden
+- gardening
 redirect_from:
 - "/to-pick-a-nectarine"
 - "/to-pick-a-nectarine/"

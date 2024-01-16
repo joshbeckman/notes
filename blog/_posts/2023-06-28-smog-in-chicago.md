@@ -4,7 +4,8 @@ title: Smog in Chicago
 cover_image_url: "/assets/images/L1050064.jpeg"
 date: '2023-06-28 04:02:34'
 tags:
-- garden
+- gardening
+- chicago
 redirect_from:
 - "/smog-in-chicago"
 - "/smog-in-chicago/"

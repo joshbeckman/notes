@@ -3,8 +3,7 @@ toc: true
 title: My Bookmarks Are All Bookmarklets
 date: '2016-04-21 00:00:00'
 tags:
-- code
-- javascript
+- code-snippets
 redirect_from:
 - "/my-bookmarks-are-all-bookmarklets"
 - "/my-bookmarks-are-all-bookmarklets/"

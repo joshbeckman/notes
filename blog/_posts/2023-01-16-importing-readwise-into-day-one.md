@@ -4,9 +4,9 @@ title: Importing Readwise into Day One
 custom_excerpt: Bringing my media log highlights into my journal app
 date: '2023-01-16 04:56:39'
 tags:
-- media-log
-- ruby
-- code
+- readwise-ruby
+- note-taking
+- code-snippets
 redirect_from:
 - "/importing-readwise-into-day-one"
 - "/importing-readwise-into-day-one/"

@@ -3,8 +3,9 @@ toc: true
 title: Handy Kue Maintenance CLI Scripts
 date: '2018-01-03 00:00:00'
 tags:
-- code
-- javascript
+- maintenance
+- queues
+- code-snippets
 redirect_from:
 - "/handy-kue-cli-maintenance"
 - "/handy-kue-cli-maintenance/"

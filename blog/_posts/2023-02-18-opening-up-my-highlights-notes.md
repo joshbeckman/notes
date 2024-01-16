@@ -6,8 +6,8 @@ custom_excerpt: I made a site to browse and link to my highlights and notes from
   the web. Feel free to browse around.
 date: '2023-02-18 18:46:40'
 tags:
-- code
-- media-log
+- note-taking
+- publishing
 redirect_from:
 - "/opening-up-my-highlights-notes"
 - "/opening-up-my-highlights-notes/"
