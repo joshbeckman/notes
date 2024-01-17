@@ -3,25 +3,27 @@
 <meta content="Josh Beckman's Notes" property="og:site_name"/>
 <meta content="{{ site.url }}/about/" property="article:author">
 {%- if page.title -%}
-<meta content="{{ page.title }} ({{site.heading}})" property="og:title">
-<meta content="article" property="og:type">
+<meta content="{{ page.title }}" property="og:title">
 <title>{{page.title}} ({{site.heading}})</title>
 {%- else -%}
 <meta content="{{ site.heading }}" property="og:title">
 <title>{{site.heading}}</title>
+{%- endif -%}
+{% if page.permalink == '/' %}
 <meta content="website" property="og:type">
+{%- else -%}
+<meta content="article" property="og:type">
 {%- endif -%}
 <meta content="{{ site.url }}{{ page.url }}" property="og:url">
-{%- if page.content-type == "notes" 
-    or page.content-type == "post"  -%}
-<meta content="{{ page.content | strip_html | strip | escape | truncate: 248}}" property="og:description">
+{%- if page.custom_excerpt -%}
+<meta content="{{ page.custom_excerpt}}" property="og:description">
 {%- else -%}
-<meta content="Notes and thoughts collected from online articles, books, and elsewhere" property="og:description">
+<meta content="{{ page.content | strip_html | strip | escape | truncate: 248 }}" property="og:description">
 {%- endif -%}
 {%- if page.cover_image_url -%}
 <meta property="og:image" content="{{page.cover_image_url}}">
 {%- else -%}
-<meta property="og:image" content="{{site.url}}/assets/img/notes-img.png">
+<meta property="og:image" content="{{site.url}}/assets/img/profile.png">
 {%- endif -%}
 <link rel="canonical" href="{{site.url}}{{page.url}}"/>
 <link rel="apple-touch-icon" href="{{site.url}}/assets/img/profile.png">
