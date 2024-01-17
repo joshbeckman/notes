@@ -1,54 +1,98 @@
 #!/usr/bin/env ruby
 
-require 'net/http'
 require 'json'
+require 'net/http'
+require 'time'
 require 'uri'
 
+Post = Struct.new(
+  :body,
+  :category,
+  :cover_image_url,
+  :date,
+  :imdb_id,
+  :rating,
+  :slug,
+  :title
+)
+
 class Poster
-  def run
-    rating = nil
-    cover_image_url = nil
-    body = nil
+  def run(path)
+    post = Post.new
+    journal = JSON.parse(File.read(path + '/Journal.json'))
+    entries = journal["entries"]
+    if entries.length > 1
+      puts "multiple entries found, importing the first one"
+    end
+    entry = entries.first
+    return unless entry
 
-    puts "Title:"
-    title = gets.chomp
-    slug = title.gsub(/[^a-zA-Z0-9\s]/, '').gsub(/\s+/, '-')
-
-    puts "Date:"
-    date = gets.chomp
-
-    puts "Category:"
-    category = gets.chomp
-
-    case category
-    when "movies", "books"
-      puts "Rating:"
-      rating = gets.chomp.to_i
-      puts "IMDB ID:"
-      imdb_id = gets.chomp
-      cover_image_url = movie_cover_image(imdb_id)
+    post.title = entry.dig("text").match(/# (.*)/)[1]
+    post.slug = post.title.gsub(/[^a-zA-Z0-9\s]/, '').gsub(/\s+/, '-').downcase
+    post.date = Time.parse(entry.dig("creationDate"))
+    copy_images(entry, path)
+    post.body = parse_body(entry)
+    if entry.dig("photos").first
+      post.cover_image_url = '/' + asset_path_for_photo(entry.dig("photos").first)
     end
 
-    filename = "#{category}/_posts/#{date}-#{slug}.md"
+    puts "Category:"
+    post.category = $stdin.gets.chomp
+
+    case post.category
+    when "movies", "books"
+      puts "Rating:"
+      post.rating = $stdin.gets.chomp.to_i
+      puts "IMDB ID:"
+      post.imdb_id = $stdin.gets.chomp
+      post.cover_image_url = movie_cover_image(post.imdb_id)
+    end
+    filename = create_file(post)
+    exec('e ' + filename)
+  end
+
+  def asset_path_for_photo(photo)
+    "assets/images/#{photo.dig("identifier")}.#{photo.dig("type")}"
+  end
+
+  def copy_images(entry, path)
+    entry.dig("photos").each do |photo|
+      # copy each photo to the assets/images folder
+      # and rename it to its identifier
+      `cp #{path}/photos/#{photo.dig("md5")}.#{photo.dig("type")} #{asset_path_for_photo(photo)}`
+    end
+  end
+
+  def parse_body(entry)
+    body = entry.dig("text").gsub(/^# (.*)/, '').strip
+    entry.dig("photos").each do |photo|
+      body.gsub!(/dayone-moment:\/\/#{photo.dig("identifier")}/, '/' + asset_path_for_photo(photo))
+    end
+    body
+  end
+
+  def create_file(post)
+    filename = "#{post.category}/_posts/#{post.date.strftime("%Y-%m-%d")}-#{post.slug}.md"
 
     File.open(filename, 'w') do |file|
       file.puts "---"
       file.puts "layout: Post"
-      file.puts "title: #{title}"
+      file.puts "title: #{post.title}"
       file.puts "toc: true"
-      file.puts "cover_image_url: #{cover_image_url}"
+      file.puts "cover_image_url: #{post.cover_image_url}"
       file.puts "custom_excerpt: "
-      if rating
-        file.puts "rating: #{rating}"
+      if post.rating
+        file.puts "rating: #{post.rating}"
       end
-      if imdb_id
-        file.puts "imdb_id: #{imdb_id}"
+      if post.imdb_id
+        file.puts "imdb_id: #{post.imdb_id}"
       end
       file.puts "tags: "
       file.puts "---"
       file.puts ""
+      file.puts post.body
     end
-    exec('e ' + filename)
+    filename
   end
 
   def movie_cover_image(imdb_id)
@@ -61,4 +105,5 @@ class Poster
   end
 end
 
-Poster.new.run
+# run the script with the first argument passed to it
+Poster.new.run(ARGF.argv[0])
