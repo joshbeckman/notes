@@ -17,55 +17,56 @@ Post = Struct.new(
 )
 
 class Poster
-  def run(path)
-    post = Post.new
-    journal = JSON.parse(File.read(path + '/Journal.json'))
+  def run(export_path)
+    journal = JSON.parse(File.read(export_path + '/Journal.json'))
     entries = journal["entries"]
-    if entries.length > 1
-      puts "multiple entries found, importing the first one"
+    filenames = entries.map do |entry|
+      import_entry(entry, export_path)
     end
-    entry = entries.first
-    return unless entry
+    exec('nvim -p ' + filenames.join(' '))
+  end
 
+  def import_entry(entry, export_path)
+    post = Post.new
     post.title = entry.dig("text").match(/# (.*)/)[1]
+    puts "Title: #{post.title}"
     post.slug = post.title.gsub(/[^a-zA-Z0-9\s]/, '').gsub(/\s+/, '-').downcase
     post.date = Time.parse(entry.dig("creationDate"))
-    copy_images(entry, path)
+    copy_images(entry, export_path)
     post.body = parse_body(entry)
-    if entry.dig("photos").first
+    if entry.dig("photos")&.first
       post.cover_image_url = '/' + asset_path_for_photo(entry.dig("photos").first)
     end
 
-    puts "Category:"
+    puts "Category: ?"
     post.category = $stdin.gets.chomp
 
     case post.category
     when "movies", "books"
-      puts "Rating:"
+      puts "Rating: ?"
       post.rating = $stdin.gets.chomp.to_i
-      puts "IMDB ID:"
+      puts "IMDB ID: ?"
       post.imdb_id = $stdin.gets.chomp
       post.cover_image_url = movie_cover_image(post.imdb_id)
     end
-    filename = create_file(post)
-    exec('e ' + filename)
+    create_file(post)
   end
 
   def asset_path_for_photo(photo)
     "assets/images/#{photo.dig("identifier")}.#{photo.dig("type")}"
   end
 
-  def copy_images(entry, path)
-    entry.dig("photos").each do |photo|
+  def copy_images(entry, export_path)
+    (entry.dig("photos") || []).each do |photo|
       # copy each photo to the assets/images folder
       # and rename it to its identifier
-      `cp #{path}/photos/#{photo.dig("md5")}.#{photo.dig("type")} #{asset_path_for_photo(photo)}`
+      `cp #{export_path}/photos/#{photo.dig("md5")}.#{photo.dig("type")} #{asset_path_for_photo(photo)}`
     end
   end
 
   def parse_body(entry)
     body = entry.dig("text").gsub(/^# (.*)/, '').strip
-    entry.dig("photos").each do |photo|
+    (entry.dig("photos") || []).each do |photo|
       body.gsub!(/dayone-moment:\/\/#{photo.dig("identifier")}/, '/' + asset_path_for_photo(photo))
     end
     body
