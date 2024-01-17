@@ -514,7 +514,7 @@ table th, table thead, table td { padding: 0.5rem; }
 }
 .column {
   flex: 1;
-  padding: 2em;
+  padding: 1em;
   overflow: auto;
   display: inherit;
   position: relative;
