@@ -1083,7 +1083,7 @@ div.highlighter-rouge.language-go::before {
         filter: invert(100%);
     }
     a:link {
-        color: cornflowerblue;
+        color: #6ca0f2;
     }
     a:visited {
         color: mediumpurple;
