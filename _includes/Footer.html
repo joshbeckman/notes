@@ -14,19 +14,30 @@ function searchInitListener() {
   if (window.location.pathname == "/search/") {
     searchInput.focus();
   }
-  document.onkeyup = function (e) {
-    var evt = window.event || e;
-    let key = evt.keyCode || evt.which;
-    if (e.ctrlKey && key == 83) {
-      if (searchInput) {
-        searchInput.focus();
-      } else {
-          window.location.href = "/search";
+  // debounce this listener
+  (function () {
+    let debounce = false;
+    document.addEventListener("keyup", function (e) {
+      if (debounce) {
+        return;
       }
-    } else if (e.ctrlKey && key == 82) {
-      window.location.href = "/random";
-    }
-  };
+      debounce = true;
+      setTimeout(function () {
+        debounce = false;
+      }, 200);
+      var evt = window.event || e;
+      let key = evt.keyCode || evt.which;
+      if (e.ctrlKey && key == 83) {
+        if (searchInput) {
+          searchInput.focus();
+        } else {
+            window.location.href = "/search";
+        }
+      } else if (e.ctrlKey && key == 82) {
+        window.location.href = "/random";
+      }
+      });
+  })();
 }
 searchInitListener();
 
