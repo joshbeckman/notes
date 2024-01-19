@@ -33,6 +33,7 @@ copyright:
 author:
   name: Josh Beckman
   uri: https://www.joshbeckman.org/about
+  email: josh@joshbeckman.org
 user:
   display: true # setting it to false will remove the header image and bio
                 # Note that user settings come wholesale, it does not have the 
@@ -108,6 +109,13 @@ plugins:
     # - jekyll-tidy
 feed:
   posts_limit: 50
+  categories:
+    - movies
+    - blog
+    - notes
+    - photos
+    - concerts
+    - books
 
 # Disqus Comments
 # disqus:
