@@ -45,7 +45,7 @@ There is only one source of truth for data and control in the system.
 
 More work can be done by the system by adding resources.
 The system does not impede its own expansion.
-The []cost of adding incremental work is _approximately constant_.
+The cost of adding incremental work is _approximately constant_.
 [[Caching layers, horizontal load balancing ::rsn]]
 
 ---
