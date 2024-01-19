@@ -1,7 +1,7 @@
 ---
 toc: true
 title: 'After Traveling: Death Valley'
-cover_image_url: "/assets/images/L1030746.JPG"
+image: "/assets/images/L1030746.JPG"
 date: '2023-04-10 13:11:24'
 tags:
 - travel

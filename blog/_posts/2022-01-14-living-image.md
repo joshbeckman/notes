@@ -2,8 +2,8 @@
 layout: Post
 title: Living image
 toc: true
-cover_image_url: /assets/images/0836771AE998420D823E69C9ECC93273.jpeg
-custom_excerpt: 
+image: /assets/images/0836771AE998420D823E69C9ECC93273.jpeg
+description: 
 tags: folk-creations flora
 ---
 

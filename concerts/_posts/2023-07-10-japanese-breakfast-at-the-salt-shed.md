@@ -1,8 +1,8 @@
 ---
 toc: true
 title: Japanese Breakfast at The Salt Shed
-cover_image_url: "/assets/images/IMG_1473.jpeg"
-custom_excerpt: A great evening seeing Japanese Breakfast perform a second time
+image: "/assets/images/IMG_1473.jpeg"
+description: A great evening seeing Japanese Breakfast perform a second time
 date: '2023-07-10 03:07:00'
 tags:
 - music

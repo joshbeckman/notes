@@ -1,8 +1,8 @@
 ---
 toc: true
 title: Away in California This Week
-cover_image_url: "/assets/images/L1040445.JPG"
-custom_excerpt: I'm away, hiking, scrambling, breathing in California
+image: "/assets/images/L1040445.JPG"
+description: I'm away, hiking, scrambling, breathing in California
 date: '2023-03-25 22:15:56'
 tags:
 - travel

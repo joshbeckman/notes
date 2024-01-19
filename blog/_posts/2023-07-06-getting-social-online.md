@@ -1,8 +1,8 @@
 ---
 toc: true
 title: Getting Social Online
-cover_image_url: "/assets/images/L1050036.jpeg"
-custom_excerpt: Examining my options to become a bit more socially engaged online
+image: "/assets/images/L1050036.jpeg"
+description: Examining my options to become a bit more socially engaged online
 date: '2023-07-06 03:38:20'
 tags:
 - tools

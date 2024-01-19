@@ -1,7 +1,7 @@
 ---
 toc: true
 title: ThreadMeUp Daily Code Reviews
-cover_image_url: "/assets/images/tmu_eng.jpg"
+image: "/assets/images/tmu_eng.jpg"
 date: '2015-04-04 00:00:00'
 redirect_from:
 - "/daily-code-reviews"

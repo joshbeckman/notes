@@ -1,7 +1,7 @@
 ---
 toc: true
 title: First Aid Kit at The Salt Shed
-cover_image_url: "/assets/images/IMG_1530.jpeg"
+image: "/assets/images/IMG_1530.jpeg"
 date: '2023-07-23 01:48:00'
 tags:
 - music

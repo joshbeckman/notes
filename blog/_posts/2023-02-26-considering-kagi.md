@@ -1,8 +1,8 @@
 ---
 toc: true
 title: Considering Kagi
-cover_image_url: "/assets/images/Screenshot-2023-02-19-at-11.16.29-AM.png"
-custom_excerpt: Kagi tells me I’ve used its search around 200 times in the last month
+image: "/assets/images/Screenshot-2023-02-19-at-11.16.29-AM.png"
+description: Kagi tells me I’ve used its search around 200 times in the last month
   that I’ve been paying for it. What are my impressions? Do I think it’s worth paying
   $10/month to use its search instead of one of the big search engines?
 date: '2023-02-26 17:32:43'

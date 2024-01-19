@@ -1,7 +1,7 @@
 ---
 toc: true
 title: Kandy Muse and Jimbo at Roscoe's
-cover_image_url: "/assets/images/IMG_1489.jpeg"
+image: "/assets/images/IMG_1489.jpeg"
 date: '2023-07-15 18:46:00'
 tags:
 - music

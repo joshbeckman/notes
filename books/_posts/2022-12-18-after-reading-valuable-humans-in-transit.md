@@ -1,8 +1,8 @@
 ---
 toc: true
 title: 'After Reading: Valuable Humans in Transit'
-cover_image_url: "/assets/images/IMG_0164.jpeg"
-custom_excerpt: On reading the latest paperback by my favorite internet fiction writer.
+image: "/assets/images/IMG_0164.jpeg"
+description: On reading the latest paperback by my favorite internet fiction writer.
 date: '2022-12-18 19:37:22'
 tags:
 - fiction

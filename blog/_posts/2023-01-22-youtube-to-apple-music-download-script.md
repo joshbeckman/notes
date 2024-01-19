@@ -1,8 +1,8 @@
 ---
 toc: true
 title: YouTube to Apple Music Download Script
-cover_image_url: "/assets/images/L1030087.jpeg"
-custom_excerpt: Sweep your favorite YouTube concerts into your Apple Music library
+image: "/assets/images/L1030087.jpeg"
+description: Sweep your favorite YouTube concerts into your Apple Music library
 date: '2023-01-22 17:57:12'
 tags:
 - code-snippets

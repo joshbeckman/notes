@@ -1,7 +1,7 @@
 ---
 toc: true
 title: Ergodox Moonlander Week 3
-cover_image_url: "/assets/images/3958639A-766E-4922-8F70-5C0F3CED4391.jpeg"
+image: "/assets/images/3958639A-766E-4922-8F70-5C0F3CED4391.jpeg"
 date: '2020-12-17 00:00:00'
 tags:
 - tools

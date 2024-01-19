@@ -5,13 +5,13 @@
   <div class="row">
     <div class="column accent centered">
       <header class="content">
-        {% if page.cover_image_url %}
-          <img class="cover-image" src="{{ page.cover_image_url }}" alt="{{ page.title }}">
+        {% if page.image %}
+          <img class="cover-image" src="{{ page.image }}" alt="{{ page.title }}">
         {% else %}
           {%- include Masthead.html -%}
         {% endif %}
-      {%- if page.custom_excerpt -%}
-          <p class="custom_excerpt">{{page.custom_excerpt}}</p>
+      {%- if page.description -%}
+          <p class="description">{{page.description}}</p>
       {%- endif -%}
       </header>
       <div id="notepad" contenteditable="true"></div>

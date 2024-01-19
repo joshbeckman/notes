@@ -1,4 +1,4 @@
-<div class="post-list-item" style="{% if include.post.cover_image_url %}background-image: url({{include.post.cover_image_url}}){% endif %}">
+<div class="post-list-item" style="{% if include.post.image %}background-image: url({{include.post.image}}){% endif %}">
   <div class="post-list-item-details">
     <h3 id="">
       <a href="{{include.post.url}}">
@@ -10,8 +10,8 @@
       </a>
     </h3>
     <p>
-      {% if include.post.custom_excerpt %}
-        {{ include.post.custom_excerpt }}
+      {% if include.post.description %}
+        {{ include.post.description }}
       {% elsif include.post.hide_title %}
         {% if include.post.author %}
         from {{ include.post.author }}

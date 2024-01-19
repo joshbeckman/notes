@@ -1,8 +1,8 @@
 ---
 toc: true
 title: 'A Successful Rewrite: Micro-services to Monolith'
-cover_image_url: "/assets/images/services_20170409-1.png"
-custom_excerpt: I was invited onto the Never Rewrite podcast last week to talk about...
+image: "/assets/images/services_20170409-1.png"
+description: I was invited onto the Never Rewrite podcast last week to talk about...
   when and why I think you should rewrite software.
 date: '2023-06-25 15:36:18'
 tags:

@@ -2,7 +2,7 @@
 layout: Post
 title: Bodies Bodies Bodies
 toc: true
-cover_image_url: https://m.media-amazon.com/images/M/MV5BYTA2ODg5ZjgtOTU2My00MzFkLWI0NzMtZmQ5MmRhMWU1NzhlXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_SX300.jpg
+image: https://m.media-amazon.com/images/M/MV5BYTA2ODg5ZjgtOTU2My00MzFkLWI0NzMtZmQ5MmRhMWU1NzhlXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_SX300.jpg
 rating: 2
 imdb_id: tt8110652
 tags:

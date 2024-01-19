@@ -1,7 +1,7 @@
 ---
 toc: true
 title: A Recommendation of Nevzat Cubukcu
-cover_image_url: "/assets/images/IMG_0465.jpg"
+image: "/assets/images/IMG_0465.jpg"
 date: '2018-02-25 00:00:00'
 tags:
 - officeluv

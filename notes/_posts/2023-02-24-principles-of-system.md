@@ -4,7 +4,7 @@ tags: system-design scalability observability safety
 author: Josh Beckman
 book: joshbeckman
 book_title: "Josh's Thoughts"
-cover_image_url: /assets/img/profile.png
+image: /assets/img/profile.png
 favicon_url: /assets/img/profile.png
 source_emoji: 🌐
 toc: true

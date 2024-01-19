@@ -1,7 +1,7 @@
 ---
 toc: true
 title: To Pick a Nectarine
-cover_image_url: "/assets/images/Screenshot-2023-07-30-at-9.14.53-PM-2.png"
+image: "/assets/images/Screenshot-2023-07-30-at-9.14.53-PM-2.png"
 date: '2023-07-31 22:56:20'
 tags:
 - gardening

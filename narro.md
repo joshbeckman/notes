@@ -2,7 +2,7 @@
 layout: Page
 toc: true
 title: Narro
-cover_image_url: "/assets/images/apps.png"
+image: "/assets/images/apps.png"
 date: '2023-01-30 04:17:14'
 permalink: /narro/
 ---

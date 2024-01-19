@@ -15,13 +15,13 @@
 <meta content="article" property="og:type">
 {%- endif -%}
 <meta content="{{ site.url }}{{ page.url }}" property="og:url">
-{%- if page.custom_excerpt -%}
-<meta content="{{ page.custom_excerpt}}" property="og:description">
+{%- if page.description -%}
+<meta content="{{ page.description}}" property="og:description">
 {%- else -%}
 <meta content="{{ page.content | strip_html | strip | escape | truncate: 248 }}" property="og:description">
 {%- endif -%}
-{%- if page.cover_image_url -%}
-<meta property="og:image" content="{{page.cover_image_url}}">
+{%- if page.image -%}
+<meta property="og:image" content="{{page.image}}">
 {%- else -%}
 <meta property="og:image" content="{{site.url}}/assets/img/profile.png">
 {%- endif -%}

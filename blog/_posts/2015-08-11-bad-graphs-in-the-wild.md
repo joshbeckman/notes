@@ -2,7 +2,7 @@
 toc: true
 title: Bad Graphs in the Wild
 featured: true
-cover_image_url: "/assets/images/1.jpg"
+image: "/assets/images/1.jpg"
 date: '2015-08-11 00:00:00'
 tags:
 - data

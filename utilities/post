@@ -8,7 +8,7 @@ require 'uri'
 Post = Struct.new(
   :body,
   :category,
-  :cover_image_url,
+  :image,
   :date,
   :imdb_id,
   :rating,
@@ -35,7 +35,7 @@ class Poster
     copy_images(entry, export_path)
     post.body = parse_body(entry)
     if entry.dig("photos")&.first
-      post.cover_image_url = '/' + asset_path_for_photo(entry.dig("photos").first)
+      post.image = '/' + asset_path_for_photo(entry.dig("photos").first)
     end
 
     puts "Category: ?"
@@ -47,7 +47,7 @@ class Poster
       post.rating = $stdin.gets.chomp.to_i
       puts "IMDB ID: ?"
       post.imdb_id = $stdin.gets.chomp
-      post.cover_image_url = movie_cover_image(post.imdb_id)
+      post.image = movie_cover_image(post.imdb_id)
     end
     create_file(post)
   end
@@ -78,16 +78,17 @@ class Poster
     File.open(filename, 'w') do |file|
       file.puts "---"
       file.puts "layout: Post"
+      file.puts "date: #{post.date.strftime("%Y-%m-%d %H:%M:%S %z")}"
       file.puts "title: #{post.title}"
       file.puts "toc: true"
-      file.puts "cover_image_url: #{post.cover_image_url}"
-      file.puts "custom_excerpt: "
       if post.rating
         file.puts "rating: #{post.rating}"
       end
       if post.imdb_id
         file.puts "imdb_id: #{post.imdb_id}"
       end
+      file.puts "image: #{post.image}"
+      file.puts "description: "
       file.puts "tags: "
       file.puts "---"
       file.puts ""

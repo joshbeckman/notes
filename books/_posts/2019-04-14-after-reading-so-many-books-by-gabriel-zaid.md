@@ -1,7 +1,7 @@
 ---
 toc: true
 title: 'After Reading: So Many Books by Gabriel Zaid'
-cover_image_url: "/assets/images/C5FA4EE6-58A7-4117-8699-5AB7E5F56CED.jpeg"
+image: "/assets/images/C5FA4EE6-58A7-4117-8699-5AB7E5F56CED.jpeg"
 date: '2019-04-14 05:00:00'
 rating: 3
 tags:

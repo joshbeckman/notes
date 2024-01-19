@@ -1,8 +1,8 @@
 ---
 toc: true
 title: Grapetooth at West Fest
-cover_image_url: "/assets/images/IMG_1443.jpeg"
-custom_excerpt: Grapetooth was a fun, tongue in cheek show on a perfect sticky summer night
+image: "/assets/images/IMG_1443.jpeg"
+description: Grapetooth was a fun, tongue in cheek show on a perfect sticky summer night
 date: '2023-07-08 03:11:00'
 tags:
 - music

@@ -1,7 +1,7 @@
 ---
 toc: true
 title: 'After Reading: A Philosophy of Software Design'
-cover_image_url: "/assets/images/IMG_1500.jpeg"
+image: "/assets/images/IMG_1500.jpeg"
 date: '2023-07-16 19:45:40'
 tags:
 - books

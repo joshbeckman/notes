@@ -1,8 +1,8 @@
 ---
 toc: true
 title: 'After Re-reading: The Systems Bible'
-cover_image_url: "/assets/images/IMG_0140.jpeg"
-custom_excerpt: On re-reading one of my earliest introductions to software design.
+image: "/assets/images/IMG_0140.jpeg"
+description: On re-reading one of my earliest introductions to software design.
 date: '2022-12-10 21:00:03'
 tags:
 - system-design

@@ -2,8 +2,8 @@
 layout: Post
 title: Journaling time
 toc: true
-cover_image_url: 
-custom_excerpt: 
+image: 
+description: 
 tags: note-taking meditation
 ---
 

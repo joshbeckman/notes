@@ -1,8 +1,8 @@
 ---
 toc: true
 title: 'After Reading: The Good Citizen'
-cover_image_url: "/assets/images/L1050179.JPG"
-custom_excerpt: A woven history of violated and reclaimed citizenship in the United
+image: "/assets/images/L1050179.JPG"
+description: A woven history of violated and reclaimed citizenship in the United
   States
 date: '2023-07-23 18:13:33'
 tags:

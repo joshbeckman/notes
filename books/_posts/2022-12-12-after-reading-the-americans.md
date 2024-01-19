@@ -1,8 +1,8 @@
 ---
 toc: true
 title: 'After Reading: The Americans'
-cover_image_url: "/assets/images/IMG_0154.jpeg"
-custom_excerpt: On reading the street photography touchstone way past when I should
+image: "/assets/images/IMG_0154.jpeg"
+description: On reading the street photography touchstone way past when I should
   have.
 date: '2022-12-12 04:29:10'
 tags:

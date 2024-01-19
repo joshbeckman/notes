@@ -1,8 +1,8 @@
 ---
 toc: true
 title: The Wedding of Bill and Emily
-cover_image_url: "/assets/images/7B42AD30-B507-40D0-94CF-8EDCA1F75629.jpeg"
-custom_excerpt: We had a blast at our friends’ wedding.
+image: "/assets/images/7B42AD30-B507-40D0-94CF-8EDCA1F75629.jpeg"
+description: We had a blast at our friends’ wedding.
 date: '2022-04-10 03:33:00'
 redirect_from:
 - "/bemily-wedding"

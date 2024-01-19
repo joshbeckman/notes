@@ -2,8 +2,8 @@
 toc: true
 title: Who and Why and How I'm Funding
 featured: true
-cover_image_url: "/assets/images/L1020944.jpeg"
-custom_excerpt: A breakdown of how I'm funding individuals in 2023, who they are,
+image: "/assets/images/L1020944.jpeg"
+description: A breakdown of how I'm funding individuals in 2023, who they are,
   and why I think individual funding is important.
 date: '2023-02-08 22:39:26'
 tags:

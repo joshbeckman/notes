@@ -1,8 +1,8 @@
 ---
 toc: true
 title: Good First Issues Are Gifts
-cover_image_url: "/assets/images/Screenshot-2023-02-26-at-1.40.40-PM.png"
-custom_excerpt: Making sure each open project I maintain has at least one 'Good First
+image: "/assets/images/Screenshot-2023-02-26-at-1.40.40-PM.png"
+description: Making sure each open project I maintain has at least one 'Good First
   Issue' available for newcomers to improve the project
 date: '2023-02-26 20:56:55'
 tags:

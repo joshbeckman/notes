@@ -2,7 +2,7 @@
 toc: true
 title: Spam Accounts in 2022
 featured: true
-cover_image_url: "/assets/images/87863FBF-65C7-4DC9-846F-7D760C7BF1D1.jpeg"
+image: "/assets/images/87863FBF-65C7-4DC9-846F-7D760C7BF1D1.jpeg"
 date: '2022-02-18 16:49:43'
 redirect_from:
 - "/what-spam-accounts-look-like-in-2022"

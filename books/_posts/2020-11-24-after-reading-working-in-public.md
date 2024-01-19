@@ -1,7 +1,7 @@
 ---
 toc: true
 title: 'After Reading: Working in Public'
-cover_image_url: "/assets/images/E0B3D1A6-2CFD-4AED-B1B4-9D871A7FAA43.jpeg"
+image: "/assets/images/E0B3D1A6-2CFD-4AED-B1B4-9D871A7FAA43.jpeg"
 date: '2020-11-24 06:00:00'
 rating: 3
 tags:

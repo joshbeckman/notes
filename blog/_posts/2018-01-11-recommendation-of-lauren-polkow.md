@@ -1,7 +1,7 @@
 ---
 toc: true
 title: A Recommendation of Lauren Polkow
-cover_image_url: "/assets/images/IMG_0024.jpg"
+image: "/assets/images/IMG_0024.jpg"
 date: '2018-01-11 00:00:00'
 tags:
 - officeluv

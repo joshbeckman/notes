@@ -1,8 +1,8 @@
 ---
 toc: true
 title: 'After Reading: High Output Management'
-cover_image_url: "/assets/images/IMG_0124.jpeg"
-custom_excerpt: In reading the classic management book of the '90s
+image: "/assets/images/IMG_0124.jpeg"
+description: In reading the classic management book of the '90s
 date: '2022-11-30 05:02:02'
 tags:
 - management

@@ -1,7 +1,7 @@
 ---
 toc: true
 title: Desk, September 2014
-cover_image_url: "/assets/images/283B253A-704F-47A2-BE61-2483C81B3AF2.jpeg"
+image: "/assets/images/283B253A-704F-47A2-BE61-2483C81B3AF2.jpeg"
 date: '2014-09-17 05:00:00'
 tags:
 - workspaces

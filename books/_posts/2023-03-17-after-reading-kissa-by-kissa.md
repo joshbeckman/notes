@@ -1,8 +1,8 @@
 ---
 toc: true
 title: 'After Reading: Kissa By Kissa'
-cover_image_url: "/assets/images/6FAB5F47-4C9D-42B7-B1F7-CC971832EDEE.jpeg"
-custom_excerpt: Paging through Craig's beautifully tactile travel photobook
+image: "/assets/images/6FAB5F47-4C9D-42B7-B1F7-CC971832EDEE.jpeg"
+description: Paging through Craig's beautifully tactile travel photobook
 date: '2023-03-17 04:59:01'
 tags:
 - photography

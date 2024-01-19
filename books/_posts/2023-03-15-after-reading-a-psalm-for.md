@@ -1,8 +1,8 @@
 ---
 toc: true
 title: 'After Reading: A Psalm For The Wild-Built'
-cover_image_url: "/assets/images/IMG_0521.jpeg"
-custom_excerpt: A calm walk through a quiet forest flickering with futuristic light
+image: "/assets/images/IMG_0521.jpeg"
+description: A calm walk through a quiet forest flickering with futuristic light
 date: '2023-03-15 03:04:26'
 tags:
 - fiction

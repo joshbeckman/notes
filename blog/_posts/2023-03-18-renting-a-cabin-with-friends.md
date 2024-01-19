@@ -1,8 +1,8 @@
 ---
 toc: true
 title: Renting A Cabin With Friends
-cover_image_url: "/assets/images/L1030510.jpeg"
-custom_excerpt: Highly recommended. Doesn't matter where you go.
+image: "/assets/images/L1030510.jpeg"
+description: Highly recommended. Doesn't matter where you go.
 date: '2023-03-18 19:59:16'
 tags:
 - travel

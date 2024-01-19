@@ -1,7 +1,7 @@
 ---
 toc: true
 title: Beyoncé at Soldier Field
-cover_image_url: "/assets/images/IMG_1547.jpeg"
+image: "/assets/images/IMG_1547.jpeg"
 date: '2023-07-24 04:07:00'
 tags:
 - music

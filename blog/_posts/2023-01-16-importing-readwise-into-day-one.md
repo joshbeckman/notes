@@ -1,7 +1,7 @@
 ---
 toc: true
 title: Importing Readwise into Day One
-custom_excerpt: Bringing my media log highlights into my journal app
+description: Bringing my media log highlights into my journal app
 date: '2023-01-16 04:56:39'
 tags:
 - readwise-ruby

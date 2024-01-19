@@ -2,7 +2,7 @@
 toc: true
 title: On Writing Great Product Release Emails
 featured: true
-cover_image_url: "/assets/images/88FB6267-145F-436A-B547-CC195F476DC1.jpeg"
+image: "/assets/images/88FB6267-145F-436A-B547-CC195F476DC1.jpeg"
 date: '2020-05-24 00:00:00'
 redirect_from:
 - "/writing-great-product-release-emails"

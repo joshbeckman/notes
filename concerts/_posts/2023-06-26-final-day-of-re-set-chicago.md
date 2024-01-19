@@ -1,8 +1,8 @@
 ---
 toc: true
 title: Final Day of Re:SET Chicago
-cover_image_url: "/assets/images/IMG_1375.jpeg"
-custom_excerpt: LCD Soundsystem, Jaime XX, and Idles at the last day of the first
+image: "/assets/images/IMG_1375.jpeg"
+description: LCD Soundsystem, Jaime XX, and Idles at the last day of the first
   year of this festival
 date: '2023-06-26 03:23:00'
 tags:

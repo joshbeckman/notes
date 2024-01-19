@@ -2,8 +2,8 @@
 layout: Post
 title: Thinking about Ghost as a website platform
 toc: true
-cover_image_url: /assets/images/82922E934EF64D1CA063B5A1945A586E.png
-custom_excerpt: Dumping thoughts about migrating from Jekyll to Ghost
+image: /assets/images/82922E934EF64D1CA063B5A1945A586E.png
+description: Dumping thoughts about migrating from Jekyll to Ghost
 tags: publishing
 ---
 

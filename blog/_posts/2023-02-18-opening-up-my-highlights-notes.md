@@ -1,8 +1,8 @@
 ---
 toc: true
 title: Opening Up My Notes Garden
-cover_image_url: "/assets/images/Screenshot-2023-02-18-at-12.21.40-PM.png"
-custom_excerpt: I made a site to browse and link to my highlights and notes from around
+image: "/assets/images/Screenshot-2023-02-18-at-12.21.40-PM.png"
+description: I made a site to browse and link to my highlights and notes from around
   the web. Feel free to browse around.
 date: '2023-02-18 18:46:40'
 tags:

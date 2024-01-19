@@ -1,7 +1,7 @@
 ---
 toc: true
 title: Smog in Chicago
-cover_image_url: "/assets/images/L1050064.jpeg"
+image: "/assets/images/L1050064.jpeg"
 date: '2023-06-28 04:02:34'
 tags:
 - gardening

@@ -1,8 +1,8 @@
 ---
 toc: true
 title: Work Trip to Vancouver
-cover_image_url: "/assets/images/FD003BCD-B395-42BB-85C4-705DE3DD4DF0.jpeg"
-custom_excerpt: Our team went to a Shopify Burst in Vancouver in the beginning of
+image: "/assets/images/FD003BCD-B395-42BB-85C4-705DE3DD4DF0.jpeg"
+description: Our team went to a Shopify Burst in Vancouver in the beginning of
   June.
 date: '2022-06-11 03:26:00'
 tags:

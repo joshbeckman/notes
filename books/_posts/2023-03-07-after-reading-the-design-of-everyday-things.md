@@ -1,8 +1,8 @@
 ---
 toc: true
 title: 'After Reading: The Design of Everyday Things'
-cover_image_url: "/assets/images/IMG_0459.jpeg"
-custom_excerpt: Notes after finishing the classic 20th century design book.
+image: "/assets/images/IMG_0459.jpeg"
+description: Notes after finishing the classic 20th century design book.
 date: '2023-03-07 13:55:19'
 tags:
 - interfaces

@@ -1,8 +1,8 @@
 ---
 toc: true
 title: Miami and Key West
-cover_image_url: "/assets/images/D9242631-E3E2-437A-8988-63815B7DD74C.jpeg"
-custom_excerpt: Marybeth, Paul, Dan, and I traveled down the keys and back to MIA.
+image: "/assets/images/D9242631-E3E2-437A-8988-63815B7DD74C.jpeg"
+description: Marybeth, Paul, Dan, and I traveled down the keys and back to MIA.
 date: '2022-03-30 03:11:00'
 redirect_from:
 - "/miami-and-key-west-2022"

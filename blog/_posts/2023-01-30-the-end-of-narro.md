@@ -1,8 +1,8 @@
 ---
 toc: true
 title: The End of Narro
-cover_image_url: "/assets/images/Screen-Shot-2023-01-22-at-10.54.43-copy.jpg"
-custom_excerpt: The timeline and reasoning behind why I shut down Narro, the best
+image: "/assets/images/Screen-Shot-2023-01-22-at-10.54.43-copy.jpg"
+description: The timeline and reasoning behind why I shut down Narro, the best
   way to listen to the internet.
 date: '2023-01-30 14:01:58'
 tags:

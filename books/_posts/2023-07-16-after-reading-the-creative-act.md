@@ -1,8 +1,8 @@
 ---
 toc: true
 title: 'After Reading: The Creative Act'
-cover_image_url: "/assets/images/IMG_0836.jpeg"
-custom_excerpt: 'A call to embrace the creative process: the continuous cycle of sourcing,
+image: "/assets/images/IMG_0836.jpeg"
+description: 'A call to embrace the creative process: the continuous cycle of sourcing,
   crafting, and sharing.'
 date: '2023-07-16 22:45:25'
 tags:
