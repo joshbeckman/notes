@@ -929,6 +929,7 @@ div.highlighter-rouge::before {
 div.highlighter-rouge.language-md::before {
   content: "Markdown";
 }
+div.highlighter-rouge.language-js::before,
 div.highlighter-rouge.language-javascript::before {
   content: "JavaScript";
 }
