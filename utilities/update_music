@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require './utilities/apple_music_library_parser'
+require 'debug'
+
+parser = AppleMusicLibraryParser.new('Library.xml')
+debugger

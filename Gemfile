@@ -26,5 +26,6 @@ gem "jekyll-sass-converter", "~> 2.0"
 gem 'kramdown-math-katex'
 gem 'readwise'
 gem 'webmention'
+gem 'plist'
 
 gem "jekyll-mastodon_webfinger", "~> 1.0"
