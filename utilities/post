@@ -28,7 +28,14 @@ class Poster
 
   def import_entry(entry, export_path)
     post = Post.new
-    post.title = entry.dig("text").match(/# (.*)/)[1]
+    title_match = entry.dig("text").match(/# (.*)/)
+    if title_match
+      post.title = title_match[1]
+    else
+      puts entry.dig("text")
+      puts "Title: ?"
+      post.title = $stdin.gets.chomp
+    end
     puts "Title: #{post.title}"
     post.slug = post.title.gsub(/[^a-zA-Z0-9\s]/, '').gsub(/\s+/, '-').downcase
     post.date = Time.parse(entry.dig("creationDate"))
