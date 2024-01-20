@@ -1,1 +1,0 @@
-./utilities/import && git add -A && git commit -m "new(usr): Import" && git push origin
