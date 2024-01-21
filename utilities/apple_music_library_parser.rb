@@ -68,10 +68,20 @@ class AppleMusicLibraryParser
     @artists.select(&:loved)
   end
 
-  def recently_played_albums
+  def recently_loved_tracks(limit: 10)
+    loved_tracks.sort_by { |t| t.date_added || DateTime.now }.reverse.take(limit)
+  end
+
+  def recently_loved_albums(limit: 10)
+    loved_tracks.sort_by { |t| t.date_added || DateTime.now }.reverse.map(&:album).uniq.take(limit).map do |name|
+      @albums.find { |a| a.name == name }
+    end
+  end
+
+  def recently_played_albums(limit: 10)
     recently_played_playlist.tracks.group_by(&:album).map do |album, tracks|
       parse_album(album, tracks)
-    end
+    end.sort_by { |a| a.play_date_utc || DateTime.new }.reverse.take(limit)
   end
 
   def forgotten_loved_tracks(limit: 10)

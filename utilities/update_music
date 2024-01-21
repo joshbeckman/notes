@@ -1,7 +1,71 @@
 #!/usr/bin/env ruby
 
 require './utilities/apple_music_library_parser'
-require 'debug'
 
 parser = AppleMusicLibraryParser.new('Library.xml')
-debugger
+
+file = File.open('music.md', 'w')
+file.puts '---'
+file.puts 'layout: Page'
+file.puts 'title: Music Listening'
+file.puts 'toc: true'
+file.puts 'categories: music'
+file.puts 'emoji: 🎶'
+file.puts '---'
+file.puts 'I generate this page from my Apple Music library using a script I wrote.'
+file.puts
+file.puts "Last updated: #{DateTime.now.strftime('%Y-%m-%d')}"
+file.puts
+file.puts '## Top Played Tracks'
+file.puts 'This is a list of the top played tracks in my library.'
+file.puts
+file.puts '| Artist | Album | Track | Play Count |'
+file.puts '| ------ | ----- | ----- | ---------- |'
+parser.top_played_tracks.each do |track|
+  file.puts "| #{track.artist} | #{track.album} | #{track.name} | #{track.play_count} |"
+end
+file.puts
+file.puts '## Top Played Albums'
+file.puts 'This is a list of the top played albums in my library (by ratio of song plays to songs in the album).'
+file.puts
+file.puts '| Artist | Album | Song Play Ratio |'
+file.puts '| ------ | ----- | --------------- |'
+parser.top_played_albums.each do |album|
+  file.puts "| #{album.artist} | #{album.name} | #{album.song_play_ratio.round} |"
+end
+file.puts
+file.puts '## Top Played Artists'
+file.puts 'This is a list of the top played artists in my library (by song plays).'
+file.puts
+file.puts '| Artist | Song Play Count | Song Play Ratio |'
+file.puts '| ------ | -------------- | --------------- |'
+parser.top_played_artists.each do |artist|
+  file.puts "| #{artist.name} | #{artist.song_play_count} | #{artist.song_play_ratio.round} |"
+end
+file.puts
+file.puts '## Recently Played Albums'
+file.puts 'This is a list of the albums I\'ve played recently.'
+file.puts
+file.puts '| Artist | Album | Date Added |'
+file.puts '| ------ | ----- | --------- |'
+parser.recently_played_albums.each do |album|
+  file.puts "| #{album.artist} | #{album.name} | #{album.date_added&.strftime('%Y-%m-%d') } |"
+end
+file.puts
+file.puts '## Recently Loved Albums'
+file.puts 'This is a list of the albums I\'ve loved recently.'
+file.puts
+file.puts '| Artist | Album | Date Added |'
+file.puts '| ------ | ----- | --------- |'
+parser.recently_loved_albums.each do |album|
+  file.puts "| #{album.artist} | #{album.name} | #{album.date_added&.strftime('%Y-%m-%d')} |"
+end
+file.puts
+file.puts '## Forgotten Loved Tracks'
+file.puts 'This is a list of the tracks I\'ve loved but haven\'t played in a while. I should listen to them again.'
+file.puts
+file.puts '| Artist | Album | Track | Last Played |'
+file.puts '| ------ | ----- | ----- | ---------- |'
+parser.forgotten_loved_tracks.each do |track|
+  file.puts "| #{track.artist} | #{track.album} | #{track.name} | #{track.play_date_utc&.strftime('%Y-%m-%d')} |"
+end
