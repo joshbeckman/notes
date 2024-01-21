@@ -1,6 +1,7 @@
 ---
 layout: Page
 title: Reading
+emoji: 📚
 categories:
 - books
 ---

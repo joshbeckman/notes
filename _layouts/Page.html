@@ -7,6 +7,8 @@
       <header class="content">
         {% if page.image %}
           <img class="cover-image" src="{{ page.image }}" alt="{{ page.title }}">
+        {% elsif page.emoji %}
+          <div class="cover-image-emoji">{{ page.emoji }}</div>
         {% else %}
           {%- include Masthead.html -%}
         {% endif %}

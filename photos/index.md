@@ -1,6 +1,7 @@
 ---
 layout: Page
 title: Photographing
+emoji: 🏞️
 categories:
 - photos
 ---

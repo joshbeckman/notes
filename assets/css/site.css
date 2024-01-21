@@ -602,6 +602,9 @@ article .footer ul li {
   font-size: larger;
   font-weight: bolder;
 }
+.cover-image-emoji {
+  font-size: 100px;
+}
 .masthead-home-link {
   text-decoration: none;
   background-image: none;

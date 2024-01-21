@@ -1,6 +1,7 @@
 ---
 layout: Page
 title: Notes
+emoji: 📝
 categories:
 - notes
 ---

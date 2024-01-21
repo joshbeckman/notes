@@ -1,6 +1,7 @@
 ---
 layout: Page
 title: Watching
+emoji: 🎬
 categories:
 - movies
 ---

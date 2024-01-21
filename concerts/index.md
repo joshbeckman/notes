@@ -1,6 +1,7 @@
 ---
 layout: Page
 title: Attending
+emoji: 🎟
 categories:
 - Concerts
 ---
