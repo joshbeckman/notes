@@ -12,7 +12,7 @@ file.puts 'toc: true'
 file.puts 'categories: music'
 file.puts 'emoji: 🎶'
 file.puts '---'
-file.puts 'I generate this page from my Apple Music library using a script I wrote.'
+file.puts 'I generate this page from my Apple Music library using [a script I wrote](/blog/pulling-fun-insights-out-of-my-apple-music-library). Feel free to use it, too!'
 file.puts
 file.puts "Last updated: #{DateTime.now.strftime('%Y-%m-%d')}"
 file.puts

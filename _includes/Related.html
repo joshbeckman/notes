@@ -1,12 +1,3 @@
-{%- comment -%}
-*
-* This file contains the markup for the 'Related' posts that you see at the end
-* of all blogposts. It contains the markup to create a small of all the posts
-* that are related by tag.
-*
-{%- endcomment -%}
-
-{%- if page.content-type == "post" -%}
   {%- assign sameTagCount = 0 -%}
   {%- assign minCommonTags =  1 -%}
   {%- for post in site.posts -%}
@@ -64,4 +55,3 @@
       </p>
     </section>
   {%- endif -%}
-{%- endif -%}

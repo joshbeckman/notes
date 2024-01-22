@@ -5,7 +5,7 @@ toc: true
 categories: music
 emoji: 🎶
 ---
-I generate this page from my Apple Music library using a script I wrote.
+I generate this page from my Apple Music library using [a script I wrote](/blog/pulling-fun-insights-out-of-my-apple-music-library).
 
 Last updated: 2024-01-21
 
