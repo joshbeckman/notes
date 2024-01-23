@@ -532,15 +532,6 @@ table th, table thead, table td { padding: 0.5rem; }
   padding: 100px 0px;
   margin: auto;
 }
-#notepad {
-  position: absolute;
-  top: 2em;
-  height: calc(100% - 4em);
-  width: calc(100% - 4em);
-  text-align: left;
-  caret-color: red;
-  font-family: Comic Sans MS;
-}
 
 article blockquote {
   margin-left: auto;
