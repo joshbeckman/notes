@@ -1,8 +1,12 @@
   {%- assign sameTagCount = 0 -%}
+  {%- assign related_page_book_id = page.book -%}
+  {% if related_page_book_id == nil %}
+    {%- assign related_page_book_id = page.title -%}
+  {% endif %
   {%- assign minCommonTags =  1 -%}
   {%- for post in site.posts -%}
     {%- for tag in post.tags -%}
-      {%- unless post.book == page.book -%}
+      {%- unless post.book == related_page_book_id -%}
         {%- if post.url != page.url -%}
           {%- if page.tags contains tag -%}
             {%- unless post.content contains page.title -%}
@@ -29,7 +33,7 @@
       {%- for post in site.posts -%}
           {%- assign sameTagCount = 0 -%}
           {%- for tag in post.tags -%}
-            {%- unless post.book == page.book -%}
+            {%- unless post.book == related_page_book_id -%}
               {%- if post.url != page.url -%}
                 {%- if page.tags contains tag -%}
                   {%- unless post.content contains page.title -%}

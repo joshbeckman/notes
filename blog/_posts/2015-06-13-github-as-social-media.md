@@ -2,6 +2,7 @@
 toc: true
 title: GitHub as Social Media
 date: '2015-06-13 00:00:00'
+tags: social-networks
 redirect_from:
 - "/github-as-social-media"
 - "/github-as-social-media/"
