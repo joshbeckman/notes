@@ -42,7 +42,7 @@ function searchInitListener() {
 searchInitListener();
 
 function prepareImagesForLightbox() {
-    let images = document.querySelectorAll('article section img');
+    let images = document.querySelectorAll('article section img, header img');
     for (let i = 0; i < images.length; i++) {
         if (images[i].classList.contains('no-lightbox')) {
             continue;
@@ -57,7 +57,7 @@ function prepareImagesForLightbox() {
         a.appendChild(img);
     }
     var lightbox = new PhotoSwipeLightbox({
-        gallery: 'article section',
+        gallery: 'article section, header',
         children: 'a.ps',
         pswpModule: PhotoSwipe
     });
