@@ -20,12 +20,13 @@ The rules:
 - Everyone is randomly assigned a partner
 - Everyone goes to the liquor cabinet and chooses a bottle of something that they think compliments their partner and explains why
 - That person then has to find/invent a cocktail recipe using that ingredient, and makes enough portions for everyone to try
+
 Then, after/as we taste them all, we judge a winner based on voting/criteria:
 - Efficiency
 - Presentation
 - Taste
 - Context
-- It factor
+- "It" factor
 
 Dan was given a rare sherry by Marybeth\. He made some passion fruit sherry drink I can’t remember\. I think based on a Lost Lake\.\.\.
 
