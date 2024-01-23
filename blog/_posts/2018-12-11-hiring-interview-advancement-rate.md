@@ -4,6 +4,7 @@ title: Hiring Retrospective - Advancement Rate
 date: '2018-12-11 00:00:00'
 tags:
 - hiring
+- officeluv
 redirect_from:
 - "/hiring-interview-advancement-rate"
 - "/hiring-interview-advancement-rate/"

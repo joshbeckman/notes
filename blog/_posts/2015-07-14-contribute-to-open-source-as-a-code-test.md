@@ -4,6 +4,7 @@ title: Contribute to Open Source as a Code Test
 date: '2015-07-14 00:00:00'
 tags:
 - hiring
+- threadmeup
 redirect_from:
 - "/contribute-to-open-source-as-a-code-test"
 - "/contribute-to-open-source-as-a-code-test/"

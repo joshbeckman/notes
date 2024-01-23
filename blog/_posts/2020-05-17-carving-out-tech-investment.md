@@ -2,6 +2,9 @@
 toc: true
 title: Carving Tech Investment Out of Tech Debt
 date: '2020-05-17 00:00:00'
+tags:
+- software-engineering
+- maintenance
 redirect_from:
 - "/carving-out-tech-investment"
 - "/carving-out-tech-investment/"

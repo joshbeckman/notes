@@ -4,6 +4,7 @@ title: Qualities of a Smooth Queueing System
 date: '2020-05-06 00:00:00'
 tags:
 - infrastructure
+- queues
 redirect_from:
 - "/qualities-of-a-smooth-queueing-system"
 - "/qualities-of-a-smooth-queueing-system/"

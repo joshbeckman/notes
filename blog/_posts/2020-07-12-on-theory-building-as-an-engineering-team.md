@@ -2,6 +2,10 @@
 toc: true
 title: Documenting Theory Building as An Engineering Team
 date: '2020-07-12 00:00:00'
+tags:
+- writing
+- maintenance
+- software-engineering
 redirect_from:
 - "/on-theory-building-as-an-engineering-team"
 - "/on-theory-building-as-an-engineering-team/"

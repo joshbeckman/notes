@@ -2,6 +2,8 @@
 toc: true
 title: Cubic Mapping of Text
 date: '2015-07-12 00:00:00'
+tags:
+- interfaces
 redirect_from:
 - "/cubic-mapping-of-text"
 - "/cubic-mapping-of-text/"
