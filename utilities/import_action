@@ -193,7 +193,6 @@ module ReadwiseExtras
         "favicon_url: #{book.favicon_url}",
         "source_emoji: #{book.source_emoji}",
         (book.navigable_url? ? "source_url: \"#{book.outbound_url(text_fragment: title)}\"" : nil),
-        "toc: #{note.nil? || note.empty? ? 'false' : 'true'}",
         "---",
         "",
         formatted_text,
