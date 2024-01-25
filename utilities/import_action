@@ -256,8 +256,6 @@ class Importer
       Jekyll.import_book(book)
       Jekyll.import_book_highlights(book)
     end
-  rescue => e
-    puts "Import Failed: #{e.message}"
   end
 
   def self.clean_posts

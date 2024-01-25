@@ -53,7 +53,7 @@ Webmentions are supported via [webmention.io](https://webmention.io).
 ## Changelog
 
 ### Unreleased
-- blogroll
+- optimize images for web sizes/rendering
 - podroll
 - h-card markup for posts
 - `/projects` page
