@@ -1,0 +1,45 @@
+#!/usr/bin/env ruby
+
+class Optimizer
+  attr_reader :max_width, :max_height, :path
+
+  def initialize(max_width: 1200, max_height: 1200, path: Dir.pwd)
+    @max_width = max_width
+    @max_height = max_height
+    @path = path
+  end
+
+  # reads images from path
+  # pass each image to optimize_image
+  def run
+    Dir.glob("#{path}/*").each do |file|
+      # determine the file type
+      # if file type is image
+      # pass to optimize_image
+      case File.extname(file).downcase
+      when ".jpg", ".jpeg", ".png", ".gif"
+        optimize_image(file)
+      else
+        puts "skipping: #{file}"
+      end
+    end
+  end
+
+  # use imagemagick to determine width, height, size
+  # if width > max_width || height > max_height
+  # use imagemagick to resize image
+  def optimize_image(path)
+    width, height, size = `identify -format "%w %h %b" #{path}`.split(" ")
+    return if width.nil? || width.empty?
+    return unless width.to_i > max_width || height.to_i > max_height
+
+    puts "resizing: #{path}"
+    `convert #{path} -resize #{max_width}x#{max_height} #{path}`
+  end
+end
+
+Optimizer.new(
+  max_width: 2000,
+  max_height: 2000,
+  path: "#{Dir.pwd}/assets/images"
+).run
