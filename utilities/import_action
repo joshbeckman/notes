@@ -70,9 +70,9 @@ module ReadwiseExtras
         "image: #{cover_image_url}",
         "favicon_url: #{favicon_url}",
         "source_emoji: #{source_emoji}",
+        "show_book_meta: true",
         (navigable_url? ? "source_url: \"#{outbound_url(text_fragment: title)}\"" : nil),
         "---",
-        "### Margin Notes",
         "",
         note,
       ].compact.join("\n")
@@ -98,22 +98,6 @@ module ReadwiseExtras
       false
     end
 
-    def citation_html
-      "<cite>#{image_html}#{author_html}<span class=\"bar\"> | </span>#{title_html}</cite>"
-    end
-
-    def source_md(text_fragment: nil)
-      "<em>#{title_html(text_fragment: text_fragment)}</em>"
-    end
-
-    def title_html(text_fragment: nil)
-      if navigable_url?
-        "<a href=\"#{outbound_url(text_fragment: text_fragment)}\" class=\"u-url\" target=\"_blank\">#{title}</a>"
-      else
-        "<span class=\"non-url\">#{title}</span>"
-      end
-    end
-
     def navigable_url?
       return true if source_url && !source_url.match?(/^mailto:/)
 
@@ -128,32 +112,14 @@ module ReadwiseExtras
       "#{source_url}#:~:text=#{URI::Parser.new.escape(text_start)}"
     end
 
+    def asin_url
+      return nil unless asin
+
+      "https://www.amazon.com/foo/dp/#{asin}/"
+    end
+
     def author_stripped
       author.to_s.split("\n").reject { |a| a.empty? }.join(" ")
-    end
-
-    def author_html
-      "<span class=\"p-author h-card\">#{author_stripped}</span>"
-    end
-
-    def image_html
-      if favicon_url
-        "<img alt=\"favicon\" src=\"#{favicon_url}\" class=\"source-favicon\"/>"
-      else
-        "<span class=\"source-emoji\">#{source_emoji}</span>"
-      end
-    end
-
-    def author_md
-      [author_stripped, image_md].join(' ')
-    end
-
-    def image_md
-      if favicon_url
-        "![favicon](#{favicon_url}){:class=\"source-favicon\"}"
-      else
-        source_emoji
-      end
     end
 
     def source_emoji
@@ -173,6 +139,32 @@ module ReadwiseExtras
       return nil unless hostname
 
       "https://s2.googleusercontent.com/s2/favicons?domain=#{hostname}"
+    end
+
+    def source_footer(text_fragment: nil)
+      <<~FOOTER
+        <div class="quoteback-footer">#{source_footer_avatar.strip}<div class="quoteback-metadata"><div class="metadata-inner"><div aria-label="#{author_stripped}" class="quoteback-author">#{author_stripped}</div><div aria-label="#{stripped_title}" class="quoteback-title">#{stripped_title}</div></div></div>#{source_footer_link(text_fragment: text_fragment).strip}</div>
+      FOOTER
+    end
+
+    def source_footer_avatar
+      unless favicon_url
+        return <<~AVATAR
+          <div class="quoteback-avatar"><span class="mini-emoji">#{source_emoji}</span></div>
+        AVATAR
+      end
+
+      <<~AVATAR
+        <div class="quoteback-avatar"><img class="mini-favicon" src="#{favicon_url}"></div>
+      AVATAR
+    end
+
+    def source_footer_link(text_fragment: nil)
+      return "" unless navigable_url?
+
+      <<~LINK
+       <div class="quoteback-backlink"><a target="_blank" aria-label="go to the full text of this quotation" rel="noopener" href="#{outbound_url(text_fragment: text_fragment)}" class="quoteback-arrow">Source</a></div>
+      LINK
     end
   end
 
@@ -195,16 +187,12 @@ module ReadwiseExtras
         (book.navigable_url? ? "source_url: \"#{book.outbound_url(text_fragment: title)}\"" : nil),
         "---",
         "",
-        formatted_text,
+        formatted_text(book),
       ].compact.join("\n")
     end
 
     def title
       @title ||= text.gsub(/\]\(\S*\)/, "]").gsub('"', "'").slice(0, 60) + '...'
-    end
-
-    def citation_html(book)
-      "<cite>#{book.image_html}#{book.author_html}<span class=\"bar\"> | </span>#{book.title_html(text_fragment: title)}</cite>"
     end
 
     def formatted_tags(book)
@@ -213,14 +201,14 @@ module ReadwiseExtras
       base_tags.flatten.join(' ')
     end
 
-    def formatted_text
+    def formatted_text(book)
       # split text by newline and add a '> ' to each line
       pieces = text.split("\n").map do |t|
         "> #{t}"
       end
+      pieces << "> #{book.source_footer(text_fragment: title).strip}"
       unless note.nil? || note.empty?
         pieces << ""
-        pieces << "### Margin Notes"
         pieces << note
       end
 

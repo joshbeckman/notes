@@ -701,6 +701,93 @@ cite .u-url, cite .non-url {
     vertical-align: middle;
 }
 
+/* quoteback styling */
+.quoteback-footer {
+  border-top: 1px solid lightgrey;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: start;
+  align-items: stretch;
+  padding-left: 1em;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.quoteback-footer .quoteback-avatar {
+  border-radius: 100%;
+  border: 1px solid lightgrey;
+  width: 42px;
+  height: 42px;
+  min-width: 42px !important;
+  margin: 12px 0px;
+  position: relative;
+}
+.quoteback-footer .quoteback-avatar .mini-favicon {
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.quoteback-footer .quoteback-avatar .mini-emoji {
+  display: inline-block;
+  font-size: 22px;
+  margin-left: 10px;
+  margin-top: 6px;
+}
+.quoteback-footer .quoteback-metadata {
+  min-width: 0px;
+  display: flex;
+  flex-shrink: 1;
+  align-items: center;
+  margin-left: 10px;
+}
+.quoteback-footer .metadata-inner {
+  font-size: 15px;
+  width: 100%;
+  max-width: 525px;
+}
+.quoteback-footer .metadata-inner .quoteback-author {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+.quoteback-footer .metadata-inner .quoteback-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 20px;
+}
+.quoteback-footer .quoteback-backlink {
+  margin-left: auto;
+  display: flex;
+  flex-shrink: 1;
+  align-items: center;
+  width: 3em;
+  min-width: 3em !important;
+  padding: 0px 1em !important;
+  border-left: 1px solid lightgrey;
+}
+.quoteback-footer .quoteback-backlink .quoteback-arrow {
+  border: none !important;
+  font-family: inherit !important;
+  -webkit-transition: opacity 0.1s ease;
+  -moz-transition: opacity 0.1s ease;
+  -ms-transition: opacity 0.1s ease;
+  -o-transition: opacity 0.1s ease;
+  transition: opacity 0.1s ease;
+}
+.quoteback-footer .quoteback-backlink .quoteback-arrow::after {
+  position: relative;
+  content: "→";
+  vertical-align: middle;
+}
+
 /* post/page */
 .footnotes {
   font-size: 0.9em;
