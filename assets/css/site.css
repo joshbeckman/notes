@@ -782,11 +782,6 @@ cite .u-url, cite .non-url {
   -o-transition: opacity 0.1s ease;
   transition: opacity 0.1s ease;
 }
-.quoteback-footer .quoteback-backlink .quoteback-arrow::after {
-  position: relative;
-  content: "→";
-  vertical-align: middle;
-}
 
 /* post/page */
 .footnotes {
