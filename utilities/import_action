@@ -109,7 +109,8 @@ module ReadwiseExtras
       return source_url unless text_fragment
 
       text_start = text_fragment.split("\n").first.split("[").first.split(" ").first(10).join(" ").strip
-      "#{source_url.split('#').first}#:~:text=#{URI::Parser.new.escape(text_start)}"
+      fragment = URI::Parser.new.escape(text_start).gsub(/[^a-zA-Z0-9]$/, '')
+      "#{source_url.split('#').first}#:~:text=#{fragment}"
     end
 
     def asin_url
