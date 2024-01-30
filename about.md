@@ -53,7 +53,6 @@ Webmentions are supported via [webmention.io](https://webmention.io).
 ## Changelog
 
 ### Unreleased
-- optimize images for web sizes/rendering
 - podroll
 - h-card markup for posts
 - `/projects` page
@@ -66,6 +65,9 @@ Webmentions are supported via [webmention.io](https://webmention.io).
 * change styling/colors by season
 * Move webmentions into static ingestion and rendering
 - Sitemap page
+
+### 2024-01-24
+- optimize images for web sizes/rendering
 
 ### 2024-01-15
 - Redesign the site to double-column layout
