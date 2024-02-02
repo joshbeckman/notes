@@ -4,6 +4,7 @@ title: Music Listening
 toc: true
 categories: music
 emoji: 🎶
+searchable: true
 ---
 I generate this page from my Apple Music library using [a script I wrote](/blog/pulling-fun-insights-out-of-my-apple-music-library). Feel free to use it, too!
 
