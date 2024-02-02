@@ -576,7 +576,7 @@ article div.highlight {
 }
 article .footer ul li {
   display: inline-block;
-  margin: 0 0.5em;
+  margin: 0 0.75em 1em 0;
 }
 
 /* Header */
