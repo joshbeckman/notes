@@ -99,6 +99,7 @@
             currentSearchIndex++;
 
             var input = searchInput.value;
+            var isBang = input.endsWith('!');
             if (input === '') {
                 hideSearch();
             } else {
@@ -150,7 +151,9 @@
                 var resultsList = document.createElement('ul');
                 resultsList.classList.add('search-results-list');
                 searchResults.appendChild(resultsList);
-
+                if (isBang) {
+                    return window.location.href = docs[results[0].ref].url;
+                }
                 addResults(resultsList, results, 0, 10, 100, currentSearchIndex);
             }
 

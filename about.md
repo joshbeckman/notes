@@ -66,6 +66,9 @@ Webmentions are supported via [webmention.io](https://webmention.io).
 * Move webmentions into static ingestion and rendering
 - Sitemap page
 
+### 2024-02-01
+- Add "Feeling Lucky" mode to the search page.
+
 ### 2024-01-24
 - optimize images for web sizes/rendering
 
