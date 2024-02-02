@@ -11,6 +11,7 @@ file.puts 'title: Music Listening'
 file.puts 'toc: true'
 file.puts 'categories: music'
 file.puts 'emoji: 🎶'
+file.puts 'searchable: true'
 file.puts '---'
 file.puts 'I generate this page from my Apple Music library using [a script I wrote](/blog/pulling-fun-insights-out-of-my-apple-music-library). Feel free to use it, too!'
 file.puts
