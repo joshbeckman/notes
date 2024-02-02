@@ -4,11 +4,11 @@ date: 2024-01-31 13:38:49 +0000
 title: "Can You Imagine? A Library of Possibilities for Reimagining the Web by Sublime"
 toc: true
 rating: 2
-image: /assets/images/3080a9d0318348cda99d065e8423f111.jpeg
+image: /assets/images/3080A9D0318348CDA99D065E8423F111.jpeg
 tags: note-taking publishing social-networks
 ---
 
-![](/assets/images/3080a9d0318348cda99d065e8423f111.jpeg)
+![](/assets/images/3080A9D0318348CDA99D065E8423F111.jpeg)
 
 I finished reading [this recent zine from Sari Azout and Sublime](https://sublime.app/zine) last night and I’m torn\. At times I put it down excited, at others I put it down depressed and I almost put it down out of disgust\.
 
