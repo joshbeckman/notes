@@ -54,15 +54,6 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          cache: 'npm'
-      - name: Setup Workbox
-        id: workbox
-        run: npm i -g workbox-cli
-      - name: Build Service Worker
-        run: workbox generateSW workbox-config.js
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v1
