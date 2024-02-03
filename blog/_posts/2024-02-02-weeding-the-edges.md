@@ -4,7 +4,7 @@ date: 2024-02-02 03:52:31 +0000
 title: Weeding The Edges
 tags: note-taking gardening
 ---
-A thought I wrote in the margins while reading an essay on online\-space\-gardening by [Annika Hansteen\-Izora](https://www.annikaizora.com): 
+A thought I wrote in the margins while reading an essay on online\-space\-gardening by [Annika Hansteen\-Izora](https://www.annikaizora.com) in [the _Can You Imagine?_ zine](https://www.joshbeckman.org/books/after-reading-can-you-imagine-a-library-of-possibilities-for-reimagining-the-web-by-sublime): 
 
 > Walk the edges of your garden and weed out or support/connect blossoms and vines and sprouts\.
 
