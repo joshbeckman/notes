@@ -1,7 +1,7 @@
 ---
 layout: Post
 date: 2024-02-03 17:48:56 +0000
-title: "Keyboard Update: Customized Keychron K1"
+title: "Customized Keychron K1"
 toc: true
 image: /assets/images/0D0C0732479844BC89816879C8C01510.jpeg
 tags: tools folk-creations
@@ -10,7 +10,7 @@ tags: tools folk-creations
 I use a keyboard for 8\+ hours every day, so I need mine to be a help to my hands and not a hindrance\. I’ve been building on a Keychron K1 base for a few months now and here’s how I got there\.
 
 ## History
-I actually like apple keyboards and used those for a long time\. Then I got a [Microsoft Sculpt](https://www.microsoft.com/en/accessories/products/keyboards/sculpt-ergonomic-desktop?activetab=pivot:overviewtab) and loved that until it wore out\. I liked how the Sculpt made my hands at ease but I didn’t love how much space it took up on my desk and I didn’t like how grimy the wrist\-rests got\. And it died, so it obviously wasn’t that well\-made\.
+I actually like apple keyboards and used those for a long time\. Like 8 years. Then I got a [Microsoft Sculpt](https://www.microsoft.com/en/accessories/products/keyboards/sculpt-ergonomic-desktop?activetab=pivot:overviewtab) and loved that until it wore out\. I liked how the Sculpt made my hands at ease but I didn’t love how much space it took up on my desk and I didn’t like how grimy the wrist\-rests got\. And it died, so it obviously wasn’t that well\-made\.
 
 Then I [got a Moonlander](https://www.joshbeckman.org/blog/ergodox-moonlander-week-3) with an ortholinear layout and didn’t like how different it was from my laptop’s keyboard \(I work a decent amount from my laptop at the couch or cafe\), so I [sold it to a coworker](https://www.joshbeckman.org/blog/switching-away-from-the-moonlander-keyboard)\.
 
@@ -18,7 +18,7 @@ Then I got [the Leopold](https://www.joshbeckman.org/blog/leopold-fc660c) and tr
 
 But I was still lured by the community of mechanical keyboards\. And my laptop was awkward to type on \(with its screen always in the way and trackpad cramping my fingers\) while standing at my desk\.
 
-## Initial Build
+## Stock
 I got the [Keychron K1](https://www.keychron.com/products/keychron-k1-wireless-mechanical-keyboard?variant=39556485382233) ~1y ago\. I really like low\-profile keyboards and this one seemed nice and low but still mechanical\. Low\-profile means I don’t have to press hard on the keys and my wrists don’t have to move much across the board\.
 
 I got it with the low\-profile, swappable, optical switches because I figured I might want to switch them later\. I got it with blue switches because people online said it was ‘for typists’ and pleasant to type on \(blue are tactile \- meaning they have a bump halfway through\)\.
