@@ -77,6 +77,7 @@ Filed Under
             {%- endif -%}
         {%- endfor -%}
     {%- endfor -%}
+    {%- if page.date -%}
     <li class="filed">
       <a href="/dates/#{{ page.date | date: '%d-%B-%Y' }}">
           <time class="dt-published" datetime="{{ page.date | date:'%Y-%m-%d' }}">
@@ -84,6 +85,7 @@ Filed Under
           </time>
       </a>
     </li>
+    {%- endif -%}
     {%- if page.readwise_url -%}
     <li class="filed edit">
       <a href="{{ page.readwise_url }}" target="_blank">

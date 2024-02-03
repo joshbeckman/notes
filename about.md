@@ -64,7 +64,9 @@ Webmentions are supported via [webmention.io](https://webmention.io).
 * move content markup into liquid filters instead of liquid logic
 * change styling/colors by season
 * Move webmentions into static ingestion and rendering
-- Sitemap page
+
+### 2024-02-03
+- Enabled PWA offline capabilities
 
 ### 2024-02-01
 - Add "Feeling Lucky" mode to the search page.
