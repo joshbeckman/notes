@@ -39,7 +39,8 @@ class Poster
     puts "Title: #{post.title}"
     post.slug = post.title.gsub(/[^a-zA-Z0-9\s]/, '').gsub(/\s+/, '-').downcase
     post.date = Time.parse(entry.dig("creationDate"))
-    copy_images(entry, export_path)
+    copy_photos(entry, export_path)
+    copy_videos(entry, export_path)
     post.body = parse_body(entry)
     if entry.dig("photos")&.first
       post.image = '/' + asset_path_for_photo(entry.dig("photos").first)
@@ -49,7 +50,10 @@ class Poster
     post.category = $stdin.gets.chomp
 
     case post.category
-    when "movies", "books"
+    when "books"
+      puts "Rating: ?"
+      post.rating = $stdin.gets.chomp.to_i
+    when "movies"
       puts "Rating: ?"
       post.rating = $stdin.gets.chomp.to_i
       puts "IMDB ID: ?"
@@ -59,14 +63,22 @@ class Poster
     create_file(post)
   end
 
+  def asset_path_for_video(video)
+    "assets/videos/#{video.dig("identifier")}.#{video.dig("type")}"
+  end
+
   def asset_path_for_photo(photo)
     "assets/images/#{photo.dig("identifier")}.#{photo.dig("type")}"
   end
 
-  def copy_images(entry, export_path)
+  def copy_videos(entry, export_path)
+    (entry.dig("videos") || []).each do |video|
+      `cp #{export_path}/videos/#{video.dig("md5")}.#{video.dig("type")} #{asset_path_for_video(video)}`
+    end
+  end
+
+  def copy_photos(entry, export_path)
     (entry.dig("photos") || []).each do |photo|
-      # copy each photo to the assets/images folder
-      # and rename it to its identifier
       `cp #{export_path}/photos/#{photo.dig("md5")}.#{photo.dig("type")} #{asset_path_for_photo(photo)}`
     end
   end
@@ -74,7 +86,12 @@ class Poster
   def parse_body(entry)
     body = entry.dig("text").gsub(/^# (.*)/, '').strip
     (entry.dig("photos") || []).each do |photo|
-      body.gsub!(/dayone-moment:\/\/#{photo.dig("identifier")}/, '/' + asset_path_for_photo(photo))
+      img_tag = "/#{asset_path_for_photo(photo)}"
+      body.gsub!(/dayone-moment:\/\/#{photo.dig("identifier")}/, img_tag)
+    end
+    (entry.dig("videos") || []).each do |video|
+      video_tag = "<video controls src=\"/#{asset_path_for_video(video)}\"></video>"
+      body.gsub!(/!\[\]\(dayone-moment:\/video\/#{video.dig("identifier")}\)/, video_tag)
     end
     body
   end
@@ -86,7 +103,7 @@ class Poster
       file.puts "---"
       file.puts "layout: Post"
       file.puts "date: #{post.date.strftime("%Y-%m-%d %H:%M:%S %z")}"
-      file.puts "title: #{post.title}"
+      file.puts "title: \"#{post.title}\""
       file.puts "toc: true"
       if post.rating
         file.puts "rating: #{post.rating}"
