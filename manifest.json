@@ -1,0 +1,9 @@
+{
+  "name": "Josh's Site",
+  "short_name": "Josh's Site",
+  "theme_color": "#903465",
+  "background_color": "#fffff8",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/"
+}
