@@ -21,6 +21,8 @@ But I was still lured by the community of mechanical keyboards\. And my laptop w
 ## Stock
 I got the [Keychron K1](https://www.keychron.com/products/keychron-k1-wireless-mechanical-keyboard?variant=39556485382233) ~1y ago\. I really like low\-profile keyboards and this one seemed nice and low but still mechanical\. Low\-profile means I don’t have to press hard on the keys and my wrists don’t have to move much across the board\.
 
+I decided on the K1 because it was low-profile, everything was swappable (I could change it later), it was made of metal (so it would last longer and make less noise), it had a wired option (I cannot stand any latency with my keyboard so I try to use them wired), it has a full-size directional pad that is off to the side (I hate mis-typing arrow keys on those tiny pads), and it was under $100.
+
 I got it with the low\-profile, swappable, optical switches because I figured I might want to switch them later\. I got it with blue switches because people online said it was ‘for typists’ and pleasant to type on \(blue are tactile \- meaning they have a bump halfway through\)\.
  When I started using the keyboard, I didn’t like the blue switches\. They have a kind of half\-way point after which they ‘click’ and then collapse/depress to type the keystroke\. I didn’t like how much more pressure it took to push them in\. The clicky noise didn’t bother me but didn’t make me swoon either\. I realized I like typing as quickly as possible \(over fancy\-feeling, tactile switches\)\. I want the keyboard to get out of my way, rather than remind me of how unique it is\.
  I didn’t use the keyboard for months\. I put it back in the box, up on a shelf\.
