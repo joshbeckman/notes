@@ -57,7 +57,7 @@
     {%- endfor -%}
 
     {{ replaced_content | inject_anchors }}
-<a class="p-author h-card" style="display: none;" href="https://notes.joshbeckman.org/about">
+<a class="p-author h-card" style="display: none;" href="https://www.joshbeckman.org/about">
     Josh Beckman
 </a>
 <h3 class="print-hidden">
@@ -81,7 +81,7 @@ Filed Under
     <li class="filed">
       <a href="/dates/#{{ page.date | date: '%d-%B-%Y' }}">
           <time class="dt-published" datetime="{{ page.date | date:'%Y-%m-%d' }}">
-              {{ page.date | date: '%B-%d-%Y' }}
+              {{ page.date | date: '%Y, %B %d' }}
           </time>
       </a>
     </li>
