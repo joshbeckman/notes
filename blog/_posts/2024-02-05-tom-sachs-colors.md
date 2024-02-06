@@ -8,7 +8,7 @@ tags: art
 
 I come back to [COLOR](https://vimeo.com/33998046) by Tom Sachs whenever I want to force myself into an artistic decision.
 
-It tells me: take a stance on the infinite aspect of art, commit, and defend your reasons. They're as good as any others.
+It tells me: take a stance on the infinite spectrum of artistic choice, commit, and defend your reasons. They're as good as any others.
 
 <iframe src="https://player.vimeo.com/video/33998046?h=8810b92a8d&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 
