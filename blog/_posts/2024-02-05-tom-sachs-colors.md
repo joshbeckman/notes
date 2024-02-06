@@ -22,7 +22,7 @@ Most of the colors in the film are only described as a reference to a paint or b
 | Green | Olive Drab #7 | `#3C341F` | ![green](https://www.thecolorapi.com/id?format=svg&named=false&hex=3C341F) |
 | Yellow | McDonald's yellow (Golden Acrylic C.P. Cadmium yellow medium, #1130-6, series 7) _or_ Kodak yellow (Golden Acrylic Diarylide yellow, #1147-6, series 6) | `#FFCC00` | ![yellow](https://www.thecolorapi.com/id?format=svg&named=false&hex=ffcc00) |
 | Red | McDonald's red (Benjamin Moore Impervex latex high gloss metal and wood enamel, brilliant red 309 20) | `#DA291C` | ![red](https://www.thecolorapi.com/id?format=svg&named=false&hex=DA291C) |
-| Blue | _They kinda punt on picking a blue color, but anchor on:_ Gulf Porsche blue, police barricade blue | `#004B87` | ![blue](https://www.thecolorapi.com/id?format=svg&named=false&hex=004B87) |
+| Blue | _They kinda punt on picking a blue color, but anchor on:_ police barricade blue | `#004B87` | ![blue](https://www.thecolorapi.com/id?format=svg&named=false&hex=004B87) |
 | Blue | _They kinda punt on picking a blue color, but also anchor on:_ Gulf Porsche blue | `#96D0E5` | ![blue](https://www.thecolorapi.com/id?format=svg&named=false&hex=96d0e5) |
 | Orange | Hermes orange | `#F37021` | ![orange](https://www.thecolorapi.com/id?format=svg&named=false&hex=f37021) |
 | Black | Benjamin Moore Impervex latex high gloss metal and wood enamel, black 309 80 | `#151515` | ![black](https://www.thecolorapi.com/id?format=svg&named=false&hex=151515) |
