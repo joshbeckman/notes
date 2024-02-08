@@ -34,18 +34,18 @@
                 <td>
                     📄
                     <a href="/blog">
-                        Writing
+                        Blog
                     </a>
                 </td>
                 <td>
-                    Sometimes I write things.
+                    My own writing and photography.
                 </td>
             </tr>
             <tr>
                 <td>
               📝
                     <a href="/notes">
-                        Learning
+                        Notes
                     </a>
                 </td>
                 <td>
@@ -54,64 +54,9 @@
             </tr>
             <tr>
                 <td>
-                  🏞️
-                    <a href="/photos">
-                        Photographing
-                    </a>
-                </td>
-                <td>
-                    I used to be a photojournalist.
-                </td>
-            </tr>
-            <tr>
-                <td>
-              📚
-                    <a href="/books">
-                        Reading
-                    </a>
-                </td>
-                <td>
-                    Reviewing the books I've read.
-                </td>
-            </tr>
-            <tr>
-                <td>
-              🎟
-                    <a href="/concerts">
-                        Attending
-                    </a>
-                </td>
-                <td>
-                    Reviewing the concerts I've attended.
-                </td>
-            </tr>
-            <tr>
-                <td>
-              🎬
-                    <a href="/movies">
-                        Watching
-                    </a>
-                </td>
-                <td>
-                    Reviewing the movies I've watched.
-                </td>
-            </tr>
-            <tr>
-                <td>
-              🪑
-                    <a href="/desks">
-                        Working
-                    </a>
-                </td>
-                <td>
-                    Recording the desks where I've.
-                </td>
-            </tr>
-            <tr>
-                <td>
               🗣
                     <a href="/talks">
-                        Presenting
+                        Presentations
                     </a>
                 </td>
                 <td>
@@ -129,81 +74,70 @@
                   Collecting things constantly.
                 </td>
             </tr>
+        </table>
+        <br/>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan=2>
+                        Information
+                    </th>
+                </tr>
+            </thead>
             <tr>
                 <td>
-              🎶
-                    <a href="/music">
-                        Listening
+                    🛟
+                    <a href="/about">
+                        About
                     </a>
                 </td>
                 <td>
-                    Stats about my listening habits.
+                    Updated {{ site.time | date_to_rfc822 }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    #️⃣ 
+                    <a href="/tags">
+                        Index
+                    </a>
+                </td>
+                <td>
+                    {{site.posts.size}} posts, {{ site.tags.size }} topics
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    📶
+                    <a href="/subscribe">
+                        Subscribe
+                    </a>
+                </td>
+                <td>
+                    Subscribe to new posts
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    🕹️
+                        Keyboard shortcuts
+                </td>
+                <td>
+                    <kbd>Ctrl</kbd> + <kbd>S</kbd> = Search
+                    <br/>
+                    <kbd>Ctrl</kbd> + <kbd>R</kbd> = Random
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    💭
+                        Today's proverb
+                </td>
+                <td>
+                      {{ site.data.proverbs | sample }}
                 </td>
             </tr>
         </table>
-        <br/>
-            <table>
-                <thead>
-                    <tr>
-                        <th colspan=2>
-                            Information
-                        </th>
-                    </tr>
-                </thead>
-                <tr>
-                    <td>
-                        🛟
-                        <a href="/about">
-                            About
-                        </a>
-                    </td>
-                    <td>
-                        Updated {{ site.time | date_to_rfc822 }}
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        #️⃣ 
-                        <a href="/tags">
-                            Index
-                        </a>
-                    </td>
-                    <td>
-                        {{site.posts.size}} posts, {{ site.tags.size }} topics
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        📶
-                        <a href="/subscribe">
-                            Subscribe
-                        </a>
-                    </td>
-                    <td>
-                        Subscribe to new posts
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        🕹️
-                            Keyboard shortcuts
-                    </td>
-                    <td>
-                        <kbd>Ctrl</kbd> + <kbd>S</kbd> = Search
-                        <br/>
-                        <kbd>Ctrl</kbd> + <kbd>R</kbd> = Random
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        💭
-                            Today's proverb
-                    </td>
-                    <td>
-                          {{ site.data.proverbs | sample }}
-                    </td>
-                </tr>
-            </table>
           <h2>Latest Post</h2>
           {%- for post in site.posts limit:1 -%}
           {%- include PostListItem.html post=post -%}
