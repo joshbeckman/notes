@@ -49,11 +49,11 @@ class Poster
     puts "Category: ?"
     post.category = $stdin.gets.chomp
 
-    case post.category
-    when "books"
+    case post.category.split('/').last
+    when "reading"
       puts "Rating: ?"
       post.rating = $stdin.gets.chomp.to_i
-    when "movies"
+    when "watching"
       puts "Rating: ?"
       post.rating = $stdin.gets.chomp.to_i
       puts "IMDB ID: ?"

@@ -3,13 +3,14 @@ layout: Page
 title: Watching
 emoji: 🎬
 categories:
-- movies
+- blog
+- watching
 ---
 
 These are movies I've been watching.
 
 {% assign postsByMonth = 
-site.categories['movies'] | group_by_exp:"post", "post.date | date: '%Y %B'" %}
+site.categories['watching'] | group_by_exp:"post", "post.date | date: '%Y %B'" %}
 {% for day in postsByMonth %}
   <table>
       <thead>

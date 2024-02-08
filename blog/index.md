@@ -1,11 +1,19 @@
 ---
 layout: Page
 title: Blog
+emoji: 📓
 categories:
 - blog
 ---
 
-This is a general blog.
+View a subcategory if you like:
+- [Concerts I've been attending](attending)
+- [Books I've been reading](reading)
+- [Movies I've been watching](watching)
+- [Desks I've been working at](working)
+- [Music I've been listening to](listening)
+
+Here are all the posts:
 
 {% assign postsByMonth = 
 site.categories['blog'] | group_by_exp:"post", "post.date | date: '%Y %B'" %}

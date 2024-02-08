@@ -1,4 +1,5 @@
 <div class="footer">
+    {%- if page.hide_footer != true -%}
     <ul>
       <li>*️⃣ <a href="/search">Search</a></li>
       <li>#️⃣ <a href="/tags">Index</a></li>
@@ -6,6 +7,7 @@
       <li>📶 <a href="/subscribe">Subscribe</a></li>
       <li>↩️ <a href="mailto:josh@joshbeckman.org?subject={{"RE: " | append: page.title | scgi_escape}}">Reply</a></li>
     </ul>
+    {%- endif -%}
 </div>
 <script async src="/assets/js/photoswipe.umd.min.js"></script>
 <script async src="/assets/js/photoswipe-lightbox.umd.min.js"></script>
