@@ -1,6 +1,6 @@
 ---
 layout: Page
-title: Index
+title: Site Index
 permalink: /tags/
 content-type: eg
 toc: true
@@ -48,6 +48,15 @@ Alternatively, things are <a href="/dates">indexed by date</a> or <a href="/sour
             </a>
           </li>
         {% endfor %}
+        {% for page in site.pages %}
+        {%- if page.tags contains slug -%}
+          <li style="">
+            <a href="{{page.url}}">
+            {{ page.title }}
+            </a>
+          </li>
+        {%- endif -%}
+        {% endfor %}
       </ul>
       {%- endif -%}
     {% endfor %}
@@ -69,6 +78,15 @@ Alternatively, things are <a href="/dates">indexed by date</a> or <a href="/sour
             {% endif %}
             </a>
           </li>
+        {% endfor %}
+        {% for page in site.pages %}
+        {%- if page.tags contains slug -%}
+          <li style="">
+            <a href="{{page.url}}">
+            {{ page.title }}
+            </a>
+          </li>
+        {%- endif -%}
         {% endfor %}
       </ul>
       {%- endif -%}
