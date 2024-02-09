@@ -1,11 +1,11 @@
 module Jekyll
   module TagInInboxFilter
+    DECIMALS = YAML.load_file('_data/decimals.yml').map { |d| d.to_s.split(' ').last.downcase }
+
     def tag_in_inbox(input)
       return false if input.to_s.match?(/articles-|books-|supplementals-/)
 
-      !@context.registers[:site].data['decimals']
-        .map { |d| d.to_s.split(' ').last.downcase }
-        .include? input
+      !DECIMALS.include? input
     end
   end
 end
