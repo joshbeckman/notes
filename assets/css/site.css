@@ -598,7 +598,7 @@ article .footer ul li {
 }
 nav .page-link {
   white-space: nowrap;
-  max-width: 13em;
+  max-width: 12em;
   display: inline-block;
   overflow: hidden;
   text-overflow: ellipsis;
