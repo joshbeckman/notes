@@ -78,18 +78,25 @@ tags: index
   {%- endif -%}
 
   {%- if slug == 'inbox' -%}
+    <ul class="">
     {% for tag in site.tags %}
       {%- assign is_in_inbox = tag.first | tag_in_inbox -%}
       {%- if is_in_inbox -%}
-      <ul class="">
         {% for post in tag.last %}
           <li style=""><a href="{{post.url}}">
             {{ post.content | strip_html | strip | escape | truncate: 70}} <em id="{{ tag.first }}">({{ tag.first }})</em>
           </a></li>
         {% endfor %}
-      </ul>
       {%- endif -%}
     {% endfor %}
+    {% for post in site.posts %}
+    {% if post.tags.size == 0 %}
+      <li style=""><a href="{{post.url}}">
+        {{ post.title | strip_html | strip | escape | truncate: 70}} <em>(untagged)</em>
+      </a></li>
+    {% endif %}
+    {% endfor %}
+    </ul>
   {%- endif -%}
 
 {%- endfor -%}
