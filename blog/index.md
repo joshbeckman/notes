@@ -8,6 +8,7 @@ View a subcategory if you like:
 - [Concerts I've been attending](attending)
 - [Books I've been reading](reading)
 - [Movies I've been watching](watching)
+- [Travel I've been going on](traveling)
 - [Desks I've been working at](working)
 - [Music I've been listening to](listening)
 
