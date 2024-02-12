@@ -4,7 +4,6 @@ title: Working
 emoji: 🪑
 categories:
 - blog
-- working
 ---
 
 These are the desks I have worked at over the years.

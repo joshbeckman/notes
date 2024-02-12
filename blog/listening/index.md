@@ -7,7 +7,6 @@ tags: music
 emoji: 🎶
 categories:
 - blog
-- listening
 redirect_from:
 - /music
 ---

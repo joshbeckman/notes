@@ -4,7 +4,9 @@ title: Thinking about Ghost as a website platform
 toc: true
 image: /assets/images/82922E934EF64D1CA063B5A1945A586E.png
 description: Dumping thoughts about migrating from Jekyll to Ghost
-tags: publishing
+tags:
+- publishing
+- personal-blog
 ---
 
 I have really been enjoying my thought process and the reward of writing in this journal more\. It has made me think a lot more about posting more to my own website\.

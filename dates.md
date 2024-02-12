@@ -1,8 +1,8 @@
 ---
 layout: Post
-title: By Date
+title: Site Index By Date
 permalink: /dates/
-content-type: eg
+tags: index
 ---
 
 {% assign postsByDay = 

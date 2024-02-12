@@ -4,7 +4,6 @@ title: Watching
 emoji: 🎬
 categories:
 - blog
-- watching
 ---
 
 These are movies I've been watching.

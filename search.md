@@ -2,7 +2,7 @@
 layout: Page
 title: Search
 permalink: /search/
-content-type: eg
+tags: index
 toc: true
 ---
 {%- include Search.html -%}

@@ -1,26 +1,10 @@
 ---
 layout: Page
-title: Site Index
+title: Site Index by Topic
 permalink: /tags/
-content-type: eg
 toc: true
+tags: index
 ---
-
-<p>
-There are categories; they are used as tags.
-Any note can be tagged with one or more categories.
-The numbers don't matter; what matters is that they are numerically sorted and numerically related.
-</p>
-
-<p>
-The system structure and theory is roughly based on the ideas of <a href="https://johnnydecimal.com" target="_blank">Johnny.Decimal</a>.
-I initially took inspiration from <a href="https://en.wikipedia.org/wiki/Dewey_Decimal_Classification" target="_blank">Dewey Decimal Classification</a>, but diverged when I saw its racist/sexist grouping and when I started embracing my own focus.
-  Categories are maintained <a href="https://github.com/joshbeckman/notes/blob/master/_data/decimals.yml">here</a>.
-</p>
-
-<p>
-Alternatively, things are <a href="/dates">indexed by date</a> or <a href="/sources">by source</a> or you can <a href="/search">search here</a>.
-</p>
 
 {%- for item in site.data.decimals -%}
   {%- assign slug = item | split: ' ' | last | downcase -%}
@@ -48,11 +32,11 @@ Alternatively, things are <a href="/dates">indexed by date</a> or <a href="/sour
             </a>
           </li>
         {% endfor %}
-        {% for page in site.pages %}
-        {%- if page.tags contains slug -%}
+        {% for foo in site.pages %}
+        {%- if foo.tags contains slug -%}
           <li style="">
-            <a href="{{page.url}}">
-            {{ page.title }}
+            <a href="{{foo.url}}">
+            {{ foo.title }}
             </a>
           </li>
         {%- endif -%}
@@ -79,11 +63,11 @@ Alternatively, things are <a href="/dates">indexed by date</a> or <a href="/sour
             </a>
           </li>
         {% endfor %}
-        {% for page in site.pages %}
-        {%- if page.tags contains slug -%}
+        {% for foo in site.pages %}
+        {%- if foo.tags contains slug -%}
           <li style="">
-            <a href="{{page.url}}">
-            {{ page.title }}
+            <a href="{{foo.url}}">
+            {{ foo.title }}
             </a>
           </li>
         {%- endif -%}

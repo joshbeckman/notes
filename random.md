@@ -3,7 +3,7 @@ layout: Page
 title: Redirecting to Random Note...
 hide_title: true
 permalink: /random/
-content-type: eg
+tags: index
 ---
 
 Loading...

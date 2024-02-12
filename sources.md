@@ -1,8 +1,8 @@
 ---
 layout: Post
-title: By Source
+title: Site Index By Source
 permalink: /sources/
-content-type: eg
+tags: index
 ---
 
 {% assign postsBySource = 

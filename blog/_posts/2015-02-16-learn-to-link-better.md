@@ -5,6 +5,9 @@ date: '2015-02-16 00:00:00'
 redirect_from:
 - "/learn-to-link-better"
 - "/learn-to-link-better/"
+tags:
+- personal-blog
+- interfaces
 ---
 
 Links within your text do two things:

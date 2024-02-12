@@ -2,8 +2,6 @@
 layout: Page
 title: Blog
 emoji: 📓
-categories:
-- blog
 ---
 
 View a subcategory if you like:

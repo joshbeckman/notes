@@ -2,8 +2,6 @@
 layout: Page
 title: Notes
 emoji: 📝
-categories:
-- notes
 ---
 
 I collect notes from things I read and hear.

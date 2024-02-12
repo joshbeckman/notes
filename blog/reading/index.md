@@ -4,7 +4,6 @@ title: Reading
 emoji: 📚
 categories:
 - blog
-- reading
 ---
 
 ## Current

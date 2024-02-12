@@ -1,6 +1,7 @@
 ---
 layout: Page
 title: Subscribe
+tags: index
 toc: true
 searchable: true
 ---
