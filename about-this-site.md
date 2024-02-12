@@ -37,8 +37,9 @@ Webmentions are supported via [webmention.io](https://webmention.io).
 ## Changelog
 
 ### Unreleased
-- podroll
-- h-card markup for posts
+- podroll and blogroll posts/tags
+- Network/map display of all posts (to find edges of the garden [needing weeding](https://www.joshbeckman.org/blog/weeding-the-edges))
+- better h-card markup for posts
 - `/projects` page
 - `/now` page
 - `/uses` page
