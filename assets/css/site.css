@@ -661,7 +661,7 @@ a.masthead-home-link {
 /* TOC - table of contents */
 #toc-and-metadata #toc {
   padding-inline-start: 0;
-  padding-bottom: 1em;
+  margin: 0;
 }
 #toc ul {
   padding-inline-start: 0;
@@ -672,6 +672,13 @@ a.masthead-home-link {
 #toc li {
   list-style: none;
   border-left: 1px solid gray;
+  margin-left: 0;
+}
+#toc li:first-child {
+   margin-top: 1em;
+}
+#toc li:last-child {
+   margin-bottom: 1em;
 }
 #toc li::before {
   content: "—";
