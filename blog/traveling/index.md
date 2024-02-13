@@ -2,6 +2,7 @@
 layout: Page
 title: Traveling
 emoji: 🌋
+searchable: true
 categories:
 - blog
 ---

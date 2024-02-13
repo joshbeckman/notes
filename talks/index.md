@@ -2,7 +2,9 @@
 layout: Page
 title: Talks
 image: /assets/images/talks.jpeg
-tags: communication
+tags:
+- communication
+- index
 ---
 
 These are talks I've given over the years.

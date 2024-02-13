@@ -2,6 +2,9 @@
 layout: Page
 title: Blog
 emoji: 📓
+searchable: true
+tags:
+- index
 ---
 
 View a subcategory if you like:

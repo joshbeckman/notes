@@ -2,6 +2,7 @@
 layout: Page
 title: Attending
 emoji: 🎟
+searchable: true
 categories:
 - blog
 ---

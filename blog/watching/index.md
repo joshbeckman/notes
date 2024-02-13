@@ -2,6 +2,7 @@
 layout: Page
 title: Watching
 emoji: 🎬
+searchable: true
 categories:
 - blog
 ---

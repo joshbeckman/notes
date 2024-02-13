@@ -3,6 +3,8 @@ layout: Page
 title: Lists
 toc: true
 searchable: true
+tags:
+- index
 ---
 {%- for list in site.data.lists -%}
 <h2 id="{{list.title | slugify}}">

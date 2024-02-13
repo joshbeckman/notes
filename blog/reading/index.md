@@ -2,6 +2,7 @@
 layout: Page
 title: Reading
 emoji: 📚
+searchable: true
 categories:
 - blog
 ---

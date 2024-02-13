@@ -2,6 +2,7 @@
 layout: Page
 title: Working
 emoji: 🪑
+searchable: true
 categories:
 - blog
 ---
