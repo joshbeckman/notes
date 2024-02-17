@@ -80,7 +80,7 @@ Filed Under
     {%- if page.date -%}
     <li class="filed">
       <a href="/dates/#{{ page.date | date: '%d-%B-%Y' }}">
-          <time class="dt-published" datetime="{{ page.date | date:'%Y-%m-%d' }}">
+          <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">
               {{ page.date | date: '%Y, %B %d' }}
           </time>
       </a>

@@ -49,6 +49,12 @@ Webmentions are supported via [webmention.io](https://webmention.io).
 * move content markup into liquid filters instead of liquid logic
 * change styling/colors by season
 * Move webmentions into static ingestion and rendering
+- live-updating table-of-contents
+- print and PDF styling of posts
+- "Filed under" and "Related"/etc. in TOC?
+- "Collect" posts/notes into a markdown block (like the old scratchpad thing)
+  - And export contents as epub?
+  - And export to a URL that can rebuild the post/content? (shareable assemblage of notes)
 
 ### 2024-02-03
 - Enabled PWA offline capabilities

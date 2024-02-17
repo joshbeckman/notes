@@ -36,7 +36,7 @@
                     </a>
                 </td>
                 <td>
-                    Updated {{ site.time | date_to_rfc822 }}
+                    Updated <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date_to_xmlschema }}</time>
                 </td>
             </tr>
             <tr>
