@@ -54,6 +54,7 @@ Webmentions are supported via [webmention.io](https://webmention.io).
   - And export contents as epub?
   - And export to a URL that can rebuild the post/content? (shareable assemblage of notes)
   - display the path on a map of notes?
+- Display "recently read" and "reading inbox" articles from Reader API
 
 ### 2024-02-17
 - Print and PDF styling of posts
