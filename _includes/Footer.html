@@ -1,4 +1,4 @@
-<div class="footer">
+<div class="footer print-hidden">
     {%- if page.hide_footer != true -%}
     <ul>
       <li>*️⃣ <a href="/search">Search</a></li>
@@ -9,6 +9,7 @@
     </ul>
     {%- endif -%}
 </div>
+<span class="print-only">{{site.url | domainify}}{{ page.url }}</span>
 <script async src="/assets/js/photoswipe.umd.min.js"></script>
 <script async src="/assets/js/photoswipe-lightbox.umd.min.js"></script>
 <script>
@@ -52,6 +53,9 @@ searchInitListener();
     }) : [];
     for (let i = 0; i < articleImages.length; i++) {
         let img = articleImages[i];
+        if (img.classList.contains('print-only')) {
+            continue;
+        }
         if (headerImageSrcs.indexOf(img.src) > -1) {
             img.parentNode.removeChild(img);
         }

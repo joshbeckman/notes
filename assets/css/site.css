@@ -1099,6 +1099,9 @@ div.highlighter-rouge.language-go::before {
 .display-on-mobile {
   display: none;
 }
+.print-only {
+  display: none;
+}
 @media (max-width: 1200px) {
   .hidden-on-mobile {
     display: none;
@@ -1264,5 +1267,25 @@ div.highlighter-rouge.language-go::before {
   }
   .print-only {
     display: block !important;
+  }
+  .row {
+    display: block;
+    height: auto;
+  }
+  .column .content {
+    padding: 0;
+  }
+  .print-header-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+  .print-header-image img {
+    max-height: 500px;
+  }
+  body {
+    background-color: white;
+    color: black;
   }
 }

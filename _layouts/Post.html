@@ -20,6 +20,11 @@
         {%- include Nav.html -%}
         {%- include Toc.html -%}
         <section class="h-entry {% for category in page.categories %}{{category}} {% endfor %}">
+            {% if page.image %}
+              <div class="print-only print-header-image">
+                <img class="no-lightbox print-only" src="{{ page.image }}" alt="{{ page.title }}">
+              </div>
+            {% endif %}
             <div class="page-title">
               {%- if page.hide_title != true -%} 
                   <h1 class="p-name">{{page.title}}</h1>
