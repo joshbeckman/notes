@@ -5,6 +5,9 @@ emoji: 🌋
 searchable: true
 categories:
 - blog
+tags:
+- travel
+- index
 ---
 
 This is still a work-in-progress.

@@ -5,6 +5,9 @@ emoji: 🪑
 searchable: true
 categories:
 - blog
+tags:
+- workspaces
+- index
 ---
 
 These are the desks I have worked at over the years.

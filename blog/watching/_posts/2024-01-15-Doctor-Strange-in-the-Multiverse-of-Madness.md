@@ -5,6 +5,8 @@ toc: true
 image: https://m.media-amazon.com/images/M/MV5BNWM0ZGJlMzMtZmYwMi00NzI3LTgzMzMtNjMzNjliNDRmZmFlXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_SX300.jpg
 rating: 3
 imdb_id: tt9419884
+tags:
+- movies
 ---
 
 I had heard this movie was kind of trippy so I was looking forward to watching it unfold in unexpected ways. It had some good visual moments, but it had too many laugh-out-loud cheesy moments to be very impactful.

@@ -3,7 +3,9 @@ layout: Page
 title: Music Listening
 toc: true
 searchable: true
-tags: music
+tags:
+- music
+- index
 emoji: 🎶
 categories:
 - blog

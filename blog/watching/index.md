@@ -5,6 +5,9 @@ emoji: 🎬
 searchable: true
 categories:
 - blog
+tags:
+- movies
+- index
 ---
 
 These are movies I've been watching.

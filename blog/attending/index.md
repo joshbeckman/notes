@@ -7,6 +7,7 @@ categories:
 - blog
 tags:
 - music
+- index
 ---
 
 Concerts are the best way to listen to music. You should go to them and support the artists you like.

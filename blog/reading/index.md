@@ -5,6 +5,9 @@ emoji: 📚
 searchable: true
 categories:
 - blog
+tags:
+- publishing
+- index
 ---
 
 ## Current
