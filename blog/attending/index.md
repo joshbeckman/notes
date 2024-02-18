@@ -5,6 +5,8 @@ emoji: 🎟
 searchable: true
 categories:
 - blog
+tags:
+- music
 ---
 
 Concerts are the best way to listen to music. You should go to them and support the artists you like.

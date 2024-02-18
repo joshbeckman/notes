@@ -59,6 +59,9 @@ class Poster
       puts "IMDB ID: ?"
       post.imdb_id = $stdin.gets.chomp
       post.image = movie_cover_image(post.imdb_id)
+      post.tags = ["movies"]
+    when "attending"
+      post.tags = ["music"]
     end
     create_file(post)
   end
@@ -114,6 +117,9 @@ class Poster
       file.puts "image: #{post.image}"
       file.puts "description: "
       file.puts "tags: "
+      post.tags.each do |tag|
+        file.puts "  - #{tag}"
+      end
       file.puts "---"
       file.puts ""
       file.puts post.body

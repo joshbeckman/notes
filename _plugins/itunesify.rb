@@ -3,7 +3,6 @@ require 'uri'
 module Jekyll
   module ItunesifyFilter
     def itunesify(input)
-      puts input
       url = URI(input)
       url.host = "embed.music.apple.com"
       block = <<-HTML
