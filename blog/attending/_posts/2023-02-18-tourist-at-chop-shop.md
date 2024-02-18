@@ -17,6 +17,6 @@ With Marybeth and Ned, and it was pretty good\. We waited forever to get drinks 
 
 We stood next to the staircase because we took too long at the bar and it was annoying for people to walk past us and bump us continually but it was nice to have some fresh air\.
 
-Tourist is a great set to see as a long, long groove that sneaks up on you and suddenly you're really dancing.
+Tourist is a great set to see ([previously](/blog/attending/tourist-gilligan-moss-at-sleeping-village)) as a long, long groove that sneaks up on you and suddenly you're really dancing.
 
 ![](/assets/images/D79810FB7FAC4F4DBB8F54356DE2D9BE.jpeg)
