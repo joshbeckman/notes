@@ -493,6 +493,7 @@ blockquote {
 }
 #mynetwork {
   height: 75vh;
+  width: 100%;
 }
 table {
     border-collapse: collapse;
