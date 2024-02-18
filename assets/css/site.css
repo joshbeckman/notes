@@ -484,11 +484,15 @@ div.highlight {
 }
 table,
 div.highlight,
+#mynetwork,
 blockquote {
   border: 1px solid lightgrey;
   box-shadow: 0 1px 3px 0 rgb(0,0,0,.05);
   border-radius: 5px;
   background: white;
+}
+#mynetwork {
+  height: 75vh;
 }
 table {
     border-collapse: collapse;

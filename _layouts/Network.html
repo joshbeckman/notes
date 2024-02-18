@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+{%- include head.html -%}
+<body>
+  <div class="row">
+    <div class="column">
+      <article class="">
+        {%- include Nav.html -%}
+        {%- include Toc.html -%}
+        <section class="h-entry page">
+            {% if page.image %}
+              <div class="print-only print-header-image">
+                <img class="no-lightbox print-only" src="{{ page.image }}" alt="{{ page.title }}">
+              </div>
+            {% endif %}
+            <div class="page-title">
+              {%- if page.hide_title != true -%} 
+                  <h1 class="p-name">{{page.title}}</h1>
+              {%- endif -%}
+            </div>
+          <div id="mynetwork" class="vis-network"></div>
+          {%- include Content.html -%}
+        </section>
+        {%- include Footer.html -%}
+        <script
+          type="text/javascript"
+          src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"
+        ></script>
+        <script type="text/javascript">
+          // create an array with nodes
+          var nodes = new vis.DataSet([
+            {% for post in site.posts %}
+              { id: "{{ post.url }}", label: "{{ post.title | replace: '"', "'" }}" },
+            {% endfor %}
+            {% for tag in site.tags %}
+              { id: "/tags#{{ tag.first }}", label: "{{ tag.first }}" },
+            {% endfor %}
+          ]);
+
+          // create an array with edges
+          var edges = new vis.DataSet([
+            {% for post in site.posts %}
+              {% for tag in post.tags %}
+                { from: "{{ post.url }}", to: "/tags#{{ tag }}" },
+              {% endfor %}
+            {% endfor %}
+          ]);
+
+          // create a network
+          var container = document.getElementById("mynetwork");
+          var data = {
+            nodes: nodes,
+            edges: edges,
+          };
+          var options = {};
+          var network = new vis.Network(container, data, options);
+          network.on("doubleClick", function (params) {
+            if (params.nodes.length > 0) {
+              window.location.href = params.nodes[0];
+            }
+          });
+        </script>
+      </article>
+    </div>
+  </div>
+</body>
+</html>
