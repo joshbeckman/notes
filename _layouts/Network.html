@@ -29,12 +29,8 @@
         <script type="text/javascript">
           // create an array with nodes
           var nodes = new vis.DataSet([
-            {% for post in site.posts %}
-              { id: "{{ post.url }}", label: "✎", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "box"},
-            {% endfor %}
-            {% for tag in site.tags %}
-              { id: "/tags#{{ tag.first }}", label: "#", title: "{{ tag.first }}", group: "tags", shape: "circle"},
-            {% endfor %}
+            {% for post in site.posts %}{ id: "{{ post.url }}", label: "✎", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "box"},{% endfor %}
+            {% for tag in site.tags %}{ id: "/tags#{{ tag.first }}", label: "#", title: "{{ tag.first }}", group: "tags", shape: "circle"},{% endfor %}
           ]);
 
           // create an array with edges
@@ -53,12 +49,22 @@
             edges: edges,
           };
           var options = {
+              physics: {
+                barnesHut: {
+                  gravitationalConstant: -80000,
+                  springConstant: 0.05,
+                  springLength: 100,
+                },
+              },
               interaction: {
                 tooltipDelay: 100,
               },
               edges: {
                 selectionWidth: 2,
                 color: "#004B87",
+                smooth: {
+                  enabled: false,
+                },
               },
               groups: {
                 tags: {

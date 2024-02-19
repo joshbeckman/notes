@@ -1,6 +1,7 @@
 ---
 layout: Network
-title: Network Graph View
+title: Site Index Network Graph
+permalink: /network/
 tags:
 - index
 ---
