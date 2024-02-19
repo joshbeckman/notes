@@ -14,7 +14,7 @@ I had a fun time this morning building a network view/graph for this site\.
 
 I’ve been wanting to walk a visual path through this notes garden for a while\. Browsing posts “near” each other and [finding edges that need pruning or encouragement](https://www.joshbeckman.org/blog/weeding-the-edges)\. I imagined a networked view of posts connected by their tags/topics and sources and backlinks\. I have really enjoyed the exercise of [programming these notes](https://www.joshbeckman.org/notes/472520959) and this site, and I want to lean into it\. A new interface might produce new thinking.
 
-After some quick research, I found [the vis\-network library](https://github.com/visjs/vis-network), and it took me a couple hours this morning to put something together \([source here](https://github.com/joshbeckman/notes/blob/6e65c2c2610261b4a95c34ce6abc583364ab053b/_includes/Network.html)\)\.
+After some quick research, I found [the vis\-network library](https://github.com/visjs/vis-network), and it took me a couple hours this morning to put something together \([source here](https://github.com/joshbeckman/notes/blob/6e65c2c2610261b4a95c34ce6abc583364ab053b/_includes/Network.html)\)\. I had to put something together manually because this site runs on Jekyll and I couldn't find a plugin that handled it for me.
 
 You can see [the full network view at /network](https://www.joshbeckman.org/network/) \(beware, it takes a few seconds to load the couple\-thousand nodes and edges\)\.
 
