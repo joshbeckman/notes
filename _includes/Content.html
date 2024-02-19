@@ -60,37 +60,48 @@
 <a class="p-author h-card" style="display: none;" href="https://www.joshbeckman.org/about">
     Josh Beckman
 </a>
-<h3 class="print-hidden">
-Filed Under
-</h3>
-<ul class="filed print-hidden">
-    <!-- Loop through page categories and print them in tags -->
-    {%- for item in site.data.decimals -%}
-        {%- assign slug = item | split: ' ' | last | downcase -%}
-        {%- for tag in page.tags -%}
-            {%- if tag == slug -%}
-                <li class="filed">
-                    <a href="/tags/#{{ tag }}" class="">
-                        {{ item }}
-                    </a>
-                </li>
-            {%- endif -%}
-        {%- endfor -%}
-    {%- endfor -%}
-    {%- if page.date -%}
-    <li class="filed">
-      <a href="/dates/#{{ page.date | date: '%d-%B-%Y' }}">
-          <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">
-              {{ page.date | date: '%Y, %B %d' }}
-          </time>
-      </a>
-    </li>
-    {%- endif -%}
-    {%- if page.readwise_url -%}
-    <li class="filed edit">
-      <a href="{{ page.readwise_url }}" target="_blank">
-        Edit
-      </a>
-    </li>
-    {%- endif -%}
-</ul>
+<div class="filing-row">
+  <div class="filing-column">
+    <div class="content">
+      <h3 class="print-hidden">
+      Filed Under
+      </h3>
+      <ul class="filed print-hidden">
+          <!-- Loop through page categories and print them in tags -->
+          {%- for item in site.data.decimals -%}
+              {%- assign slug = item | split: ' ' | last | downcase -%}
+              {%- for tag in page.tags -%}
+                  {%- if tag == slug -%}
+                      <li class="filed">
+                          <a href="/tags/#{{ tag }}" class="">
+                              {{ item }}
+                          </a>
+                      </li>
+                  {%- endif -%}
+              {%- endfor -%}
+          {%- endfor -%}
+          {%- if page.date -%}
+          <li class="filed">
+            <a href="/dates/#{{ page.date | date: '%d-%B-%Y' }}">
+                <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">
+                    {{ page.date | date: '%Y, %B %d' }}
+                </time>
+            </a>
+          </li>
+          {%- endif -%}
+          {%- if page.readwise_url -%}
+          <li class="filed edit">
+            <a href="{{ page.readwise_url }}" target="_blank">
+              Edit
+            </a>
+          </li>
+          {%- endif -%}
+      </ul>
+    </div>
+  </div>
+  <div class="filing-column">
+    <div class="content">
+      <div id="postnetwork" class="vis-network-container"></div>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 {%- include head.html -%}
+<style>
+#postnetwork {
+  display: none;
+}
+</style>
 <body>
   <div class="row">
     <div class="column">
@@ -18,74 +23,11 @@
                   <h1 class="p-name">{{page.title}}</h1>
               {%- endif -%}
             </div>
-          <div id="mynetwork" class="vis-network"></div>
+          <div id="mynetwork" class="vis-network-container full-vis-network"></div>
           {%- include Content.html -%}
         </section>
         {%- include Footer.html -%}
-        <script
-          type="text/javascript"
-          src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"
-        ></script>
-        <script type="text/javascript">
-          // create an array with nodes
-          var nodes = new vis.DataSet([
-            {% for post in site.posts %}{ id: "{{ post.url }}", label: "✎", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "box"},{% endfor %}
-            {% for tag in site.tags %}{ id: "/tags#{{ tag.first }}", label: "#", title: "{{ tag.first }}", group: "tags", shape: "circle"},{% endfor %}
-          ]);
-
-          // create an array with edges
-          var edges = new vis.DataSet([
-            {% for post in site.posts %}
-              {% for tag in post.tags %}
-                { from: "{{ post.url }}", to: "/tags#{{ tag }}" },
-              {% endfor %}
-            {% endfor %}
-          ]);
-
-          // create a network
-          var container = document.getElementById("mynetwork");
-          var data = {
-            nodes: nodes,
-            edges: edges,
-          };
-          var options = {
-              physics: {
-                barnesHut: {
-                  gravitationalConstant: -80000,
-                  springConstant: 0.05,
-                  springLength: 100,
-                },
-              },
-              interaction: {
-                tooltipDelay: 100,
-              },
-              edges: {
-                selectionWidth: 2,
-                color: "#004B87",
-                smooth: {
-                  enabled: false,
-                },
-              },
-              groups: {
-                tags: {
-                  color: {
-                    background: '#F37021',
-                  },
-                },
-                posts: {
-                  color: {
-                    background: '#96D0E5',
-                  },
-                },
-              },
-          };
-          var network = new vis.Network(container, data, options);
-          network.on("doubleClick", function (params) {
-            if (params.nodes.length > 0) {
-              window.location.href = params.nodes[0];
-            }
-          });
-        </script>
+        {%- include Network.html -%}
       </article>
     </div>
   </div>

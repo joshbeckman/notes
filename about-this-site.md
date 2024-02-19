@@ -38,7 +38,6 @@ Webmentions are supported via [webmention.io](https://webmention.io).
 
 ### Unreleased
 - podroll and blogroll posts/tags
-- Network/map display of all posts (to find edges of the garden [needing weeding](https://www.joshbeckman.org/blog/weeding-the-edges))
 - better h-card markup for posts
 - `/projects` page
 - `/now` page ([ref](https://nownownow.com/about#who))
@@ -55,6 +54,10 @@ Webmentions are supported via [webmention.io](https://webmention.io).
   - And export to a URL that can rebuild the post/content? (shareable assemblage of notes)
   - display the path on a map of notes?
 - Display "recently read" and "reading inbox" articles from Reader API
+
+### 2024-02-19
+- [Network/map display of all posts](/network) (to find edges of the garden [needing weeding](https://www.joshbeckman.org/blog/weeding-the-edges))
+- Network display on each post (to walk the garden path)
 
 ### 2024-02-17
 - Print and PDF styling of posts

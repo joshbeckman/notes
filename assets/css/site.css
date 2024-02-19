@@ -484,14 +484,19 @@ div.highlight {
 }
 table,
 div.highlight,
-#mynetwork,
+.vis-network-container,
 blockquote {
   border: 1px solid lightgrey;
   box-shadow: 0 1px 3px 0 rgb(0,0,0,.05);
   border-radius: 5px;
   background: white;
 }
-#mynetwork {
+.vis-network-container {
+  height: 300px;
+  max-width: 100%;
+  max-height: 100%;
+}
+.vis-network-container.full-vis-network {
   height: 75vh;
   width: 100%;
 }
@@ -536,6 +541,21 @@ table th, table thead, table td { padding: 0.5rem; }
   width: 614px;
   padding: 100px 0px;
   margin: auto;
+}
+.filing-row {
+  display: flex;
+}
+.filing-column {
+  flex: 1;
+  overflow: auto;
+  display: inherit;
+  position: relative;
+}
+.filing-column .content {
+  width: 100%;
+  margin: auto;
+  display: block;
+  padding: 1em 0;
 }
 
 article blockquote {
@@ -1129,7 +1149,7 @@ div.highlighter-rouge.language-go::before {
     }
     table,
     div.highlight,
-    #mynetwork,
+    .vis-network-container,
     blockquote {
         background: black;
         border-color: darkgray;
