@@ -1,6 +1,6 @@
 ---
 layout: Network
-title: Graph View
+title: Network Graph View
 tags:
 - index
 ---

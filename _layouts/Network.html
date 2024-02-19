@@ -30,10 +30,10 @@
           // create an array with nodes
           var nodes = new vis.DataSet([
             {% for post in site.posts %}
-              { id: "{{ post.url }}", label: "{{ post.title | replace: '"', "'" }}" },
+              { id: "{{ post.url }}", label: "✎", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "box"},
             {% endfor %}
             {% for tag in site.tags %}
-              { id: "/tags#{{ tag.first }}", label: "{{ tag.first }}" },
+              { id: "/tags#{{ tag.first }}", label: "#", title: "{{ tag.first }}", group: "tags", shape: "circle"},
             {% endfor %}
           ]);
 
@@ -52,7 +52,27 @@
             nodes: nodes,
             edges: edges,
           };
-          var options = {};
+          var options = {
+              interaction: {
+                tooltipDelay: 100,
+              },
+              edges: {
+                selectionWidth: 2,
+                color: "#004B87",
+              },
+              groups: {
+                tags: {
+                  color: {
+                    background: '#F37021',
+                  },
+                },
+                posts: {
+                  color: {
+                    background: '#96D0E5',
+                  },
+                },
+              },
+          };
           var network = new vis.Network(container, data, options);
           network.on("doubleClick", function (params) {
             if (params.nodes.length > 0) {
