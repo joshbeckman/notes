@@ -30,7 +30,7 @@
           // create an array with nodes
           var nodes = new vis.DataSet([
             {% for post in site.posts %}
-              { id: "{{ post.url }}", label: "{{ post.title | replace: '"', "'" | replace: "\n", ' '}}" },
+              { id: "{{ post.url }}", label: "{{ post.title | replace: '"', "'" }}" },
             {% endfor %}
             {% for tag in site.tags %}
               { id: "/tags#{{ tag.first }}", label: "{{ tag.first }}" },

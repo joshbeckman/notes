@@ -193,7 +193,7 @@ module ReadwiseExtras
     end
 
     def title
-      @title ||= text.gsub(/\]\(\S*\)/, "]").gsub('"', "'").slice(0, 60) + '...'
+      @title ||= text.gsub(/\]\(\S*\)/, "]").gsub('"', "'").split("\n").join(' ').slice(0, 60) + '...'
     end
 
     def formatted_tags(book)

@@ -1129,6 +1129,7 @@ div.highlighter-rouge.language-go::before {
     }
     table,
     div.highlight,
+    #mynetwork,
     blockquote {
         background: black;
         border-color: darkgray;
