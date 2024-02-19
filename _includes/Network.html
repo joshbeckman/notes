@@ -12,7 +12,7 @@ function prepareNetwork() {
     {%- assign md_link_url = '' | append: include.post.url -%}
     // include the source
     {% if include.post.book != nil %}
-      { id: "/sources#{{ include.post.book }}", label: "#", title: "{{ include.post.book_title | replace: '"', "'" }}", group: "tags", shape: "circle"},
+      { id: "/sources/#{{ include.post.book }}", label: "#", title: "{{ include.post.book_title | replace: '"', "'" }}", group: "tags", shape: "circle"},
     {% endif %}
     {% for post in site.posts %}
       {% if include.post.book != nil %}
@@ -28,7 +28,7 @@ function prepareNetwork() {
     {% endfor %}
     // include the tags
     {% for tag in include.post.tags %}
-    { id: "/tags#{{ tag }}", label: "#", title: "{{ tag | capitalize }}", group: "tags", shape: "circle"},
+    { id: "/tags/#{{ tag }}", label: "#", title: "{{ tag | capitalize }}", group: "tags", shape: "circle"},
       {% for post in site.posts %}
         {% if post.tags contains tag %}
         // include posts with the same tag
@@ -38,7 +38,7 @@ function prepareNetwork() {
     {% endfor %}
 {% else %}
     {% for post in site.posts %}{ id: "{{ post.url }}", label: "✎", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "box"},{% endfor %}
-    {% for tag in site.tags %}{ id: "/tags#{{ tag.first }}", label: "#", title: "{{ tag.first }}", group: "tags", shape: "circle"},{% endfor %}
+    {% for tag in site.tags %}{ id: "/tags/#{{ tag.first }}", label: "#", title: "{{ tag.first }}", group: "tags", shape: "circle"},{% endfor %}
 {% endif %}
   ];
   // make sure the items in nodeData are unique
@@ -48,12 +48,12 @@ function prepareNetwork() {
   {%- assign md_link_url = '' | append: include.post.url -%}
   {% for tag in include.post.tags %}
     // edges for tags to post
-    { from: "{{ include.post.url }}", to: "/tags#{{ tag }}" },
+    { from: "{{ include.post.url }}", to: "/tags/#{{ tag }}" },
     {% for sitetag in site.tags %}
       {% if sitetag.first == tag %}
         {% for tagpost in sitetag.last %}
           // edges for tags to posts with same tag
-          { from: "/tags#{{ tag }}", to: "{{ tagpost.url }}" },
+          { from: "/tags/#{{ tag }}", to: "{{ tagpost.url }}" },
         {% endfor %}
       {% endif %}
     {% endfor %}
@@ -62,7 +62,7 @@ function prepareNetwork() {
     {% if include.post.book != nil %}
       {% if post.book == include.post.book %}
         // edges for source to posts with the same source
-        { from: "/sources#{{ post.book }}", to: "{{ post.url }}" },
+        { from: "/sources/#{{ post.book }}", to: "{{ post.url }}" },
       {% endif %}
     {% endif %}
     // edges for backlinks
@@ -73,11 +73,25 @@ function prepareNetwork() {
 {% else %}
   {% for post in site.posts %}
     {% for tag in post.tags %}
-      { from: "{{ post.url }}", to: "/tags#{{ tag }}" },
+      { from: "{{ post.url }}", to: "/tags/#{{ tag }}" },
     {% endfor %}
   {% endfor %}
 {% endif %}
   ];
+// read the comma-separated list of ids from the session storage key sessionPath
+// iterate through the edgeData and set the color to red if the 'from' and 'to' are in the sessionPath list
+  var sessionPath = window.sessionStorage.getItem('sessionPath');
+  if (sessionPath) {
+    var urls = sessionPath.split(',');
+      console.log(urls);
+    for (var i = 0; i < edgeData.length; i++) {
+      console.log(edgeData[i].from + " " + edgeData[i].to)
+      if (urls.includes(edgeData[i].from) && urls.includes(edgeData[i].to)) {
+        edgeData[i].color = "#DA291C";
+          console.log('match')
+      }
+    }
+  }
   var nodes = new vis.DataSet(nodeData);
   var edges = new vis.DataSet(edgeData);
 {% if include.post %}

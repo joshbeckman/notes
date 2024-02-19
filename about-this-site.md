@@ -58,6 +58,7 @@ Webmentions are supported via [webmention.io](https://webmention.io).
 ### 2024-02-19
 - [Network/map display of all posts](/network) (to find edges of the garden [needing weeding](https://www.joshbeckman.org/blog/weeding-the-edges))
 - Network display on each post (to walk the garden path)
+- Walking path display on the network (based on session)
 
 ### 2024-02-17
 - Print and PDF styling of posts

@@ -158,4 +158,21 @@ function timeAgo(date) {
   }
 
 })();
+(function appendToSession() {
+// append to session storage the current url
+  if (!window.sessionStorage) {
+      return;
+  }
+  var currentUrl = window.location.href.split(window.location.host)[1];
+  var sessionPath = window.sessionStorage.getItem('sessionPath');
+  if (sessionPath) {
+    var urls = sessionPath.split(',');
+    if (urls.indexOf(currentUrl) == -1) {
+      urls.push(currentUrl);
+      window.sessionStorage.setItem('sessionPath', urls.join(','));
+    }
+  } else {
+    window.sessionStorage.setItem('sessionPath', currentUrl);
+  }
+})();
 </script>
