@@ -136,10 +136,6 @@
                 </td>
             </tr>
         </table>
-          <h2>Latest Post</h2>
-          {%- for post in site.posts limit:1 -%}
-          {%- include PostListItem.html post=post -%}
-          {%- endfor -%}
         </section>
         {%- include Footer.html -%}
       </article>
