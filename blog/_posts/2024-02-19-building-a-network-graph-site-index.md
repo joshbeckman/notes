@@ -36,4 +36,5 @@ Here’s a basic legend:
 - Double\-clicking a node navigates you to it
 - You can scroll and pan and drag nodes around
 - Nodes you have visited in this [browsing session](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage) are recorded and edges you have travelled are highlighted \(red\)
+
 I used the [colors from Tom Sachs](https://www.joshbeckman.org/blog/tom-sachs-colors), because that’s fun\. Initially, I had each node containing its title, but it was just *way* too busy, so I opted to display an icon for each and use hover/focus text to display the title\.
