@@ -13,7 +13,9 @@ Post = Struct.new(
   :imdb_id,
   :rating,
   :slug,
-  :title
+  :tags,
+  :title,
+  keyword_init: true
 )
 
 class Poster
@@ -27,7 +29,7 @@ class Poster
   end
 
   def import_entry(entry, export_path)
-    post = Post.new
+    post = Post.new(tags: [])
     title_match = entry.dig("text").match(/# (.*)/)
     if title_match
       post.title = title_match[1]
