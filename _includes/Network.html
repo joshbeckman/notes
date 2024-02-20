@@ -83,12 +83,9 @@ function prepareNetwork() {
   var sessionPath = window.sessionStorage.getItem('sessionPath');
   if (sessionPath) {
     var urls = sessionPath.split(',');
-      console.log(urls);
     for (var i = 0; i < edgeData.length; i++) {
-      console.log(edgeData[i].from + " " + edgeData[i].to)
       if (urls.includes(edgeData[i].from) && urls.includes(edgeData[i].to)) {
         edgeData[i].color = "#DA291C";
-          console.log('match')
       }
     }
   }

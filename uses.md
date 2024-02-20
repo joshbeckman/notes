@@ -28,18 +28,21 @@ Well, we're gonna have to break this down a bit.
 - Samson Q2U microphone
 - Teenage Engineering M-1 headphones
 - Raspberry Pi
+- iPhone 12 mini
 
 ### Software
 - MacOS
 - Vim as an editor
 - iTerm as a terminal
+- tmux
 - Git for version control
-- Day One for personal journaling
-- GitHub issues for work journaling
+- Day One for personal journaling/logbook
+- GitHub issues for work journaling/logbook
 - Jekyll and GitHub pages
 - Fastmail for personal email
 - Fantastical for personal calendar
 - Google for work email/calendar
+- [These fonts](https://www.joshbeckman.org/blog/my-favorite-fonts)
 
 ## Photography
 

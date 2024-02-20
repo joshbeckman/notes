@@ -5,6 +5,10 @@ image: /assets/img/profile.png
 favicon_url: /assets/img/profile.png
 source_emoji: 🌐
 toc: true
+tags:
+- information-theory
+- system-design
+- taxonomy
 ---
 
 There are categories; they are used as tags.

@@ -8,6 +8,8 @@ description:
 tags: 
 - interfaces
 - personal-blog
+- network-theory
+- taxonomy
 ---
 
 I had a fun time this morning building a network view/graph for this site\.
