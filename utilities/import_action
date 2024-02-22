@@ -108,9 +108,15 @@ module ReadwiseExtras
     def outbound_url(text_fragment: nil)
       return source_url unless text_fragment
 
-      text_start = text_fragment.split("\n").first.split("[").first.split(" ").first(10).join(" ").strip
-      fragment = URI::Parser.new.escape(text_start).gsub(/[^a-zA-Z0-9]$/, '')
-      "#{source_url.split('#').first}#:~:text=#{fragment}"
+      text_start = text_fragment.unicode_normalize.split("\n").first.split("[").first.split(" ").first(10).join(" ").strip
+      fragment = ":~:text=" + URI.encode_uri_component(text_start)
+      begin
+        parsed_url = URI.parse(source_url)
+        parsed_url.fragment = "#{parsed_url.fragment}#{fragment}"
+        parsed_url.to_s
+      rescue URI::InvalidURIError
+        "#{source_url.split('#').first}##{fragment}"
+      end
     end
 
     def asin_url
@@ -173,7 +179,7 @@ module ReadwiseExtras
     def post_text(book)
       [
         "---",
-        "title: \"#{title}\"",
+        "title: \"#{title}...\"",
         "tags: #{formatted_tags(book)}",
         "canonical: #{book.source_url}",
         "author: #{book.author_stripped}",
@@ -193,7 +199,7 @@ module ReadwiseExtras
     end
 
     def title
-      @title ||= text.gsub(/\]\(\S*\)/, "]").gsub('"', "'").split("\n").join(' ').slice(0, 60) + '...'
+      @title ||= text.gsub(/\]\(\S*\)/, "]").gsub('"', "'").split("\n").join(' ').slice(0, 60)
     end
 
     def formatted_tags(book)
