@@ -8,41 +8,41 @@ function prepareNetwork() {
   var nodeData = [
 {% if include.post %}
     // include the post itself
-    { id: "{{ include.post.url }}", label: "@", title: "{{ include.post.title | replace: '"', "'" }}", group: "posts", shape: "box", color: "#FFCC00"},
+    { id: "{{ include.post.url }}", title: "{{ include.post.title | replace: '"', "'" }}", group: "posts", shape: "hexagon", color: "#FFCC00"},
     {%- assign md_link_url = '' | append: include.post.url -%}
     // include the source
     {% if include.post.book != nil %}
-      { id: "/sources/#{{ include.post.book }}", label: "#", title: "{{ include.post.book_title | replace: '"', "'" }}", group: "tags", shape: "circle"},
+      { id: "/sources/#{{ include.post.book }}", title: "{{ include.post.book_title | replace: '"', "'" }}", group: "tags", shape: "dot"},
     {% endif %}
     {% for post in site.posts %}
       {% if include.post.book != nil %}
         // include posts from the same source
         {% if post.book == include.post.book %}
-          { id: "{{ post.url }}", label: "✎", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "box"},
+          { id: "{{ post.url }}", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "square"},
         {% endif %}
       {% endif %}
       // include posts with a backlink
       {% if post.content contains md_link_url %}
-        { id: "{{ post.url }}", label: "✎", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "box"},
+        { id: "{{ post.url }}", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "square"},
       {% endif %}
       {%- assign item_md_link_url = '' | append: post.url -%}
       {% if include.post.content contains item_md_link_url %}
-        { id: "{{ post.url }}", label: "✎", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "box"},
+        { id: "{{ post.url }}", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "square"},
       {% endif %}
     {% endfor %}
     // include the tags
     {% for tag in include.post.tags %}
-    { id: "/tags/#{{ tag }}", label: "#", title: "{{ tag | capitalize }}", group: "tags", shape: "circle"},
+    { id: "/tags/#{{ tag }}", title: "{{ tag | capitalize }}", group: "tags", shape: "dot"},
       {% for post in site.posts %}
         {% if post.tags contains tag %}
         // include posts with the same tag
-        { id: "{{ post.url }}", label: "✎", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "box"},
+        { id: "{{ post.url }}", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "square"},
         {% endif %}
       {% endfor %}
     {% endfor %}
 {% else %}
-    {% for post in site.posts %}{ id: "{{ post.url }}", label: "✎", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "box"},{% endfor %}
-    {% for tag in site.tags %}{ id: "/tags/#{{ tag.first }}", label: "#", title: "{{ tag.first }}", group: "tags", shape: "circle"},{% endfor %}
+    {% for post in site.posts %}{ id: "{{ post.url }}", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "square"},{% endfor %}
+    {% for tag in site.tags %}{ id: "/tags/#{{ tag.first }}", title: "{{ tag.first }}", group: "tags", shape: "dot"},{% endfor %}
 {% endif %}
   ];
   // make sure the items in nodeData are unique
@@ -86,6 +86,17 @@ function prepareNetwork() {
   {% endfor %}
 {% endif %}
   ];
+// iterate through the items in nodeData and set their `value` to the count of edges touching them
+nodeData = nodeData.map(function (node) {
+  var count = 0;
+  for (var i = 0; i < edgeData.length; i++) {
+    if (edgeData[i].from === node.id || edgeData[i].to === node.id) {
+      count++;
+    }
+  }
+  node.value = count;
+  return node;
+});
 // read the comma-separated list of ids from the session storage key sessionPath
 // iterate through the edgeData and set the color to red if the 'from' and 'to' are in the sessionPath list
   var sessionPath = window.sessionStorage.getItem('sessionPath');

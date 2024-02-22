@@ -30,10 +30,11 @@ So, that’s the “full garden”, but I also figured it would be nice to displ
 
 ## Legend
 Here’s a basic legend:
-- Each tag/topic is a `#` node
-- Each source is a `#` node \(orange\)
-- Each post is a `✎` node \(blue\)
-- The current page/post is the `@` node \(yellow\)
+- Each tag/topic is a circle node
+- Each source is a circle node \(orange\)
+- Each post is a square node \(blue\)
+- The current page/post is the hexagon node \(yellow\)
+- Nodes are scaled up by their number of connections
 - Clicking a node or edge highlights its connected nodes
 - Double\-clicking a node navigates you to it
 - You can scroll and pan and drag nodes around
