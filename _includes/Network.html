@@ -97,6 +97,10 @@ nodeData = nodeData.map(function (node) {
   node.value = count;
   return node;
 });
+// filter out items from nodeData that have an id matching '/sources/#' and a value less than 2
+nodeData = nodeData.filter(function (node) {
+  return !(node.id.match(/\/sources\/#/) && node.value < 2);
+});
 // read the comma-separated list of ids from the session storage key sessionPath
 // iterate through the edgeData and set the color to red if the 'from' and 'to' are in the sessionPath list
   var sessionPath = window.sessionStorage.getItem('sessionPath');
