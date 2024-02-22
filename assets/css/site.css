@@ -496,6 +496,9 @@ blockquote {
   max-width: 100%;
   max-height: 100%;
 }
+.vis-network-container:hover {
+  cursor: move;
+}
 .vis-network-container.full-vis-network {
   height: 75vh;
   width: 100%;

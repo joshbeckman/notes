@@ -110,12 +110,8 @@ plugins:
 feed:
   posts_limit: 50
   categories:
-    - movies
     - blog
     - notes
-    - photos
-    - concerts
-    - books
 
 # Disqus Comments
 # disqus:
