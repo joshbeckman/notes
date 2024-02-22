@@ -55,6 +55,8 @@ Network graph views are powered by [vis-network](https://www.joshbeckman.org/blo
   - And export to a URL that can rebuild the post/content? (shareable assemblage of notes)
   - display the path on a map of notes?
 - Display "recently read" and "reading inbox" articles from Reader API
+- "suggested relations" page
+  - suggest tags if the tag text is in the note/post text
 
 ### 2024-02-19
 - [Network/map display of all posts](/network) (to find edges of the garden [needing weeding](https://www.joshbeckman.org/blog/weeding-the-edges))
