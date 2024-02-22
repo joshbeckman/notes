@@ -25,6 +25,10 @@ function prepareNetwork() {
       {% if post.content contains md_link_url %}
         { id: "{{ post.url }}", label: "✎", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "box"},
       {% endif %}
+      {%- assign item_md_link_url = '' | append: post.url -%}
+      {% if include.post.content contains item_md_link_url %}
+        { id: "{{ post.url }}", label: "✎", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "box"},
+      {% endif %}
     {% endfor %}
     // include the tags
     {% for tag in include.post.tags %}
@@ -68,6 +72,10 @@ function prepareNetwork() {
     // edges for backlinks
     {% if post.content contains md_link_url %}
       { from: "{{ post.url }}", to: "{{ include.post.url }}" },
+    {% endif %}
+    {%- assign item_md_link_url = '' | append: post.url -%}
+    {% if include.post.content contains item_md_link_url %}
+      { from: "{{ include.post.url }}", to: "{{ post.url }}" },
     {% endif %}
   {% endfor %}
 {% else %}

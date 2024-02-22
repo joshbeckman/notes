@@ -15,6 +15,6 @@ There’s this video game trailer for [Everything](https://cdn.jwplayer.com/prev
 
 Recently the game has become [available on a platform that we have](https://www.nintendo.com/us/store/products/everything-switch/) in the house, so I hope to finally play it this spring\.
 
-As I was digging more into the game, I found [the website of its creator](https://www.davidoreilly.com/everything) and it’s beautiful in a different way\. I hope you explore\.
+As I was digging more into the game, I found [the website of its creator](https://www.davidoreilly.com/) and it’s beautiful in a different way\. I hope you explore\.
 
 ![](/assets/images/F1366DFFFF094122AD960EBBB58E5F43.png)
