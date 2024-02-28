@@ -7,21 +7,17 @@
 function prepareNetwork() {
   var nodeData = [
 {% if include.post %}
-    // include the post itself
     { id: "{{ include.post.url }}", title: "{{ include.post.title | replace: '"', "'" }}", group: "posts", shape: "hexagon", color: "#FFCC00"},
     {%- assign md_link_url = '' | append: include.post.url -%}
-    // include the source
     {% if include.post.book != nil %}
       { id: "/sources/#{{ include.post.book }}", title: "{{ include.post.book_title | replace: '"', "'" }}", group: "tags", shape: "dot"},
     {% endif %}
     {% for post in site.posts %}
       {% if include.post.book != nil %}
-        // include posts from the same source
         {% if post.book == include.post.book %}
           { id: "{{ post.url }}", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "square"},
         {% endif %}
       {% endif %}
-      // include posts with a backlink
       {% if post.content contains md_link_url %}
         { id: "{{ post.url }}", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "square"},
       {% endif %}
@@ -30,12 +26,10 @@ function prepareNetwork() {
         { id: "{{ post.url }}", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "square"},
       {% endif %}
     {% endfor %}
-    // include the tags
     {% for tag in include.post.tags %}
     { id: "/tags/#{{ tag }}", title: "{{ tag | capitalize }}", group: "tags", shape: "dot"},
       {% for post in site.posts %}
         {% if post.tags contains tag %}
-        // include posts with the same tag
         { id: "{{ post.url }}", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "square"},
         {% endif %}
       {% endfor %}
@@ -51,12 +45,10 @@ function prepareNetwork() {
 {% if include.post %}
   {%- assign md_link_url = '' | append: include.post.url -%}
   {% for tag in include.post.tags %}
-    // edges for tags to post
     { from: "{{ include.post.url }}", to: "/tags/#{{ tag }}" },
     {% for sitetag in site.tags %}
       {% if sitetag.first == tag %}
         {% for tagpost in sitetag.last %}
-          // edges for tags to posts with same tag
           { from: "/tags/#{{ tag }}", to: "{{ tagpost.url }}" },
         {% endfor %}
       {% endif %}
@@ -65,11 +57,9 @@ function prepareNetwork() {
   {% for post in site.posts %}
     {% if include.post.book != nil %}
       {% if post.book == include.post.book %}
-        // edges for source to posts with the same source
         { from: "/sources/#{{ post.book }}", to: "{{ post.url }}" },
       {% endif %}
     {% endif %}
-    // edges for backlinks
     {% if post.content contains md_link_url %}
       { from: "{{ post.url }}", to: "{{ include.post.url }}" },
     {% endif %}
