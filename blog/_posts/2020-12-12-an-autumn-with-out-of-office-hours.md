@@ -5,6 +5,8 @@ featured: true
 image: "/assets/images/96B2B946-7500-48A0-8168-360450087625.jpeg"
 description: Reflecting on what went well and what to improve after a season of mentoring brand new software engineers.
 date: '2020-12-12 00:00:00'
+tags:
+- mentoring
 redirect_from:
 - "/an-autumn-with-out-of-office-hours"
 - "/an-autumn-with-out-of-office-hours/"
