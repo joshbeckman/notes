@@ -2,6 +2,8 @@
 toc: true
 title: Ways I'm Able to Help
 date: '2020-06-24 00:00:00'
+tags:
+- mentoring
 redirect_from:
 - "/ways-im-available-to-help"
 - "/ways-im-available-to-help/"
@@ -25,7 +27,7 @@ That said, ways I’m available to help anyone:
 
 Ways I’m available to help BIPOC and women in tech:
 
-- **Interview advice and practice**. I’ve interviewed _many_ people at early- and mid-stage startups for years, so I can help you in situations like that. I am very happy to help practice interviews with you or give you advice on how to best approach different interview structures or scenarios.
+- **Interview advice and practice**. I’ve interviewed _many_ people at both startups and Big Tech for years, so I can help you in situations like that. I am very happy to help practice interviews with you or give you advice on how to best approach different interview structures or scenarios.
 - **Mid-career job advice**. After your first tech position, you really start getting a handle on how wide the world of tech can be. I’m eager to help people figure out the differences in those multiple paths and can share my own experience as a data point to inform your own.
 - **Startup tech evaluations**. Many times people in tech are presented with existing or proposed towers of technical debt when they join a company. I am happy to help evaluate the soundness of those environments or decisions, in a limited capacity.
 - **Review blog posts or talk proposals**. I want to see more writing from everyone in tech, but would be happiest to see those from BIPOC. Any help I can give in bringing your voice to the fore I will give. I’m not the best proofreader, but can help shape ideas and identify those that would be most interesting to others.
@@ -33,7 +35,6 @@ Ways I’m available to help BIPOC and women in tech:
 Some things I’m _not_ a good resource for:
 
 - **Getting your first job in tech**. My own career path into and through tech was not traditional (or, I think, replicable). I also don’t have the best grasp on the environments many bootcamps provide, so I will leave the advice for first jobs to those just leaving their first job. Go find those people!
-- **Getting hired at Big Tech companies**. Until recently, I’ve only ever worked for small to mid-size startups, where I was able to control the vast majority of the hiring process, so I don’t have any advice that you couldn’t discover yourself through Google searches.
 - **Referrals that are unlikely to get serious consideration**. This may be the wrong stance, but I only refer people of make an introduction if I am exceedingly confident that both parties will strongly engage. That usually means I won’t do it, and I save my sponsorship efforts for those individuals I already know.
 - **Connecting with you on LinkedIn**. I prefer having my LinkedIn profile represent my actual network. This is so when people ask me for introductions, I genuinely know the people they’re asking about. To that end, I generally don’t accept connection requests from people I haven’t met in person, or haven’t talked to extensively through email.
 
