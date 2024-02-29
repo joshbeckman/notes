@@ -14,24 +14,16 @@ function prepareNetwork() {
     {% endif %}
     {% for post in site.posts %}
       {% if include.post.book != nil %}
-        {% if post.book == include.post.book %}
-          { id: "{{ post.url }}", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "square"},
-        {% endif %}
+        {% if post.book == include.post.book %}{ id: "{{ post.url }}", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "square"},{% endif %}
       {% endif %}
-      {% if post.content contains md_link_url %}
-        { id: "{{ post.url }}", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "square"},
-      {% endif %}
+      {% if post.content contains md_link_url %}{ id: "{{ post.url }}", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "square"},{% endif %}
       {%- assign item_md_link_url = '' | append: post.url -%}
-      {% if include.post.content contains item_md_link_url %}
-        { id: "{{ post.url }}", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "square"},
-      {% endif %}
+      {% if include.post.content contains item_md_link_url %}{ id: "{{ post.url }}", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "square"},{% endif %}
     {% endfor %}
     {% for tag in include.post.tags %}
     { id: "/tags/#{{ tag }}", title: "{{ tag | capitalize }}", group: "tags", shape: "dot"},
       {% for post in site.posts %}
-        {% if post.tags contains tag %}
-        { id: "{{ post.url }}", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "square"},
-        {% endif %}
+        {% if post.tags contains tag %}{ id: "{{ post.url }}", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "square"},{% endif %}
       {% endfor %}
     {% endfor %}
 {% else %}
@@ -46,34 +38,14 @@ function prepareNetwork() {
   {%- assign md_link_url = '' | append: include.post.url -%}
   {% for tag in include.post.tags %}
     { from: "{{ include.post.url }}", to: "/tags/#{{ tag }}" },
-    {% for sitetag in site.tags %}
-      {% if sitetag.first == tag %}
-        {% for tagpost in sitetag.last %}
-          { from: "/tags/#{{ tag }}", to: "{{ tagpost.url }}" },
-        {% endfor %}
-      {% endif %}
-    {% endfor %}
+    {% for sitetag in site.tags %}{% if sitetag.first == tag %}{% for tagpost in sitetag.last %}{ from: "/tags/#{{ tag }}", to: "{{ tagpost.url }}" },{% endfor %}{% endif %}{% endfor %}
   {% endfor %}
-  {% for post in site.posts %}
-    {% if include.post.book != nil %}
-      {% if post.book == include.post.book %}
-        { from: "/sources/#{{ post.book }}", to: "{{ post.url }}" },
-      {% endif %}
-    {% endif %}
-    {% if post.content contains md_link_url %}
-      { from: "{{ post.url }}", to: "{{ include.post.url }}" },
-    {% endif %}
+  {% for post in site.posts %}{% if include.post.book != nil %}{% if post.book == include.post.book %}{ from: "/sources/#{{ post.book }}", to: "{{ post.url }}" },{% endif %}{% endif %}
+    {% if post.content contains md_link_url %}{ from: "{{ post.url }}", to: "{{ include.post.url }}" },{% endif %}
     {%- assign item_md_link_url = '' | append: post.url -%}
-    {% if include.post.content contains item_md_link_url %}
-      { from: "{{ include.post.url }}", to: "{{ post.url }}" },
-    {% endif %}
-  {% endfor %}
+    {% if include.post.content contains item_md_link_url %}{ from: "{{ include.post.url }}", to: "{{ post.url }}" },{% endif %}{% endfor %}
 {% else %}
-  {% for post in site.posts %}
-    {% for tag in post.tags %}
-      { from: "{{ post.url }}", to: "/tags/#{{ tag }}" },
-    {% endfor %}
-  {% endfor %}
+  {% for post in site.posts %}{% for tag in post.tags %}{ from: "{{ post.url }}", to: "/tags/#{{ tag }}" },{% endfor %}{% endfor %}
 {% endif %}
   ];
 // iterate through the items in nodeData and set their `value` to the count of edges touching them
@@ -114,16 +86,6 @@ nodeData = nodeData.filter(function (node) {
     edges: edges,
   };
   var options = {
-{% unless include.post %}
-      physics: {
-        barnesHut: {
-          gravitationalConstant: -80000,
-          springConstant: 0.05,
-          springLength: 100,
-          avoidOverlap: 0.5,
-        },
-      },
-{% endunless %}
       interaction: {
         tooltipDelay: 100,
       },

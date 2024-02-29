@@ -11,8 +11,8 @@ tags:
 - taxonomy
 ---
 
-There are categories; they are used as tags.
-Any note can be tagged with one or more categories.
+[The topics](/tags) are categories; they are used as tags.
+Any note can be tagged with one or more topics.
 The numbers don't matter; what matters is that they are numerically sorted and numerically related.
 
 The system structure and theory is roughly based on the ideas of <a href="https://johnnydecimal.com" target="_blank">Johnny.Decimal</a>.
@@ -20,3 +20,5 @@ I initially took inspiration from <a href="https://en.wikipedia.org/wiki/Dewey_D
   Categories are maintained <a href="https://github.com/joshbeckman/notes/blob/master/_data/decimals.yml">here</a>.
 
 Things are [indexec by topic](/tags), or <a href="/dates">indexed by date</a>, or <a href="/sources">by source</a> or you can <a href="/search">search here</a>.
+
+If you're visually-inclined, you can [browse the network visualization](/network)
