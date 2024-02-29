@@ -849,6 +849,14 @@ li.filed:before {
   content: "#";
   color: #999;
 }
+li.filed.source {
+  white-space: nowrap;
+  max-width: 12em;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: bottom;
+}
 li.filed.source:before {
   content: "⊞";
 }
