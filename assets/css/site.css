@@ -854,14 +854,14 @@ li.filed.source {
   vertical-align: bottom;
 }
 li.filed.source:before {
-  content: "⊞";
+  content: "≡";
 }
 li.filed.date:before {
-  content: "⏲";
+  content: "≈";
 }
 li.filed.edit:before {
   position: relative;
-  content: "⊕";
+  content: "≠";
   color: #999;
   margin-right: 3px;
 }
