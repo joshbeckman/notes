@@ -80,9 +80,22 @@
               {%- endfor -%}
           {%- endfor -%}
           {%- if page.book -%}
+              {%- assign sameTagCount = 0 -%}
+              {%- assign minCommonTags = 1 -%}
+              {%- for post in site.posts -%}
+                    {%- if post.url != page.url -%}
+                      {%- if page.book and page.book == post.book -%}
+                        {%- unless post.content contains page.title -%}
+                          {%- assign sameTagCount = sameTagCount | plus: 1 -%}
+                        {%- endunless -%}
+                      {%- endif -%}
+                    {%- endif -%}
+              {%- endfor -%}
+              {%- if sameTagCount >= minCommonTags-%}
               <li class="filed source">
                   <a href="/sources/#{{ page.book }}" class="">{{ page.book_title }}</a>
               </li>
+              {%- endif -%}
           {%- endif -%}
           {%- if page.date -%}
           <li class="filed date">
