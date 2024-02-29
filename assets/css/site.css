@@ -835,15 +835,19 @@ article ul li.filed {
 li.filed:before {
   position: relative;
   content: "#";
-  vertical-align: middle;
   color: #999;
+}
+li.filed.source:before {
+  content: "⊞";
+}
+li.filed.date:before {
+  content: "⏲";
 }
 li.filed.edit:before {
   position: relative;
-  content: "✎";
-  vertical-align: middle;
+  content: "⊕";
   color: #999;
-  left: -1px;
+  margin-right: 3px;
 }
 ul.similar>li:before {
   position: relative;

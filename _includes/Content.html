@@ -78,8 +78,13 @@
                   {%- endif -%}
               {%- endfor -%}
           {%- endfor -%}
+          {%- if page.book -%}
+              <li class="filed source">
+                  <a href="/sources/#{{ page.book }}" class="">{{ page.book_title }}</a>
+              </li>
+          {%- endif -%}
           {%- if page.date -%}
-          <li class="filed">
+          <li class="filed date">
             <a href="/dates/#{{ page.date | date: '%d-%B-%Y' }}">
                 <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y, %B %d' }}</time>
             </a>
