@@ -92,7 +92,7 @@ tags: index
     {% for post in site.posts %}
     {% if post.tags.size == 0 %}
       <li style=""><a href="{{post.url}}">
-        {{ post.title | strip_html | strip | escape | truncate: 70}} <em>(untagged)</em>
+        {{ post.title | strip_html | strip | escape | truncate: 70}}
       </a></li>
     {% endif %}
     {% endfor %}

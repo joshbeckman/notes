@@ -44,21 +44,16 @@ You can read about everything else I use to build things at [/uses](/uses).
 - better h-card markup for posts
 - `/projects` page
 - `/now` page ([ref](https://nownownow.com/about#who))
-- `/uses` page ([ref](https://uses.tech))
 - Random image on homepage
 - podcast rendering
-* make backlinks and related/same-source rendering more efficient
 * move content markup into liquid filters instead of liquid logic
 * change styling/colors by season
 * Move webmentions into static ingestion and rendering
 - Post to mastodon or something via GitHub action build pipeline
-- "Collect" posts/notes into a markdown block (like the old scratchpad thing)
-  - And export contents as epub?
-  - And export to a URL that can rebuild the post/content? (shareable assemblage of notes)
-  - display the path on a map of notes?
 - Display "recently read" and "reading inbox" articles from Reader API
-- "suggested relations" page
-  - suggest tags if the tag text is in the note/post text
+
+### 2024-02-28
+- [`/uses` page](/uses) ([ref](https://uses.tech))
 
 ### 2024-02-19
 - [Network/map display of all posts](/network) (to find edges of the garden [needing weeding](https://www.joshbeckman.org/blog/weeding-the-edges))
