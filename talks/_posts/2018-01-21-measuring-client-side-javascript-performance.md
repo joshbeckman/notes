@@ -3,6 +3,10 @@ title: Measuring Client-Side JavaScript Performance
 date: 2018-01-21 00:00:00 Z
 redirect_to: "https://ghpages.joshbeckman.org/presents/measuring-client-side-javascript-performance"
 presented_at: Chicago JavaScript Meetup
+tags:
+- software-engineering
+- code-snippets
+- open-source
 ---
 
 <section data-markdown>

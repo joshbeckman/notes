@@ -3,6 +3,10 @@ title: Build Your Own Node.js CLI Package
 date: 2018-04-16 00:00:00 Z
 redirect_to: "https://ghpages.joshbeckman.org/presents/build-a-nodejs-cli-package"
 presented_at: Chicago Node.js Meetup
+tags:
+- software-engineering
+- code-snippets
+- open-source
 ---
 
 <style>

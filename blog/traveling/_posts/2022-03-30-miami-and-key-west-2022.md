@@ -4,6 +4,9 @@ title: Miami and Key West
 image: "/assets/images/D9242631-E3E2-437A-8988-63815B7DD74C.jpeg"
 description: Marybeth, Paul, Dan, and I traveled down the keys and back to MIA.
 date: '2022-03-30 03:11:00'
+tags:
+- travel
+- united-states
 redirect_from:
 - "/miami-and-key-west-2022"
 - "/miami-and-key-west-2022/"

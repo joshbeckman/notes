@@ -2,6 +2,8 @@
 toc: true
 title: Five Fun Days
 date: '2023-05-12 13:47:00'
+tags:
+- health
 redirect_from:
 - "/five-fun-days"
 - "/five-fun-days/"

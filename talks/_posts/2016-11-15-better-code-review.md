@@ -3,6 +3,9 @@ title: Code Review Doesn't Have to Suck
 date: 2016-11-15 00:00:00 Z
 redirect_to: "https://ghpages.joshbeckman.org/presents/better-code-review"
 presented_at: Chicago JavaScript Meetup, Chicago Tech Leads Meetup
+tags:
+- mentoring
+- software-engineering
 ---
 
 ## Why do it?

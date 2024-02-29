@@ -3,6 +3,9 @@ title: Testing React Apps
 date: 2017-08-31
 presented_at: React Chicago Meetup
 redirect_to: "https://ghpages.joshbeckman.org/presents/testing-react-apps"
+tags:
+- code-snippets
+- software-engineering
 ---
 
 <script>

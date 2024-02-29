@@ -3,6 +3,9 @@ title: React SPA Continuous Delivery with GitLab
 date: 2017-09-27 00:00:00 Z
 redirect_to: "https://ghpages.joshbeckman.org/presents/react-spa-continuous-delivery"
 presented_at: React Chicago Meetup
+tags:
+- software-engineering
+- code-snippets
 ---
 
 ## What is CI/CD?

@@ -3,6 +3,9 @@ title: Don't Call Back, I'll Just Wait Here
 date: 2017-06-21 00:00:00 Z
 redirect_to: "https://ghpages.joshbeckman.org/presents/escape-callbacks-koa-async-await"
 presented_at: Chicago Node.js Meetup
+tags:
+- software-engineering
+- code-snippets
 ---
 
 ## JavaScript has non-blocking async i/o
