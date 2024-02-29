@@ -498,6 +498,18 @@ blockquote {
   max-width: 100%;
   max-height: 100%;
 }
+.vis-network-legend {
+  position: absolute;
+  bottom: 1em;
+  z-index: 100;
+  border-radius: 5px;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border: 1px solid lightgrey;
+  padding: 0.25em 0.5em 0.4em;
+}
+.vis-network-legend .legend-item {
+}
 .vis-network-container:hover {
   cursor: move;
 }
