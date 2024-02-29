@@ -1,5 +1,6 @@
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.joshbeckman.org" # the base hostname & protocol for your site, e.g. http://example.com
+repo_edit_url: "http://github.com/joshbeckman/notes/edit/master/"
 
 #######################################################################
 # Settings related to the Header and your About page go here,such as 

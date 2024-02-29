@@ -73,9 +73,7 @@
               {%- for tag in page.tags -%}
                   {%- if tag == slug -%}
                       <li class="filed">
-                          <a href="/tags/#{{ tag }}" class="">
-                              {{ item }}
-                          </a>
+                          <a href="/tags/#{{ tag }}" class="">{{ item }}</a>
                       </li>
                   {%- endif -%}
               {%- endfor -%}
@@ -83,19 +81,17 @@
           {%- if page.date -%}
           <li class="filed">
             <a href="/dates/#{{ page.date | date: '%d-%B-%Y' }}">
-                <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">
-                    {{ page.date | date: '%Y, %B %d' }}
-                </time>
+                <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y, %B %d' }}</time>
             </a>
           </li>
           {%- endif -%}
-          {%- if page.readwise_url -%}
           <li class="filed edit">
-            <a href="{{ page.readwise_url }}" target="_blank">
-              Edit
-            </a>
-          </li>
+          {%- if page.readwise_url -%}
+            <a href="{{ page.readwise_url }}" target="_blank">Edit</a>
+          {%- else -%}
+            <a href="{{ page.path | prepend: site.repo_edit_url }}" target="_blank">Edit</a>
           {%- endif -%}
+          </li>
       </ul>
     </div>
   </div>

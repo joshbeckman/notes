@@ -23,3 +23,6 @@ As I see it, a useful three-dimensional mapping would give me the ability to rot
 
 I think a mapping like this would let the author traverse the notes taken and topics mentioned in a way that would show outliers or trends in thought very easily. At least worth a shot.
 
+## Edit 2024-02-28
+
+I guess [I eventually built this idea](https://www.joshbeckman.org/blog/building-a-network-graph-site-index), unintentionally, 8 years later.

@@ -6,6 +6,7 @@ favicon_url: /assets/img/profile.png
 source_emoji: 🌐
 toc: true
 tags:
+- index
 - information-theory
 - system-design
 - taxonomy

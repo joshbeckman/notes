@@ -35,6 +35,8 @@ The site fonts are [IBM Plex](https://www.ibm.com/plex/).
 Webmentions are supported via [webmention.io](https://webmention.io).
 Network graph views are powered by [vis-network](https://www.joshbeckman.org/blog/building-a-network-graph-site-index).
 
+You can read about everything else I use to build things at [/uses](/uses).
+
 ## Changelog
 
 ### Unreleased

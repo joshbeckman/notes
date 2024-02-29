@@ -448,6 +448,7 @@ figcaption,
 table,
 blockquote {
   hyphens: auto;
+  text-wrap: pretty;
 }
 h1,
 h2,
@@ -458,6 +459,7 @@ h6,
 table,
 figcaption {
   line-height: 1.2;
+  text-wrap: balance;
 }
 h1,
 h2,
@@ -841,6 +843,7 @@ li.filed.edit:before {
   content: "✎";
   vertical-align: middle;
   color: #999;
+  left: -1px;
 }
 ul.similar>li:before {
   position: relative;
