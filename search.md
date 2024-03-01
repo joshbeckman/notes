@@ -2,7 +2,7 @@
 layout: Page
 title: Search
 permalink: /search/
-emoji: *️⃣
+emoji: "*️⃣"
 tags: index
 toc: true
 ---
