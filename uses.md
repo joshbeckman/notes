@@ -4,6 +4,7 @@ title: Uses
 searchable: true
 toc: true
 permalink: /uses/
+emoji: 🛠️
 tags:
 - personal-blog
 - tools
