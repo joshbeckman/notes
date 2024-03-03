@@ -14,6 +14,8 @@ tags:
 
 _The Power Broker_ by Robert Caro
 
+My [article reading list](/blog/reading/reading_list).
+
 ## Antilibrary
 
 I keep this [anitlibrary](/notes/660552124) to allow my interest to project forward.

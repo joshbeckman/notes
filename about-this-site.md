@@ -40,7 +40,6 @@ You can read about everything else I use to build things at [/uses](/uses).
 ## Changelog
 
 ### Unreleased
-- podroll and blogroll posts/tags
 - better h-card markup for posts
 - `/projects` page
 - `/now` page ([ref](https://nownownow.com/about#who))
@@ -50,10 +49,13 @@ You can read about everything else I use to build things at [/uses](/uses).
 * change styling/colors by season
 * Move webmentions into static ingestion and rendering
 - Post to mastodon or something via GitHub action build pipeline
-- Display "recently read" and "reading inbox" articles from Reader API
+
+### 2024-03-02
+- Display ["recently read" and "reading inbox"](/blog/reading/reading_list) articles from Reader API
 
 ### 2024-02-28
 - [`/uses` page](/uses) ([ref](https://uses.tech))
+- podroll and blogroll posts/tags
 
 ### 2024-02-19
 - [Network/map display of all posts](/network) (to find edges of the garden [needing weeding](https://www.joshbeckman.org/blog/weeding-the-edges))

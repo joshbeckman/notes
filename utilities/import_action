@@ -27,6 +27,58 @@ class Jekyll
       f.write highlight.post_text(book)
     end
   end
+
+  def self.import_reading_list(inbox_month: [], archive_month: [])
+    file = File.open('blog/reading/reading_list.md', 'w')
+    file.puts '---'
+    file.puts 'layout: Page'
+    file.puts 'title: Reading List'
+    file.puts 'toc: true'
+    file.puts 'emoji: 📚'
+    file.puts 'searchable: true'
+    file.puts 'categories:'
+    file.puts '- blog'
+    file.puts 'tags:'
+    file.puts '- index'
+    file.puts '---'
+    file.puts 'I generate this page from my Readwise library using [a script I wrote](/TODO). Feel free to use it, too!'
+    file.puts
+    file.puts '## Archive'
+    file.puts "This is a list of the #{archive_month.count} articles/etc. that I read in the last month."
+    file.puts
+    file.puts '| Title | Author |'
+    file.puts '| ------ | ----- |'
+    archive_month.each do |doc|
+      # TODO: match each against a highlight and link to it if found
+      title = doc.title
+      author = doc.author
+      email = doc.source_url.match?(/^mailto:/)
+      unless doc.source_url.match?(/^mailto:/)
+        title = "[#{title}](#{doc.source_url})"
+      end
+      if email && author.nil?
+        author = "(newsletter)"
+      end
+      file.puts "| #{title&.gsub('|', '')} | #{author&.gsub('|', '')} |"
+    end
+    file.puts
+    file.puts '## Inbox'
+    file.puts "This is a list of the #{inbox_month.count} articles/etc. that I added to my reading list queue in the last month."
+    file.puts
+    file.puts '| Title | Author | Read in app |'
+    file.puts '| ------ | ----- | ----- |'
+    inbox_month.each do |doc|
+      site_name = doc.site_name
+      email = doc.source_url.match?(/^mailto:/)
+      unless doc.source_url.match?(/^mailto:/)
+        title = "[#{title}](#{doc.source_url})"
+      end
+      if email && site_name.nil?
+        site_name = "(newsletter)"
+      end
+      file.puts "| #{title&.gsub('|', '')} | #{site_name&.gsub('|', '')} | [Read](#{doc.url}) |"
+    end
+  end
 end
 
 module ReadwiseExtras
@@ -250,6 +302,10 @@ class Importer
       Jekyll.import_book(book)
       Jekyll.import_book_highlights(book)
     end
+    month_ago = Date.today.prev_month.to_time
+    new_docs = client.get_documents(location: 'new', updated_after: month_ago.iso8601)
+    archive_docs = client.get_documents(location: 'archive', updated_after: month_ago.iso8601)
+    Jekyll.import_reading_list(inbox_month: new_docs, archive_month: archive_docs)
   end
 
   def self.clean_posts
