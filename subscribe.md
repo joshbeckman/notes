@@ -4,6 +4,7 @@ title: Subscribe
 tags: index
 toc: true
 searchable: true
+emoji: '📶'
 ---
 
 Subscribe to the [unified RSS/Atom feed](/feed.xml) for new posts ~daily. There are dedicated feeds for each category, if you want a subset:

@@ -4,6 +4,7 @@ title: Redirecting to Random Note...
 hide_title: true
 permalink: /random/
 tags: index
+emoji: '🔀'
 ---
 
 Loading...
