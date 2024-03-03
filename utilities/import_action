@@ -45,6 +45,8 @@ class Jekyll
     file.puts
     file.puts '## Archive'
     file.puts "This is a list of the #{archive_month.count} articles/etc. that I read in the last month."
+    file.puts "These probably weren't all that notable to me, otherwise they'd be in [my notes](/notes)."
+    file.puts "But this is helpful for me to remember what I've read and to share with others."
     file.puts
     file.puts '| Title | Author |'
     file.puts '| ------ | ----- |'
@@ -65,9 +67,10 @@ class Jekyll
     file.puts '## Inbox'
     file.puts "This is a list of the #{inbox_month.count} articles/etc. that I added to my reading list queue in the last month."
     file.puts
-    file.puts '| Title | Author | Read in app |'
+    file.puts '| Title | Site | Read in app |'
     file.puts '| ------ | ----- | ----- |'
     inbox_month.each do |doc|
+      title = doc.title
       site_name = doc.site_name
       email = doc.source_url.match?(/^mailto:/)
       unless doc.source_url.match?(/^mailto:/)
