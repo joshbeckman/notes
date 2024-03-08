@@ -29,28 +29,30 @@ class Jekyll
   end
 
   def self.import_reading_list(inbox_month: [], archive_month: [])
-    file = File.open('blog/reading/reading_list.md', 'w')
+    file = File.open('blog/reading/reading_list_archive.md', 'w')
     file.puts '---'
     file.puts 'layout: Page'
-    file.puts 'title: Reading List'
+    file.puts 'title: "Reading List: Recent Archive"'
     file.puts 'toc: true'
     file.puts 'emoji: 📚'
     file.puts 'searchable: true'
+    file.puts 'permalink: /blog/reading/reading_list/archive'
     file.puts 'categories:'
     file.puts '- blog'
+    file.puts '- reading'
     file.puts 'tags:'
     file.puts '- index'
     file.puts '---'
-    file.puts 'I generate this page from my Readwise library using [a script I wrote](/TODO). Feel free to use it, too!'
-    file.puts
-    file.puts '## Archive'
     file.puts "This is a list of the #{archive_month.count} articles/etc. that I read in the last month."
     file.puts "These probably weren't all that notable to me, otherwise they'd be in [my notes](/notes)."
     file.puts "But this is helpful for me to remember what I've read and to share with others."
+    file.puts "I also have [an inbox of articles to read](/blog/reading/reading_list/inbox)."
+    file.puts 'I generate this page from my Readwise library using [a script I wrote](/TODO). Feel free to use it, too!'
     file.puts
     file.puts '| Title | Author |'
     file.puts '| ------ | ----- |'
-    archive_month.each do |doc|
+    # sort archive_month by updated_at with most recent first
+    archive_month.sort_by { |doc| doc.updated_at }.each do |doc|
       # TODO: match each against a highlight and link to it if found
       title = doc.title
       author = doc.author
@@ -63,9 +65,22 @@ class Jekyll
       end
       file.puts "| #{title&.gsub('|', '')} | #{author&.gsub('|', '')} |"
     end
-    file.puts
-    file.puts '## Inbox'
+    file = File.open('blog/reading/reading_list_inbox.md', 'w')
+    file.puts '---'
+    file.puts 'layout: Page'
+    file.puts 'title: "Reading List: Inbox"'
+    file.puts 'toc: true'
+    file.puts 'emoji: 📚'
+    file.puts 'searchable: true'
+    file.puts 'permalink: /blog/reading/reading_list/inbox'
+    file.puts 'categories:'
+    file.puts '- blog'
+    file.puts '- reading'
+    file.puts 'tags:'
+    file.puts '- index'
+    file.puts '---'
     file.puts "This is a list of the #{inbox_month.count} articles/etc. that I added to my reading list queue in the last month."
+    file.puts "I also have [an archive of the last month's reading](/blog/reading/reading_list/archive)."
     file.puts
     file.puts '| Title | Site | Read in app |'
     file.puts '| ------ | ----- | ----- |'

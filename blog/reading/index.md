@@ -14,7 +14,7 @@ tags:
 
 _The Power Broker_ by Robert Caro
 
-My [article reading list](/blog/reading/reading_list).
+My [article reading list inbox](/blog/reading/reading_list/inbox) and [recently read articles](/blog/reading/reading_list/archive).
 
 ## Antilibrary
 
