@@ -101,30 +101,6 @@ end
 
 module ReadwiseExtras
   module Book
-    def has_image?
-      cover_image_name && download_image
-    end
-
-    def download_image
-      return false unless cover_image_name
-      return true if File.exist?(cover_image_name)
-
-      system "curl '#{cover_image_url}' -o #{cover_image_name}"
-    end
-
-    def cleanup_image
-      return true unless has_image?
-
-      system "rm #{cover_image_name}"
-    end
-
-    def cover_image_name
-      return if cover_image_url.nil?
-
-      extension = URI.parse(cover_image_url).path.split('/').last.match(/\.[a-z|A-Z]*$/)&.to_a&.first || '.jpg'
-      book_id + extension
-    end
-
     def post_text
       [
         "---",
