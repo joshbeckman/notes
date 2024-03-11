@@ -2,7 +2,10 @@
 toc: true
 title: Swiss Army Side Project
 date: '2015-12-28 00:00:00'
-tags: narro
+tags:
+- narro
+- education
+- programming-languages
 redirect_from:
 - "/swiss-army-side-project"
 - "/swiss-army-side-project/"
