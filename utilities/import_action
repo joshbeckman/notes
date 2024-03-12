@@ -54,6 +54,7 @@ class Jekyll
     # sort archive_month by updated_at with most recent first
     archive_month.sort_by { |doc| doc.updated_at }.each do |doc|
       # TODO: match each against a highlight and link to it if found
+      # TODO: Group by site/author
       title = doc.title
       author = doc.author
       email = doc.source_url.match?(/^mailto:/)
