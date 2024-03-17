@@ -22,7 +22,6 @@ Well, we're gonna have to break this down a bit.
 - Macbook Air (2022, personal)
 - Macbook Pro (2022, work)
 - paper and pencil
-- Wacom One drawing tablet
 - Apple studio monitor (and built-in camera)
 - Elgato Air lights
 - Focusrite Scarlet Solo
