@@ -22,8 +22,8 @@ Well, we're gonna have to break this down a bit.
 - Macbook Air (2022, personal)
 - Macbook Pro (2022, work)
 - paper and pencil
-- Apple studio monitor
-- Logitech Brio camera
+- Wacom One drawing tablet
+- Apple studio monitor (and built-in camera)
 - Elgato Air lights
 - Focusrite Scarlet Solo
 - Samson Q2U microphone
@@ -33,7 +33,7 @@ Well, we're gonna have to break this down a bit.
 
 ### Software
 - MacOS
-- Vim as an editor
+- [Neo]Vim as an editor
 - iTerm as a terminal
 - tmux
 - Git for version control
@@ -43,6 +43,8 @@ Well, we're gonna have to break this down a bit.
 - Fastmail for personal email
 - Fantastical for personal calendar
 - Google for work email/calendar
+- Raycast for quicklinks and launching and text snippets
+- Keyboard Maestro for macros and keybindings
 - [These fonts](https://www.joshbeckman.org/blog/my-favorite-fonts)
 
 ## Photography
