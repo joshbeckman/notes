@@ -33,6 +33,6 @@ I don't need to evaluate any new app or protocol - they all do basically the sam
 
 So I'm removing this rabbit-hole as a distraction and simply adding other outlets of this site (and [my notes site](https://notes.joshbeckman.org)) as they can be easily integrated and let the things people create there be publicly accessible and owned by the creator (i.e. me). For now, that's just Mastodon: posts from here will get mirrored to [mastodon.social/@joshbeckman](https://mastodon.social/@joshbeckman), where I'll respond if you comment. If you like Mastodon over RSS or email, head over there.
 
-I'll still prefer my [tried-and-true contact]( /contact/) and [subscription]( /subscribe/) methods, but I'm extending this one to reach a few more people where they are. Maybe I'll create another outlet in the future, but these will always work for me. Cheers, to posting through it.
+I'll still prefer my [tried-and-true contact](/contact) and [subscription](/subscribe) methods, but I'm extending this one to reach a few more people where they are. Maybe I'll create another outlet in the future, but these will always work for me. Cheers, to posting through it.
 
 <figure class="kg-card kg-image-card"><a href="https://mastodon.social/@joshbeckman"><img src="/assets/images/Screenshot-2023-07-04-at-1.08.32-PM.png" class="kg-image" alt  width="2000" height="1379"  sizes="(min-width: 720px) 720px"></a></figure>
