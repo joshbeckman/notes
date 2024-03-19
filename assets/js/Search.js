@@ -59,7 +59,7 @@
 
             var index = lunr(function(){
                 this.ref('id');
-                this.field('title', {boost: 200});
+                this.field('title', {boost: 20});
                 this.field('content', {boost: 2});
                 this.field('url');
                 this.metadataWhitelist = ['position']
@@ -120,8 +120,11 @@
 
             var results = index.query(function (query) {
                 var tokens = lunr.tokenizer(input)
+               query.term([input], {
+                 boost: 50,
+               });
                query.term(tokens, {
-                 boost: 10
+                 boost: 5
                });
                query.term(tokens, {
                  wildcard: lunr.Query.wildcard.TRAILING
