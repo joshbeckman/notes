@@ -22,7 +22,7 @@ group :jekyll_plugins do
   # gem "jekyll-tidy"
 end
 
-gem "jekyll-sass-converter", "~> 2.0"
+gem "jekyll-sass-converter", "~> 3.0"
 gem 'kramdown-math-katex'
 gem 'readwise', github: 'joshbeckman/readwise-ruby', branch: 'feature/readwise-api-v3'
 gem 'webmention'
