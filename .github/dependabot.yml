@@ -10,12 +10,12 @@ updates:
     schedule:
       interval: "daily"
     commit-message:
-      prefix: "chg(dev): "
+      prefix: "chg"
       include: "scope"
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "weekly"
     commit-message:
-      prefix: "chg(dev): "
+      prefix: "chg"
       include: "scope"
