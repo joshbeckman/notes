@@ -14,7 +14,7 @@ tags:
 
 I hate getting an `I` confused with an `l` confused with a `1` , so I usually favor serif fonts\. But, I have to admit that for user interfaces like websites \(with links and buttons and icons\), sans\-serif fonts work better\.
 
-For [this site](//about-this-site) and generally I use [IBM Plex Sans](https://www.ibm.com/plex/), which I love because it’s open\-source and has a crossed `I` and disambiguated `l/1` \.
+For [this site](/about-this-site) and generally I use [IBM Plex Sans](https://www.ibm.com/plex/), which I love because it’s open\-source and has a crossed `I` and disambiguated `l/1` \.
 
 For monospace applications like displaying and working with tabular source code I use [Berkeley Mono](https://berkeleygraphics.com/typefaces/berkeley-mono/), which I love for much the same reasons and because it feels comfortable on my eyes\. It was the first font I’ve ever paid for, but I appreciate how much time the author has put into it and I do love how it looks\.
 
