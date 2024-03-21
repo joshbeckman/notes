@@ -13,8 +13,7 @@ I've been reading this blog https://rachelbythebay\.com for so many years
 now that it's become one of my canonical ideas of what valuable writing
 online should be\.
 
-I don't know why but I read this post
-https://rachelbythebay\.com/w/2023/05/30/eng/ today and it struck me as a
+I don't know why but I read [this post](https://rachelbythebay\.com/w/2023/05/30/eng/) today and it struck me as a
 great example of why I think it's valuable: human, down\-to\-earth,
 practical, pedantic, short\.
 
