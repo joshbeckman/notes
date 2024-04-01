@@ -13,9 +13,11 @@ tags:
 
 ![](/assets/images/816EFA4287B34B9ABC9C1B4607352EBA.jpeg)
 
-This was one of my top five shows in my life\. 
+This has to be one of the top five shows in my life\. 
 
 The man was layering so many instruments at once: [circular breathing](https://en.wikipedia.org/wiki/Circular_breathing) to play the saxophone continuously through every song, microphones one the keys of the instrument so he can play them like percussion, a microphone taped to his throat to capture his singing while playing the sax\. It was an inhuman performance; terrifying to see realized *inside a crematorium, on a cemetery* no less\!
+
+<iframe allow="autoplay *; encrypted-media *;" frameborder="0" height="150" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/when-we-were-that-what-wept-for-the-sea/1679092720?i=1679092722"></iframe>
 
 There was a space in the second song, with red light flooding the stage and his bass saxophone booming and his voice howling that I thought: this is the closest I’ll ever get to seeing the gates of hell open up through the floor\.
 
