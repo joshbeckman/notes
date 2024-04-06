@@ -155,8 +155,7 @@ module ReadwiseExtras
     def outbound_url(text_fragment: nil)
       return source_url unless text_fragment
 
-      text_start = text_fragment.unicode_normalize.split("\n").first.split("[").first.split(" ").first(10).join(" ").strip
-      fragment = ":~:text=" + URI.encode_uri_component(text_start)
+      fragment = build_text_fragment(text_fragment)
       begin
         parsed_url = URI.parse(source_url)
         parsed_url.fragment = "#{parsed_url.fragment}#{fragment}"
@@ -164,6 +163,12 @@ module ReadwiseExtras
       rescue URI::InvalidURIError
         "#{source_url.split('#').first}##{fragment}"
       end
+    end
+
+    def build_text_fragment(text)
+      text_start = text.unicode_normalize.split("\n").first.split("[").first.split(" ").first(3).join(" ").strip
+      text_end = text.unicode_normalize.split("\n").last.split("]").last.split(" ").last(3).join(" ").strip
+      ":~:text=" + URI.encode_uri_component(text_start) + "," + URI.encode_uri_component(text_end)
     end
 
     def asin_url
