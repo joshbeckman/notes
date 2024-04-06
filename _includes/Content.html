@@ -106,9 +106,9 @@
           {%- endif -%}
           <li class="filed edit">
           {%- if page.readwise_url -%}
-            <a href="{{ page.readwise_url }}" target="_blank">Edit</a>
+            <a href="{{ page.readwise_url }}" target="_blank" rel="noopener noreferrer">Edit</a>
           {%- else -%}
-            <a href="{{ page.path | prepend: site.repo_edit_url }}" target="_blank">Edit</a>
+            <a href="{{ page.path | prepend: site.repo_edit_url }}" target="_blank" rel="noopener noreferrer">Edit</a>
           {%- endif -%}
           </li>
       </ul>
