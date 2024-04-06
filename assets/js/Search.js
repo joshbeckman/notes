@@ -59,8 +59,8 @@
 
             var index = lunr(function(){
                 this.ref('id');
-                this.field('title', {boost: 20});
-                this.field('content', {boost: 2});
+                this.field('title');
+                this.field('content');
                 this.field('url');
                 this.metadataWhitelist = ['position']
 
@@ -118,18 +118,7 @@
                 return;
             }
 
-            var results = index.query(function (query) {
-                var tokens = lunr.tokenizer(input)
-               query.term([input], {
-                 boost: 50,
-               });
-               query.term(tokens, {
-                 boost: 5
-               });
-               query.term(tokens, {
-                 wildcard: lunr.Query.wildcard.TRAILING
-               });
-            });
+            var results = index.search(input);
 
             if ((results.length == 0) && (input.length > 2)) {
                 var tokens = lunr.tokenizer(input).filter(function(token, i){
