@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/joshbeckman/readwise-ruby.git
-  revision: cb813c442c2a813e85bf9b6fd48237093df6bf98
+  revision: e48be2c8391a2069de05ca4fad2e7b063e7d2039
   branch: feature/readwise-api-v3
   specs:
     readwise (0.5.0)
