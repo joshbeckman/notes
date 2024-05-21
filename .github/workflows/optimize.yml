@@ -1,0 +1,46 @@
+name: Optimize Assets
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow committing to the repository
+permissions:
+  contents: read, write
+  pages: write
+  id-token: write
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3' # Not needed with a .ruby-version file
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          cache-version: 0 # Increment this number if you need to re-download cached gems
+      - name: Setup ImageMagick
+        run: sudo apt-get install imagemagick
+      - name: Optimize images
+        id: optimize_images
+        run: bundle exec utilities/optimize_images
+      - name: Determine if changes were made
+        run: echo ::set-output name=changed::$(git status --porcelain | wc -l)
+      - name: Exit early if no uncommitted changes
+        if: steps.optimize_images.outputs.changed == 0
+        run: exit 0
+      - name: Commit changes
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "josh@joshbeckman.org"
+          git add .
+          git commit -m "chg(usr): Optimize images"
+          "
