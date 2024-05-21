@@ -3,7 +3,7 @@ description: This template can be used to draft a blog post
 labels: post
 assignees: joshbeckman
 body:
-- type: textarea
+  - type: textarea
     id: content
     attributes:
       label: Content
