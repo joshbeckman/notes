@@ -1,0 +1,25 @@
+name: Blog Post
+description: This template can be used to draft a blog post
+labels: post
+assignees: joshbeckman
+body:
+- type: textarea
+    id: content
+    attributes:
+      label: Content
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - "blog"
+        - "blog/watching"
+        - "blog/reading"
+        - "blog/attending"
+        - "blog/traveling"
+        - "blog/listening"
+        - "blog/working"
+    validations:
+      required: true
