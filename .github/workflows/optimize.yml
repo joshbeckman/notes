@@ -10,9 +10,7 @@ on:
 
 # Sets permissions of the GITHUB_TOKEN to allow committing to the repository
 permissions:
-  contents: read, write
-  pages: write
-  id-token: write
+  contents: write
 
 jobs:
   # Build job
