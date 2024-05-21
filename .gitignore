@@ -5,3 +5,5 @@ _site/
 *.DS_Store
 .readwise_token
 .omdb_token
+.bundle/
+vendor/
