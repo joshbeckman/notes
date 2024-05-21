@@ -30,15 +30,21 @@ jobs:
       - name: Optimize images
         id: optimize_images
         run: bundle exec utilities/optimize_images
+  commit:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
       - name: Determine if changes were made
+        id: any_changes
         run: echo ::set-output name=changed::$(git status --porcelain | wc -l)
-      - name: Exit early if no uncommitted changes
-        if: steps.optimize_images.outputs.changed == 0
-        run: exit 0
       - name: Commit changes
+        if: steps.any_changes.outputs.changed != 0
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "josh@joshbeckman.org"
-          git add .
+          git add assets
           git commit -m "chg(usr): Optimize images"
           "
+      - name: Push changes
+        if: steps.any_changes.outputs.changed != 0
+        run: git push
