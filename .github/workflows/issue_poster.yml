@@ -11,6 +11,7 @@ on:
 permissions:
   contents: write
   issues: read
+  pull_requests: write
 jobs:
   build:
     if: ${{ !github.event.issue.pull_request && github.event.comment.user.login == 'joshbeckman' && startsWith(github.event.comment.body, '/post')}}
