@@ -40,5 +40,9 @@ jobs:
         run: git push --set-upstream origin issue_post/${{ github.event.issue.number }}
       - name: Create pull request
         run: gh pr create --title "Post from issue" --body "This pull request was created automatically from an issue comment on https://github.com/joshbeckman/notes/issues/${{ github.event.issue.number }}." --base master --head issue_post/${{ github.event.issue.number }}
+        env:
+          GH_TOKEN: ${{ github.token }}
       - name: Close issue
         run: gh issue close ${{ github.event.issue.number }}
+        env:
+          GH_TOKEN: ${{ github.token }}
