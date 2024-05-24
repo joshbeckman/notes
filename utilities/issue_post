@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+class IssuePoster
+  def run
+    puts "Hello, world!"
+  end
+end
+
+IssuePoster.new(
+).run

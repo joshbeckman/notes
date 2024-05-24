@@ -1,0 +1,44 @@
+# a workflow that listens to new comments on issues
+# only run when the comment is by @joshbeckman and starts with "/post"
+#
+# to run:
+# - read the issue body into a file
+# - run the script "/utilities/issue_post"
+name: Issue Poster
+on:
+  issue_comment:
+    types: [created]
+permissions:
+  contents: write
+  issues: read
+jobs:
+  build:
+    if: ${{ !github.event.issue.pull_request && github.event.comment.user.login == 'joshbeckman' && startsWith(github.event.comment.body, '/post')}}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3' # Not needed with a .ruby-version file
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          cache-version: 0 # Increment this number if you need to re-download cached gems
+      - name: Read issue body
+        id: read_issue
+        run: echo "${{ github.event.issue.body }}" > $GITHUB_WORKSPACE/issue_body
+      - name: Run issue_post
+        run: bundle exec utilities/issue_post
+      - name: Commit changes
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "josh@joshbeckman.org"
+          git checkout -b issue_post/${{ github.event.issue.number }}
+          git add .
+          git commit -m "new(usr): Post from issue"
+      - name: Push changes
+        run: git push
+      - name: Create pull request
+        run: gh pr create --title "Post from issue" --body "This pull request was created automatically from an issue comment on https://github.com/joshbeckman/notes/issues/${{ github.event.issue.number }}." --base master --head issue_post/${{ github.event.issue.number }}
+      - name: Close issue
+        run: gh issue close ${{ github.event.issue.number }}

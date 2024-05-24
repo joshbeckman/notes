@@ -40,7 +40,6 @@ jobs:
           git config --global user.email "josh@joshbeckman.org"
           git add assets
           git commit -m "chg(usr): Optimize images"
-          "
       - name: Push changes
         if: steps.any_changes.outputs.changed != 0
         run: git push
