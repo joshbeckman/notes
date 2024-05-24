@@ -1,12 +1,26 @@
 name: Blog Post
 description: This template can be used to draft a blog post
-labels: post
-assignees: joshbeckman
+labels:
+  - post
+assignees:
+  - joshbeckman
 body:
-  - type: textarea
-    id: content
+  - type: input
+    id: title
     attributes:
-      label: Content
+      label: Title
+    validations:
+      required: true
+  - type: input
+    id: slug
+    attributes:
+      label: Slug
+    validations:
+      required: true
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
     validations:
       required: true
   - type: dropdown
@@ -21,5 +35,29 @@ body:
         - "blog/traveling"
         - "blog/listening"
         - "blog/working"
+    validations:
+      required: true
+  - type: input
+    id: imdb_id
+    attributes:
+      label: IMDB ID
+    validations:
+      required: false
+  - type: dropdown
+    id: rating
+    attributes:
+      label: Rating
+      options:
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+    validations:
+      required: false
+  - type: textarea
+    id: content
+    attributes:
+      label: Content
     validations:
       required: true
