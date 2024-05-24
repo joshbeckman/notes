@@ -37,7 +37,7 @@ jobs:
           git add .
           git commit -m "new(usr): Post from issue"
       - name: Push changes
-        run: git push
+        run: git push --set-upstream origin issue_post/${{ github.event.issue.number }}
       - name: Create pull request
         run: gh pr create --title "Post from issue" --body "This pull request was created automatically from an issue comment on https://github.com/joshbeckman/notes/issues/${{ github.event.issue.number }}." --base master --head issue_post/${{ github.event.issue.number }}
       - name: Close issue
