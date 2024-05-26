@@ -1,8 +1,93 @@
 #!/usr/bin/env ruby
 
+require 'time'
+require_relative 'models/post'
+
+Asset = Struct.new(:url, :category, :path, keyword_init: true) do
+  # checks if there is a file at the path
+  # exits if there is
+  # downloads the image from the url to the path
+  def download
+    unless path.nil?
+      return if File.exist?(path)
+    end
+    if path.nil?
+      path = "assets/#{category}/#{url.split("/").last}"
+    end
+
+    `curl -L -o #{path} #{url}`
+    # determine the filetype
+    # rename the file to the path with the correct extension
+    filetype = `file --mime-type -b #{path}`.strip.split("/").last
+    new_path = "#{path}.#{filetype}"
+    `mv #{path} #{new_path}`
+    self.path = new_path
+  end
+
+  def insert_into_content(content)
+    if path.nil?
+      return content
+    end
+    if category == "images"
+      content.gsub(url, "/#{path}")
+    else
+      content.gsub(url, "<video controls src=\"/#{path}\"></video>")
+    end
+  end
+end
+
 class IssuePoster
+  # read the filte `issue_body`
+  # and parse its contents into a hash
+  # where the keys are the delimiters
+  # and the values are the content between the delimiters
+  # Delimiters:
+  # - "### Title" is a string, set in the title key
+  # - "### Tags" is an array of strings separated by commas, set in the tags key
+  # - "### IMDB ID" is a string, set in the imdb_id key
+  # - "### Rating" is an integer, set in the rating key
+  # - "### Content" is a string, set in the content key
   def run
-    puts "Hello, world!"
+    issue_body = File.read("issue_body")
+    title = issue_body.match(/### Title\n\n(.*)\n/)[1]
+    slug = title.gsub(/[^a-zA-Z0-9\s]/, '').gsub(/\s+/, '-').downcase
+    tags = issue_body.match(/### Tags\n\n(.*)\n/)[1]&.split(", ")&.map(&:strip)
+    imdb_id = issue_body.match(/### IMDB ID\n\n(.*)\n/)[1]&.strip
+    category = issue_body.match(/### Category\n\n(.*)\n/)[1]
+    rating = issue_body.match(/### Rating\n\n(.*)\n/)[1].to_i
+    raw_content = issue_body.match(/### Content\n\n(.*)/m)[1]
+    assets = extract_assets(raw_content)
+    assets.map(&:download)
+    content = transform_content(raw_content, assets)
+    image = assets.find { |asset| asset.category == "images" }
+    post = Post.new(tags:, title:, slug:, imdb_id:, rating:, image:, category:, body: content, date: Time.now)
+    unless imdb_id.nil?
+      post.image = post.movie_cover_image || post.image
+    end
+    post.create_file
+    File.delete("issue_body")
+  end
+
+  def transform_content(content, assets)
+    # for each of the assets, replace the url in the content with the path
+    assets.reduce(content) do |acc, asset|
+      asset.insert_into_content(acc)
+    end
+  end
+
+  def extract_assets(content)
+    # images are identified by regular markdown image syntax
+    images = content.scan(/\!\[.*\]\((.*)\)/).flatten.map do |url|
+      Asset.new(url: url, category: "images")
+    end
+    # videos are identified by:
+    # - a URI at the start of a line
+    # - the domain is github.com
+    # - the path starts with joshbeckman/notes/assets
+    videos = content.scan(/^https:\/\/github.com\/joshbeckman\/notes\/assets\/.*$/).flatten.map do |url|
+      Asset.new(url: url, category: "videos")
+    end
+    images + videos
   end
 end
 

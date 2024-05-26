@@ -30,6 +30,8 @@ jobs:
         run: echo "${{ github.event.issue.body }}" > $GITHUB_WORKSPACE/issue_body
       - name: Run issue_post
         run: bundle exec utilities/issue_post
+      - name: Run optimize_images
+        run: bundle exec utilities/optimize_images
       - name: Commit changes
         run: |
           git config --global user.name "GitHub Actions"
