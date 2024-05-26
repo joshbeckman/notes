@@ -17,7 +17,11 @@ Post = Struct.new(
 ) do
 
   def movie_cover_image
-    key = ENV["OMDB_TOKEN"] || File.read(File.expand_path(".omdb_token")).strip
+    key = ENV["OMDB_TOKEN"]
+    unless key
+      puts "OMDB_TOKEN environment variable not set"
+      return
+    end
     url = "https://www.omdbapi.com/?i=#{@imdb_id}&apikey=#{key}"
     uri = URI(url)
     response = Net::HTTP.get(uri)
