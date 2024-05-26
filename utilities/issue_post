@@ -15,11 +15,13 @@ Asset = Struct.new(:url, :category, :path, keyword_init: true) do
       path = "assets/#{category}/#{url.split("/").last}"
     end
 
-    `curl -L -o #{path} #{url}`
+    puts "Downloading #{url} to #{path}"
+    `curl -L -o #{path} "#{url}"`
     # determine the filetype
     # rename the file to the path with the correct extension
     filetype = `file --mime-type -b #{path}`.strip.split("/").last
     new_path = "#{path}.#{filetype}"
+    puts "Renaming #{path} to #{new_path}"
     `mv #{path} #{new_path}`
     self.path = new_path
   end
@@ -59,7 +61,7 @@ class IssuePoster
     assets = extract_assets(raw_content)
     assets.map(&:download)
     content = transform_content(raw_content, assets)
-    image = assets.find { |asset| asset.category == "images" }
+    image = assets.find { |asset| asset.category == "images" }&.path
     post = Post.new(tags:, title:, slug:, imdb_id:, rating:, image:, category:, body: content, date: Time.now)
     unless imdb_id.nil?
       post.image = post.movie_cover_image || post.image
