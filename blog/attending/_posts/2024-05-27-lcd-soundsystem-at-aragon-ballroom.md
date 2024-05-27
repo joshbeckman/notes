@@ -1,6 +1,6 @@
 ---
 layout: Post
-date: 2024-05-27 05:06:59 +0000
+date: 2024-05-25 12:06:59 +0000
 title: "LCD Soundsystem at Aragon Ballroom"
 toc: true
 image: /assets/images/d27a9a98-67fd-4e18-866b-acb703f16014.jpeg
