@@ -1,9 +1,15 @@
 <div class="search">
   <div class="searchbar search-container">
+    <form id="search-form" class="search-form" action="/search" method="get">
       <label for="search-input"></label>
-      <input type="text" id="search-input" autocomplete="off" placeholder="Search {{site.heading}}..."/>
-      <div id="search-results" class="search-results"></div>
+      <div class="search-input-container">
+        <input type="text" name="q" id="search-input" autocomplete="off" placeholder="Search {{site.heading}}..."/>
+        <button type="submit" class="search-button" aria-label="Submit search query">
+          Search
+        </button>
+      </div>
+    </form>
   </div>
-  <script async type="text/javascript" src="/assets/js/vendor/lunr.min.js"></script>
-  <script async src="/assets/js/Search.js"></script>
+  <div id="search-results" class="search-results"></div>
+  <hr>
 </div>

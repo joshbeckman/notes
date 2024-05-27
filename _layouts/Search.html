@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+{%- include head.html -%}
+<body>
+  <div class="row">
+    <div class="column accent centered">
+      <header class="content">
+        {% if page.image %}
+          <img class="cover-image" src="{{ page.image }}" alt="{{ page.title }}">
+        {% elsif page.emoji %}
+          <div class="cover-image-emoji">{{ page.emoji }}</div>
+        {% else %}
+          {%- include Masthead.html -%}
+        {% endif %}
+      {%- if page.description -%}
+          <p class="description">{{page.description}}</p>
+      {%- endif -%}
+      </header>
+    </div>
+    <div class="column">
+      <article class="content">
+        {%- include Nav.html -%}
+        {%- include Toc.html -%}
+        <section class="h-entry page">
+            {% if page.image %}
+              <div class="print-only print-header-image">
+                <img class="no-lightbox print-only" src="{{ page.image }}" alt="{{ page.title }}">
+              </div>
+            {% endif %}
+            <div class="page-title">
+              {%- if page.hide_title != true -%} 
+                  <h1 class="p-name">{{page.title}}</h1>
+              {%- endif -%}
+            </div>
+          {%- include Search.html -%}
+          {%- include Content.html -%}
+        </section>
+        {%- include Footer.html -%}
+        {%- include Network.html post=page -%}
+      </article>
+    </div>
+  </div>
+  <script async type="text/javascript" src="/assets/js/vendor/lunr.min.js"></script>
+  <script async src="/assets/js/Search.js"></script>
+</body>
+</html>

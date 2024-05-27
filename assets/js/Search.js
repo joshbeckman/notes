@@ -1,26 +1,3 @@
-/********************************************************************************************
- * 
- * File: Search.js
- * Author@Raghuveer S
- * 
- * Preface: I take loads of inspiration from just-the-docs to implement this.
- * This can be easily ported to suit your needs. There is very little project specific stuff
- * in this.
- * 
- * How to customize this for your own project:
- * --------------------------------------------
- * 1. Lunr takes json fields for indexing, so create a json file with all the fields
- *      you want searched by Lunr. For eg. In my case, it is title, content, url for my 
- *      blog posts.
- *      Note: In this project, the json gets automatically generated. (SEE: search-data.json)
- * 2. Change the field names below accordingly. (SEE: this.field)
- * 3. Create a HTML Page with an input box(with id='search-input') and a div beneath it
- *     with id='search-results'. Also, don't forget to embed this script using the script
- *     tag.
- * 4. You are good to go. If you need additional customization you can change the boost 
- *      values, layout, colors etc by tinkering with the correponding parts of the code.
- *********************************************************************************************/
-
 (function (sj) {
     "use strict";
 
@@ -134,12 +111,11 @@
                 }
             }
 
-            if (results.length == 0) {
-                var noResultsDiv = document.createElement('div');
-                noResultsDiv.classList.add('search-no-result');
-                noResultsDiv.innerText = 'No results found';
-                searchResults.appendChild(noResultsDiv);
-            } else {
+            var countResultsDiv = document.createElement('small');
+            countResultsDiv.classList.add('search-result-count');
+            countResultsDiv.innerText = results.length.toLocaleString() + ' result' + (results.length != 1 ? 's' : '') + ' found';
+            searchResults.appendChild(countResultsDiv);
+            if (results.length > 0) {
                 var resultsList = document.createElement('ul');
                 resultsList.classList.add('search-results-list');
                 searchResults.appendChild(resultsList);
@@ -337,109 +313,30 @@
             }
         }
 
-        function searchViaQuery() {
-          var search = new URLSearchParams(window.location.search).get("q");
-          if (!search) { return; }
-
-          var searchInput = document.getElementById("search-input");
-          searchInput.value = search;
-          searchInput.focus();
-          update();
-        }
-        function searchVia404() {
-          var shouldSearch = document.title.indexOf("404 - Page not found") >= 0;
-          if (!shouldSearch) { return; }
-
-          var search = window.location.pathname.split("/").join(" ").trim().split("-").join(" ");
-          var searchInput = document.getElementById("search-input");
-          searchInput.value = search;
-          searchInput.focus();
-          update();
-        }
-        
-        sj.addEvent(searchInput, 'focus', function(){
-            setTimeout(update, 0);
-        });
-
-        sj.addEvent(searchInput, 'keyup', function(e){
-            switch (e.keyCode) {
-            case 27: // When esc key is pressed, hide the results and clear the field
-                let searchInput = document.getElementById("search-input");
-                searchInput.value = "";
-                searchInput.blur();
-                hideSearch();
-                break;
-            case 38: // arrow up
-            case 40: // arrow down
-            case 13: // enter
-                e.preventDefault();
-                return;
-            }
-            update();
-        });
-
-        sj.addEvent(searchInput, 'keydown', function(e){
-            switch (e.keyCode) {
-            case 38: // arrow up
-                e.preventDefault();
-                var active = document.querySelector('.search-result.active');
-                if (active) {
-                    active.classList.remove('active');
-                    if (active.parentElement.previousSibling) {
-                        var previous = active.parentElement.previousSibling.querySelector('.search-result');
-                        previous.classList.add('active');
-                        previous.scrollIntoView(false);
-                    }
-                }
-                return;
-            case 40: // arrow down
-                e.preventDefault();
-                var active = document.querySelector('.search-result.active');
-                if (active) {
-                    if (active.parentElement.nextSibling) {
-                        var next = active.parentElement.nextSibling.querySelector('.search-result');
-                        active.classList.remove('active');
-                        next.classList.add('active');
-                        next.scrollIntoView(false);
-                    }
-                } else {
-                var next = document.querySelector('.search-result');
-                    if (next) {
-                        next.classList.add('active');
-                    }
-                }
-                return;
-            case 13: // enter
-                e.preventDefault();
-                var active = document.querySelector('.search-result.active');
-                if (active) {
-                active.click();
-                } else {
-                var first = document.querySelector('.search-result');
-                if (first) {
-                    first.click();
-                }
-                }
-                return;
-            }
-        });
-
-        sj.addEvent(document, 'click', function(e){
-            if (e.target != searchInput) {
-            hideSearch();
-            }
-        });
-
         sj.onReady(function(){
-            searchViaQuery();
-          searchVia404();
+            update();
         });
     }
 
     sj.onReady(function(){
         searchInit();
     });
+    function searchViaQuery() {
+      var search = new URLSearchParams(window.location.search).get("q");
+      if (!search) { return; }
+
+      var searchInput = document.getElementById("search-input");
+      searchInput.value = search;
+    }
+    function searchVia404() {
+      var shouldSearch = document.title.indexOf("404 - Page not found") >= 0;
+      if (!shouldSearch) { return; }
+
+      var search = window.location.pathname.split("/").join(" ").trim().split("-").join(" ");
+      var searchInput = document.getElementById("search-input");
+      searchInput.value = search;
+    }
+
+    searchViaQuery();
+    searchVia404();
 })(window.sj = window.sj || {});
-
-
-

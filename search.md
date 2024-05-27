@@ -1,12 +1,11 @@
 ---
-layout: Page
+layout: Search
 title: Search
 permalink: /search/
 emoji: "*️⃣"
 tags: index
 toc: true
 ---
-{%- include Search.html -%}
 
 You can get to this page from anywhere on the site with `Ctrl` + `s`.
 
