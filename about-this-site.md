@@ -32,7 +32,6 @@ This website is statically generated using [Jekyll](https://jekyllrb.com) from a
 Search is powered by [lunrjs](https://lunrjs.com).
 Photo galleries and zoom are powered by [PhotoSwipe](https://photoswipe.com).
 The site fonts are [IBM Plex](https://www.ibm.com/plex/).
-Webmentions are supported via [webmention.io](https://webmention.io).
 Network graph views are powered by [vis-network](https://www.joshbeckman.org/blog/building-a-network-graph-site-index).
 
 You can read about everything else I use to build things at [/uses](/uses).
@@ -47,8 +46,13 @@ You can read about everything else I use to build things at [/uses](/uses).
 - podcast rendering
 * move content markup into liquid filters instead of liquid logic
 * change styling/colors by season
-* Move webmentions into static ingestion and rendering
 - Post to mastodon or something via GitHub action build pipeline
+
+### 2024-05-27
+- Render search results statically
+
+### 2024-05-26
+- Add "post via GitHub issue" feature
 
 ### 2024-03-02
 - Display ["recently read" and "reading inbox"](/blog/reading/reading_list) articles from Reader API

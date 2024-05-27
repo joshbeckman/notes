@@ -921,12 +921,6 @@ ul.asymp>li {
   margin-top: 0;
 }
 
-/* Webmention */
-.webmention-button {
-  margin-left: 1rem;
-  font-size: 1rem;
-}
-
 /* Search */
 .search {
   margin: 1em 0;
@@ -1161,12 +1155,6 @@ div.highlighter-rouge.language-go::before {
       color: #ddd;
     }
 
-    .webmention-button {
-      background-color: rgb(55, 62, 71);
-      border-color: rgba(205, 217, 229, 0.1);
-      color: #ddd;
-      box-shadow: none;
-    }
     .highlighted-text {
       background-color: #332e0e;
     }
@@ -1262,8 +1250,7 @@ div.highlighter-rouge.language-go::before {
 }
 @media print {
   header,
-  section.related,
-  div.webmention-container {
+  section.related {
     display: none !important;
   }
   .print-hidden {

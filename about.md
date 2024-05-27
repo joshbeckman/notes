@@ -12,7 +12,7 @@ I'm an experienced startup operator with a history of scaling tech and teams. I'
 I'm currently working as a Senior Staff Engineer at [Shopify](//shopify.com).
 I live in Chicago and [Chicago](/tags#chicago) is a great place to live.
 
-My email address is `josh@joshbeckman.org`. I strongly prefer email as a communication method, so email me if you have a comment about something I've written - or write a post on your own site (and [send a webmention](https://webmention.app/)!).
+My email address is `josh@joshbeckman.org`. I strongly prefer email as a communication method, so email me if you have a comment about something I've written - or write a post on your own site.
 
 > Want help with something? Here are [ways I'm able to help](/blog/ways-im-available-to-help/).
 
