@@ -4,6 +4,18 @@ require 'time'
 require_relative 'models/post'
 
 Asset = Struct.new(:url, :category, :path, keyword_init: true) do
+  def image?
+    category == "images"
+  end
+
+  def video?
+    category == "videos"
+  end
+
+  def public_path
+    "/#{path}"
+  end
+
   # checks if there is a file at the path
   # exits if there is
   # downloads the image from the url to the path
@@ -30,10 +42,10 @@ Asset = Struct.new(:url, :category, :path, keyword_init: true) do
     if path.nil?
       return content
     end
-    if category == "images"
-      content.gsub(url, "/#{path}")
+    if image?
+      content.gsub(url, public_path)
     else
-      content.gsub(url, "<video controls src=\"/#{path}\"></video>")
+      content.gsub(url, "<video controls src=\"#{public_path}\"></video>")
     end
   end
 end
@@ -55,14 +67,24 @@ class IssuePoster
     slug = title.gsub(/[^a-zA-Z0-9\s]/, '').gsub(/\s+/, '-').downcase
     tags = issue_body.match(/### Tags\n\n(.*)\n/)[1]&.split(", ")&.map(&:strip)
     imdb_id = issue_body.match(/### IMDB ID\n\n(.*)\n/)[1]&.strip
+    imdb_id = nil if imdb_id.empty? || imdb_id == "_No response_"
     category = issue_body.match(/### Category\n\n(.*)\n/)[1]
     rating = issue_body.match(/### Rating\n\n(.*)\n/)[1].to_i
+    rating = nil if rating == 0
     raw_content = issue_body.match(/### Content\n\n(.*)/m)[1]
     assets = extract_assets(raw_content)
     assets.map(&:download)
-    content = transform_content(raw_content, assets)
-    image = assets.find { |asset| asset.category == "images" }&.path
-    post = Post.new(tags:, title:, slug:, imdb_id:, rating:, image:, category:, body: content, date: Time.now)
+    post = Post.new(
+      body: transform_content(raw_content, assets),
+      category:,
+      date: Time.now
+      image: assets.find(&:image?)&.public_path,
+      imdb_id:,
+      rating:,
+      slug:,
+      tags:,
+      title:,
+    )
     unless imdb_id.nil?
       post.image = post.movie_cover_image || post.image
     end
