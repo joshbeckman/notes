@@ -5,7 +5,7 @@ title: "Anatomy of a Fall"
 toc: true
 rating: 4
 imdb_id: tt17009710
-image: 
+image: https://m.media-amazon.com/images/M/MV5BMDBiYmRkNjUtYzc4My00NGFiLWE2NWUtMGU1ZDA1NTQ3ZjQwXkEyXkFqcGdeQXVyMTM1NjM2ODg1._V1_SX300.jpg
 description: 
 tags: 
   - movies

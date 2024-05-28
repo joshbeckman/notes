@@ -22,7 +22,7 @@ Post = Struct.new(
       puts "OMDB_TOKEN environment variable not set"
       return
     end
-    url = "https://www.omdbapi.com/?i=#{@imdb_id}&apikey=#{key}"
+    url = "https://www.omdbapi.com/?i=#{imdb_id}&apikey=#{key}"
     uri = URI(url)
     response = Net::HTTP.get(uri)
     json = JSON.parse(response)
