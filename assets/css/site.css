@@ -1100,6 +1100,22 @@ div.highlighter-rouge.language-go::before {
   display: none;
 }
 
+/* tinylitics */
+button.tinylytics_kudos {
+  background: none;
+  border: none;
+  padding: 0;
+}
+button.tinylytics_kudos:disabled {
+  color: inherit;
+}
+button.tinylytics_kudos.did_select {
+  font-weight: bold;
+}
+button.tinylytics_kudos:hover {
+  cursor: pointer;
+}
+
 .display-on-mobile {
   display: none;
 }
