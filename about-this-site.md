@@ -33,6 +33,7 @@ Search is powered by [lunrjs](https://lunrjs.com).
 Photo galleries and zoom are powered by [PhotoSwipe](https://photoswipe.com).
 The site fonts are [IBM Plex](https://www.ibm.com/plex/).
 Network graph views are powered by [vis-network](https://www.joshbeckman.org/blog/building-a-network-graph-site-index).
+Popularity is tracked by [Tinylitics](https://tinylytics.app/public/34xe4FBs3y87LLkdCHaT).
 
 You can read about everything else I use to build things at [/uses](/uses).
 
@@ -47,6 +48,9 @@ You can read about everything else I use to build things at [/uses](/uses).
 * move content markup into liquid filters instead of liquid logic
 * change styling/colors by season
 - Post to mastodon or something via GitHub action build pipeline
+
+### 2024-06-01
+- Added Tinylitics as an experiment
 
 ### 2024-05-27
 - Render search results statically
