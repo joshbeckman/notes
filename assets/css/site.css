@@ -1167,6 +1167,9 @@ button.tinylytics_kudos:hover {
       background-color: darkblue;
       color: #ddd;
     }
+    button.tinylytics_kudos {
+      color: #ddd;
+    }
     .search-result-preview {
       color: #ddd;
     }
