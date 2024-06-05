@@ -1,4 +1,5 @@
 #!/usr/in/env ruby
+# frozen_string_literal: true
 
 require 'json'
 require 'net/http'
@@ -20,31 +21,31 @@ Post = Struct.new(
 
 class Poster
   def run(export_path)
-    journal = JSON.parse(File.read(export_path + '/Journal.json'))
+    journal = JSON.parse(File.read("#{export_path}/Journal.json"))
     entries = journal['entries']
     filenames = entries.map do |entry|
       import_entry(entry, export_path)
     end
-    exec('nvim -p ' + filenames.join(' '))
+    exec("nvim -p #{filenames.join(' ')}")
   end
 
   def import_entry(entry, export_path)
     post = Post.new(tags: [])
-    title_match = entry.dig('text').match(/# (.*)/)
+    title_match = entry['text'].match(/# (.*)/)
     if title_match
       post.title = title_match[1]
     else
-      puts entry.dig('text')
+      puts entry['text']
       puts 'Title: ?'
       post.title = $stdin.gets.chomp
     end
     puts "Title: #{post.title}"
     post.slug = post.title.gsub(/[^a-zA-Z0-9\s]/, '').gsub(/\s+/, '-').downcase
-    post.date = Time.parse(entry.dig('creationDate'))
+    post.date = Time.parse(entry['creationDate'])
     copy_photos(entry, export_path)
     copy_videos(entry, export_path)
     post.body = parse_body(entry)
-    post.image = '/' + asset_path_for_photo(entry.dig('photos').first) if entry.dig('photos')&.first
+    post.image = "/#{asset_path_for_photo(entry['photos'].first)}" if entry['photos']&.first
 
     puts 'Category: ?'
     post.category = $stdin.gets.chomp
@@ -67,34 +68,34 @@ class Poster
   end
 
   def asset_path_for_video(video)
-    "assets/videos/#{video.dig('identifier')}.#{video.dig('type')}"
+    "assets/videos/#{video['identifier']}.#{video['type']}"
   end
 
   def asset_path_for_photo(photo)
-    "assets/images/#{photo.dig('identifier')}.#{photo.dig('type')}"
+    "assets/images/#{photo['identifier']}.#{photo['type']}"
   end
 
   def copy_videos(entry, export_path)
-    (entry.dig('videos') || []).each do |video|
-      `cp #{export_path}/videos/#{video.dig('md5')}.#{video.dig('type')} #{asset_path_for_video(video)}`
+    (entry['videos'] || []).each do |video|
+      `cp #{export_path}/videos/#{video['md5']}.#{video['type']} #{asset_path_for_video(video)}`
     end
   end
 
   def copy_photos(entry, export_path)
-    (entry.dig('photos') || []).each do |photo|
-      `cp #{export_path}/photos/#{photo.dig('md5')}.#{photo.dig('type')} #{asset_path_for_photo(photo)}`
+    (entry['photos'] || []).each do |photo|
+      `cp #{export_path}/photos/#{photo['md5']}.#{photo['type']} #{asset_path_for_photo(photo)}`
     end
   end
 
   def parse_body(entry)
-    body = entry.dig('text').gsub(/^# (.*)/, '').strip
-    (entry.dig('photos') || []).each do |photo|
+    body = entry['text'].gsub(/^# (.*)/, '').strip
+    (entry['photos'] || []).each do |photo|
       img_tag = "/#{asset_path_for_photo(photo)}"
-      body.gsub!(%r{dayone-moment://#{photo.dig('identifier')}}, img_tag)
+      body.gsub!(%r{dayone-moment://#{photo['identifier']}}, img_tag)
     end
-    (entry.dig('videos') || []).each do |video|
+    (entry['videos'] || []).each do |video|
       video_tag = "<video controls src=\"/#{asset_path_for_video(video)}\"></video>"
-      body.gsub!(%r{!\[\]\(dayone-moment:/video/#{video.dig('identifier')}\)}, video_tag)
+      body.gsub!(%r{!\[\]\(dayone-moment:/video/#{video['identifier']}\)}, video_tag)
     end
     body
   end
