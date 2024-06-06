@@ -63,13 +63,13 @@ class IssuePoster
   # - "### Content" is a string, set in the content key
   def run
     issue_body = File.read("issue_body")
-    title = issue_body.match(/### Title\n\s*\n\s*(.*)\n/)[1]
-    tags = issue_body.match(/### Tags\n\s*\n\s*(.*)\n/)[1]&.split(",")&.map(&:strip)
-    date = parse_date(issue_body.match(/### Date\n\s*\n\s*(.*)\n/)[1])
-    imdb_id = parse_imdb_id(issue_body.match(/### IMDB ID\n\s*\n\s*(.*)\n/)[1])
-    rating = parse_rating(issue_body.match(/### Rating\n\s*\n\s*(.*)\n/)[1])
-    category = issue_body.match(/### Category\n\s*\n\s*(.*)\n/)[1]
-    raw_content = issue_body.match(/### Content\n\s*\n\s*(.*)/m)[1]
+    title = parse_input(issue_body, 'Title')
+    tags = parse_input(issue_body, 'Tags')&.split(",")&.map(&:strip)
+    date = parse_date(parse_input(issue_body, 'Date'))
+    imdb_id = parse_imdb_id(parse_input(issue_body, 'IMDB ID'))
+    rating = parse_rating(parse_input(issue_body, 'Rating'))
+    category = parse_input(issue_body, 'Category')
+    raw_content = issue_body.match(/### Content.*\n\s*\n\s*(.*)/m)[1]
     slug = title.gsub(/[^a-zA-Z0-9\s]/, '').gsub(/\s+/, '-').downcase
     assets = extract_assets(raw_content)
     assets.map(&:download)
@@ -89,6 +89,13 @@ class IssuePoster
     end
     post.create_file
     File.delete("issue_body")
+  end
+
+  def parse_input(body, input_label)
+    match = body.match(/### #{Regexp.quote(input_label)}.*\n\s*\n\s*(.*)/)
+    return '_No response_' unless match
+  
+    match[1].strip
   end
 
   def parse_imdb_id(imdb_id)
