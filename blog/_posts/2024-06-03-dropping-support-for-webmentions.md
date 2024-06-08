@@ -5,6 +5,7 @@ title: "Dropping Support for Webmentions"
 toc: true
 image: 
 description: 
+mastodon_social_status_url: post
 tags: 
   - personal-blog
   - publishing
