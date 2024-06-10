@@ -42,7 +42,8 @@ Post = Struct.new(
       file.puts "rating: #{rating}" if rating
       file.puts "imdb_id: #{imdb_id}" if imdb_id
       file.puts "image: #{image}"
-      file.puts 'description: '
+      file.puts "description: #{description}"
+      file.puts 'mastodon_social_status_url: post'
       file.puts 'tags: '
       tags.each do |tag|
         file.puts "  - #{tag}"
