@@ -7,6 +7,7 @@ require 'uri'
 Post = Struct.new(
   :body,
   :category,
+  :description,
   :image,
   :date,
   :imdb_id,
