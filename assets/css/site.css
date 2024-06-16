@@ -1100,6 +1100,17 @@ div.highlighter-rouge.language-go::before {
   display: none;
 }
 
+/* social */
+.post-social details summary {
+  border: 1px solid lightgrey;
+  padding: 0.25em 0.5em;
+  display: inline-block;
+  border-radius: 4px;
+}
+.post-social details summary:hover {
+  cursor: pointer;
+}
+
 /* tinylitics */
 button.tinylytics_kudos {
   background: none;

@@ -6,15 +6,21 @@
 {%- endcomment -%}
 
 <div class="post-social">
-    <h3 class="">Social</h3>
-    <p class="social-kudos">
-      Kudos: <button class="tinylytics_kudos"></button>
-    </p>
+  <details>
+    <summary>Comments</summary>
     {%- if page.mastodon_social_status_url -%}
     <p class="social-mastodon">
       Comment <a href="{{page.mastodon_social_status_url}}" target="_blank">
         on Mastodon
-      </a>
+      </a> or right here:
     </p>
     {%- endif -%}
+    <div id="cusdis_thread"
+      data-host="https://cusdis.com"
+      data-app-id="0bbb76b5-e971-4d9c-8fa7-a4c9e1ff0984"
+      data-page-id="{{ page.url }}"
+      data-page-url="{{ site.url }}{{ page.url }}"
+      data-page-title="{{ page.title }}"
+    ></div>
+  </details>
 </div>
