@@ -5,6 +5,7 @@ title: "Coffee Walk While Learning Starbucks"
 toc: true
 image: 
 description: 
+mastodon_social_status_url: post
 tags: 
   - walking
   - cooking
