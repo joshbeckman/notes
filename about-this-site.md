@@ -47,7 +47,11 @@ You can read about everything else I use to build things at [/uses](/uses).
 - podcast rendering
 * move content markup into liquid filters instead of liquid logic
 * change styling/colors by season
-- Post to mastodon or something via GitHub action build pipeline
+
+### 2024-06-16
+- Post to mastodon via GitHub action build pipeline (POSSE)
+- Add comments via Cusdis
+- Add a [guestbook](/guestbook) page
 
 ### 2024-06-01
 - Added Tinylitics as an experiment
