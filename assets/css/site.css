@@ -1101,7 +1101,7 @@ div.highlighter-rouge.language-go::before {
 }
 
 /* social */
-#cusdis_thread {
+#cusdis_thread iframe {
    min-height: 22rem;
 }
 .post-social details summary {
