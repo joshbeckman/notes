@@ -1101,10 +1101,13 @@ div.highlighter-rouge.language-go::before {
 }
 
 /* social */
+#cusdis_thread {
+   min-height: 22rem;
+}
 .post-social details summary {
   border: 1px solid lightgrey;
   padding: 0.25em 0.5em;
-  display: inline-block;
+  display: list-item;
   border-radius: 4px;
 }
 .post-social details summary:hover {
