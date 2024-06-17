@@ -140,6 +140,7 @@ module ReadwiseExtras
     end
 
     def should_import?
+      return false if note == '0'
       return true if note&.length&.positive?
 
       false
