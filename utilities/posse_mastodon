@@ -37,8 +37,10 @@ module POSSE
     end
 
     def post(post)
+      puts "Posting: #{url(post)}"
       message = "#{post.data['title']}\n\n#{url(post)}"
       status = post_status(message)
+      puts "Posted:  #{url(post)}} to #{status['url']}"
       mastodon_social_status_url = status['url']
       save_status(post, mastodon_social_status_url)
     end
@@ -57,7 +59,7 @@ module POSSE
 
     def should_post?(post)
       posted_url = post.data['mastodon_social_status_url']
-      posted_url && !posted_url.match?(/https\S*\/\d+/)
+      !posted_url.nil? && !posted_url.match?(/https\S*\/\d+/)
     end
 
     def post_status(status)
