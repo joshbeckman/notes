@@ -59,7 +59,7 @@ module POSSE
 
     def should_post?(post)
       posted_url = post.data['mastodon_social_status_url']
-      !posted_url.nil? && !posted_url.match?(/https\S*\/\d+/)
+      !posted_url.nil? && !(posted_url || '').match?(/https\S*\/\d+/)
     end
 
     def post_status(status)
