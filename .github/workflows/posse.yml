@@ -46,7 +46,8 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "josh@joshbeckman.org"
-          git add assets
+          git add blog
+          git add notes
           git commit -m "new(usr): POSSE"
       - name: Push changes
         if: steps.any_changes.outputs.changed != 0
