@@ -2,6 +2,7 @@
 layout: Page
 title: Guestbook
 permalink: /guestbook/
+emoji: 💌
 searchable: true
 tags:
 - index
