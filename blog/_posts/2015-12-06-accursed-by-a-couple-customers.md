@@ -5,6 +5,9 @@ date: '2015-12-06 00:00:00'
 redirect_from:
 - "/accursed-by-a-couple-customers"
 - "/accursed-by-a-couple-customers/"
+tags:
+- threadmeup
+- venture-capital
 ---
 
 I’ve seeing a trend with some of the start up companies I’ve worked at. It tends to happen that a prolific and available customer drives the majority of revenue or traffic. That’s all well and good but what usually happens is that one (or two) customers start making decisions in their best interest. Who can blame them?

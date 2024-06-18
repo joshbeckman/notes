@@ -5,6 +5,9 @@ date: '2016-03-12 00:00:00'
 redirect_from:
 - "/databases-doing-dirty-work"
 - "/databases-doing-dirty-work/"
+tags:
+- sql
+- threadmeup
 ---
 
 [Eric did a great thing](http://www.codedependant.net/2016/03/11/timeseries-apis-on-a-dime-with-tnode-astypie-and-mysql/) in the past two weeks with his implementation of data calculating MySQL tables. In short, he wrote a table definition that updates itself on the hour by recalculating its own columns and records by determining the accrued new data and then summing and saving rows for each of our customers. Think of it as a preemptive cache that only has as much overheard as what has accrued in the last hour, with the added benefit of being entirely contained within our MySQL table definitions.

@@ -5,6 +5,8 @@ date: '2014-08-26 00:00:00'
 redirect_from:
 - "/feeling-a-pending-breakthrough"
 - "/feeling-a-pending-breakthrough/"
+tags:
+- competition
 ---
 
 From The Verge, [This is Uber’s playbook for sabotaging Lyft](http://www.theverge.com/2014/8/26/6067663/this-is-ubers-playbook-for-sabotaging-lyft):

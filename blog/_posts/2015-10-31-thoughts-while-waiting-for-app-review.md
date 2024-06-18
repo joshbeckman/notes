@@ -5,6 +5,9 @@ date: '2015-10-31 00:00:00'
 redirect_from:
 - "/thoughts-while-waiting-for-app-review"
 - "/thoughts-while-waiting-for-app-review/"
+tags:
+- narro
+- platforms
 ---
 
 I just pressed the button to submit _[Narro](//narro.co) for iOS_ into the App Store. After 12 revisions, 3 weeks of testing, and 15 external beta testers, I think it’s ready to go.

@@ -5,6 +5,9 @@ date: '2015-06-08 00:00:00'
 redirect_from:
 - "/hard-numbers-calculator"
 - "/hard-numbers-calculator/"
+tags:
+- threadmeup
+- venture-capital
 ---
 
 When you’re leading a team of developers for a startup company, you often get asked to define hard numbers. You get asked questions like:

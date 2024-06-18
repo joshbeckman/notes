@@ -5,6 +5,8 @@ date: '2015-10-05 00:00:00'
 redirect_from:
 - "/increased-speed-and-urgency"
 - "/increased-speed-and-urgency/"
+tags:
+- work
 ---
 
 From Jack Dorsey’s re-introduction as CEO of Twitter today:

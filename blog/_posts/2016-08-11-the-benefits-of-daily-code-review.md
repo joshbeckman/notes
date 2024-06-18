@@ -5,6 +5,9 @@ date: '2016-08-11 00:00:00'
 redirect_from:
 - "/the-benefits-of-daily-code-review"
 - "/the-benefits-of-daily-code-review/"
+tags:
+- mentoring
+- software-engineering
 ---
 
 I wrote a while ago about [a methodology for daily code reviews]( /2015/04/04/daily-code-reviews/), one which we implemented originally at ThreadMeUp. Now that I’m building a new team at OfficeLuv, I’ve been excited to start them again. Recently, I was talking to [a very good friend of mine](//elenichappen.com) and found myself reasoning through the importance of team code reviews. I think it boils down to four main skills for individual team members.

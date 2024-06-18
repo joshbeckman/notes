@@ -5,7 +5,10 @@ title: "Twenty-Sided Tavern Premiere Trip"
 toc: true
 image: /assets/images/34A97CA251E044C5AAF1B5D7CE69BEC9.jpeg
 description: 
-tags: 
+tags:
+- travel
+- live-theater
+- friends
 ---
 
 We traveled to Brooklyn for the weekend to see our friend Maddie premiere her Off\-Broadway show: [Twenty\-Sided Tavern](https://thetwentysidedtavern.com)\.

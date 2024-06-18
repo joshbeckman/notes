@@ -5,7 +5,9 @@ title: Returning to Kagi
 toc: true
 image: 
 description: 
-tags: tools
+tags:
+- tools
+- search
 ---
 
 Started paying for the [Kagi](https://kagi.com) starter plan again.

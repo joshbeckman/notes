@@ -7,6 +7,7 @@ date: '2022-04-10 03:33:00'
 redirect_from:
 - "/bemily-wedding"
 - "/bemily-wedding/"
+tags: friends
 ---
 
 <figure class="kg-card kg-image-card"><img src="/assets/images/7B42AD30-B507-40D0-94CF-8EDCA1F75629.jpeg" /></figure>

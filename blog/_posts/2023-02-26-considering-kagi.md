@@ -9,6 +9,9 @@ date: '2023-02-26 17:32:43'
 redirect_from:
 - "/considering-kagi"
 - "/considering-kagi/"
+tags:
+- tools
+- search
 ---
 
 ## How It Started

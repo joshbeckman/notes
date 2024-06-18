@@ -5,6 +5,8 @@ date: '2015-04-14 00:00:00'
 redirect_from:
 - "/arrative-arcs-in-the-code"
 - "/arrative-arcs-in-the-code/"
+tags:
+- software-engineering
 ---
 
 A good method has narrative structure. There’s an establishing scene, a rising action, and a conclusion to tie up loose ends. After reading more fiction recently, I’ve been finding fictional story structure seep into my code - for the better.

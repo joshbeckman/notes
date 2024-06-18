@@ -6,6 +6,10 @@ date: '2015-04-04 00:00:00'
 redirect_from:
 - "/daily-code-reviews"
 - "/daily-code-reviews/"
+tags:
+- threadmeup
+- mentoring
+- software-engineering
 ---
 
 <figure class="kg-card kg-image-card"><img src="/assets/images/tmu_eng.jpg" class="kg-image" alt ></figure>
