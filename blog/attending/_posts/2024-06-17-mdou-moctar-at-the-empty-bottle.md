@@ -5,7 +5,7 @@ title: "Mdou Moctar at The Empty Bottle"
 toc: true
 image: /assets/images/90cb8c44-79ec-4883-89e1-b7b5648edfd5.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/112644535811461487
 tags: 
   - music
 ---
