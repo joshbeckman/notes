@@ -144,7 +144,7 @@ class IssuePoster
     videos = content.scan(/^https:\/\/github.com\/joshbeckman\/notes\/assets\/.*$/).flatten.map do |url|
       Asset.new(url: url, category: "videos")
     end
-    [images + videos].uniq { |asset| asset.url }
+    images + videos
   end
 end
 
