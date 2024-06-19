@@ -5,7 +5,7 @@ title: "Coffee Walk While Learning Starbucks"
 toc: true
 image: 
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/112641705054000929
 tags: 
   - walking
   - cooking
