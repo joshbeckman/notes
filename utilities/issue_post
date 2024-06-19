@@ -134,7 +134,9 @@ class IssuePoster
     # images are identified by regular markdown image syntax
     images = content.scan(/\!\[.*\]\((.*)\)/).flatten.map do |url|
       Asset.new(url: url, category: "images")
-    end
+    end.concat(content.scan(/<img .*src="(.*)">/).flatten.map do |url|
+      Asset.new(url: url, category: "images")
+    end)
     # videos are identified by:
     # - a URI at the start of a line
     # - the domain is github.com
@@ -142,7 +144,7 @@ class IssuePoster
     videos = content.scan(/^https:\/\/github.com\/joshbeckman\/notes\/assets\/.*$/).flatten.map do |url|
       Asset.new(url: url, category: "videos")
     end
-    images + videos
+    [images + videos].uniq { |asset| asset.url }
   end
 end
 
