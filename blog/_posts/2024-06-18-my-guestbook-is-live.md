@@ -5,7 +5,7 @@ title: "My guestbook is live"
 toc: true
 image: /assets/images/340882252-269d3299-50a0-42a8-aebc-529e178dfe26.png
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/112641705067394645
 tags: 
   - personal-blog
 ---
