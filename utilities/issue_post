@@ -148,5 +148,4 @@ class IssuePoster
   end
 end
 
-IssuePoster.new(
-).run
+IssuePoster.new.run

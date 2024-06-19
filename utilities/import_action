@@ -309,7 +309,8 @@ class Importer
       Jekyll.import_book(book)
       Jekyll.import_book_highlights(book)
     end
-    Jekyll.import_reading_list(inbox_month: new_docs, archive_month: archive_docs)
+    # turning this off for now because I'm not using it
+    # Jekyll.import_reading_list(inbox_month: new_docs, archive_month: archive_docs)
   end
 
   def self.clean_posts
