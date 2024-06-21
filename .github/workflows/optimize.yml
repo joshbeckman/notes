@@ -43,3 +43,6 @@ jobs:
       - name: Push changes
         if: steps.any_changes.outputs.changed != 0
         run: git push
+      - name: Publish Jekyll
+        if: steps.any_changes.outputs.changed != 0
+        uses: joshbeckman/notes/.github/workflows/jekyll.yml@main
