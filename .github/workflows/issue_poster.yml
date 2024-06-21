@@ -26,7 +26,9 @@ jobs:
           cache-version: 0 # Increment this number if you need to re-download cached gems
       - name: Read issue body
         id: read_issue
-        run: echo "${{ github.event.issue.body }}" > $GITHUB_WORKSPACE/issue_body
+        run: echo $GITHUB_ISSUE_BODY > $GITHUB_WORKSPACE/issue_body
+        env:
+          GITHUB_ISSUE_BODY: ${{ github.event.issue.body }}
       - name: Run issue_post
         run: bundle exec utilities/issue_post
         env:
