@@ -5,7 +5,7 @@ title: "Bonobo at Concord"
 toc: true
 image: /assets/images/80c4ac66-001d-4eac-ba6b-292d39e26c40.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/112653037706690321
 tags: 
   - music
 ---
