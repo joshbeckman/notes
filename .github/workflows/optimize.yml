@@ -46,4 +46,4 @@ jobs:
   deploy:
     needs: build
     if: needs.build.steps.any_changes.outputs.changed != 0
-    uses: joshbeckman/notes/.github/workflows/jekyll.yml@main
+    uses: joshbeckman/notes/.github/workflows/jekyll.yml@master
