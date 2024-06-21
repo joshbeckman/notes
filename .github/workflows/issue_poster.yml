@@ -50,4 +50,5 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
   deploy:
+    needs: build
     uses: joshbeckman/notes/.github/workflows/jekyll.yml@master
