@@ -19,3 +19,5 @@ I was making `robots.txt` and `humans.txt` files for Narro recently, and I wante
 - [GitHub](//github.com/humans.txt) (simply because it is _massive_)
 - [New York Times](//nytimes.com/humans.txt)
 - [Mozilla](//mozilla.org/humans.txt)
+
+You can see mine at [/humans.txt](/humans.txt).
