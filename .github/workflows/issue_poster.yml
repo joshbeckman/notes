@@ -47,5 +47,5 @@ jobs:
         run: gh issue close ${{ github.event.issue.number }}
         env:
           GH_TOKEN: ${{ github.token }}
-      - name: Publish Jekyll
-        uses: joshbeckman/notes/.github/workflows/jekyll.yml@main
+  deploy:
+    uses: joshbeckman/notes/.github/workflows/jekyll.yml@main
