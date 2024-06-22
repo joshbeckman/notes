@@ -33,7 +33,7 @@ Search is powered by [lunrjs](https://lunrjs.com).
 Photo galleries and zoom are powered by [PhotoSwipe](https://photoswipe.com).
 The site fonts are [IBM Plex](https://www.ibm.com/plex/).
 Network graph views are powered by [vis-network](https://www.joshbeckman.org/blog/building-a-network-graph-site-index).
-Popularity is tracked by [Tinylitics](https://tinylytics.app/public/34xe4FBs3y87LLkdCHaT) (and I'm also testing [Goatcounter](https://www.goatcounter.com/)).
+Popularity is tracked by [Goatcounter](https://www.goatcounter.com/) - public stats are available at [/analytics](https://www.joshbeckman.org/analytics).
 Comments are powered by [Cusdis](https://cusdis.com/).
 
 You can read about everything else I use to build things at [/uses](/uses).
@@ -47,6 +47,9 @@ You can read about everything else I use to build things at [/uses](/uses).
 - Random image on homepage
 - podcast rendering
 * move content markup into liquid filters instead of liquid logic
+
+### 2024-06-22
+- Switching off Tinylitics and over to Goatcounter for analytics
 
 ### 2024-06-16
 - Post to mastodon via GitHub action build pipeline (POSSE)
