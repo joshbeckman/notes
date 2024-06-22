@@ -5,7 +5,7 @@ title: "Beyond Wonderland 2024"
 toc: true
 image: /assets/images/7ca58d13-e68b-402c-9ebe-0ffa1e12e25f.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/112661531577992672
 tags: 
   - music
 ---

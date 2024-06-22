@@ -5,7 +5,7 @@ title: "Analytics Experiment: Switching from Tinylytics to Goatcounter"
 toc: true
 image: /assets/images/badd8389-5711-46d5-911c-654df98368bd.png
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/112661531596178805
 tags: 
   - metrics
   - personal-blog
