@@ -25,4 +25,4 @@ This year we had rain instead of cold, so our shoes and clothes took a beating.
 
 Luckily the shows were great and we got to ride around on carnival swings.
 
-<video controls src="/assets/videos/514c6ced-2c08-45c8-89ae-9b955a848633.quicktime"></video>
+<video controls src="/assets/videos/wonderland-swings.MOV"></video>
