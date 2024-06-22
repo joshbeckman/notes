@@ -943,6 +943,7 @@ ul.asymp>li {
   border-radius: 4px;
   border: 1px solid #ccc;
   background-color: aliceblue;
+  color: inherit;
 }
 .searchbar button[type=submit]:hover {
   cursor: pointer;
