@@ -2,9 +2,13 @@
 layout: Page
 title: Insight
 permalink: /insight/
+emoji: 💡
+searchable: true
 tags:
 - index
 - personal-blog
+- llm
+- ai
 ---
 This page generates a random "insight" from all my posts, based on [this approach](https://www.joshbeckman.org/notes/741185037) to [retrieval-augmented generation](https://www.joshbeckman.org/search/?q=rag).
 
