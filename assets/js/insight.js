@@ -5,7 +5,7 @@
     fetch('https://joshbeckman-amethysthalibut.web.val.run')
         .then(response => response.json())
         .then(data => {
-            document.getElementById('insight').innerHTML = data.insight;
+            document.getElementById('insight').innerHTML = data.insightHtml;
             document.getElementById('topic').innerHTML = data.topic;
         });
 
