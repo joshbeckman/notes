@@ -35,6 +35,7 @@ The site fonts are [IBM Plex](https://www.ibm.com/plex/).
 Network graph views are powered by [vis-network](https://www.joshbeckman.org/blog/building-a-network-graph-site-index).
 Popularity is tracked by [Goatcounter](https://www.goatcounter.com/) - public stats are available at [/analytics](https://www.joshbeckman.org/analytics).
 Comments are powered by [Cusdis](https://cusdis.com/).
+Serverless scripts (e.g. for [generating insights](/insight)) are hosted/run by [Val Town](https://www.val.town).
 
 You can read about everything else I use to build things at [/uses](/uses).
 
