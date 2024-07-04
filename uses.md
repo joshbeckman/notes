@@ -20,7 +20,7 @@ Well, we're gonna have to break this down a bit.
 - Jarvis standing desk ([previously](/blog/working))
 - Keychron K1 keyboard ([customized](https://www.joshbeckman.org/blog/keyboard-update-customized-keychron-k1))
 - Macbook Air (2022, personal)
-- Macbook Pro (2022, work)
+- Macbook Pro (2023, work)
 - paper and pencil
 - Apple studio monitor (and built-in camera)
 - Elgato Air lights
@@ -60,10 +60,10 @@ Well, we're gonna have to break this down a bit.
 ## Music
 
 ### Hardware
-- Teenage Engineering K.O. II
-- Teenage Engineering P.O 133
 - Teenage Engineering OP-Z
+- Teenage Engineering K.O. II
 - Teenage Engineering P.O Modular 400
+- Teenage Engineering P.O 133
 - Arturia Keystep
 - Zoom H4N
 - Hercules DJI Starlight
