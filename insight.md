@@ -10,11 +10,9 @@ tags:
 - llm
 - ai
 ---
-This page generates a random "insight" from all my posts, based on [this approach](https://www.joshbeckman.org/notes/741185037) to [retrieval-augmented generation](https://www.joshbeckman.org/search/?q=rag).
+This page generates a random "insight" from all my posts - you can [read about how it works](https://www.joshbeckman.org/blog/using-an-llmand-rag-to-wring-insights-from-my-posts).
 
-Essentially, it selects a few posts at random, asks an [LLM](https://www.joshbeckman.org/tags/#llm) to identify a common topic between them, then searches my posts for things related to that topic, then asks another LLM to "identify a unique insight" about the topic, using those posts as context.
-
-Each time you come to this page, it will attempt to generate a new insight.
+Each time you come to this page, it will attempt to generate a new insight. Note that, to prevent abuse, this is currently limited to 10 insights/min (this is across all users: _please share/play nicely_).
 
 <h2 id="topic"></h2>
 <div id="insight"><em>Generating insight...</em></div>
