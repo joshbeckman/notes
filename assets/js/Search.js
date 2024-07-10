@@ -39,6 +39,7 @@
                 this.field('title');
                 this.field('content');
                 this.field('url');
+                this.field('tags');
                 this.metadataWhitelist = ['position']
 
                 for (var i in docs) {
@@ -46,7 +47,8 @@
                         id: i,
                         title: docs[i].title,
                         content: docs[i].content,
-                        url: docs[i].url
+                        url: docs[i].url,
+                        tags: docs[i].tags,
                     });
                 }
             });
