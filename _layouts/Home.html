@@ -159,6 +159,16 @@
           {%- for post in site.posts limit:3 -%}
           {%- include PostListItem.html post=post -%}
           {%- endfor -%}
+          {% assign postsByDay = 
+          site.posts | group_by_exp:"post", "post.date | date: '%d-%B-%Y'" %}
+          {% assign today = site.time | date: '%d-%B' %}
+          {% assign previousYearsPosts = postsByDay[today] %}
+          {% if previousYearsPosts %}
+          <h3>On This Day in Previous Years</h3>
+          {%- for post in previousYearsPosts -%}
+          {%- include PostListItem.html post=post dated=true -%}
+          {%- endfor -%}
+          {% endif %}
         </section>
         {%- include Footer.html -%}
       </article>

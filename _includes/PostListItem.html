@@ -19,6 +19,10 @@
       {% else %}
         {{ include.post.content | strip_html | strip | escape | truncate: 70}}
       {% endif %}
+      {% if include.dated %}
+        <br>
+        <time class="dt-published" datetime="{{ include.post.date | date_to_xmlschema }}">{{ include.post.date | date: '%Y, %B %d' }}</time>
+      {% endif %}
     </p>
   </div>
 </div>
