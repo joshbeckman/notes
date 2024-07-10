@@ -1114,7 +1114,7 @@ div.highlighter-rouge.language-go::before {
   display: list-item;
   border-radius: 4px;
 }
-.post-social details summary:hover {
+details summary:hover {
   cursor: pointer;
 }
 
