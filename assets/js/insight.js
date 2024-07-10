@@ -35,6 +35,7 @@
             .then(response => response.json())
             .then(data => {
                 stopLoading();
+                document.title = document.title + ': ' + data.topic;
                 document.getElementById('insight').innerHTML = data.insightHtml;
                 document.getElementById('topic').innerHTML = data.topic;
             });
@@ -47,6 +48,7 @@
             .then(response => response.json())
             .then(data => {
                 stopLoading();
+                document.title = document.title + ': ' + data.question;
                 document.getElementById('insight').innerHTML = data.insightHtml;
                 document.getElementById('topic').innerHTML = data.question;
             });
