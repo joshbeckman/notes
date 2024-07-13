@@ -1,6 +1,10 @@
 <div class="search">
   <div class="searchbar search-container">
+    {%- if page.title == "Fuse" -%}
+    <form id="search-form" class="search-form" action="/search-fuse" method="get">
+    {%- else -%}
     <form id="search-form" class="search-form" action="/search" method="get">
+    {%- endif -%}
       <label for="search-input"></label>
       <div class="search-input-container">
         <input type="text" name="q" id="search-input" autocomplete="off" placeholder="Search {{site.heading}}..."/>

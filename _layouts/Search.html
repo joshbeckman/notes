@@ -40,7 +40,12 @@
       </article>
     </div>
   </div>
-  <script async type="text/javascript" src="/assets/js/vendor/lunr.min.js"></script>
+  {%- if page.title == "Fuse" -%}
+  <script type="text/javascript" src="/assets/js/vendor/fuse.min.js"></script>
+  <script async src="/assets/js/SearchFuse.js"></script>
+  {%- else -%}
+  <script type="text/javascript" src="/assets/js/vendor/lunr.min.js"></script>
   <script async src="/assets/js/Search.js"></script>
+  {%- endif -%}
 </body>
 </html>
