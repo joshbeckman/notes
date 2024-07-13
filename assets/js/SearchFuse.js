@@ -74,7 +74,7 @@
             }
 
             var results = fuse.search(input);
-            if (results[0].score <= 0.3) {
+            if (results[0] && results[0].score <= 0.3) {
                 results = results.filter(function(result){
                     return result.score < 0.5;
                 });
