@@ -8,6 +8,7 @@ tags:
 - identity
 - publishing
 - building
+- taxonomy
 ---
 
 ![](/assets/images/EE755FE2535D4A56A4D1831A3443507F.jpeg)
