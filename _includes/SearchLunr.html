@@ -1,0 +1,15 @@
+<div class="search">
+  <div class="searchbar search-container">
+    <form id="search-form" class="search-form" action="/search-lunr" method="get">
+      <label for="search-input"></label>
+      <div class="search-input-container">
+        <input type="text" name="q" id="search-input" autocomplete="off" placeholder="Search {{site.heading}}..."/>
+        <button type="submit" class="search-button" aria-label="Submit search query">
+          Search
+        </button>
+      </div>
+    </form>
+  </div>
+  <div id="search-results" class="search-results"></div>
+  <hr>
+</div>
