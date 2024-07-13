@@ -6,6 +6,7 @@ image: "/assets/images/apps.png"
 date: '2023-01-30 04:17:14'
 permalink: /narro/
 tags: narro
+searchable: true
 ---
 ![Narro](/assets/images/apps.png)
 

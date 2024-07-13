@@ -5,6 +5,7 @@ permalink: /search/
 emoji: "*️⃣"
 tags: index
 toc: true
+searchable: true
 ---
 
 You can get to this page from anywhere on the site with `Ctrl` + `s`.
