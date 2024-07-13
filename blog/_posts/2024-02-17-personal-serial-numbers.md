@@ -21,3 +21,5 @@ But I’d want a serial number to also identify *the model* in addition to the y
 Where could I start using this to give handles to things I’m making? I guess the serial number is most useful for *physical* items that must be made and can’t be copied easily\. The version number is most useful for *digital knowledge* \(like code\) that are replicated and destroyed infinitely\.
 
 I guess I’ve been using a serial numbering system \(implicitly\) for years in my cameras: they each have their own file naming pattern for each photo that tries to mimic a serial numbering scheme\. I should lean into that\! I should go edit them to conform to a common serial pattern for easier sorting/identification/etc\.
+
+*Update:* I'm realizing that this is similar to how I have [the site index](/notes/about-the-index) under the [Johnny.Decimal](https://johnnydecimal.com/) system.
