@@ -1,6 +1,6 @@
 ---
 layout: Post
-date: 2024-07-28 00:00:00 +0000
+date: 2024-06-28 00:00:00 +0000
 title: "Shopify Summit 2024"
 toc: true
 image: /assets/images/d9f08a45-5c70-4364-9130-0793c38ad9c1.jpeg

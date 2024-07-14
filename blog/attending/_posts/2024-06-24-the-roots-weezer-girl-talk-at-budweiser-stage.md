@@ -13,7 +13,7 @@ tags:
 
 
 
-On the first night of Shopify Summit 2024, we were treated to a trio of performances in a privately-opened [Budweiser Stage](https://www.canadianamphitheatre.net/) in Toronto, Canada.
+On the first night of [Shopify Summit 2024](/blog/traveling/shopify-summit-2024), we were treated to a trio of performances in a privately-opened [Budweiser Stage](https://www.canadianamphitheatre.net/) in Toronto, Canada.
 
 ![IMG_3215](/assets/images/cd22a3f2-5dc7-45e1-b717-bdfc428f7fe9.jpeg)
 
