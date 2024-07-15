@@ -18,6 +18,8 @@ I walked over to the last evening of West Fest in sickly humid heat. I grabbed f
 
 Ned had tipped me off to Cortex a few months earlier and it was serendipitous that they were coming to town. Their most famous album is heavily sampled in hip-hop, but their plain songs are delightful bops with good bass lines. 
 
+<iframe allow="autoplay *; encrypted-media *;" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/troupeau-bleu/1154110761"></iframe>
+
 They ran past curfew cutoff and the cops had to go on stage to get these old French jazz pianists to stop playing. Good summer fun. 
 
 ![IMG_3296](/assets/images/38a4afde-3cbe-49de-a1ee-4af524c44dde.jpeg)
