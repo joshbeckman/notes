@@ -5,7 +5,7 @@ title: "Deeper at West Fest"
 toc: true
 image: /assets/images/398dc2a7-76c6-476f-b419-f33f301693c3.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/112788933074865505
 tags: 
   - music
 ---

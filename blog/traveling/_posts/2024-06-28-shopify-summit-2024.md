@@ -5,7 +5,7 @@ title: "Shopify Summit 2024"
 toc: true
 image: /assets/images/d9f08a45-5c70-4364-9130-0793c38ad9c1.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/112788933052679041
 tags: 
   - shopify
 ---

@@ -5,7 +5,7 @@ title: "Cortex at West Fest"
 toc: true
 image: /assets/images/427d9f96-5bc8-4f38-9415-a9d5cd3529a7.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/112788933092941363
 tags: 
   - music
 ---

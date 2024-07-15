@@ -5,7 +5,7 @@ title: "The Roots & Weezer & Girl Talk at Budweiser Stage"
 toc: true
 image: /assets/images/cd22a3f2-5dc7-45e1-b717-bdfc428f7fe9.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/112788933035475890
 tags: 
   - music
   - Shopify
