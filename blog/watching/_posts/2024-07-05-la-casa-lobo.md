@@ -7,7 +7,7 @@ rating: 5
 imdb_id: tt8173728
 image: https://m.media-amazon.com/images/M/MV5BOGYwNzc3YmEtYjNlMS00OWM0LTg3ZjEtZjMxMDFlMTk0YThmXkEyXkFqcGdeQXVyOTE4MDA1NDI@._V1_SX300.jpg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/112794595444739231
 tags: 
   - movies
 ---

@@ -5,7 +5,7 @@ title: "Switching Search from Lunr.js to Fuse.js"
 toc: true
 image: 
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/112794595485989662
 tags: 
   - personal-blog
   - search

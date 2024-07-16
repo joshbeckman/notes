@@ -5,7 +5,7 @@ title: "Bully at Empty Bottle"
 toc: true
 image: /assets/images/f5422003-4e9b-4ea8-93cc-74f9c9c38e75.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/112794595458071001
 tags: 
   - music
 ---
