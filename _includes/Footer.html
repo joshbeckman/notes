@@ -9,6 +9,7 @@
     {%- endif -%}
 </div>
 <span class="print-only">{{site.url | domainify}}{{ page.url }}</span>
+<script async src="/assets/js/lazyload.min.js"></script>
 <script async src="/assets/js/photoswipe.umd.min.js"></script>
 <script async src="/assets/js/photoswipe-lightbox.umd.min.js"></script>
 <script>
@@ -84,6 +85,9 @@ function prepareImagesForLightbox() {
     lightbox.init();
 }
 window.addEventListener('load', prepareImagesForLightbox);
+window.addEventListener('load', function () {
+    lazyload();
+});
 
 (function logoAnimator() {
   var paths = document.querySelectorAll('.name-svg path');

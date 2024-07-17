@@ -1,4 +1,4 @@
-<div class="post-list-item" style="{% if include.post.image %}background-image: url({{include.post.image}}){% endif %}">
+<div class="post-list-item {% if include.post.image %}lazyload" data-src="{{include.post.image}}{% endif %}">
   <div class="post-list-item-details">
     <h3 id="">
       <a href="{{include.post.url}}">
