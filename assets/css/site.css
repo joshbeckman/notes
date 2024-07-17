@@ -1117,6 +1117,13 @@ div.highlighter-rouge.language-go::before {
 details summary:hover {
   cursor: pointer;
 }
+.embeddable-buttondown-form div {
+  margin: 0 0 0.5em;
+}
+.embeddable-buttondown-form label {
+  width: 8em;
+  display: inline-block;
+}
 
 .display-on-mobile {
   display: none;

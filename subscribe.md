@@ -11,4 +11,22 @@ Subscribe to the [unified RSS/Atom feed](/feed.xml) for new posts ~daily. There 
 - [Blog RSS feed](/feed/blog.xml)
 - [Notes RSS feed](/feed/notes.xml)
 
-If you prefer email newsletters, send an email to <a href="mailto:newsletter@joshbeckman.org">newsletter@joshbeckman.org</a> with the subject line "Subscribe" and I'll add you to my [forthcoming] email newsletter.
+If you prefer email newsletters:
+
+<form
+  action="https://buttondown.email/api/emails/embed-subscribe/andjosh"
+  method="post"
+  target="popupwindow"
+  onsubmit="window.open('https://buttondown.email/andjosh', 'popupwindow')"
+  class="embeddable-buttondown-form"
+>
+<div>
+  <label for="bd-email">Enter your email</label>
+  <input type="email" name="email" id="bd-email" />
+</div>
+<div>
+  <label for="name">And your name</label>
+  <input type="text" name="metadata__name" id="name" />
+</div>
+  <input type="submit" value="Subscribe" />
+</form>
