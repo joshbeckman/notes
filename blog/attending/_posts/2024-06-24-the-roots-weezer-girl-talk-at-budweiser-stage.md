@@ -8,7 +8,7 @@ description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/112788933035475890
 tags: 
   - music
-  - Shopify
+  - shopify
 ---
 
 
