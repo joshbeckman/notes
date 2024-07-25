@@ -49,6 +49,15 @@ You can read about everything else I use to build things at [/uses](/uses).
 - podcast rendering
 * move content markup into liquid filters instead of liquid logic
 
+### 2024-07-16
+- Add lazy-loading support for images in post lists
+
+### 2024-07-13
+- [Switch search library from Lunr.js to Fuse.js](https://www.joshbeckman.org/blog/switching-search-from-lunrjs-to-fusejs)
+
+### 2024-07-04
+- [Add Insight page](https://www.joshbeckman.org/blog/using-an-llmand-rag-to-wring-insights-from-my-posts)
+
 ### 2024-06-22
 - Switching off Tinylitics and over to Goatcounter for analytics
 
