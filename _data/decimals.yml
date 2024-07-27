@@ -32,6 +32,8 @@
 - 10.19 Service-architecture
 - 10.20 Events
 - 10.21 Vim
+- 10.22 RLHF
+- 10.23 DPO
 - 11 Medicine-and-health
 - 11.01 Medicine
 - 11.02 Health
@@ -311,12 +313,14 @@
 - 81.01 AI
 - 81.02 Intelligence
 - 81.03 Curiosity
+- 81.04 Alignment
 - 82 Ethics
 - 82.01 Ethics
 - 83 Mind
 - 83.01 Memory
 - 83.02 Perception
 - 83.03 Proximity
+- 83.04 Bias
   # - 84
   # - 85
   # - 86
