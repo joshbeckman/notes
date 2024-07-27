@@ -2,7 +2,13 @@
 permalink: /assets/js/decimals.json
 ---
 [
-  {%- for decimal in site.data.decimals -%}
-    "{{decimal}}"{%- unless forloop.last -%},{%- endunless -%}
+  {%- for item in site.data.decimals -%}
+  {%- assign slug = item | split: ' ' | last | downcase -%}
+  {%- assign decimal = item | split: ' ' | first -%}
+  {
+    "name": "{{item}}",
+    "decimal": "{{decimal}}",
+    "slug": "{{slug}}"
+  }{%- unless forloop.last -%},{%- endunless -%}
   {% endfor %}
 ]
