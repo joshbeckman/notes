@@ -203,14 +203,14 @@ module ReadwiseExtras
 
     def source_footer(text_fragment: nil)
       <<~FOOTER
-        <div class="quoteback-footer">#{source_footer_avatar.strip}<div class="quoteback-metadata"><div class="metadata-inner"><div aria-label="#{author_stripped}" class="quoteback-author">#{author_stripped}</div><div aria-label="#{stripped_title}" class="quoteback-title">#{stripped_title}</div></div></div>#{source_footer_link(text_fragment: text_fragment).strip}</div>
+        <div class="quoteback-footer">#{source_footer_avatar.strip}<div class="quoteback-metadata"><div class="metadata-inner"><div aria-label="#{author_stripped}" class="quoteback-author"> #{author_stripped}</div><div aria-label="#{stripped_title}" class="quoteback-title"> #{stripped_title}</div></div></div>#{source_footer_link(text_fragment: text_fragment).strip}</div>
       FOOTER
     end
 
     def source_footer_avatar
       unless favicon_url
         return <<~AVATAR
-          <div class="quoteback-avatar"><span class="mini-emoji">#{source_emoji}</span></div>
+          <div class="quoteback-avatar"><span class="mini-emoji"> #{source_emoji}</span></div>
         AVATAR
       end
 
@@ -223,7 +223,7 @@ module ReadwiseExtras
       return "" unless navigable_url?
 
       <<~LINK
-       <div class="quoteback-backlink"><a target="_blank" aria-label="go to the full text of this quotation" rel="noopener" href="#{outbound_url(text_fragment: text_fragment)}" class="quoteback-arrow">Source</a></div>
+       <div class="quoteback-backlink"><a target="_blank" aria-label="go to the full text of this quotation" rel="noopener" href="#{outbound_url(text_fragment: text_fragment)}" class="quoteback-arrow"> Source</a></div>
       LINK
     end
   end
@@ -290,26 +290,25 @@ end
 Readwise::Book.include(ReadwiseExtras::Book)
 Readwise::Highlight.include(ReadwiseExtras::Highlight)
 
-
 # Steps:
 # - Import highlights into notes/_posts
 class Importer
   def self.import
     client = Readwise::Client.new(token: ENV['READWISE_TOKEN'])
-    month_ago = Date.today.prev_month.to_time
     limit = ENV['READWISE_LIMIT']&.to_i
 
-    books, new_docs, archive_docs = [
-      Thread.new { client.export(updated_after: Time.parse("2000-01-01").iso8601) },
-      Thread.new { client.get_documents(location: 'new', updated_after: month_ago.iso8601) },
-      Thread.new { client.get_documents(location: 'archive', updated_after: month_ago.iso8601) },
-    ].map(&:value)
+    books = client.export(updated_after: Time.parse("2000-01-01").iso8601)
     books = books.sample(limit) if limit
     books.each do |book|
       Jekyll.import_book(book)
       Jekyll.import_book_highlights(book)
     end
     # turning this off for now because I'm not using it
+    # month_ago = Date.today.prev_month.to_time
+    # new_docs, archive_docs = [
+    #   Thread.new { client.get_documents(location: 'new', updated_after: month_ago.iso8601) },
+    #   Thread.new { client.get_documents(location: 'archive', updated_after: month_ago.iso8601) },
+    # ].map(&:value)
     # Jekyll.import_reading_list(inbox_month: new_docs, archive_month: archive_docs)
   end
 
