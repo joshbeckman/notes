@@ -10,10 +10,11 @@ tags:
   - llm
   - note-taking
   - tools
-  - personal-site
+  - personal-blog
+  - end-user-programming
+  - open-source
+  - research
 ---
-
-
 
 I watched [this interview with Steven Johnson about Google's NotebookLM](https://www.youtube.com/watch?v=8fiiWhma-iA) tonight and got inspired. 
 
