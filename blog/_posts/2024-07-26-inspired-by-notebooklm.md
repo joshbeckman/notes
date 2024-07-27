@@ -5,7 +5,7 @@ title: "Inspired by NotebookLM"
 toc: true
 image: 
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/112856881789709786
 tags: 
   - llm
   - note-taking
