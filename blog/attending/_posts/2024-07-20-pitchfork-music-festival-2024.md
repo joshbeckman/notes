@@ -5,7 +5,7 @@ title: "Pitchfork Music Festival 2024"
 toc: true
 image: /assets/images/6e92f58e-0103-438c-bc4f-aec6159c8790.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/112862543458568086
 tags: 
   - music
 ---

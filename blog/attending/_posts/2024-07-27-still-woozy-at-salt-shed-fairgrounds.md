@@ -5,7 +5,7 @@ title: "Still Woozy at Salt Shed Fairgrounds"
 toc: true
 image: /assets/images/e446b89d-b3f0-45b8-bf13-53be8b4abeb5.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/112862543490763333
 tags: 
   - music
 ---

@@ -5,7 +5,7 @@ title: "100 gecs at Empty Bottle"
 toc: true
 image: /assets/images/83ec758e-67b0-4396-b7bd-8b4b7bb19ffd.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/112862543441632006
 tags: 
   - music
 ---
