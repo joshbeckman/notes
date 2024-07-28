@@ -41,8 +41,13 @@ Wonderfully personal set, and great choreography, but more lip-syncing.
 ### 100 gecs
 Not as awesome as my high hopes were expecting - their [Boiler Room set](https://www.youtube.com/watch?v=8NWHnWbpxmc) is one of my all-time favorites and I loved their show at Empty Bottle in Chicago - but fun nonetheless.
 
+### Jai Paul
+I am such a fan of his music, and the instrumentation was superb, but his vocals were so so quiet. I really wanted to love it, but it was hard to hear him.
+
 ### Jeff Rosenstock
 I loved [the last time I saw him](https://www.joshbeckman.org/blog/attending/jeff-rosenstock-at-the-salt-shed) and this time was equally fun. He dove off the stage and crowd-surfed while playing a saxophone.
+
+> "Nespresso has some stupid coffee tent back there. Nespresso is owned by Nestle and Nestle doesn't believe that water is a human right. So fuck Nestle!"
 
 ### Black Pumas
 Talented, but not a great final act. We left a bit early.
