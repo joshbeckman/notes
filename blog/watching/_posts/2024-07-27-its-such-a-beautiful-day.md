@@ -7,7 +7,7 @@ rating: 4
 imdb_id: tt2396224
 image: https://m.media-amazon.com/images/M/MV5BODkyYTI3ZDYtOTBkZi00OWQ5LThlNTUtY2ZmZjdmYTU5ZGI3XkEyXkFqcGdeQXVyMjM5NDU5ODY@._V1_SX300.jpg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/112868208003386134
 tags: 
   - movies
 ---
