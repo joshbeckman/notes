@@ -6,8 +6,8 @@ permalink: /assets/js/SearchData.json
   {%- for tag in site.tags -%}
     "{{ i }}": {
        "doc":  {{ tag | first | escape | jsonify }},
-       "title": {{ tag | first | append: " (tag)" | escape | jsonify }},
-       "content": {{ tag | first | escape | jsonify }},
+       "title": {{ tag | first | append: " (tag)" | jsonify }},
+       "content": {{ tag | first | jsonify }},
        "tags": {{ tag | first | jsonify }},
        "date": "{{ site.time | date_to_xmlschema }}",
        "type": "tag",
@@ -18,8 +18,8 @@ permalink: /assets/js/SearchData.json
   {%- if page.searchable -%}
     "{{ i }}": {
        "doc":  {{ page.title | strip_html | escape | jsonify }},
-       "title": {{ page.title | strip_html | escape | jsonify }},
-       "content": {{ page.raw_content | strip_html | escape | jsonify }},
+       "title": {{ page.title | strip_html | jsonify }},
+       "content": {{ page.raw_content | strip_html | jsonify }},
        "tags": {{ page.tags | join: " " | jsonify }},
        "date": "{{ page.date | date_to_xmlschema }}",
        "type": "page",
@@ -30,8 +30,8 @@ permalink: /assets/js/SearchData.json
   {%- for post in site.posts -%}
     "{{ i }}": {
        "doc":  {{ post.title | strip_html | escape | jsonify }},
-       "title": {{ post.title | strip_html | escape | jsonify }},
-       "content": {{ post.raw_content | strip_html | escape | jsonify }},
+       "title": {{ post.title | strip_html | jsonify }},
+       "content": {{ post.raw_content | strip_html | jsonify }},
        "tags": {{ post.tags | join: " " | jsonify }},
        "date": "{{ post.date | date_to_xmlschema }}",
        "type": "post",
