@@ -266,7 +266,7 @@ module ReadwiseExtras
       pieces = text.split("\n").map do |t|
         "> #{t}"
       end
-      pieces << "> #{book.source_footer(text_fragment: title).strip}"
+      pieces << "> #{book.source_footer(text_fragment: text).strip}"
       unless note.nil? || note.empty?
         pieces << ""
         pieces << note
