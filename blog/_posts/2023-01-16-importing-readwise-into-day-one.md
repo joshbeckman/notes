@@ -12,7 +12,7 @@ redirect_from:
 - "/importing-readwise-into-day-one/"
 ---
 
-I've returned to using [Readwise](https://readwise.io) to record snippets of the books I'm reading at home (through their mobile app) and the articles I'm reading online (through their new [Reader](https://readwise.io/read) app).
+I've returned to using [Readwise](https://readwise.io/i/josh6644) to record snippets of the books I'm reading at home (through their mobile app) and the articles I'm reading online (through their new [Reader](https://readwise.io/read) app).
 
 In previous years, I've just recorded highlights and snippets of articles in my journal - written in [Day One](https://dayoneapp.com/) - alongside other general journal notes. I've got a couple years of those notes (though they are sparser than what I've been recording in Readwise these days), and I really enjoy looking back at what I was reading in previous years (like a [Media Log]( /tag/media-log/)), so I wanted to bring these Readwise highlights into my Day One journal.
 

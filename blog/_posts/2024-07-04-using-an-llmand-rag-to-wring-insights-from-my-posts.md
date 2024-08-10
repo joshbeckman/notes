@@ -44,6 +44,6 @@ Right now this is using [OpenAI's GPT-4o](https://openai.com/index/hello-gpt-4o/
 
 ## Results
 
-So far, the output from this little generator gives me something useful to consider about half the time. I already use Readwise to review my notes every morning, but that focuses on improving recall. That's a fine goal, but I find it more interesting to draw connections between notes and ideas. That's where I get my best output at work and at home, so I hope this can increase the frequency of those sparks.
+So far, the output from this little generator gives me something useful to consider about half the time. I already use [Readwise](https://readwise.io/i/josh6644) to review my notes every morning, but that focuses on improving recall. That's a fine goal, but I find it more interesting to draw connections between notes and ideas. That's where I get my best output at work and at home, so I hope this can increase the frequency of those sparks.
 
 Let me know if it brings you some insight!

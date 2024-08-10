@@ -14,7 +14,7 @@ redirect_from:
 ---
 ![Screenshot of notes site](/assets/images/Screenshot-2023-02-18-at-12.21.40-PM.png)
 
-Recently I've been trying to recall and interrogate more of what I read and watch - both online and offline. I used to collect snippets and notes to myself in my daily journal, but that medium does a poor job at resurfacing ideas to me outside of re-reading every note. So, for the past couple months I've been using [Readwise](https://readwise.io) to highlight articles and books.
+Recently I've been trying to recall and interrogate more of what I read and watch - both online and offline. I used to collect snippets and notes to myself in my daily journal, but that medium does a poor job at resurfacing ideas to me outside of re-reading every note. So, for the past couple months I've been using [Readwise](https://readwise.io/i/josh6644) to highlight articles and books.
 
 I started by [backing up those Readwise highlights into my journal]( /writing-a-better-readwise-to-day-one-import/), but I wanted something more browseable. The Readwise app does a good job at trying to help you _memorize_ key ideas, but I find it's been more useful to me to draw _connections_ between them.
 

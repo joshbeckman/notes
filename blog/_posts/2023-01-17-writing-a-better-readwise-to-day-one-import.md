@@ -17,7 +17,7 @@ redirect_from:
 
 I had the day off from work today in honor of Martin Luther King Jr. and the work of others like him to improve us.
 
-Building off [the import script I wrote yesterday]( /importing-readwise-into-day-one/), I sat down this morning to more accurately pull [Readwise](https://readwise.io/) highlights into my [Day One](https://dayoneapp.com/) [media log]( /tag/media-log/) journal. &nbsp;I wanted to have actual importing of images and timestamps associated to _when_ I was reading things (rather than when I imported them).
+Building off [the import script I wrote yesterday]( /importing-readwise-into-day-one/), I sat down this morning to more accurately pull [Readwise](https://readwise.io/i/josh6644) highlights into my [Day One](https://dayoneapp.com/) [media log]( /tag/media-log/) journal. &nbsp;I wanted to have actual importing of images and timestamps associated to _when_ I was reading things (rather than when I imported them).
 
 So, I wrote a Ruby script to interact with [the Readwise API](https://readwise.io/api_deets). The script grew in complexity, but it delivered nicely after a couple hours. It pulled recent highlights, organized by book, downloaded cover images for each, and imported each as a correctly timestamped entry, with formatting I liked a bit better than before.
 
