@@ -140,8 +140,8 @@ class IssuePoster
     # videos are identified by:
     # - a URI at the start of a line
     # - the domain is github.com
-    # - the path starts with joshbeckman/notes/assets
-    videos = content.scan(/^https:\/\/github.com\/joshbeckman\/notes\/assets\/.*$/).flatten.map do |url|
+    # - the path contains /assets
+    videos = content.scan(/^https:\/\/github.com\/.*\/assets\/.*$/).flatten.map do |url|
       Asset.new(url: url, category: "videos")
     end
     images + videos
