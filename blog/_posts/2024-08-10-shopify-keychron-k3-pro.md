@@ -5,7 +5,7 @@ title: "Shopify Keychron K3 Pro"
 toc: true
 image: /assets/images/1f4dae48-73ae-4241-803c-04d299cce802.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/112938984439606626
 tags: 
   - tools
   - folk-creations
