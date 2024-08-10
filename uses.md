@@ -18,7 +18,7 @@ Well, we're gonna have to break this down a bit.
 
 ### Hardware
 - Jarvis standing desk ([previously](/blog/working))
-- Keychron K1 keyboard ([customized](https://www.joshbeckman.org/blog/keyboard-update-customized-keychron-k1))
+- Keychron K3 Pro keyboard ([customized](https://www.joshbeckman.org/blog/shopify-keychron-k3-pro))
 - Macbook Air (2022, personal)
 - Macbook Pro (2023, work)
 - paper and pencil

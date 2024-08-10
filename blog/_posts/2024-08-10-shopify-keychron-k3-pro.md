@@ -19,7 +19,7 @@ This spring I replaced my [Customized Keychron K1](https://www.joshbeckman.org/b
 
 I like this keyboard _so_ much more than the K1. It's got a smaller footprint and it sits lower to the table, making it that much easier for me to type for long sessions. Of course I have it wired because I have zero tolerance for latency from my computer peripherals (any lag makes me question my sanity).
 
-<video controls src="/assets/videos/9f582be5-f3db-485b-b477-4ed53f0bed3c.9f582be5-f3db-485b-b477-4ed53f0bed3chttps://github.com/user-attachments/assets/9f582be5-f3db-485b-b477-4ed53f0bed3c15' (No such file or directory)"></video>
+<video controls src="/assets/videos/k3-pro.mov"></video>
 
 ## Customization
 
