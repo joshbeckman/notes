@@ -18,6 +18,9 @@
 {%- if page.description -%}
 <meta content="{{ page.description}}" name="description">
 <meta content="{{ page.description}}" property="og:description">
+{%- elsif page.rating -%}
+<meta content="Rating: {{ page.rating}}/5" name="description">
+<meta content="Rating: {{ page.rating}}/5" property="og:description">
 {%- else -%}
 <meta content="{{ page.content | strip_html | strip | escape | truncate: 248 }}" name="description">
 <meta content="{{ page.content | strip_html | strip | escape | truncate: 248 }}" property="og:description">
