@@ -7,7 +7,7 @@ rating: 3
 imdb_id: tt13964390
 image: https://m.media-amazon.com/images/M/MV5BMDM5ODBiN2ItOTk4Yi00NzgyLWE2YTktYzhjYTc2ODE4ZTE4XkEyXkFqcGc@._V1_SX300.jpg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/112944648039784578
 tags: 
   - movies
   - climate-change
