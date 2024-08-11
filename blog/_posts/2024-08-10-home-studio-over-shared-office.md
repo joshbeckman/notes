@@ -5,7 +5,7 @@ title: "Home Studio Over Shared Office"
 toc: true
 image: /assets/images/fa43d9e3-f4f8-4104-a4b9-1e0c7562fe29.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/112941816473223130
 tags: 
   - work
   - tools
