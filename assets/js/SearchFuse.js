@@ -47,7 +47,7 @@
             });
             searchLoaded(fuse);
         }).catch(function(err) {
-            console.warn("Error processing the search-data for lunrjs",err);
+            alert('Failed to load search data: ' + err);
         });
     }
 
