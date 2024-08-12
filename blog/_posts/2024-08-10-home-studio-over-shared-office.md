@@ -8,6 +8,7 @@ description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/112941816473223130
 tags: 
   - work
+  - workspaces
   - tools
 ---
 
