@@ -1,9 +1,10 @@
 import lunr from "https://cdn.skypack.dev/lunr";
 import { email } from "https://esm.town/v/std/email?v=9";
 import { marked } from "npm:marked";
-import { OpenAI } from "npm:openai";
+import Anthropic from "npm:@anthropic-ai/sdk";
 
-const openai = new OpenAI();
+const anthropic = new Anthropic();
+const model = "claude-3-5-sonnet-20240620";
 
 type Entry = {
   title: string;
@@ -87,7 +88,7 @@ async function introspectPost(post: Entry, search): Promise<void> {
     summary,
     "---",
     "I hope this helps!",
-    "- Librarian NPC 📚"
+    `- Librarian NPC 📚 (Anthropic ${model})`
   ].join("\n\n");
   const emailHTML = await marked.parse(emailText);
   await email({
@@ -98,18 +99,16 @@ async function introspectPost(post: Entry, search): Promise<void> {
 }
 
 async function summarizeInsights(post: Entry, insights: string): Promise<string> {
-  const completion = await openai.chat.completions.create({
+  const completion = await anthropic.messages.create({
+    system:
+      "You are the philosophical academic Richard Feynman. You are incredibly adept at pulling relevant insights from disparate sources - often able to find a seed of truth that is not obvious to others. Based on some background research posts, please summarize a couple key insights. Use a brief style with short replies. Please provide a link to relevant posts in your response, so we might better understand how they relate.",
     messages: [
-      {
-        role: "system",
-        content:
-          "You are the philosophical academic Richard Feynman. You are incredibly adept at pulling relevant insights from disparate sources - often able to find a seed of truth that is not obvious to others. Based on some background research posts, please summarize a couple key insights. Use a brief style with short replies. Please provide a link to relevant posts in your response, so we might better understand how they relate.",
-      },
       { role: "user", content: insights },
     ],
-    model: "gpt-4o-mini",
+    model,
+    max_tokens: 2048,
   });
-  const insight = completion.choices[0].message.content;
+  const insight = completion.content[0].text;
   return insight;
 }
 
@@ -130,23 +129,21 @@ async function summarizeTopic(topic: string, post: Entry, search): Promise<strin
   ].join("\n\n");
   const question =
     `How does this post complement the related posts? How does it contrast?`;
-  const completion = await openai.chat.completions.create({
+  const completion = await anthropic.messages.create({
+    system:
+      "You are the philosophical academic Richard Feynman. You are incredibly adept at pulling relevant insights from disparate sources - often able to find a seed of truth that is not obvious to others. Based on some background research posts, you will be asked to compare and contrast them to a new post. Please provide a link to each relevant post in your response, so we might better understand how they relate.",
     messages: [
-      {
-        role: "system",
-        content:
-          "You are the philosophical academic Richard Feynman. You are incredibly adept at pulling relevant insights from disparate sources - often able to find a seed of truth that is not obvious to others. Based on some background research posts, you will be asked to compare and contrast them to a new post. Please provide a link to each relevant post in your response, so we might better understand how they relate.",
-      },
       { role: "user", content: context },
-      { role: "assistant", content: "Thank you for the context, I am ready to answer your question." },
+      { role: "assistant", content: "Thank you for that context. What is your question?"},
       {
         role: "user",
         content: question,
       },
     ],
-    model: "gpt-4o-mini",
+    model,
+    max_tokens: 1028,
   });
-  const insight = completion.choices[0].message.content;
+  const insight = completion.content[0].text;
   return insight;
 }
 
@@ -167,23 +164,21 @@ async function summarizeTag(tag: string, post: Entry, search): Promise<string> {
   ].join("\n\n");
   const question =
     `How is this post different from the related posts? How is it similar? What insights can you provide?`;
-  const completion = await openai.chat.completions.create({
+  const completion = await anthropic.messages.create({
+    system:
+      "You are the philosophical academic Richard Feynman. You are incredibly adept at pulling relevant insights from disparate sources - often able to find a seed of truth that is not obvious to others. Based on some background research posts, you will be asked to compare and contrast them to a new post. Please provide a link to each relevant post in your response, so we might better understand how they relate.",
     messages: [
-      {
-        role: "system",
-        content:
-          "You are the philosophical academic Richard Feynman. You are incredibly adept at pulling relevant insights from disparate sources - often able to find a seed of truth that is not obvious to others. Based on some background research posts, you will be asked to compare and contrast them to a new post. Please provide a link to each relevant post in your response, so we might better understand how they relate.",
-      },
       { role: "user", content: context },
-      { role: "assistant", content: "Thank you for the context, I am ready to answer your question." },
+      { role: "assistant", content: "Thank you for that context. What is your question?"},
       {
         role: "user",
         content: question,
       },
     ],
-    model: "gpt-4o-mini",
+    model,
+    max_tokens: 1028,
   });
-  const insight = completion.choices[0].message.content;
+  const insight = completion.content[0].text;
   return insight;
 }
 
@@ -194,44 +189,35 @@ async function suggestTags(content: string): Promise<Array<string>> {
   const leafSlugs = leafTags.map((tag) => tag.slug);
   const messages = [
     {
-      role: "system",
-      content:
-        "You are an expert librarian who can help people find the research and resources they need to understand things. Based on what the user provices, you need to identify relevant tags (from a selected set) that should be used to file the content. Reply with just the tags, separated by commas, and no other text or filler words, please.",
-    },
-    {
-      role: "system",
-      content: "Here are the tags you can choose from: " + leafSlugs.join(", "),
-    },
-    {
       role: "user",
       content: content,
     },
   ];
-  const completion = await openai.chat.completions.create({
+  const completion = await anthropic.messages.create({
+  system:
+    "You are an expert librarian who can help people find the research and resources they need to understand things. Based on what the user provices, you need to identify relevant tags (from a selected set) that should be used to file the content. Reply with just the tags, separated by commas, and no other text or filler words, please.\nHere are the tags you can choose from: " + leafSlugs.join(", "),
     messages: messages,
-    model: "gpt-4o-mini",
+    model,
+    max_tokens: 100,
   });
-  const suggestedTags = completion.choices[0].message.content.split(",").map((tag) => tag.trim());
+  const suggestedTags = completion.content[0].text.split(",").map((tag) => tag.trim());
   return suggestedTags.filter((tag) => leafSlugs.includes(tag));
 }
 
 async function suggestTopics(content: string): Promise<Array<string>> {
   const messages = [
     {
-      role: "system",
-      content:
-        "You are an expert librarian who can help people find the research and resources they need to understand things. Based on what the user provides, you need to identify a few topics that would be useful in searching the archives to find related articles. Each topic should be one (maybe two) words long. Reply with just the topics, separated by commas, and no other text or filler words, please.",
-    },
-    {
       role: "user",
       content: content,
     },
   ];
-  const completion = await openai.chat.completions.create({
+  const completion = await anthropic.messages.create({
+    system: "You are an expert librarian who can help people find the research and resources they need to understand things. Based on what the user provides, you need to identify a few topics that would be useful in searching the archives to find related articles. Each topic should be one (maybe two) words long. Reply with just the topics, separated by commas, and no other text or filler words, please.",
     messages: messages,
-    model: "gpt-4o-mini",
+    model,
+    max_tokens: 100,
   });
-  const topics = completion.choices[0].message.content;
+  const topics = completion.content[0].text;
   return topics.split(",").map((topic) => topic.trim());
 }
 
