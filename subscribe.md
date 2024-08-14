@@ -11,6 +11,8 @@ Subscribe to the [unified RSS/Atom feed](/feed.xml) for new posts ~daily. There 
 - [Blog RSS feed](/feed/blog.xml)
 - [Notes RSS feed](/feed/notes.xml)
 
+If you prefer Mastodon/Fediverse: blog posts are [syndicated to Mastodon](https://mastodon.social/@joshbeckman) (where you can also reply/messaage me).
+
 If you prefer email newsletters:
 
 <form
