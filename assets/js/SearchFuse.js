@@ -202,7 +202,14 @@
     }
 
     sj.onReady(function(){
-        searchInit();
+        (function ensureLoaded() {
+            // if Fuse isn't available on the page, wait 100ms and try again
+            if (typeof Fuse === 'undefined') {
+                setTimeout(ensureLoaded, 100);
+                return;
+            }
+            searchInit();
+        })();
     });
     function searchViaQuery() {
       var search = new URLSearchParams(window.location.search).get("q");
