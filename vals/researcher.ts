@@ -44,10 +44,13 @@ export default async function(interval: Interval) {
     });
   const posts = entries.filter((entry) => entry.type === "post");
   const pages = entries.filter((entry) => entry.type === "page");
+  const maxPosts = 4;
   const recentPosts = posts.filter((entry) => new Date(entry.date) > cutoff);
+  const randomPosts = posts.filter((entry) => Math.random() < 0.1);
+  const postsToProcess = recentPosts.concat(randomPosts).slice(0, maxPosts);
   const index = buildIndex(posts.concat(pages));
   const searcher = makeSearcher(index, searchData);
-  await Promise.all(recentPosts.map((post) => introspectPost(post, searcher)));
+  await Promise.all(postsToProcess.map((post) => introspectPost(post, searcher)));
 }
 
 async function introspectPost(post: Entry, search): Promise<void> {
