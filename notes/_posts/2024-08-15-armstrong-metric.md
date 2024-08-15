@@ -1,6 +1,6 @@
 ---
 title: Armstrong Metric
-favicon_url: /assets/img/profile.png
+image: https://avatars.githubusercontent.com/u/1952127
 source_emoji: 🌐
 tags:
 - metrics
@@ -11,7 +11,7 @@ _(noun) /ˈɑːmstrɒŋ ˈmɛtrɪk/_
 
 A metric which is too noisy to be monitored (does not indicate system health), but which nonetheless is helpful is understanding [system](https://www.joshbeckman.org/notes/principles-of-system) behavior.
 
-Named for Jeff Armstrong.
+Named for [Jeff Armstrong](https://github.com/MahlerFive).
 
 Example:
 
