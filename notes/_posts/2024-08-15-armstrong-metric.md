@@ -2,7 +2,7 @@
 title: Armstrong Metric
 image: https://avatars.githubusercontent.com/u/1952127
 source_emoji: 🌐
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/112972963248340393
 tags:
 - metrics
 - observability
