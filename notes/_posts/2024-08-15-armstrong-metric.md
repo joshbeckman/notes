@@ -6,6 +6,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/112972963248340
 tags:
 - metrics
 - observability
+- noise
 ---
 
 _(noun) /ˈɑːmstrɒŋ ˈmɛtrɪk/_
