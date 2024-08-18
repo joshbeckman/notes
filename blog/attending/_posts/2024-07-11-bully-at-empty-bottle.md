@@ -8,6 +8,9 @@ description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/112794595458071001
 tags: 
   - music
+  - chicago
+  - recreational-drugs
+  - cocktails
 ---
 
 
