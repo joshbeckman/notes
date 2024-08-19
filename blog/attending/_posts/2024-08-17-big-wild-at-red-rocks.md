@@ -13,8 +13,6 @@ tags:
   - travel
 ---
 
-
-
 We took a shuttle bus from the train station [in Denver](/blog/traveling/denver-august-2024) out of the city and up the mountain to the best outdoor venue I've ever seen.[^1] Of course, Red Rocks had been built up for me as a bucket-list venue, and it held up. 
 
 When Bill and Emily said they had booked the trip for the weekend, Marybeth and I nudged our way in. We've seen Big Wild a couple times before, but I knew the outdoor amphitheater was going to be his sweet spot. 
@@ -31,7 +29,7 @@ The rows of seats are so steeply cut into the rock face that you feel a bit on e
 
 _Big Wild_ had a great trio of musicians with him, each with their own personal platform. They all wore matching red sweeping sweaters and had their own solos and the crowd loved every one. 
 
-<video controls src="/assets/videos/big-wild.mov"></video>
+<video controls src="/assets/videos/big-wild.MOV"></video>
 
 He played his earlier album, which was absolutely the best choice. The crowd was moving the entire time and went wild with him as he joined the seats for the final song. We didn't want it to end, I didn't want to leave, and I'm looking forward to the next time.
 
