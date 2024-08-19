@@ -5,7 +5,7 @@ title: "Big Wild at Red Rocks"
 toc: true
 image: /assets/images/02ba18c4-2c7e-4807-8ef7-184e8fec8b6e.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/112987115341153767
 tags: 
   - music
 ---
