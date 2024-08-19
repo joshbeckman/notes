@@ -28,7 +28,7 @@ The rows of seats are so steeply cut into the rock face that you feel a bit on e
 
 _Big Wild_ had a great trio of musicians with him, each with their own personal platform. They all wore matching red sweeping sweaters and had their own solos and the crowd loved every one. 
 
-<video controls src="/assets/videos/big-wild.mov"></video>
+<video controls src="/assets/videos/big-wild.MOV"></video>
 
 He played his earlier album, which was absolutely the best choice. The crowd was moving the entire time and went wild with him as he joined the seats for the final song. We didn't want it to end, I didn't want to leave, and I'm looking forward to the next time.
 
