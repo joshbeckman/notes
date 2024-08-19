@@ -3,7 +3,7 @@ layout: Post
 date: 2024-08-17 00:00:00 +0000
 title: "Big Wild at Red Rocks"
 toc: true
-image: /assets/images/113f98f2-c997-4b7a-93d8-a44a96ddd3ae.jpeg
+image: /assets/images/02ba18c4-2c7e-4807-8ef7-184e8fec8b6e.jpeg
 description: 
 mastodon_social_status_url: false
 tags: 
@@ -27,6 +27,8 @@ The rows of seats are so steeply cut into the rock face that you feel a bit on e
 ![IMG_3521](/assets/images/02ba18c4-2c7e-4807-8ef7-184e8fec8b6e.jpeg)
 
 _Big Wild_ had a great trio of musicians with him, each with their own personal platform. They all wore matching red sweeping sweaters and had their own solos and the crowd loved every one. 
+
+<video controls src="/assets/videos/big-wild.MOV"></video>
 
 He played his earlier album, which was absolutely the best choice. The crowd was moving the entire time and went wild with him as he joined the seats for the final song. We didn't want it to end, I didn't want to leave, and I'm looking forward to the next time.
 
