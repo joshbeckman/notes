@@ -300,7 +300,8 @@ class Importer
     books = client.export(updated_after: Time.parse("2000-01-01").iso8601)
     books = books.sample(limit) if limit
     books.each do |book|
-      Jekyll.import_book(book)
+      # turn this off for now because Readwise is not good about allowing you to edit the book notes
+      # Jekyll.import_book(book)
       Jekyll.import_book_highlights(book)
     end
     # turning this off for now because I'm not using it
