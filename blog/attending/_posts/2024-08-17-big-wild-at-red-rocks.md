@@ -8,6 +8,9 @@ description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/112987115341153767
 tags: 
   - music
+  - physical-architecture
+  - friends
+  - travel
 ---
 
 
