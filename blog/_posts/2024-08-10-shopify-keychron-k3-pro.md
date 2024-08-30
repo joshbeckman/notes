@@ -9,6 +9,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/112938984439606
 tags: 
   - tools
   - folk-creations
+  - shopify
 ---
 
 
