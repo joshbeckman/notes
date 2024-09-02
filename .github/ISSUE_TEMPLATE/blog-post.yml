@@ -29,6 +29,7 @@ body:
         - "blog/traveling"
         - "blog/listening"
         - "blog/working"
+        - "notes"
     validations:
       required: true
   - type: input
