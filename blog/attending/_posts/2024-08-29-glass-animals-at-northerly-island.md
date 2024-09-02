@@ -1,6 +1,6 @@
 ---
 layout: Post
-date: 2024-08-29 00:00:00 +0000
+date: 2024-08-29 00:00:00 -0500
 title: "Glass Animals at Northerly Island"
 toc: true
 image: /assets/images/5198a262-e081-4e83-88d2-3c0512877ba3.jpeg
