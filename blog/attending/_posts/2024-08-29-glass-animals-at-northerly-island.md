@@ -5,7 +5,7 @@ title: "Glass Animals at Northerly Island"
 toc: true
 image: /assets/images/5198a262-e081-4e83-88d2-3c0512877ba3.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113069219735103705
 tags: 
   - music
   - chicago
