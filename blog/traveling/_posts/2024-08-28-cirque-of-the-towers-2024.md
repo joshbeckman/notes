@@ -4,7 +4,7 @@ date: 2024-08-28 00:00:00 +0000
 title: "Cirque of The Towers 2024"
 toc: true
 image: /assets/images/86dc6bb9-7a69-4e3e-9234-58a1ffa91ec0.jpeg
-description: 
+description: Backpacking to the Cirque of The Towers in the Wind River Range, Wyoming.
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113083374396083132
 tags: 
   - travel
@@ -16,7 +16,7 @@ tags:
 > [!NOTE]
 > I took a lot of video on this trip. I'm going to edit it into something fun. I'll link that here when it's ready.
 
-Mike, Joe, Bill Joe, and I survived our second annual wilderness week backpacking trip. Here is my report.
+Mike, Joe, Bill, Joe, and I survived our second annual wilderness week backpacking trip. Here is my report.
 
 ## Arrival
 We each fly and land in to Salt Lake City while Mike drives two days from San Francisco to pick us up. The airport is teeming with Mormon families screaming with signs to welcome home their missionaries. We pick up final food and liquor and Mike just keeps driving us North, up and up. That first night we set tents just before dark and make a fire and see the stars in Wyoming next to Fremont Lake.
@@ -163,7 +163,7 @@ The truck was there. We drove it back down to Pinedale and spent the evening eat
 ![jackelope motor lodge](/assets/images/66c0e8ae-05e3-45f8-b495-1ba406530d76.jpeg)
 
 ## Maps & Data
-The path we took is different than what was planned/highlighted on the map.
+The path we took is different than what was planned/highlighted on the map through the Wind River Range.
 
 ![innacurate map](/assets/images/86dc6bb9-7a69-4e3e-9234-58a1ffa91ec0.jpeg)
 
