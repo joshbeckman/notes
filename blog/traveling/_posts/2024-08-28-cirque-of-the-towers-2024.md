@@ -120,7 +120,7 @@ We're questioning our ability to make the next pass with this snow, but soon we'
 ![hiking](/assets/images/2a1fcc0d-4a3b-477c-a7ec-c6d4feddcfb5.jpeg)
 ![Mike on a rock](/assets/images/06d4f6b8-9949-4589-a5a6-f0ba5d2ede33.jpeg)
 
-As we approach the bottom of Texas Pass, our steepest climb yet - up 1,400ft to 11,500ft - the clouds return. It's cold. The snow starts at about the halfway point: big, near-hail-sized flakes that look and taste more like Dippin' Dots than snowflakes. We're *entirely* focused on the climb as we lose the trail a couple times and we're all saying prayers and thanks at the summit.
+As we approach the bottom of Texas Pass, our steepest climb yet - upward 1,400ft to 11,500ft - the clouds return. It's cold. The snow starts at about the halfway point: big, near-hail-sized flakes that look and taste more like Dippin' Dots than snowflakes. We're *entirely* focused on the climb as we lose the trail a couple times and we're all saying prayers and thanks at the summit.
 
 ![Texas pass](/assets/images/1b518bd5-c1a4-40f4-8aa7-062b15f8e4a2.jpeg)
 ![Cirque of the towers](/assets/images/ac1c62da-dba2-492d-abd5-7aad2d6ce71f.jpeg)
