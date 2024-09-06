@@ -18,6 +18,6 @@ I hadn’t really listened to STS9 before the show, but I had a good sense of th
 
 The bassist was fantastic\. The drummer was fun and unhinged with excitement\. The guitarist had some good licks at times\. The synth player layered in some lovely modular synthesis to lead some songs\. Really good stuff\.
 
-This couple \(middle\-aged\) that started in font of us at the rail eventually moved to the right and kept tousling my hair and massaging my shoulders because they thought I was falling asleep\. But I was just enjoying the music\.
+This couple \(middle\-aged\) that started in front of us at the rail eventually moved to the right and kept tousling my hair and massaging my shoulders because they thought I was falling asleep\. But I was just enjoying the music\.
 
 Oh\! And as we walked out into the <20 degrees bitter cold, there were like 5 dudes with nitrous tanks blowing up balloons to sell to the exiting crowd\. It was intense and police sirens were wailing and they kept popping balloons accidentally and so many people were streaming out of the sold\-out concert\.
