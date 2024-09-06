@@ -13,6 +13,12 @@
     <div class="column">
       <article class="content">
         {%- include Nav.html -%}
+        <pre class="home-tag">
+<small>
+SITE OWNER              Updated
+</small>
+Josh Beckman            <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date_to_xmlschema }}</time>
+        </pre>
         <section class="home">
             <p>
                 I'm <a href="/about">Josh</a>, hi!
@@ -157,25 +163,18 @@
                 </td>
             </tr>
         </table>
-          <h3>Latest</h3>
-          {%- for post in site.posts limit:3 -%}
+          <h3>
+              📓 Latest <a href="/blog">Blog Posts I've Written</a>
+          </h3>
+          {%- for post in site.categories['blog'] limit:3 -%}
           {%- include PostListItem.html post=post -%}
           {%- endfor -%}
-          {% assign postsByDay = 
-          site.posts | group_by_exp:"post", "post.date | date: '%d-%B'" %}
-          {% assign today = site.time | date: '%d-%B' %}
-          {% assign previousYearsPosts = postsByDay[today] %}
-          {% if previousYearsPosts %}
-          <h3>On This Day in Previous Years</h3>
-          {% assign todayFull = site.time | date: '%d-%B-%Y' %}
-          {%- for post in previousYearsPosts -%}
-          {% assign postFull = post.date | date: '%d-%B-%Y' %}
-          {% if postFull == todayFull %}
-          {%- continue -%}
-          {% endif %}
-          {%- include PostListItem.html post=post dated=true -%}
+          <h3>
+              📝 Latest <a href="/notes">Notes I've Collected</a>
+          </h3>
+          {%- for post in site.categories['notes'] limit:3 -%}
+          {%- include PostListItem.html post=post -%}
           {%- endfor -%}
-          {% endif %}
         </section>
         {%- include Footer.html -%}
       </article>
