@@ -34,7 +34,7 @@ class Optimizer
     return unless width.to_i > max_width || height.to_i > max_height
 
     puts "resizing: #{path}"
-    `convert #{path} -resize #{max_width}x#{max_height} #{path}`
+    `convert #{path} -strip -resize #{max_width}x#{max_height} #{path}`
   end
 end
 
