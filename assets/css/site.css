@@ -371,13 +371,6 @@ template {
     font-display: swap;
     src: local("IBM Plex Sans Bold"), local("IBMPlexSans-Bold"), url("../IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-Bold.woff2") format("woff2"), url("../IBM-Plex-Sans/fonts/complete/woff/IBMPlexSans-Bold.woff") format("woff");
 }
-@font-face {
-    font-family: "Departure Mono";
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: local("Departure Mono"), local("DepartureMono"), url("../DepartureMono/DepartureMono-Regular.woff2") format("woff2"), url("../DepartureMono/DepartureMono-Regular.woff") format("woff"), url("../DepartureMono/DepartureMono-Regular.otf") format("otf");
-}
 body {
     font-family: "IBM Plex Sans", sans-serif;
     text-rendering: optimizeLegibility;
@@ -643,9 +636,6 @@ article .footer ul li {
 }
 .cover-image-emoji {
   font-size: 100px;
-}
-pre.home-tag {
-  font-family: "Departure Mono", monospace;
 }
 nav .page-link {
   white-space: nowrap;

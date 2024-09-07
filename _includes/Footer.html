@@ -8,6 +8,8 @@
     </ul>
     {%- endif -%}
 </div>
+<div id="proverb-footer">
+</div>
 <span class="print-only">{{site.url | domainify}}{{ page.url }}</span>
 <script async src="/assets/js/lazyload.min.js"></script>
 <script async src="/assets/js/photoswipe.umd.min.js"></script>
@@ -156,8 +158,14 @@ function timeAgo(date) {
     }
 }
   var timeElements = document.querySelectorAll('time');
+  var ago;
   for (var i = 0; i < timeElements.length; i++) {
-    timeElements[i].title = timeAgo(new Date(timeElements[i].getAttribute('datetime')));
+    ago = timeAgo(new Date(timeElements[i].getAttribute('datetime')));
+    timeElements[i].title = ago;
+    if (timeElements[i].classList.contains('time-relative')) {
+      timeElements[i].textContent = ago;
+      timeElements[i].title = new Date(timeElements[i].getAttribute('datetime')).toLocaleString();
+    }
   }
 
 })();
