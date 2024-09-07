@@ -17,4 +17,9 @@ The constant chorus of her voice reverberating in every track makes the power ch
 
 I listened to this when it first came out, I don't remember how it got on my radar, but I've been coming back to it more and more as the summer heat turns to crisp reflective autumn air.
 
+Favorite tracks:
+- 22
+- Love
+- Look Alive
+
 <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/romanticism/1726216204"></iframe>
