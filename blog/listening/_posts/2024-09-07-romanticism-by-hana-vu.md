@@ -15,11 +15,11 @@ tags:
 
 The constant chorus of her voice reverberating in every track makes the power chords fuzz and swell in my chest and makes me feel like I'm twenty again and I'm wanting to stretch farther and farther into my own independence and I still don't know where I want to go but I don't want to be here any more so let's blast this on the car stereo while the wind drowns me out.
 
-I listened to this when it first came out, I don't remember how it got on my radar, but I've been coming back to it more and more as the summer heat turns to crisp reflective autumn air.
+I listened to this when it first came out, I don't remember how it got on my radar, but I've been coming back to it more and more as the summer heat turns to crisp reflective autumn air. I find myself turning up the volume and yelling along to the lyrics.
 
 Favorite tracks:
-- 22
 - Love
+- 22
 - Look Alive
 
 <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/romanticism/1726216204"></iframe>
