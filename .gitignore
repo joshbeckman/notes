@@ -8,3 +8,4 @@ _site/
 .mastodon_social_token
 .bundle/
 vendor/
+Library.xml

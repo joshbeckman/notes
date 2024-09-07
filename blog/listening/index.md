@@ -97,18 +97,23 @@ This is a list of the albums I've loved recently.
 | Tourist | Memory Morning | 2024-06-14 |
 | Charli xcx | BRAT | 2024-06-07 |
 
-## Forgotten Loved Tracks
-This is a list of the tracks I've loved but haven't played in a while. I should listen to them again.
+## Reviews
 
-| Artist | Album | Track | Last Played |
-| ------ | ----- | ----- | ---------- |
-| SBTRKT | OUTSPOKEN - EP | BACK ON |  |
-| Fred again.., Anderson .Paak & CHIKA | ten days | places to be |  |
-| RY X & Ólafur Arnalds | Oceans - Single | Oceans |  |
-| Bleachers | Bleachers | Tiny Moves |  |
-| Bonobo | Late Night Tales: Bonobo | Late Night Tales: Bonobo (Continuous Mix) | 1904-01-01 |
-| Misun | The Hood Internet II | Promise Me (The Hood Internet Remix) | 2015-10-09 |
-| Romare | Meditations on Afrocentrism - EP | Down the Line (It Takes a Number) | 2016-01-27 |
-| LCD Soundsystem | This Is Happening (Deluxe Edition) | Dance Yrself Clean | 2016-02-15 |
-| Misun | II | Promise Me (The Hood Internet Remix) | 2016-02-16 |
-| Scarlett Johansson & Joaquin Phoenix | The Moon Song (Music From And Inspired By The Motion Picture Her) - Single | The Moon Song (Film Version) | 2016-02-24 |
+These are albums that moved me enough to write about.
+
+{% assign postsByMonth = 
+site.categories['listening'] | group_by_exp:"post", "post.date | date: '%Y'" %}
+{% for day in postsByMonth %}
+  <table>
+      <thead>
+        <tr>
+            <td colspan="3">
+                <span id="{{ day.name }}">{{ day.name }}</span>
+            </td>
+        </tr>
+      </thead>
+  {% for post in day.items %}
+  {%- include PostTableRow.html post=post -%}
+  {% endfor %}
+  </table>
+{% endfor %}

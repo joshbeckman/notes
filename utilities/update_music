@@ -69,11 +69,25 @@ parser.recently_loved_albums.each do |album|
   file.puts "| #{album.artist} | #{album.name} | #{album.date_added&.strftime('%Y-%m-%d')} |"
 end
 file.puts
-file.puts '## Forgotten Loved Tracks'
-file.puts 'This is a list of the tracks I\'ve loved but haven\'t played in a while. I should listen to them again.'
-file.puts
-file.puts '| Artist | Album | Track | Last Played |'
-file.puts '| ------ | ----- | ----- | ---------- |'
-parser.forgotten_loved_tracks.each do |track|
-  file.puts "| #{track.artist} | #{track.album} | #{track.name} | #{track.play_date_utc&.strftime('%Y-%m-%d')} |"
-end
+file.puts <<-LIQUID
+## Reviews
+
+These are albums that moved me enough to write about.
+
+{% assign postsByMonth = 
+site.categories['listening'] | group_by_exp:"post", "post.date | date: '%Y'" %}
+{% for day in postsByMonth %}
+  <table>
+      <thead>
+        <tr>
+            <td colspan="3">
+                <span id="{{ day.name }}">{{ day.name }}</span>
+            </td>
+        </tr>
+      </thead>
+  {% for post in day.items %}
+  {%- include PostTableRow.html post=post -%}
+  {% endfor %}
+  </table>
+{% endfor %}
+LIQUID
