@@ -49,6 +49,9 @@ You can read about everything else I use to build things at [/uses](/uses).
 - podcast rendering
 * move content markup into liquid filters instead of liquid logic
 
+### 2024-09-07
+- Add conversation support to insight page
+
 ### 2024-09-06
 - Add insight generation for posts and tags
 

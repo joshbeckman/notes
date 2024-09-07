@@ -53,6 +53,6 @@ Each time you come to this page, it will attempt to generate a new insight. Note
 </details>
 </div>
 <h2 id="topic"></h2>
-<p id="insight-loading" style="display:none"><em>Generating insight...</em></p>
 <div id="insight"></div>
+<div id="insight-loading" style="display:none" class="lds-ellipsis"><div></div><div></div><div></div><div></div><em>Generating</em></div>
 <script src="/assets/js/insight.js"></script>
