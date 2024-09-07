@@ -1,13 +1,18 @@
 (function(){
     var topicInsightUrl = 'https://joshbeckman-amethysthalibut.web.val.run';
     var questionInsightUrl = 'https://joshbeckman-coffeeostrich.web.val.run';
+    var postInsightUrl = 'https://joshbeckman-insightpost.web.val.run';
     var params = new URLSearchParams(window.location.search);
     var topic = params.get('topic');
     var question = params.get('question');
+    var post = params.get('post');
 
     if (topic) {
         hideMenu();
         fetchTopicInsight(topic);
+    } else if (post) {
+        hideMenu();
+        fetchPostInsight(post);
     } else if (question) {
         hideMenu();
         fetchQuestionInsight(question);
@@ -38,6 +43,25 @@
                 document.title = document.title + ': ' + data.topic;
                 document.getElementById('insight').innerHTML = data.insightHtml;
                 document.getElementById('topic').innerHTML = data.topic;
+            });
+    }
+    function fetchPostInsight(post) {
+        startLoading();
+        document.getElementById('topic').innerHTML = '';
+        if (!post.startsWith('https://')) {
+            post = 'https://www.joshbeckman.org' + post;
+        }
+        postInsightUrl += '?post=' + encodeURIComponent(post);
+        fetch(postInsightUrl)
+            .then(response => response.json())
+            .then(data => {
+                stopLoading();
+                document.title = document.title + ': ' + data.post.title;
+                document.getElementById('insight').innerHTML = data.insightHtml;
+                let anchor = document.createElement('a');
+                anchor.href = data.post.url;
+                anchor.innerHTML = data.post.title;
+                document.getElementById('topic').innerHTML = 'On "' + anchor.outerHTML + '"';
             });
     }
     function fetchQuestionInsight(question) {

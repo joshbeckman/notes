@@ -49,6 +49,9 @@ tags: index
     {%- for tag in site.tags %}
       {%- if tag.first == slug -%}
       <ul class="">
+        <li>
+          <a href="/insight?topic={{ slug | split: '-' | join: ' ' | url_encode }}">💡 Insight</a>
+        </li>
         {% for post in tag.last %}
           <li style="">
             <a href="{{post.url}}">

@@ -859,6 +859,9 @@ li.filed.source {
 li.filed.source:before {
   content: "≡";
 }
+li.filed.insight:before {
+  content: "?";
+}
 li.filed.date:before {
   content: "≈";
 }

@@ -10,7 +10,7 @@ tags:
 - llm
 - ai
 ---
-This page generates a random "insight" from all my posts - you can [read about how it works](https://www.joshbeckman.org/blog/using-an-llmand-rag-to-wring-insights-from-my-posts).
+This page generates "insights" from my posts - you can [read about how it works](https://www.joshbeckman.org/blog/using-an-llmand-rag-to-wring-insights-from-my-posts).
 
 Each time you come to this page, it will attempt to generate a new insight. Note that, to prevent abuse, this is currently limited to 10 insights/min (this is across all users: _please share/play nicely_).
 
@@ -39,6 +39,15 @@ Each time you come to this page, it will attempt to generate a new insight. Note
 <form id="insight-form-question" method="GET">
   <input type="text" name="question" placeholder="Your question...">
   <button type="submit">Ask</button>
+</form>
+</p>
+</details>
+<details name="insight-options">
+<summary>Specific Post</summary>
+<p>
+<form id="insight-form-post" method="GET">
+  <input type="text" name="post" placeholder="https://www.joshbeckman.org/...">
+  <button type="submit">Consider</button>
 </form>
 </p>
 </details>

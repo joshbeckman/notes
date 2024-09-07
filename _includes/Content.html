@@ -64,7 +64,7 @@
   <div class="filing-column">
     <div class="content">
       <h3 class="print-hidden">
-      Filed Under
+      Reference
       </h3>
       <ul class="filed print-hidden">
           <!-- Loop through page categories and print them in tags -->
@@ -101,6 +101,11 @@
             <a href="/dates/#{{ page.date | date: '%d-%B-%Y' }}">
                 <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y, %B %d' }}</time>
             </a>
+          </li>
+          {%- endif -%}
+          {%- if page.layout == 'Post' -%}
+          <li class="filed insight">
+            <a href="/insight?post={{ page.url | url_encode }}">Consider</a>
           </li>
           {%- endif -%}
           <li class="filed edit">
