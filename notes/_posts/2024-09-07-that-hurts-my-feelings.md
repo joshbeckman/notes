@@ -5,7 +5,7 @@ title: "That Hurts My Feelings"
 toc: true
 image: 
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113100362363567210
 tags: 
   - blogroll
 ---
