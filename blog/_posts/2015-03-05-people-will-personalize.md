@@ -7,6 +7,7 @@ redirect_from:
 - "/people-will-personalize/"
 tags:
 - folk-creations
+- threadmeup
 ---
 
 Some time ago, a group of us from [ThreadMeUp](http://tech.threadmeup.com) took a trip out to one of our suppliers’ warehouses. &nbsp;We were given a tour of the packing floor, one with over 200 employees actively carrying products to and fro.
