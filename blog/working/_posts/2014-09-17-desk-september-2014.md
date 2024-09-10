@@ -5,6 +5,7 @@ image: "/assets/images/283B253A-704F-47A2-BE61-2483C81B3AF2.jpeg"
 date: '2014-09-17 05:00:00'
 tags:
 - workspaces
+- aggrego
 redirect_from:
 - "/desk-september-2014"
 - "/desk-september-2014/"
