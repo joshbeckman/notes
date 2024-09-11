@@ -7,7 +7,7 @@ rating: 4
 imdb_id: tt18412256
 image: https://m.media-amazon.com/images/M/MV5BMDU0NjcwOGQtNjNjOS00NzQ3LWIwM2YtYWVmODZjMzQzN2ExXkEyXkFqcGc@._V1_SX300.jpg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113120179683558334
 tags: 
   - movies
 ---

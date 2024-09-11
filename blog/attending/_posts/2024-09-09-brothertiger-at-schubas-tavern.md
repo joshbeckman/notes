@@ -5,7 +5,7 @@ title: "Brothertiger at Schubas Tavern"
 toc: true
 image: /assets/images/8f56420b-4ae5-4289-b068-64570bfa7522.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113120179665763571
 tags: 
   - music
   - chicago
