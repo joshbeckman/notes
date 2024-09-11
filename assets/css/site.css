@@ -859,11 +859,17 @@ li.filed.source {
 li.filed.source:before {
   content: "≡";
 }
+li.filed.insight a {
+   color: #F37021;
+}
 li.filed.insight:before {
   content: "?";
 }
 li.filed.date:before {
   content: "≈";
+}
+li.filed.edit a {
+   color: #004B87;
 }
 li.filed.edit:before {
   position: relative;
