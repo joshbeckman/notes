@@ -645,6 +645,9 @@ nav .page-link {
   text-overflow: ellipsis;
   vertical-align: bottom;
 }
+.row.home .column.accent header {
+  font-size: 1.6em;
+}
 .masthead-home-link {
   text-decoration: none;
   background-image: none;
