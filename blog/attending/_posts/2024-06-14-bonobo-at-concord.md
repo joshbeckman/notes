@@ -16,7 +16,7 @@ I've really enjoyed listening to Bonobo in the past, and so when he announced a 
 
 ![IMG_3122](/assets/images/80c4ac66-001d-4eac-ba6b-292d39e26c40.jpeg)
 
-Sadly, the day of the show they moved it to Concord (a venue I still love, but not the launch I was hoping for), and Marybeth was in a boot (to heal her foot). But at least we got to watch the whole (lone! DJ sets are always too long!) show from the front row.
+Sadly, the day of the show they moved it to Concord (a venue I still love, but not the launch I was hoping for), and Marybeth was in a boot (to heal her foot). But at least we got to watch the whole (long! DJ sets are always too long!) show from the front row.
 
 When he played Cirrus, my skin tingled - remembering how many times I watched that music video when I first moved to the city.
 
