@@ -6,6 +6,7 @@ toc: true
 image: /assets/images/86dc6bb9-7a69-4e3e-9234-58a1ffa91ec0.jpeg
 description: Backpacking to the Cirque of The Towers in the Wind River Range, Wyoming.
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113083374396083132
+photo_feature: /assets/images/154c1701-0fca-4c63-863e-873af17a27f5.jpeg
 tags: 
   - travel
   - flora

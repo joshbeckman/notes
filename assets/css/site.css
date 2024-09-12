@@ -664,6 +664,16 @@ a.masthead-home-link {
 .name-svg g path {
   stroke: #903465;
 }
+.color-bars {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  width: 9em;
+}
+.color-bars .color-bar {
+  flex: 1;
+  height: 1em;
+}
 .header .favicon {
   float: right;
   width: 5em;

@@ -3,6 +3,7 @@ layout: Post
 date: 2024-02-05 20:43:34 +0000
 title: "Tom Sachs's COLOR Hex Codes"
 image: /assets/images/tom-sachs-color.png
+popular: true
 tags: art
 ---
 
