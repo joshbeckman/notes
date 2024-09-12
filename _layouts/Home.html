@@ -8,20 +8,17 @@
 {% assign popular_feature_post = site.categories['blog'] | find_exp: "item", "item.popular" %}
 {% assign latest_note_post = site.categories['notes'] | first %}
 <body>
-  <div class="row">
+  <div class="row home">
     <div class="column accent">
       <header class="content centered">
-        {%- include Masthead.html -%}
+        I'm {%- include Masthead.html -%}, hi!
       </header>
     </div>
     <div class="column">
       <article class="content">
         <section class="home">
-            <h1>
-            I'm Josh, hi!
-            </h1>
             <p>
-            This is my home online. I wrote up a bit <a href="/about">about me</a> if we haven't met and you're curious.
+            I wrote up a bit <a href="/about">about me</a> if we haven't met and you're curious. This is my home online.
             </p>
             <p>
             I hope you're having a lovely {{ site.data.seasons[month].name }}. {{ site.data.seasons[month].emoji }}

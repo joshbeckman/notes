@@ -8,7 +8,7 @@
         {% if page.image %}
           <img class="cover-image" src="{{ page.image }}" alt="{{ page.title }}">
         {% else %}
-          {%- include Masthead.html -%}
+          <div class="cover-image-emoji">📓</div>
         {% endif %}
       {%- if page.description -%}
           <p class="description">{{page.description}}</p>
