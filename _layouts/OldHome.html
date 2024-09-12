@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+{%- include head.html -%}
+
+<body>
+  <div class="row">
+    <div class="column accent">
+      <header class="content centered">
+        {%- include Masthead.html -%}
+      </header>
+    </div>
+    <div class="column">
+      <article class="content">
+        {%- include Nav.html -%}
+        <pre class="home-tag">
+<small>
+SITE OWNER              Updated
+</small>
+Josh Beckman            <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date_to_xmlschema }}</time>
+        </pre>
+        <section class="home">
+            <p>
+                I'm <a href="/about">Josh</a>, hi!
+            </p>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan=2>
+                        Information
+                    </th>
+                </tr>
+            </thead>
+            <tr>
+                <td>
+                    🛟
+                    <a href="/about">
+                        About
+                    </a>
+                </td>
+                <td>
+                    Updated <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date_to_xmlschema }}</time>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    #️⃣ 
+                    <a href="/tags">
+                        Index
+                    </a>
+                </td>
+                <td>
+                    {{site.posts.size}} posts, over <a href="/tags">{{ site.tags.size }} topics</a> and <a href="/dates">13 years</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    📶
+                    <a href="/subscribe">
+                        Subscribe
+                    </a>
+                </td>
+                <td>
+                    Subscribe to new posts
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    🕹️
+                        Keyboard shortcuts
+                </td>
+                <td>
+                    <kbd>Ctrl</kbd> + <kbd>S</kbd> = <a href="/search">Search</a> site
+                    <br/>
+                    <kbd>Ctrl</kbd> + <kbd>R</kbd> = <a href="/random">Random</a> post
+                </td>
+            </tr>
+            <tr>
+                <td>
+              💡
+                    <a href="/insight">
+                        Insight
+                    </a>
+                </td>
+                <td>
+                  Generate an insight based on posts.
+                </td>
+            </tr>
+        </table>
+        <br/>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan=2>
+                        Collections
+                    </th>
+                </tr>
+            </thead>
+            <tr>
+                <td>
+                    📓
+                    <a href="/blog">
+                        Blog
+                    </a>
+                </td>
+                <td>
+                    My own writing and photography.
+                </td>
+            </tr>
+            <tr>
+                <td>
+              📝
+                    <a href="/notes">
+                        Notes
+                    </a>
+                </td>
+                <td>
+                    Picking up things to remember.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    💭
+                    <a href="/proverbs">
+                        Proverbs
+                    </a>
+                </td>
+                <td>
+                    My little motivations.
+                </td>
+            </tr>
+            <tr>
+                <td>
+              🛠️
+                    <a href="/uses">
+                       Uses
+                    </a>
+                </td>
+                <td>
+                    Tools I use to make things.
+                </td>
+            </tr>
+            <tr>
+                <td>
+              🗣
+                    <a href="/talks">
+                        Presentations
+                    </a>
+                </td>
+                <td>
+                    Some talks I've given.
+                </td>
+            </tr>
+            <tr>
+                <td>
+              💌
+                    <a href="/guestbook">
+                        Guestbook
+                    </a>
+                </td>
+                <td>
+                  Notes from visitors.
+                </td>
+            </tr>
+        </table>
+          <h3>
+              📓 Latest <a href="/blog">Blog Posts I've Written</a>
+          </h3>
+          {%- for post in site.categories['blog'] limit:3 -%}
+          {%- include PostListItem.html post=post -%}
+          {%- endfor -%}
+          <h3>
+              📝 Latest <a href="/notes">Notes I've Collected</a>
+          </h3>
+          {%- for post in site.categories['notes'] limit:3 -%}
+          {%- include PostListItem.html post=post -%}
+          {%- endfor -%}
+        </section>
+        {%- include Footer.html -%}
+      </article>
+    </div>
+  </div>
+</body>
+</html>

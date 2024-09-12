@@ -1,7 +1,7 @@
 ---
 toc: true
 title: On Writing Great Product Release Emails
-featured: true
+popular: true
 image: "/assets/images/88FB6267-145F-436A-B547-CC195F476DC1.jpeg"
 date: '2020-05-24 00:00:00'
 tags:

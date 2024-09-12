@@ -5,6 +5,7 @@
 {% assign build_time = site.time | date_to_xmlschema %}
 {% assign latest_blog_post = site.categories['blog'] | first %}
 {% assign photo_feature_post = site.categories['blog'] | find_exp: "item", "item.photo_feature" %}
+{% assign popular_feature_post = site.categories['blog'] | find_exp: "item", "item.popular" %}
 {% assign latest_note_post = site.categories['notes'] | first %}
 <body>
   <div class="row">
@@ -16,20 +17,14 @@
     <div class="column">
       <article class="content">
         <section class="home">
+            <h1>
+            I'm Josh, hi!
+            </h1>
             <p>
-            I'm Josh, hi! This is my <a href="/">home</a> online. I wrote up a bit <a href="/about">about me</a> if we haven't met and you're curious.
+            This is my home online. I wrote up a bit <a href="/about">about me</a> if we haven't met and you're curious.
             </p>
             <p>
             I hope you're having a lovely {{ site.data.seasons[month].name }}. {{ site.data.seasons[month].emoji }}
-            </p>
-            <p>
-            I've been <a href="/blog">publishing</a> essays about stuff I think will be helpful and photographs I take. That includes stuff like <a href="/blog/traveling">travel</a>, <a href="/blog/reading">books</a>, <a href="/blog/attending">concerts</a>, <a href="/blog/watching">movies</a>, <a href="/blog/working">desks</a>, and <a href="/blog/listening">music</a> (and some <a href="/talks">presentations I've given</a>).
-            </p>
-            <p>
-            My most recent post is: <a href="{{ latest_blog_post.url }}">{{ latest_blog_post.title }}</a>.
-            </p>
-            <p>
-            I also publish <a href="/notes">notes and highlights</a> I find interesting. The most recent one I've found begins: <a href="{{ latest_note_post.url }}">{{ latest_note_post.title }}</a>.
             </p>
             <p>
             <a href="{{ photo_feature_post.url }}">
@@ -37,11 +32,40 @@
             </a>
             </p>
             <p>
-            This site has {{site.posts.size}} posts, touching on <a href="/tags">{{ site.tags.size }} topics</a>, and over <a href="/dates">13 years</a> of history. It was last updated <time datetime="{{ build_time }}" class="time-relative">{{ build_time }}</time>.
+            I've been <a href="/blog">publishing</a> essays about the intersection of engineering, knowledge tools, management, and more. I hope you <a href="/blog">read through</a> and find something useful. You can also browse some <a href="/talks">presentations I've given</a> and listen to <a href="/podcasts">podcasts I operate</a>.
             </p>
             <p>
-            <a href="/subscribe">Subscribe</a> if you'd like to keep up or <a href="/guestbook">sign the guestbook</a> if you want to leave a mark! Please <a href="/contact">contact me</a> if you'd like to chat.
+            A recent popular post is:
             </p>
+            {%- include PostListItem.html post=popular_feature_post -%}
+            <p>
+            My latest post is:
+            </p>
+            {%- include PostListItem.html post=latest_blog_post -%}
+            <p>
+            I also publish <a href="/notes">notes and highlights</a> that I find interesting. The most recent one I've found begins: <a href="{{ latest_note_post.url }}"><em>{{ latest_note_post.title }}</em></a>.
+            </p>
+            <p>
+            This site is also a tool. It's supposed to be useful for me and fun for you. I've built a <a href="/search">search</a> tool, a <a href="/random">random post</a> router, and an <a href="/insight">insight</a> generator to help us better understand things.
+            </p>
+            <p>
+            <a href="/subscribe">Subscribe</a> if you'd like to keep up or <a href="/contact">email me</a> with questions or <a href="/guestbook">sign the guestbook</a> if you just want to leave a mark!
+            </p>
+            <p>
+            This site has {{site.posts.size}} posts, touching on <a href="/tags">{{ site.tags.size }} topics</a>, and over <a href="/dates">13 years</a> of history.
+            You can <a href="/about-this-site">read about how it's built</a> if you're curious.
+            The site was last updated <time datetime="{{ build_time }}" class="time-relative">{{ build_time }}</time>.
+            </p>
+            <div class="color-bars">
+                <span class="color-bar" style="background-color: #EBEDEA;"></span>
+                <span class="color-bar" style="background-color: #DA291C;"></span>
+                <span class="color-bar" style="background-color: #F37021;"></span>
+                <span class="color-bar" style="background-color: #FFCC00;"></span>
+                <span class="color-bar" style="background-color: #3C341F;"></span>
+                <span class="color-bar" style="background-color: #004B87;"></span>
+                <span class="color-bar" style="background-color: mediumpurple;"></span>
+                <span class="color-bar" style="background-color: #151515;"></span>
+            </div>
         </section>
         {%- include Footer.html -%}
       </article>
