@@ -203,7 +203,7 @@ module ReadwiseExtras
 
     def source_footer(text_fragment: nil)
       <<~FOOTER
-        <span style="display:none">FROM:</span><div class="quoteback-footer">#{source_footer_avatar.strip}<div class="quoteback-metadata"><div class="metadata-inner"><div aria-label="#{author_stripped}" class="quoteback-author"> #{author_stripped}</div><div aria-label="#{stripped_title}" class="quoteback-title"> #{stripped_title}</div></div></div>#{source_footer_link(text_fragment: text_fragment).strip}</div>
+        <div class="quoteback-footer">#{source_footer_avatar.strip}<div class="quoteback-metadata"><div class="metadata-inner"><span style="display:none">FROM:</span><div aria-label="#{author_stripped}" class="quoteback-author"> #{author_stripped}</div><div aria-label="#{stripped_title}" class="quoteback-title"> #{stripped_title}</div></div></div>#{source_footer_link(text_fragment: text_fragment).strip}</div>
       FOOTER
     end
 
