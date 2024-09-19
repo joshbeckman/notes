@@ -7,7 +7,7 @@ rating: 4
 imdb_id: tt1560747
 image: https://m.media-amazon.com/images/M/MV5BMTQ2NjQ5MzMwMF5BMl5BanBnXkFtZTcwMjczNTAzOA@@._V1_SX300.jpg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113165478608864318
 tags: 
   - movies
 ---
