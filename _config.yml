@@ -128,9 +128,6 @@ kramdown:
   math_engine: katex
   # smart_quotes: ["apos", "apos", "quot", "quot"]
   syntax_highlighter: rouge
-  
-sass:
-  style: compressed
 
 defaults:
   - scope:
