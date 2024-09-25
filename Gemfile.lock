@@ -110,7 +110,6 @@ DEPENDENCIES
   jekyll-feed
   jekyll-mastodon_webfinger (~> 1.0)
   jekyll-redirect-from
-  jekyll-sass-converter (~> 3.0)
   jekyll-sitemap
   jekyll-toc
   kramdown-math-katex
@@ -118,4 +117,4 @@ DEPENDENCIES
   readwise!
 
 BUNDLED WITH
-   2.4.2
+   2.5.18
