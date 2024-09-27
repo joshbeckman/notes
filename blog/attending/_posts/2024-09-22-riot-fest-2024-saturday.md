@@ -5,7 +5,7 @@ title: "Riot Fest 2024, Saturday"
 toc: true
 image: /assets/images/ae039424-1e78-4d61-b6e4-9f0114255578.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113207946137833948
 tags: 
   - music
   - chicago
