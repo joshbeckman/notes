@@ -5,7 +5,7 @@ title: "AIR at Auditorium Theater"
 toc: true
 image: /assets/images/1135c6d1-ca15-4ef3-a2e6-ed4c37eae893.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113284387133030251
 tags: 
   - music
   - chicago
