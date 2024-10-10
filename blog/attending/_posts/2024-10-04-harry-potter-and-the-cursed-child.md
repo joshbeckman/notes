@@ -6,7 +6,7 @@ toc: true
 rating: 3
 image: /assets/images/0623bb69-bb2a-4e1b-9ef9-132698b6ba1e.png
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113281555334319046
 tags: 
   - live-theater
 ---

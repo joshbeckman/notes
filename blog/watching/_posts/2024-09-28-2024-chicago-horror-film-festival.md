@@ -6,7 +6,7 @@ toc: true
 rating: 4
 image: 
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113281555302715961
 tags: 
   - movies
   - chicago

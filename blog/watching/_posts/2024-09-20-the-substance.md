@@ -7,7 +7,7 @@ rating: 5
 imdb_id: tt17526714
 image: https://m.media-amazon.com/images/M/MV5BZDQ1NGE5MGMtYzdlZC00ODExLWJlMDMtNWU4NjA5OWYwMDEwXkEyXkFqcGc@._V1_SX300.jpg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113281555265926250
 tags: 
   - movies
   - health

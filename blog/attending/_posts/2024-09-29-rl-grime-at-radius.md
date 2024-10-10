@@ -5,7 +5,7 @@ title: "RL Grime at Radius"
 toc: true
 image: /assets/images/79045c0d-9bf5-440e-893d-6c07e1343216.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113281555318792828
 tags: 
   - music
 ---
