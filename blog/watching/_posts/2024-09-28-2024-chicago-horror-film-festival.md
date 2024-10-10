@@ -4,7 +4,7 @@ date: 2024-09-28 00:00:00 +0000
 title: "2024 Chicago Horror Film Festival"
 toc: true
 rating: 4
-image: /assets/images/horror-festival-sched.jpg
+image: /assets/images/horror-festival-sched.jpeg
 description: 
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113281555302715961
 tags: 
