@@ -5,7 +5,7 @@ title: "Montreal, September 2024"
 toc: true
 image: /assets/images/ca0b9776-701f-4113-a0c4-68166bdd4b4c.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113287217701227591
 tags: 
   - travel
   - Canada
