@@ -15,7 +15,7 @@ class SiteVersion
   # ref: https://news.ycombinator.com/item?id=28155654
   def version
     `git describe --long 2>/dev/null | sed 's/\([^-]*-g\)/r\1/' || \
-      printf "r%s-g%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"`
+      printf "r%s-g%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"`.strip
   end
 end
 Jekyll::Hooks.register :site, :after_init do |site|
