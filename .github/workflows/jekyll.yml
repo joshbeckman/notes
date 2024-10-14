@@ -51,9 +51,12 @@ jobs:
         run: bundle exec utilities/import_action
         env:
           READWISE_TOKEN: ${{ secrets.READWISE_TOKEN }}
+      - name: Print version
+        run: git describe --long 2>/dev/null | sed 's/\([^-]*-g\)/r\1/' | awk 1 ORS='' || printf "r%s-g%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)" || echo "no version found"
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        working-directory: ${{ github.workspace }}
         env:
           JEKYLL_ENV: production
       - name: Upload artifact

@@ -6,7 +6,7 @@ class SiteVersion
   end
 
   def inject
-    @site.config['version'] = version
+    @site.config['version'] = ENV.fetch('SITE_VERSION', version)
   end
 
   # Returns the version of the site
@@ -14,7 +14,7 @@ class SiteVersion
   # Otherwise, it returns a string with the number of commits and the short hash of the last commit
   # ref: https://news.ycombinator.com/item?id=28155654
   def version
-    `git describe --long 2>/dev/null | sed 's/\([^-]*-g\)/r\1/' || \
+    `git describe --long 2>/dev/null | sed 's/\([^-]*-g\)/r\1/' | awk 1 ORS='' || \
       printf "r%s-g%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"`.strip
   end
 end
