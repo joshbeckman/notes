@@ -37,6 +37,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Output Git Info
+        run: |
+          echo "Current branch: $(git rev-parse --abbrev-ref HEAD)"
+          echo "Latest commit hash: $(git rev-parse HEAD)"
+          echo "Latest commit message: $(git log -1 --pretty=%B)"
+          echo "Author: $(git log -1 --pretty=%an)"
+          echo "Committer: $(git log -1 --pretty=%cn)"
+          echo "List of changed files:"
+          git diff-tree --no-commit-id --name-only -r HEAD
       - name: Describe git
         run: |
           git describe --long
