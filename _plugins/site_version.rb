@@ -14,8 +14,13 @@ class SiteVersion
   # Otherwise, it returns a string with the number of commits and the short hash of the last commit
   # ref: https://news.ycombinator.com/item?id=28155654
   def version
-    `git describe --long 2>/dev/null | sed 's/\([^-]*-g\)/r\1/' | awk 1 ORS='' || \
-      printf "r%s-g%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"`.strip
+    # `git describe --long 2>/dev/null | sed 's/\([^-]*-g\)/r\1/' | awk 1 ORS=''`.strip
+    described = `git describe --long`.strip
+    if described.empty?
+      return `printf "r%s-g%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"`.strip
+    end
+
+    described.gsub(/([^-]*-g)/, 'r\1').strip
   end
 end
 Jekyll::Hooks.register :site, :after_init do |site|
