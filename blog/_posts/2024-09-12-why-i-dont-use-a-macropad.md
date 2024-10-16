@@ -5,7 +5,7 @@ title: "Why I Don't Use a Macropad"
 toc: true
 image: 
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113304204994700357
 tags: 
   - tools
 ---
