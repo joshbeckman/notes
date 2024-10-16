@@ -974,7 +974,7 @@ ul.asymp>li {
   cursor: pointer;
 }
 .search-results {
-  min-height: 50vh;
+  min-height: 10vh;
 }
 ul.search-results-list {
   padding: 0;
