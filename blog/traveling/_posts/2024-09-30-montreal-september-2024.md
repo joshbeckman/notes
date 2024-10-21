@@ -8,8 +8,8 @@ description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113287217701227591
 tags: 
   - travel
-  - Canada
-  - Shopify
+  - canada
+  - shopify
 ---
 
 
