@@ -60,8 +60,14 @@
             .then(response => response.json())
             .then(data => {
                 stopLoading();
+                console.log(data);
                 document.title = document.title + ': ' + data.post.title;
                 document.getElementById('insight').innerHTML = data.insightHtml;
+                if (data.suggestedTags.length > 0) {
+                    let p = document.createElement('p');
+                    p.innerHTML = 'I suggest adding these tags: ' + data.suggestedTags.join(', ');
+                    document.getElementById('insight').appendChild(p);
+                }
                 let anchor = document.createElement('a');
                 anchor.href = data.post.url;
                 anchor.innerHTML = data.post.title;
