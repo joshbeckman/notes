@@ -3,7 +3,6 @@
 require 'jekyll'
 require 'json'
 require 'net/http'
-require 'time'
 
 module POSSE
   class JekyllFilter
@@ -19,12 +18,11 @@ module POSSE
   class Mastodon
     class Error < StandardError; end
 
-    attr_reader :site, :post_after
+    attr_reader :site
 
     def initialize
       @site = Jekyll::Site.new(Jekyll.configuration({}))
       @site.read
-      @post_after = Date.parse('2024-06-02').to_time
       @jekyll_filter = JekyllFilter.new
       @content_template = Liquid::Template.parse("{{ x | strip_html | strip | escape | truncate: 140}}")
       @token = ENV['MASTODON_SOCIAL_TOKEN']
