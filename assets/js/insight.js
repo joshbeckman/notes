@@ -60,12 +60,16 @@
             .then(response => response.json())
             .then(data => {
                 stopLoading();
-                console.log(data);
                 document.title = document.title + ': ' + data.post.title;
                 document.getElementById('insight').innerHTML = data.insightHtml;
                 if (data.suggestedTags.length > 0) {
                     let p = document.createElement('p');
                     p.innerHTML = 'I suggest adding these tags: ' + data.suggestedTags.join(', ');
+                    document.getElementById('insight').appendChild(p);
+                }
+                if (data.keywords.length > 0) {
+                    let p = document.createElement('p');
+                    p.innerHTML = '<em>(Keywords I searched to build this context: ' + data.keywords + ')</em>';
                     document.getElementById('insight').appendChild(p);
                 }
                 let anchor = document.createElement('a');
