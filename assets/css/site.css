@@ -377,7 +377,7 @@ body {
     font-feature-settings: 'liga' on, 'clig' on, 'zero';
     -webkit-font-smoothing: antialiased;
     background-color: #fffff8;
-    color: #111;
+    color: #151515;
     counter-reset: sidenote-counter;
     font-size: 16px;
 }
@@ -387,13 +387,14 @@ a {
     text-shadow: -1px 0px 0px #fffff8, 1px 0px 0px #fffff8, -2px 0 0 #fffff8, 2px 0 0 #fffff8;
 }
 a:link {
-   color: rgb(9,105,218);
+   color: #0969DA;
 }
 a:visited {
    color: rebeccapurple;
 }
 a:hover {
-  text-decoration-color: #903465;
+  color: #004B87;
+  text-decoration-style: dashed;
 }
 
 .frac {
@@ -873,7 +874,7 @@ li.filed.source:before {
   content: "≡";
 }
 li.filed.insight a {
-   color: #F37021;
+   color: #FF7900;
 }
 li.filed.insight:before {
   content: "?";
@@ -882,7 +883,7 @@ li.filed.date:before {
   content: "≈";
 }
 li.filed.edit a {
-   color: #004B87;
+   color: #903465;
 }
 li.filed.edit:before {
   position: relative;
@@ -1003,7 +1004,7 @@ li.search-results-list-item:last-child {
     word-wrap: break-word; 
 }
 .search-result-preview {
-  color: #111;
+  color: #151515;
 }
 .search-result-highlight { 
     font-weight: bold; 
@@ -1268,7 +1269,7 @@ details summary:hover {
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #151515;
-        color: #ddd;
+        color: #EBEDEA;
     }
     table,
     div.highlight,
@@ -1289,17 +1290,14 @@ details summary:hover {
     }
     .searchbar input[type=text] {
       background-color: #353535;
-      color: #ddd;
+      color: #EBEDEA;
     }
     .searchbar button[type=submit] {
       background-color: darkblue;
-      color: #ddd;
-    }
-    button.tinylytics_kudos {
-      color: #ddd;
+      color: #EBEDEA;
     }
     .search-result-preview {
-      color: #ddd;
+      color: #EBEDEA;
     }
 
     .highlighted-text {

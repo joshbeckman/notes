@@ -25,6 +25,7 @@ This is the default palette. Often, I'll use these colors as a starting point an
 | Blue | Science blue | `#0969DA` | ![blue](https://www.thecolorapi.com/id?format=svg&named=false&hex=0969DA) |
 | Dark Blue | police barricade blue | `#004B87` | ![blue](https://www.thecolorapi.com/id?format=svg&named=false&hex=004B87) |
 | Purple | HTML standard mediumpurple | `#9370d8` | ![purple](https://www.thecolorapi.com/id?format=svg&named=false&hex=9370d8) |
+| Josh Purple | Brand purple | `#903465` | ![purple](https://www.thecolorapi.com/id?format=svg&named=false&hex=903465) |
 | Black | Benjamin Moore Impervex latex high gloss metal and wood enamel, black 309 80 | `#151515` | ![black](https://www.thecolorapi.com/id?format=svg&named=false&hex=151515) |
 | White | Benjamin Moore's Decorator's White | `#EBEDEA` | ![white](https://www.thecolorapi.com/id?format=svg&named=false&hex=ebedea) |
 
