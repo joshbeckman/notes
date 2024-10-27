@@ -32,16 +32,24 @@ function searchInitListener() {
       }, 200);
       var evt = window.event || e;
       let key = evt.keyCode || evt.which;
-      if (e.ctrlKey && key == 83) {
+      if (e.ctrlKey && key == 83) { // ctrl+s for search
         if (searchInput) {
           searchInput.focus();
         } else {
             window.location.href = "/search";
         }
-      } else if (e.ctrlKey && key == 82) {
+      } else if (e.ctrlKey && key == 82) { // ctrl+r for random
         window.location.href = "/random";
+      } else if (e.ctrlKey && key == 73) { // ctrl+i for insight
+          var path = window.location.pathname;
+        window.location.href = "/insight?post=" + encodeURIComponent(path);
+      } else if (e.ctrlKey && key == 69) { // ctrl+e for edit
+          var link = document.getElementById("edit-link");
+          if (link) {
+              link.click();
+          }
       }
-      });
+    });
   })();
 }
 searchInitListener();
