@@ -1,11 +1,9 @@
 (function(){
     var topicInsightUrl = 'https://joshbeckman-amethysthalibut.web.val.run';
-    var questionInsightUrl = 'https://joshbeckman-coffeeostrich.web.val.run';
     var postInsightUrl = 'https://joshbeckman-insightpost.web.val.run';
     var conversationInsightUrl = 'https://joshbeckman-insightconversation.web.val.run';
     var params = new URLSearchParams(window.location.search);
     var topic = params.get('topic');
-    var question = params.get('question');
     var post = params.get('post');
 
     if (topic) {
@@ -14,9 +12,6 @@
     } else if (post) {
         hideMenu();
         fetchPostInsight(post);
-    } else if (question) {
-        hideMenu();
-        fetchQuestionInsight(question);
     }
 
     function startLoading() {
@@ -76,22 +71,6 @@
                 anchor.href = data.post.url;
                 anchor.innerHTML = data.post.title;
                 document.getElementById('topic').innerHTML = 'On "' + anchor.outerHTML + '"';
-                if (data.conversation) {
-                    setUpConversation(data.conversation);
-                }
-            });
-    }
-    function fetchQuestionInsight(question) {
-        startLoading();
-        document.getElementById('topic').innerHTML = question;
-        questionInsightUrl += '?question=' + encodeURIComponent(question);
-        fetch(questionInsightUrl)
-            .then(response => response.json())
-            .then(data => {
-                stopLoading();
-                document.title = document.title + ': ' + data.question;
-                document.getElementById('insight').innerHTML = data.insightHtml;
-                document.getElementById('topic').innerHTML = data.question;
                 if (data.conversation) {
                     setUpConversation(data.conversation);
                 }
