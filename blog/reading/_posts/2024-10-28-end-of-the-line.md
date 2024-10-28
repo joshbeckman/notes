@@ -11,8 +11,6 @@ tags:
   - photography
 ---
 
-
-
 ![book on countertop](/assets/images/55bf2a24-66ed-404c-b400-3e5b6a60f4aa.jpeg)
 
 My friend Ned lent me this photo book for the week and I thoroughly enjoyed it. The photos are well-crafted, and the author details exactly how he crafted them. What's better than that in a photo book?
@@ -23,4 +21,8 @@ It all reminded me of when I lived near the train tracks in college and I was st
 
 ![book on countertop](/assets/images/c927722d-3fa2-4388-ab84-bbb99faaaf31.jpeg)
 
-I definitely would have liked to meet John Free, and all his friends on the rail yards. 
+I definitely would have liked to meet [John Free](https://johnfreephotography.com), and all his friends on the rail yards. I love his slogan:
+
+> Candid, full frame, available light
+
+Other quotes from the book that I liked: [the 'Isolation Challenge'](https://www.joshbeckman.org/notes/804044779) and [Tramps work, hoboes won't, and bums can't.](https://www.joshbeckman.org/notes/804044987).
