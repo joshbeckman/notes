@@ -8,7 +8,6 @@ description:
 mastodon_social_status_url: false
 tags: 
   - music
-  - concerts
   - chicago
 ---
 
