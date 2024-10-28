@@ -5,7 +5,7 @@ title: "Fat Dog at The Empty Bottle"
 toc: true
 image: /assets/images/dd6af622-7ee9-42dc-9a52-32085d455e9d.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113383478054719298
 tags: 
   - music
   - chicago

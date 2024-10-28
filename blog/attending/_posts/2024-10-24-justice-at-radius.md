@@ -5,7 +5,7 @@ title: "Justice at Radius"
 toc: true
 image: /assets/images/a1a981e7-47fc-4610-aac6-1d84303d4233.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113383478036384190
 tags: 
   - music
   - chicago
