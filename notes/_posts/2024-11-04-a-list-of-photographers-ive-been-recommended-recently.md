@@ -5,7 +5,7 @@ title: "A List of Photographers I've Been Recommended Recently"
 toc: true
 image: 
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113428776749435470
 tags: 
   - photography
   - chicago
