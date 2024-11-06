@@ -6,8 +6,7 @@ toc: true
 image: 
 description: 
 mastodon_social_status_url: false
-tags: 
-  - politics
+tags:
   - united-states
 ---
 
