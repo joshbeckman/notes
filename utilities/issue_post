@@ -108,8 +108,8 @@ class IssuePoster
   def parse_date(date)
     return Time.now if date.nil?
 
-    Date.iso8601(date.strip).to_time
-  rescue ArgumentError, Date::Error
+    Time.parse(date.strip)
+  rescue ArgumentError
     Time.now
   end
 
