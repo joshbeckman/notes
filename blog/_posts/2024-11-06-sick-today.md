@@ -5,7 +5,7 @@ title: "Sick today"
 toc: true
 image: 
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113437269555435263
 tags:
   - united-states
 ---
