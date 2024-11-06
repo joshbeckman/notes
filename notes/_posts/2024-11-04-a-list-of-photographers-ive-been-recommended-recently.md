@@ -9,7 +9,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/113428776749435
 tags: 
   - photography
   - chicago
-  - politics
+  - state-government
 ---
 
 
