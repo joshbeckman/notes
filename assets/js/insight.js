@@ -23,6 +23,13 @@
     function hideMenu() {
         document.getElementById('insight-menu').style.display = 'none';
     }
+    function openInsightLinksInNewTab() {
+        document.querySelectorAll('#insight a').forEach(function (el) {
+          if (!el.target) {
+            el.target = '_blank';
+          }
+        });
+    }
     function fetchTopicInsight(topic) {
         startLoading();
         if (topic == 'random') {
@@ -42,6 +49,7 @@
                 if (data.conversation) {
                     setUpConversation(data.conversation);
                 }
+                openInsightLinksInNewTab();
             });
     }
     function fetchPostInsight(post) {
@@ -74,6 +82,7 @@
                 if (data.conversation) {
                     setUpConversation(data.conversation);
                 }
+                openInsightLinksInNewTab();
             });
     }
     function fetchConversationInsight(conversation) {
@@ -90,6 +99,7 @@
                 if (data.conversation) {
                     setUpConversation(data.conversation);
                 }
+                openInsightLinksInNewTab();
             });
     }
     // conversation is an array of objects with the following properties:
