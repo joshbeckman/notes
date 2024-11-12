@@ -15,7 +15,7 @@ I live in Chicago and [Chicago](/tags#chicago) is a great place to live.
 
 I'm an experienced startup operator with a history of scaling tech and teams. I'm a self-taught software developer, (and tech lead, and manager, yadda yadda) with a much wider-ranging career and education before that. I strive to bring curiosity, encouragement, and first-principles thinking to the work I'm doing.
 
-My email address is `josh@joshbeckman.org`. I strongly prefer email as a communication method, so email me if you have a comment about something I've written - or write a post on your own site.
+My email address is `josh@joshbeckman.org`. I strongly prefer email as a communication method, so email me if you have a comment about something I've written - or write a post on your own site. Or you can [follow/message me on open social networks](https://www.joshbeckman.org/subscribe).
 
 > Want help with something? Here are [ways I'm able to help](/blog/ways-im-available-to-help).
 
