@@ -5,7 +5,7 @@ title: "I Haven't Contributed to Open-Source in a While"
 toc: true
 image: 
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113471243094482622
 tags: 
   - open-source
 ---
