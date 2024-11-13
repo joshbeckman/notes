@@ -8,15 +8,14 @@ tags:
 - publishing
 ---
 
-View a subcategory if you like:
-- 🎟️ [Concerts I've been attending](attending)
-- 📚 [Books I've been reading](reading)
-- 🎬 [Movies I've been watching](watching)
-- 🌋 [Travel I've been going on](traveling)
-- 🪑 [Desks I've been working at](working)
-- 🎶 [Music I've been listening to](listening)
-
-Here are all the posts:
+<div id="toc-and-metadata"><ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="attending">Concerts</a></li>
+<li class="toc-entry toc-h2"><a href="reading">Books</a></li>
+<li class="toc-entry toc-h2"><a href="watching">Movies</a></li>
+<li class="toc-entry toc-h2"><a href="traveling">Travel</a></li>
+<li class="toc-entry toc-h2"><a href="working">Desks</a></li>
+<li class="toc-entry toc-h2"><a href="listening">Music</a></li>
+</ul></div>
 
 {% assign postsByMonth = 
 site.categories['blog'] | group_by_exp:"post", "post.date | date: '%Y %B'" %}
