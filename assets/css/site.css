@@ -715,17 +715,16 @@ a.masthead-home-link {
 
 /* TOC - table of contents */
 #toc-and-metadata #toc {
-  padding-inline-start: 0;
+  padding-inline-start: 0.1em;
+  margin-top: 1ch;
 }
 #toc ul {
-  padding-inline-start: 0;
-}
-#toc ul ul {
-  padding-inline-start: 4ch;
+  padding-inline-start: 2ch;
 }
 #toc li {
   list-style: none;
   border-left: 1px solid gray;
+  margin-left: 0;
 }
 #toc li::before {
   content: "—";
