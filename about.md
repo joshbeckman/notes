@@ -51,11 +51,11 @@ These are me, but I don't actively use them. If *you* happen to use these networ
 These were me, but I don't use them any more.
 
 - Micro.blog: [@joshbeckman](https://micro.blog/joshbeckman)
+- Twitter/X: [@josh_beckman](https://twitter.com/josh_beckman)
 
 ### Do Not Have
 If an account with my name is on these networks, it's not me.
 
-- Twitter/X
 - Facebook/Instagram/Threads
 - TikTok
 - Snapchat
