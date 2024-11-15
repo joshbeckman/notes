@@ -43,6 +43,7 @@ These are me, but I don't actively use them. If *you* happen to use these networ
 
 - Letterboxd: [@joshbeckman](https://letterboxd.com/joshbeckman/)
 - LastFM: [@andjosh_](https://www.last.fm/user/andjosh_)
+- GitLab: [@joshbeckman](https://gitlab.com/joshbeckman)
 - LinkedIn: [@josh-beckman-0aa20b50](https://www.linkedin.com/in/josh-beckman-0aa20b50)
 - Spotify: [@andjosh](https://open.spotify.com/user/u7mkuzxzdh9igmc9ob8vbvvlr)
 
