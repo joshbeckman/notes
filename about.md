@@ -8,6 +8,7 @@ tags: index
 redirect_from: 
   - /hello
   - /now
+  - /verify
 ---
 
 I'm currently working as a Senior Staff Engineer at [Shopify](//shopify.com), building [a visual programming platform](https://www.shopify.com/flow) for merchants and improving the interfaces for Shopify developers.
@@ -23,4 +24,39 @@ You can read more [about this site](/about-this-site).
 
 ## Support
 
-I'm [@joshbeckman on Github](//github.com/joshbeckman), where I maintain open-source software projects. I welcome any issues or ideas you may open there and _especially_ any code you can contribute. Creating and _maintaining_ open-source software and open writing takes a lot of time and money, so fund my software maintenance and writing [via GitHub Sponsors](https://github.com/sponsors/joshbeckman).
+In addition to writing and sharing tools on this site, I maintain many open-source software projects. I welcome any issues or ideas you may open there and _especially_ any code you can contribute. Creating and _maintaining_ open-source software and open writing takes a lot of time and money, so fund my software maintenance and writing [via GitHub Sponsors](https://github.com/sponsors/joshbeckman).
+
+## Verification
+
+If you see an account that looks like it might be me but isn't listed here, please let me know.
+
+### Active Accounts
+- Mastodon: [@joshbeckman@mastodon.social](https://mastodon.social/@joshbeckman)
+- Bluesky: [@joshbeckman.org](https://bsky.app/profile/joshbeckman.org)
+- GitHub: [@joshbeckman](https://github.com/joshbeckman)
+- Apple Music: [@andjosh](https://music.apple.com/profile/andjosh)
+- YouTube: [@joshbeckmanchannel](https://www.youtube.com/@joshbeckmanchannel)
+- Email: `josh@josbeckman.org`
+
+### Passive Accounts
+These are me, but I don't actively use them. If *you* happen to use these networks, feel free to interact with me and I'll see it eventually.
+
+- Letterboxd: [@joshbeckman](https://letterboxd.com/joshbeckman/)
+- LastFM: [@andjosh_](https://www.last.fm/user/andjosh_)
+- LinkedIn: [@josh-beckman-0aa20b50](https://www.linkedin.com/in/josh-beckman-0aa20b50)
+- Spotify: [@andjosh](https://open.spotify.com/user/u7mkuzxzdh9igmc9ob8vbvvlr)
+
+### Inactive Accounts
+These were me, but I don't use them any more.
+
+- Micro.blog: [@joshbeckman](https://micro.blog/joshbeckman)
+
+### Do Not Have
+If an account with my name is on these networks, it's not me.
+
+- Twitter/X
+- Facebook/Instagram/Threads
+- TikTok
+- Snapchat
+- Pinterest
+- Reddit
