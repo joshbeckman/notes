@@ -1,4 +1,4 @@
-#!/usr/in/env ruby
+#!/usr/bin/env ruby
 # frozen_string_literal: true
 
 require 'json'
@@ -20,13 +20,31 @@ Post = Struct.new(
 )
 
 class Poster
-  def run(export_path)
-    journal = JSON.parse(File.read("#{export_path}/Journal.json"))
+  def run
+    zip_files = Dir['day_one_export/*.zip']
+    zip_files.each do |zip_file|
+      export_path = File.basename(zip_file, '.zip')
+      `unzip -d day_one_import/#{export_path} #{zip_file}`
+    end
+    folders = Dir['day_one_import/*']
+    folders.each do |folder|
+      import_folder(folder)
+    end
+  end
+
+  def cleanup
+    # remove everythinng inside day_one_import except. gitkeep
+    `rm -rf day_one_import/*`
+    # remove everythinng inside day_one_export except. gitkeep
+    `rm -rf day_one_export/*`
+  end
+
+  def import_folder(path)
+    journal = JSON.parse(File.read("#{path}/Journal.json"))
     entries = journal['entries']
     filenames = entries.map do |entry|
-      import_entry(entry, export_path)
+      import_entry(entry, path)
     end
-    exec("nvim -p #{filenames.join(' ')}")
   end
 
   def import_entry(entry, export_path)
@@ -35,36 +53,39 @@ class Poster
     if title_match
       post.title = title_match[1]
     else
-      puts entry['text']
-      puts 'Title: ?'
-      post.title = $stdin.gets.chomp
+      post.title = entry['text'].split("\n").first
     end
-    puts "Title: #{post.title}"
     post.slug = post.title.gsub(/[^a-zA-Z0-9\s]/, '').gsub(/\s+/, '-').downcase
     post.date = Time.parse(entry['creationDate'])
     copy_photos(entry, export_path)
     copy_videos(entry, export_path)
-    post.body = parse_body(entry)
+    post.body = parse_body(entry, post.title)
     post.image = "/#{asset_path_for_photo(entry['photos'].first)}" if entry['photos']&.first
-
-    puts 'Category: ?'
-    post.category = $stdin.gets.chomp
+    post.body, post.category = parse_out(post.body, 'Category', 'blog')
+    post.body, tags = parse_out(post.body, 'Tags', '')
+    post.tags = tags.split(',').map(&:strip).map(&:downcase).map { |tag| tag.gsub(/^#/, '') }
 
     case post.category.split('/').last
     when 'reading'
-      puts 'Rating: ?'
-      post.rating = $stdin.gets.chomp.to_i
+      post.body, rating = parse_out(post.body, 'Rating', 0)
+      post.rating = rating.to_i
     when 'watching'
-      puts 'Rating: ?'
-      post.rating = $stdin.gets.chomp.to_i
-      puts 'IMDB ID: ?'
-      post.imdb_id = $stdin.gets.chomp
+      post.body, rating = parse_out(post.body, 'Rating', 0)
+      post.rating = rating.to_i
+      post.body, post.imdb_id = parse_out(post.body, 'IMDB', nil)
       post.image = movie_cover_image(post.imdb_id)
-      post.tags = ['movies']
+      post.tags += ['movies'] unless post.tags.include?('movies')
     when 'attending'
-      post.tags = ['music']
+      post.tags += ['music'] unless post.tags.include?('music')
     end
     create_file(post)
+  end
+
+  def parse_out(text, identifier, default = nil)
+    matched = text.match(/^#{identifier}: (.*)/)
+    return text, default unless matched
+
+    [text.gsub(/^#{identifier}: (.*)/, ''), matched[1]]
   end
 
   def asset_path_for_video(video)
@@ -87,8 +108,9 @@ class Poster
     end
   end
 
-  def parse_body(entry)
+  def parse_body(entry, title)
     body = entry['text'].gsub(/^# (.*)/, '').strip
+    body = body.split("\n")[1..-1].join("\n") if body.split("\n").first == title
     (entry['photos'] || []).each do |photo|
       img_tag = "/#{asset_path_for_photo(photo)}"
       body.gsub!(%r{dayone-moment://#{photo['identifier']}}, img_tag)
@@ -97,6 +119,14 @@ class Poster
       video_tag = "<video controls src=\"/#{asset_path_for_video(video)}\"></video>"
       body.gsub!(%r{!\[\]\(dayone-moment:/video/#{video['identifier']}\)}, video_tag)
     end
+    body = body.split("\n").map do |line|
+      if line.match?(/https:\/\/www.youtube.com\/watch\?v=(.*)/)
+        youtube_id = line.match(/https:\/\/www.youtube.com\/watch\?v=(.*)/)[1]
+        "<iframe width=\"100%\" height=\"340\" src=\"https://www.youtube-nocookie.com/embed/#{youtube_id}\" title=\"YouTube embed\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+      else
+        line
+      end
+    end.join("\n")
     body
   end
 
@@ -134,5 +164,6 @@ class Poster
   end
 end
 
-# run the script with the first argument passed to it
-Poster.new.run(ARGF.argv[0])
+poster = Poster.new
+poster.run
+poster.cleanup
