@@ -38,6 +38,11 @@ jobs:
         run: bundle exec utilities/posse_mastodon
         env:
           MASTODON_SOCIAL_TOKEN: ${{ secrets.MASTODON_SOCIAL_TOKEN }}
+      - name: Publish to Bluesky
+        id: posse_bluesky
+        run: bundle exec utilities/posse_bluesky
+        env:
+          BLUESKY_PASSWORD: ${{ secrets.BLUESKY_PASSWORD }}
       - name: Determine if changes were made
         id: any_changes
         run: echo "changed=$(git status --porcelain | wc -l)" >> $GITHUB_OUTPUT

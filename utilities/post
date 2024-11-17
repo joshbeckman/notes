@@ -143,6 +143,8 @@ class Poster
       file.puts "imdb_id: #{post.imdb_id}" if post.imdb_id
       file.puts "image: #{post.image}"
       file.puts 'description: '
+      file.puts 'mastodon_social_status_url: false'
+      file.puts 'bluesky_status_url: false'
       file.puts 'tags: '
       post.tags.each do |tag|
         file.puts "  - #{tag}"

@@ -13,6 +13,10 @@ permissions:
   issues: write
   pages: write
   id-token: write
+# Allow one concurrent deployment
+concurrency:
+  group: "posting"
+  cancel-in-progress: true
 jobs:
   build:
     if: ${{ !github.event.issue.pull_request && github.event.comment.user.login == 'joshbeckman' && startsWith(github.event.comment.body, '/post')}}
