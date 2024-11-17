@@ -8,13 +8,20 @@
 <div class="post-social">
   <details>
     <summary>Comments</summary>
-    {%- if page.mastodon_social_status_url -%}
-    <p class="social-mastodon">
-      Comment <a href="{{page.mastodon_social_status_url}}" target="_blank">
+    <p class="social-mastodon-bluesky">
+      Comment
+      {%- if page.mastodon_social_status_url -%}
+      <a href="{{page.mastodon_social_status_url}}" target="_blank">
         on Mastodon
-      </a> or right here:
+      </a> or
+      {%- endif -%}
+      {%- if page.bluesky_status_url -%}
+      <a href="{{page.bluesky_status_url}}" target="_blank">
+        on Bluesky
+      </a> or
+      {%- endif -%}
+      &nbsp;right here:
     </p>
-    {%- endif -%}
     <div id="cusdis_thread"
       data-theme="auto"
       data-host="https://cusdis.com"
