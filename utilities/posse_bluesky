@@ -71,7 +71,7 @@ module POSSE
       puts "Posting: #{url(post)}"
       message = "#{url(post)}\n\n#{post.data['title']}"
       status = post_status(message)
-      puts "Posted:  #{url(post)}} to #{status['url']}"
+      puts "Posted:  #{url(post)} to #{status['url']}"
       bluesky_status_url = status['url']
       save_status(post, bluesky_status_url)
     end
