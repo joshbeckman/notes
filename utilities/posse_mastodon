@@ -38,7 +38,7 @@ module POSSE
       puts "Posting: #{url(post)}"
       message = "#{post.data['title']}\n\n#{url(post)}"
       status = post_status(message)
-      puts "Posted:  #{url(post)}} to #{status['url']}"
+      puts "Posted:  #{url(post)} to #{status['url']}"
       mastodon_social_status_url = status['url']
       save_status(post, mastodon_social_status_url)
     end
