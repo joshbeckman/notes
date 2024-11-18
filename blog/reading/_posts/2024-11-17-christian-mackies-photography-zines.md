@@ -6,7 +6,7 @@ toc: true
 rating: 3
 image: /assets/images/8D417517231C40A9AF16DC3B80DC375C.png
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113502386158619186
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lb5zykbecx2i
 tags: 
   - photography
