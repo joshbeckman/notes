@@ -50,7 +50,7 @@ jobs:
       - name: Push changes
         run: git push origin
       - name: Close issue
-        run: gh issue delete ${{ github.event.issue.number }} --yes
+        run: gh issue close ${{ github.event.issue.number }}
         env:
           GH_TOKEN: ${{ github.token }}
   deploy:
