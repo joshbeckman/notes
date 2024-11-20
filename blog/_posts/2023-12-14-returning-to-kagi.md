@@ -10,6 +10,6 @@ tags:
 - search
 ---
 
-Started paying for the [Kagi](https://kagi.com) starter plan again.
+Started paying for the [Kagi](https://kagi.com) starter plan again. It's now half the price at $5/mo.
 
 I previously wrote about [considering Kagi here](/blog/considering-kagi), but I'm returning because the search results are just better\. And I want something like Kagi to succeed\.
