@@ -6,6 +6,7 @@ toc: true
 image: /assets/images/b40df2a3-ce7d-4273-ab07-f9307b74288e.png
 description: 
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113516542549278628
+bluesky_social_status_url: false
 tags: 
   - personal-blog
   - social-networks
