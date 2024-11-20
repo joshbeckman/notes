@@ -44,6 +44,7 @@ Post = Struct.new(
       file.puts "image: #{image}"
       file.puts "description: #{description}"
       file.puts 'mastodon_social_status_url: false'
+      file.puts 'bluesky_status_url: false'
       file.puts 'tags: '
       tags.each do |tag|
         file.puts "  - #{tag}"
