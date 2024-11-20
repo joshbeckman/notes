@@ -5,7 +5,7 @@ title: "I Love micro.blog - Here’s Why I Don’t Use It"
 toc: true
 image: /assets/images/b40df2a3-ce7d-4273-ab07-f9307b74288e.png
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113516542549278628
 tags: 
   - personal-blog
   - social-networks
