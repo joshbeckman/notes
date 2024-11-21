@@ -5,8 +5,8 @@ title: "Caribou at The Salt Shed"
 toc: true
 image: /assets/images/D73CD8969CF64F04B7602680754EA3C7.jpeg
 description: Another really fun Caribou show.
-mastodon_social_status_url: false
-bluesky_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113519372225151186
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lbgrduj2ik2m
 tags: 
   - music
 ---
