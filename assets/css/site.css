@@ -1227,6 +1227,7 @@ div.highlighter-rouge.language-go::before {
 #cusdis_thread iframe {
    min-height: 22rem;
 }
+.post-network details summary,
 .post-social details summary {
   border: 1px solid lightgrey;
   padding: 0.25em 0.5em;
