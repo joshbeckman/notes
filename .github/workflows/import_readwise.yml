@@ -1,0 +1,58 @@
+name: Deploy Jekyll site to Pages
+
+on:
+  # Runs on pushes targeting the default branch
+  # Runs every day at 4:30 and 16:30 UTC
+  schedule:
+    - cron: '30 4,16 * * *'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "posting"
+  cancel-in-progress: true
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3' # Not needed with a .ruby-version file
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          cache-version: 0 # Increment this number if you need to re-download cached gems
+      - name: Import Highlights
+        id: import
+        run: bundle exec utilities/import_action
+        env:
+          READWISE_TOKEN: ${{ secrets.READWISE_TOKEN }}
+      - name: Determine if changes were made
+        id: any_changes
+        run: echo "changed=$(git status --porcelain | wc -l)" >> $GITHUB_OUTPUT
+      - name: Commit changes
+        if: steps.any_changes.outputs.changed != 0
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "josh@joshbeckman.org"
+          git add notes
+          git commit -m "new(usr): Import Readwise highlights"
+      - name: Push changes
+        if: steps.any_changes.outputs.changed != 0
+        run: git push
+  deploy:
+    needs: build
+    if: needs.build.steps.any_changes.outputs.changed != 0
+    uses: joshbeckman/notes/.github/workflows/jekyll.yml@master
