@@ -10,6 +10,7 @@ emoji: '🔀'
 Loading...
 
 <script>
+// TODO: accept a tag as a parameter to filter the random note
 async function getSearchData(dataUrl) {
     let response = await fetch(dataUrl);
     let responseText = response.text();

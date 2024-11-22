@@ -1,8 +1,19 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 require 'jekyll'
 require 'json'
 require 'net/http'
+
+# TODO: post full contents if they fit 500chars (23char for a URL)
+#       ref: https://docs.joinmastodon.org/user/posting/
+# TODO: maybe thread text-only posts?
+#
+# TODO: link/facet to handles if present
+#
+# TODO: reply in thread if reply_to is present and is a mastodon URL
+#
+# TODO: Get reply/boost/fav counts and update post
 
 module POSSE
   class JekyllFilter
