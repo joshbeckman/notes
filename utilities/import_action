@@ -314,7 +314,7 @@ class Importer
   end
 
   def self.clean_posts
-    system 'rm notes/_posts/*.md'
+    system 'rm notes/_posts/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]-[0-9]*.md'
     system 'git checkout -- notes/_posts'
   end
 end
