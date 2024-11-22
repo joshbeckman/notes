@@ -22,7 +22,7 @@ module POSSE
 
     def initialize(opts = {})
       @site = Jekyll::Site.new(Jekyll.configuration(opts))
-      @context = Liquid::Context.new(@site.site_payload, {}, :site => @site)
+      @context = Liquid::Context.new(@site.site_payload, {}, site: @site)
     end
   end
 
@@ -35,7 +35,7 @@ module POSSE
       @site = Jekyll::Site.new(Jekyll.configuration({}))
       @site.read
       @jekyll_filter = JekyllFilter.new
-      @content_template = Liquid::Template.parse("{{ x | strip_html | strip | escape | truncate: 140}}")
+      @content_template = Liquid::Template.parse('{{ x | strip_html | strip | escape | truncate: 140}}')
       @token = ENV['MASTODON_SOCIAL_TOKEN']
     end
 
@@ -68,7 +68,7 @@ module POSSE
 
     def should_post?(post)
       posted_url = post.data['mastodon_social_status_url']
-      !posted_url.nil? && !(posted_url || '').match?(/https\S*\/\d+/)
+      !posted_url.nil? && !(posted_url || '').match?(%r{https\S*/\d+})
     end
 
     def post_status(status)

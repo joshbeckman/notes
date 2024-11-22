@@ -22,6 +22,10 @@ group :jekyll_plugins do
   # gem "jekyll-tidy"
 end
 
+group :development do
+  gem 'rubocop'
+end
+
 gem 'kramdown-math-katex'
 gem 'readwise', github: 'joshbeckman/readwise-ruby', branch: 'feature/readwise-api-v3'
 gem 'plist'
