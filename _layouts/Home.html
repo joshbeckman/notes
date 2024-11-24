@@ -3,10 +3,6 @@
 {%- include head.html -%}
 {% assign month = site.time | date: "%m" | plus: 0 %}
 {% assign build_time = site.time | date_to_xmlschema %}
-{% assign latest_blog_post = site.categories['blog'] | first %}
-{% assign photo_feature_post = site.categories['blog'] | find_exp: "item", "item.photo_feature" %}
-{% assign popular_feature_post = site.categories['blog'] | find_exp: "item", "item.popular" %}
-{% assign latest_note_post = site.categories['notes'] | first %}
 <body>
   <div class="row home">
     <div class="column accent">
@@ -17,42 +13,55 @@
     <div class="column">
       <article class="content">
         <section class="home">
-            <p>
-            I wrote up a bit <a href="/about">about me</a> if we haven't met and you're curious. This is my home online.
-            </p>
-            <p>
-            I hope you're having a lovely {{ site.data.seasons[month].name }}. {{ site.data.seasons[month].emoji }}
-            </p>
-            <p>
-            <a href="{{ photo_feature_post.url }}">
-                <img src="{{ photo_feature_post.photo_feature }}" alt="{{ photo_feature_post.title }}" class="no-lightbox"/>
-            </a>
-            </p>
-            <p>
-            I've been <a href="/blog">publishing</a> essays about the intersection of engineering, knowledge tools, management, and more. I hope you <a href="/blog">read through</a> and find something useful. You can also browse some <a href="/talks">presentations I've given</a> and listen to <a href="/podcasts">podcasts I operate</a>.
-            </p>
-            <p>
-            A recent popular post is:
-            </p>
-            {%- include PostListItem.html post=popular_feature_post -%}
-            <p>
-            My latest post is:
-            </p>
-            {%- include PostListItem.html post=latest_blog_post -%}
-            <p>
-            I also publish <a href="/notes">notes and highlights</a> that I find interesting. The most recent one I've found begins: <a href="{{ latest_note_post.url }}"><em>{{ latest_note_post.title }}</em></a>.
-            </p>
-            <p>
-            This site is also a tool. It's supposed to be useful for me and fun for you. I've built a <a href="/search">search</a> tool, a <a href="/random">random post</a> router, and an <a href="/insight">insight</a> generator to help us better understand things.
-            </p>
-            <p>
-            <a href="/subscribe">Subscribe</a> if you'd like to keep up or <a href="/contact">email me</a> with questions or <a href="/guestbook">sign the guestbook</a> if you just want to leave a mark!
-            </p>
-            <p>
-            This site has {{site.posts.size}} posts, touching on <a href="/tags">{{ site.tags.size }} topics</a>, and over <a href="/dates">13 years</a> of history.
-            You can <a href="/about-this-site">read about how it's built</a> if you're curious.
-            The site was last updated <time datetime="{{ build_time }}" class="time-relative">{{ build_time }}</time> to <code>{{site.version}}</code>.
-            </p>
+            <div id="toc-and-metadata">
+                <ul id="toc" class="section-nav">
+                    <li class="toc-entry toc-h2">
+                        <a href="about">About</a>
+                        <ul>
+                            <li class="toc-entry toc-h3"><a href="about-this-site">About This Site</a></li>
+                            <li class="toc-entry toc-h3"><a href="uses">Uses This</a></li>
+                        </ul>
+                    </li>
+                    <li class="toc-entry toc-h2"><a href="subscribe">Subscribe or Follow</a></li>
+                    <li class="toc-entry toc-h2">
+                        <a href="blog">Blog</a>
+                        <ul>
+                            <li class="toc-entry toc-h3"><a href="blog/attending">Concerts</a></li>
+                            <li class="toc-entry toc-h3"><a href="blog/reading">Books</a></li>
+                            <li class="toc-entry toc-h3"><a href="blog/watching">Movies</a></li>
+                            <li class="toc-entry toc-h3"><a href="blog/traveling">Travel</a></li>
+                            <li class="toc-entry toc-h3"><a href="blog/working">Desks</a></li>
+                            <li class="toc-entry toc-h3"><a href="blog/listening">Music</a></li>
+                            <li class="toc-entry toc-h3"><a href="blog/photos">Photos</a></li>
+                        </ul>
+                    </li>
+                    <li class="toc-entry toc-h2">
+                        <a href="notes">Notes</a>
+                    </li>
+                    <li class="toc-entry toc-h2"><a href="replies">Replies & Threads</a></li>
+                    <li class="toc-entry toc-h2"><a href="talks">Talks</a></li>
+                    <li class="toc-entry toc-h2"><a href="podcasts">Podcasts</a></li>
+                    <li class="toc-entry toc-h2"><a href="search">Search</a></li>
+                    <li class="toc-entry toc-h2"><a href="guestbook">Guestbook</a></li>
+                    <li class="toc-entry toc-h2"><a href="network">Network</a></li>
+                    <li class="toc-entry toc-h2"><a href="insight">Insight</a></li>
+                    <li class="toc-entry toc-h2">
+                        <a href="tags">Index</a>
+                        <ul>
+                            <li class="toc-entry toc-h3"><a href="dates">By Date</a></li>
+                            <li class="toc-entry toc-h3"><a href="sources">By Source</a></li>
+                            <li class="toc-entry toc-h3"><a href="random">Random</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>
+                Season: {{ site.data.seasons[month].emoji }} {{ site.data.seasons[month].name }}
+                <br>
+                Updated: <time datetime="{{ build_time }}" class="time-relative">{{ build_time }}</time>
+                <br>
+                Version: <code>{{site.version}}</code>
+                </p>
+            </div>
             <div class="color-bars">
                 <span class="color-bar" style="background-color: #EBEDEA;"></span>
                 <span class="color-bar" style="background-color: #bd2024;"></span>

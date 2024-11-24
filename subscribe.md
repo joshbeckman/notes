@@ -1,6 +1,6 @@
 ---
 layout: Page
-title: Subscribe
+title: Subscribe or Follow
 tags: index
 toc: true
 searchable: true
