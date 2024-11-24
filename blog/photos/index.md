@@ -6,7 +6,7 @@ categories:
 - blog
 ---
 
-This is still a work-in-progress.
+This is still a work-in-progress - for now, I'd just go browse photos on [the main blog index](/blog).
 
 Check back in the future.
 

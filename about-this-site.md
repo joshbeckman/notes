@@ -5,7 +5,7 @@ searchable: true
 tags:
 - index
 - personal-blog
-redirect_from: 
+redirect_from:
   - /colophon
 ---
 
@@ -42,6 +42,11 @@ Serverless scripts (e.g. for [generating insights](/insight)) are hosted/run by 
 You can read about everything else I use to build things at [/uses](/uses).
 
 ## Changelog
+
+Site version: {{site.version}}
+
+{% assign build_time = site.time | date_to_xmlschema %}
+Build time: <time datetime="{{ build_time }}">{{ build_time }}</time>
 
 ### Unreleased
 - better h-card markup for posts
