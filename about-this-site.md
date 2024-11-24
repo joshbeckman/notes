@@ -55,8 +55,10 @@ You can read about everything else I use to build things at [/uses](/uses).
 
 ### Unreleased
 - POSSE notes to Mastodon and Bluesky
+- Add link facets to Bluesky syndication
 - replies page
 - photos page
+- import posts from Mastodon and Bluesky as notes/replies
 - insights inline on the post page itself
 - backlinks powered by the same data that provides the network linkages
 - `ReplyTo` should be extractable content and used to link

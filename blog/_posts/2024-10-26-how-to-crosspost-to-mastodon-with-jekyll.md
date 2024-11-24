@@ -24,7 +24,7 @@ The workflow is pretty simple:
 1. Execute the `utilities/posse_mastodon` script
 2. If there are any code/content changes, commit them and push them up to the repository.
 
-The script, written in Ruby, looks through my posts to see any that have been marked for syndication to Mastodon via Jekyll post frontmatter of `mastodon_social_status_url: true`. For each of those posts, it constructs a message (with a link to the canonical post and a brief excerpt) and calls the Mastodon API to create a status update with that message. Then the script updates the post frontmatter with a link to the resulting status/message on Mastodon.
+The script, written in Ruby, looks through my posts to see any that have been marked for syndication to Mastodon via Jekyll post frontmatter of `mastodon_social_status_url: nil`. For each of those posts, it constructs a message (with a link to the canonical post and a brief excerpt) and calls the Mastodon API to create a status update with that message. Then the script updates the post frontmatter with a link to the resulting status/message on Mastodon.
 
 This way, the site can show a link to the Mastodon post and it's all automated! About 5 hours after I post this, there will be a link at the bottom of the page (if you expand the `Comments` section) to the Mastodon link for this post.
 
