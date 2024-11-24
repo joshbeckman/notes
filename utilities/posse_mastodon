@@ -58,7 +58,7 @@ module POSSE
       post_path = post.path
       post_content = File.read(post_path)
       new_post_content = post_content.gsub(
-        /mastodon_social_status_url: .*/,
+        /^mastodon_social_status_url: .*/,
         "mastodon_social_status_url: #{mastodon_social_status_url}"
       )
       File.write(post_path, new_post_content)
