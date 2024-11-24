@@ -1,4 +1,4 @@
-name: Deploy Jekyll site to Pages
+name: Import Readwise Highlights
 
 on:
   # Runs on pushes targeting the default branch
@@ -12,6 +12,7 @@ on:
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
+  pages: write
   id-token: write
 
 # Allow one concurrent deployment
