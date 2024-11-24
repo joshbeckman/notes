@@ -54,12 +54,21 @@ You can read about everything else I use to build things at [/uses](/uses).
 ## Changelog
 
 ### Unreleased
-- better h-card markup for posts
-- `/projects` page
-- `/now` page ([ref](https://nownownow.com/about#who))
-- Random image on homepage
-- podcast rendering
+- replies page
+- photos page
+- insights inline on the post page itself
+- backlinks powered by the same data that provides the network linkages
+- `ReplyTo` should be extractable content and used to link
 * move content markup into liquid filters instead of liquid logic
+- `/projects` page
+- podcast rendering
+- Figure out someway to connect book summary posts and article summary post to highlights and override the default source page
+- Create mastodon or Bluesky bots to have LLMs interact with my posts
+- Refactor insights logic to operate via LLM tools instead of plain RAG
+- [More ideas](https://github.com/joshbeckman/notes/issues?q=is%3Aopen+is%3Aissue+-label%3Apost)
+
+### 2024-11-24
+- Redesign the homepage to be more like a directory
 
 ### 2024-09-07
 - Add conversation support to insight page
