@@ -5,8 +5,8 @@ title: "Cross-posting to Bluesky from Jekyll"
 toc: true
 image: /assets/images/f01fc394-41e8-4b0e-a599-88b0218c57de.png
 description: 
-mastodon_social_status_url: false
-bluesky_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113539189969260739
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lbpkxxku5c2b
 tags: 
   - code-snippets
   - personal-blog
