@@ -54,6 +54,7 @@ You can read about everything else I use to build things at [/uses](/uses).
 ## Changelog
 
 ### Unreleased
+- POSSE notes to Mastodon and Bluesky
 - replies page
 - photos page
 - insights inline on the post page itself
