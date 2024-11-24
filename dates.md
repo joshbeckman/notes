@@ -1,5 +1,5 @@
 ---
-layout: Post
+layout: Page
 title: Site Index By Date
 permalink: /dates/
 tags: index

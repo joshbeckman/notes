@@ -1,5 +1,5 @@
 ---
-layout: Post
+layout: Page
 title: Site Index By Source
 permalink: /sources/
 tags: index
