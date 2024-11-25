@@ -24,7 +24,7 @@ Well, we're gonna have to break this down a bit.
 - Macbook Pro (2023, work)
 - paper and pencil
 - Apple studio monitor (and built-in camera)
-- ~Elgato Air lights~ Workbench lights
+- Workbench lights
 - Focusrite Scarlet Solo
 - Samson Q2U microphone
 - Teenage Engineering M-1 headphones
