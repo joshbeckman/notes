@@ -19,11 +19,12 @@ Well, we're gonna have to break this down a bit.
 ### Hardware
 - Jarvis standing desk ([previously](/blog/working))
 - Keychron K3 Pro keyboard ([customized](https://www.joshbeckman.org/blog/shopify-keychron-k3-pro))
+- ErgoDriven mouse
 - Macbook Air (2022, personal)
 - Macbook Pro (2023, work)
 - paper and pencil
 - Apple studio monitor (and built-in camera)
-- Elgato Air lights
+- ~Elgato Air lights~ Workbench lights
 - Focusrite Scarlet Solo
 - Samson Q2U microphone
 - Teenage Engineering M-1 headphones
@@ -33,14 +34,13 @@ Well, we're gonna have to break this down a bit.
 ### Software
 - MacOS
 - [Neo]Vim as an editor
-- iTerm as a terminal
-- tmux
+- Wezterm as a terminal
 - Git for version control
 - Day One for personal journaling/logbook
 - GitHub issues for work journaling/logbook
 - Jekyll and GitHub pages
 - Fastmail for personal email
-- Fantastical for personal calendar
+- Apple Calendar for personal calendar
 - Google for work email/calendar
 - Raycast for quicklinks and launching and text snippets
 - Keyboard Maestro for macros and keybindings
@@ -54,6 +54,7 @@ Well, we're gonna have to break this down a bit.
 - Parabo Press for printing
 
 ### Software
+- Adobe Lightroom
 - Apple Photos
 - Apple iMovie
 
@@ -63,13 +64,10 @@ Well, we're gonna have to break this down a bit.
 - Teenage Engineering OP-Z
 - Teenage Engineering K.O. II
 - Teenage Engineering P.O Modular 400
-- Teenage Engineering P.O 133
 - Arturia Keystep
 - Zoom H4N
-- Hercules DJI Starlight
 
 ### Software
-- Serato DJ Lite
 - Forecast
 - Apple Music for listening
 
