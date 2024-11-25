@@ -39,7 +39,7 @@ jobs:
           echo "Committer: $(git log -1 --pretty=%cn)"
           echo "List of changed files:"
           git diff-tree --no-commit-id --name-only -r HEAD
-          git describe --long
+          git describe --tags --long
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
