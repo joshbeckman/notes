@@ -7,8 +7,8 @@ rating: 4
 imdb_id: tt0097814
 image: https://m.media-amazon.com/images/M/MV5BOTFhYWI1NGUtZWFhZS00MTdkLWIzZTItMDBhNWNiZDNlMjYyXkEyXkFqcGc@._V1_SX300.jpg
 description: 
-mastodon_social_status_url: false
-bluesky_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113542022287290280
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lbqt7xkf2s2n
 tags: 
   - movies
 ---
