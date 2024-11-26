@@ -54,15 +54,15 @@ You can read about everything else I use to build things at [/uses](/uses).
 ## Changelog
 
 ### Unreleased
+- move content markup into liquid filters instead of liquid logic
 - POSSE notes to Mastodon and Bluesky
 - Add link facets to Bluesky syndication
+- import posts from Mastodon and Bluesky as notes/replies
 - replies page
 - photos page
-- import posts from Mastodon and Bluesky as notes/replies
 - insights inline on the post page itself
 - backlinks powered by the same data that provides the network linkages
 - `ReplyTo` should be extractable content and used to link
-* move content markup into liquid filters instead of liquid logic
 - `/projects` page
 - podcast rendering
 - Figure out someway to connect book summary posts and article summary post to highlights and override the default source page
