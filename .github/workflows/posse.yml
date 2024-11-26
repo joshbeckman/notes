@@ -44,10 +44,10 @@ jobs:
         env:
           BLUESKY_PASSWORD: ${{ secrets.BLUESKY_PASSWORD }}
       - name: Determine if changes were made
-        id: any_changes
+        id: any_changes_posse
         run: echo "changed=$(git status --porcelain | wc -l)" >> $GITHUB_OUTPUT
       - name: Commit changes
-        if: steps.any_changes.outputs.changed != 0
+        if: steps.any_changes_posse.outputs.changed != 0
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "josh@joshbeckman.org"
@@ -55,7 +55,25 @@ jobs:
           git add notes
           git commit -m "new(usr): POSSE"
       - name: Push changes
-        if: steps.any_changes.outputs.changed != 0
+        if: steps.any_changes_posse.outputs.changed != 0
+        run: git push
+      - name: Import Highlights
+        id: import
+        run: bundle exec utilities/import_action
+        env:
+          READWISE_TOKEN: ${{ secrets.READWISE_TOKEN }}
+      - name: Determine if changes were made
+        id: any_changes_readwise
+        run: echo "changed=$(git status --porcelain | wc -l)" >> $GITHUB_OUTPUT
+      - name: Commit changes
+        if: steps.any_changes_readwise.outputs.changed != 0
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "josh@joshbeckman.org"
+          git add notes
+          git commit -m "new(usr): Import Readwise highlights"
+      - name: Push changes
+        if: steps.any_changes_readwise.outputs.changed != 0
         run: git push
   deploy:
     needs: build
