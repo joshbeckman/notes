@@ -229,7 +229,7 @@ window.addEventListener('load', function () {
         var dialog = document.getElementById('hotkeyDialog');
         dialog.showModal();
     }
-    hotkeys('o,e,i,r,s,/,shift+/', function (event, handler){
+    hotkeys('o,e,i,r,s,/,shift+/,cmd+k', function (event, handler){
       switch (handler.key) {
         case 'o': source();
           break;
@@ -244,6 +244,8 @@ window.addEventListener('load', function () {
         case '/': search();
           break;
         case 'shift+/': displayDialog();
+          break;
+        case 'cmd+k': displayDialog();
           break;
         default: console.log(event);
       }

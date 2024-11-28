@@ -5,6 +5,7 @@ module RawContent
     def generate(site)
       site.posts.docs.each do |post|
         post.data['raw_content'] = post.content
+        # TODO: extract any backlinks from the post content and add them to the post data
       end
     end
   end
