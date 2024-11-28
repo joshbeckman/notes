@@ -620,6 +620,17 @@ article .footer ul li {
   display: inline-block;
   margin: 0 0.75em 1em 0;
 }
+:modal {
+  border: 2px solid lightgrey;
+  border-radius: 5px;
+}
+#hotkeyDialog button {
+  margin: auto;
+  display: block;
+}
+#hotkeyDialog table {
+  margin: 1em auto;
+}
 
 /* Header */
 .header nav ul {

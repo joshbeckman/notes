@@ -9,50 +9,54 @@
 </div>
 <div id="proverb-footer">
 </div>
+<dialog id="hotkeyDialog">
+    <h2>Keyboard Shortcuts</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tr>
+            <td><kbd>o</kbd></td>
+            <td>Source</td>
+        </tr>
+        <tr>
+            <td><kbd>e</kbd></td>
+            <td>Edit</td>
+        </tr>
+        <tr>
+            <td><kbd>i</kbd></td>
+            <td>Insight</td>
+        </tr>
+        <tr>
+            <td><kbd>r</kbd></td>
+            <td>Random</td>
+        </tr>
+        <tr>
+            <td><kbd>s</kbd> or <kbd>/</kbd></td>
+            <td>Search</td>
+        </tr>
+    </table>
+  <form method="dialog">
+    <button>Close</button>
+  </form>
+</dialog>
 <span class="print-only">{{site.url | domainify}}{{ page.url }}</span>
 <script async src="/assets/js/lazyload.min.js"></script>
 <script async src="/assets/js/photoswipe.umd.min.js"></script>
 <script async src="/assets/js/photoswipe-lightbox.umd.min.js"></script>
+<script async src="/assets/js/vendor/hotkeys.min.js"></script>
+<script data-goatcounter="https://joshbeckman.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 <script>
-function searchInitListener() {
+(function searchInitListener() {
   let searchInput = document.getElementById("search-input");
   if (window.location.pathname == "/search/") {
     searchInput.focus();
   }
-  // debounce this listener
-  (function () {
-    let debounce = false;
-    document.addEventListener("keyup", function (e) {
-      if (debounce) {
-        return;
-      }
-      debounce = true;
-      setTimeout(function () {
-        debounce = false;
-      }, 200);
-      var evt = window.event || e;
-      let key = evt.keyCode || evt.which;
-      if (e.ctrlKey && key == 83) { // ctrl+s for search
-        if (searchInput) {
-          searchInput.focus();
-        } else {
-            window.location.href = "/search";
-        }
-      } else if (e.ctrlKey && key == 82) { // ctrl+r for random
-        window.location.href = "/random";
-      } else if (e.ctrlKey && key == 73) { // ctrl+i for insight
-          var path = window.location.pathname;
-        window.location.href = "/insight?post=" + encodeURIComponent(path);
-      } else if (e.ctrlKey && key == 69) { // ctrl+e for edit
-          var link = document.getElementById("edit-link");
-          if (link) {
-              link.click();
-          }
-      }
-    });
-  })();
-}
-searchInitListener();
+})();
 
 (function hideDuplicateImages() {
     let headerImages = document.querySelectorAll('header img');
@@ -193,6 +197,56 @@ function timeAgo(date) {
     window.sessionStorage.setItem('sessionPath', currentUrl);
   }
 })();
+window.addEventListener('load', function () {
+    function search() {
+      let searchInput = document.getElementById("search-input");
+        if (searchInput) {
+          searchInput.focus();
+        } else {
+            window.location.href = "/search";
+        }
+    }
+    function edit() {
+          var link = document.getElementById("edit-link");
+          if (link) {
+              link.click();
+          }
+    }
+    function random() {
+        window.location.href = "/random";
+    }
+    function insight() {
+        var path = window.location.pathname;
+        window.location.href = "/insight?post=" + encodeURIComponent(path);
+    }
+    function source() {
+        var link = document.querySelector('a.quoteback.arrow');
+        if (link) {
+            link.click();
+        }
+    }
+    function displayDialog() {
+        var dialog = document.getElementById('hotkeyDialog');
+        dialog.showModal();
+    }
+    hotkeys('o,e,i,r,s,/,shift+/', function (event, handler){
+      switch (handler.key) {
+        case 'o': source();
+          break;
+        case 'e': edit();
+          break;
+        case 'i': insight();
+          break;
+        case 'r': random();
+          break;
+        case 's': search();
+          break;
+        case '/': search();
+          break;
+        case 'shift+/': displayDialog();
+          break;
+        default: console.log(event);
+      }
+    });
+});
 </script>
-<script data-goatcounter="https://joshbeckman.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
