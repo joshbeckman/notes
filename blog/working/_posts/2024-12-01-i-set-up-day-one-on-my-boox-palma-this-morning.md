@@ -5,8 +5,8 @@ title: "I set up Day One on my Boox Palma this morning"
 toc: true
 image: /assets/images/0335CC879B6645B0891389EEEC844884.jpeg
 description: 
-mastodon_social_status_url: false
-bluesky_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113578765640822511
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lcb5ev6c4u2b
 tags: 
   - tools
   - writing
