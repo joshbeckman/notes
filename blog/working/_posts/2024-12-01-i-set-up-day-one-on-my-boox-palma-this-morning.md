@@ -9,7 +9,7 @@ mastodon_social_status_url: false
 bluesky_status_url: false
 tags: 
   - tools
-  - desks
+  - writing
 ---
 
 And also connected my mechanical keyboard to the device via bluetooth\. I'm thinking this might be a fun way to journal and draft things away from other distractions and maybe outside in the sun\.
