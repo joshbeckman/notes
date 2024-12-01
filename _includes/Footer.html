@@ -210,6 +210,8 @@ window.addEventListener('load', function () {
           var link = document.getElementById("edit-link");
           if (link) {
               link.click();
+          } else {
+            alert("No edit link found.");
           }
     }
     function random() {
@@ -220,9 +222,11 @@ window.addEventListener('load', function () {
         window.location.href = "/insight?post=" + encodeURIComponent(path);
     }
     function source() {
-        var link = document.querySelector('a.quoteback.arrow');
+        var link = document.querySelector('a.quoteback-arrow');
         if (link) {
             link.click();
+        } else {
+          alert("No source link found.");
         }
     }
     function displayDialog() {
