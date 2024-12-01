@@ -222,7 +222,7 @@ window.addEventListener('load', function () {
         window.location.href = "/insight?post=" + encodeURIComponent(path);
     }
     function source() {
-        var link = document.querySelector('a.quoteback-arrow');
+        var link = document.querySelector('a.quoteback-arrow') || document.querySelector('a.imdb-link') || document.querySelector('a.letterboxd-link') || document.querySelector('a.amazon-link');
         if (link) {
             link.click();
         } else {

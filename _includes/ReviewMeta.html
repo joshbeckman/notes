@@ -6,15 +6,15 @@
     <cite class="source">
       <p>
         {%- if page.imdb_id -%}
-          <a href="https://www.imdb.com/title/{{page.imdb_id}}/" target="_blank">
+          <a href="https://www.imdb.com/title/{{page.imdb_id}}/" target="_blank" class="imdb-link">
             View on IMDB
           </a>
           or
-          <a href="https://letterboxd.com/imdb/{{page.imdb_id}}/" target="_blank">
+          <a href="https://letterboxd.com/imdb/{{page.imdb_id}}/" target="_blank" class="letterboxd-link">
             View on Letterboxd
           </a>
         {%- elsif page.book_asin -%}
-          <a href="https://www.amazon.com/foo/dp/{{page.book_asin}}/" target="_blank">
+        <a href="https://www.amazon.com/foo/dp/{{page.book_asin}}/" target="_blank" class="amazon-link">
             View on Amazon
           </a>
         {%- endif -%}
