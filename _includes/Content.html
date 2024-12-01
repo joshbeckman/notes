@@ -8,12 +8,7 @@
             {%- assign internal_link = itemparts[0] -%}
             {%- assign external_link = itemparts[0] | split:external_link_delimiter -%}
             {%- assign sidenote = itemparts[0] | split:sidenote_delimiter -%}
-        
             {%- if external_link[1] == nil -%}
-                {%- assign result_posts = site.posts | where: 'title',itemparts[0] -%}
-                {%- assign result_pages = site.pages | where: 'title',itemparts[0] -%}
-                {%- assign internal_links = internal_links | append: link_joiner_delimiter | append: internal_link -%}
-                {%- assign internal_urls = internal_urls | append: link_joiner_delimiter | append: result_posts[0].url | append: result_pages[0].url -%}
             {%- else -%}
                 {%- assign external_links = external_links | append: link_joiner_delimiter | append: external_link[0] -%}
                 {%- assign external_urls = external_urls | append: link_joiner_delimiter | append: external_link[1] -%}
@@ -21,28 +16,10 @@
         {%- endif -%}
     {%- endfor -%}
 
-    {%- assign internal_url_array = internal_urls | split:link_joiner_delimiter -%}
-    {%- assign internal_link_array = internal_links | split:link_joiner_delimiter -%}
-
     {%- assign external_url_array = external_urls | split:link_joiner_delimiter -%}
     {%- assign external_link_array = external_links | split:link_joiner_delimiter -%}
 
-
     {%- assign replaced_content = content -%}
-    {%- for title in internal_link_array -%}
-        {%- assign url = internal_url_array[forloop.index0] -%}
-        {%- if url == nil -%}
-            {%- assign link_text = '<a class="stale-link" href="' | append: 'javascript:void(0)' | append: '">' | append: title | append: '</a>' -%}
-        {%- elsif url == empty -%}
-            {%- assign link_text = '<a class="stale-link" href="' | append: 'javascript:void(0)' | append: '">' | append: title | append: '</a>' -%}
-        {%- else -%}
-                {%- assign post = site.posts | where: 'title',title -%}
-                {%- assign excerpt = post[0].content | markdownify | strip_html | truncate: 200 | newline_to_br -%}
-        {%- endif -%}
-        {%- assign bracket_link = '[[' | append: title | append: ']]' -%}
-        {%- assign replaced_content = replaced_content | replace: bracket_link,link_text -%}
-    {%- endfor -%}
-
     {%- for title in external_link_array -%}
         {%- assign url = external_url_array[forloop.index0] -%}
         {%- if url == "highlight" -%}
@@ -79,22 +56,9 @@
               {%- endfor -%}
           {%- endfor -%}
           {%- if page.book -%}
-              {%- assign sameTagCount = 0 -%}
-              {%- assign minCommonTags = 1 -%}
-              {%- for post in site.posts -%}
-                    {%- if post.url != page.url -%}
-                      {%- if page.book and page.book == post.book -%}
-                        {%- unless post.content contains page.title -%}
-                          {%- assign sameTagCount = sameTagCount | plus: 1 -%}
-                        {%- endunless -%}
-                      {%- endif -%}
-                    {%- endif -%}
-              {%- endfor -%}
-              {%- if sameTagCount >= minCommonTags-%}
               <li class="filed source">
                   <a href="/sources/#{{ page.book }}" class="">{{ page.book_title }}</a>
               </li>
-              {%- endif -%}
           {%- endif -%}
           {%- if page.date -%}
           <li class="filed date">

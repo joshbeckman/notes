@@ -4,50 +4,49 @@
   src="/assets/js/vendor/vis-network.min.js"
 ></script>
 <script type="text/javascript">
-function prepareNetwork() {
-  var nodeData = [
+async function getVisData() {
+  let response = await fetch("/assets/js/VisData.json");
+  let responseText = response.text();
+  return responseText;
+}
 {% if include.post %}
-    { id: "{{ include.post.url }}", title: "{{ include.post.title | replace: '"', "'" }}", group: "posts", shape: "hexagon", color: "#FFCC00"},
-    {%- assign md_link_url = '' | append: include.post.url -%}
-    {% if include.post.book != nil %}
-      { id: "/sources/#{{ include.post.book }}", title: "{{ include.post.book_title | replace: '"', "'" }}", group: "tags", shape: "dot"},
-    {% endif %}
-    {% for post in site.posts %}
-      {% if include.post.book != nil %}
-        {% if post.book == include.post.book %}{ id: "{{ post.url }}", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "square"},{% endif %}
-      {% endif %}
-      {% if post.content contains md_link_url %}{ id: "{{ post.url }}", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "square"},{% endif %}
-      {%- assign item_md_link_url = '' | append: post.url -%}
-      {% if include.post.content contains item_md_link_url %}{ id: "{{ post.url }}", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "square"},{% endif %}
-    {% endfor %}
-    {% for tag in include.post.tags %}
-    { id: "/tags/#{{ tag }}", title: "{{ tag | capitalize }}", group: "tags", shape: "dot"},
-      {% for post in site.posts %}
-        {% if post.tags contains tag %}{ id: "{{ post.url }}", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "square"},{% endif %}
-      {% endfor %}
-    {% endfor %}
+  var networkContainer = document.getElementById("postnetwork");
 {% else %}
-    {% for post in site.posts %}{ id: "{{ post.url }}", title: "{{ post.title | replace: '"', "'" }}", group: "posts", shape: "square"},{% endfor %}
-    {% for tag in site.tags %}{ id: "/tags/#{{ tag.first }}", title: "{{ tag.first }}", group: "tags", shape: "dot"},{% endfor %}
+  var networkContainer = document.getElementById("mynetwork");
 {% endif %}
-  ];
-  // make sure the items in nodeData are unique
-  nodeData = nodeData.filter((v,i,a)=>a.findIndex(t=>(t.id === v.id))===i);
-  var edgeData = [
-{% if include.post %}
-  {%- assign md_link_url = '' | append: include.post.url -%}
-  {% for tag in include.post.tags %}
-    { from: "{{ include.post.url }}", to: "/tags/#{{ tag }}" },
-    {% for sitetag in site.tags %}{% if sitetag.first == tag %}{% for tagpost in sitetag.last %}{ from: "/tags/#{{ tag }}", to: "{{ tagpost.url }}" },{% endfor %}{% endif %}{% endfor %}
-  {% endfor %}
-  {% for post in site.posts %}{% if include.post.book != nil %}{% if post.book == include.post.book %}{ from: "/sources/#{{ post.book }}", to: "{{ post.url }}" },{% endif %}{% endif %}
-    {% if post.content contains md_link_url %}{ from: "{{ post.url }}", to: "{{ include.post.url }}" },{% endif %}
-    {%- assign item_md_link_url = '' | append: post.url -%}
-    {% if include.post.content contains item_md_link_url %}{ from: "{{ include.post.url }}", to: "{{ post.url }}" },{% endif %}{% endfor %}
-{% else %}
-  {% for post in site.posts %}{% for tag in post.tags %}{ from: "{{ post.url }}", to: "/tags/#{{ tag }}" },{% endfor %}{% endfor %}
-{% endif %}
-  ];
+function prepareNetwork(nodeData, edgeData) {
+  var postId = null;
+  {% if include.post %}
+    postId = "{{ include.post.url }}";
+    var firstDegree = edgeData.filter(function (edge) {
+      return edge.from === postId || edge.to === postId;
+    });
+    // filter edgeData to only include items that have a 'from' or 'to' that matches a 'from' or 'to' in firstDegree
+    edgeData = edgeData.filter(function (edge) {
+      for (var i = 0; i < firstDegree.length; i++) {
+        if (firstDegree[i].from === edge.from || firstDegree[i].to === edge.to) {
+          return true;
+        }
+      }
+      return false;
+    });
+    // filter nodeData to only include items that have and id that matches an item's from or to in edgeData
+    nodeData = nodeData.filter(function (node) {
+      for (var i = 0; i < edgeData.length; i++) {
+        if (edgeData[i].from === node.id || edgeData[i].to === node.id) {
+          return true;
+        }
+      }
+      return false;
+    });
+    // set the `color` to "#FFCC00" on the item in nodeData that has an id matching postId
+    nodeData = nodeData.map(function (node) {
+      if (node.id === postId) {
+        node.color = "#FFCC00";
+      }
+      return node;
+    });
+  {% endif %}
 // iterate through the items in nodeData and set their `value` to the count of edges touching them
 nodeData = nodeData.map(function (node) {
   var count = 0;
@@ -76,11 +75,6 @@ nodeData = nodeData.filter(function (node) {
   }
   var nodes = new vis.DataSet(nodeData);
   var edges = new vis.DataSet(edgeData);
-{% if include.post %}
-  var container = document.getElementById("postnetwork");
-{% else %}
-  var container = document.getElementById("mynetwork");
-{% endif %}
   var data = {
     nodes: nodes,
     edges: edges,
@@ -109,12 +103,35 @@ nodeData = nodeData.filter(function (node) {
         },
       },
   };
-  var network = new vis.Network(container, data, options);
+  var network = new vis.Network(networkContainer, data, options);
   network.on("doubleClick", function (params) {
     if (params.nodes.length > 0) {
       window.location.href = params.nodes[0];
     }
   });
 }
-window.addEventListener('load', prepareNetwork);
+window.addEventListener('load', function() {
+  var building = false;
+  function buildVisData() {
+    if (building) {
+      return;
+    }
+    building = true;
+    getVisData().then(function(data) {
+      data = JSON.parse(data);
+      prepareNetwork(data.nodes, data.edges);
+    });
+  }
+  // only call buildVisData if the networkContainer is visible in the viewport
+  if (networkContainer.getBoundingClientRect().top < window.innerHeight) {
+    buildVisData();
+  } else {
+    window.addEventListener('scroll', function() {
+      if (networkContainer.getBoundingClientRect().top < window.innerHeight) {
+        buildVisData();
+        window.removeEventListener('scroll', this);
+      }
+    });
+  }
+});
 </script>

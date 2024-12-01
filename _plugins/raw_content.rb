@@ -5,7 +5,19 @@ module RawContent
     def generate(site)
       site.posts.docs.each do |post|
         post.data['raw_content'] = post.content
-        # TODO: extract any backlinks from the post content and add them to the post data
+        post_backlinks = site.posts.docs.map do |other_post|
+          next unless other_post.content.include?(post.url)
+
+          other_post
+        end.compact
+        page_backlinks = site.pages.map do |page|
+          next unless page.content.include?(post.url)
+          next if page.url.include?('assets')
+          next if page.url.include?('.json')
+
+          page
+        end.compact
+        post.data['backlinks'] = (post_backlinks + page_backlinks).compact
       end
     end
   end
