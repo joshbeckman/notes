@@ -371,8 +371,36 @@ template {
     font-display: swap;
     src: local("IBM Plex Sans Bold"), local("IBMPlexSans-Bold"), url("../IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-Bold.woff2") format("woff2"), url("../IBM-Plex-Sans/fonts/complete/woff/IBMPlexSans-Bold.woff") format("woff");
 }
+@font-face {
+    font-family: "Berkeley Mono";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local("Berkeley Mono"), local("BerkeleyMono"), url("../font/berkeley-mono/BerkeleyMono-Regular.woff2") format("woff2"), url("../font/berkeley-mono/BerkeleyMono-Regular.woff") format("woff");
+}
+@font-face {
+    font-family: "Berkeley Mono";
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: local("Berkeley Mono Italic"), local("BerkeleyMono-Italic"), url("../font/berkeley-mono/BerkeleyMono-Italic.woff2") format("woff2"), url("../font/berkeley-mono/BerkeleyMono-Italic.woff") format("woff");
+}
+@font-face {
+    font-family: "Berkeley Mono";
+    font-style: bold;
+    font-weight: 700;
+    font-display: swap;
+    src: local("Berkeley Mono Bold"), local("BerkeleyMono-Bold"), url("../font/berkeley-mono/BerkeleyMono-Bold.woff2") format("woff2"), url("../font/berkeley-mono/BerkeleyMono-Bold.woff") format("woff");
+}
+@font-face {
+    font-family: "Departure Mono";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local("Departure Mono"), local("DepartureMono"), url("../font/departure-mono/DepartureMono-Regular.woff2") format("woff2"), url("../font/departure-mono/DepartureMono-Regular.woff") format("woff");
+}
 body {
-    font-family: "IBM Plex Sans", sans-serif;
+    font-family: "Berkeley Mono", monospace;
     text-rendering: optimizeLegibility;
     font-feature-settings: 'liga' on, 'clig' on, 'zero';
     -webkit-font-smoothing: antialiased;
@@ -441,7 +469,7 @@ figure {
 p,
 li,
 blockquote {
-  line-height: 1.4;
+  line-height: 1.5;
 }
 p,
 li,
@@ -581,7 +609,7 @@ article blockquote {
 }
 article ol,
 article ul {
-  padding-inline-start: 0;
+  padding-inline-start: 2.5ch;
 }
 article ol li {
   margin-left: 2ch;
@@ -592,12 +620,12 @@ article ul li {
 article blockquote ol,
 article blockquote ul,
 article blockquote p {
-  margin-left: 1em;
-  width: calc(100% - 2em);
+  margin-left: 2ch;
+  width: calc(100% - 4ch);
 }
 article blockquote blockquote {
-  margin: 0 1em;
-  width: calc(100% - 2em);
+  margin: 0 2ch;
+  width: calc(100% - 4ch);
   box-shadow: none;
   border-radius: 0;
   border: none;
@@ -734,7 +762,7 @@ a.masthead-home-link {
 }
 #toc li {
   list-style: none;
-  border-left: 1px solid gray;
+  border-left: 1px solid;
   margin-left: 0;
 }
 #toc li::before {
@@ -742,7 +770,6 @@ a.masthead-home-link {
   display: inline-block;
   padding-right: 1ch;
   margin-left: -1px;
-  color: gray;
 }
 .header header {
   position: sticky;
@@ -840,9 +867,9 @@ cite .u-url, cite .non-url {
   display: flex;
   flex-shrink: 1;
   align-items: center;
-  width: 3em;
-  min-width: 3em !important;
-  padding: 0px 1em !important;
+  width: 6ch;
+  min-width: 6ch !important;
+  padding: 0px 1.5ch !important;
   border-left: 1px solid lightgrey;
 }
 .quoteback-footer .quoteback-backlink .quoteback-arrow {
@@ -870,15 +897,6 @@ article ul li.filed {
 li.filed:before {
   position: relative;
   content: "#";
-  color: #999;
-}
-li.filed.source {
-  white-space: nowrap;
-  max-width: 12em;
-  display: inline-block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  vertical-align: bottom;
 }
 li.filed.source:before {
   content: "≡";
@@ -898,14 +916,12 @@ li.filed.edit a {
 li.filed.edit:before {
   position: relative;
   content: "≠";
-  color: #999;
-  margin-right: 3px;
+  margin-right: 1ch;
 }
 ul.similar>li:before {
   position: relative;
   margin-left: -1.5ch;
   content: "∼";
-  color: #999;
 }
 ul.similar>li {
   list-style: none;
@@ -914,7 +930,6 @@ ul.asymp>li:before {
   position: relative;
   margin-left: -1.5ch;
   content: "≈";
-  color: #999;
 }
 ul.asymp>li {
   list-style: none;
@@ -1042,9 +1057,8 @@ li.search-results-list-item:last-child {
 .lds-ellipsis div {
   position: absolute;
   top: 33.33333px;
-  width: 13.33333px;
-  height: 13.33333px;
-  border-radius: 50%;
+  width: 1ch;
+  height: 2px;
   background: currentColor;
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
@@ -1087,41 +1101,6 @@ li.search-results-list-item:last-child {
   100% {
     transform: translate(24px, 0);
   }
-}
-
-/* Turn cross-document view-transitions on */
-/* Note that this at-rule is all that is needed to create the default cross-fade animation  */
-@view-transition {
-    navigation: auto;
-}
-/* Customize the default animation behavior */
-::view-transition-group(root) {
-    animation-duration: 0.5s;
-}
-/* Create a custom animation */
-@keyframes move-out {
-    from {
-        transform: translateX(0%);
-    }
-    to {
-        transform: translateX(-100%);
-    }
-}
-@keyframes move-in {
-    from {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(0%);
-    }
-}
-/* Apply the custom animation to the old and new page states */
-::view-transition-old(root) {
-    animation: 0.4s ease-in both move-out;
-
-}
-::view-transition-new(root) {
-    animation: 0.4s ease-in both move-in;
 }
 
 /* Syntax highlighting */
@@ -1278,7 +1257,8 @@ details summary:hover {
   }
 }
 @media (prefers-color-scheme: dark) {
-    body {
+    body,
+    dialog {
         background-color: #151515;
         color: #EBEDEA;
     }

@@ -5,6 +5,7 @@ permalink: /about/
 searchable: true
 image: /assets/images/FBFE9CF8-7D9A-4B63-9816-3A5D2F31B959.jpeg
 tags: index
+toc: true
 redirect_from: 
   - /hello
   - /now
@@ -16,7 +17,7 @@ I live in Chicago and [Chicago](/tags#chicago) is a great place to live.
 
 I'm an experienced startup operator with a history of scaling tech and teams. I'm a self-taught software developer, (and tech lead, and manager, yadda yadda) with a much wider-ranging career and education before that. I strive to bring curiosity, encouragement, and first-principles thinking to the work I'm doing.
 
-My email address is `josh@joshbeckman.org`. I strongly prefer email as a communication method, so email me if you have a comment about something I've written - or write a post on your own site. Or you can [follow/message me on open social networks](https://www.joshbeckman.org/subscribe).
+My email address is `josh@joshbeckman.org`. I strongly prefer email as a communication method, so email me if you have a comment about something I've written - or write a post on your own site. Or you can follow/message me on open social networks (see *Verification* below).
 
 > Want help with something? Here are [ways I'm able to help](/blog/ways-im-available-to-help).
 
@@ -28,30 +29,31 @@ In addition to writing and sharing tools on this site, I maintain many open-sour
 
 ## Verification
 
+### Active Accounts
+
 If you see an account that looks like it might be me but isn't listed here, please let me know.
 
-### Active Accounts
-- Mastodon: [@joshbeckman@mastodon.social](https://mastodon.social/@joshbeckman)
-- Bluesky: [@joshbeckman.org](https://bsky.app/profile/joshbeckman.org)
-- GitHub: [@joshbeckman](https://github.com/joshbeckman)
-- Apple Music: [@andjosh](https://music.apple.com/profile/andjosh)
-- YouTube: [@joshbeckmanchannel](https://www.youtube.com/@joshbeckmanchannel)
-- Email: `josh@josbeckman.org`
+| Mastodon | [@joshbeckman@mastodon.social](https://mastodon.social/@joshbeckman) |
+| Bluesky | [@joshbeckman.org](https://bsky.app/profile/joshbeckman.org) |
+| GitHub | [@joshbeckman](https://github.com/joshbeckman) |
+| Apple Music | [@andjosh](https://music.apple.com/profile/andjosh) |
+| YouTube | [@joshbeckmanchannel](https://www.youtube.com/@joshbeckmanchannel) |
+| Email | `josh@josbeckman.org` |
 
 ### Passive Accounts
 These are me, but I don't actively use them. If *you* happen to use these networks, feel free to interact with me and I'll see it eventually.
 
-- Letterboxd: [@joshbeckman](https://letterboxd.com/joshbeckman/)
-- LastFM: [@andjosh_](https://www.last.fm/user/andjosh_)
-- GitLab: [@joshbeckman](https://gitlab.com/joshbeckman)
-- LinkedIn: [@josh-beckman-0aa20b50](https://www.linkedin.com/in/josh-beckman-0aa20b50)
-- Spotify: [@andjosh](https://open.spotify.com/user/u7mkuzxzdh9igmc9ob8vbvvlr)
+| Letterboxd | [@joshbeckman](https://letterboxd.com/joshbeckman/) |
+| LastFM | [@andjosh_](https://www.last.fm/user/andjosh_) |
+| GitLab | [@joshbeckman](https://gitlab.com/joshbeckman) |
+| LinkedIn | [@josh-beckman-0aa20b50](https://www.linkedin.com/in/josh-beckman-0aa20b50) |
+| Spotify | [@andjosh](https://open.spotify.com/user/u7mkuzxzdh9igmc9ob8vbvvlr) |
 
 ### Inactive Accounts
 These were me, but I don't use them any more.
 
-- Micro.blog: [@joshbeckman](https://micro.blog/joshbeckman)
-- Twitter/X: [@josh_beckman](https://twitter.com/josh_beckman)
+| Micro.blog | [@joshbeckman](https://micro.blog/joshbeckman) |
+| Twitter/X | [@josh_beckman](https://twitter.com/josh_beckman) |
 
 ### Do Not Have
 If an account with my name is on these networks, it's not me.

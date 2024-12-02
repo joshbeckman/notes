@@ -37,6 +37,11 @@ These are books I've read in the past and made notes about.
 site.categories['reading'] | group_by_exp:"post", "post.date | date: '%Y'" %}
 {% for day in postsByMonth %}
   <table>
+    <colgroup>
+      <col />
+      <col style="width: 20ch" />
+      <col style="width: 12ch" />
+    </colgroup>
       <thead>
         <tr>
             <td colspan="3">

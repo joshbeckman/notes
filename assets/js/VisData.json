@@ -4,6 +4,7 @@ permalink: /assets/js/VisData.json
 {
     "nodes": [
     {% for post in site.posts %}{ "id": "{{ post.url }}", "title": "{{ post.title | replace: '"', "'" }}", "group": "posts", "shape": "square"},{% endfor %}
+    {% for post in site.pages %}{ "id": "{{ post.url }}", "title": "{{ post.title | replace: '"', "'" }}", "group": "posts", "shape": "square"},{% endfor %}
     {% assign postsBySource = site.posts | group_by_exp:"post", "post.book" %}{% for source in postsBySource %}{% if source.name %}{ "id": "/sources/#{{ source.items.first.book }}", "title": "{{ source.items.first.book_title | replace: '"', "'" }}", "group": "tags", "shape": "dot"},{% endif %}{% endfor %}
     {% for tag in site.tags %}{ "id": "/tags/#{{ tag.first }}", "title": "{{ tag.first }}", "group": "tags", "shape": "dot"}{% unless forloop.last %},{% endunless -%}{% endfor %}
     ],

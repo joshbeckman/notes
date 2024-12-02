@@ -16,6 +16,11 @@ These are movies I've been watching.
 site.categories['watching'] | group_by_exp:"post", "post.date | date: '%Y %B'" %}
 {% for day in postsByMonth %}
   <table>
+    <colgroup>
+      <col />
+      <col style="width: 20ch" />
+      <col style="width: 12ch" />
+    </colgroup>
       <thead>
         <tr>
             <td colspan="3">
