@@ -54,21 +54,25 @@ You can read about everything else I use to build things at [/uses](/uses).
 ## Changelog
 
 ### Unreleased
-- move content markup into liquid filters instead of liquid logic
-- POSSE notes to Mastodon and Bluesky
-- Add link facets to Bluesky syndication
-- import posts from Mastodon and Bluesky as notes/replies
-- replies page
-- photos page
-- insights inline on the post page itself
-- backlinks powered by the same data that provides the network linkages
-- `ReplyTo` should be extractable content and used to link
 - `/projects` page
 - podcast rendering
+- Add link facets to Bluesky syndication
+- import posts from Mastodon as notes
+- import posts from Bluesky as notes/replies
+- photos page
 - Figure out someway to connect book summary posts and article summary post to highlights and override the default source page
 - Create mastodon or Bluesky bots to have LLMs interact with my posts
 - Refactor insights logic to operate via LLM tools instead of plain RAG
 - [More ideas](https://github.com/joshbeckman/notes/issues?q=is%3Aopen+is%3Aissue+-label%3Apost)
+
+### 2024-12-01
+- Switch to monospace fonts
+- POSSE notes to Mastodon and Bluesky
+- import posts from Mastodon as replies
+- replies page
+- insights inline on the post page itself
+- backlinks powered by the same data that provides the network linkages
+- `ReplyTo` as extractable content and used to link
 
 ### 2024-11-24
 - Redesign the homepage to be more like a directory
