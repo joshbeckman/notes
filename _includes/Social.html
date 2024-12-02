@@ -5,23 +5,17 @@
  *
 {%- endcomment -%}
 
-<div class="post-social">
-  <p class="social-mastodon-bluesky">
-    Comment
+<div class="post-social print-hidden">
+  <h3 class="print-hidden">
+      Comment/Reply
+  </h3>
+  <ul class="social-mastodon-bluesky">
     {%- if page.mastodon_social_status_url -%}
-    &nbsp;<a href="{{page.mastodon_social_status_url}}" target="_blank">on Mastodon</a> or
+    <li><a href="{{page.mastodon_social_status_url}}" target="_blank">on Mastodon</a></li>
     {%- endif -%}
     {%- if page.bluesky_status_url -%}
-    &nbsp;<a href="{{page.bluesky_status_url}}" target="_blank">on Bluesky</a> or
+    <li><a href="{{page.bluesky_status_url}}" target="_blank">on Bluesky</a></li>
     {%- endif -%}
-    &nbsp;right here:
-  </p>
-  <div id="cusdis_thread"
-    data-theme="auto"
-    data-host="https://cusdis.com"
-    data-app-id="0bbb76b5-e971-4d9c-8fa7-a4c9e1ff0984"
-    data-page-id="{{ page.url }}"
-    data-page-url="{{ site.url }}{{ page.url }}"
-    data-page-title="{{ page.title }}"
-  ></div>
+    <li><a href="/about#active-accounts">via email</a></li>
+  </ul>
 </div>

@@ -49,8 +49,13 @@
 <script async src="/assets/js/photoswipe-lightbox.umd.min.js"></script>
 <script async src="/assets/js/hotkeys.min.js"></script>
 <script data-goatcounter="https://joshbeckman.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 <script>
+if (document.getElementById("cusdis_thread")) {
+  var script = document.createElement('script');
+  script.src = 'https://cusdis.com/js/cusdis.es.js';
+  script.async = true;
+  document.body.appendChild(script);
+}
 (function searchInitListener() {
   let searchInput = document.getElementById("search-input");
   if (window.location.pathname == "/search/") {

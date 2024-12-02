@@ -122,16 +122,25 @@ window.addEventListener('load', function() {
       prepareNetwork(data.nodes, data.edges);
     });
   }
-  // only call buildVisData if the networkContainer is visible in the viewport
-  if (networkContainer.getBoundingClientRect().top < window.innerHeight) {
-    buildVisData();
-  } else {
-    window.addEventListener('scroll', function() {
-      if (networkContainer.getBoundingClientRect().top < window.innerHeight) {
+  var details = document.querySelector('.post-network details');
+  if (details) {
+    details.addEventListener('toggle', function() {
+      if (details.open) {
         buildVisData();
-        window.removeEventListener('scroll', this);
       }
     });
+  } else {
+    // only call buildVisData if the networkContainer is visible in the viewport
+    if (networkContainer.getBoundingClientRect().top < window.innerHeight) {
+      buildVisData();
+    } else {
+      window.addEventListener('scroll', function() {
+        if (networkContainer.getBoundingClientRect().top < window.innerHeight) {
+          buildVisData();
+          window.removeEventListener('scroll', this);
+        }
+      });
+    }
   }
 });
 </script>
