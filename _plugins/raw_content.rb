@@ -19,7 +19,7 @@ module RawContent
         end.compact
         post.data['backlinks'] = (post_backlinks + page_backlinks).compact
       end
-      site.pages.docs.each do |page|
+      site.pages.each do |page|
         page.data['raw_content'] = page.content
         post_backlinks = site.posts.docs.map do |other_post|
           next unless other_post.content.include?(page.url)
