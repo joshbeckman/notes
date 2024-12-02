@@ -93,9 +93,9 @@
             let input = document.getElementById('conversation-input');
             let content = input.value;
             if (!content) { return; }
-            let message = document.createElement('div');
+            let message = document.createElement('blockquote');
             message.className = 'conversation-message';
-            message.innerHTML = '<strong>You:</strong> ' + content;
+            message.innerHTML = '<p><strong>You:</strong> ' + content + '</p>';
             document.getElementById('post-insight').appendChild(message);
             removeConversationForm();
             fetchConversationInsight(conversation.concat([{role: 'user', content: content}]));
