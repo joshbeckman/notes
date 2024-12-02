@@ -7,10 +7,14 @@ require 'uri'
 Post = Struct.new(
   :body,
   :category,
+  :canonical,
   :description,
   :image,
   :date,
   :imdb_id,
+  :in_reply_to,
+  :mastodon_social_status_url,
+  :bluesky_status_url,
   :rating,
   :slug,
   :tags,
@@ -39,15 +43,19 @@ Post = Struct.new(
       file.puts "date: #{date.strftime('%Y-%m-%d %H:%M:%S %z')}"
       file.puts "title: \"#{title}\""
       file.puts 'toc: true'
+      file.puts "canonical: #{canonical}" if canonical
       file.puts "rating: #{rating}" if rating
       file.puts "imdb_id: #{imdb_id}" if imdb_id
       file.puts "image: #{image}"
       file.puts "description: #{description}"
-      file.puts 'mastodon_social_status_url: false'
-      file.puts 'bluesky_status_url: false'
-      file.puts 'tags: '
-      tags.each do |tag|
-        file.puts "  - #{tag}"
+      file.puts "in_reply_to: #{in_reply_to}" if in_reply_to
+      file.puts "mastodon_social_status_url: #{mastodon_social_status_url}" if mastodon_social_status_url
+      file.puts "bluesky_status_url: #{bluesky_status_url}" if bluesky_status_url
+      if tags&.any?
+        file.puts 'tags:'
+        tags.each do |tag|
+          file.puts "  - #{tag}"
+        end
       end
       file.puts '---'
       file.puts ''

@@ -75,6 +75,22 @@ jobs:
       - name: Push changes
         if: steps.any_changes_readwise.outputs.changed != 0
         run: git push
+      - name: Import Mastodon
+        id: import
+        run: bundle exec utilities/pesos_mastodon
+      - name: Determine if changes were made
+        id: any_pesos
+        run: echo "changed=$(git status --porcelain | wc -l)" >> $GITHUB_OUTPUT
+      - name: Commit changes
+        if: steps.any_pesos.outputs.changed != 0
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "josh@joshbeckman.org"
+          git add replies
+          git commit -m "new(usr): PESOS"
+      - name: Push changes
+        if: steps.any_pesos.outputs.changed != 0
+        run: git push
   deploy:
     needs: build
     uses: joshbeckman/notes/.github/workflows/jekyll.yml@master

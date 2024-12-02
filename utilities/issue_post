@@ -75,6 +75,8 @@ class IssuePoster
     assets.map(&:download)
     post = Post.new(
       body: transform_content(raw_content, assets),
+      mastodon_social_status_url: 'false',
+      bluesky_status_url: 'false',
       category:,
       date:,
       image: assets.find(&:image?)&.public_path,

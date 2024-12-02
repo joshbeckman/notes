@@ -1,0 +1,91 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'jekyll'
+require 'json'
+require 'net/http'
+require 'time'
+require_relative 'models/post'
+
+module PESOS
+  class JekyllFilter
+    include Jekyll::Filters
+    attr_accessor :site, :context
+
+    def initialize(opts = {})
+      @site = Jekyll::Site.new(Jekyll.configuration(opts))
+      @context = Liquid::Context.new(@site.site_payload, {}, site: @site)
+    end
+  end
+
+  class Mastodon
+    class Error < StandardError; end
+
+    attr_reader :site
+
+    def initialize
+      @site = Jekyll::Site.new(Jekyll.configuration({}))
+      @site.read
+    end
+
+    def import_replies
+      replies = outbox.dig('orderedItems').filter do |item|
+        item.dig('object', 'inReplyTo')
+      end
+      replies.each { |reply| import(reply) }
+    end
+
+    def import(reply)
+      title = reply['object']['summary'] || "Reply to #{find_mention_handle(reply['object']['tag'])}"
+      slug = reply['object']['id'].split('/').last
+      image = find_image(reply['object']['attachment'])
+      post = Post.new(
+        body: reply['object']['content'],
+        category: 'replies',
+        date: Time.parse(reply['published']),
+        in_reply_to: reply['object']['inReplyTo'],
+        mastodon_social_status_url: reply['object']['id'],
+        canonical: reply['object']['id'],
+        image: image,
+        slug: slug,
+        title: title
+      )
+      post.create_file
+    end
+
+    def find_mention_handle(tags)
+      return 'Mastodon' if tags.nil?
+
+      mention = tags.find { |tag| tag['type'] == 'Mention' }
+      return 'Mastodon' if mention.nil?
+
+      mention['name']
+    end
+
+    def find_image(attachments)
+      return nil if attachments.nil?
+
+      image = attachments.find { |attachment| attachment['mediaType']&.include?('image') }
+      return nil if image.nil?
+
+      image['url']
+    end
+
+    def outbox
+      uri = URI.parse('https://mastodon.social/users/joshbeckman/outbox?page=true')
+      req = Net::HTTP::Get.new(uri)
+      req['Accept'] = 'application/activity+json'
+      req['Content-Type'] = 'application/json'
+      res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
+        http.request(req)
+      end
+
+      raise Error, 'Outbox request failed' unless res.is_a?(Net::HTTPSuccess)
+
+      JSON.parse(res.body)
+    end
+  end
+end
+
+mastodon = PESOS::Mastodon.new
+mastodon.import_replies
