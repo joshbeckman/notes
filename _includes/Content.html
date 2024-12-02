@@ -67,11 +67,6 @@
             </a>
           </li>
           {%- endif -%}
-          {%- if page.layout == 'Post' -%}
-          <li class="filed insight">
-            <a href="/insight?post={{ page.url | url_encode }}">Reflect on this post</a>
-          </li>
-          {%- endif -%}
           <li class="filed edit">
           {%- if page.readwise_url -%}
             <a id="edit-link" href="{{ page.readwise_url }}" target="_blank" rel="noopener noreferrer">Edit</a>

@@ -1,0 +1,130 @@
+<div class="post-insight print-hidden">
+  <details closed class="print-hidden">
+    <summary>
+      Insight
+    </summary>
+    <p>This widget generates “insights” about a post - you can <a href="/blog/using-an-llmand-rag-to-wring-insights-from-my-posts">read about how it works</a>.</p>
+    <hr>
+    <div id="post-insight"></div>
+    <div id="post-insight-loading" class="lds-ellipsis"><div></div><div></div><div></div><div></div><em>Generating</em></div>
+  </details>
+</div>
+<script>
+(function(){
+    var postInsightUrl = 'https://joshbeckman-insightpost.web.val.run';
+    var conversationInsightUrl = 'https://joshbeckman-insightconversation.web.val.run';
+    var post = "{{ page.url }}";
+    var loaded = false;
+    document.querySelector('.post-insight details').addEventListener('toggle', function(event) {
+        if (!loaded) {
+            fetchPostInsight(post);
+        }
+    });
+
+    function startLoading() {
+        document.getElementById('post-insight-loading').style.display = 'block';
+    }
+    function stopLoading() {
+        document.getElementById('post-insight-loading').style.display = 'none';
+    }
+    function openInsightLinksInNewTab() {
+        document.querySelectorAll('#post-insight a').forEach(function (el) {
+          if (!el.target) {
+            el.target = '_blank';
+          }
+        });
+    }
+    function fetchPostInsight(post) {
+        loaded = true;
+        startLoading();
+        if (!post.startsWith('https://')) {
+            post = 'https://www.joshbeckman.org' + post;
+        }
+        postInsightUrl += '?post=' + encodeURIComponent(post);
+        fetch(postInsightUrl)
+            .then(response => response.json())
+            .then(data => {
+                stopLoading();
+                document.title = document.title + ': ' + data.post.title;
+                document.getElementById('post-insight').innerHTML = data.insightHtml;
+                if (data.suggestedTags.length > 0) {
+                    let p = document.createElement('p');
+                    p.innerHTML = 'I suggest adding these tags: ' + data.suggestedTags.join(', ');
+                    document.getElementById('post-insight').appendChild(p);
+                }
+                if (data.keywords.length > 0) {
+                    let p = document.createElement('p');
+                    p.innerHTML = '<em>(Keywords I searched to build this context: ' + data.keywords + ')</em>';
+                    document.getElementById('post-insight').appendChild(p);
+                }
+                let anchor = document.createElement('a');
+                anchor.href = data.post.url;
+                anchor.innerHTML = data.post.title;
+                if (data.conversation) {
+                    setUpConversation(data.conversation);
+                }
+                openInsightLinksInNewTab();
+            });
+    }
+    function fetchConversationInsight(conversation) {
+        startLoading();
+        fetch(conversationInsightUrl, {
+            method: 'POST',
+            body: JSON.stringify({conversation: conversation}),
+        })
+            .then(response => response.json())
+            .then(data => {
+                stopLoading();
+                let insightElement = document.getElementById('post-insight');
+                insightElement.innerHTML = insightElement.innerHTML + data.insightHtml;
+                if (data.conversation) {
+                    setUpConversation(data.conversation);
+                }
+                openInsightLinksInNewTab();
+            });
+    }
+    // conversation is an array of objects with the following properties:
+    // - role: 'user' or 'assistant' or 'system'
+    // - content: string
+    function setUpConversation(conversation) {
+        console.log('setting up conversation', conversation);
+        let form = createConversationForm();
+        // add event listener to form
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            let input = document.getElementById('conversation-input');
+            let content = input.value;
+            if (!content) { return; }
+            let message = document.createElement('div');
+            message.className = 'conversation-message';
+            message.innerHTML = '<strong>You:</strong> ' + content;
+            document.getElementById('post-insight').appendChild(message);
+            removeConversationForm();
+            fetchConversationInsight(conversation.concat([{role: 'user', content: content}]));
+        });
+        document.getElementById('post-insight').appendChild(form);
+    }
+    function removeConversationForm() {
+        let form = document.getElementById('conversation-form');
+        if (form) {
+            form.parentNode.removeChild(form);
+        }
+    }
+    function createConversationForm() {
+        let form = document.createElement('form');
+        form.id = 'conversation-form';
+        let input = document.createElement('input');
+        input.type = 'text';
+        input.id = 'conversation-input';
+        input.name = 'conversation-input';
+        input.placeholder = 'Ask a follow-up question';
+        form.appendChild(input);
+        let submit = document.createElement('input');
+        submit.type = 'submit';
+        submit.value = 'Send';
+        form.appendChild(submit);
+        return form;
+    }
+
+})();
+</script>

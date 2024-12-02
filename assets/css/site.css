@@ -648,6 +648,9 @@ article .footer ul li {
   display: inline-block;
   margin: 0 0.75em 1em 0;
 }
+article .footer ul li:last-child {
+  margin-right: 0;
+}
 :modal {
   border: 2px solid lightgrey;
   border-radius: 5px;
@@ -976,11 +979,13 @@ ul.asymp>li {
 .search {
   margin: 1em 0;
 }
+#conversation-form,
 .searchbar .search-input-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+#conversation-form input[type="text"],
 .searchbar input[type=text] {
   font-size: inherit;
   padding:0.4rem 2.5ch;
@@ -989,6 +994,7 @@ ul.asymp>li {
   width: calc(100% - 17ch);
   display: inline-block;
 }
+#conversation-form input[type="submit"],
 .searchbar button[type=submit] {
   padding:0.45rem 2.5ch;
   border-radius: 4px;
@@ -996,6 +1002,7 @@ ul.asymp>li {
   background-color: aliceblue;
   color: inherit;
 }
+#conversation-form input[type="submit"]:hover,
 .searchbar button[type=submit]:hover {
   cursor: pointer;
 }
@@ -1217,7 +1224,11 @@ div.highlighter-rouge.language-go::before {
 #cusdis_thread iframe {
    min-height: 22rem;
 }
+.post-insight {
+  margin: 1em 0;
+}
 .post-network details summary,
+.post-insight details summary,
 .post-social details summary {
   border: 1px solid lightgrey;
   padding: 0.25em 0.5em;
@@ -1279,10 +1290,12 @@ details summary:hover {
     .boxit {
         background-color: rgba(255,255,255,0.1);
     }
+    #conversation-form input[type=text],
     .searchbar input[type=text] {
       background-color: #353535;
       color: #EBEDEA;
     }
+    #conversation-form input[type=submit],
     .searchbar button[type=submit] {
       background-color: darkblue;
       color: #EBEDEA;
