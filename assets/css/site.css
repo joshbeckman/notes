@@ -407,7 +407,7 @@ body {
     background-color: #fffff8;
     color: #151515;
     counter-reset: sidenote-counter;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 a {

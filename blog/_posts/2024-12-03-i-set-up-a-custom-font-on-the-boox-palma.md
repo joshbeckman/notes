@@ -12,8 +12,8 @@ tags:
 - interfaces
 ---
 
-This morning I figured out how to set up my preferred font \(IBM Plex Sans\) on the Boox Palma\! I had to use their Boox Drop app \(websites accessible on LAN are still amazing\) and upload the font files from my computer, but now I’ve got it working like a charm\.
+This morning I figured out how to set up [my preferred font](/blog/my-favorite-fonts) \(IBM Plex Sans\) on the Boox Palma\! I had to use their Boox Drop app \(websites accessible on LAN are still amazing to me\) and upload the font files from my computer, but now I’ve got it working like a charm\.
 
 I’m kinda loving the hackability of this little Android device\!
 
-![](/assets/images/1D66945D3CF544CBA21F686D8C4F5596.jpeg)
+![boox palma with custom font](/assets/images/1D66945D3CF544CBA21F686D8C4F5596.jpeg)

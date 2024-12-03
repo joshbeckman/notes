@@ -231,6 +231,7 @@ window.addEventListener('load', function () {
         var details = document.querySelector('.post-insight details')
       if (details) {
         details.open = !details.open;
+        details.scrollIntoView({behavior: "smooth"});
       } else {
         var path = window.location.pathname;
         window.location.href = "/insight?post=" + encodeURIComponent(path);
