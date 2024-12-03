@@ -400,7 +400,7 @@ template {
     src: local("Departure Mono"), local("DepartureMono"), url("../font/departure-mono/DepartureMono-Regular.woff2") format("woff2"), url("../font/departure-mono/DepartureMono-Regular.woff") format("woff");
 }
 body {
-    font-family: "IBM Plex Sans", sans-serif;
+    font-family: "IBM Plex Sans", Verdana, sans-serif;
     text-rendering: optimizeLegibility;
     font-feature-settings: 'liga' on, 'clig' on, 'zero';
     -webkit-font-smoothing: antialiased;
