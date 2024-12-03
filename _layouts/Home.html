@@ -15,14 +15,10 @@
         <section class="home">
             <div id="toc-and-metadata">
                 <ul id="toc" class="section-nav">
-                    <li class="toc-entry toc-h2">Season: {{ site.data.seasons[month].emoji }} {{ site.data.seasons[month].name }}</li>
+                    <li class="toc-entry toc-h2">{{ site.data.seasons[month].name }} {{ site.data.seasons[month].emoji }}</li>
                     <li class="toc-entry toc-h2"><a href="about">About</a>
                         <ul>
                             <li class="toc-entry toc-h3"><a href="about-this-site">About This Site</a>
-                                <ul>
-                                    <li class="toc-entry toc-h4">Updated <time datetime="{{ build_time }}" class="time-relative">{{ build_time }}</time></li>
-                                    <li class="toc-entry toc-h4"><span title="version">{{site.version}}</span></li>
-                                </ul>
                             </li>
                             <li class="toc-entry toc-h3"><a href="uses">Uses This</a></li>
                         </ul>
@@ -55,6 +51,8 @@
                             <li class="toc-entry toc-h3"><a href="random">Random Post</a></li>
                         </ul>
                     </li>
+                    <li class="toc-entry toc-h4"><span title="version">{{site.version}}</span></li>
+                    <li class="toc-entry toc-h4">Updated <time datetime="{{ build_time }}" class="time-relative">{{ build_time }}</time></li>
                 </ul>
             </div>
             <div class="color-bars">

@@ -1,6 +1,4 @@
 <nav>
   <span class="print-only">{{ site.title }} ({{ site.url | domainify }})</span>
-  {% assign month = site.time | date: "%m" | plus: 0 %}
-  {% assign cat_acc = "" %}
-  {{ site.data.seasons[month].emoji }} / <a href="/">home</a>{% for category in page.categories %} / <a href="/{{cat_acc}}{{ category | slugify }}">{{ category  }}</a>{% assign cat_acc = cat_acc | append: category | slugify | append: "/" %}{% endfor %}{% if page.url != "/" %} / <a href="{{ page.url }}" class="page-link">{{ page.title | slugify  }}</a>{% endif %}
+  <a href="/">home</a>{% for category in page.categories %} / <a href="/{{cat_acc}}{{ category | slugify }}">{{ category  }}</a>{% assign cat_acc = cat_acc | append: category | slugify | append: "/" %}{% endfor %}{% if page.url != "/" %} / <a href="{{ page.url }}" class="page-link">{{ page.title | slugify  }}</a>{% endif %}
 </nav>

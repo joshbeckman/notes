@@ -13,6 +13,7 @@ Post = Struct.new(
   :date,
   :imdb_id,
   :in_reply_to,
+  :hide_title,
   :mastodon_social_status_url,
   :bluesky_status_url,
   :rating,
@@ -43,6 +44,7 @@ Post = Struct.new(
       file.puts "date: #{date.strftime('%Y-%m-%d %H:%M:%S %z')}"
       file.puts "title: \"#{title}\""
       file.puts 'toc: true'
+      file.puts 'hide_title: true' if hide_title
       file.puts "canonical: #{canonical}" if canonical
       file.puts "rating: #{rating}" if rating
       file.puts "imdb_id: #{imdb_id}" if imdb_id

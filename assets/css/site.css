@@ -367,7 +367,7 @@ template {
 @font-face {
     font-family: "IBM Plex Sans";
     font-style: normal;
-    font-weight: 700;
+    font-weight: 500 900;
     font-display: swap;
     src: local("IBM Plex Sans Bold"), local("IBMPlexSans-Bold"), url("../IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-Bold.woff2") format("woff2"), url("../IBM-Plex-Sans/fonts/complete/woff/IBMPlexSans-Bold.woff") format("woff");
 }
@@ -400,7 +400,7 @@ template {
     src: local("Departure Mono"), local("DepartureMono"), url("../font/departure-mono/DepartureMono-Regular.woff2") format("woff2"), url("../font/departure-mono/DepartureMono-Regular.woff") format("woff");
 }
 body {
-    font-family: "Berkeley Mono", monospace;
+    font-family: "IBM Plex Sans", sans-serif;
     text-rendering: optimizeLegibility;
     font-feature-settings: 'liga' on, 'clig' on, 'zero';
     -webkit-font-smoothing: antialiased;
@@ -497,6 +497,15 @@ h4,
 h5,
 h6 {
   margin-bottom: 0;
+  font-size: inherit;
+  text-transform: uppercase;
+  border-bottom: 1px solid;
+}
+h1 {
+  margin-top: 2em;
+}
+h2 {
+  margin-top: 1em;
 }
 ol li::marker {
   font-variant-numeric: tabular-nums;
@@ -612,10 +621,10 @@ article ul {
   padding-inline-start: 2.5ch;
 }
 article ol li {
-  margin-left: 2ch;
+  margin-left: 1ch;
 }
 article ul li {
-  margin-left: 1em;
+  margin-left: 1ch;
 }
 article blockquote ol,
 article blockquote ul,
@@ -642,11 +651,12 @@ article div.highlight {
 .footer ul {
   list-style: none;
   padding-inline-start: 0;
-  text-align: center;
 }
 article .footer ul li {
   display: inline-block;
-  margin: 0 0.75em 1em 0;
+  margin: 0 0.25em 1em 0;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 article .footer ul li:last-child {
   margin-right: 0;
@@ -680,6 +690,11 @@ article .footer ul li:last-child {
 .cover-image-emoji {
   font-size: 100px;
 }
+nav {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 2em;
+}
 nav .page-link {
   white-space: nowrap;
   max-width: 12em;
@@ -690,6 +705,8 @@ nav .page-link {
 }
 .row.home .column.accent header {
   font-size: 1.6em;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 .masthead-home-link {
   text-decoration: none;
@@ -767,6 +784,8 @@ a.masthead-home-link {
   list-style: none;
   border-left: 1px solid;
   margin-left: 0;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 #toc li::before {
   content: "—";
@@ -893,6 +912,9 @@ cite .u-url, cite .non-url {
   border-top: 1px dashed gray;
   border-bottom: 1px dashed gray;
 }
+article ul.filed {
+  padding-inline-start: 2ch;
+}
 article ul li.filed {
     list-style: none;
     margin-left: 0;
@@ -900,6 +922,7 @@ article ul li.filed {
 li.filed:before {
   position: relative;
   content: "#";
+  left: -0.3em;
 }
 li.filed.source:before {
   content: "≡";
@@ -919,7 +942,7 @@ li.filed.edit a {
 li.filed.edit:before {
   position: relative;
   content: "≠";
-  margin-right: 1ch;
+  margin-right: 0.3em;
 }
 ul.similar>li:before {
   position: relative;
@@ -959,6 +982,15 @@ ul.asymp>li {
   font-size: 5em;
   width: 25%;
   text-align: center;
+}
+.post-list-item-title {
+  text-transform: uppercase;
+  font-weight: bold;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 0;
 }
 .post-list-item-details {
   width: calc(75% - 2em);
@@ -1227,13 +1259,21 @@ div.highlighter-rouge.language-go::before {
 .post-insight {
   margin: 1em 0;
 }
-.post-network details summary,
-.post-insight details summary,
-.post-social details summary {
+details {
   border: 1px solid lightgrey;
-  padding: 0.25em 0.5em;
-  display: list-item;
+  padding: 0.5em 1em;
   border-radius: 4px;
+}
+details summary {
+  display: list-item;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+details[open] {
+  padding: 0 1em 1em;
+}
+details[open] summary {
+  padding: 0.5em 0 1em;
 }
 details summary:hover {
   cursor: pointer;

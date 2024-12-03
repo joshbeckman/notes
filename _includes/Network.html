@@ -1,8 +1,3 @@
-<script
-  async
-  type="text/javascript"
-  src="/assets/js/vendor/vis-network.min.js"
-></script>
 <script type="text/javascript">
 async function getVisData() {
   let response = await fetch("/assets/js/VisData.json");
@@ -117,9 +112,14 @@ window.addEventListener('load', function() {
       return;
     }
     building = true;
+    var script = document.createElement('script');
+    script.src = '/assets/js/vendor/vis-network.min.js';
+    document.body.appendChild(script);
     getVisData().then(function(data) {
       data = JSON.parse(data);
-      prepareNetwork(data.nodes, data.edges);
+      script.onload = function() {
+        prepareNetwork(data.nodes, data.edges);
+      };
     });
   }
   var details = document.querySelector('.post-network details');

@@ -35,6 +35,7 @@ module PESOS
       replies.each { |reply| import(reply) }
     end
 
+    # TODO: Download the image and save it locally to assets
     def import(reply)
       title = reply['object']['summary'] || "Reply to #{find_mention_handle(reply['object']['tag'])}"
       slug = reply['object']['id'].split('/').last
@@ -44,6 +45,7 @@ module PESOS
         category: 'replies',
         date: Time.parse(reply['published']),
         in_reply_to: reply['object']['inReplyTo'],
+        hide_title: true,
         mastodon_social_status_url: reply['object']['id'],
         canonical: reply['object']['id'],
         image: image,

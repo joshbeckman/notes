@@ -32,11 +32,17 @@ This site's source code lives on [[Github::https://github.com/joshbeckman/notes]
 This website is statically generated using [Jekyll](https://jekyllrb.com) from a set of Markdown files.
 
 Search is powered by [lunrjs](https://lunrjs.com).
+
 Photo galleries and zoom are powered by [PhotoSwipe](https://photoswipe.com).
-The site fonts are [IBM Plex](https://www.ibm.com/plex/).
+
+The site fonts are [IBM Plex](https://www.ibm.com/plex/) and [Berkeley Mono](https://berkeleygraphics.com/typefaces/berkeley-mono/).
+
 Network graph views are powered by [vis-network](https://www.joshbeckman.org/blog/building-a-network-graph-site-index).
+
 Popularity is tracked by [Goatcounter](https://www.goatcounter.com/) - public stats are available at [/analytics](https://www.joshbeckman.org/analytics).
-Comments are powered by [Cusdis](https://cusdis.com/).
+
+Guestbook comments are powered by [Cusdis](https://cusdis.com/).
+
 Serverless scripts (e.g. for [generating insights](/insight)) are hosted/run by [Val Town](https://www.val.town).
 
 You can read about everything else I use to build things at [/uses](/uses).
@@ -64,6 +70,10 @@ You can read about everything else I use to build things at [/uses](/uses).
 - Create mastodon or Bluesky bots to have LLMs interact with my posts
 - Refactor insights logic to operate via LLM tools instead of plain RAG
 - [More ideas](https://github.com/joshbeckman/notes/issues?q=is%3Aopen+is%3Aissue+-label%3Apost)
+
+### 2024-12-02
+- Switch back to variable fonts
+- Refactor general post layout and headings
 
 ### 2024-12-01
 - Switch to monospace fonts

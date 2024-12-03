@@ -19,6 +19,9 @@ And so, if you want to leave your mark on my online home, please do so below.
 function adjustIframeHeight(iframe) {
     var heights = [];
     function load() {
+        if (!iframe.contentWindow.document.body) {
+            return setTimeout(load, 500);
+        }
         var height = iframe.contentWindow.document.body.scrollHeight;
         // Set the iframe height
         iframe.style.height = height + 'px';
