@@ -891,8 +891,7 @@ cite .u-url, cite .non-url {
   display: flex;
   flex-shrink: 1;
   align-items: center;
-  width: 6ch;
-  min-width: 6ch !important;
+  min-width: 5ch !important;
   padding: 0px 1.5ch !important;
   border-left: 1px solid lightgrey;
 }
