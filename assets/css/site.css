@@ -499,12 +499,14 @@ h6 {
   margin-bottom: 0;
   font-size: inherit;
   text-transform: uppercase;
-  border-bottom: 1px solid;
+  border-top: 1px solid;
+  padding-top: 0.5em;
 }
 h1 {
   margin-top: 2em;
 }
-h2 {
+h2,
+h3 {
   margin-top: 1em;
 }
 ol li::marker {
