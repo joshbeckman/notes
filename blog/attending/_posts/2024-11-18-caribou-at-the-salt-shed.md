@@ -22,4 +22,4 @@ Caribou doesn’t play for very long \- the set was only an 90 minutes or so \- 
 
 Yuné Pinku was the opener and her music was pretty good but there was a giant music video on repeat behind her and it repeated continuously and for some reason it really distracted me\.
 
-<iframe allow="autoplay *; encrypted\-media *;" frameborder="0" height="150" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/only-you/1742019690?i=1742020187"></iframe>
+<iframe allow="autoplay *; encrypted-media *;" frameborder="0" height="150" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/only-you/1742019690?i=1742020187"></iframe>
