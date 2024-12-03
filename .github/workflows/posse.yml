@@ -53,6 +53,7 @@ jobs:
           git config --global user.email "josh@joshbeckman.org"
           git add blog
           git add notes
+          git add replies
           git commit -m "new(usr): POSSE"
       - name: Push changes
         if: steps.any_changes_posse.outputs.changed != 0
