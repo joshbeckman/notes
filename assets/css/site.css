@@ -499,7 +499,7 @@ h6 {
   margin-bottom: 0;
   font-size: inherit;
   text-transform: uppercase;
-  border-top: 1px solid;
+  border-top: 2px solid;
   padding-top: 0.5em;
 }
 h1 {
@@ -537,6 +537,9 @@ blockquote {
   height: 300px;
   max-width: 100%;
   max-height: 100%;
+}
+.post-network details {
+  position: relative;
 }
 .vis-network-legend {
   position: absolute;
@@ -784,7 +787,7 @@ a.masthead-home-link {
 }
 #toc li {
   list-style: none;
-  border-left: 1px solid;
+  border-left: 2px solid;
   margin-left: 0;
   text-transform: uppercase;
   font-weight: bold;
