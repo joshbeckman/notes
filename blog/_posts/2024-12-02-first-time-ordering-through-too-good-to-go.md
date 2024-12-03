@@ -5,8 +5,8 @@ title: "First time ordering through Too Good To Go"
 toc: true
 image: /assets/images/42422E4570714C83A4AD0974AE82FD39.jpeg
 description: 
-mastodon_social_status_url: false
-bluesky_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113590102336048030
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lcg6iazb5j2n
 tags:
 - food
 ---
