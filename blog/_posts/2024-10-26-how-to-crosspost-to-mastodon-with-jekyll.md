@@ -12,6 +12,7 @@ tags:
   - blogs
   - publishing
   - code-snippets
+  - mastodon
 ---
 
 

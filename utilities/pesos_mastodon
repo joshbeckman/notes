@@ -50,6 +50,7 @@ module PESOS
         canonical: reply['object']['id'],
         image: image,
         slug: slug,
+        tags: ['mastodon'],
         title: title
       )
       post.create_file

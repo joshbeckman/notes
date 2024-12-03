@@ -12,6 +12,7 @@ tags:
   - personal-blog
   - publishing
   - blogs
+  - bluesky
 ---
 
 Just like how I set up [cross-posting to Mastodon](https://www.joshbeckman.org/blog/how-to-crosspost-to-mastodon-with-jekyll) for this site (to ensure that I am publishing on my own site and syndicating elsewhere: POSSE), I have now set up cross-posting from this site to [my Bluesky account](https://bsky.app/profile/joshbeckman.org).
