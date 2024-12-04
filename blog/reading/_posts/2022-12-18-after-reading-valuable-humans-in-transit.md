@@ -15,7 +15,7 @@ redirect_from:
 
 When I think of great internet writing - not writing that happened to be put online but writing that is informed by and uses the nature of the internet ot its advantage - I think of [qntm](https://qntm.org).
 
-I've written [a bit about]( /on-reading-fine-structure/)_[Fine Structure]( /on-reading-fine-structure/)_[in the past]( /on-reading-fine-structure/) and have voraciously read more and more of their stories over time - on their blog and on the [SCP Foundation website](https://scp-wiki.wikidot.com/scp-3008).
+I've written [a bit about](/on-reading-fine-structure/) [Fine Structure](/on-reading-fine-structure/) [in the past](/on-reading-fine-structure/) and have voraciously read more and more of their stories over time - on their blog and on the [SCP Foundation website](https://scp-wiki.wikidot.com/scp-3008).
 
 This book is the latest physical publishing of some of their short stories and internet fiction, collected and published in November of this year. As soon as I saw that a pre-order was available, I put up my money. I've purchased every physical print edition from qntm and have ready many more hours of their fiction online.
 
