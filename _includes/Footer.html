@@ -112,6 +112,18 @@ window.addEventListener('load', function () {
     lazyload();
 });
 
+(function articleLinks() {
+    var links = document.querySelectorAll('article .h-entry a');
+    for (var i = 0; i < links.length; i++) {
+        var link = links[i];
+        var linkIsLocal = link.href.indexOf(window.location.host) > -1 || link.href[0] == '/';
+        if (!linkIsLocal) {
+            link.target = '_blank';
+            link.rel = 'noopener';
+        }
+    }
+})();
+
 (function logoAnimator() {
   var paths = document.querySelectorAll('.name-svg path');
   var lastPathIndex = paths.length - 1;
