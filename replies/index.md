@@ -5,6 +5,9 @@ searchable: true
 emoji: 🧵
 tags:
 - index
+- mastodon
+- bluesky
+- social-networks
 ---
 
 This is still a work-in-progress.
