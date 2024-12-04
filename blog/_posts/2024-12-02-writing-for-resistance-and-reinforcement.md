@@ -5,8 +5,8 @@ title: "Writing for Resistance and Reinforcement"
 toc: true
 image: 
 description: 
-mastodon_social_status_url: false
-bluesky_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113595759471842062
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lciousp3sf2d
 tags:
 - publishing
 - writing

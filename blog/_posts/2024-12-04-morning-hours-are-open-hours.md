@@ -5,8 +5,8 @@ title: "Morning Hours are Open Hours"
 toc: true
 image: 
 description: 
-mastodon_social_status_url: false
-bluesky_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113595759502356005
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lciousuktm2n
 tags:
 - habits
 ---
