@@ -178,17 +178,20 @@ function timeAgo(date) {
         return date.toLocaleDateString();
     }
 }
-  var timeElements = document.querySelectorAll('time');
-  var ago;
-  for (var i = 0; i < timeElements.length; i++) {
-    ago = timeAgo(new Date(timeElements[i].getAttribute('datetime')));
-    timeElements[i].title = ago;
-    if (timeElements[i].classList.contains('time-relative')) {
-      timeElements[i].textContent = ago;
-      timeElements[i].title = new Date(timeElements[i].getAttribute('datetime')).toLocaleString();
+  function timeAgoInterval() {
+    var timeElements = document.querySelectorAll('time');
+    var ago;
+    for (var i = 0; i < timeElements.length; i++) {
+      ago = timeAgo(new Date(timeElements[i].getAttribute('datetime')));
+      timeElements[i].title = ago;
+      if (timeElements[i].classList.contains('time-relative')) {
+        timeElements[i].textContent = ago;
+        timeElements[i].title = new Date(timeElements[i].getAttribute('datetime')).toLocaleString();
+      }
     }
   }
-
+  setInterval(timeAgoInterval, 60000);
+  timeAgoInterval();
 })();
 (function appendToSession() {
 // append to session storage the current url

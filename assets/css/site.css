@@ -409,6 +409,12 @@ body {
     counter-reset: sidenote-counter;
     font-size: 18px;
 }
+.departure {
+    font-family: "Departure Mono", monospace;
+}
+.uppercase {
+    text-transform: uppercase;
+}
 
 a {
     width: fit-content;
@@ -499,6 +505,7 @@ h6 {
   margin-bottom: 0;
   font-size: inherit;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
   border-top: 2px solid;
   padding-top: 0.5em;
 }
@@ -650,22 +657,6 @@ article div.highlight {
 }
 
 /* Footer */
-.footer {
-  padding: 2em 0;
-}
-.footer ul {
-  list-style: none;
-  padding-inline-start: 0;
-}
-article .footer ul li {
-  display: inline-block;
-  margin: 0 0.25em 1em 0;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-article .footer ul li:last-child {
-  margin-right: 0;
-}
 :modal {
   border: 2px solid lightgrey;
   border-radius: 5px;
@@ -697,6 +688,7 @@ article .footer ul li:last-child {
 }
 nav {
   text-transform: uppercase;
+  letter-spacing: 0.05em;
   font-weight: bold;
   margin-bottom: 2em;
 }
@@ -711,7 +703,18 @@ nav .page-link {
 .row.home .column.accent header {
   font-size: 1.6em;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
   font-weight: bold;
+}
+.row.home .flex {
+  display: flex;
+}
+.row.home marquee {
+  flex: 1;
+}
+.row.home marquee span {
+  margin-left: 10ch;
+  display: inline-block;
 }
 .masthead-home-link {
   text-decoration: none;
@@ -790,6 +793,7 @@ a.masthead-home-link {
   border-left: 2px solid;
   margin-left: 0;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
   font-weight: bold;
 }
 #toc li::before {
@@ -874,12 +878,12 @@ cite .u-url, cite .non-url {
   margin-left: 10px;
 }
 .quoteback-footer .metadata-inner {
-  font-size: 15px;
+  font-size: 16px;
   width: 100%;
   max-width: 525px;
 }
 .quoteback-footer .metadata-inner .quoteback-author {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: bold;
   margin-bottom: 2px;
 }
@@ -989,6 +993,7 @@ ul.asymp>li {
 }
 .post-list-item-title {
   text-transform: uppercase;
+  letter-spacing: 0.05em;
   font-weight: bold;
   white-space: nowrap;
   max-width: 100%;
@@ -1271,6 +1276,7 @@ details {
 details summary {
   display: list-item;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
   font-weight: bold;
 }
 details[open] {

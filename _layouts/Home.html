@@ -15,7 +15,6 @@
         <section class="home">
             <div id="toc-and-metadata">
                 <ul id="toc" class="section-nav">
-                    <li class="toc-entry toc-h2">{{ site.data.seasons[month].name }} {{ site.data.seasons[month].emoji }}</li>
                     <li class="toc-entry toc-h2"><a href="about">About</a>
                         <ul>
                             <li class="toc-entry toc-h3"><a href="about-this-site">About This Site</a>
@@ -51,10 +50,9 @@
                             <li class="toc-entry toc-h3"><a href="random">Random Post</a></li>
                         </ul>
                     </li>
-                    <li class="toc-entry toc-h4"><span title="version">{{site.version}}</span></li>
-                    <li class="toc-entry toc-h4">Updated <time datetime="{{ build_time }}" class="time-relative">{{ build_time }}</time></li>
                 </ul>
             </div>
+            <div class="flex">
             <div class="color-bars">
                 <span class="color-bar" style="background-color: #EBEDEA;"></span>
                 <span class="color-bar" style="background-color: #bd2024;"></span>
@@ -66,6 +64,12 @@
                 <span class="color-bar" style="background-color: #004B87;"></span>
                 <span class="color-bar" style="background-color: #9370d8;"></span>
                 <span class="color-bar" style="background-color: #151515;"></span>
+            </div>
+            <marquee class="departure uppercase">
+              <span title="version">Version: {{site.version}}</span>
+              <span>Updated: <time datetime="{{ build_time }}" class="time-relative">{{ build_time }}</time></span>
+              <span>Season: {{ site.data.seasons[month].name }} {{ site.data.seasons[month].emoji }}</span>
+            </marquee>
             </div>
         </section>
         {%- include Footer.html -%}
