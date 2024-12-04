@@ -22,7 +22,6 @@ Fuse = (function(){"use strict";function e(e,t){var n=Object.keys(e);if(Object.g
       });
     }
 
-    
     async function getSearchData(dataUrl) {
         let response = await fetch(dataUrl);
         let responseText = response.text();
@@ -222,15 +221,6 @@ Fuse = (function(){"use strict";function e(e,t){var n=Object.keys(e);if(Object.g
       var searchInput = document.getElementById("search-input");
       searchInput.value = search;
     }
-    function searchVia404() {
-      var shouldSearch = document.title.indexOf("404 - Page not found") >= 0;
-      if (!shouldSearch) { return; }
-
-      var search = window.location.pathname.split("/").join(" ").trim().split("-").join(" ");
-      var searchInput = document.getElementById("search-input");
-      searchInput.value = search;
-    }
 
     searchViaQuery();
-    searchVia404();
 })(window.sj = window.sj || {});

@@ -7,6 +7,9 @@ tags: index
 toc: true
 searchable: true
 ---
+
+---
+
 Alternatively, you can [browse the index](/tags/).
 
 You can get to this page from anywhere on the site with `Ctrl` + `s`.
