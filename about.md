@@ -21,7 +21,7 @@ My email address is `josh@joshbeckman.org`. I strongly prefer email as a communi
 
 > Want help with something? Here are [ways I'm able to help](/blog/ways-im-available-to-help).
 
-You can read more [about this site](/about-this-site).
+You can read more [about this site](/about-this-site) or the [tools I use](/uses).
 
 ## Support
 
