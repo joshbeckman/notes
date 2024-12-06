@@ -6,6 +6,7 @@ toc: true
 rating: 4
 image: 
 description: 
+image: https://m.media-amazon.com/images/M/MV5BZDhiMTljYjYtODc1Yy00MmEwLTg2OTYtYmE1YTRmNDE4MmEwXkEyXkFqcGc@._V1_SX300.jpg
 imdb_id: tt0078788
 mastodon_social_status_url: false
 bluesky_status_url: false
