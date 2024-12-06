@@ -8,8 +8,8 @@ image:
 description: 
 image: https://m.media-amazon.com/images/M/MV5BZDhiMTljYjYtODc1Yy00MmEwLTg2OTYtYmE1YTRmNDE4MmEwXkEyXkFqcGc@._V1_SX300.jpg
 imdb_id: tt0078788
-mastodon_social_status_url: false
-bluesky_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113607082835938569
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lcnps2ukfj2p
 tags: 
   - war
   - movies

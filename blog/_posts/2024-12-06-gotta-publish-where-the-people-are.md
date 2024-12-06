@@ -5,8 +5,8 @@ title: "Gotta Publish Where The People Are"
 toc: true
 image: 
 description: 
-mastodon_social_status_url: false
-bluesky_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113607082872401963
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lcnps2vrrg2h
 tags:
 - publishing
 - social-networks
