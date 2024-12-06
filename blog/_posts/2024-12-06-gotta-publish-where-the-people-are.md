@@ -21,6 +21,6 @@ I already do this, for example, in my open source software habits: [I use GitHub
 
 For social networks, I am syndicating my writing here [into Mastodon](https://www.joshbeckman.org/blog/how-to-crosspost-to-mastodon-with-jekyll) and [into Bluesky](https://www.joshbeckman.org/blog/crossposting-to-bluesky-from-jekyll) \(until one of them wins or the other withers\)\.
 
-For my movie log, I think I need to start using Letterboxd \- it’s ​*where the movie watchers are \(my friends who are movie watchers\)*​\. That system doesn’t have an API where I can *syndicate* my posts from here to there, but it does have a personal feed where I can *archive* my posts from there to here\. So I think I gotta go build that\.
+For my movie log, I think I need to start using [Letterboxd](https://letterboxd.com/joshbeckman/) \- it’s ​*where the movie watchers are \(my friends who are movie watchers\)*​\. That system doesn’t have an API where I can *syndicate* my posts from here to there, but it does have a personal feed where I can *archive* my posts from there to here\. So I think I gotta go build that\.
 
 You need to publish where the people are reading\. If that place has an API to publish, POSSE \(syndicate\) to it\. If it only has an API to read/subscribe, PESOS \(archive\) from it\. If it has neither, don’t use it: just publish on your own\.
