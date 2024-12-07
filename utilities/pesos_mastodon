@@ -74,7 +74,13 @@ module PESOS
     def import_post(post)
       title = post['object']['summary'] || "Post to #{find_mention_handle(post['object']['tag'])}"
       image = find_image(post['object']['attachment'])
-      bluesky_status_url = false if find_mention_handle(post['object']['tag']).nil?
+      canonical = nil
+      bluesky_status_url = false
+      # lock it down to mastodon if directed at another user
+      if find_mention_handle(post['object']['tag'])
+        canonical = post['object']['url']
+        bluesky_status_url = nil
+      end
       post = Post.new(
         body: post['object']['content'],
         category: 'blog',
@@ -82,7 +88,7 @@ module PESOS
         hide_title: true,
         mastodon_social_status_url: post['object']['url'],
         bluesky_status_url: bluesky_status_url,
-        canonical: post['object']['url'],
+        canonical: canonical,
         image: image,
         slug: reply['object']['id'].split('/').last,
         tags: ['mastodon'],
