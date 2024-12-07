@@ -82,7 +82,7 @@ module PESOS
         bluesky_status_url = nil
       end
       post = Post.new(
-        body: post['object']['content'],
+        body: post_body(post),
         category: 'blog',
         date: Time.parse(post['published']),
         hide_title: true,
@@ -95,6 +95,15 @@ module PESOS
         title: title
       )
       post.create_file
+    end
+
+    def post_body(post)
+      video = find_video(post['object']['attachment'])
+      if video
+        "#{post['object']['content']}\n\n#{video}"
+      else
+        post['object']['content']
+      end
     end
 
     def find_mention_handle(tags)
@@ -115,6 +124,17 @@ module PESOS
       asset = Asset.new(url: image['url'], category: 'images')
       asset.download
       asset.public_path
+    end
+
+    def find_video(attachments)
+      return nil if attachments.nil?
+
+      image = attachments.find { |attachment| attachment['mediaType']&.include?('video') }
+      return nil if image.nil?
+
+      asset = Asset.new(url: image['url'], category: 'videos')
+      asset.download
+      asset.standalone_md
     end
 
     def outbox

@@ -13,6 +13,14 @@ Asset = Struct.new(:url, :category, :path, keyword_init: true) do
     "/#{path}"
   end
 
+  def standalone_md
+    if image?
+      "![image](#{public_path})"
+    else
+      "<video controls src=\"#{public_path}\"></video>"
+    end
+  end
+
   # checks if there is a file at the path
   # exits if there is
   # downloads the image from the url to the path
@@ -43,7 +51,7 @@ Asset = Struct.new(:url, :category, :path, keyword_init: true) do
     if image?
       content.gsub(url, public_path)
     else
-      content.gsub(url, "<video controls src=\"#{public_path}\"></video>")
+      content.gsub(url, standalone_md)
     end
   end
 end
