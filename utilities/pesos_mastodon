@@ -9,16 +9,6 @@ require_relative 'models/post'
 require_relative 'models/asset'
 
 module PESOS
-  class JekyllFilter
-    include Jekyll::Filters
-    attr_accessor :site, :context
-
-    def initialize(opts = {})
-      @site = Jekyll::Site.new(Jekyll.configuration(opts))
-      @context = Liquid::Context.new(@site.site_payload, {}, site: @site)
-    end
-  end
-
   class Mastodon
     class Error < StandardError; end
 
@@ -47,7 +37,7 @@ module PESOS
     end
 
     def post_exists?(url)
-      @site.posts.docs.any? do |post|
+      site.posts.docs.any? do |post|
         post.data['mastodon_social_status_url'] == url
       end
     end
@@ -129,10 +119,10 @@ module PESOS
     def find_video(attachments)
       return nil if attachments.nil?
 
-      image = attachments.find { |attachment| attachment['mediaType']&.include?('video') }
-      return nil if image.nil?
+      video = attachments.find { |attachment| attachment['mediaType']&.include?('video') }
+      return nil if video.nil?
 
-      asset = Asset.new(url: image['url'], category: 'videos')
+      asset = Asset.new(url: video['url'], category: 'videos')
       asset.download
       asset.standalone_md
     end
