@@ -3,7 +3,7 @@
 {%- include head.html -%}
 <body>
   <div class="row">
-    <div class="column accent centered">
+    <div class="column navigation centered">
       <header class="content">
         {% if page.image %}
           <img class="cover-image" src="{{ page.image }}" alt="{{ page.title }}">
@@ -33,7 +33,7 @@
           {%- include BookMeta.html -%}
           {%- include ReviewMeta.html -%}
           {%- include InReplyTo.html -%}
-          <section class="u-in-reply-to h-cite">
+          <section class="u-in-reply-to h-cite frac">
             {%- include Content.html -%}
           </section>
             {%- include Backlinks.html -%}

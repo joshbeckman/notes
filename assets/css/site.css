@@ -409,12 +409,6 @@ body {
     counter-reset: sidenote-counter;
     font-size: 18px;
 }
-.departure {
-    font-family: "Departure Mono", monospace;
-}
-.uppercase {
-    text-transform: uppercase;
-}
 
 a {
     width: fit-content;
@@ -445,6 +439,12 @@ a:hover {
 }
 .centered {
     text-align: center;
+}
+.departure {
+    font-family: "Departure Mono", monospace;
+}
+.uppercase {
+    text-transform: uppercase;
 }
 
 pre,
@@ -592,11 +592,11 @@ table th, table thead, table td { padding: 0.5rem; }
   display: inherit;
   position: relative;
 }
-.column.accent {
+.column.navigation {
   background-color: white;
   box-shadow: 0 1px 3px 0 rgb(0,0,0,.25);
 }
-.column.accent .content img {
+.column.navigation .content img {
   box-shadow: 0 15px 25px rgba(0,0,0,.25);
 }
 .column .content {
@@ -700,7 +700,7 @@ nav .page-link {
   text-overflow: ellipsis;
   vertical-align: bottom;
 }
-.row.home .column.accent header {
+.row.home .column.navigation header {
   font-size: 1.6em;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -1331,7 +1331,7 @@ details summary:hover {
         border-color: darkgray;
     }
 
-    .column.accent {
+    .column.navigation {
       background-color: black;
     }
     .season-column .season-cover {
