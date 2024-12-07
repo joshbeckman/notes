@@ -53,6 +53,8 @@ module PESOS
 
     def import_replies
       replies = outbox.dig('orderedItems').filter do |item|
+        next false if item['type'] == 'Announce'
+
         item.dig('object', 'inReplyTo')
       end
       replies.each { |reply| import_reply(reply) }
@@ -60,6 +62,7 @@ module PESOS
 
     def import_posts
       posts = outbox.dig('orderedItems').filter do |item|
+        next false if item['type'] == 'Announce'
         next false if item.dig('object', 'inReplyTo')
         next false if post_exists?(item['object']['url'])
 
