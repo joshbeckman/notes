@@ -28,6 +28,4 @@ Examples of how a post can “rely” on a platform’s context:
 - It’s a reply to a post local to that platform
 - It targets or mentions a user of that platform \(e\.g\. with an embedded mention link\)
 
-This way, if someone sees a post from me natively on one platform or another - [metting them where they are](https://www.joshbeckman.org/blog/gotta-publish-where-the-people-are) - they can interact with it fully and with the least surprise \(e\.g\. they won’t click a username and be directed to another platform\)\. And anyone can always view my stuff on my site and see everything\. 
-
-
+This way, if someone sees a post from me natively on one platform or another - [metting them where they are](https://www.joshbeckman.org/blog/gotta-publish-where-the-people-are) - they can interact with it fully and with the least surprise \(e\.g\. they won’t click a username and be directed to another platform\)\. Everyone has as much context as required to understand what's being discussed. And anyone can always view my stuff on my site and see everything\. 
