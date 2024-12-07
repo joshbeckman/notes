@@ -10,7 +10,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lcnps2vrrg2h
 tags:
 - publishing
 - social-networks
-- personal-site
+- personal-blog
 ---
 
 I have been writing my movie reviews on my personal site but I doubt anyone is reading them\. Instead, I need to make sure they publish somewhere that people will read them\. I *want* people to engage with them, after all\.
