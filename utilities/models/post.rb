@@ -51,8 +51,8 @@ Post = Struct.new(
       file.puts "image: #{image}"
       file.puts "description: #{description}"
       file.puts "in_reply_to: #{in_reply_to}" if in_reply_to
-      file.puts "mastodon_social_status_url: #{mastodon_social_status_url}" if mastodon_social_status_url
-      file.puts "bluesky_status_url: #{bluesky_status_url}" if bluesky_status_url
+      file.puts "mastodon_social_status_url: #{mastodon_social_status_url}" unless mastodon_social_status_url.nil?
+      file.puts "bluesky_status_url: #{bluesky_status_url}" unless bluesky_status_url.nil?
       if tags&.any?
         file.puts 'tags:'
         tags.each do |tag|

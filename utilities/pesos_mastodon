@@ -6,6 +6,7 @@ require 'json'
 require 'net/http'
 require 'time'
 require_relative 'models/post'
+require_relative 'models/asset'
 
 module PESOS
   class JekyllFilter
@@ -32,13 +33,27 @@ module PESOS
       replies = outbox.dig('orderedItems').filter do |item|
         item.dig('object', 'inReplyTo')
       end
-      replies.each { |reply| import(reply) }
+      replies.each { |reply| import_reply(reply) }
     end
 
-    # TODO: Download the image and save it locally to assets
-    def import(reply)
+    def import_posts
+      posts = outbox.dig('orderedItems').filter do |item|
+        next false if item.dig('object', 'inReplyTo')
+        next false if post_exists?(item['object']['url'])
+
+        true
+      end
+      posts.each { |post| import_post(post) }
+    end
+
+    def post_exists?(url)
+      @site.posts.docs.any? do |post|
+        post.data['mastodon_social_status_url'] == url
+      end
+    end
+
+    def import_reply(reply)
       title = reply['object']['summary'] || "Reply to #{find_mention_handle(reply['object']['tag'])}"
-      slug = reply['object']['id'].split('/').last
       image = find_image(reply['object']['attachment'])
       post = Post.new(
         body: reply['object']['content'],
@@ -46,10 +61,30 @@ module PESOS
         date: Time.parse(reply['published']),
         in_reply_to: reply['object']['inReplyTo'],
         hide_title: true,
-        mastodon_social_status_url: reply['object']['id'],
-        canonical: reply['object']['id'],
+        mastodon_social_status_url: reply['object']['url'],
+        canonical: reply['object']['url'],
         image: image,
-        slug: slug,
+        slug: reply['object']['id'].split('/').last,
+        tags: ['mastodon'],
+        title: title
+      )
+      post.create_file
+    end
+
+    def import_post(post)
+      title = post['object']['summary'] || "Post to #{find_mention_handle(post['object']['tag'])}"
+      image = find_image(post['object']['attachment'])
+      bluesky_status_url = false if find_mention_handle(post['object']['tag']).nil?
+      post = Post.new(
+        body: post['object']['content'],
+        category: 'blog',
+        date: Time.parse(post['published']),
+        hide_title: true,
+        mastodon_social_status_url: post['object']['url'],
+        bluesky_status_url: bluesky_status_url,
+        canonical: post['object']['url'],
+        image: image,
+        slug: reply['object']['id'].split('/').last,
         tags: ['mastodon'],
         title: title
       )
@@ -71,7 +106,9 @@ module PESOS
       image = attachments.find { |attachment| attachment['mediaType']&.include?('image') }
       return nil if image.nil?
 
-      image['url']
+      asset = Asset.new(url: image['url'], category: 'images')
+      asset.download
+      asset.public_path
     end
 
     def outbox
@@ -92,3 +129,4 @@ end
 
 mastodon = PESOS::Mastodon.new
 mastodon.import_replies
+mastodon.import_posts

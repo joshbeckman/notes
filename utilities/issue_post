@@ -2,53 +2,7 @@
 
 require 'time'
 require_relative 'models/post'
-
-Asset = Struct.new(:url, :category, :path, keyword_init: true) do
-  def image?
-    category == "images"
-  end
-
-  def video?
-    category == "videos"
-  end
-
-  def public_path
-    "/#{path}"
-  end
-
-  # checks if there is a file at the path
-  # exits if there is
-  # downloads the image from the url to the path
-  def download
-    unless path.nil?
-      return if File.exist?(path)
-    end
-    if path.nil?
-      path = "assets/#{category}/#{url.split("/").last}"
-    end
-
-    puts "Downloading #{url} to #{path}"
-    `curl -L -o #{path} "#{url}"`
-    # determine the filetype
-    # rename the file to the path with the correct extension
-    filetype = `file --mime-type -b #{path}`.strip.split("/").last
-    new_path = "#{path}.#{filetype}"
-    puts "Renaming #{path} to #{new_path}"
-    `mv #{path} #{new_path}`
-    self.path = new_path
-  end
-
-  def insert_into_content(content)
-    if path.nil?
-      return content
-    end
-    if image?
-      content.gsub(url, public_path)
-    else
-      content.gsub(url, "<video controls src=\"#{public_path}\"></video>")
-    end
-  end
-end
+require_relative 'models/asset'
 
 class IssuePoster
   # read the filte `issue_body`

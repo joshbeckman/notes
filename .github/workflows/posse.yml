@@ -79,6 +79,9 @@ jobs:
       - name: Import Mastodon
         id: import_mastodon
         run: bundle exec utilities/pesos_mastodon
+      - name: Optimize images
+        id: optimize_images
+        run: bundle exec utilities/optimize_images
       - name: Determine if changes were made
         id: any_pesos
         run: echo "changed=$(git status --porcelain | wc -l)" >> $GITHUB_OUTPUT
@@ -88,6 +91,7 @@ jobs:
           git config --global user.name "GitHub Actions"
           git config --global user.email "josh@joshbeckman.org"
           git add replies
+          git add blog
           git commit -m "new(usr): PESOS"
       - name: Push changes
         if: steps.any_pesos.outputs.changed != 0
