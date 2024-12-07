@@ -5,8 +5,8 @@ title: "Cross-Posting From Mastodon to Jekyll"
 toc: true
 image: /assets/images/3476482D4C4A481B8E375E6D7EE2690C.png
 description: Archiving and syndicating Mastodon posts in Jekyll
-mastodon_social_status_url: false
-bluesky_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113613740967238375
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lcqoftcmzd2s
 tags: 
   - mastodon
   - code-snippets
