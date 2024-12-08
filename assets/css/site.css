@@ -751,34 +751,6 @@ a.masthead-home-link {
   margin-top: 0.5em;
   border-radius: 4px;
 }
-.season-row {
-  display: flex;
-  justify-content: center;
-}
-.season-row .season-column {
-  flex: 1;
-  padding: 0;
-  position: relative;
-}
-.season-row .season-column:first-child {
-  text-align: right;
-}
-.season-row .season-column:last-child {
-  text-align: left;
-  list-style: none;
-}
-.season-column .season-cover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
-}
-.josh-seasons {
-  height: 7em;
-  overflow: hidden;
-}
 
 /* TOC - table of contents */
 #toc-and-metadata #toc {
@@ -1339,9 +1311,6 @@ details summary:hover {
 
     .column.navigation {
       background-color: black;
-    }
-    .season-column .season-cover {
-      background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1));
     }
     .boxit {
         background-color: rgba(255,255,255,0.1);
