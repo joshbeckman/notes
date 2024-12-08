@@ -80,7 +80,7 @@ module POSSE
     def post(post)
       puts "Posting: #{url(post)}"
       message = "#{url(post)}\n\n#{post.data['title']}"
-      status = post_status(message)
+      status = post_status(message, post)
       puts "Posted:  #{url(post)} to #{status['url']}"
       bluesky_status_url = status['url']
       save_status(post, bluesky_status_url)
@@ -103,7 +103,7 @@ module POSSE
       !posted_url.nil? && !(posted_url || '').match?(%r{https\S*/\d+})
     end
 
-    def post_status(status)
+    def post_status(status, post)
       uri = URI.parse('https://bsky.social/xrpc/com.atproto.repo.createRecord')
       request = Net::HTTP::Post.new(uri)
       request.content_type = 'application/json'
@@ -114,6 +114,7 @@ module POSSE
                                  'record' => {
                                    'text' => status,
                                    'facets' => parse_facets(status),
+                                   'embed' => embed(post),
                                    'createdAt' => Time.now.strftime('%Y-%m-%dT%H:%M:%S.%3NZ'),
                                    '$type' => 'app.bsky.feed.post'
                                  }
@@ -130,6 +131,47 @@ module POSSE
       resp_body = JSON.parse(res.body)
       resp_body['url'] = "https://bsky.app/profile/#{@handle}/post/#{resp_body['uri'].split('/').last}"
       resp_body
+    end
+
+    def embed(post)
+      card = {
+        "uri": url(post),
+        "title": post.data['title'],
+        "description": excerpt(post)
+      }
+      card['thumb'] = image_blob(post) if post.data['image']
+      {
+        "$type": 'app.bsky.embed.external',
+        "external": card
+      }
+    end
+
+    def image_blob(post)
+      image_path = post.data['image']
+      if image_path.start_with?('http')
+        image_path = URI.parse(image_path)
+        image_path = File.join(Dir.tmpdir, File.basename(image_path.path))
+        File.open(image_path, 'wb') do |file|
+          file.write(URI.open(post.data['image']).read)
+        end
+      else
+        image_path = File.join('.', image_path)
+      end
+      filetype = `file --mime-type -b #{image_path}`.strip
+      uri = URI.parse('https://bsky.social/xrpc/com.atproto.repo.uploadBlob')
+      request = Net::HTTP::Post.new(uri)
+      request.content_type = filetype
+      request['Authorization'] = "Bearer #{@api_key}"
+      request.body = File.binread(image_path)
+      req_options = {
+        use_ssl: uri.scheme == 'https'
+      }
+      res = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
+        http.request(request)
+      end
+      raise Error, 'Image blob post request failed' unless res.is_a?(Net::HTTPSuccess)
+
+      JSON.parse(res.body)['blob']
     end
 
     def url(post)
