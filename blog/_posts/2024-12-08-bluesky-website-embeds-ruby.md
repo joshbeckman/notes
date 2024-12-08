@@ -5,8 +5,8 @@ title: Adding Website Card Embeds to my Bluesky Posts
 toc: true
 image: /assets/images/E0F9F28442EB4E069171E4F4D69368CE.png
 description: 
-mastodon_social_status_url: false
-bluesky_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113618400598758317
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lcsqms45562x
 tags:
 - bluesky
 - code-snippets
