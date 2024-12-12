@@ -583,7 +583,6 @@ table th, table thead, table td { padding: 0.5rem; }
 
 .row {
   display: flex;
-  height: 100vh;
 }
 .column {
   flex: 1;
