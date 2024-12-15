@@ -38,6 +38,7 @@ If you see an account that looks like it might be me but isn't listed here, plea
 | GitHub | [@joshbeckman](https://github.com/joshbeckman) |
 | Apple Music | [@andjosh](https://music.apple.com/profile/andjosh) |
 | YouTube | [@joshbeckmanchannel](https://www.youtube.com/@joshbeckmanchannel) |
+| Strava | [@beckman_josh](https://www.strava.com/athletes/beckman_josh) |
 | Email | `josh@josbeckman.org` |
 
 ### Passive Accounts
