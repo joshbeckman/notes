@@ -87,11 +87,13 @@ Well, we're gonna have to break this down a bit.
 - Flybird rack
 - Random smattering of weights
 - Fitness Gear adjustable bench
-- Apple Watch Ultra
+- Garmin Instinct 2X Solar
 
 ### Software
 - Healthfit
 - Fitbod
+- Strava
+- Garmin Connect
 - Overcast for podcasts
 
 ## Carpentry

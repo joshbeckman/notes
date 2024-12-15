@@ -36,15 +36,16 @@ If you see an account that looks like it might be me but isn't listed here, plea
 | Mastodon | [@joshbeckman@mastodon.social](https://mastodon.social/@joshbeckman) |
 | Bluesky | [@joshbeckman.org](https://bsky.app/profile/joshbeckman.org) |
 | GitHub | [@joshbeckman](https://github.com/joshbeckman) |
+| Letterboxd | [@joshbeckman](https://letterboxd.com/joshbeckman/) |
 | Apple Music | [@andjosh](https://music.apple.com/profile/andjosh) |
 | YouTube | [@joshbeckmanchannel](https://www.youtube.com/@joshbeckmanchannel) |
 | Strava | [@beckman_josh](https://www.strava.com/athletes/beckman_josh) |
+| Hacker News | [bckmn](https://news.ycombinator.com/user?id=bckmn) |
 | Email | `josh@josbeckman.org` |
 
 ### Passive Accounts
 These are me, but I don't actively use them. If *you* happen to use these networks, feel free to interact with me and I'll see it eventually.
 
-| Letterboxd | [@joshbeckman](https://letterboxd.com/joshbeckman/) |
 | LastFM | [@andjosh_](https://www.last.fm/user/andjosh_) |
 | GitLab | [@joshbeckman](https://gitlab.com/joshbeckman) |
 | LinkedIn | [@josh-beckman-0aa20b50](https://www.linkedin.com/in/josh-beckman-0aa20b50) |
