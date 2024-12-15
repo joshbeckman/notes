@@ -81,6 +81,9 @@ jobs:
       - name: Import Mastodon
         id: import_mastodon
         run: bundle exec utilities/pesos_mastodon
+      - name: Import Letterboxd
+        id: import_letterboxd
+        run: bundle exec utilities/pesos_letterboxd
       - name: Optimize images
         id: optimize_images
         run: bundle exec utilities/optimize_images

@@ -83,7 +83,7 @@ module PESOS
         bluesky_status_url: bluesky_status_url,
         canonical: canonical,
         image: image,
-        slug: reply['object']['id'].split('/').last,
+        slug: post['object']['id'].split('/').last,
         tags: ['mastodon'],
         title: title
       )

@@ -7,13 +7,23 @@
       <p>
         {%- if page.imdb_id -%}
           <a href="https://www.imdb.com/title/{{page.imdb_id}}/" target="_blank" class="imdb-link">
-            View on IMDB</a>
+            View film on IMDB</a>
           or
           <a href="https://letterboxd.com/imdb/{{page.imdb_id}}/" target="_blank" class="letterboxd-link">
-            View on Letterboxd</a>
-        {%- elsif page.book_asin -%}
+            View film on Letterboxd</a>
+        {%- elsif page.tmdb_id -%}
+        <a href="https://www.themoviedb.org/movie/{{page.tmdb_id}}" target="_blank" class="tmdb-link">
+            View film on TMDB</a>
+          or
+          <a href="https://letterboxd.com/tmdb/{{page.tmdb_id}}/" target="_blank" class="letterboxd-link">
+            View film on Letterboxd</a>
+        {%- elsif page.letterboxd_id -%}
+          <a href="https://letterboxd.com/film/{{page.letterboxd_id}}/" target="_blank" class="letterboxd-link">
+            View film on Letterboxd</a>
+        {%- endif -%}
+        {%- if page.book_asin -%}
         <a href="https://www.amazon.com/foo/dp/{{page.book_asin}}/" target="_blank" class="amazon-link">
-            View on Amazon
+            View book on Amazon
           </a>
         {%- endif -%}
       </p>
