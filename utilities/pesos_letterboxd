@@ -8,10 +8,10 @@ require 'time'
 require_relative 'models/post'
 require_relative 'models/asset'
 
-# pull the film name/slug out of the item link
-# GET the film page content at https://letterboxd.com/film/<slug>
-# find in the HTML the IMDB URL that starts with http://www.imdb.com/title/<id>
-# make a post with all that
+# TODO: get the IMDB ID from the film page
+#   pull the film name/slug out of the item link
+#   GET the film page content at https://letterboxd.com/film/<slug>
+#   find in the HTML the IMDB URL that starts with http://www.imdb.com/title/<id>
 
 module PESOS
   class Letterboxd
@@ -52,7 +52,7 @@ module PESOS
         letterboxd_id: letterboxd_id,
         image: image,
         slug: post['guid'] + '-' + letterboxd_id,
-        tags: ['letterboxd','movies'],
+        tags: %w[letterboxd movies],
         title: title,
         rating: post['memberRating'].to_i
       )
@@ -62,7 +62,7 @@ module PESOS
     def find_image(description)
       return nil if description.nil?
 
-      image = description.scan(%r{<img src="([^"]+)"})
+      image = description.scan(/<img src="([^"]+)"/)
       return nil if image.empty?
 
       image.first.first
