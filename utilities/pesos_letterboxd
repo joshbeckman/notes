@@ -50,6 +50,8 @@ module PESOS
         letterboxd_review_url: post['link'],
         tmdb_id: post['movieId'],
         letterboxd_id: letterboxd_id,
+        bluesky_status_url: false,
+        mastodon_social_status_url: false,
         image: image,
         slug: post['guid'] + '-' + letterboxd_id,
         tags: %w[letterboxd movies],
