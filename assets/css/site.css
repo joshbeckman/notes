@@ -583,7 +583,6 @@ table th, table thead, table td { padding: 0.5rem; }
 
 .row {
   display: flex;
-  height: 100vh;
 }
 .column {
   flex: 1;
@@ -595,6 +594,10 @@ table th, table thead, table td { padding: 0.5rem; }
 .column.navigation {
   background-color: white;
   box-shadow: 0 1px 3px 0 rgb(0,0,0,.25);
+  align-self: flex-start;
+  position: sticky;
+  top: 0;
+  height: calc(100vh - 2em);
 }
 .column.navigation .content img {
   box-shadow: 0 15px 25px rgba(0,0,0,.25);
@@ -1293,6 +1296,10 @@ details summary:hover {
   }
   .column .content {
     padding: 0;
+  }
+  .column.navigation {
+    position: initial;
+    height: auto;
   }
 }
 @media (prefers-color-scheme: dark) {
