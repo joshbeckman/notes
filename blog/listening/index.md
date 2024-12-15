@@ -15,39 +15,39 @@ redirect_from:
 ---
 I generate this page from my Apple Music library using [a script I wrote](/blog/pulling-fun-insights-out-of-my-apple-music-library). Feel free to use it, too!
 
-Last updated: 2024-11-25
+Last updated: 2024-12-15
 
 ## Top Played Tracks
 This is a list of the top played tracks in my library.
 
-| Artist | Album | Track | Play Count |
-| ------ | ----- | ----- | ---------- |
-| Duster | Stratosphere | Gold Dust | 93 |
-| Peter Broderick | How They Are | Pulling the Rain | 92 |
-| Still Woozy | Lucy (feat. Odie) - Single | Lucy (feat. Odie) | 90 |
-| Sufjan Stevens | Greetings from Michigan - The Great Lake State (Deluxe Version) | Redford (For Yia-Yia and Pappou) | 87 |
-| Reptile Youth | Away - EP | Arab Spring Break, Pt. 2 | 86 |
-| Jamie xx | In Colour | Gosh | 86 |
-| Sylvan Esso | Sylvan Esso | Come Down | 81 |
-| Peter Broderick | Partners | In a Landscape | 81 |
-|  | Her OST | Song On The Beach | 78 |
-| Peter Broderick | How They Are | Guilt's Tune | 76 |
+| Artist | Album | Track | Play Count | Listening Time |
+| ------ | ----- | ----- | ---------- | -------------- |
+| Duster | Stratosphere | Gold Dust | 93 | 3h 15m 11s |
+| Peter Broderick | How They Are | Pulling the Rain | 92 | 8h 23m 21s |
+| Still Woozy | Lucy (feat. Odie) - Single | Lucy (feat. Odie) | 90 | 3h 33m 45s |
+| Jamie xx | In Colour | Gosh | 87 | 7h 1m 54s |
+| Sufjan Stevens | Greetings from Michigan - The Great Lake State (Deluxe Version) | Redford (For Yia-Yia and Pappou) | 87 | 2h 56m 54s |
+| Reptile Youth | Away - EP | Arab Spring Break, Pt. 2 | 86 | 7h 22m 48s |
+| Sylvan Esso | Sylvan Esso | Come Down | 81 | 3h 59m 2s |
+| Peter Broderick | Partners | In a Landscape | 81 | 14h 4m 46s |
+|  | Her OST | Song On The Beach | 78 | 4h 36m 29s |
+|  | Her OST | Photograph | 76 | 3h 8m 48s |
 
 ## Top Played Albums
 This is a list of the top played albums in my library (by ratio of song plays to songs in the album).
 
-| Artist | Album | Song Play Ratio |
-| ------ | ----- | --------------- |
-| Shane Carruth | Upstream Color (Original Motion Picture Score) | 51 |
-| Peter Broderick | Partners | 40 |
-| Peter Broderick | How They Are | 37 |
-| Sylvan Esso | Sylvan Esso | 36 |
-| Max Richter | Black Mirror: Nosedive (Music from the Original TV Series) | 36 |
-| Daniel Caesar | Freudian | 36 |
-| Peter Broderick | Float 2013 | 34 |
-| Andy Shauf | The Party | 34 |
-| Oddisee | The Beauty In All | 32 |
-| Girl Talk | Feed The Animals | 32 |
+| Artist | Album | Song Play Ratio | Play Count
+| ------ | ----- | --------------- | --------- |
+| Shane Carruth | Upstream Color (Original Motion Picture Score) | 51 | 765 |
+| Peter Broderick | Partners | 40 | 317 |
+| Peter Broderick | How They Are | 37 | 259 |
+| Daniel Caesar | Freudian | 36 | 364 |
+| Sylvan Esso | Sylvan Esso | 36 | 356 |
+| Max Richter | Black Mirror: Nosedive (Music from the Original TV Series) | 36 | 249 |
+| Peter Broderick | Float 2013 | 34 | 340 |
+| Andy Shauf | The Party | 34 | 335 |
+| Ahmad Jamal Trio | Ahmad Jamal At The Pershing: But Not for Me | 33 | 260 |
+| Oddisee | The Beauty In All | 32 | 384 |
 
 ## Top Played Artists
 This is a list of the top played artists in my library (by song plays).
@@ -56,30 +56,46 @@ This is a list of the top played artists in my library (by song plays).
 | ------ | -------------- | --------------- |
 | Oddisee | 1083 | 8 |
 | Four Tet | 1055 | 9 |
-| Peter Broderick | 927 | 33 |
+| Peter Broderick | 928 | 33 |
 | Sylvan Esso | 887 | 13 |
-| Caribou | 872 | 8 |
-| Nils Frahm | 859 | 8 |
+| Caribou | 885 | 8 |
+| Nils Frahm | 860 | 8 |
 | Shane Carruth | 765 | 51 |
 | José González | 762 | 10 |
 | KAYTRANADA | 716 | 12 |
-| Alvvays | 647 | 20 |
+| Still Woozy | 648 | 14 |
+
+## Top Genres
+This is a list of the top genres my library (by track count).
+
+| Genre | Track Count | Song Play Count | Total Time |
+| ------ | ---------- | -------------- | --------------- |
+| Electronic | 4613 | 18908 | 361h 9m 28s |
+| Alternative | 4280 | 17709 | 271h 13m 1s |
+| Dance | 2974 | 7696 | 184h 23m 4s |
+| Hip-Hop/Rap | 2540 | 7606 | 139h 37m 25s |
+| Rock | 1588 | 3979 | 109h 9m 50s |
+| Pop | 1269 | 4431 | 88h 38m 8s |
+| Soundtrack | 1026 | 3424 | 53h 49m 18s |
+| R&B/Soul | 897 | 3082 | 55h 19m 30s |
+| Classical | 885 | 2514 | 63h 46m 48s |
+| Jazz | 822 | 3319 | 74h 17m 26s |
 
 ## Recently Played Albums
 This is a list of the albums I've played recently.
 
 | Artist | Album | Date Added |
 | ------ | ----- | --------- |
-| PawPaw Rod | Doobie Mouth (An EP From PawPaw Rod) | 2024-10-31 |
-| Fat Dog | WOOF. | 2024-04-26 |
-| Fat Dog | Peace Song - Single | 2024-11-22 |
-| Souls of Mischief | Hiero Oldies, Vol. 1 | 2024-07-12 |
-| Still Woozy | Cooks - Single | 2018-04-30 |
-| Still Woozy | Lucy (feat. Odie) - Single | 2018-04-28 |
-| Doja Cat | Scarlet 2 CLAUDE | 2024-05-23 |
-| PawPaw Rod | HIT EM WHERE IT HURTS - Single | 2024-10-31 |
+|  |  | 2013-04-23 |
+| Bicep | In Waves Radio Presents: The Floor with Jamie xx b2b Caribou, Ep. 1 (DJ Mix) | 2024-12-13 |
+| Charli xcx | BRAT | 2024-06-07 |
+| Kelly Lee Owens | Dreamstate | 2024-10-18 |
+| Mark Barrott | Everything Changes, Nothing Ends | 2024-12-10 |
+| Nilüfer Yanya | PAINLESS (Deluxe Edition) | 2022-12-19 |
+| Hana Vu | Romanticism | 2024-05-13 |
+| True Cuckoo | Non Binary Code | 2024-05-03 |
+| Father John Misty | Mahashmashana | 2024-11-22 |
 | Major Lazer | Guns Don't Kill People... Lazers Do (15th Anniversary Edition) | 2024-11-22 |
-| Tyler, The Creator | CHROMAKOPIA | 2024-10-31 |
 
 ## Recently Loved Albums
 This is a list of the albums I've loved recently.

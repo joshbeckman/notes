@@ -27,19 +27,21 @@ file.puts
 file.puts '## Top Played Tracks'
 file.puts 'This is a list of the top played tracks in my library.'
 file.puts
-file.puts '| Artist | Album | Track | Play Count |'
-file.puts '| ------ | ----- | ----- | ---------- |'
+file.puts '| Artist | Album | Track | Play Count | Listening Time |'
+file.puts '| ------ | ----- | ----- | ---------- | -------------- |'
 parser.top_played_tracks.each do |track|
-  file.puts "| #{track.artist} | #{track.album} | #{track.name} | #{track.play_count} |"
+  time = (track.play_count * track.total_time) / 1000
+  time_format = "#{time / 3600}h #{(time % 3600) / 60}m #{time % 60}s"
+  file.puts "| #{track.artist} | #{track.album} | #{track.name} | #{track.play_count} | #{time_format} |"
 end
 file.puts
 file.puts '## Top Played Albums'
 file.puts 'This is a list of the top played albums in my library (by ratio of song plays to songs in the album).'
 file.puts
-file.puts '| Artist | Album | Song Play Ratio |'
-file.puts '| ------ | ----- | --------------- |'
+file.puts '| Artist | Album | Song Play Ratio | Play Count'
+file.puts '| ------ | ----- | --------------- | --------- |'
 parser.top_played_albums.each do |album|
-  file.puts "| #{album.artist} | #{album.name} | #{album.song_play_ratio.round} |"
+  file.puts "| #{album.artist} | #{album.name} | #{album.song_play_ratio.round} | #{album.song_play_count} |"
 end
 file.puts
 file.puts '## Top Played Artists'
@@ -49,6 +51,17 @@ file.puts '| Artist | Song Play Count | Song Play Ratio |'
 file.puts '| ------ | -------------- | --------------- |'
 parser.top_played_artists.each do |artist|
   file.puts "| #{artist.name} | #{artist.song_play_count} | #{artist.song_play_ratio.round} |"
+end
+file.puts
+file.puts '## Top Genres'
+file.puts 'This is a list of the top genres my library (by track count).'
+file.puts
+file.puts '| Genre | Track Count | Song Play Count | Total Time |'
+file.puts '| ------ | ---------- | -------------- | --------------- |'
+parser.top_genres.each do |genre|
+  time = genre.total_time / 1000
+  time_format = "#{time / 3600}h #{(time % 3600) / 60}m #{time % 60}s"
+  file.puts "| #{genre.name} | #{genre.track_count} | #{genre.play_count} | #{time_format} |"
 end
 file.puts
 file.puts '## Recently Played Albums'

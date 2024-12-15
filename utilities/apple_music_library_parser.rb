@@ -3,6 +3,7 @@ require_relative 'apple_music_library_parser/album'
 require_relative 'apple_music_library_parser/artist'
 require_relative 'apple_music_library_parser/playlist'
 require_relative 'apple_music_library_parser/track'
+require_relative 'apple_music_library_parser/genre'
 
 class AppleMusicLibraryParser
   attr_reader :plist
@@ -16,10 +17,10 @@ class AppleMusicLibraryParser
     @playlists ||= parse_playlists(plist['Playlists'])
     @artists ||= tracks.group_by(&:artist).map do |artist, tracks|
       parse_artist(artist, tracks)
-    end.reject { |a| a.name.nil? }
+    end.reject { |a| a.name.nil? || a.name.strip == '' }
     @albums ||= tracks.group_by(&:album).map do |album, tracks|
       parse_album(album, tracks)
-    end.reject { |a| a.name.nil? }
+    end.reject { |a| a.name.nil? || a.name.strip == '' }
   end
 
   def top_played_tracks(limit: 10)
@@ -33,6 +34,17 @@ class AppleMusicLibraryParser
 
   def top_played_artists(limit: 10, sort_by: :song_play_count)
     @artists.sort_by(&sort_by).reverse.take(limit)
+  end
+
+  def top_genres(limit: 10, sort_by: :track_count)
+    @tracks.group_by(&:genre).map do |genre, tracks|
+      Genre.new(
+        name: genre,
+        play_count: tracks.sum { |t| t.play_count || 0 },
+        total_time: tracks.sum { |t| t.total_time || 0 },
+        track_count: tracks.count
+      )
+    end.sort_by(&sort_by).reverse.take(limit)
   end
 
   def smart_playlists
