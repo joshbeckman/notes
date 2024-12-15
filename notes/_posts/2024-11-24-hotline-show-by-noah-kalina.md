@@ -3,7 +3,7 @@ layout: Post
 date: 2024-11-24 14:06:39 -0600
 title: "Hotline Show by Noah Kalina"
 toc: true
-image: 
+image: /assets/images/kalina-hotline-show.png
 description: 
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113542022302085165
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lbqt7xskgo2s
