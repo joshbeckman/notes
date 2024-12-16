@@ -5,8 +5,8 @@ title: Cross-posting From Letterboxd to Jekyll
 toc: true
 image: /assets/images/03C77ACF666F433E835E19772DAEF9D6.png
 description: 
-mastodon_social_status_url: false
-bluesky_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113662813185021566
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ldghrg4sby2j
 tags: 
   - code-snippets
   - personal-blog

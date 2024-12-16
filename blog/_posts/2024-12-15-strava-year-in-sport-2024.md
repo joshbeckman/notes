@@ -5,8 +5,8 @@ title: "Strava Year in Sport 2024"
 toc: true
 image: /assets/images/6F2233541CE84CBEB075FFFB85FF6FF7.jpeg
 description: 
-mastodon_social_status_url: false
-bluesky_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113662813169468867
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ldghregrdp2v
 tags: 
   - exercise
   - data
