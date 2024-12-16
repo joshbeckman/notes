@@ -17,6 +17,8 @@ tags:
 <li class="toc-entry toc-h2"><a href="listening">Music</a></li>
 </ul></div>
 
+I have some collections for specific topics (above) or you can browse the full list (below).
+
 {% assign postsByMonth = 
 site.categories['blog'] | group_by_exp:"post", "post.date | date: '%Y %B'" %}
 {% for day in postsByMonth %}
