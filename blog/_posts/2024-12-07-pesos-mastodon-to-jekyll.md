@@ -26,7 +26,7 @@ I tacked this on to the GitHub workflow that I run regularly to syndicate my pos
 1. Execute the `utilities/pesos_mastodon` script
 2. If there are any code/content changes, commit them and push them up to the repository\.
 
-The script, written in Ruby, pulls in the public feed of my Mastodon account’s posts \(praise publicly\-readable APIs\!\!\)\. It then finds any of those posts that are replies and imports them as Jekyll posts\. For every other post/status, it looks to see if there’s already a Jekyll post on the site that corresponds \(has the same Jekyll post frontmatter of `mastodon_social_status_url` ). Any that are already present get skipped\. Any that doesn’t gets imported as a blog post\.
+The script, written in Ruby, pulls in the public feed of my Mastodon account’s posts \(praise [publicly\-readable APIs](https://www.joshbeckman.org/blog/using-open-protocols)\!\!\)\. It then finds any of those posts that are replies and imports them as Jekyll posts\. For every other post/status, it looks to see if there’s already a Jekyll post on the site that corresponds \(has the same Jekyll post frontmatter of `mastodon_social_status_url` ). Any that are already present get skipped\. Any that doesn’t gets imported as a blog post\.
 
 Here I’m using a little `Post` class I made to assist in imports\. I also made a little `Asset` class that can download any image/video attachments to archive locally\.
 

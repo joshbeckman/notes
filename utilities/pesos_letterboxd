@@ -21,6 +21,7 @@ module PESOS
 
     def initialize
       @site = Jekyll::Site.new(Jekyll.configuration({}))
+      @username = ENV.fetch('LETTERBOXD_USERNAME', 'joshbeckman')
       @site.read
     end
 
@@ -43,6 +44,7 @@ module PESOS
       title = post['filmTitle']
       image = find_image(post['description'])
       letterboxd_id = post['link'].split('/').last
+      slug = "#{post['guid']}-#{letterboxd_id}"
       post = Post.new(
         body: post['description'],
         category: 'blog/watching',
@@ -53,7 +55,7 @@ module PESOS
         bluesky_status_url: false,
         mastodon_social_status_url: false,
         image: image,
-        slug: post['guid'] + '-' + letterboxd_id,
+        slug: slug,
         tags: %w[letterboxd movies],
         title: title,
         rating: post['memberRating'].to_i
@@ -71,7 +73,7 @@ module PESOS
     end
 
     def outbox
-      uri = URI.parse('https://letterboxd.com/joshbeckman/rss/')
+      uri = URI.parse("https://letterboxd.com/#{@username}/rss/")
       req = Net::HTTP::Get.new(uri)
       req['Accept'] = 'application/rss+xml'
       res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
