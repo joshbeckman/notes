@@ -24,8 +24,11 @@ Apparently I was one of the top 500 listeners of:
 - Kelly Lee Owens
 - Sofia Kourtesis
 - Melody’s Echo Chamber
+
 And one of the top 1000 listeners to:
 - Caribou
+
+See my other aggregate stats [on my listening page](https://www.joshbeckman.org/blog/listening/).
 
 ![](/assets/images/450E083ED90F4FD99DDDD63F44A5C8C3.jpeg)
 
