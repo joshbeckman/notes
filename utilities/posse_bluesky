@@ -5,6 +5,7 @@ require 'jekyll'
 require 'json'
 require 'net/http'
 require 'uri'
+require 'open-uri'
 
 # TODO: post full contents if they fit 300chars
 # TODO: maybe thread text-only posts?

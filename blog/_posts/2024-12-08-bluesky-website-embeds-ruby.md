@@ -38,6 +38,9 @@ Anyway, this morning I added some additional logic to my Ruby script for posting
 ## Code
 
 ```ruby
+# [omitted... see previous post for full code]
+require 'open-uri'
+
 module POSSE
   class JekyllFilter
     include Jekyll::Filters
