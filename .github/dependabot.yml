@@ -19,3 +19,10 @@ updates:
     commit-message:
       prefix: "chg"
       include: "scope"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "chg"
+      include: "scope"
