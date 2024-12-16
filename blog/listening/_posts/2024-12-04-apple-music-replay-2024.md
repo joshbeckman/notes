@@ -5,8 +5,8 @@ title: "Apple Music Replay 2024"
 toc: true
 image: /assets/images/7D002B16AD954C999B610C0B316DE8C3.jpeg
 description: I recommend all this
-mastodon_social_status_url: false
-bluesky_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113662813124306905
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ldghrc7m6o2c
 tags: 
   - music
   - data

@@ -9,8 +9,8 @@ letterboxd_id: the-first-omen
 image: https://a.ltrbxd.com/resized/film-poster/3/7/0/1/7/8/370178-the-first-omen-0-600-0-900-crop.jpg?v=ee3160fca0
 description: 
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/the-first-omen/
-mastodon_social_status_url: false
-bluesky_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113662813153465075
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ldghrcxvdp2v
 tags:
   - letterboxd
   - movies
