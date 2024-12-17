@@ -3,14 +3,14 @@ layout: Post
 date: 2024-12-17 13:52:53 +0000
 title: "Planning A Spaced Repetition System for My Site"
 toc: true
-image: 
-description: A sketch of what's to come
+image: /assets/images/1ABAE25016594772B3E5338BD71105E6.jpeg
+description: 
 mastodon_social_status_url: false
 bluesky_status_url: false
-tags:
-- personal-blog
-- memory
-- note-taking
+tags: 
+  - personal-blog
+  - memory
+  - note-taking
 ---
 
 I think I can build a spaced repetition system on my own site that can replace the one I use on [Readwise](http://readwise.io) right now\. It’s not that I dislike the Readwise tooling, it’s that it doesn’t include *all* of my writing/notes \(e\.g\. blog posts\) and the highlights in Readwise don’t have all the context that I’ve built around them on this site \(e\.g\. backlinks, source linking, [LLM\-aided insights](https://www.joshbeckman.org/blog/using-an-llmand-rag-to-wring-insights-from-my-posts)\)\. 
@@ -23,4 +23,7 @@ Then I can just review until I run out of interest/time\. And come back to resta
 
 To prevent other people from reviewing on my behalf \(this is a public site, after all\), I could have the start page ask for a username/password to unlock the review system\. That could be verified by the val\.town script and then stored on the client session storage for each subsequent request\. That way, no one is able to make a successful review/update without the password\. And I can rely on val\.town’s already\-enforced request rate limit to prevent brute\-force attacks\.
 
-I didn't have time to build it this morning so I wrote this instead.
+![forest image](/assets/images/1ABAE25016594772B3E5338BD71105E6.jpeg)
+
+I didn't have time to build it this morning so I wrote this instead\.
+
