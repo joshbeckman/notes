@@ -20,7 +20,7 @@ class Optimizer
       when ".jpg", ".jpeg", ".png", ".gif"
         optimize_image(file)
       else
-        puts "skipping: #{file}"
+        puts "skipping unknown extension: #{file}"
       end
     end
   end
@@ -30,11 +30,19 @@ class Optimizer
   # use imagemagick to resize image
   def optimize_image(path)
     width, height, size = `identify -format "%w %h %b" #{path}`.split(" ")
-    return if width.nil? || width.empty?
+    if width.nil? || width.empty?
+      puts "skipping unknown sizing: #{path}"
+      return
+    end
     return unless width.to_i > max_width || height.to_i > max_height
 
     puts "resizing: #{path}"
-    `convert #{path} -strip -resize #{max_width}x#{max_height} #{path}`
+    case File.extname(path).downcase
+    when ".jpg", ".jpeg"
+      `convert #{path} -strip -resize #{max_width}x#{max_height} -define jpeg:extent=976kb #{path}`
+    else
+      `convert #{path} -strip -resize #{max_width}x#{max_height} #{path}`
+    end
   end
 end
 
