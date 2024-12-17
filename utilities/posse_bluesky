@@ -54,7 +54,10 @@ module POSSE
       params = { handle: @handle }
       uri.query = URI.encode_www_form(params)
       response = Net::HTTP.get_response(uri)
-      raise Error, 'DID identification failed' unless response.is_a?(Net::HTTPSuccess)
+      unless response.is_a?(Net::HTTPSuccess)
+        puts response.body
+        raise Error, 'DID identification failed'
+      end
 
       JSON.parse(response.body)['did']
     end
@@ -73,7 +76,10 @@ module POSSE
       response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
         http.request(request)
       end
-      raise Error, 'API Key generation failed' unless response.is_a?(Net::HTTPSuccess)
+      unless response.is_a?(Net::HTTPSuccess)
+        puts response.body
+        raise Error, 'API Key generation failed'
+      end
 
       JSON.parse(response.body)['accessJwt']
     end
@@ -127,7 +133,10 @@ module POSSE
         http.request(request)
       end
 
-      raise Error, 'Status post request failed' unless res.is_a?(Net::HTTPSuccess)
+      unless res.is_a?(Net::HTTPSuccess)
+        puts res.body
+        raise Error, 'Status post request failed'
+      end
 
       resp_body = JSON.parse(res.body)
       resp_body['url'] = "https://bsky.app/profile/#{@handle}/post/#{resp_body['uri'].split('/').last}"

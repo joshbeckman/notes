@@ -38,16 +38,11 @@ jobs:
         run: bundle exec utilities/posse_mastodon
         env:
           MASTODON_SOCIAL_TOKEN: ${{ secrets.MASTODON_SOCIAL_TOKEN }}
-      - name: Publish to Bluesky
-        id: posse_bluesky
-        run: bundle exec utilities/posse_bluesky
-        env:
-          BLUESKY_PASSWORD: ${{ secrets.BLUESKY_PASSWORD }}
       - name: Determine if changes were made
-        id: any_changes_posse
+        id: any_changes_posse_mastodon
         run: echo "changed=$(git status --porcelain | wc -l)" >> $GITHUB_OUTPUT
       - name: Commit changes
-        if: steps.any_changes_posse.outputs.changed != 0
+        if: steps.any_changes_posse_mastodon.outputs.changed != 0
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "josh@joshbeckman.org"
@@ -55,9 +50,30 @@ jobs:
           git add notes
           git add replies
           git add assets
-          git commit -m "new(usr): POSSE"
+          git commit -m "new(usr): POSSE Mastodon"
       - name: Push changes
-        if: steps.any_changes_posse.outputs.changed != 0
+        if: steps.any_changes_posse_mastodon.outputs.changed != 0
+        run: git push
+      - name: Publish to Bluesky
+        id: posse_bluesky
+        run: bundle exec utilities/posse_bluesky
+        env:
+          BLUESKY_PASSWORD: ${{ secrets.BLUESKY_PASSWORD }}
+      - name: Determine if changes were made
+        id: any_changes_posse_bluesky
+        run: echo "changed=$(git status --porcelain | wc -l)" >> $GITHUB_OUTPUT
+      - name: Commit changes
+        if: steps.any_changes_posse_bluesky.outputs.changed != 0
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "josh@joshbeckman.org"
+          git add blog
+          git add notes
+          git add replies
+          git add assets
+          git commit -m "new(usr): POSSE Bluesky"
+      - name: Push changes
+        if: steps.any_changes_posse_bluesky.outputs.changed != 0
         run: git push
       - name: Import Highlights
         id: import_highlights
@@ -81,26 +97,56 @@ jobs:
       - name: Import Mastodon
         id: import_mastodon
         run: bundle exec utilities/pesos_mastodon
-      - name: Import Letterboxd
-        id: import_letterboxd
-        run: bundle exec utilities/pesos_letterboxd
-      - name: Optimize images
-        id: optimize_images
-        run: bundle exec utilities/optimize_images
       - name: Determine if changes were made
-        id: any_pesos
+        id: any_changes_pesos_mastodon
         run: echo "changed=$(git status --porcelain | wc -l)" >> $GITHUB_OUTPUT
       - name: Commit changes
-        if: steps.any_pesos.outputs.changed != 0
+        if: steps.any_changes_pesos_mastodon.outputs.changed != 0
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "josh@joshbeckman.org"
           git add replies
           git add blog
           git add assets
-          git commit -m "new(usr): PESOS"
+          git commit -m "new(usr): PESOSi Mastodon"
       - name: Push changes
-        if: steps.any_pesos.outputs.changed != 0
+        if: steps.any_changes_pesos_mastodon.outputs.changed != 0
+        run: git push
+      - name: Import Letterboxd
+        id: import_letterboxd
+        run: bundle exec utilities/pesos_letterboxd
+      - name: Determine if changes were made
+        id: any_changes_pesos_letterboxd
+        run: echo "changed=$(git status --porcelain | wc -l)" >> $GITHUB_OUTPUT
+      - name: Commit changes
+        if: steps.any_changes_pesos_letterboxd.outputs.changed != 0
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "josh@joshbeckman.org"
+          git add replies
+          git add blog
+          git add assets
+          git commit -m "new(usr): PESOS Letterboxd"
+      - name: Push changes
+        if: steps.any_changes_pesos_letterboxd.outputs.changed != 0
+        run: git push
+      - name: Optimize images
+        id: optimize_images
+        run: bundle exec utilities/optimize_images
+      - name: Determine if changes were made
+        id: any_changes_optimize_images
+        run: echo "changed=$(git status --porcelain | wc -l)" >> $GITHUB_OUTPUT
+      - name: Commit changes
+        if: steps.any_changes_optimize_images.outputs.changed != 0
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "josh@joshbeckman.org"
+          git add replies
+          git add blog
+          git add assets
+          git commit -m "chg(dev): Optimize images"
+      - name: Push changes
+        if: steps.any_changes_optimize_images.outputs.changed != 0
         run: git push
   deploy:
     needs: build

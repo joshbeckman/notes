@@ -81,7 +81,10 @@ module POSSE
         http.request(req)
       end
 
-      raise Error, 'Post request failed' unless res.is_a?(Net::HTTPSuccess)
+      unless res.is_a?(Net::HTTPSuccess)
+        puts res.body
+        raise Error, 'Post request failed'
+      end
 
       JSON.parse(res.body)
     end

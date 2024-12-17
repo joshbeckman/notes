@@ -80,7 +80,10 @@ module PESOS
         http.request(req)
       end
 
-      raise Error, 'Outbox request failed' unless res.is_a?(Net::HTTPSuccess)
+      unless res.is_a?(Net::HTTPSuccess)
+        puts res.body
+        raise Error, 'Outbox request failed'
+      end
 
       REXML::Document.new(res.body).elements['rss/channel'].elements.map do |item|
         next unless item.name == 'item'
