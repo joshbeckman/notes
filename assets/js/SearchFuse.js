@@ -43,7 +43,7 @@ Fuse = (function(){"use strict";function e(e,t){var n=Object.keys(e);if(Object.g
                 includeMatches: true,
                 includeScore: true,
                 isCaseSensitive: false,
-                minMatchCharLength: 3,
+                minMatchCharLength: 2,
                 shouldSort: true,
                 threshold: 0.2, // set this to 0 to require a perfect match
                 useExtendedSearch: true, // ref: https://www.fusejs.io/examples.html#extended-search
