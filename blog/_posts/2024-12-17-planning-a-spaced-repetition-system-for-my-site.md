@@ -6,7 +6,7 @@ toc: true
 image: /assets/images/1ABAE25016594772B3E5338BD71105E6.jpeg
 description: 
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113669683170861908
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ldjtkd4ta62o
 tags: 
   - personal-blog
   - memory
