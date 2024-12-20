@@ -6,7 +6,7 @@ toc: true
 image: /assets/images/f23ec509-716b-471a-8378-52cc7fcf066d.png
 description: 
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113683521711319052
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ldpo2ii2z725
 tags:
   - github
   - data
