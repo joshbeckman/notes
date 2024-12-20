@@ -1,7 +1,7 @@
 ---
 layout: Post
 date: 2024-12-19 15:28:05 +0000
-title: "GitHub Wrapped 2024"
+title: "My GitHub Wrapped 2024"
 toc: true
 image: /assets/images/f23ec509-716b-471a-8378-52cc7fcf066d.png
 description: 
