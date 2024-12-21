@@ -23,7 +23,6 @@ module Bluesky
       uri = URI.parse("https://plc.directory/#{did}")
       response = Net::HTTP.get_response(uri)
       unless response.is_a?(Net::HTTPSuccess)
-        # return nil if response.code == '404'
         return nil if response.code == '404'
 
         puts response.body

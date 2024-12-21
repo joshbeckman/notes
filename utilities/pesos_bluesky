@@ -143,7 +143,7 @@ module PESOS
     end
 
     def outbox
-      uri = URI.parse('https://bsky.social/xrpc/app.bsky.feed.searchPosts?author=joshbeckman.org&q=*')
+      uri = URI.parse("https://bsky.social/xrpc/app.bsky.feed.searchPosts?author=#{@handle}&q=*")
       request = Net::HTTP::Get.new(uri)
       request.content_type = 'application/json'
       request['Authorization'] = "Bearer #{@api_key}"
