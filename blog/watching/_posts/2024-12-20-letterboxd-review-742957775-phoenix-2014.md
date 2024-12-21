@@ -8,7 +8,7 @@ tmdb_id: 254578
 letterboxd_id: phoenix-2014
 image: https://a.ltrbxd.com/resized/sm/upload/yo/sh/hn/kv/9wgvrNpD4YtcZji0sy69av8rPfZ-0-600-0-900-crop.jpg?v=3792be2a54
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113692008948706964
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/phoenix-2014/
 tags:
