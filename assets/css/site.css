@@ -1010,6 +1010,7 @@ ul.asymp>li {
   width: calc(100% - 17ch);
   display: inline-block;
 }
+button,
 #conversation-form input[type="submit"],
 .searchbar button[type=submit] {
   padding:0.45rem 2.5ch;
@@ -1018,6 +1019,15 @@ ul.asymp>li {
   background-color: aliceblue;
   color: inherit;
 }
+button#kill {
+  background-color: darkred;
+  color: #EBEDEA;
+}
+#counter {
+  font-size: 3rem;
+  font-weight: bold;
+}
+button:hover,
 #conversation-form input[type="submit"]:hover,
 .searchbar button[type=submit]:hover {
   cursor: pointer;
@@ -1327,6 +1337,7 @@ details summary:hover {
       background-color: #353535;
       color: #EBEDEA;
     }
+    button,
     #conversation-form input[type=submit],
     .searchbar button[type=submit] {
       background-color: darkblue;
