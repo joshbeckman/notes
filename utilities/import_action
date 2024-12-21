@@ -21,7 +21,6 @@ class Jekyll
   end
 
   def self.import_highlight(highlight, book)
-    puts highlight if highlight.highlight_id == '824043990'
     return unless highlight.should_import?(book)
 
     File.open("notes/_posts/#{highlight.formatted_date}-#{highlight.highlight_id}.md", 'w') do |f|
@@ -314,10 +313,15 @@ class Importer
     # Jekyll.import_reading_list(inbox_month: new_docs, archive_month: archive_docs)
   end
 
-  def self.clean_posts
+  def self.wipe_posts
     system 'rm notes/_posts/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]-[0-9]*.md'
+  end
+
+  def self.reset_posts
+    wipe_posts
     system 'git checkout -- notes/_posts'
   end
 end
 
+Importer.wipe_posts
 Importer.import
