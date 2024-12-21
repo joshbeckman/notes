@@ -4,6 +4,9 @@ title: Counter
 permalink: /counter/
 emoji: 🍃
 tags: index
+redirect_from:
+  - /counter-redirect
+  - /counter-redirect/
 ---
 
 This is a page that displays the life of my counter.
