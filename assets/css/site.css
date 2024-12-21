@@ -1027,6 +1027,7 @@ button#kill {
 #counter {
   font-size: 3rem;
   font-weight: bold;
+  font-family: "Berkeley Mono", monospace;
 }
 button:hover,
 #conversation-form input[type="submit"]:hover,
