@@ -33,7 +33,7 @@ grow.addEventListener('click', () => {
     interactionCount++;
     var growth = Math.floor(Math.random() * interactionCount);
     if (interactionCount > 1) {
-        number = number + growth;
+        number = number + Math.max(1, growth);
         counter.innerText = number;
         fetch(`${url}/set`, {
             method: 'POST',
