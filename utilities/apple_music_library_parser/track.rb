@@ -61,4 +61,15 @@ Track = Struct.new(
   :work,
   :year,
   keyword_init: true
-)
+) do
+  def get_album
+    Album.new(
+      artist: album_artist,
+      genre: genre,
+      loved: album_loved,
+      rating: album_rating,
+      name: album,
+      year: year
+    )
+  end
+end

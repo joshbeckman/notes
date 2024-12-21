@@ -30,18 +30,22 @@ file.puts
 file.puts '| Artist | Album | Track | Play Count | Listening Time |'
 file.puts '| ------ | ----- | ----- | ---------- | -------------- |'
 parser.top_played_tracks.each do |track|
+  track.get_album.download_album_art
   time = (track.play_count * track.total_time) / 1000
   time_format = "#{time / 3600}h #{(time % 3600) / 60}m #{time % 60}s"
-  file.puts "| #{track.artist} | #{track.album} | #{track.name} | #{track.play_count} | #{time_format} |"
+  album_md = track.get_album.album_art_md
+  album_md = track.album if album_md.nil? || album_md.empty?
+  file.puts "| #{track.artist} | #{album_md} | #{track.name} | #{track.play_count} | #{time_format} |"
 end
 file.puts
 file.puts '## Top Played Albums'
 file.puts 'This is a list of the top played albums in my library (by ratio of song plays to songs in the album).'
 file.puts
-file.puts '| Artist | Album | Song Play Ratio | Play Count'
-file.puts '| ------ | ----- | --------------- | --------- |'
+file.puts '| Art | Artist | Album | Song Play Ratio | Play Count'
+file.puts '| --- | ------ | ----- | --------------- | --------- |'
 parser.top_played_albums.each do |album|
-  file.puts "| #{album.artist} | #{album.name} | #{album.song_play_ratio.round} | #{album.song_play_count} |"
+  album.download_album_art
+  file.puts "| #{album.album_art_md} | #{album.artist} | #{album.name} | #{album.song_play_ratio.round} | #{album.song_play_count} |"
 end
 file.puts
 file.puts '## Top Played Artists'
@@ -67,19 +71,21 @@ file.puts
 file.puts '## Recently Played Albums'
 file.puts 'This is a list of the albums I\'ve played recently.'
 file.puts
-file.puts '| Artist | Album | Date Added |'
-file.puts '| ------ | ----- | --------- |'
+file.puts '| Art | Artist | Album | Date Added |'
+file.puts '| --- | ------ | ----- | --------- |'
 parser.recently_played_albums.each do |album|
-  file.puts "| #{album.artist} | #{album.name} | #{album.date_added&.strftime('%Y-%m-%d') } |"
+  album.download_album_art
+  file.puts "| #{album.album_art_md} | #{album.artist} | #{album.name} | #{album.date_added&.strftime('%Y-%m-%d') } |"
 end
 file.puts
 file.puts '## Recently Loved Albums'
 file.puts 'This is a list of the albums I\'ve loved recently.'
 file.puts
-file.puts '| Artist | Album | Date Added |'
+file.puts '| Art | Artist | Album | Date Added |'
 file.puts '| ------ | ----- | --------- |'
 parser.recently_loved_albums.each do |album|
-  file.puts "| #{album.artist} | #{album.name} | #{album.date_added&.strftime('%Y-%m-%d')} |"
+  album.download_album_art
+  file.puts "| #{album.album_art_md} | #{album.artist} | #{album.name} | #{album.date_added&.strftime('%Y-%m-%d') } |"
 end
 file.puts
 file.puts <<-LIQUID
