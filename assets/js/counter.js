@@ -5,7 +5,7 @@ let url = 'https://joshbeckman-counterservice.web.val.run';
 let number = 0;
 let interactionCount = 0;
 (function updateCounter() {
-    fetch(url)
+    fetch(`${url}/increment`, { method: 'POST' })
         .then(response => response.json())
         .then(data => {
             animateCounterChange(number, data.number);
