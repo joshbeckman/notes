@@ -6,6 +6,7 @@ require 'json'
 require 'net/http'
 require 'uri'
 require 'open-uri'
+require_relative 'bluesky/auth'
 
 # TODO: post full contents if they fit 300chars
 # TODO: maybe thread text-only posts?
@@ -28,6 +29,8 @@ module POSSE
   end
 
   class Bluesky
+    include ::Bluesky::Auth
+
     class Error < StandardError; end
 
     attr_reader :site
@@ -38,50 +41,14 @@ module POSSE
       @jekyll_filter = JekyllFilter.new
       @content_template = Liquid::Template.parse('{{ x | strip_html | strip | escape | truncate: 140}}')
       @handle = ENV.fetch('BLUESKY_HANDLE', 'joshbeckman.org')
-      @password = ENV['BLUESKY_PASSWORD']
-      @did = generate_did
-      @api_key = generate_api_key(@did)
+      @did = generate_did(@handle)
+      @api_key = generate_api_key(@did, ENV['BLUESKY_PASSWORD'])
     end
 
     def post_all
       site.posts.docs.each do |post|
         post(post) if should_post?(post)
       end
-    end
-
-    def generate_did
-      uri = URI.parse('https://bsky.social/xrpc/com.atproto.identity.resolveHandle')
-      params = { handle: @handle }
-      uri.query = URI.encode_www_form(params)
-      response = Net::HTTP.get_response(uri)
-      unless response.is_a?(Net::HTTPSuccess)
-        puts response.body
-        raise Error, 'DID identification failed'
-      end
-
-      JSON.parse(response.body)['did']
-    end
-
-    def generate_api_key(did)
-      uri = URI.parse('https://bsky.social/xrpc/com.atproto.server.createSession')
-      request = Net::HTTP::Post.new(uri)
-      request.content_type = 'application/json'
-      request.body = JSON.dump({
-                                 'identifier' => did,
-                                 'password' => @password
-                               })
-      req_options = {
-        use_ssl: uri.scheme == 'https'
-      }
-      response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
-        http.request(request)
-      end
-      unless response.is_a?(Net::HTTPSuccess)
-        puts response.body
-        raise Error, 'API Key generation failed'
-      end
-
-      JSON.parse(response.body)['accessJwt']
     end
 
     def post(post)

@@ -62,12 +62,14 @@ You can read about everything else I use to build things at [/uses](/uses).
 ### Unreleased
 - `/projects` page
 - podcast rendering
-- import posts from Bluesky as notes/replies
 - photos page
 - Figure out someway to connect book summary posts and article summary post to highlights and override the default source page
 - Create mastodon or Bluesky bots to have LLMs interactions with my posts
 - Refactor insights logic to operate via LLM tools instead of plain RAG
 - [More ideas](https://github.com/joshbeckman/notes/issues?q=is%3Aopen+is%3Aissue+-label%3Apost)
+
+### 2024-12-21
+- Import posts from Bluesky as posts and replies
 
 ### 2024-12-15
 - [Import reviews from Letterboxd](https://www.joshbeckman.org/blog/crossposting-from-letterboxd-to-jekyll) as blog posts

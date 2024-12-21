@@ -1,0 +1,170 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'jekyll'
+require 'json'
+require 'net/http'
+require 'time'
+require_relative 'bluesky/auth'
+require_relative 'models/post'
+require_relative 'models/asset'
+
+module PESOS
+  # Pulls in posts and replies from Bluesky
+  # TODO: support image/video imports
+  # TODO: support tag imports
+  # TODO: generate title with LLM for post imports
+  class Bluesky
+    include ::Bluesky::Auth
+
+    class Error < StandardError; end
+
+    attr_reader :site
+
+    def initialize
+      @site = Jekyll::Site.new(Jekyll.configuration({}))
+      @handle = ENV.fetch('BLUESKY_HANDLE', 'joshbeckman.org')
+      @did = generate_did(@handle)
+      @api_key = generate_api_key(@did, ENV['BLUESKY_PASSWORD'])
+      @site.read
+    end
+
+    def import_replies
+      replies = outbox.filter do |item|
+        item.dig('record', 'reply', 'parent', 'uri')
+      end
+      replies.each { |reply| import_reply(reply) }
+    end
+
+    # example post:
+    # {"uri"=>"at://did:plc:oclgvsz6g6bsosawrkchxyyq/app.bsky.feed.post/3ldjtkd4ta62o", "cid"=>"bafyreihfongdqqovn2b5hzkpyk7y7abgjmne4dd6k3hbqr4iwqeli33xfu", "author"=>{"did"=>"did:plc:oclgvsz6g6bsosawrkchxyyq", "handle"=>"joshbeckman.org", "displayName"=>"Josh Beckman", "avatar"=>"https://cdn.bsky.app/img/avatar/plain/did:plc:oclgvsz6g6bsosawrkchxyyq/bafkreicpanycebp6xzx5idb365juthz2edh3m2abruigehosk6nycxxxzq@jpeg", "viewer"=>{"muted"=>false, "blockedBy"=>false}, "labels"=>[], "createdAt"=>"2023-10-18T15:55:28.252Z"}, "record"=>{"$type"=>"app.bsky.feed.post", "createdAt"=>"2024-12-17T21:57:02.956Z", "embed"=>{"$type"=>"app.bsky.embed.external", "external"=>{"description"=>"I think I can build a spaced repetition system on my own site that can replace the one I use on Readwise right now. It’s not that I disli...", "thumb"=>{"$type"=>"blob", "ref"=>{"$link"=>"bafkreiaebaxzkqim4rfhzvn5ondunpcnqomks4zhf5vgjudfd7ncyf4jeu"}, "mimeType"=>"image/jpeg", "size"=>938860}, "title"=>"Planning A Spaced Repetition System for My Site", "uri"=>"https://www.joshbeckman.org/blog/planning-a-spaced-repetition-system-for-my-site"}}, "facets"=>[{"features"=>[{"$type"=>"app.bsky.richtext.facet#link", "uri"=>"https://www.joshbeckman.org/blog/planning-a-spaced-repetition-system-for-my-site"}], "index"=>{"byteEnd"=>80, "byteStart"=>0}}], "text"=>"https://www.joshbeckman.org/blog/planning-a-spaced-repetition-system-for-my-site\n\nPlanning A Spaced Repetition System for My Site"}, "embed"=>{"$type"=>"app.bsky.embed.external#view", "external"=>{"uri"=>"https://www.joshbeckman.org/blog/planning-a-spaced-repetition-system-for-my-site", "title"=>"Planning A Spaced Repetition System for My Site", "description"=>"I think I can build a spaced repetition system on my own site that can replace the one I use on Readwise right now. It’s not that I disli...", "thumb"=>"https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:oclgvsz6g6bsosawrkchxyyq/bafkreiaebaxzkqim4rfhzvn5ondunpcnqomks4zhf5vgjudfd7ncyf4jeu@jpeg"}}, "replyCount"=>0, "repostCount"=>0, "likeCount"=>0, "quoteCount"=>0, "indexedAt"=>"2024-12-17T21:57:03.616Z", "viewer"=>{"threadMuted"=>false, "embeddingDisabled"=>false}, "labels"=>[]}
+    def import_posts
+      posts = outbox.filter do |item|
+        next false if item.dig('record', 'reply', 'parent', 'uri')
+        next false if post_exists?(resolve_post_uri(item['uri']))
+
+        true
+      end
+      posts.each { |post| import_post(post) }
+    end
+
+    def post_exists?(url)
+      slug = url.split('/').last
+      site.posts.docs.any? do |post|
+        next false unless post.data['bluesky_status_url']
+
+        post.data['bluesky_status_url'].include?(slug)
+      end
+    end
+
+    def import_reply(reply)
+      record = reply['record']
+      reply_uri = record.dig('reply', 'parent', 'uri')
+      title = "Reply to #{find_did_handle(reply_uri)}"
+      canonical = resolve_post_uri(reply['uri'])
+      post = Post.new(
+        body: embed_facets(record['text'], record['facets']),
+        category: 'replies',
+        date: Time.parse(record['createdAt']),
+        in_reply_to: resolve_post_uri(reply_uri),
+        bluesky_status_url: canonical,
+        canonical: canonical,
+        slug: reply['uri'].split('/').last,
+        tags: ['bluesky'],
+        title: title
+      )
+      post.create_file
+    end
+
+    def import_post(post)
+      record = post['record']
+      title = 'Post to Bluesky'
+      post_uri = resolve_post_uri(post['uri'])
+      canonical = nil
+      mastodon_social_status_url = false
+      # lock it down to bluesky if directed at another user
+      if mention?(record['facets'])
+        canonical = post_uri
+        mastodon_social_status_url = nil
+      end
+      post = Post.new(
+        body: embed_facets(record['text'], record['facets']),
+        category: 'blog',
+        date: Time.parse(post['published']),
+        hide_title: true,
+        mastodon_social_status_url: mastodon_social_status_url,
+        bluesky_status_url: post_uri,
+        canonical: canonical,
+        slug: post['uri'].split('/').last,
+        tags: ['bluesky'],
+        title: title
+      )
+      post.create_file
+    end
+
+    def mention?(facets)
+      facets&.any? do |facet|
+        facet['features']&.any? do |feature|
+          feature['$type'] == 'app.bsky.richtext.facet#mention'
+        end
+      end
+    end
+
+    def embed_facets(text, facets)
+      return text if facets.nil? || facets.empty?
+
+      facets.each do |facet|
+        next unless facet['features']
+
+        facet['features'].each do |feature|
+          if feature['$type'] == 'app.bsky.richtext.facet#link'
+            bytestart = facet['index']['byteStart']
+            byteend = facet['index']['byteEnd']
+            text.insert(bytestart, '[')
+            text.insert(byteend + 1, "](#{feature['uri']})")
+          elsif feature['$type'] == 'app.bsky.richtext.facet#mention'
+            bytestart = facet['index']['byteStart']
+            byteend = facet['index']['byteEnd']
+            text.insert(bytestart, '[')
+            text.insert(byteend + 1, "](#{resolve_did_to_profile(feature['did'])})")
+          end
+        end
+      end
+      text
+    end
+
+    def find_did_handle(uri)
+      return 'Bluesky' if uri.nil?
+
+      did = extract_did(uri)
+      return 'Bluesky' if did.nil?
+
+      resolve_handle(did) || 'Bluesky'
+    end
+
+    def outbox
+      uri = URI.parse('https://bsky.social/xrpc/app.bsky.feed.searchPosts?author=joshbeckman.org&q=*')
+      request = Net::HTTP::Get.new(uri)
+      request.content_type = 'application/json'
+      request['Authorization'] = "Bearer #{@api_key}"
+      req_options = {
+        use_ssl: uri.scheme == 'https'
+      }
+      res = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
+        http.request(request)
+      end
+
+      unless res.is_a?(Net::HTTPSuccess)
+        puts res.body
+        raise Error, 'Status post request failed'
+      end
+
+      resp_body = JSON.parse(res.body)
+      resp_body['posts']
+    end
+  end
+end
+
+bluesky = PESOS::Bluesky.new
+bluesky.import_replies
+bluesky.import_posts
