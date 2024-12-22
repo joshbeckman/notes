@@ -8,7 +8,7 @@ tmdb_id: 496243
 letterboxd_id: parasite-2019
 image: https://a.ltrbxd.com/resized/film-poster/4/2/6/4/0/6/426406-parasite-0-600-0-900-crop.jpg?v=8f5653f710
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113694841183525299
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/parasite-2019/
 tags:
