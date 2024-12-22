@@ -40,7 +40,7 @@ If you see an account that looks like it might be me but isn't listed here, plea
 | Apple Music | [@andjosh](https://music.apple.com/profile/andjosh) |
 | YouTube | [@joshbeckmanchannel](https://www.youtube.com/@joshbeckmanchannel) |
 | Strava | [@beckman_josh](https://www.strava.com/athletes/beckman_josh) |
-| Hacker News | [bckmn](https://news.ycombinator.com/user?id=bckmn) |
+| Hacker News | [@bckmn](https://news.ycombinator.com/user?id=bckmn) |
 | Email | `josh@josbeckman.org` |
 
 ### Passive Accounts
