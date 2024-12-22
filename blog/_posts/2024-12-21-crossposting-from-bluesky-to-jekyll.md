@@ -6,7 +6,7 @@ toc: true
 image: /assets/images/94DC2326C74C413C8550148F3A798DD2.png
 description: Archiving and syndicating Bluesky posts to my site
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113694841211210705
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lduow5rw6s2y
 tags:
 - bluesky
 - code-snippets
