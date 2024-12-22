@@ -12,7 +12,7 @@ class Optimizer
   # reads images from path
   # pass each image to optimize_image
   def run
-    Dir.glob("#{path}/*").each do |file|
+    Dir.glob("#{path}/**/*").each do |file|
       # determine the file type
       # if file type is image
       # pass to optimize_image
