@@ -50,6 +50,9 @@ grow.addEventListener('click', () => {
             .then(data => {
                 animateCounterChange(number, data.number);
                 number = data.number;
+            })
+            .catch(error => {
+                alert('The counter is growing too quickly. Try again in a minute or so.');
             });
     } else {
         number = number + 1;
@@ -59,6 +62,9 @@ grow.addEventListener('click', () => {
             .then(data => {
                 animateCounterChange(number, data.number);
                 number = data.number;
+            })
+            .catch(error => {
+                alert('The counter is growing too quickly. Try again in a minute or so.');
             });
     }
 });
