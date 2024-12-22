@@ -24,4 +24,6 @@ This is *my* counter because it lives with me. The number here is mirrored on a 
 
 ![counter](/assets/images/47E8A68F0D414D79AF690B9B473DF9AD.jpeg)
 
+You can read about [how I built it](https://www.joshbeckman.org/blog/breathing-life-into-my-little-counter).
+
 <script async src="/assets/js/counter.js"></script>
