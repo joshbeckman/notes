@@ -47,7 +47,12 @@ module POSSE
 
     def post(post)
       puts "Posting: #{url(post)}"
-      message = "#{post.data['title']}\n\n#{url(post)}"
+      text = if post.data['hide_title']
+               excerpt(post)
+             else
+               post.data['title']
+             end
+      message = "#{text}\n\n#{url(post)}"
       status = post_status(message)
       puts "Posted:  #{url(post)} to #{status['url']}"
       mastodon_social_status_url = status['url']

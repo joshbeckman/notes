@@ -53,7 +53,12 @@ module POSSE
 
     def post(post)
       puts "Posting: #{url(post)}"
-      message = "#{url(post)}\n\n#{post.data['title']}"
+      text = if post.data['hide_title']
+               excerpt(post)
+             else
+               post.data['title']
+             end
+      message = "#{url(post)}\n\n#{text}"
       status = post_status(message, post)
       puts "Posted:  #{url(post)} to #{status['url']}"
       bluesky_status_url = status['url']
