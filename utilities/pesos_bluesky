@@ -11,7 +11,7 @@ require_relative 'models/asset'
 
 module PESOS
   # Pulls in posts and replies from Bluesky
-  # TODO: support image/video imports
+  # TODO: support video imports
   # TODO: support tag imports
   # TODO: generate title with LLM for post imports
   class Bluesky
@@ -37,7 +37,7 @@ module PESOS
     end
 
     # example post:
-    # {"uri"=>"at://did:plc:oclgvsz6g6bsosawrkchxyyq/app.bsky.feed.post/3ldjtkd4ta62o", "cid"=>"bafyreihfongdqqovn2b5hzkpyk7y7abgjmne4dd6k3hbqr4iwqeli33xfu", "author"=>{"did"=>"did:plc:oclgvsz6g6bsosawrkchxyyq", "handle"=>"joshbeckman.org", "displayName"=>"Josh Beckman", "avatar"=>"https://cdn.bsky.app/img/avatar/plain/did:plc:oclgvsz6g6bsosawrkchxyyq/bafkreicpanycebp6xzx5idb365juthz2edh3m2abruigehosk6nycxxxzq@jpeg", "viewer"=>{"muted"=>false, "blockedBy"=>false}, "labels"=>[], "createdAt"=>"2023-10-18T15:55:28.252Z"}, "record"=>{"$type"=>"app.bsky.feed.post", "createdAt"=>"2024-12-17T21:57:02.956Z", "embed"=>{"$type"=>"app.bsky.embed.external", "external"=>{"description"=>"I think I can build a spaced repetition system on my own site that can replace the one I use on Readwise right now. It’s not that I disli...", "thumb"=>{"$type"=>"blob", "ref"=>{"$link"=>"bafkreiaebaxzkqim4rfhzvn5ondunpcnqomks4zhf5vgjudfd7ncyf4jeu"}, "mimeType"=>"image/jpeg", "size"=>938860}, "title"=>"Planning A Spaced Repetition System for My Site", "uri"=>"https://www.joshbeckman.org/blog/planning-a-spaced-repetition-system-for-my-site"}}, "facets"=>[{"features"=>[{"$type"=>"app.bsky.richtext.facet#link", "uri"=>"https://www.joshbeckman.org/blog/planning-a-spaced-repetition-system-for-my-site"}], "index"=>{"byteEnd"=>80, "byteStart"=>0}}], "text"=>"https://www.joshbeckman.org/blog/planning-a-spaced-repetition-system-for-my-site\n\nPlanning A Spaced Repetition System for My Site"}, "embed"=>{"$type"=>"app.bsky.embed.external#view", "external"=>{"uri"=>"https://www.joshbeckman.org/blog/planning-a-spaced-repetition-system-for-my-site", "title"=>"Planning A Spaced Repetition System for My Site", "description"=>"I think I can build a spaced repetition system on my own site that can replace the one I use on Readwise right now. It’s not that I disli...", "thumb"=>"https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:oclgvsz6g6bsosawrkchxyyq/bafkreiaebaxzkqim4rfhzvn5ondunpcnqomks4zhf5vgjudfd7ncyf4jeu@jpeg"}}, "replyCount"=>0, "repostCount"=>0, "likeCount"=>0, "quoteCount"=>0, "indexedAt"=>"2024-12-17T21:57:03.616Z", "viewer"=>{"threadMuted"=>false, "embeddingDisabled"=>false}, "labels"=>[]}
+    # {"uri"=>"at://did:plc:oclgvsz6g6bsosawrkchxyyq/app.bsky.feed.post/3ldvndto7vs2i", "cid"=>"bafyreidopwlupa34etn7467ra5i6dovyfyr4k5hxckoydydkuurgecwxje", "author"=>{"did"=>"did:plc:oclgvsz6g6bsosawrkchxyyq", "handle"=>"joshbeckman.org", "displayName"=>"Josh Beckman", "avatar"=>"https://cdn.bsky.app/img/avatar/plain/did:plc:oclgvsz6g6bsosawrkchxyyq/bafkreicpanycebp6xzx5idb365juthz2edh3m2abruigehosk6nycxxxzq@jpeg", "viewer"=>{"muted"=>false, "blockedBy"=>false}, "labels"=>[], "createdAt"=>"2023-10-18T15:55:28.252Z"}, "record"=>{"$type"=>"app.bsky.feed.post", "createdAt"=>"2024-12-22T14:37:59.893Z", "embed"=>{"$type"=>"app.bsky.embed.images", "images"=>[{"alt"=>"", "aspectRatio"=>{"height"=>1500, "width"=>2000}, "image"=>{"$type"=>"blob", "ref"=>{"$link"=>"bafkreid5cqcd4eszysxrtnjvz3v6ov5xhxzqtcbavxhbgm6l2vqlhgf54q"}, "mimeType"=>"image/jpeg", "size"=>907796}}]}, "langs"=>["en"], "text"=>"Hacked something together yesterday"}, "embed"=>{"$type"=>"app.bsky.embed.images#view", "images"=>[{"thumb"=>"https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:oclgvsz6g6bsosawrkchxyyq/bafkreid5cqcd4eszysxrtnjvz3v6ov5xhxzqtcbavxhbgm6l2vqlhgf54q@jpeg", "fullsize"=>"https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:oclgvsz6g6bsosawrkchxyyq/bafkreid5cqcd4eszysxrtnjvz3v6ov5xhxzqtcbavxhbgm6l2vqlhgf54q@jpeg", "alt"=>"", "aspectRatio"=>{"height"=>1500, "width"=>2000}}]}, "replyCount"=>0, "repostCount"=>0, "likeCount"=>0, "quoteCount"=>0, "indexedAt"=>"2024-12-22T14:38:03.124Z", "viewer"=>{"threadMuted"=>false, "embeddingDisabled"=>false}, "labels"=>[]}
     def import_posts
       posts = outbox.filter do |item|
         next false if item.dig('record', 'reply', 'parent', 'uri')
@@ -62,6 +62,7 @@ module PESOS
       reply_uri = record.dig('reply', 'parent', 'uri')
       title = "Reply to #{find_did_handle(reply_uri)}"
       canonical = resolve_post_uri(reply['uri'])
+      image = find_image(record['embed'])
       post = Post.new(
         body: embed_facets(record['text'], record['facets']),
         category: 'replies',
@@ -69,6 +70,7 @@ module PESOS
         in_reply_to: resolve_post_uri(reply_uri),
         bluesky_status_url: canonical,
         canonical: canonical,
+        image: image,
         slug: reply['uri'].split('/').last,
         tags: ['bluesky'],
         title: title
@@ -82,6 +84,7 @@ module PESOS
       post_uri = resolve_post_uri(post['uri'])
       canonical = nil
       mastodon_social_status_url = false
+      image = find_image(post['embed'])
       # lock it down to bluesky if directed at another user
       if mention?(record['facets'])
         canonical = post_uri
@@ -90,16 +93,32 @@ module PESOS
       post = Post.new(
         body: embed_facets(record['text'], record['facets']),
         category: 'blog',
-        date: Time.parse(post['published']),
+        date: Time.parse(record['createdAt']),
         hide_title: true,
         mastodon_social_status_url: mastodon_social_status_url,
         bluesky_status_url: post_uri,
         canonical: canonical,
+        image: image,
         slug: post['uri'].split('/').last,
         tags: ['bluesky'],
         title: title
       )
       post.create_file
+    end
+
+    def find_image(embed)
+      return nil if embed.nil?
+
+      if embed['$type'] == 'app.bsky.embed.images#view'
+        image_url = embed['images'].first['fullsize']
+        return nil if image_url.nil?
+
+        asset = Asset.new(url: image_url, category: 'images')
+        asset.download
+        asset.public_path
+      elsif embed['$type'] == 'app.bsky.embed.external#view'
+        embed['external']['thumb']
+      end
     end
 
     def mention?(facets)

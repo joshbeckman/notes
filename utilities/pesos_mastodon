@@ -49,7 +49,7 @@ module PESOS
       title = reply['object']['summary'] || "Reply to #{find_mention_handle(reply['object']['tag'])}"
       image = find_image(reply['object']['attachment'])
       post = Post.new(
-        body: reply['object']['content'],
+        body: post_body(reply),
         category: 'replies',
         date: Time.parse(reply['published']),
         in_reply_to: reply['object']['inReplyTo'],
