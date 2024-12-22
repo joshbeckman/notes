@@ -20,6 +20,8 @@ You can choose to grow the counter or you can destroy it.
 
 If it's more than zero, it's because others before you helped it grow. If it's very big, it's because many have cared for it a lot.
 
-This is *my* counter because it lives with me. The number here is mirrored on a physical split-flap display counter in my home.
+This is *my* counter because it lives with me. The number here is mirrored on a physical split-flap display counter in my studio.
+
+![counter](/assets/images/47E8A68F0D414D79AF690B9B473DF9AD.jpeg)
 
 <script async src="/assets/js/counter.js"></script>
