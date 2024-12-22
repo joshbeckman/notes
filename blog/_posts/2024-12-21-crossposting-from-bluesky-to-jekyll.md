@@ -92,6 +92,7 @@ module PESOS
       reply_uri = record.dig('reply', 'parent', 'uri')
       title = "Reply to #{find_did_handle(reply_uri)}"
       canonical = resolve_post_uri(reply['uri'])
+      image = find_image(record['embed'])
       post = Post.new(
         body: embed_facets(record['text'], record['facets']),
         category: 'replies',
@@ -99,6 +100,7 @@ module PESOS
         in_reply_to: resolve_post_uri(reply_uri),
         bluesky_status_url: canonical,
         canonical: canonical,
+        image: image,
         slug: reply['uri'].split('/').last,
         tags: ['bluesky'],
         title: title
@@ -112,6 +114,7 @@ module PESOS
       post_uri = resolve_post_uri(post['uri'])
       canonical = nil
       mastodon_social_status_url = false
+      image = find_image(post['embed'])
       # lock it down to bluesky if directed at another user
       if mention?(record['facets'])
         canonical = post_uri
@@ -120,16 +123,32 @@ module PESOS
       post = Post.new(
         body: embed_facets(record['text'], record['facets']),
         category: 'blog',
-        date: Time.parse(post['published']),
+        date: Time.parse(record['createdAt']),
         hide_title: true,
         mastodon_social_status_url: mastodon_social_status_url,
         bluesky_status_url: post_uri,
         canonical: canonical,
+        image: image,
         slug: post['uri'].split('/').last,
         tags: ['bluesky'],
         title: title
       )
       post.create_file
+    end
+
+    def find_image(embed)
+      return nil if embed.nil?
+
+      if embed['$type'] == 'app.bsky.embed.images#view'
+        image_url = embed['images'].first['fullsize']
+        return nil if image_url.nil?
+
+        asset = Asset.new(url: image_url, category: 'images')
+        asset.download
+        asset.public_path
+      elsif embed['$type'] == 'app.bsky.embed.external#view'
+        embed['external']['thumb']
+      end
     end
 
     def mention?(facets)
@@ -286,5 +305,5 @@ end
 
 Things I’d like to add in the future:
 - Detect any tags used in the Bluesky post and set them correctly on the Jekyll post
-- Detect any embedded images/videos and import them
+- Detect any embedded videos and import them
 - Use an LLM to generate a title for the post upon import
