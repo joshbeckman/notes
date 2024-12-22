@@ -4,7 +4,7 @@ date: 2024-12-22 16:01:29 +0000
 title: "Hacking Life into My Little Counter"
 image: /assets/images/47E8A68F0D414D79AF690B9B473DF9AD.jpeg
 description: And interactive art piece, counting care
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113697670105981335
 bluesky_status_url: false
 tags: 
   - shopify
