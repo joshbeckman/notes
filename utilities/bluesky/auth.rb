@@ -6,6 +6,8 @@ require 'net/http'
 module Bluesky
   # Authentication against the Bluesky API
   module Auth
+    class Error < StandardError; end
+
     def generate_did(handle)
       uri = URI.parse('https://bsky.social/xrpc/com.atproto.identity.resolveHandle')
       params = { handle: handle }
