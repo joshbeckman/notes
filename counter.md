@@ -13,7 +13,7 @@ This is a page that displays the life of my counter.
 
 You can choose to grow the counter or you can destroy it.
 
-<div id="counter">?</div>
+<div id="counter">_______</div>
 
 <button id="grow">Grow</button>
 <button id="kill">Kill</button>
