@@ -9,7 +9,7 @@ letterboxd_id: prisoners
 image: https://a.ltrbxd.com/resized/sm/upload/iw/eg/4g/nm/3w79tTsv6tmlT8Jww6snyPrgVok-0-600-0-900-crop.jpg?v=778c7ae8b8
 description: 
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113700509993482985
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ldx7hvhcec2h
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/prisoners/
 tags:
   - letterboxd
