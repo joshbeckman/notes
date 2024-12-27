@@ -8,7 +8,7 @@ tmdb_id: 467244
 letterboxd_id: the-zone-of-interest
 image: https://a.ltrbxd.com/resized/film-poster/3/9/8/8/0/0/398800-the-zone-of-interest-0-600-0-900-crop.jpg?v=0514f658e1
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113725982136440240
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/the-zone-of-interest/
 tags:
