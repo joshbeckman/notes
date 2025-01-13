@@ -106,12 +106,7 @@ nodeData = nodeData.filter(function (node) {
   });
 }
 window.addEventListener('load', function() {
-  var building = false;
   function buildVisData() {
-    if (building) {
-      return;
-    }
-    building = true;
     var script = document.createElement('script');
     script.src = '/assets/js/vendor/vis-network.min.js';
     document.body.appendChild(script);
@@ -120,6 +115,8 @@ window.addEventListener('load', function() {
       script.onload = function() {
         prepareNetwork(data.nodes, data.edges);
       };
+    }).catch(function(error) {
+      console.error('Error fetching VisData.json:', error);
     });
   }
   var details = document.querySelector('.post-network details');
