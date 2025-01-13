@@ -88,7 +88,7 @@ GEM
       racc
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
-    plist (3.7.1)
+    plist (3.7.2)
     public_suffix (6.0.1)
     racc (1.8.1)
     rainbow (3.1.1)
