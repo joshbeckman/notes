@@ -9,7 +9,7 @@ letterboxd_id: uncut-gems
 image: https://a.ltrbxd.com/resized/film-poster/4/0/4/2/6/6/404266-uncut-gems-0-600-0-900-crop.jpg?v=670cb7034d
 description: 
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113825074682628227
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lfojndyilh2r
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/uncut-gems/
 tags:
   - letterboxd
