@@ -15,7 +15,7 @@ tags:
 
 
 
-In the same line as [Apple Music Replay 2024](https://www.joshbeckman.org/blog/listening/apple-music-replay-2024) and [Strava Year in Sport 2024](https://www.joshbeckman.org/blog/strava-year-in-sport-2024) I used [git-wrapped](https://git-wrapped.com/) to generate a 2024 review of my commits on GitHub.
+In the same line as [Apple Music Replay 2024](https://www.joshbeckman.org/blog/listening/apple-music-replay-2024) and [Strava Year in Sport 2024](https://www.joshbeckman.org/blog/strava-year-in-sport-2024) I used [git-wrapped](https://git-wrapped.com/) to generate a 2024 review of my commits on [GitHub](https://github.com/joshbeckman/).
 
 ![git-wrapped-joshbeckman](/assets/images/f23ec509-716b-471a-8378-52cc7fcf066d.png)
 
