@@ -1,6 +1,6 @@
 ---
 layout: Page
-title: Blog
+title: Josh's Blog
 emoji: 📓
 searchable: true
 tags:
