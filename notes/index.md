@@ -1,6 +1,6 @@
 ---
 layout: Page
-title: Notes
+title: Josh's Notes
 emoji: 📝
 tags:
 - index
