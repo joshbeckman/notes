@@ -5,18 +5,53 @@ require_relative 'models/post'
 require_relative 'models/asset'
 
 class IssuePoster
-  # read the filte `issue_body`
-  # and parse its contents into a hash
-  # where the keys are the delimiters
-  # and the values are the content between the delimiters
-  # Delimiters:
-  # - "### Title" is a string, set in the title key
-  # - "### Tags" is an array of strings separated by commas, set in the tags key
-  # - "### IMDB ID" is a string, set in the imdb_id key
-  # - "### Rating" is an integer, set in the rating key
-  # - "### Content" is a string, set in the content key
   def run
     issue_body = File.read("issue_body")
+    post = if has_frontmatter?(issue_body)
+             post_with_frontmatter(issue_body)
+           else
+             post_with_form_matter(issue_body)
+           end
+    post.create_file
+    File.delete("issue_body")
+  end
+
+  # initialize a post by parsing frontmatter out of the issue_body
+  def post_with_frontmatter(issue_body)
+    frontmatter = YAML.load(issue_body.match(/---\n(.*?)\n---\n/m)[1])
+    body = issue_body.match(/---\n.*\n---\n(.*)/m)[1]
+    title = frontmatter['title']
+    tags = frontmatter['tags'] || []
+    date = frontmatter['date'] || Time.now
+    imdb_id = frontmatter['imdb_id']
+    rating = frontmatter['rating']
+    category = frontmatter['category'] || 'blog'
+    in_reply_to = frontmatter['in_reply_to']
+    description = frontmatter['description']
+    hide_title = frontmatter['hide_title']
+    slug = frontmatter['slug'] || title.gsub(/[^a-zA-Z0-9\s]/, '').gsub(/\s+/, '-').downcase
+    assets = extract_assets(body)
+    assets.map(&:download)
+    post = Post.new(
+      body: transform_content(body, assets),
+      mastodon_social_status_url: 'false',
+      bluesky_status_url: 'false',
+      category: category,
+      in_reply_to: in_reply_to,
+      hide_title: hide_title,
+      description: description,
+      date: date,
+      image: assets.find(&:image?)&.public_path || frontmatter['image'],
+      imdb_id: imdb_id,
+      rating: rating,
+      slug: slug,
+      tags: tags,
+      title: title,
+    )
+  end
+
+  # initialize a post by parsing the form matter out of the issue_body
+  def post_with_form_matter(issue_body)
     title = parse_input(issue_body, 'Title')
     tags = parse_input(issue_body, 'Tags')&.split(",")&.map(&:strip)
     date = parse_date(parse_input(issue_body, 'Date'))
@@ -43,8 +78,10 @@ class IssuePoster
     unless imdb_id.nil?
       post.image = post.movie_cover_image || post.image
     end
-    post.create_file
-    File.delete("issue_body")
+  end
+
+  def has_frontmatter?(body)
+    body.match?(/---\n.*\n---\n/m)
   end
 
   def parse_input(body, input_label)
