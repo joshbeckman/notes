@@ -2,6 +2,7 @@
 layout: Page
 title: Podcasts
 searchable: true
+emoji: 🎤
 tags:
 - podroll
 - index
