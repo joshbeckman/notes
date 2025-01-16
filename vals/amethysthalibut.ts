@@ -21,7 +21,8 @@ export default async function(req: Request): Promise<Response> {
     topic = await selectRandomTopic(db);
   }
   const context = buildContext(topic, index, searchData);
-  const insight = await generateInsight(topic, context);
+  const conversation = await generateInsight(topic, context);
+  const insight = conversation[conversation.length - 1].content;
   const insightHtml = await marked.parse(insight);
 
   return Response.json({
@@ -29,29 +30,30 @@ export default async function(req: Request): Promise<Response> {
     insight: insight,
     insightHtml: insightHtml,
     context: context,
+    conversation: conversation,
   });
 }
 
 async function generateInsight(topic: string, context: string): Promise<string> {
+  const insightSystemPrompt = "You are a philosophical engineer and craftsman. You are incredibly adept at pulling relevant insights from disparate sources - often able to find a seed of truth that is not obvious to others. Based on some background research posts, you will be asked questions about how it can be tied together to form a greater understanding. Answer in a concise manner, structuring your response to focus on reinforcing or disproving ideas. Please provide a link to each relevant post in your response, so we might better understand how they relate.";
+  const messages = [
+    {
+      role: "system",
+      content: insightSystemPrompt,
+    },
+    { role: "user", content: context },
+    { role: "assistant", content: "Thank you for the context, I am ready to answer your question." },
+    {
+      role: "user",
+      content: `What is something insightful about "${topic}", based on those posts?`,
+    },
+  ];
   const completion = await openai.chat.completions.create({
-    messages: [
-      {
-        role: "system",
-        content:
-          "You are the philosophical academic Richard Feynman. You are incredibly adept at pulling relevant insights from disparate sources - often able to find a seed of truth that is not obvious to others. Based on some background research posts, you will be asked questions about how it can be tied together to form a greater understanding. Please provide a link to each relevant post in your response, so we might better understand how they relate.",
-      },
-      { role: "user", content: context },
-      { role: "assistant", content: "Thank you for the context, I am ready to answer your question." },
-      {
-        role: "user",
-        content: `What is something insightful about "${topic}", based on those posts?`,
-      },
-    ],
+    messages: messages,
     model: "gpt-4o-mini",
     max_tokens: 2000,
   });
-  const insight = completion.choices[0].message.content;
-  return insight;
+  return messages.concat([completion.choices[0].message]);
 }
 
 function buildContext(topic: string, index, searchData): string {
