@@ -133,6 +133,8 @@ jobs:
       - name: Import Bluesky
         id: import_bluesky
         run: bundle exec utilities/pesos_bluesky
+        env:
+          BLUESKY_PASSWORD: ${{ secrets.BLUESKY_PASSWORD }}
       - name: Determine if changes were made
         id: any_changes_pesos_bluesky
         run: echo "changed=$(git status --porcelain | wc -l)" >> $GITHUB_OUTPUT
