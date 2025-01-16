@@ -108,7 +108,7 @@ jobs:
           git add replies
           git add blog
           git add assets
-          git commit -m "new(usr): PESOSi Mastodon"
+          git commit -m "new(usr): PESOS Mastodon"
       - name: Push changes
         if: steps.any_changes_pesos_mastodon.outputs.changed != 0
         run: git push
@@ -129,6 +129,24 @@ jobs:
           git commit -m "new(usr): PESOS Letterboxd"
       - name: Push changes
         if: steps.any_changes_pesos_letterboxd.outputs.changed != 0
+        run: git push
+      - name: Import Bluesky
+        id: import_bluesky
+        run: bundle exec utilities/pesos_bluesky
+      - name: Determine if changes were made
+        id: any_changes_pesos_bluesky
+        run: echo "changed=$(git status --porcelain | wc -l)" >> $GITHUB_OUTPUT
+      - name: Commit changes
+        if: steps.any_changes_pesos_bluesky.outputs.changed != 0
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "josh@joshbeckman.org"
+          git add replies
+          git add blog
+          git add assets
+          git commit -m "new(usr): PESOS Bluesky"
+      - name: Push changes
+        if: steps.any_changes_pesos_bluesky.outputs.changed != 0
         run: git push
       - name: Optimize images
         id: optimize_images
