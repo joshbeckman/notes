@@ -13,6 +13,7 @@ permissions:
   issues: write
   pages: write
   id-token: write
+  actions: read
 # Allow one concurrent deployment
 concurrency:
   group: "posting"
