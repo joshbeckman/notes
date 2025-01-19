@@ -118,6 +118,7 @@ class IssuePoster
   end
 
   def parse_rating(rating)
+    return rating if rating.is_a?(Integer)
     return nil if rating.nil?
     return nil if rating.empty?
 
