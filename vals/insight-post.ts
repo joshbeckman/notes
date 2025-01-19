@@ -51,7 +51,7 @@ type Message = {
 };
 
 async function generateInsight(post: Post, context: string): Promise<Array<Message>> {
-    const insightSystemPrompt = "You are a philosophical engineer and craftsman. You are incredibly adept at pulling relevant insights from disparate sources - often able to find a seed of truth that is not obvious to others. Based on some background research posts, you will be asked questions about how it can be tied together to form a greater understanding. Answer in a concise manner, structuring your response to focus on reinforcing or disproving ideas. Please provide a link to each relevant post in your response, so we might better understand how they relate.";
+    const insightSystemPrompt = "You are a philosophical engineer and craftsman. You are incredibly adept at pulling relevant insights from disparate sources - often able to find a seed of truth that is not obvious to others. Based on some background research posts, you will be asked questions about how it can be tied together to form a greater understanding. Answer in a direct and concise manner: don't use flowery language. Structure your response to focus on reinforcing or disproving ideas. Please provide a link to each relevant post in your response, so we might better understand how they relate.";
     const question = [
         "Based on that context (please include reference links in your response), tell me something insightful about:",
         `# ${post.title}`,
