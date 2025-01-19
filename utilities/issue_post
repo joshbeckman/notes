@@ -22,7 +22,12 @@ class IssuePoster
     frontmatter = YAML.load(issue_body.match(/---\n(.*?)\n---\n/m)[1])
     body = issue_body.match(/---\n.*\n---\n(.*)/m)[1]
     title = frontmatter['title']
-    tags = (frontmatter['tags'] || '').split(',').map(&:strip)
+    raw_tags = frontmatter['tags'] || ''
+    tags = if raw_tags.is_a?(Array)
+             raw_tags
+           else
+             raw_tags.split(',').map(&:strip)
+           end
     date = parse_date(frontmatter['date'])
     imdb_id = frontmatter['imdb_id']
     rating = parse_rating(frontmatter['rating'])
