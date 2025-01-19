@@ -1,6 +1,6 @@
 ---
 layout: Post
-date: 2025-01-19 20:38:06 +0000
+date: 2025-01-17 20:38:06 +0000
 title: "Jamie XX at Aragon"
 toc: true
 image: /assets/images/9594d46d-c5c0-4dcd-a8a3-dac138052733.jpeg
@@ -11,7 +11,6 @@ tags:
   - music
   - chicago
 ---
-
 
 ![Jamie XX at Aragon](/assets/images/9594d46d-c5c0-4dcd-a8a3-dac138052733.jpeg)
 
