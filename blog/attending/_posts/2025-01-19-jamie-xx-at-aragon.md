@@ -5,7 +5,7 @@ title: "Jamie XX at Aragon"
 toc: true
 image: /assets/images/9594d46d-c5c0-4dcd-a8a3-dac138052733.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113859051278350597
 bluesky_status_url: false
 tags:
   - music
