@@ -13,6 +13,7 @@ tags:
 - exploration
 ---
 
+A modern city built between the volcanoes and the sea.
 
 ![](/assets/images/1E19CE55D2964AC3B0BD600E49D38EFB.jpeg)
 

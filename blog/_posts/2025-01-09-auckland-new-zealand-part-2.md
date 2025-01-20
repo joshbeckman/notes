@@ -13,6 +13,7 @@ tags:
 - exploration
 ---
 
+Returning to enjoy the ocean and the views.
 
 ![](/assets/images/88F1BEFDB55145EABDD93DF43040F556.jpeg)
 

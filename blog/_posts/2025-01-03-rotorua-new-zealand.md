@@ -13,6 +13,7 @@ tags:
 - exploration
 ---
 
+A mountain lake town where you can walk between the hot springs and the redwoods.
 
 ![](/assets/images/1DC154D10BE3486E91113F5C699FE02D.jpeg)
 

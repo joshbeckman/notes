@@ -13,6 +13,7 @@ tags:
 - exploration
 ---
 
+A surfer town with a view of the jungle.
 
 ![](/assets/images/C581C56E92EE406189E269E37E35366C.jpeg)
 
