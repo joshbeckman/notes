@@ -7,7 +7,7 @@ rating: 3
 image: https://readwise-assets.s3.amazonaws.com/media/reader/parsed_document_assets/30288561/cover-image-cover-image_VChJuiA.jpg
 description: 
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113859051257481945
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lg5mi4hdxo2i
 tags:
   - optimization
   - software-engineering
