@@ -1,6 +1,6 @@
 ---
 layout: Post
-date: 2025-12-27 00:00:00 +0000
+date: 2024-12-27 00:00:00 +0000
 title: "String Theory by David Foster Wallace"
 toc: true
 rating: 4
