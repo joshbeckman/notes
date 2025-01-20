@@ -5,7 +5,7 @@ title: "New Family in Washington, DC"
 toc: true
 image: /assets/images/3ef43469-7532-4a5d-8045-576386c713db.jpeg
 description: Scenes from visiting our newest family member
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113861876301612838
 bluesky_status_url: false
 tags:
   - travel

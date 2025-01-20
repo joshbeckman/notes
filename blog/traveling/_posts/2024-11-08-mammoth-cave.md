@@ -5,7 +5,7 @@ title: "Mammoth Cave"
 toc: true
 image: /assets/images/b811a7c0-8bc8-463f-bb8d-1eba312b11a4.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113861876330260274
 bluesky_status_url: false
 tags:
   - travel
