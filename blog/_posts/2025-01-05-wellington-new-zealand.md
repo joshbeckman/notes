@@ -6,7 +6,7 @@ toc: true
 category: traveling
 image: /assets/images/A178EBB0287747E3AA5A59D19D14ECEA.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113864713093382658
 bluesky_status_url: false
 tags: 
 - travel
