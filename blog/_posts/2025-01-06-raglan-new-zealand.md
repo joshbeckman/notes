@@ -10,6 +10,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/113864713110307
 bluesky_status_url: false
 tags: 
 - travel
+- new-zealand
 - exploration
 ---
 
