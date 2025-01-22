@@ -144,7 +144,7 @@ module POSSE
       request = Net::HTTP::Post.new(uri)
       request.content_type = filetype
       request['Authorization'] = "Bearer #{@api_key}"
-      request.body = File.binread(image_path)
+      request.body = File.binread(compress_image(image_path))
       req_options = {
         use_ssl: uri.scheme == 'https'
       }
@@ -154,6 +154,14 @@ module POSSE
       raise Error, 'Image blob post request failed' unless res.is_a?(Net::HTTPSuccess)
 
       JSON.parse(res.body)['blob']
+    end
+
+    def compress_image(image_path)
+      # create a local temp image with the same filename and a random prefix
+      file_name = File.basename(image_path)
+      temp_image_path = File.join('.', "#{rand(36**8).to_s(36)}_#{file_name}")
+      `convert #{image_path} -strip -resize 800x800 -define jpeg:extent=500kb #{temp_image_path}`
+      temp_image_path
     end
 
     def url(post)
