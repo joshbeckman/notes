@@ -7,7 +7,7 @@ rating: 4
 image: /assets/images/c67b56d6-0f8a-4413-84d6-7e4978eccbe5.jpeg
 description: 
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113864713043489854
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lgdwsa73a72g
 tags:
   - sport
   - writing

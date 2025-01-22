@@ -7,7 +7,7 @@ category: traveling
 image: /assets/images/58067817769A418D90B35E195F26EAC3.jpeg
 description: 
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113864713110307720
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lgdwskhhgs2k
 tags: 
 - travel
 - new-zealand
