@@ -8,7 +8,7 @@ tmdb_id: 426063
 letterboxd_id: nosferatu-2024
 image: https://a.ltrbxd.com/resized/film-poster/3/5/9/5/0/5/359505-nosferatu-2024-0-600-0-900-crop.jpg?v=a12d4ad648
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113878866640738364
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/nosferatu-2024/
 tags:
