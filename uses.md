@@ -19,15 +19,16 @@ Well, we're gonna have to break this down a bit.
 ### Hardware
 - Jarvis standing desk ([previously](/blog/working))
 - Keychron K3 Pro keyboard ([customized](https://www.joshbeckman.org/blog/shopify-keychron-k3-pro))
-- ErgoDriven mouse
+- Logitech M705 mouse
 - Macbook Air (2022, personal)
 - Macbook Pro (2023, work)
 - paper and pencil
-- Apple studio monitor (and built-in camera)
+- Apple studio monitor
+- Logitech Brio webcam
 - Workbench lights
 - Focusrite Scarlet Solo
 - Samson Q2U microphone
-- Teenage Engineering M-1 headphones
+- Bose IE2 in-ear-monitor headphones
 - Raspberry Pi
 - iPhone 12 mini
 
