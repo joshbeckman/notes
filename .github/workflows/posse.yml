@@ -43,7 +43,7 @@ jobs:
           MASTODON_SOCIAL_TOKEN: ${{ secrets.MASTODON_SOCIAL_TOKEN }}
       - name: Determine if changes were made
         id: any_changes_posse_mastodon
-        run: echo "changed=$(git status --porcelain | wc -l)" >> $GITHUB_OUTPUT
+        run: echo "changed=$(git status --porcelain blog notes replies assets | wc -l)" >> $GITHUB_OUTPUT
       - name: Commit changes
         if: steps.any_changes_posse_mastodon.outputs.changed != 0
         run: |
@@ -64,7 +64,7 @@ jobs:
           BLUESKY_PASSWORD: ${{ secrets.BLUESKY_PASSWORD }}
       - name: Determine if changes were made
         id: any_changes_posse_bluesky
-        run: echo "changed=$(git status --porcelain | wc -l)" >> $GITHUB_OUTPUT
+        run: echo "changed=$(git status --porcelain blog notes replies assets | wc -l)" >> $GITHUB_OUTPUT
       - name: Commit changes
         if: steps.any_changes_posse_bluesky.outputs.changed != 0
         run: |
@@ -85,7 +85,7 @@ jobs:
           READWISE_TOKEN: ${{ secrets.READWISE_TOKEN }}
       - name: Determine if changes were made
         id: any_changes_readwise
-        run: echo "changed=$(git status --porcelain | wc -l)" >> $GITHUB_OUTPUT
+        run: echo "changed=$(git status --porcelain notes assets | wc -l)" >> $GITHUB_OUTPUT
       - name: Commit changes
         if: steps.any_changes_readwise.outputs.changed != 0
         run: |
@@ -102,7 +102,7 @@ jobs:
         run: bundle exec utilities/pesos_mastodon
       - name: Determine if changes were made
         id: any_changes_pesos_mastodon
-        run: echo "changed=$(git status --porcelain | wc -l)" >> $GITHUB_OUTPUT
+        run: echo "changed=$(git status --porcelain replies blog assets | wc -l)" >> $GITHUB_OUTPUT
       - name: Commit changes
         if: steps.any_changes_pesos_mastodon.outputs.changed != 0
         run: |
@@ -120,7 +120,7 @@ jobs:
         run: bundle exec utilities/pesos_letterboxd
       - name: Determine if changes were made
         id: any_changes_pesos_letterboxd
-        run: echo "changed=$(git status --porcelain | wc -l)" >> $GITHUB_OUTPUT
+        run: echo "changed=$(git status --porcelain replies blog assets | wc -l)" >> $GITHUB_OUTPUT
       - name: Commit changes
         if: steps.any_changes_pesos_letterboxd.outputs.changed != 0
         run: |
@@ -140,7 +140,7 @@ jobs:
           BLUESKY_PASSWORD: ${{ secrets.BLUESKY_PASSWORD }}
       - name: Determine if changes were made
         id: any_changes_pesos_bluesky
-        run: echo "changed=$(git status --porcelain | wc -l)" >> $GITHUB_OUTPUT
+        run: echo "changed=$(git status --porcelain replies blog assets | wc -l)" >> $GITHUB_OUTPUT
       - name: Commit changes
         if: steps.any_changes_pesos_bluesky.outputs.changed != 0
         run: |
@@ -158,7 +158,7 @@ jobs:
         run: bundle exec utilities/optimize_images
       - name: Determine if changes were made
         id: any_changes_optimize_images
-        run: echo "changed=$(git status --porcelain | wc -l)" >> $GITHUB_OUTPUT
+        run: echo "changed=$(git status --porcelain replies blog assets | wc -l)" >> $GITHUB_OUTPUT
       - name: Commit changes
         if: steps.any_changes_optimize_images.outputs.changed != 0
         run: |
