@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'plist'
 require_relative 'apple_music_library_parser/album'
 require_relative 'apple_music_library_parser/artist'

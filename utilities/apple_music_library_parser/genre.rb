@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 Genre = Struct.new(
   :name,
   :play_count,
