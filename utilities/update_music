@@ -89,25 +89,25 @@ parser.recently_loved_albums.each do |album|
   file.puts "| #{album.album_art_md} | #{album.artist} | #{album.name} | #{album.date_added&.strftime('%Y-%m-%d')} |"
 end
 file.puts
-file.puts <<-LIQUID
-## Reviews
-
-These are albums that moved me enough to write about.
-
-{% assign postsByMonth = 
-site.categories['listening'] | group_by_exp:"post", "post.date | date: '%Y'" %}
-{% for day in postsByMonth %}
-  <table>
-      <thead>
-        <tr>
-            <td colspan="3">
-                <span id="{{ day.name }}">{{ day.name }}</span>
-            </td>
-        </tr>
-      </thead>
-  {% for post in day.items %}
-  {%- include PostTableRow.html post=post -%}
+file.puts <<~LIQUID
+  ## Reviews
+  
+  These are albums that moved me enough to write about.
+  
+  {% assign postsByMonth = 
+  site.categories['listening'] | group_by_exp:"post", "post.date | date: '%Y'" %}
+  {% for day in postsByMonth %}
+    <table>
+        <thead>
+          <tr>
+              <td colspan="3">
+                  <span id="{{ day.name }}">{{ day.name }}</span>
+              </td>
+          </tr>
+        </thead>
+    {% for post in day.items %}
+    {%- include PostTableRow.html post=post -%}
+    {% endfor %}
+    </table>
   {% endfor %}
-  </table>
-{% endfor %}
 LIQUID
