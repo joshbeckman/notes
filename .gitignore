@@ -6,6 +6,7 @@ _site/
 .readwise_token
 .omdb_token
 .mastodon_social_token
+.strava_token
 .bundle/
 vendor/
 Library.xml
