@@ -91,11 +91,10 @@ end
 file.puts
 file.puts <<~LIQUID
   ## Reviews
-  
+
   These are albums that moved me enough to write about.
-  
-  {% assign postsByMonth = 
-  site.categories['listening'] | group_by_exp:"post", "post.date | date: '%Y'" %}
+
+  {% assign postsByMonth = site.categories['listening'] | group_by_exp:"post", "post.date | date: '%Y'" %}
   {% for day in postsByMonth %}
     <table>
         <thead>
