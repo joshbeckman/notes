@@ -9,7 +9,7 @@ require_relative 'models/asset'
 class IssuePoster
   def run
     issue_body = File.read('issue_body')
-    post = if has_frontmatter?(issue_body)
+    post = if frontmatter?(issue_body)
              post_with_frontmatter(issue_body)
            else
              post_with_form_matter(issue_body)
@@ -88,7 +88,7 @@ class IssuePoster
     post
   end
 
-  def has_frontmatter?(body)
+  def frontmatter?(body)
     body.match?(/---\n.*\n---\n/m)
   end
 
