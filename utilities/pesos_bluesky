@@ -80,8 +80,8 @@ module PESOS
 
     def import_post(post)
       record = post['record']
-      title = 'Post to Bluesky'
       post_uri = resolve_post_uri(post['uri'])
+      body = embed_facets(record['text'], record['facets'])
       canonical = nil
       mastodon_social_status_url = false
       image = find_image(post['embed'])
@@ -91,7 +91,7 @@ module PESOS
         mastodon_social_status_url = nil
       end
       post = Post.new(
-        body: embed_facets(record['text'], record['facets']),
+        body: body,
         category: 'blog',
         date: Time.parse(record['createdAt']),
         hide_title: true,
@@ -99,10 +99,10 @@ module PESOS
         bluesky_status_url: post_uri,
         canonical: canonical,
         image: image,
-        slug: post['uri'].split('/').last,
-        tags: ['bluesky'],
-        title: title
+        slug: post['uri'].split('/').last
       )
+      post.title = post.suggested_title || 'Post to Bluesky'
+      post.tags = (post.suggested_tags || []).push('bluesky').uniq
       post.create_file
     end
 

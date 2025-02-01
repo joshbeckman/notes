@@ -65,7 +65,6 @@ module PESOS
     end
 
     def import_post(post)
-      title = post['object']['summary'] || "Post to #{find_mention_handle(post['object']['tag'])}"
       image = find_image(post['object']['attachment'])
       canonical = nil
       bluesky_status_url = false
@@ -83,10 +82,10 @@ module PESOS
         bluesky_status_url: bluesky_status_url,
         canonical: canonical,
         image: image,
-        slug: post['object']['id'].split('/').last,
-        tags: ['mastodon'],
-        title: title
+        slug: post['object']['id'].split('/').last
       )
+      post.title = post.suggested_title || "Post to #{find_mention_handle(post['object']['tag'])}"
+      post.tags = (post.suggested_tags || []).push('mastodon').uniq
       post.create_file
     end
 

@@ -38,6 +38,32 @@ Post = Struct.new(
     json['Poster']
   end
 
+  def suggested_title
+    request = Net::HTTP::Post.new(URI.parse('https://joshbeckman-titler.web.val.run'))
+    request.content_type = 'application/x-www-form-urlencoded'
+    content = "#{title}\n#{body}"
+    request.set_form_data('content' => content)
+    response = Net::HTTP.start(request.uri.hostname, request.uri.port, use_ssl: request.uri.scheme == 'https') do |http|
+      http.request(request)
+    end
+    JSON.parse(response.body)['suggestedTitle']
+  rescue Net::HTTPError, JSON::ParserError
+    nil
+  end
+
+  def suggested_tags
+    request = Net::HTTP::Post.new(URI.parse('https://joshbeckman-tagger.web.val.run'))
+    request.content_type = 'application/x-www-form-urlencoded'
+    content = "#{title}\n#{body}"
+    request.set_form_data('content' => content)
+    response = Net::HTTP.start(request.uri.hostname, request.uri.port, use_ssl: request.uri.scheme == 'https') do |http|
+      http.request(request)
+    end
+    JSON.parse(response.body)['suggestedTags']
+  rescue Net::HTTPError, JSON::ParserError
+    nil
+  end
+
   def create_file
     filename = "#{category}/_posts/#{date.strftime('%Y-%m-%d')}-#{slug}.md"
 

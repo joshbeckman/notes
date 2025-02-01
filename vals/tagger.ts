@@ -18,11 +18,11 @@ app.post("/", async (c) => {
     .then((res) => res.json());
   const leafTags = tags.filter((tag) => tag.decimal.match(/^\d\d\.\d\d$/));
   const response = await selectTags(content, leafTags);
-  const suggestedTags = response.split(",").map((tag) => tag.trim());
-  return c.json({ content, suggestedTags });
+  return c.json({ content, suggestedTags: response });
 });
 
-async function selectTags(content: string, tags: Array<Tag>): Promise<string> {
+async function selectTags(content: string, tags: Array<Tag>): Promise<Array<string>> {
+  const tagSlugs = tags.map((tag) => tag.slug);
   const messages = [
     {
       role: "system",
@@ -32,7 +32,7 @@ async function selectTags(content: string, tags: Array<Tag>): Promise<string> {
     {
       role: "system",
       content:
-        "Here are the tags you can choose from: " + tags.map((tag) => tag.slug).join(", "),
+        "Here are the tags you can choose from: " + tagSlugs.join(", "),
     },
     {
       role: "user",
@@ -44,7 +44,8 @@ async function selectTags(content: string, tags: Array<Tag>): Promise<string> {
     model: "gpt-4o-mini",
   });
   const keywords = keywordsCompletion.choices[0].message.content;
-  return keywords;
+  // only return the tags that are in the list of tags
+  return keywords.split(",").map((tag) => tag.trim()).filter((tag) => tagSlugs.includes(tag));
 }
 
 export default app.fetch;

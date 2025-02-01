@@ -56,10 +56,10 @@ module PESOS
         mastodon_social_status_url: false,
         image: image,
         slug: slug,
-        tags: %w[letterboxd movies],
         title: title,
         rating: post['memberRating'].to_i
       )
+      post.tags = (post.suggested_tags || []).push('letterboxd').uniq
       post.create_file
     end
 
