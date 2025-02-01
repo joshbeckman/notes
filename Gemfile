@@ -29,7 +29,7 @@ group :development do
 end
 
 gem 'kramdown-math-katex'
-gem 'readwise', github: 'joshbeckman/readwise-ruby', branch: 'feature/readwise-api-v3'
 gem 'plist'
+gem 'readwise', github: 'joshbeckman/readwise-ruby', branch: 'feature/readwise-api-v3'
 
 gem 'jekyll-mastodon_webfinger', '~> 1.0'
