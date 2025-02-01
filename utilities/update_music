@@ -75,7 +75,7 @@ file.puts '| Art | Artist | Album | Date Added |'
 file.puts '| --- | ------ | ----- | --------- |'
 parser.recently_played_albums.each do |album|
   album.download_album_art
-  file.puts "| #{album.album_art_md} | #{album.artist} | #{album.name} | #{album.date_added&.strftime('%Y-%m-%d') } |"
+  file.puts "| #{album.album_art_md} | #{album.artist} | #{album.name} | #{album.date_added&.strftime('%Y-%m-%d')} |"
 end
 file.puts
 file.puts '## Recently Loved Albums'
@@ -85,7 +85,7 @@ file.puts '| Art | Artist | Album | Date Added |'
 file.puts '| ------ | ----- | --------- |'
 parser.recently_loved_albums.each do |album|
   album.download_album_art
-  file.puts "| #{album.album_art_md} | #{album.artist} | #{album.name} | #{album.date_added&.strftime('%Y-%m-%d') } |"
+  file.puts "| #{album.album_art_md} | #{album.artist} | #{album.name} | #{album.date_added&.strftime('%Y-%m-%d')} |"
 end
 file.puts
 file.puts <<-LIQUID
