@@ -244,7 +244,7 @@ module ReadwiseExtras
       @title ||= text.gsub(/\]\(\S*\)/, ']').gsub('"', "'").split("\n").join(' ').slice(0, 60)
     end
 
-    def formatted_tags(book)
+    def formatted_tags(_book)
       base_tags = tags.map { |t| t['name'] }
       base_tags << 'inbox' if base_tags.empty?
       base_tags.flatten.join(' ')

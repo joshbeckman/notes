@@ -119,14 +119,14 @@ module POSSE
 
     def embed(post)
       card = {
-        'uri': url(post),
-        'title': post.data['title'],
-        'description': excerpt(post)
+        uri: url(post),
+        title: post.data['title'],
+        description: excerpt(post)
       }
       card['thumb'] = image_blob(post) if post.data['image']
       {
         '$type': 'app.bsky.embed.external',
-        'external': card
+        external: card
       }
     end
 
@@ -186,7 +186,7 @@ module POSSE
 
     def parse_urls(text)
       text_bytes = text.encode('UTF-8')
-      spans = URI.extract(text, %w[http https]).map do |url|
+      URI.extract(text, %w[http https]).map do |url|
         {
           start: text_bytes.index(url),
           end: text_bytes.index(url) + url.length,
@@ -210,7 +210,7 @@ module POSSE
             byteStart: m[:start],
             byteEnd: m[:end]
           },
-          features: [{ '$type': 'app.bsky.richtext.facet#mention', 'did': did }]
+          features: [{ '$type': 'app.bsky.richtext.facet#mention', did: did }]
         }
       end
 
@@ -224,7 +224,7 @@ module POSSE
             {
               '$type': 'app.bsky.richtext.facet#link',
               # NOTE: URI ("I") not URL ("L")
-              'uri': u[:url]
+              uri: u[:url]
             }
           ]
         }

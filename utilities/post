@@ -42,7 +42,7 @@ class Poster
   def import_folder(path)
     journal = JSON.parse(File.read("#{path}/Journal.json"))
     entries = journal['entries']
-    filenames = entries.map do |entry|
+    entries.map do |entry|
       import_entry(entry, path)
     end
   end
