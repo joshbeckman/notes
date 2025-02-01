@@ -7,9 +7,7 @@ require_relative 'apple_music_library_parser/track'
 require_relative 'apple_music_library_parser/genre'
 
 class AppleMusicLibraryParser
-  attr_reader :plist
-  attr_reader :tracks
-  attr_reader :playlists
+  attr_reader :plist, :tracks, :playlists
 
   def initialize(library_xml_path)
     @plist = Plist.parse_xml(library_xml_path)

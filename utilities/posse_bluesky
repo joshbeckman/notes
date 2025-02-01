@@ -18,6 +18,7 @@ require_relative 'bluesky/auth'
 # TODO: get reply/boost/fav counts and update post
 
 module POSSE
+  # a Jekyll filter class to use Jekyll filters in a non-Jekyll context
   class JekyllFilter
     include Jekyll::Filters
     attr_accessor :site, :context
@@ -28,6 +29,7 @@ module POSSE
     end
   end
 
+  # a class to post to bluesky.social
   class Bluesky
     include ::Bluesky::Auth
 
@@ -42,7 +44,7 @@ module POSSE
       @content_template = Liquid::Template.parse('{{ x | strip_html | strip | escape | truncate: 140}}')
       @handle = ENV.fetch('BLUESKY_HANDLE', 'joshbeckman.org')
       @did = generate_did(@handle)
-      @api_key = generate_api_key(@did, ENV['BLUESKY_PASSWORD'])
+      @api_key = generate_api_key(@did, ENV.fetch('BLUESKY_PASSWORD', nil))
     end
 
     def post_all
@@ -117,14 +119,14 @@ module POSSE
 
     def embed(post)
       card = {
-        "uri": url(post),
-        "title": post.data['title'],
-        "description": excerpt(post)
+        'uri': url(post),
+        'title': post.data['title'],
+        'description': excerpt(post)
       }
       card['thumb'] = image_blob(post) if post.data['image']
       {
-        "$type": 'app.bsky.embed.external',
-        "external": card
+        '$type': 'app.bsky.embed.external',
+        'external': card
       }
     end
 
@@ -133,9 +135,7 @@ module POSSE
       if image_path.start_with?('http')
         image_path = URI.parse(image_path)
         image_path = File.join(Dir.tmpdir, File.basename(image_path.path))
-        File.open(image_path, 'wb') do |file|
-          file.write(URI.open(post.data['image']).read)
-        end
+        File.binwrite(image_path, URI.open(post.data['image']).read)
       else
         image_path = File.join('.', image_path)
       end
@@ -212,7 +212,7 @@ module POSSE
             byteStart: m[:start],
             byteEnd: m[:end]
           },
-          features: [{ "$type": 'app.bsky.richtext.facet#mention', "did": did }]
+          features: [{ '$type': 'app.bsky.richtext.facet#mention', 'did': did }]
         }
       end
 
@@ -224,9 +224,9 @@ module POSSE
           },
           features: [
             {
-              "$type": 'app.bsky.richtext.facet#link',
+              '$type': 'app.bsky.richtext.facet#link',
               # NOTE: URI ("I") not URL ("L")
-              "uri": u[:url]
+              'uri': u[:url]
             }
           ]
         }

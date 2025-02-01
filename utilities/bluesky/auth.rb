@@ -55,9 +55,7 @@ module Bluesky
       return nil if did.nil? || rkey.nil?
 
       pretty_did = resolve_handle(did)
-      unless pretty_did.nil?
-        did = pretty_did.split('@').last
-      end
+      did = pretty_did.split('@').last unless pretty_did.nil?
       "https://bsky.app/profile/#{did}/post/#{rkey}"
     end
 

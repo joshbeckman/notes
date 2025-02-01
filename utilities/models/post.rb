@@ -26,7 +26,7 @@ Post = Struct.new(
   keyword_init: true
 ) do
   def movie_cover_image
-    key = ENV['OMDB_TOKEN']
+    key = ENV.fetch('OMDB_TOKEN', nil)
     unless key
       puts 'OMDB_TOKEN environment variable not set'
       return

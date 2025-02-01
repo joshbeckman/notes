@@ -16,9 +16,7 @@ class SiteVersion
   def version
     # `git describe --long 2>/dev/null | sed 's/\([^-]*-g\)/r\1/' | awk 1 ORS=''`.strip
     described = `git describe --tags --long`.strip
-    if described.empty?
-      return `printf "r%s-g%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"`.strip
-    end
+    return `printf "r%s-g%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"`.strip if described.empty?
 
     described.gsub(/([^-]*-g)/, 'r\1').strip
   end

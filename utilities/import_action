@@ -10,9 +10,7 @@ class Jekyll
   def self.import_book(book)
     return unless book.should_import?
 
-    File.open("notes/_posts/#{book.formatted_date}-#{book.book_id}.md", 'w') do |f|
-      f.write book.post_text
-    end
+    File.write("notes/_posts/#{book.formatted_date}-#{book.book_id}.md", book.post_text)
   end
 
   def self.import_book_highlights(book)
@@ -24,9 +22,7 @@ class Jekyll
   def self.import_highlight(highlight, book)
     return unless highlight.should_import?(book)
 
-    File.open("notes/_posts/#{highlight.formatted_date}-#{highlight.highlight_id}.md", 'w') do |f|
-      f.write highlight.post_text(book)
-    end
+    File.write("notes/_posts/#{highlight.formatted_date}-#{highlight.highlight_id}.md", highlight.post_text(book))
   end
 
   def self.import_reading_list(inbox_month: [], archive_month: [])
@@ -47,7 +43,7 @@ class Jekyll
     file.puts "This is a list of the #{archive_month.count} articles/etc. that I read in the last month."
     file.puts "These probably weren't all that notable to me, otherwise they'd be in [my notes](/notes)."
     file.puts "But this is helpful for me to remember what I've read and to share with others."
-    file.puts "I also have [an inbox of articles to read](/blog/reading/reading_list/inbox)."
+    file.puts 'I also have [an inbox of articles to read](/blog/reading/reading_list/inbox).'
     file.puts 'I generate this page from my Readwise library using [a script I wrote](/TODO). Feel free to use it, too!'
     file.puts
     file.puts '| Title | Author |'
@@ -59,12 +55,8 @@ class Jekyll
       title = doc.title
       author = doc.author
       email = doc.source_url.match?(/^mailto:/)
-      unless doc.source_url.match?(/^mailto:/)
-        title = "[#{title}](#{doc.source_url})"
-      end
-      if email && author.nil?
-        author = "(newsletter)"
-      end
+      title = "[#{title}](#{doc.source_url})" unless doc.source_url.match?(/^mailto:/)
+      author = '(newsletter)' if email && author.nil?
       file.puts "| #{title&.gsub('|', '')} | #{author&.gsub('|', '')} |"
     end
     file = File.open('blog/reading/reading_list_inbox.md', 'w')
@@ -90,12 +82,8 @@ class Jekyll
       title = doc.title
       site_name = doc.site_name
       email = doc.source_url.match?(/^mailto:/)
-      unless doc.source_url.match?(/^mailto:/)
-        title = "[#{title}](#{doc.source_url})"
-      end
-      if email && site_name.nil?
-        site_name = "(newsletter)"
-      end
+      title = "[#{title}](#{doc.source_url})" unless doc.source_url.match?(/^mailto:/)
+      site_name = '(newsletter)' if email && site_name.nil?
       file.puts "| #{title&.gsub('|', '')} | #{site_name&.gsub('|', '')} | [Read](#{doc.url}) |"
     end
   end
@@ -105,7 +93,7 @@ module ReadwiseExtras
   module Book
     def post_text
       [
-        "---",
+        '---',
         "title: \"#{stripped_title}\"",
         "tags: #{formatted_tags}",
         "canonical: #{source_url}",
@@ -113,16 +101,16 @@ module ReadwiseExtras
         "book: #{book_id}",
         "book_title: \"#{stripped_title}\"",
         "book_asin: #{asin}",
-        "hide_title: true",
+        'hide_title: true',
         "readwise_url: #{readwise_url}",
         "image: #{cover_image_url}",
         "favicon_url: #{favicon_url}",
         "source_emoji: #{source_emoji}",
-        "show_book_meta: true",
+        'show_book_meta: true',
         (navigable_url? ? "source_url: \"#{outbound_url}\"" : nil),
-        "---",
-        "",
-        note,
+        '---',
+        '',
+        note
       ].compact.join("\n")
     end
 
@@ -168,9 +156,9 @@ module ReadwiseExtras
     end
 
     def build_text_fragment(text)
-      text_start = text.unicode_normalize.split("\n").first.split("[").first.split(" ").first(3).join(" ").strip
-      text_end = text.unicode_normalize.split("\n").last.split("]").last.split(" ").last(3).join(" ").strip
-      ":~:text=" + URI.encode_uri_component(text_start) + "," + URI.encode_uri_component(text_end)
+      text_start = text.unicode_normalize.split("\n").first.split('[').first.split(' ').first(3).join(' ').strip
+      text_end = text.unicode_normalize.split("\n").last.split(']').last.split(' ').last(3).join(' ').strip
+      ':~:text=' + URI.encode_uri_component(text_start) + ',' + URI.encode_uri_component(text_end)
     end
 
     def asin_url
@@ -180,21 +168,21 @@ module ReadwiseExtras
     end
 
     def author_stripped
-      author.to_s.split("\n").reject { |a| a.empty? }.join(" ")
+      author.to_s.split("\n").reject { |a| a.empty? }.join(' ')
     end
 
     def source_emoji
       if source_url&.match?(/^mailto:/)
-        "✉️"
-      elsif category == 'books' || category == 'supplementals'
-        "📕"
+        '✉️'
+      elsif %w[books supplementals].include?(category)
+        '📕'
       else
-        "🌐"
+        '🌐'
       end
     end
 
     def favicon_url
-      return nil unless source_url&.match?(/^https{0,1}:\/\//)
+      return nil unless source_url&.match?(%r{^https{0,1}://})
 
       hostname = URI.parse(source_url).hostname
       return nil unless hostname
@@ -221,7 +209,7 @@ module ReadwiseExtras
     end
 
     def source_footer_link(text_fragment: nil)
-      return "" unless navigable_url?
+      return '' unless navigable_url?
 
       <<~LINK
         <div class="quoteback-backlink"><a target="_blank" aria-label="go to the full text of this quotation" rel="noopener" href="#{outbound_url(text_fragment: text_fragment)}" class="quoteback-arrow"> Source</a></div>
@@ -232,7 +220,7 @@ module ReadwiseExtras
   module Highlight
     def post_text(book)
       [
-        "---",
+        '---',
         "title: \"#{title}...\"",
         "tags: #{formatted_tags(book)}",
         "canonical: #{book.source_url}",
@@ -240,20 +228,20 @@ module ReadwiseExtras
         "book: #{book.book_id}",
         "book_title: \"#{book.stripped_title}\"",
         "book_asin: #{book.asin}",
-        "hide_title: true",
+        'hide_title: true',
         "readwise_url: #{readwise_url}",
         "image: #{book.cover_image_url}",
         "favicon_url: #{book.favicon_url}",
         "source_emoji: #{book.source_emoji}",
         (book.navigable_url? ? "source_url: \"#{book.outbound_url(text_fragment: text)}\"" : nil),
-        "---",
-        "",
-        formatted_text(book),
+        '---',
+        '',
+        formatted_text(book)
       ].compact.join("\n")
     end
 
     def title
-      @title ||= text.gsub(/\]\(\S*\)/, "]").gsub('"', "'").split("\n").join(' ').slice(0, 60)
+      @title ||= text.gsub(/\]\(\S*\)/, ']').gsub('"', "'").split("\n").join(' ').slice(0, 60)
     end
 
     def formatted_tags(book)
@@ -269,7 +257,7 @@ module ReadwiseExtras
       end
       pieces << "> #{book.source_footer(text_fragment: text).strip}"
       unless note.nil? || note.empty?
-        pieces << ""
+        pieces << ''
         pieces << note
       end
 
@@ -281,8 +269,8 @@ module ReadwiseExtras
     end
 
     def should_import?(book)
-      return false if book.category == "supplementals" && tags.empty?
-      return false if tags.map { |t| t['name'] }.include?("discard")
+      return false if book.category == 'supplementals' && tags.empty?
+      return false if tags.map { |t| t['name'] }.include?('discard')
 
       true
     end
@@ -295,10 +283,10 @@ Readwise::Highlight.include(ReadwiseExtras::Highlight)
 # - Import highlights into notes/_posts
 class Importer
   def self.import
-    client = Readwise::Client.new(token: ENV['READWISE_TOKEN'])
+    client = Readwise::Client.new(token: ENV.fetch('READWISE_TOKEN', nil))
     limit = ENV['READWISE_LIMIT']&.to_i
 
-    books = client.export(updated_after: Time.parse("2000-01-01").iso8601)
+    books = client.export(updated_after: Time.parse('2000-01-01').iso8601)
     books = books.sample(limit) if limit
     books.each do |book|
       # turn this off for now because Readwise is not good about allowing you to edit the book notes

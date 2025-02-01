@@ -25,7 +25,7 @@ module PESOS
       @site = Jekyll::Site.new(Jekyll.configuration({}))
       @handle = ENV.fetch('BLUESKY_HANDLE', 'joshbeckman.org')
       @did = generate_did(@handle)
-      @api_key = generate_api_key(@did, ENV['BLUESKY_PASSWORD'])
+      @api_key = generate_api_key(@did, ENV.fetch('BLUESKY_PASSWORD', nil))
       @site.read
     end
 

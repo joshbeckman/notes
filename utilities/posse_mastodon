@@ -36,7 +36,7 @@ module POSSE
       @site.read
       @jekyll_filter = JekyllFilter.new
       @content_template = Liquid::Template.parse('{{ x | strip_html | strip | escape | truncate: 140}}')
-      @token = ENV['MASTODON_SOCIAL_TOKEN']
+      @token = ENV.fetch('MASTODON_SOCIAL_TOKEN', nil)
     end
 
     def post_all

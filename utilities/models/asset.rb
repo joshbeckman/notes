@@ -35,10 +35,10 @@ Asset = Struct.new(:url, :category, :path, keyword_init: true) do
     # rename the file to the path with the correct extension
     filetype = `file --mime-type -b #{path}`.strip.split('/').last
     # append the filetype to the path if it is not already there
-    new_path = if path.split('.').last != filetype
-                 "#{path}.#{filetype}"
-               else
+    new_path = if path.split('.').last == filetype
                  path
+               else
+                 "#{path}.#{filetype}"
                end
     puts "Renaming #{path} to #{new_path}"
     `mv #{path} #{new_path}`

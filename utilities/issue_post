@@ -8,14 +8,14 @@ require_relative 'models/asset'
 
 class IssuePoster
   def run
-    issue_body = File.read("issue_body")
+    issue_body = File.read('issue_body')
     post = if has_frontmatter?(issue_body)
              post_with_frontmatter(issue_body)
            else
              post_with_form_matter(issue_body)
            end
     post.create_file
-    File.delete("issue_body")
+    File.delete('issue_body')
   end
 
   # initialize a post by parsing frontmatter out of the issue_body
@@ -53,23 +53,21 @@ class IssuePoster
       rating: rating,
       slug: slug,
       tags: tags,
-      title: title,
+      title: title
     )
-    unless imdb_id.nil?
-      post.image = post.movie_cover_image || post.image
-    end
+    post.image = post.movie_cover_image || post.image unless imdb_id.nil?
     post
   end
 
   # initialize a post by parsing the form matter out of the issue_body
   def post_with_form_matter(issue_body)
     title = parse_input(issue_body, 'Title')
-    tags = parse_input(issue_body, 'Tags')&.split(",")&.map(&:strip)
+    tags = parse_input(issue_body, 'Tags')&.split(',')&.map(&:strip)
     date = parse_date(parse_input(issue_body, 'Date'))
     imdb_id = parse_imdb_id(parse_input(issue_body, 'IMDB ID'))
     rating = parse_rating(parse_input(issue_body, 'Rating'))
     category = parse_input(issue_body, 'Category')
-    raw_content = issue_body.split("### Content").slice(1, 10).join("### Content")
+    raw_content = issue_body.split('### Content').slice(1, 10).join('### Content')
     slug = title.gsub(/[^a-zA-Z0-9\s]/, '').gsub(/\s+/, '-').downcase
     assets = extract_assets(raw_content)
     assets.map(&:download)
@@ -84,11 +82,9 @@ class IssuePoster
       rating:,
       slug:,
       tags:,
-      title:,
+      title:
     )
-    unless imdb_id.nil?
-      post.image = post.movie_cover_image || post.image
-    end
+    post.image = post.movie_cover_image || post.image unless imdb_id.nil?
     post
   end
 
@@ -138,17 +134,17 @@ class IssuePoster
 
   def extract_assets(content)
     # images are identified by regular markdown image syntax
-    images = content.scan(/\!\[.*\]\((.*)\)/).flatten.map do |url|
-      Asset.new(url: url, category: "images")
+    images = content.scan(/!\[.*\]\((.*)\)/).flatten.map do |url|
+      Asset.new(url: url, category: 'images')
     end.concat(content.scan(/<img .*src="(.*)">/).flatten.map do |url|
-      Asset.new(url: url, category: "images")
+      Asset.new(url: url, category: 'images')
     end)
     # videos are identified by:
     # - a URI at the start of a line
     # - the domain is github.com
     # - the path contains /assets
-    videos = content.scan(/^https:\/\/github.com\/.*\/assets\/.*$/).flatten.map do |url|
-      Asset.new(url: url, category: "videos")
+    videos = content.scan(%r{^https://github.com/.*/assets/.*$}).flatten.map do |url|
+      Asset.new(url: url, category: 'videos')
     end
     images + videos
   end

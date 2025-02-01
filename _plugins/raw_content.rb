@@ -5,11 +5,7 @@ module RawContent
     def generate(site)
       site.posts.docs.each do |post|
         post.data['raw_content'] = post.content
-        post_backlinks = site.posts.docs.map do |other_post|
-          next unless other_post.content.include?(post.url)
-
-          other_post
-        end.compact
+        post_backlinks = site.posts.docs.select { |other_post| other_post.content.include?(post.url) }
         page_backlinks = site.pages.map do |page|
           next unless page.content.include?(post.url)
           next if page.url.include?('assets')
@@ -21,11 +17,7 @@ module RawContent
       end
       site.pages.each do |page|
         page.data['raw_content'] = page.content
-        post_backlinks = site.posts.docs.map do |other_post|
-          next unless other_post.content.include?(page.url)
-
-          other_post
-        end.compact
+        post_backlinks = site.posts.docs.select { |other_post| other_post.content.include?(page.url) }
         page_backlinks = site.pages.map do |other_page|
           next unless other_page.content.include?(page.url)
           next if other_page.url.include?('assets')

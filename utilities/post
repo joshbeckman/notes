@@ -50,11 +50,11 @@ class Poster
   def import_entry(entry, export_path)
     post = Post.new(tags: [])
     title_match = entry['text'].match(/# (.*)/)
-    if title_match
-      post.title = title_match[1]
+    post.title = if title_match
+      title_match[1]
     else
-      post.title = entry['text'].split("\n").first
-    end
+      entry['text'].split("\n").first
+                 end
     post.slug = post.title.gsub(/[^a-zA-Z0-9\s]/, '').gsub(/\s+/, '-').downcase
     post.date = Time.parse(entry['creationDate'])
     copy_photos(entry, export_path)
@@ -119,15 +119,15 @@ class Poster
       video_tag = "<video controls src=\"/#{asset_path_for_video(video)}\"></video>"
       body.gsub!(%r{!\[\]\(dayone-moment:/video/#{video['identifier']}\)}, video_tag)
     end
-    body = body.split("\n").map do |line|
-      if line.match?(/https:\/\/www.youtube.com\/watch\?v=(.*)/)
-        youtube_id = line.match(/https:\/\/www.youtube.com\/watch\?v=(.*)/)[1]
+    body.split("\n").map do |line|
+      if line.match?(%r{https://www.youtube.com/watch\?v=(.*)})
+        youtube_id = line.match(%r{https://www.youtube.com/watch\?v=(.*)})[1]
         "<iframe width=\"100%\" height=\"340\" src=\"https://www.youtube-nocookie.com/embed/#{youtube_id}\" title=\"YouTube embed\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
       else
         line
       end
     end.join("\n")
-    body
+    
   end
 
   def create_file(post)
