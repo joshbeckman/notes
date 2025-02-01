@@ -117,7 +117,7 @@ module ReadwiseExtras
     def formatted_tags
       base_tags = tags.map { |t| t['name'] }
       base_tags.concat(highlights.map { |h| h.tags.map { |ht| ht['name'] } })
-        .flatten.uniq.join(' ')
+               .flatten.uniq.join(' ')
     end
 
     def formatted_date

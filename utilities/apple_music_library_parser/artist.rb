@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 Artist = Struct.new(
   :name,
   :play_date_utc,

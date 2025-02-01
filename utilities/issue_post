@@ -103,6 +103,7 @@ class IssuePoster
     return nil if imdb_id.nil?
     return nil if imdb_id.empty?
     return nil unless imdb_id.match?(/tt\d+/)
+
     imdb_id.strip
   end
 

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'plist'
 require_relative 'apple_music_library_parser/album'
 require_relative 'apple_music_library_parser/artist'
@@ -28,7 +29,7 @@ class AppleMusicLibraryParser
 
   def top_played_albums(limit: 10, include_ep: false, sort_by: :song_play_ratio)
     @albums.select { |a| include_ep || a.tracks.count > 3 }
-      .sort_by(&sort_by).reverse.take(limit)
+           .sort_by(&sort_by).reverse.take(limit)
   end
 
   def top_played_artists(limit: 10, sort_by: :song_play_count)

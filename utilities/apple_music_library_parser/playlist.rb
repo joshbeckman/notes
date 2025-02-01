@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 Playlist = Struct.new(
   :all_items,
   :description,

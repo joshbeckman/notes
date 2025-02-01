@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 Album = Struct.new(
   :artist,
   :date_added,

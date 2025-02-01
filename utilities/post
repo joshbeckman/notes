@@ -51,9 +51,9 @@ class Poster
     post = Post.new(tags: [])
     title_match = entry['text'].match(/# (.*)/)
     post.title = if title_match
-      title_match[1]
-    else
-      entry['text'].split("\n").first
+                   title_match[1]
+                 else
+                   entry['text'].split("\n").first
                  end
     post.slug = post.title.gsub(/[^a-zA-Z0-9\s]/, '').gsub(/\s+/, '-').downcase
     post.date = Time.parse(entry['creationDate'])
@@ -127,7 +127,6 @@ class Poster
         line
       end
     end.join("\n")
-    
   end
 
   def create_file(post)

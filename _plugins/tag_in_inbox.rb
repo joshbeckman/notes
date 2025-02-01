@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module Jekyll
   module TagInInboxFilter
     DECIMALS = YAML.load_file('_data/decimals.yml').map { |d| d.to_s.split.last.downcase }
