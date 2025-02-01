@@ -5,6 +5,7 @@ _site/
 *.DS_Store
 .readwise_token
 .omdb_token
+.strava_token
 .mastodon_social_token
 .strava_token
 .bundle/

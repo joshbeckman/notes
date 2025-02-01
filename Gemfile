@@ -31,5 +31,6 @@ end
 gem 'kramdown-math-katex'
 gem 'plist'
 gem 'readwise', github: 'joshbeckman/readwise-ruby', branch: 'feature/readwise-api-v3'
+gem 'strava-ruby-client'
 
 gem 'jekyll-mastodon_webfinger', '~> 1.0'
