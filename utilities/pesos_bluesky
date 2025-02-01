@@ -94,7 +94,6 @@ module PESOS
         body: body,
         category: 'blog',
         date: Time.parse(record['createdAt']),
-        hide_title: true,
         mastodon_social_status_url: mastodon_social_status_url,
         bluesky_status_url: post_uri,
         canonical: canonical,
