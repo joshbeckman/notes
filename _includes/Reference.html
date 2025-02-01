@@ -1,0 +1,37 @@
+<div class="reference">
+  <h3 class="">
+  Reference
+  </h3>
+  <ul class="filed">
+      <!-- Loop through page categories and print them in tags -->
+      {%- for item in site.data.decimals -%}
+          {%- assign slug = item | split: ' ' | last | downcase -%}
+          {%- for tag in page.tags -%}
+              {%- if tag == slug -%}
+                  <li class="filed">
+                      <a href="/tags/#{{ tag }}" class="">{{ item }}</a>
+                  </li>
+              {%- endif -%}
+          {%- endfor -%}
+      {%- endfor -%}
+      {%- if page.book -%}
+          <li class="filed source">
+              <a href="/sources/#{{ page.book }}" class="">{{ page.book_title }}</a>
+          </li>
+      {%- endif -%}
+      {%- if page.date -%}
+      <li class="filed date">
+        <a href="/dates/#{{ page.date | date: '%d-%B-%Y' }}">
+            <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y, %B %d' }}</time>
+        </a>
+      </li>
+      {%- endif -%}
+      <li class="filed edit">
+      {%- if page.readwise_url -%}
+        <a id="edit-link" href="{{ page.readwise_url }}" target="_blank" rel="noopener noreferrer">Edit</a>
+      {%- else -%}
+        <a id="edit-link" href="{{ page.path | prepend: site.repo_edit_url }}" target="_blank" rel="noopener noreferrer">Edit</a>
+      {%- endif -%}
+      </li>
+  </ul>
+</div>
