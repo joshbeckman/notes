@@ -185,16 +185,14 @@ module POSSE
     end
 
     def parse_urls(text)
-      spans = []
       text_bytes = text.encode('UTF-8')
-      URI.extract(text, %w[http https]).each do |url|
-        spans << {
+      spans = URI.extract(text, %w[http https]).map do |url|
+        {
           start: text_bytes.index(url),
           end: text_bytes.index(url) + url.length,
           url: url
         }
       end
-      spans
     end
 
     def parse_facets(text)

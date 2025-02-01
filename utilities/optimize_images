@@ -30,7 +30,7 @@ class Optimizer
   # if width > max_width || height > max_height
   # use imagemagick to resize image
   def optimize_image(path)
-    width, height, size = `identify -format "%w %h %b" #{path}`.split(' ')
+    width, height, size = `identify -format "%w %h %b" #{path}`.split
     if width.nil? || width.empty?
       puts "skipping unknown sizing: #{path}"
       return

@@ -12,7 +12,7 @@ class AppleMusicLibraryParser
   def initialize(library_xml_path)
     @plist = Plist.parse_xml(library_xml_path)
     @tracks ||= parse_tracks(plist['Tracks'])
-    @tracks_by_id ||= tracks.map { |t| [t.track_id, t] }.to_h
+    @tracks_by_id ||= tracks.to_h { |t| [t.track_id, t] }
     @playlists ||= parse_playlists(plist['Playlists'])
     @artists ||= tracks.group_by(&:artist).map do |artist, tracks|
       parse_artist(artist, tracks)
@@ -47,7 +47,7 @@ class AppleMusicLibraryParser
   end
 
   def smart_playlists
-    @playlists.select { |p| p.smart_criteria }
+    @playlists.select(&:smart_criteria)
   end
 
   def recently_played_playlist

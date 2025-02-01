@@ -49,7 +49,7 @@ class Jekyll
     file.puts '| Title | Author |'
     file.puts '| ------ | ----- |'
     # sort archive_month by updated_at with most recent first
-    archive_month.sort_by { |doc| doc.updated_at }.each do |doc|
+    archive_month.sort_by(&:updated_at).each do |doc|
       # TODO: match each against a highlight and link to it if found
       # TODO: Group by site/author
       title = doc.title
@@ -156,9 +156,9 @@ module ReadwiseExtras
     end
 
     def build_text_fragment(text)
-      text_start = text.unicode_normalize.split("\n").first.split('[').first.split(' ').first(3).join(' ').strip
-      text_end = text.unicode_normalize.split("\n").last.split(']').last.split(' ').last(3).join(' ').strip
-      ':~:text=' + URI.encode_uri_component(text_start) + ',' + URI.encode_uri_component(text_end)
+      text_start = text.unicode_normalize.split("\n").first.split('[').first.split.first(3).join(' ').strip
+      text_end = text.unicode_normalize.split("\n").last.split(']').last.split.last(3).join(' ').strip
+      ":~:text=#{URI.encode_uri_component(text_start)},#{URI.encode_uri_component(text_end)}"
     end
 
     def asin_url
@@ -168,7 +168,7 @@ module ReadwiseExtras
     end
 
     def author_stripped
-      author.to_s.split("\n").reject { |a| a.empty? }.join(' ')
+      author.to_s.split("\n").reject(&:empty?).join(' ')
     end
 
     def source_emoji

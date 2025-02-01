@@ -110,7 +110,7 @@ class Poster
 
   def parse_body(entry, title)
     body = entry['text'].gsub(/^# (.*)/, '').strip
-    body = body.split("\n")[1..-1].join("\n") if body.split("\n").first == title
+    body = body.split("\n")[1..].join("\n") if body.split("\n").first == title
     (entry['photos'] || []).each do |photo|
       img_tag = "/#{asset_path_for_photo(photo)}"
       body.gsub!(%r{dayone-moment://#{photo['identifier']}}, img_tag)
