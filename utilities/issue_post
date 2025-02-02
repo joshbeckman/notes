@@ -48,14 +48,13 @@ class IssuePoster
       hide_title: hide_title,
       description: description,
       date: date,
-      image: assets.find(&:image?)&.public_path || frontmatter['image'],
+      image: determine_post_image(frontmatter, assets, imdb_id),
       imdb_id: imdb_id,
       rating: rating,
       slug: slug,
       tags: tags,
       title: title
     )
-    post.image = post.movie_cover_image || post.image unless imdb_id.nil?
     post
   end
 
@@ -86,6 +85,12 @@ class IssuePoster
     )
     post.image = post.movie_cover_image || post.image unless imdb_id.nil?
     post
+  end
+
+  def determine_post_image(frontmatter, assets, imdb_id)
+    image = assets.find(&:image?)&.public_path || frontmatter['image']
+    return movie_cover_image || image if imdb_id
+    image
   end
 
   def frontmatter?(body)
