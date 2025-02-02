@@ -7,7 +7,7 @@ rating: 4
 song_link: https://music.apple.com/us/album/eusexua/1767658574
 image: /assets/images/album_art/fkatwigs-eusexua.jpg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113935700669910548
 bluesky_status_url: false
 tags:
   - music
