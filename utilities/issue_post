@@ -31,12 +31,8 @@ class IssuePoster
              raw_tags.split(',').map(&:strip)
            end
     date = parse_date(frontmatter['date'])
-    imdb_id = frontmatter['imdb_id']
     rating = parse_rating(frontmatter['rating'])
     category = frontmatter['category'] || 'blog'
-    in_reply_to = frontmatter['in_reply_to']
-    description = frontmatter['description']
-    hide_title = frontmatter['hide_title']
     slug = frontmatter['slug'] || title.gsub(/[^a-zA-Z0-9\s]/, '').gsub(/\s+/, '-').downcase
     assets = extract_assets(body)
     assets.map(&:download)
@@ -45,21 +41,19 @@ class IssuePoster
       mastodon_social_status_url: 'false',
       bluesky_status_url: 'false',
       category: category,
-      in_reply_to: in_reply_to,
-      hide_title: hide_title,
-      description: description,
+      in_reply_to: frontmatter['in_reply_to'],
+      hide_title: frontmatter['hide_title'],
+      description: frontmatter['description'],
       date: date,
       image: assets.find(&:image?)&.public_path || frontmatter['image'],
-      imdb_id: imdb_id,
+      imdb_id: frontmatter['imdb_id'],
       rating: rating,
       slug: slug,
       tags: tags,
       title: title
     )
-    post.image = post.movie_cover_image || post.image if imdb_id
-
+    post.image = post.movie_cover_image || post.image if post.imdb_id
     set_album_art(post, frontmatter['album']) if frontmatter['album']
-
     post
   end
 

@@ -19,7 +19,7 @@ Album = Struct.new(
   end
 
   # Use the `sacad` CLI, if present, to download album art.
-  def download_album_art
+  def download_album_art(size: 500)
     if File.exist?(album_art_asset)
       puts "Album art already exists for #{artist} - #{name}."
       return
@@ -30,7 +30,7 @@ Album = Struct.new(
       return
     end
 
-    system("#{sacad} \"#{artist}\" \"#{name}\" 500 \"#{album_art_asset}\"")
+    system("#{sacad} \"#{artist}\" \"#{name}\" #{size} \"#{album_art_asset}\"")
   end
 
   def album_art_md
