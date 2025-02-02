@@ -55,7 +55,7 @@ class IssuePoster
       tags: tags,
       title: title
     )
-    post.image = post.movie_cover_image || post.image unless imdb_id.nil?
+    post.image = post.movie_cover_image || post.image if imdb_id
     post
   end
 
@@ -84,7 +84,7 @@ class IssuePoster
       tags:,
       title:
     )
-    post.image = post.movie_cover_image || post.image unless imdb_id.nil?
+    post.image = post.movie_cover_image || post.image if imdb_id
     post
   end
 
