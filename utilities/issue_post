@@ -57,7 +57,7 @@ class IssuePoster
       title: title
     )
     post.image = post.movie_cover_image || post.image if imdb_id
-    
+
     if frontmatter['album']
       album_data = frontmatter['album']
       if album_data['title'] && album_data['artist']
@@ -65,11 +65,11 @@ class IssuePoster
           artist: album_data['artist'],
           name: album_data['title']
         )
-        album.download_album_art
-        post.image = album.album_art_asset if File.exist?(album.album_art_asset)
+        album.download_album_art(size: 1000)
+        post.image = "/#{album.album_art_asset}" if File.exist?(album.album_art_asset)
       end
     end
-    
+
     post
   end
 
