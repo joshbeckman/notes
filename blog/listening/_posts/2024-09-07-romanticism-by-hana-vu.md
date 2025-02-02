@@ -7,6 +7,7 @@ rating: 4
 image: /assets/images/1815acbb-2eeb-4c3c-ade1-af612edfee76.png
 description: 
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113097530265816291
+song_link: https://music.apple.com/us/album/romanticism/1726216204
 tags: 
   - music
 ---
@@ -22,4 +23,4 @@ Favorite tracks:
 - 22
 - Look Alive
 
-<iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/romanticism/1726216204"></iframe>
+{{ "https://music.apple.com/us/album/romanticism/1726216204" | itunesify }}

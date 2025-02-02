@@ -8,7 +8,7 @@ parser = AppleMusicLibraryParser.new('Library.xml')
 file = File.open('blog/listening/index.md', 'w')
 file.puts '---'
 file.puts 'layout: Page'
-file.puts 'title: Music Listening'
+file.puts 'title: Listening'
 file.puts 'toc: true'
 file.puts 'emoji: 🎶'
 file.puts 'searchable: true'
@@ -21,6 +21,27 @@ file.puts '- index'
 file.puts 'redirect_from:'
 file.puts '- /music'
 file.puts '---'
+file.puts <<~LIQUID
+  Albums that moved me enough to write about them.
+
+  {% assign postsByMonth = site.categories['listening'] | group_by_exp:"post", "post.date | date: '%Y'" %}
+  {% for day in postsByMonth %}
+    <table>
+        <thead>
+          <tr>
+              <td colspan="3">
+                  <span id="{{ day.name }}">{{ day.name }}</span>
+              </td>
+          </tr>
+        </thead>
+    {% for post in day.items %}
+    {%- include PostTableRow.html post=post -%}
+    {% endfor %}
+    </table>
+  {% endfor %}
+LIQUID
+file.puts
+file.puts '## Listening Stats'
 file.puts 'I generate this page from my Apple Music library using [a script I wrote](/blog/pulling-fun-insights-out-of-my-apple-music-library). Feel free to use it, too!'
 file.puts
 file.puts "Last updated: #{DateTime.now.strftime('%Y-%m-%d')}"
@@ -88,25 +109,3 @@ parser.recently_loved_albums.each do |album|
   album.download_album_art
   file.puts "| #{album.album_art_md} | #{album.artist} | #{album.name} | #{album.date_added&.strftime('%Y-%m-%d')} |"
 end
-file.puts
-file.puts <<~LIQUID
-  ## Reviews
-
-  These are albums that moved me enough to write about.
-
-  {% assign postsByMonth = site.categories['listening'] | group_by_exp:"post", "post.date | date: '%Y'" %}
-  {% for day in postsByMonth %}
-    <table>
-        <thead>
-          <tr>
-              <td colspan="3">
-                  <span id="{{ day.name }}">{{ day.name }}</span>
-              </td>
-          </tr>
-        </thead>
-    {% for post in day.items %}
-    {%- include PostTableRow.html post=post -%}
-    {% endfor %}
-    </table>
-  {% endfor %}
-LIQUID

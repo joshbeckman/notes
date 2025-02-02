@@ -26,6 +26,11 @@
             View book on Amazon
           </a>
         {%- endif -%}
+        {%- if page.song_link -%}
+        <a href="https://song.link/{{page.song_link}}" target="_blank" class="song-link">
+            Listen on your favorite music service
+          </a>
+        {%- endif -%}
       </p>
     </cite>
   </div>

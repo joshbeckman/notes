@@ -43,6 +43,7 @@ class IssuePoster
       category: category,
       in_reply_to: frontmatter['in_reply_to'],
       hide_title: frontmatter['hide_title'],
+      song_link: frontmatter['song_link'],
       description: frontmatter['description'],
       date: date,
       image: assets.find(&:image?)&.public_path || frontmatter['image'],

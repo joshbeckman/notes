@@ -20,6 +20,7 @@ Post = Struct.new(
   :bluesky_status_url,
   :letterboxd_review_url,
   :rating,
+  :song_link,
   :slug,
   :tags,
   :title,
@@ -78,6 +79,7 @@ Post = Struct.new(
       file.puts "rating: #{rating}" if rating
       file.puts "imdb_id: #{imdb_id}" if imdb_id
       file.puts "tmdb_id: #{tmdb_id}" if tmdb_id
+      file.puts "song_link: #{song_link}" if song_link
       file.puts "letterboxd_id: #{letterboxd_id}" if letterboxd_id
       file.puts "image: #{image}"
       file.puts "description: #{description}"

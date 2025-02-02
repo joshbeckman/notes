@@ -1,6 +1,6 @@
 ---
 layout: Page
-title: Music Listening
+title: Listening
 toc: true
 emoji: 🎶
 searchable: true
@@ -13,6 +13,26 @@ tags:
 redirect_from:
 - /music
 ---
+Albums that moved me enough to write about them.
+
+{% assign postsByMonth = 
+site.categories['listening'] | group_by_exp:"post", "post.date | date: '%Y'" %}
+{% for day in postsByMonth %}
+  <table>
+      <thead>
+        <tr>
+            <td colspan="3">
+                <span id="{{ day.name }}">{{ day.name }}</span>
+            </td>
+        </tr>
+      </thead>
+  {% for post in day.items %}
+  {%- include PostTableRow.html post=post -%}
+  {% endfor %}
+  </table>
+{% endfor %}
+
+## Listening Stats
 I generate this page from my Apple Music library using [a script I wrote](/blog/pulling-fun-insights-out-of-my-apple-music-library). Feel free to use it, too!
 
 Last updated: 2025-01-31
@@ -112,24 +132,3 @@ This is a list of the albums I've loved recently.
 |  | Dwayne Jensen | The Warehouse Project: Sofia Kourtesis, Manchester (DJ Mix) | 2024-10-31 |
 | ![PawPaw Rod - HIT EM WHERE IT HURTS - Single](/assets/images/album_art/pawpawrod-hitemwhereithurtssingle.jpg) | PawPaw Rod | HIT EM WHERE IT HURTS - Single | 2024-10-31 |
 | ![Underworld - Strawberry Hotel](/assets/images/album_art/underworld-strawberryhotel.jpg) | Underworld | Strawberry Hotel | 2024-10-25 |
-
-## Reviews
-
-These are albums that moved me enough to write about.
-
-{% assign postsByMonth = 
-site.categories['listening'] | group_by_exp:"post", "post.date | date: '%Y'" %}
-{% for day in postsByMonth %}
-  <table>
-      <thead>
-        <tr>
-            <td colspan="3">
-                <span id="{{ day.name }}">{{ day.name }}</span>
-            </td>
-        </tr>
-      </thead>
-  {% for post in day.items %}
-  {%- include PostTableRow.html post=post -%}
-  {% endfor %}
-  </table>
-{% endfor %}
