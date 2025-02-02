@@ -1,6 +1,6 @@
 ---
 layout: Page
-title: Listening
+title: Music Listening
 toc: true
 emoji: 🎶
 searchable: true

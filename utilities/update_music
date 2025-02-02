@@ -8,7 +8,7 @@ parser = AppleMusicLibraryParser.new('Library.xml')
 file = File.open('blog/listening/index.md', 'w')
 file.puts '---'
 file.puts 'layout: Page'
-file.puts 'title: Listening'
+file.puts 'title: Music Listening'
 file.puts 'toc: true'
 file.puts 'emoji: 🎶'
 file.puts 'searchable: true'
