@@ -68,7 +68,7 @@ module PESOS
       canonical = nil
       bluesky_status_url = false
       # lock it down to mastodon if directed at another user
-      if find_mention_handle(post['object']['tag'])
+      if mentions_user?(post)
         canonical = post['object']['url']
         bluesky_status_url = nil
       end
@@ -94,6 +94,13 @@ module PESOS
       else
         post['object']['content']
       end
+    end
+
+    def mentions_user?(post)
+      return false if post['object']['tag'].nil?
+      return true if post['object']['tag'].find { |tag| tag['type'] == 'Mention' }
+
+      false
     end
 
     def find_mention_handle(tags)
