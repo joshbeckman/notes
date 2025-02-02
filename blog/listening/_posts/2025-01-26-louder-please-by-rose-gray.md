@@ -8,7 +8,7 @@ song_link: https://music.apple.com/us/album/louder-please/1766520241
 image: /assets/images/album_art/rosegray-louderplease.jpg
 description: 
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113935700650205183
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lh7nqcgqxs2g
 tags:
   - music
 ---
