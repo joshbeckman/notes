@@ -33,6 +33,14 @@ jobs:
           cache-version: 0 # Increment this number if you need to re-download cached gems
       - name: Setup ImageMagick
         run: sudo apt-get install imagemagick
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install sacad
       - name: Read issue body
         id: read_issue
         run: echo "$GITHUB_ISSUE_BODY" > $GITHUB_WORKSPACE/issue_body
