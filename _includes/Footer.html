@@ -222,6 +222,34 @@ function timeAgo(date) {
     window.sessionStorage.setItem('sessionPath', currentUrl);
   }
 })();
+(function unscrambler() {
+  // find all elements with the class scrambled
+  // for each, store the text, then replace the text with a random permutation of the text
+  // then after 1 second, start an animation loop that will reveal the text one character at a time by iterating through all letters and numbers to find the correct one
+  var scrambledElements = document.querySelectorAll('.scrambled');
+  for (var i = 0; i < scrambledElements.length; i++) {
+    var element = scrambledElements[i];
+    var text = element.textContent;
+    var scrambledText = scramble(text);
+    element.textContent = scrambledText;
+    setTimeout(function (element, text) {
+      return function () {
+        unscramble(element, text);
+      };
+    }(element, text), 1000);
+  }
+  function scramble(text) {
+    var chars = text.split('');
+    var scrambled = [];
+    while (chars.length > 0) {
+      scrambled.push(chars.splice(Math.floor(Math.random() * chars.length), 1)[0]);
+    }
+    return scrambled.join('');
+  }
+  function unscramble(element, text) {
+    var chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 ';
+  }
+})();
 window.addEventListener('load', function () {
     function search() {
       let searchInput = document.getElementById("search-input");
