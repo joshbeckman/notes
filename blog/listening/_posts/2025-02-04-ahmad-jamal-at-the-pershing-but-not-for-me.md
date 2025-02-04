@@ -8,7 +8,7 @@ song_link: https://music.apple.com/us/album/ahmad-jamal-at-the-pershing-but-not-
 image: /assets/images/album_art/ahmadjamaltrio-ahmadjamalatthepershingbutnotforme.jpg
 description: 
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113946820585728721
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lhelqyb4ki24
 tags:
   - music
 ---
