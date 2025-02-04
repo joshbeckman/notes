@@ -6,7 +6,6 @@ emoji: 🎶
 searchable: true
 categories:
 - blog
-- listening
 tags:
 - music
 - index
