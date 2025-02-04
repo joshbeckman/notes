@@ -7,7 +7,7 @@ rating: 5
 song_link: https://music.apple.com/us/album/ahmad-jamal-at-the-pershing-but-not-for-me/1445769114
 image: /assets/images/album_art/ahmadjamaltrio-ahmadjamalatthepershingbutnotforme.jpg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113946820585728721
 bluesky_status_url: false
 tags:
   - music
