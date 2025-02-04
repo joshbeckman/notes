@@ -239,42 +239,33 @@ function timeAgo(date) {
     }(element, text), 1000);
   }
   function scramble(text) {
-    var chars = text.split('');
     var scrambled = [];
-    while (chars.length > 0) {
-      scrambled.push(chars.splice(Math.floor(Math.random() * chars.length), 1)[0]);
+    var chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,!?<>{}[]()=+-*/%$#@&^~|\\;:\'"`';
+    while (scrambled.length < text.length) {
+      scrambled.push(chars[Math.floor(Math.random() * chars.length)]);
     }
     return scrambled.join('');
   }
   function unscramble(element, text) {
-    var chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 ';
-    var currentText = element.textContent;
     var targetText = text;
-    var currentIndex = 0;
-    var interval = setInterval(function() {
-        if (currentIndex >= targetText.length) {
-            clearInterval(interval);
-            return;
+    var chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 .,!?<>{}[]()=+-*/%$#@&^~|\\;:\'"`';
+    // unscrable all characters simultaneously by iterating through all possible characters
+    function step() {
+      var newText = '';
+      var currentText = element.textContent;
+      for (var i = 0; i < targetText.length; i++) {
+        if (currentText[i] == targetText[i]) {
+          newText += targetText[i];
+        } else {
+          newText += chars[Math.floor(Math.random() * chars.length)];
         }
-        
-        // If character is already correct, move to next one
-        if (currentText[currentIndex] === targetText[currentIndex]) {
-            currentIndex++;
-            return;
-        }
-
-        // Create new text with random character at current position
-        var randomChar = chars[Math.floor(Math.random() * chars.length)];
-        currentText = currentText.substring(0, currentIndex) + 
-                     randomChar + 
-                     currentText.substring(currentIndex + 1);
-        element.textContent = currentText;
-
-        // If we found the correct character, move to next position
-        if (randomChar === targetText[currentIndex]) {
-            currentIndex++;
-        }
-    }, 50); // Adjust speed as needed
+      }
+      element.textContent = newText;
+      if (newText != targetText) {
+        requestAnimationFrame(step);
+      }
+    }
+    requestAnimationFrame(step);
   }
 })();
 window.addEventListener('load', function () {

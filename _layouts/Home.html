@@ -15,8 +15,20 @@
         <section class="home">
             <div id="toc-and-metadata">
                 {{ content }}
+                <h2>Recent Posts</h2>
+              {%- for post in site.posts limit:3 -%}
+              {%- include PostListItem.html post=post -%}
+              {%- endfor -%}
+              <p>and {{site.posts.size | minus: 3}} more <a href="/dates">in the date index</a>.</p>
+              {% assign popular_posts = site.posts | where: "popular", true %}
+              <h2>Popular Posts</h2>
+              {%- for post in popular_posts limit:3 -%}
+              {%- include PostListItem.html post=post -%}
+              {%- endfor -%}
+              <p>or dip into something <a href="/random">at random</a>.</p>
+              <h2>MORE, OTHER, & ADDITIONAL, AND ETCETERA, AND MORE.</h2>
                 <ul id="toc" class="section-nav">
-                    <li class="toc-entry toc-h2"><a href="about">About</a>
+                    <li class="toc-entry toc-h2"><a href="about">About Josh</a>
                         <ul>
                             <li class="toc-entry toc-h3"><a href="about-this-site">About This Site</a>
                             </li>
@@ -42,26 +54,10 @@
                             <li class="toc-entry toc-h3"><a href="random">Random Post</a></li>
                         </ul>
                     </li>
+                    <li class="toc-entry toc-h2">{{ site.data.seasons[month].name }} {{ site.data.seasons[month].emoji }}</li>
+                    <li class="toc-entry toc-h2">{{site.version}}</li>
+                    <li class="toc-entry toc-h2">Updated: <time datetime="{{ build_time }}" class="time-relative">{{ build_time }}</time></li>
                 </ul>
-            </div>
-            <div class="flex">
-            <div class="color-bars">
-                <span class="color-bar" style="background-color: #EBEDEA;"></span>
-                <span class="color-bar" style="background-color: #bd2024;"></span>
-                <span class="color-bar" style="background-color: #FF7900;"></span>
-                <span class="color-bar" style="background-color: #FFCC00;"></span>
-                <span class="color-bar" style="background-color: #237F52;"></span>
-                <span class="color-bar" style="background-color: #3C341F;"></span>
-                <span class="color-bar" style="background-color: #0969DA;"></span>
-                <span class="color-bar" style="background-color: #004B87;"></span>
-                <span class="color-bar" style="background-color: #9370d8;"></span>
-                <span class="color-bar" style="background-color: #151515;"></span>
-            </div>
-            <marquee class="departure uppercase">
-              <span title="version">Version: {{site.version}}</span>
-              <span>Updated: <time datetime="{{ build_time }}" class="time-relative">{{ build_time }}</time></span>
-              <span>Season: {{ site.data.seasons[month].name }} {{ site.data.seasons[month].emoji }}</span>
-            </marquee>
             </div>
         </section>
         {%- include Footer.html -%}

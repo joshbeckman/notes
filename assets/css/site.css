@@ -949,7 +949,8 @@ ul.asymp>li {
 .post-list-item {
   margin-bottom: 1em;
   margin-top: 1em;
-  background-image: url(/assets/img/contour-lines.svg);
+  /* linear gradient from left to right, white to transparent */
+  background-image: url(/assets/img/contour-lines.svg), linear-gradient(to right, rgba(255, 255, 255, 0.5), transparent);
   background-position-x: 0;
   background-size: 25%;
   background-repeat: no-repeat;

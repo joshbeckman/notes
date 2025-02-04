@@ -7,6 +7,7 @@ image: /assets/images/CB23E538E04949B59577C8CF6AC08F37.jpeg
 description: 
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113613740983548639
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lcqoftfpub2p
+popular: true
 tags: 
   - mastodon
   - bluesky

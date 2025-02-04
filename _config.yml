@@ -8,25 +8,7 @@ repo_edit_url: "http://github.com/joshbeckman/notes/edit/master/"
 # your social media links etc
 #######################################################################
 
-title: Josh's Site
-heading: Josh's Site
-subheading: # subheading won't work without a tagline, 
-          # tagline is mandatory if you want the 
-          # suheading to appear. The reason is
-          # having a heading and a subheading looks 
-          # ridiculous.
-  enabled: false
-  name: Subheading.name
-tagline: # subheading won't work without a tagline, 
-         # tagline is mandatory if you want the 
-         # suheading to appear. The reason is
-         # having a heading and a subheading looks 
-         # ridiculous.
-         # Although you can have the tagline without 
-         # the subheading to support the main heading
-         # which in this case is 'Knowledge Continuum'
-  enabled: false
-  name: Things collected from online and elsewhere
+title: From the Desk of Josh Beckman
 description: Things collected from online and elsewhere
 copyright: 
   # year: 2023
