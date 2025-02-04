@@ -18,4 +18,4 @@ Someone at work yesterday asked for jazz album recommendations and immediately I
 
 Poinciana is worth the price of admission, alone. Loping along, it always makes me bounce on my feet as I listen.
 
-{{ "https://music.apple.com/us/album/poinciana-live-at-the-pershing-chicago-1958/1445769114?i=1445769464" | ituneify }}
+{{ "https://music.apple.com/us/album/poinciana-live-at-the-pershing-chicago-1958/1445769114" | itunesify }}
