@@ -4,6 +4,19 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches: ["master"]
+    paths:
+      - 'blog/**'
+      - 'notes/**'
+      - 'replies/**'
+      - 'assets/**'
+      - '_config.yml'
+      - '*.md'
+      - '*.html'
+      - 'plugins/**'
+      - 'frametags/**'
+      - '_includes/**'
+      - '_data/**'
+      - '_layouts/**'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
