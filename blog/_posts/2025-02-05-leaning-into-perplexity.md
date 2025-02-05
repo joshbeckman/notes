@@ -5,7 +5,7 @@ title: "Leaning into Perplexity"
 toc: true
 image: /assets/images/perplexity-reasoning.png
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113952486955904655
 bluesky_status_url: false
 tags:
   - llm
