@@ -22,7 +22,7 @@ Note: I'm just talking about Kagi's "Quick Answer" interface - they also  provid
 1. It's only available on their top-tier plan (which I don't have the appetite for at the moment)
 2. Its interface doesn't expose the reasoning and search steps that I've come to enjoy on Perplexity
 
-Perplexity has been expanding the explanatory steps used to actually fulfill your query:
+Perplexity has been expanding the explanatory steps used to actually fulfill your query (see screenshot).
 ![Perplexity's Pro Search explanatory interface](/assets/images/perplexity-reasoning.png)
 
 This kind of step-by-step, expandable by the user, leans _even more_ into the idea that the machine can present a summary that can be interrogated piece by piece. I love this because:
