@@ -31,4 +31,4 @@ This kind of step-by-step, expandable by the user, leans _even more_ into the id
 - because it shows me how my phrasing/query was unclear (how I meant it vs. how it was interpreted by the LLM)
 - it leads me to better use the system, creating a nice positive feedback loop
 
-Honestly, there's never been a better time to be researching online. You just need to be [curious enough to articulate your thinking](https://www.joshbeckman.org/notes/846060336).
+Honestly, there's never been a better time to be researching online. You just need to be [curious enough to articulate your thinking](https://www.joshbeckman.org/notes/846060336) and [showing the inner work of the black box](https://www.joshbeckman.org/notes/646734825) encourages curiosity.
