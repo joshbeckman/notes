@@ -3,7 +3,7 @@ layout: Post
 date: 2025-02-05 14:02:07 +0000
 title: "Leaning into Perplexity"
 toc: true
-image: 
+image: /assets/images/perplexity-reasoning.png
 description: 
 mastodon_social_status_url: false
 bluesky_status_url: false
@@ -23,7 +23,7 @@ Note: I'm just talking about Kagi's "Quick Answer" interface - they also  provid
 2. Its interface doesn't expose the reasoning and search steps that I've come to enjoy on Perplexity
 
 Perplexity has been expanding the explanatory steps used to actually fulfill your query:
-<img width="742" alt="Perplexity's Pro Search explanatory interface" src="https://github.com/user-attachments/assets/09c32695-7669-4c45-a216-4c97bc72f2d9" />
+![Perplexity's Pro Search explanatory interface](/assets/images/perplexity-reasoning.png)
 
 This kind of step-by-step, expandable by the user, leans _even more_ into the idea that the machine can present a summary that can be interrogated piece by piece. I love this because:
 - it often leads me to a source other than the first presented by the LLM
