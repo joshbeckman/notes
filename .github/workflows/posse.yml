@@ -2,9 +2,9 @@
 name: Publish once syndicate socially everywhere (POSSE)
 
 on:
-  # Runs every day at 5:45 and 17:45 UTC
+  # Runs every day at 5:30 UTC, etc.
   schedule:
-    - cron: '30 5,17 * * *'
+    - cron: '30 5,11,17,23 * * *'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
