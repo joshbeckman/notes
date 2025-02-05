@@ -6,7 +6,7 @@ toc: true
 image: /assets/images/eafcd67f-e94e-40c2-be78-7143d3648728.jpeg
 description: 
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113953901057056283
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lhhqes544r24
 tags:
   - united-states
   - chicago
