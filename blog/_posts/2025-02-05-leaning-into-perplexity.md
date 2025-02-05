@@ -10,6 +10,7 @@ bluesky_status_url: false
 tags:
   - llm
   - search
+  - curiosity
 ---
 
 I had been [using Kagi](https://www.joshbeckman.org/blog/returning-to-kagi) for a while before [Perplexity](https://www.perplexity.ai)'s popularity really picked up.
