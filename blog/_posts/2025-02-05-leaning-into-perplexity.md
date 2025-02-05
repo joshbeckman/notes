@@ -6,7 +6,7 @@ toc: true
 image: /assets/images/perplexity-reasoning.png
 description: 
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113952486955904655
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lhh4bprjsg2w
 tags:
   - llm
   - search
