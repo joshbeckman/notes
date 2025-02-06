@@ -222,52 +222,6 @@ function timeAgo(date) {
     window.sessionStorage.setItem('sessionPath', currentUrl);
   }
 })();
-(function unscrambler() {
-  // find all elements with the class scrambled
-  // for each, store the text, then replace the text with a random permutation of the text
-  // then after 1 second, start an animation loop that will reveal the text one character at a time by iterating through all letters and numbers to find the correct one
-  var scrambledElements = document.querySelectorAll('.scrambled');
-  for (var i = 0; i < scrambledElements.length; i++) {
-    var element = scrambledElements[i];
-    var text = element.textContent;
-    var scrambledText = scramble(text);
-    element.textContent = scrambledText;
-    setTimeout(function (element, text) {
-      return function () {
-        unscramble(element, text);
-      };
-    }(element, text), 1000);
-  }
-  function scramble(text) {
-    var scrambled = [];
-    var chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,!?<>{}[]()=+-*/%$#@&^~|\\;:\'"`';
-    while (scrambled.length < text.length) {
-      scrambled.push(chars[Math.floor(Math.random() * chars.length)]);
-    }
-    return scrambled.join('');
-  }
-  function unscramble(element, text) {
-    var targetText = text;
-    var chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 .,!?<>{}[]()=+-*/%$#@&^~|\\;:\'"`';
-    // unscrable all characters simultaneously by iterating through all possible characters
-    function step() {
-      var newText = '';
-      var currentText = element.textContent;
-      for (var i = 0; i < targetText.length; i++) {
-        if (currentText[i] == targetText[i]) {
-          newText += targetText[i];
-        } else {
-          newText += chars[Math.floor(Math.random() * chars.length)];
-        }
-      }
-      element.textContent = newText;
-      if (newText != targetText) {
-        requestAnimationFrame(step);
-      }
-    }
-    requestAnimationFrame(step);
-  }
-})();
 window.addEventListener('load', function () {
     function search() {
       let searchInput = document.getElementById("search-input");
@@ -328,7 +282,7 @@ window.addEventListener('load', function () {
           break;
         case 'cmd+k': displayDialog();
           break;
-        default: console.log(event);
+        default: console.log(`No hotkey handler for ${handler.key}`);
       }
     });
 });
