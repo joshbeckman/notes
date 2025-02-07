@@ -6,23 +6,25 @@ require 'readwise'
 require 'time'
 require 'uri'
 
-class Jekyll
-  def self.import_book(book)
-    return unless book.should_import?
+module ReadwiseExtras
+  class Jekyll
+    def self.import_book(book)
+      return unless book.should_import?
 
-    File.write("notes/_posts/#{book.formatted_date}-#{book.book_id}.md", book.post_text)
-  end
-
-  def self.import_book_highlights(book)
-    book.highlights.each do |highlight|
-      import_highlight(highlight, book)
+      File.write("notes/_posts/#{book.formatted_date}-#{book.book_id}.md", book.post_text)
     end
-  end
 
-  def self.import_highlight(highlight, book)
-    return unless highlight.should_import?(book)
+    def self.import_book_highlights(book)
+      book.highlights.each do |highlight|
+        import_highlight(highlight, book)
+      end
+    end
 
-    File.write("notes/_posts/#{highlight.formatted_date}-#{highlight.highlight_id}.md", highlight.post_text(book))
+    def self.import_highlight(highlight, book)
+      return unless highlight.should_import?(book)
+
+      File.write("notes/_posts/#{highlight.formatted_date}-#{highlight.highlight_id}.md", highlight.post_text(book))
+    end
   end
 end
 
