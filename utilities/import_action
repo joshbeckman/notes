@@ -8,19 +8,19 @@ require 'uri'
 
 module ReadwiseExtras
   class Jekyll
-    def self.import_book(book)
+    def import_book(book)
       return unless book.should_import?
 
       File.write("notes/_posts/#{book.formatted_date}-#{book.book_id}.md", book.post_text)
     end
 
-    def self.import_book_highlights(book)
+    def import_book_highlights(book)
       book.highlights.each do |highlight|
         import_highlight(highlight, book)
       end
     end
 
-    def self.import_highlight(highlight, book)
+    def import_highlight(highlight, book)
       return unless highlight.should_import?(book)
 
       File.write("notes/_posts/#{highlight.formatted_date}-#{highlight.highlight_id}.md", highlight.post_text(book))
@@ -224,13 +224,14 @@ class Importer
   def self.import
     client = Readwise::Client.new(token: ENV.fetch('READWISE_TOKEN', nil))
     limit = ENV['READWISE_LIMIT']&.to_i
+    jekyll = ReadwiseExtras::Jekyll.new
 
     books = client.export(updated_after: Time.parse('2000-01-01').iso8601)
     books = books.sample(limit) if limit
     books.each do |book|
       # turn this off for now because Readwise is not good about allowing you to edit the book notes
-      # Jekyll.import_book(book)
-      Jekyll.import_book_highlights(book)
+      # jekyll.import_book(book)
+      jekyll.import_book_highlights(book)
     end
   end
 
