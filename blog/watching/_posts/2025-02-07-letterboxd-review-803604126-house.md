@@ -9,7 +9,7 @@ letterboxd_id: house
 image: https://a.ltrbxd.com/resized/sm/upload/7f/z3/ho/6j/6vblWscFAbIm9V5CwHC7IImgAq9-0-600-0-900-crop.jpg?v=b505ff45b0
 description: 
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113970888807048694
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lhpbrwi3km2n
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/house/
 tags:
   - movies
