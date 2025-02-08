@@ -7,7 +7,7 @@ rating: 4
 song_link: https://music.apple.com/us/album/seraph/1683432803
 image: /assets/images/album_art/masysa-seraph.jpg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/113969471760519244
 bluesky_status_url: false
 tags:
   - music
