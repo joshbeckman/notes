@@ -3,7 +3,7 @@ layout: Post
 date: 2025-02-12 00:00:00 +0000
 title: "The Brutalist"
 toc: true
-rating: 4
+rating: 3
 tmdb_id: 549509
 letterboxd_id: the-brutalist
 image: https://a.ltrbxd.com/resized/film-poster/4/7/8/4/2/8/478428-the-brutalist-0-600-0-900-crop.jpg?v=2f8cae2ea5
