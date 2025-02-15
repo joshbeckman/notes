@@ -13,7 +13,7 @@ permalink: /assets/js/SearchData.json
        "book": null,
        "author_id": null,
        "type": "tag",
-       "url": "/search?q=%27#{{ tag | first }}&keys=tags"
+       "url": "/search?q=%27{{ tag | first }}&keys=tags"
     },{%- assign i = i | plus: 1 -%}
   {% endfor %}
   {%- for page in site.pages -%}
