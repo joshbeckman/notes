@@ -19,7 +19,6 @@
               {%- for post in site.posts limit:3 -%}
               {%- include PostListItem.html post=post -%}
               {%- endfor -%}
-              <p>and {{site.posts.size | minus: 3}} more <a href="/dates">in the date index</a>.</p>
               {% assign popular_posts = site.posts | where: "popular", true %}
               <h2>Popular Posts</h2>
               {%- for post in popular_posts limit:3 -%}
