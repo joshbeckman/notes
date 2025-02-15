@@ -1,0 +1,80 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'jekyll'
+require 'rexml/document'
+require 'net/http'
+require 'time'
+require_relative 'models/post'
+
+module PESOS
+  class HackerNews
+    class Error < StandardError; end
+
+    attr_reader :site
+
+    def initialize
+      @site = Jekyll::Site.new(Jekyll.configuration({}))
+      @username = ENV.fetch('HACKER_NEWS_USERNAME', 'bckmn')
+      @site.read
+    end
+
+    def import_posts
+      posts = outbox.filter do |item|
+        next false if post_exists?(item['link'])
+
+        true
+      end
+      posts.each { |post| import_post(post) }
+    end
+
+    def post_exists?(url)
+      site.posts.docs.any? do |post|
+        post.data['hacker_news_url'] == url
+      end
+    end
+
+    def import_post(post)
+      title = post['title'].gsub('"', "'")
+      hacker_news_id = post['link'].split('?id=').last
+      slug = "hacker-news-item-#{hacker_news_id}"
+      post = Post.new(
+        body: post['description'],
+        category: 'replies',
+        date: Time.parse(post['pubDate']),
+        hacker_news_url: post['link'],
+        canonical: post['link'],
+        in_reply_to: post['link'],
+        slug: slug,
+        title: title
+      )
+      post.tags = (post.suggested_tags || []).push('hacker-news').uniq
+      post.create_file
+    end
+
+    def outbox
+      uri = URI.parse("https://hnrss.org/threads?id=#{@username}")
+      req = Net::HTTP::Get.new(uri)
+      req['Accept'] = 'application/rss+xml'
+      res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
+        http.request(req)
+      end
+
+      unless res.is_a?(Net::HTTPSuccess)
+        puts res.body
+        raise Error, 'Outbox request failed'
+      end
+
+      REXML::Document.new(res.body).elements['rss/channel'].elements.map do |item|
+        next unless item.name == 'item'
+
+        item.elements.each_with_object({}) do |element, hash|
+          hash[element.name] = element.text
+        end
+      end.compact
+    end
+  end
+end
+
+hacker_news = PESOS::HackerNews.new
+hacker_news.import_posts

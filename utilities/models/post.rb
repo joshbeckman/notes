@@ -19,6 +19,7 @@ Post = Struct.new(
   :mastodon_social_status_url,
   :bluesky_status_url,
   :letterboxd_review_url,
+  :hacker_news_url,
   :rating,
   :song_link,
   :slug,
@@ -87,6 +88,7 @@ Post = Struct.new(
       file.puts "mastodon_social_status_url: #{mastodon_social_status_url}" unless mastodon_social_status_url.nil?
       file.puts "bluesky_status_url: #{bluesky_status_url}" unless bluesky_status_url.nil?
       file.puts "letterboxd_review_url: #{letterboxd_review_url}" unless letterboxd_review_url.nil?
+      file.puts "hacker_news_url: #{hacker_news_url}" unless hacker_news_url.nil?
       if tags&.any?
         file.puts 'tags:'
         tags.each do |tag|

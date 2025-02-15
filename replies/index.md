@@ -10,12 +10,7 @@ tags:
 - social-networks
 ---
 
-Replies I make on Mastodon and Bluesky and other social networks. Always adding more [syndication](https://www.joshbeckman.org/blog/rules-for-syndication-on-my-site).
-
-Going to be pulling in replies from:
-- blog posts I'd like to comment on
-- [Hacker News comments](https://news.ycombinator.com/threads?id=bckmn)
-  - via `https://hnrss.org/threads?id=bckmn`
+Replies I make on social networks and other external sites, mirrored here for completeness and archival reference. Always adding more [syndication](https://www.joshbeckman.org/blog/rules-for-syndication-on-my-site).
 
 ---
 

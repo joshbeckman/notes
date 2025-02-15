@@ -153,6 +153,24 @@ jobs:
       - name: Push changes
         if: steps.any_changes_pesos_bluesky.outputs.changed != 0
         run: git push
+      - name: Import HackerNews
+        id: import_hackernews
+        run: bundle exec utilities/pesos_hn
+      - name: Determine if changes were made
+        id: any_changes_pesos_hn
+        run: echo "changed=$(git status --porcelain replies blog assets | wc -l)" >> $GITHUB_OUTPUT
+      - name: Commit changes
+        if: steps.any_changes_pesos_hn.outputs.changed != 0
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "josh@joshbeckman.org"
+          git add replies
+          git add blog
+          git add assets
+          git commit -m "new(usr): PESOS HackerNews"
+      - name: Push changes
+        if: steps.any_changes_pesos_hn.outputs.changed != 0
+        run: git push
       - name: Optimize images
         id: optimize_images
         run: bundle exec utilities/optimize_images
