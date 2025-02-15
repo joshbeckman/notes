@@ -95,6 +95,7 @@ feed:
   categories:
     - blog
     - notes
+    - replies
 
 # Disqus Comments
 # disqus:
@@ -130,9 +131,14 @@ defaults:
 # their entries' file path in the `include:` list.
 #
 exclude:
-  - utilities/
+  - .aider.chat.history.md
+  - .aider.conf.yml
+  - .aider.input.history
+  - .aider.tags.cache.v3/
   - .readwise_token
   - README.md
+  - utilities/
+  - vals/
 #   - .jekyll-cache/
 #   - gemfiles/
 #   - Gemfile
