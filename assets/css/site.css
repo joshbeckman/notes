@@ -582,7 +582,8 @@ table th tr, table thead tr {
 table th, table thead, table td { padding: 0.5rem; }
 
 .row {
-  display: flex;
+  display: block;
+  height: auto;
 }
 .column {
   flex: 1;
@@ -593,24 +594,22 @@ table th, table thead, table td { padding: 0.5rem; }
 }
 .column.navigation {
   background-color: white;
-  box-shadow: 0 1px 3px 0 rgb(0,0,0,.25);
   align-self: flex-start;
-  position: sticky;
+  border-bottom: 2px solid;
+  position: initial;
+  height: auto;
   top: 0;
-  height: calc(100vh - 2em);
+}
+.column.navigation .content {
+  width: 100%;
 }
 .column.navigation .content img {
-  box-shadow: 0 15px 25px rgba(0,0,0,.25);
-  max-height: calc(100vh - 8em);
+  max-height: 80vh;
 }
 .column .content {
   max-width: 100%;
   width: 614px;
-  padding: 2em 0px;
   margin: auto;
-}
-.column .content img {
-   box-shadow: 0 1px 3px 0 rgb(0,0,0,.25);
 }
 .filing-row {
   display: flex;
@@ -1305,17 +1304,6 @@ details summary:hover {
   }
   .display-on-mobile {
     display: block;
-  }
-  .row {
-    display: block;
-    height: auto;
-  }
-  .column .content {
-    padding: 0;
-  }
-  .column.navigation {
-    position: initial;
-    height: auto;
   }
 }
 @media (prefers-color-scheme: dark) {

@@ -8,7 +8,9 @@
         {% if page.image %}
           <img class="cover-image" src="{{ page.image }}" alt="{{ page.title }}">
         {% else %}
-          <div class="cover-image-emoji">📓</div>
+          <div class="post-list-item" style="background-size: 100%;margin: 0;">
+            <div style="height: 100px"></div>
+          </div>
         {% endif %}
       {%- if page.description -%}
           <p class="description">{{page.description}}</p>
