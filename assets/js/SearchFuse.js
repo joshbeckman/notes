@@ -182,6 +182,15 @@ Fuse = (function(){"use strict";function e(e,t){var n=Object.keys(e);if(Object.g
                     resultPreview.appendChild(document.createTextNode('... '));
                     addHighlightedText(resultPreview, doc.content, Math.max(0, position[0] - previewBuffer), position[1] + previewBuffer, [position]);
                     resultPreview.appendChild(document.createTextNode(' ...'));
+                } else if (doc.content) {
+                    var resultPreviews = document.createElement('div');
+                    resultPreviews.classList.add('search-result-previews');
+                    resultLink.appendChild(resultPreviews);
+
+                    var resultPreview = document.createElement('div');
+                    resultPreview.classList.add('search-result-preview');
+                    resultPreviews.appendChild(resultPreview);
+                    resultPreview.textContent = doc.content.substring(0, 75) + '...';
                 }
             }
 
