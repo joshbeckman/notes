@@ -150,6 +150,16 @@ Fuse = (function(){"use strict";function e(e,t){var n=Object.keys(e);if(Object.g
                     resultTitle.appendChild(resultSection);
                     resultDocOrSection = resultSection;
                 }
+
+                // Add date display
+                if (doc.date) {
+                    var resultDate = document.createElement('div');
+                    resultDate.classList.add('search-result-date');
+                    var dateObj = new Date(doc.date);
+                    resultDate.innerHTML = dateObj.toLocaleString();
+                    resultTitle.appendChild(resultDate);
+                }
+
                 var titlePositions = result.matches.filter(function(match){
                     return match.key == 'title';
                 }).map(function(match){
