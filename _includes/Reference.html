@@ -9,19 +9,24 @@
           {%- for tag in page.tags -%}
               {%- if tag == slug -%}
                   <li class="filed">
-                      <a href="/tags/#{{ tag }}" class="">{{ item }}</a>
+                      <a href="/search/?q=%27{{ tag }}&keys=tags" class="">{{ item }}</a>
                   </li>
               {%- endif -%}
           {%- endfor -%}
       {%- endfor -%}
       {%- if page.book -%}
           <li class="filed source">
-              <a href="/sources/#{{ page.book }}" class="">{{ page.book_title }}</a>
+              <a href="/search/?q=%5E{{ page.book }}&keys=book" class="">{{ page.book_title }}</a>
+          </li>
+      {%- endif -%}
+      {%- if page.author_id -%}
+          <li class="filed source">
+              <a href="/search/?q=%5E{{ page.author_id }}+%7C+%27%22{{page.author}}%22" class="">{{ page.author }}</a>
           </li>
       {%- endif -%}
       {%- if page.date -%}
       <li class="filed date">
-        <a href="/dates/#{{ page.date | date: '%d-%B-%Y' }}">
+        <a href="/search/?q=%5E{{ page.date | date: '%Y-%m-%d' }}">
             <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y, %B %d' }}</time>
         </a>
       </li>

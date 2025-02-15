@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
+require 'jekyll'
 require 'json'
 require 'readwise'
 require 'time'
@@ -8,8 +9,35 @@ require 'uri'
 
 module ReadwiseExtras
   class Jekyll
+    class Error < StandardError; end
+
+    attr_reader :site
+
+    def initialize
+      @site = ::Jekyll::Site.new(::Jekyll.configuration({}))
+      @site.read
+    end
+
+    def should_import_book?(book)
+      book_post = site.posts.docs.find do |post|
+        post.data['book_id'] == book.book_id
+      end
+      return false if book_post && book_post.data['forked']
+
+      book.should_import?
+    end
+
+    def should_import_highlight?(highlight, book)
+      highlight_post = site.posts.docs.find do |post|
+        post.data['highlight_id'] == highlight.highlight_id
+      end
+      return false if highlight_post && highlight_post.data['forked']
+
+      highlight.should_import?(book)
+    end
+
     def import_book(book)
-      return unless book.should_import?
+      return unless should_import_book?(book)
 
       File.write("notes/_posts/#{book.formatted_date}-#{book.book_id}.md", book.post_text)
     end
@@ -21,7 +49,7 @@ module ReadwiseExtras
     end
 
     def import_highlight(highlight, book)
-      return unless highlight.should_import?(book)
+      return unless should_import_highlight?(highlight, book)
 
       File.write("notes/_posts/#{highlight.formatted_date}-#{highlight.highlight_id}.md", highlight.post_text(book))
     end
@@ -33,14 +61,14 @@ module ReadwiseExtras
     def post_text
       [
         '---',
-        "title: \"#{stripped_title}\"",
+        "title: \"#{combined_title}\"",
         "tags: #{formatted_tags}",
         "canonical: #{source_url}",
         "author: #{author_stripped}",
+        "author_id: #{author_id}",
         "book: #{book_id}",
         "book_title: \"#{stripped_title}\"",
-        "book_asin: #{asin}",
-        'hide_title: true',
+        (asin.nil? ? nil : "book_asin: #{asin}"),
         "readwise_url: #{readwise_url}",
         "image: #{cover_image_url}",
         "favicon_url: #{favicon_url}",
@@ -61,6 +89,10 @@ module ReadwiseExtras
 
     def formatted_date
       highlighted_at_time.to_date.to_s
+    end
+
+    def combined_title
+      "#{stripped_title} via #{author_stripped}"
     end
 
     def stripped_title
@@ -106,8 +138,12 @@ module ReadwiseExtras
       "https://www.amazon.com/foo/dp/#{asin}/"
     end
 
+    def author_id
+      @author_id ||= author_stripped.hash.abs.to_s(16)
+    end
+
     def author_stripped
-      author.to_s.split("\n").reject(&:empty?).join(' ')
+      @author_stripped ||= author.to_s.split("\n").reject(&:empty?).join(' ')
     end
 
     def source_emoji
@@ -160,14 +196,16 @@ module ReadwiseExtras
     def post_text(book)
       [
         '---',
-        "title: \"#{title}...\"",
+        "title: \"#{title(book)}\"",
         "tags: #{formatted_tags(book)}",
         "canonical: #{book.source_url}",
         "author: #{book.author_stripped}",
+        "author_id: #{book.author_id}",
         "book: #{book.book_id}",
         "book_title: \"#{book.stripped_title}\"",
-        "book_asin: #{book.asin}",
+        (book.asin.nil? ? nil : "book_asin: #{book.asin}"),
         'hide_title: true',
+        "highlight_id: #{highlight_id}",
         "readwise_url: #{readwise_url}",
         "image: #{book.cover_image_url}",
         "favicon_url: #{book.favicon_url}",
@@ -179,8 +217,8 @@ module ReadwiseExtras
       ].compact.join("\n")
     end
 
-    def title
-      @title ||= text.gsub(/\]\(\S*\)/, ']').gsub('"', "'").split("\n").join(' ').slice(0, 60)
+    def title(book)
+      @title ||= "Note on #{book.combined_title}"
     end
 
     def formatted_tags(_book)
@@ -228,6 +266,7 @@ class Importer
 
     books = client.export(updated_after: Time.parse('2000-01-01').iso8601)
     books = books.sample(limit) if limit
+
     books.each do |book|
       # turn this off for now because Readwise is not good about allowing you to edit the book notes
       # jekyll.import_book(book)

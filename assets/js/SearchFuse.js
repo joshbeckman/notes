@@ -34,9 +34,14 @@ Fuse = (function(){"use strict";function e(e,t){var n=Object.keys(e);if(Object.g
         getSearchData(dataUrl)
             .then(function(responseText) {
             var docs = JSON.parse(responseText);
+            var keysRestriction = new URLSearchParams(window.location.search).get("keys");
+            var keys = ['title', 'content', 'tags', 'url', 'date', 'book', 'author_id'];
+            if (keysRestriction) {
+              keys = keysRestriction.split(',');
+            }
 
             var fuse = new Fuse(Object.values(docs), {
-                keys: ['title', 'content', 'tags', 'url'],
+                keys: keys,
                 findAllMatches: false,
                 ignoreFieldNorm: true,
                 ignoreLocation: true,

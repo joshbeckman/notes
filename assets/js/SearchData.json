@@ -8,10 +8,12 @@ permalink: /assets/js/SearchData.json
        "doc":  {{ tag | first | escape | jsonify }},
        "title": {{ tag | first | append: " (tag)" | jsonify }},
        "content": {{ tag | first | jsonify }},
-       "tags": {{ tag | first | jsonify }},
-       "date": "{{ site.time | date_to_xmlschema }}",
+       "tags": null,
+       "date": null,
+       "book": null,
+       "author_id": null,
        "type": "tag",
-       "url": "/tags/#{{ tag | first }}"
+       "url": "/search?q=%27#{{ tag | first }}&keys=tags"
     },{%- assign i = i | plus: 1 -%}
   {% endfor %}
   {%- for page in site.pages -%}
@@ -22,6 +24,8 @@ permalink: /assets/js/SearchData.json
        "content": {{ page.raw_content | strip_html | jsonify }},
        "tags": {{ page.tags | join: " " | jsonify }},
        "date": "{{ page.date | date_to_xmlschema }}",
+       "book": {{ post.book | jsonify }},
+       "author_id": {{ post.author_id | jsonify }},
        "type": "page",
        "url": "{{ page.url }}"
     },{%- assign i = i | plus: 1 -%}
@@ -34,6 +38,8 @@ permalink: /assets/js/SearchData.json
        "content": {{ post.raw_content | strip_html | jsonify }},
        "tags": {{ post.tags | join: " " | jsonify }},
        "date": "{{ post.date | date_to_xmlschema }}",
+       "book": {{ post.book | jsonify }},
+       "author_id": {{ post.author_id | jsonify }},
        "type": "post",
        "url": "{{ post.url }}"
     }{%- unless forloop.last -%},{%- endunless -%}{%- assign i = i | plus: 1 -%}

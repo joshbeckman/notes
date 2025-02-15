@@ -2,7 +2,6 @@
 layout: Page
 title: Site Index by Topic
 permalink: /tags/
-toc: true
 tags: index
 ---
 
@@ -18,29 +17,12 @@ tags: index
     {%- for tag in site.tags %}
       {%- if tag.first == slug -%}
       <ul class="">
-        {% for post in tag.last %}
-          <li style="">
-            <a href="{{post.url}}">
-            {% if post.hide_title %}
-            {{ post.content | strip_html | strip | escape | truncate: 70}}
-            {% else %}
-            {{ post.title }}
-            {% endif %}
-            {% if post.author %}
-            <em>from {{ post.author }}</em>
-            {% endif %}
-            </a>
-          </li>
-        {% endfor %}
-        {% for foo in site.pages %}
-        {%- if foo.tags contains slug -%}
-          <li style="">
-            <a href="{{foo.url}}">
-            {{ foo.title }}
-            </a>
-          </li>
-        {%- endif -%}
-        {% endfor %}
+        <li>
+          <a href="/insight?topic={{ slug | split: '-' | join: ' ' | url_encode }}">💡 Insight</a>
+        </li>
+        <li>
+          <a href="/search?q=%27{{ slug | split: '-' | join: ' ' | url_encode }}&keys=tags">All Posts</a>
+        </li>
       </ul>
       {%- endif -%}
     {% endfor %}
@@ -52,29 +34,9 @@ tags: index
         <li>
           <a href="/insight?topic={{ slug | split: '-' | join: ' ' | url_encode }}">💡 Insight</a>
         </li>
-        {% for post in tag.last %}
-          <li style="">
-            <a href="{{post.url}}">
-            {% if post.hide_title %}
-            {{ post.content | strip_html | strip | escape | truncate: 70}}
-            {% else %}
-            {{ post.title }}
-            {% endif %}
-            {% if post.author %}
-            <em>from {{ post.author }}</em>
-            {% endif %}
-            </a>
-          </li>
-        {% endfor %}
-        {% for foo in site.pages %}
-        {%- if foo.tags contains slug -%}
-          <li style="">
-            <a href="{{foo.url}}">
-            {{ foo.title }}
-            </a>
-          </li>
-        {%- endif -%}
-        {% endfor %}
+        <li>
+          <a href="/search?q=%27{{ slug | split: '-' | join: ' ' | url_encode }}&keys=tags">All Posts</a>
+        </li>
       </ul>
       {%- endif -%}
     {% endfor %}
