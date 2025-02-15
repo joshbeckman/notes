@@ -197,8 +197,7 @@ Fuse = (function(){"use strict";function e(e,t){var n=Object.keys(e);if(Object.g
                     var resultDateDiv = document.createElement('div');
                     resultDateDiv.classList.add('search-result-date');
                     var resultDate = document.createElement('small');
-                    var dateObj = new Date(doc.date);
-                    resultDate.innerHTML = dateObj.toISOString().split('T')[0];
+                    resultDate.innerHTML = doc.date.split('T')[0];
                     resultDateDiv.appendChild(resultDate);
                     resultLink.appendChild(resultDateDiv);
                 }

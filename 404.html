@@ -13,8 +13,14 @@ title: 404 - Page not found
 {%- include Search.html -%}
 <script>
 (function searchVia404() {
-  var search = window.location.pathname.split("/").join(" ").trim().split("-").join(" ");
   var searchInput = document.getElementById("search-input");
+  var search = window.location.pathname.split("/").join(" ").trim().split("-").join(" ");
+    // if the window URL contains a hash, use that as the search term
+    if (window.location.hash) {
+        search = window.location.hash.replace("#", "");
+        searchInput.value = search;
+        document.getElementById("search-form").submit();
+    }
   searchInput.value = search;
 })();
 </script>
