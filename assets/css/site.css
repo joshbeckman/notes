@@ -1067,6 +1067,9 @@ li.search-results-list-item:last-child {
 .search-result-preview {
   color: #151515;
 }
+.search-result-date {
+  text-align: right;
+}
 .search-result-highlight { 
     font-weight: bold; 
 }

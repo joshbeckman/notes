@@ -151,15 +151,6 @@ Fuse = (function(){"use strict";function e(e,t){var n=Object.keys(e);if(Object.g
                     resultDocOrSection = resultSection;
                 }
 
-                // Add date display
-                if (doc.date) {
-                    var resultDate = document.createElement('div');
-                    resultDate.classList.add('search-result-date');
-                    var dateObj = new Date(doc.date);
-                    resultDate.innerHTML = dateObj.toLocaleString();
-                    resultTitle.appendChild(resultDate);
-                }
-
                 var titlePositions = result.matches.filter(function(match){
                     return match.key == 'title';
                 }).map(function(match){
@@ -201,6 +192,15 @@ Fuse = (function(){"use strict";function e(e,t){var n=Object.keys(e);if(Object.g
                     resultPreview.classList.add('search-result-preview');
                     resultPreviews.appendChild(resultPreview);
                     resultPreview.textContent = doc.content.substring(0, 75) + '...';
+                }
+                if (doc.date) {
+                    var resultDateDiv = document.createElement('div');
+                    resultDateDiv.classList.add('search-result-date');
+                    var resultDate = document.createElement('small');
+                    var dateObj = new Date(doc.date);
+                    resultDate.innerHTML = dateObj.toISOString().split('T')[0];
+                    resultDateDiv.appendChild(resultDate);
+                    resultLink.appendChild(resultDateDiv);
                 }
             }
 
