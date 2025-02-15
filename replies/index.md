@@ -15,6 +15,7 @@ Replies I make on Mastodon and Bluesky and other social networks. Always adding 
 Going to be pulling in replies from:
 - blog posts I'd like to comment on
 - [Hacker News comments](https://news.ycombinator.com/threads?id=bckmn)
+  - via `https://hnrss.org/threads?id=bckmn`
 
 ---
 
