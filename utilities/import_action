@@ -139,7 +139,7 @@ module ReadwiseExtras
     end
 
     def author_id
-      @author_id ||= author_stripped.hash.abs.to_s(16)
+      @author_id ||= Digest::MD5.hexdigest(author_stripped)
     end
 
     def author_stripped
