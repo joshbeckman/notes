@@ -5,8 +5,8 @@ title: "Phantogram at Aragon"
 toc: true
 image: /assets/images/59c59f47-1a5d-442a-b193-1ddfac01dedf.jpeg
 description: 
-mastodon_social_status_url: false
-bluesky_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114009112412332801
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3liaaxzqup223
 tags:
   - music
 ---
