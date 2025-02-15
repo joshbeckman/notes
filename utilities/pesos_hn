@@ -41,6 +41,7 @@ module PESOS
       post = Post.new(
         body: post['description'],
         category: 'replies',
+        image: 'https://news.ycombinator.com/y18.svg',
         date: Time.parse(post['pubDate']),
         hacker_news_url: post['link'],
         canonical: post['link'],
