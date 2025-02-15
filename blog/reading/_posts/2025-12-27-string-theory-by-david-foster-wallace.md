@@ -9,7 +9,7 @@ description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113864713043489854
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lgdwsa73a72g
 tags:
-  - sport
+  - sports
   - writing
   - practice-and-training
 ---
