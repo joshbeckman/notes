@@ -991,6 +991,11 @@ ul.asymp>li {
   overflow: hidden;
   text-overflow: ellipsis;
   margin-top: 0;
+  margin-bottom: 0.5em;
+}
+.post-list-item-description {
+  margin-top: 0;
+  margin-bottom: 1em;
 }
 .post-list-item-details {
   background-color: #fffff8;
