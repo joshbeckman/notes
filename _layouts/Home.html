@@ -20,6 +20,7 @@
               {%- for post in site.posts limit:3 -%}
               {%- include PostListItem.html post=post -%}
               {%- endfor -%}
+              <p>or dip into posts <a href="/on-this-day">on this day in prior years</a>.</p>
               {% assign popular_posts = site.posts | where: "popular", true %}
               <h2>Popular Posts</h2>
               {%- for post in popular_posts limit:3 -%}

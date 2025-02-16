@@ -70,7 +70,7 @@ module ReadwiseExtras
         "book_title: \"#{stripped_title}\"",
         (asin.nil? ? nil : "book_asin: #{asin}"),
         "readwise_url: #{readwise_url}",
-        "image: #{cover_image_url}",
+        "image: #{filtered_cover_image_url}",
         "favicon_url: #{favicon_url}",
         "source_emoji: #{source_emoji}",
         'show_book_meta: true',
@@ -79,6 +79,14 @@ module ReadwiseExtras
         '',
         note
       ].compact.join("\n")
+    end
+
+    def filtered_cover_image_url
+      return nil if cover_image_url.nil?
+      return nil if cover_image_url.match?(/readwise-assets.*default-book-icon/)
+      return nil if cover_image_url.match?(/readwise-assets.*article\d\./)
+
+      cover_image_url
     end
 
     def formatted_tags
@@ -207,7 +215,7 @@ module ReadwiseExtras
         'hide_title: true',
         "highlight_id: #{highlight_id}",
         "readwise_url: #{readwise_url}",
-        "image: #{book.cover_image_url}",
+        "image: #{book.filtered_cover_image_url}",
         "favicon_url: #{book.favicon_url}",
         "source_emoji: #{book.source_emoji}",
         (book.navigable_url? ? "source_url: \"#{book.outbound_url(text_fragment: text)}\"" : nil),

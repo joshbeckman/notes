@@ -959,14 +959,16 @@ ul.asymp>li {
 
 /* Post lists */
 .post-list-item {
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   margin-top: 1em;
   /* linear gradient from left to right, white to transparent */
-  background-image: url(/assets/img/contour-lines.svg), linear-gradient(to right, rgba(255, 255, 255, 0.5), transparent);
+  background-image: url(/assets/img/contour-lines.svg), linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent);
   background-position-x: 0;
-  background-size: 25%;
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position-y: 50%;
+  padding-top: 12em;
+  border: 1px solid lightgrey;
 }
 .post-list-item-cover {
   display: inline-block;
@@ -991,11 +993,12 @@ ul.asymp>li {
   margin-top: 0;
 }
 .post-list-item-details {
-  width: calc(75% - 2em);
-  display: inline-block;
-  vertical-align: top;
-  padding-left: 1em;
-  margin-left: 25%;
+  background-color: #fffff8;
+  padding: 1em 1em 0.1em;
+}
+.post-list-item-details .dt-published {
+  font-size: 0.8em;
+  font-style: italic;
 }
 .post-list-item-details.post-list-item-with-emoji {
   margin-left: 0;
@@ -1345,6 +1348,7 @@ details summary:hover {
         background: black;
         border-color: darkgray;
     }
+    .post-list-item-details,
     .column {
         background-color: #151515;
     }
