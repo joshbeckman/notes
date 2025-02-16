@@ -10,6 +10,7 @@
         {% elsif page.emoji %}
           <div class="cover-image-emoji">{{ page.emoji }}</div>
         {% else %}
+          <div class="contour-filler"></div>
           {%- include Masthead.html -%}
         {% endif %}
       {%- if page.description -%}
