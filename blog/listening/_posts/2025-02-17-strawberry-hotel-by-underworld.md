@@ -19,3 +19,7 @@ I've been listening to this off and on since its release in September, 2024 and 
 I would _love_ to see them perform this album live.
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/PzczgbCGO8k?si=8G0vq_vKpZExDwMN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Favorite tracks:
+- denver lua
+- lewis in pomona
