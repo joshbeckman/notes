@@ -1,12 +1,12 @@
 ---
 toc: true
 title: Bad Graphs in the Wild
-popular: true
 image: "/assets/images/1.jpg"
 date: '2015-08-11 00:00:00'
 tags:
 - data
 - interfaces
+- popular
 redirect_from:
 - "/bad-graphs-in-the-wild"
 - "/bad-graphs-in-the-wild/"

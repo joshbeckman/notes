@@ -3,7 +3,6 @@ layout: Post
 date: 2024-07-04 00:00:00 +0000
 title: "Using an LLM and RAG to Wring Insights From My Posts"
 toc: true
-popular: true
 image: /assets/images/1ee188b4-30f7-4a14-a60a-3f11905a8058.png
 description: 
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/112732310405920997
@@ -11,6 +10,7 @@ tags:
   - llm
   - personal-blog
   - code-snippets
+  - popular
 ---
 
 <img width="554" alt="Screenshot 2024-07-04 at 15 40 39" src="/assets/images/1ee188b4-30f7-4a14-a60a-3f11905a8058.png">

@@ -3,9 +3,9 @@ layout: Post
 date: 2024-03-14 16:09:22 +0000
 title: "What we talk about when we talk about tech debt"
 toc: true
-popular: true
 tags: 
 - software-engineering
+- popular
 ---
 
 Recently, I've been talking with people about what we should identify as "tech debt"\.

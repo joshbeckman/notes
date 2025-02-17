@@ -1,7 +1,6 @@
 ---
 toc: true
 title: Spam Accounts in 2022
-popular: true
 image: "/assets/images/87863FBF-65C7-4DC9-846F-7D760C7BF1D1.jpeg"
 date: '2022-02-18 16:49:43'
 redirect_from:
@@ -10,6 +9,7 @@ redirect_from:
 tags:
 - narro
 - research
+- popular
 ---
 
 I fell down this rabbit hole while trying to investigate some spammy account behavior on [Narro](https://www.narro.co). I've been running Narro as a SAAS application with a free trial for several years now, which means I have dealt with a lot of spam account creation.

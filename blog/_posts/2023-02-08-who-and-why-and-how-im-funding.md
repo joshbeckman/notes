@@ -5,9 +5,9 @@ image: "/assets/images/L1020944.jpeg"
 description: A breakdown of how I'm funding individuals in 2023, who they are,
   and why I think individual funding is important.
 date: '2023-02-08 22:39:26'
-popular: true
 tags:
 - funding
+- popular
 redirect_from:
 - "/who-and-why-and-how-im-funding"
 - "/who-and-why-and-how-im-funding/"
