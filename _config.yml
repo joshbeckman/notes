@@ -91,7 +91,7 @@ plugins:
   - jekyll-redirect-from
     # - jekyll-tidy
 feed:
-  posts_limit: 50
+  posts_limit: 25
   categories:
     - blog
     - notes

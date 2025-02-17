@@ -10,6 +10,7 @@ emoji: '📶'
 Subscribe to the [unified RSS/Atom feed](/feed.xml) for new posts ~daily. There are dedicated feeds for each category, if you want a subset:
 - [Blog RSS feed](/feed/blog.xml)
 - [Notes RSS feed](/feed/notes.xml)
+- [Replies & Threads RSS feed](/feed/replies.xml)
 
 If you prefer federated social networks, blog posts are [syndicated to Mastodon](https://mastodon.social/@joshbeckman) and [syndicated to Bluesky](https://bsky.app/profile/joshbeckman.org). You can also reply/messaage me on both of those and I'll respond.
 
