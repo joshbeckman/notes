@@ -7,7 +7,7 @@ rating: 4
 song_link: https://music.apple.com/us/album/strawberry-hotel/1761865594
 image: /assets/images/album_art/underworld-strawberryhotel.jpg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114020434003062745
 bluesky_status_url: false
 tags:
   - music
