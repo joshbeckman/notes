@@ -9,7 +9,7 @@ letterboxd_id: the-apartment
 image: https://a.ltrbxd.com/resized/film-poster/5/1/7/7/4/51774-the-apartment-0-600-0-900-crop.jpg?v=7df6fac704
 description: 
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114019018152326282
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lienqonzis2a
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/the-apartment/
 tags:
   - movies

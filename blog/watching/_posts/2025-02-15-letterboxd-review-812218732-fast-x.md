@@ -9,7 +9,7 @@ letterboxd_id: fast-x
 image: https://a.ltrbxd.com/resized/film-poster/3/2/0/4/8/1/320481-fast-x-0-600-0-900-crop.jpg?v=58239dde0a
 description: 
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114019018113764875
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lienqnitlx2y
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/fast-x/
 tags:
   - movies
