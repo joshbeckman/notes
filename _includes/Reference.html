@@ -4,15 +4,10 @@
   </h3>
   <ul class="filed">
       <!-- Loop through page categories and print them in tags -->
-      {%- for item in site.data.decimals -%}
-          {%- assign slug = item | split: ' ' | last | downcase -%}
-          {%- for tag in page.tags -%}
-              {%- if tag == slug -%}
-                  <li class="filed">
-                      <a href="/search/?q=%27{{ tag }}&keys=tags" class="">{{ item }}</a>
-                  </li>
-              {%- endif -%}
-          {%- endfor -%}
+      {%- for tag in page.tags -%}
+          <li class="filed">
+              <a href="/search/?q=%27{{ tag }}&keys=tags" class="">{{ tag }}</a>
+          </li>
       {%- endfor -%}
       {%- if page.book -%}
           <li class="filed source">

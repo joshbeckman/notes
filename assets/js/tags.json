@@ -1,0 +1,11 @@
+---
+permalink: /assets/js/tags.json
+---
+[
+  {%- for item in site.tags -%}
+  {
+    "name": "{{item | first}}",
+    "url": "/search?q=%27{{ item | first }}&keys=tags"
+  }{%- unless forloop.last -%},{%- endunless -%}
+  {% endfor %}
+]
