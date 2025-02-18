@@ -5,7 +5,7 @@ title: "Dropping Johnny Decimal: Leaning Into Tags and Search"
 toc: true
 image: /assets/images/8eb3446f-a17c-4963-8b3e-75f7c8029036.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114026098465391036
 bluesky_status_url: false\
 tags:
 - taxonomy
