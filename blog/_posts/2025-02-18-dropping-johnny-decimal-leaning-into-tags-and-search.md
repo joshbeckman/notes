@@ -6,7 +6,12 @@ toc: true
 image: /assets/images/8eb3446f-a17c-4963-8b3e-75f7c8029036.jpeg
 description: 
 mastodon_social_status_url: false
-bluesky_status_url: false
+bluesky_status_url: false\
+tags:
+- taxonomy
+- search
+- information-theory
+- network-theory
 ---
 
 
