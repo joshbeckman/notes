@@ -6,23 +6,21 @@ const openai = new OpenAI();
 
 type Tag = {
   name: string;
-  decimal: string;
-  slug: string;
+  url: string;
 };
 
 const app = new Hono();
 app.post("/", async (c) => {
   const formData = await c.req.formData();
   const content = formData.get("content");
-  const tags: Array<Tag> = await fetch("https://www.joshbeckman.org/assets/js/decimals.json")
+  const tags: Array<Tag> = await fetch("https://www.joshbeckman.org/assets/js/tags.json")
     .then((res) => res.json());
-  const leafTags = tags.filter((tag) => tag.decimal.match(/^\d\d\.\d\d$/));
-  const response = await selectTags(content, leafTags);
+  const response = await selectTags(content, tags);
   return c.json({ content, suggestedTags: response });
 });
 
 async function selectTags(content: string, tags: Array<Tag>): Promise<Array<string>> {
-  const tagSlugs = tags.map((tag) => tag.slug);
+  const tagNames = tags.map((tag) => tag.name);
   const messages = [
     {
       role: "system",
@@ -32,7 +30,7 @@ async function selectTags(content: string, tags: Array<Tag>): Promise<Array<stri
     {
       role: "system",
       content:
-        "Here are the tags you can choose from: " + tagSlugs.join(", "),
+        "Here are the tags you can choose from: " + tagNames.join(", "),
     },
     {
       role: "user",
@@ -45,7 +43,7 @@ async function selectTags(content: string, tags: Array<Tag>): Promise<Array<stri
   });
   const keywords = keywordsCompletion.choices[0].message.content;
   // only return the tags that are in the list of tags
-  return keywords.split(",").map((tag) => tag.trim()).filter((tag) => tagSlugs.includes(tag));
+  return keywords.split(",").map((tag) => tag.trim()).filter((tag) => tagNames.includes(tag));
 }
 
 export default app.fetch;

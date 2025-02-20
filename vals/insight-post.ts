@@ -5,8 +5,18 @@ import { OpenAI } from "npm:openai";
 const openai = new OpenAI();
 
 type Post = {
+  doc: string;
   title: string;
   content: string;
+  tags: string;
+  url: string;
+  type: string;
+  author_id: string;
+  book: string;
+  date: string;
+};
+type Tag = {
+  name: string;
   url: string;
 };
 
@@ -93,14 +103,13 @@ async function selectKeywords(question: string): Promise<string> {
 }
 
 async function suggestTags(content: string): Promise<Array<string>> {
-  const tags: Array<Tag> = await fetch("https://www.joshbeckman.org/assets/js/decimals.json")
+  const tags: Array<Tag> = await fetch("https://www.joshbeckman.org/assets/js/tags.json")
     .then((res) => res.json());
-  const leafTags = tags.filter((tag) => tag.decimal.match(/^\d\d\.\d\d$/));
-  const leafSlugs = leafTags.map((tag) => tag.slug);
+  const tagNames = tags.map((tag) => tag.name);
   const messages = [
     {
       role: "system",
-      content: "You are an expert librarian who can help people find the research and resources they need to understand things. Based on what the user provices, you need to identify relevant tags (from a selected set) that should be used to file the content. Reply with just the tags, separated by commas, and no other text or filler words, please.\nHere are the tags you can choose from: " + leafSlugs.join(", "),
+      content: "You are an expert librarian who can help people find the research and resources they need to understand things. Based on what the user provices, you need to identify relevant tags (from a selected set) that should be used to file the content. Reply with just the tags, separated by commas, and no other text or filler words, please.\nHere are the tags you can choose from: " + tagNames.join(", "),
     },
     {
       role: "user",
@@ -113,7 +122,7 @@ async function suggestTags(content: string): Promise<Array<string>> {
     max_tokens: 100,
   });
   const suggestedTags = keywordsCompletion.choices[0].message.content.split(",").map((tag) => tag.trim());
-  return suggestedTags.filter((tag) => leafSlugs.includes(tag));
+  return suggestedTags.filter((tag) => tagNames.includes(tag));
 }
 
 function buildContext(topic: string, index, searchData, post: Post): string {
@@ -127,7 +136,7 @@ function buildContext(topic: string, index, searchData, post: Post): string {
 }
 
 function postFilter(post: Post) {
-  return !post.title.includes("(tag)");
+    return post.type === "post" || post.type === "page";
 }
 
 function buildIndex(searchData) {
