@@ -5,7 +5,7 @@ title: "Craig Mod is Running Another Pop-Up Newsletter"
 toc: true
 image: 
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114055822999269592
 bluesky_status_url: false
 tags:
   - blogroll
