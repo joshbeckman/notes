@@ -23,3 +23,5 @@ I initially took inspiration from <a href="https://en.wikipedia.org/wiki/Dewey_D
 Things are [indexec by topic](/tags), or <a href="/dates">indexed by date</a>, or <a href="/sources">by source</a> or you can <a href="/search">search here</a>.
 
 If you're visually-inclined, you can [browse the network visualization](/network)
+
+**Update 2025-02-18:** This is [deprecated](https://www.joshbeckman.org/blog/dropping-johnny-decimal-leaning-into-tags-and-search).
