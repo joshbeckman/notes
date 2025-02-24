@@ -8,7 +8,7 @@ tmdb_id: 1124620
 letterboxd_id: the-monkey-2025
 image: https://a.ltrbxd.com/resized/film-poster/1/0/1/3/3/9/3/1013393-the-monkey-2025-0-600-0-900-crop.jpg?v=ac27f20e5a
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114058654921983024
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/the-monkey-2025/
 tags:
