@@ -29,7 +29,7 @@ This year's lineup:
 
 Definitely some of the best costumes I've _ever_ seen - at a show of any size: human-sized eyes, a mouth with cigarette, and a nose with boogers. Fun bops, but kinda sound all the same.
 
-{"https://music.apple.com/us/album/spy-song/1743768131?i=1743768335" | itunesify}
+{{"https://music.apple.com/us/album/spy-song/1743768131?i=1743768335" | itunesify}}
 
 ## Double Over
 
@@ -39,7 +39,7 @@ Only played a couple songs for some reason?
 
 This was a new find for me and I liked their East-Coast punk synth rock. The lead singer kept my attention.
 
-{"https://music.apple.com/us/album/floodwatch/1673950678?i=1673950690" | itunesify }
+{{"https://music.apple.com/us/album/floodwatch/1673950678?i=1673950690" | itunesify }}
 
 ![Landowner](/assets/images/2e4f712d-4c40-4d39-b726-e7d7b66961fa.jpeg)
 
@@ -47,7 +47,7 @@ This was a new find for me and I liked their East-Coast punk synth rock. The lea
 
 Good, standard punk rock with some good instrumentalists on that stage.
 
-{"https://music.apple.com/us/album/laugh-track/1698759703?i=1698760131" | itunesify}
+{{"https://music.apple.com/us/album/laugh-track/1698759703?i=1698760131" | itunesify}}
 
 ## Egyptian Lover
 
