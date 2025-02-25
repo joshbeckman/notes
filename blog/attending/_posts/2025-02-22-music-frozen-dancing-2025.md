@@ -55,4 +55,4 @@ I had heard his music before but never seen him live. Damn, it was fine to hear 
 
 ![Egyptian Lover](/assets/images/c9eb23f8-49bb-4652-b810-f9ace5d61ec3.jpeg)
 
-{"https://music.apple.com/us/album/egypt-egypt/276167433?i=276167930" | itunesify }
+{{"https://music.apple.com/us/album/egypt-egypt/276167433?i=276167930" | itunesify }}
