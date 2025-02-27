@@ -8,7 +8,7 @@ tmdb_id: 1064213
 letterboxd_id: anora
 image: https://a.ltrbxd.com/resized/film-poster/9/5/9/5/4/0/959540-anora-0-600-0-900-crop.jpg?v=6f92877033
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114078471969254782
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/anora/
 tags:
