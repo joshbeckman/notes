@@ -9,7 +9,7 @@ letterboxd_id: jurassic-park
 image: https://a.ltrbxd.com/resized/sm/upload/1g/zz/ez/d8/yyCKYaW908ZbpexpnBJ3p8o87HA-0-600-0-900-crop.jpg?v=19a50874d0
 description: 
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114078471951226899
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lj72n2s4aw25
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/jurassic-park/
 tags:
   - movies

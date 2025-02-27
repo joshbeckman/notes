@@ -9,7 +9,7 @@ letterboxd_id: anora
 image: https://a.ltrbxd.com/resized/film-poster/9/5/9/5/4/0/959540-anora-0-600-0-900-crop.jpg?v=6f92877033
 description: 
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114078471969254782
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lj72n3sp7w25
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/anora/
 tags:
   - movies
