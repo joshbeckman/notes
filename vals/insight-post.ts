@@ -12,14 +12,13 @@ type Post = {
   url: string;
   type: string;
   author_id: string;
-  book: string;
+  book: number | string;
   date: string;
 };
 type Tag = {
   name: string;
   url: string;
 };
-
 
 export default async function(req: Request): Promise<Response> {
   let postUrl = new URL(req.url).searchParams.get("post");
@@ -61,18 +60,19 @@ type Message = {
 };
 
 async function generateInsight(post: Post, context: string): Promise<Array<Message>> {
-    const insightSystemPrompt = "You are a philosophical engineer and craftsman. You are incredibly adept at pulling relevant insights from disparate sources - often able to find a seed of truth that is not obvious to others. Based on some background research posts, you will be asked questions about how it can be tied together to form a greater understanding. Answer in a direct and concise manner: don't use flowery language. Structure your response to focus on reinforcing or disproving ideas. Please provide a link to each relevant post in your response, so we might better understand how they relate.";
-    const question = [
-        "Based on that context (please include reference links in your response), tell me something insightful about:",
-        `# ${post.title}`,
-        post.content,
-    ].join("\n\n");
-    const messages: Array<Message> = [
-        { role: "system", content: insightSystemPrompt },
-        { role: "user", content: context },
-        { role: "assistant", content: "Thank you for the context, I am ready to answer your question." },
-        { role: "user", content: question },
-    ];
+  const insightSystemPrompt =
+    "You are a philosophical engineer and craftsman. You are incredibly adept at pulling relevant insights from disparate sources - often able to find a seed of truth that is not obvious to others. Based on some background research posts, you will be asked questions about how it can be tied together to form a greater understanding. Answer in a direct and concise manner: don't use flowery language. Structure your response to focus on reinforcing or disproving ideas. Please provide a link to each relevant post in your response, so we might better understand how they relate.";
+  const question = [
+    "Based on that context (please include reference links in your response), tell me something insightful about:",
+    `# ${post.title}`,
+    post.content,
+  ].join("\n\n");
+  const messages: Array<Message> = [
+    { role: "system", content: insightSystemPrompt },
+    { role: "user", content: context },
+    { role: "assistant", content: "Thank you for the context, I am ready to answer your question." },
+    { role: "user", content: question },
+  ];
   const completion = await openai.chat.completions.create({
     messages: messages,
     model: "gpt-4o-mini",
@@ -109,7 +109,9 @@ async function suggestTags(content: string): Promise<Array<string>> {
   const messages = [
     {
       role: "system",
-      content: "You are an expert librarian who can help people find the research and resources they need to understand things. Based on what the user provices, you need to identify relevant tags (from a selected set) that should be used to file the content. Reply with just the tags, separated by commas, and no other text or filler words, please.\nHere are the tags you can choose from: " + tagNames.join(", "),
+      content:
+        "You are an expert librarian who can help people find the research and resources they need to understand things. Based on what the user provices, you need to identify relevant tags (from a selected set) that should be used to file the content. Reply with just the tags, separated by commas, and no other text or filler words, please.\nHere are the tags you can choose from: "
+        + tagNames.join(", "),
     },
     {
       role: "user",
@@ -130,13 +132,13 @@ function buildContext(topic: string, index, searchData, post: Post): string {
     .filter(postFilter)
     .filter((result) => result.url !== post.url);
   return posts
-    .slice(0, 5)
-    .map((result) => `[${result.title}](${result.url}): ${result.content}`)
+    .slice(0, 10)
+    .map((result) => `# [${result.title}](${result.url})\n\n${result.content}`)
     .join("\n\n");
 }
 
 function postFilter(post: Post) {
-    return post.type === "post" || post.type === "page";
+  return post.type == "post" || post.type == "page";
 }
 
 function buildIndex(searchData) {
@@ -182,6 +184,7 @@ function search(input: string, index, searchData) {
     return {
       title: item.title,
       content: item.content,
+      type: item.type,
       url: "https://www.joshbeckman.org" + item.url,
       score: result.score,
       match: result.matchData.metadata,
