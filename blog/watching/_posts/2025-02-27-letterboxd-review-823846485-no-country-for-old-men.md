@@ -8,7 +8,7 @@ tmdb_id: 6977
 letterboxd_id: no-country-for-old-men
 image: https://a.ltrbxd.com/resized/sm/upload/dr/hr/pz/ez/ehLb2SQ3djlA1FrQKbP2WO3VH09-0-600-0-900-crop.jpg?v=6489920a92
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114091223477048170
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/no-country-for-old-men/
 tags:
