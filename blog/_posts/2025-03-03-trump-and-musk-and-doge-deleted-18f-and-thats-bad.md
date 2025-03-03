@@ -3,7 +3,7 @@ layout: Post
 date: 2025-03-03 14:02:03 +0000
 title: "Trump and Musk and DOGE Deleted 18F and That's Bad"
 toc: true
-image: 
+image: /assets/images/418601541-c3c6e53e-f511-43d3-993b-06a49969eb9a.png
 description: They're removing the efficiency and safety
 mastodon_social_status_url: false
 bluesky_status_url: false
@@ -12,9 +12,6 @@ tags:
   - trump
   - software-engineering
 ---
-
-
-<img width="567" alt="Image" src="https://github.com/user-attachments/assets/c3c6e53e-f511-43d3-993b-06a49969eb9a" />
 
 I don't quite know why, but this latest move by President Trump and Elon Musk and their idiotic [Department of Government Efficiency (DOGE)](https://en.wikipedia.org/wiki/Department_of_Government_Efficiency) extra-governmental team is putting me in a mood to write something. I've already been [physically protesting against this group](https://www.joshbeckman.org/blog/rallying-duckworth-and-durbin) - to my elected representatives - to little effect.
 
@@ -27,3 +24,5 @@ I think one reason I am anchoring on this 18F removal is that they give me some 
 > We are dedicated to the American public and we're not done yet.
 
 So may we all remain dedicated and effective.
+
+![18F](/assets/images/418601541-c3c6e53e-f511-43d3-993b-06a49969eb9a.png)
