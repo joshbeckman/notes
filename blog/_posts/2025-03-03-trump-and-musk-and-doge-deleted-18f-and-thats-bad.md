@@ -5,7 +5,7 @@ title: "Trump and Musk and DOGE Deleted 18F and That's Bad"
 toc: true
 image: /assets/images/418601541-c3c6e53e-f511-43d3-993b-06a49969eb9a.png
 description: They're removing the efficiency and safety
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114099709544141102
 bluesky_status_url: false
 tags:
   - united-states
