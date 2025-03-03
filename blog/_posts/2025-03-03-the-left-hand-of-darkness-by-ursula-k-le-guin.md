@@ -6,6 +6,7 @@ toc: true
 rating: 4
 image: /assets/images/70b35df1-aa9e-4a26-a678-6ed9c38f8ca1.jpeg
 description: 
+book_asin: 0441478123
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114096881750266137
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ljhaavifwe26
 tags:
