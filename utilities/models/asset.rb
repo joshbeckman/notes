@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-Asset = Struct.new(:url, :category, :path, keyword_init: true) do
+Asset = Struct.new(:url, :category, :path, :alt, keyword_init: true) do
   def image?
     category == 'images'
   end
@@ -15,7 +15,7 @@ Asset = Struct.new(:url, :category, :path, keyword_init: true) do
 
   def standalone_md
     if image?
-      "![image](#{public_path})"
+      "![#{alt || 'image'}](#{public_path})"
     else
       "<video controls src=\"#{public_path}\"></video>"
     end
