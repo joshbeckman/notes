@@ -147,7 +147,7 @@ class IssuePoster
     # images are identified by regular markdown image syntax
     images = content.scan(/!\[.*\]\((.*)\)/).flatten.map do |url|
       Asset.new(url: url, category: 'images')
-    end.concat(content.scan(/<img .*src="(.*)">/).flatten.map do |url|
+    end.concat(content.scan(/<img .*src="(.*)" \/>/).flatten.map do |url|
       Asset.new(url: url, category: 'images')
     end)
     # videos are identified by:
