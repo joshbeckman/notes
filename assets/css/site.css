@@ -966,7 +966,7 @@ ul.asymp>li {
   background-position-x: 0;
   background-size: 100%;
   background-repeat: no-repeat;
-  padding-top: calc(66vw - 2rem);
+  padding-top: min(22rem, calc(66vw - 2rem));
   border: 1px solid lightgrey;
 }
 .post-list-item-cover {
