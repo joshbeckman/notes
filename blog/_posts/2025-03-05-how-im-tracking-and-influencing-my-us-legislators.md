@@ -5,7 +5,7 @@ title: "How I'm Tracking and Influencing My U.S. Legislators"
 toc: true
 image: /assets/images/030aabff-8f7b-4f87-9b52-80228af3bbfa.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114108205783433506
 bluesky_status_url: false
 ---
 
