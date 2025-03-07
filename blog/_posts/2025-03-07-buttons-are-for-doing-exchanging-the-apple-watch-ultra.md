@@ -5,7 +5,7 @@ title: "Buttons are for Doing: Exchanging the Apple Watch Ultra"
 toc: true
 image: /assets/images/43694bc5-43e2-46a1-a7ac-de4526c2a712.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114122360709272961
 bluesky_status_url: false
 tags:
   - tools
