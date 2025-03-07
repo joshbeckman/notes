@@ -13,7 +13,7 @@ redirect_from:
 
 <figure class="kg-card kg-image-card"><img src="/assets/images/IMG_0459.jpeg" /></figure>
 
-I finished reading Don Norman’s _The Design of Everyday Things_ last night. Looking [at my highlights](https://notes.joshbeckman.org/tags/#books-25051458), it was a useful book.
+I finished reading Don Norman’s _The Design of Everyday Things_ last night. Looking [at my highlights](https://www.joshbeckman.org/search/?q=%2725051458&keys=book), it was a useful book.
 
 I think this book explained much of what I enjoy about working with my favorite designers, and much of what I have seen them reference and emulate over the years. Most of what I found useful was related to interaction and interface categorization ([affordances](https://notes.joshbeckman.org/notes/487338519), [control mapping](https://notes.joshbeckman.org/notes/487344266), [stages of action](https://notes.joshbeckman.org/notes/487342571), and [more](https://notes.joshbeckman.org/notes/487346022)) - better terminology to guide my thinking around problems of product design.
 
@@ -37,5 +37,5 @@ Reading this definitely made me want to set aside some time to deeply consider h
 
 🍃
 
-More highlights and notes [in the garden](https://notes.joshbeckman.org/tags/#books-25051458).
+More highlights and notes [in the garden](https://www.joshbeckman.org/search/?q=%2725051458&keys=book).
 
