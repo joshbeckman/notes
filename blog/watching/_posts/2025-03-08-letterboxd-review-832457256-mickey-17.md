@@ -8,7 +8,7 @@ tmdb_id: 696506
 letterboxd_id: mickey-17
 image: https://a.ltrbxd.com/resized/film-poster/6/2/0/2/8/1/620281-mickey-17-0-600-0-900-crop.jpg?v=93e4d2af6d
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114142179043638619
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/mickey-17/
 tags:
