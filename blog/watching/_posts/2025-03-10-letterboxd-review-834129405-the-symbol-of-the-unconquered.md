@@ -8,7 +8,7 @@ tmdb_id: 175226
 letterboxd_id: the-symbol-of-the-unconquered
 image: https://a.ltrbxd.com/resized/film-poster/1/2/8/3/0/6/128306-the-symbol-of-the-unconquered-0-600-0-900-crop.jpg?v=a3dd37b622
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114153506476904524
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/the-symbol-of-the-unconquered/
 tags:

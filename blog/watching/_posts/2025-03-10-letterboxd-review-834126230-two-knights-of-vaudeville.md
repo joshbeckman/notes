@@ -8,7 +8,7 @@ tmdb_id: 409134
 letterboxd_id: two-knights-of-vaudeville
 image: https://a.ltrbxd.com/resized/film-poster/3/4/3/3/7/7/343377-two-knights-of-vaudeville-0-600-0-900-crop.jpg?v=e88130f78b
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114153506455701914
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/two-knights-of-vaudeville/
 tags:
