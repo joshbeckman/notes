@@ -5,7 +5,7 @@ title: "DARKSIDE at The Salt Shed"
 toc: true
 image: /assets/images/feb90f6e-3f50-44ef-a1fa-bf2eedd89202.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114161991890075958
 bluesky_status_url: false
 tags:
   - music
