@@ -6,7 +6,7 @@ toc: true
 image: /assets/images/feb90f6e-3f50-44ef-a1fa-bf2eedd89202.jpeg
 description: 
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114161991890075958
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lke5jl4trh2k
 tags:
   - music
   - concerts
