@@ -19,7 +19,7 @@ I'm an experienced startup operator with a history of scaling tech and teams. I'
 
 My email address is `josh@joshbeckman.org`. I strongly prefer email as a communication method, so email me if you have a comment about something I've written - or write a post on your own site. Or you can follow/message me on open social networks (see *Verification* below).
 
-> Want help with something? Here are [ways I'm able to help](/blog/ways-im-available-to-help).
+> Want help with something? Here are [ways I'm able to help](/blog/ways-im-available-to-help). Or, [book some time to chat](https://fantastical.app/joshbeckman).
 
 You can read more [about this site](/about-this-site) or the [tools I use](/uses).
 
