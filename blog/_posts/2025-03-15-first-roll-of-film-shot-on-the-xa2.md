@@ -10,9 +10,6 @@ bluesky_status_url: false
 tags:
   - photography
   - cameras
-  - art
-  - personal-blog
-  - exploration
 ---
 
 
