@@ -50,9 +50,10 @@ class IssuePoster
       imdb_id: frontmatter['imdb_id'],
       rating: rating,
       slug: slug,
-      tags: tags.any? ? tags : post.suggested_tags,
+      tags: tags,
       title: title
     )
+    post.tags = post.suggested_tags if post.tags.empty?
     post.image = post.movie_cover_image || post.image if post.imdb_id
     set_album_art(post, frontmatter['album']) if frontmatter['album']
     post
