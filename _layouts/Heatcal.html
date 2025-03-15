@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+{%- include head.html -%}
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://unpkg.com/cal-heatmap/dist/cal-heatmap.min.js"></script>
+<script src="https://unpkg.com/cal-heatmap/dist/plugins/Legend.min.js"></script>
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/cal-heatmap/dist/plugins/Tooltip.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/cal-heatmap/dist/cal-heatmap.css">
+<style>
+</style>
+<body>
+  <div class="row">
+    <div class="column navigation centered">
+      <header class="content">
+        {% if page.image %}
+          <img class="cover-image" src="{{ page.image }}" alt="{{ page.title }}">
+        {% elsif page.emoji %}
+          <div class="cover-image-emoji">{{ page.emoji }}</div>
+        {% else %}
+          <div class="contour-filler"></div>
+        {% endif %}
+      {%- if page.description -%}
+          <p class="description">{{page.description}}</p>
+      {%- endif -%}
+      </header>
+    </div>
+    <div class="column">
+      <article class="content">
+        {%- include Nav.html -%}
+        {%- include Toc.html -%}
+        <section class="h-entry page">
+            {% if page.image %}
+              <div class="print-only print-header-image">
+                <img class="no-lightbox print-only" src="{{ page.image }}" alt="{{ page.title }}">
+              </div>
+            {% endif %}
+            <div class="page-title">
+              {%- if page.hide_title != true -%} 
+                  <h1 class="p-name">{{page.title}}</h1>
+              {%- endif -%}
+            </div>
+          {%- include Content.html -%}
+          <div id="cal-heatmap"></div>
+          {%- include Reference.html -%}
+        </section>
+        {%- include Footer.html -%}
+      </article>
+    </div>
+  </div>
+<script>
+// use prefers-color-scheme media query to set theme
+var theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
+var dataUrl = "/assets/js/SearchData.json";
+async function getSearchData(dataUrl) {
+    let response = await fetch(dataUrl);
+    let responseText = response.text();
+    return responseText;
+}
+function renderHeatmap(docs) {
+    var posts = docs.filter(function(d) {
+        return d.type == "post";
+    });
+    var maxRange = 0;
+    var earliestDate = new Date(posts[posts.length - 1].date);
+    var data = posts.reduce(function(acc, post) {
+        var date = new Date(post.date);
+        if (date < earliestDate) {
+            earliestDate = date;
+        }
+        var key = date.toISOString().slice(0, 10);
+        if (acc[key]) {
+            acc[key].value += 1;
+            if (acc[key].value > maxRange) {
+                maxRange = acc[key].value;
+            }
+        } else {
+            acc[key] = {
+                date: key,
+                value: 1
+            };
+        }
+        return acc;
+    }, {});
+    var cal = new CalHeatmap();
+    // set start date to 12mo ago
+    var source = Object.values(data);
+    // set range to count of months between min and max dates
+    var range = Math.floor((new Date() - earliestDate) / (1000 * 60 * 60 * 24 * 30)) - 1;
+    var options = {
+        theme: theme,
+        range: range,
+        data: {
+            source: source,
+            x: 'date',
+            y: 'value',
+            defaultValue: 0,
+        },
+        date: {
+            start: earliestDate,
+            max: new Date(),
+            highlight: [
+                new Date(),
+            ],
+        },
+        domain: {
+            type: 'month',
+            sort: 'desc',
+            label: {
+                text: 'MMM YYYY',
+                position: 'top',
+            },
+        },
+        subDomain: {
+            type: 'day',
+            width: document.querySelector('#cal-heatmap').offsetWidth / 7,
+            height: 20,
+        },
+        scale: {
+          opacity: {
+            baseColor: '#903465',
+            type: 'linear',
+            domain: [0, 5],
+          },
+        },
+        verticalOrientation: true,
+    }
+    var legendOptions = {
+        label: 'Posts per day',
+    };
+    var tooltipOptions = {
+        text: function (timestamp, value, dayjsDate) {
+            return `${value} posts - ${dayjsDate.toISOString().slice(0, 10)}`;
+        },
+    };
+    cal.paint(options, [[Legend, legendOptions], [Tooltip, tooltipOptions]]);
+    cal.on('click', (event, timestamp, value) => {
+        // navigate to search results for the clicked date
+        var date = new Date(timestamp);
+        var dateStr = date.toISOString().slice(0, 10);
+        var searchUrl = `/search?q=%27${dateStr}`;
+        window.location.href = searchUrl;
+    });
+}
+getSearchData(dataUrl).then(function(responseText) {
+    var docs = JSON.parse(responseText);
+    renderHeatmap(Object.values(docs));
+});
+</script>
+</body>
+</html>

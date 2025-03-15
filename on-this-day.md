@@ -17,3 +17,4 @@ These are the posts I've written on this day in previous years:
 {% endif %}
 {% endfor %}
 
+Or browse the [heatmap calendar](/heatcal).
