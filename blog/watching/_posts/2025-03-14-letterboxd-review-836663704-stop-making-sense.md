@@ -8,7 +8,7 @@ tmdb_id: 24128
 letterboxd_id: stop-making-sense
 image: https://a.ltrbxd.com/resized/film-poster/3/7/0/0/4/37004-stop-making-sense-0-600-0-900-crop.jpg?v=c7e06b923e
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114167652763489581
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/stop-making-sense/
 tags:
