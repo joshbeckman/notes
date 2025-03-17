@@ -10,6 +10,8 @@ bluesky_status_url: false
 tags:
   - photography
   - non-fiction
+  - art
+  - books
 ---
 
 
