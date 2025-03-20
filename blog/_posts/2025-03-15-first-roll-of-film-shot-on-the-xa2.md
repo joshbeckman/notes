@@ -17,7 +17,7 @@ My grandma found an old tiny camera in her basement that wasn't working and aske
 
 This one turned out to be a cute little [Olympus XA2](https://casualphotophile.com/2023/05/23/olympus-xa2-point-and-shoot-35mm-film-camera-review/). After a bit of cleaning and some new batteries, I had it working again.
 
-I have various film stock in my fridge that I've had since I shot film more regularly in college and my early 20s. (I used to have a little [Olympus 35RC Review & Sample Images by Ken Rockwell](https://www.kenrockwell.com/olympus/35rc.htm) that I _adored_ and then lost somehow.) I grabbed some fridge-preserved SAF 400 film (I remember this being the most budget film I could find in college) that must be long expired and put it through the XA2 when friends came over these past winter nights.
+I have various film stock in my fridge that I've had since I shot film more regularly in college and my early 20s. (I used to have a little [Olympus 35RC](https://www.kenrockwell.com/olympus/35rc.htm) that I _adored_ and then lost somehow.) I grabbed some fridge-preserved SAF 400 film (I remember this being the most budget film I could find in college) that must be long expired and put it through the XA2 when friends came over these past winter nights.
 
 ![Image](/assets/images/c4bae1d8-886a-4019-a0cc-77d80683dabd.jpeg)
 
