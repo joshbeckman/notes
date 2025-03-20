@@ -6,7 +6,7 @@ toc: true
 image: /assets/images/ee8815cf-8280-44b0-8e8f-02721dc1d814.png
 description: 
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114195966414844441
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lktadf6stj26
 tags:
   - personal-blog visualization
 ---
