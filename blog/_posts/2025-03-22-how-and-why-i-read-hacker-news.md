@@ -5,7 +5,7 @@ title: "How and Why I Read Hacker News"
 toc: true
 image: /assets/images/f241d9da-6b14-4848-ab03-a48e0f6db6c6.png
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114207993214972242
 bluesky_status_url: false
 tags:
   - hacker-news
