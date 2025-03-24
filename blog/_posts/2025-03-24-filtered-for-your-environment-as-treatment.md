@@ -5,7 +5,7 @@ title: "Filtered for Your Environment as Treatment"
 toc: true
 image: 
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114218616338668223
 bluesky_status_url: false
 tags:
   - tools medicine habits environment
