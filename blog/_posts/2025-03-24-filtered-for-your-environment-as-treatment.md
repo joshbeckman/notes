@@ -6,7 +6,7 @@ toc: true
 image: 
 description: 
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114218616338668223
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ll5c7fgawe2k
 tags:
   - tools medicine habits environment
 ---
