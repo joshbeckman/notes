@@ -8,7 +8,7 @@ tmdb_id: 870360
 letterboxd_id: the-day-the-earth-blew-up-a-looney-tunes-movie
 image: https://a.ltrbxd.com/resized/film-poster/7/8/2/4/6/0/782460-the-day-the-earth-blew-up-a-looney-tunes-movie-0-600-0-900-crop.jpg?v=c26393ad7a
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114241972741593624
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/the-day-the-earth-blew-up-a-looney-tunes-movie/
 tags:
