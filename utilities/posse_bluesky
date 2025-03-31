@@ -41,7 +41,7 @@ module POSSE
       @site = Jekyll::Site.new(Jekyll.configuration({}))
       @site.read
       @jekyll_filter = JekyllFilter.new
-      @content_template = Liquid::Template.parse('{{ x | strip_html | strip | escape | truncate: 140}}')
+      @content_template = Liquid::Template.parse('{{ x | strip_html | strip | escape | truncate: 120}}')
       @handle = ENV.fetch('BLUESKY_HANDLE', 'joshbeckman.org')
       @did = generate_did(@handle)
       @api_key = generate_api_key(@did, ENV.fetch('BLUESKY_PASSWORD', nil))
