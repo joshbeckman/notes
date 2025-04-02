@@ -6,7 +6,7 @@ toc: true
 image: /assets/images/2ce39967-1e6b-4049-9e09-30a1b82f00e3.jpeg
 description: 
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114269576197946323
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lltwfa5ckh26
 tags:
   - chicago
   - environment
