@@ -5,7 +5,7 @@ title: "Confidence Man at Subterranean"
 toc: true
 image: /assets/images/f748d638-258d-4910-aa2b-4a420f6926d7.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114278791249865551
 bluesky_status_url: false
 tags:
   - subterranean-venue
