@@ -6,7 +6,7 @@ toc: true
 image: /assets/images/f748d638-258d-4910-aa2b-4a420f6926d7.jpeg
 description: 
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114278791249865551
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3llxzds6hcj2b
 tags:
   - subterranean-venue
   - chicago
