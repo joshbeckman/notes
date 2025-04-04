@@ -5,7 +5,7 @@ title: "Kelly Lee Owens at Metro"
 toc: true
 image: /assets/images/85e774ef-9278-40ea-97d4-2f9d1a188a31.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114278074101713675
 bluesky_status_url: false
 tags:
   - metro-venue
