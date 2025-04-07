@@ -7,6 +7,7 @@ image: /assets/images/EE2C29AFFF2244EEB98166CCFDF56478.jpeg
 description: 
 tags: 
   - music
+  - metro-venue
 ---
 
 ![](/assets/images/EE2C29AFFF2244EEB98166CCFDF56478.jpeg)
