@@ -5,7 +5,7 @@ title: "Life Clock"
 toc: true
 image: /assets/images/8eec76d6-a4a6-414d-aa3b-c5d6da4404f0.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114302854447520150
 bluesky_status_url: false
 tags:
   - personal-blog
