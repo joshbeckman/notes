@@ -51,3 +51,7 @@ We’ll see how this goes \- I may grow bored if it never changes\. Other ideas 
 - Assign numbers to a set of messages \(e\.g\. “it’s going to snow” or “a package was delivered”\) and display messages\-as\-numbers
 
 Send me your ideas! I’d love to hear them.
+
+## Update 2025-04-08
+
+I've since [repurposed this counter to be a "life clock"](/blog/life-clock).

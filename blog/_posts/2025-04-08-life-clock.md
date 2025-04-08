@@ -13,6 +13,9 @@ tags:
   - time
   - motivation
   - tools
+redirect_from:
+  - /counter-redirect
+  - /counter-redirect/
 ---
 
 
