@@ -20,4 +20,4 @@ I have been listening to a lot of Kelly Lee Owens [in the last year](https://www
 
 She had a few more slow songs than I would have expected for a live show, but the good songs were still great and we felt the energy. The only downer was that she left the stage on her last song and had to come back out to tell us she had no encore. But we'll be back. 
 
-<video controls src="/assets/videos/8e2b2823-b22c-4bf8-afb8-cf585d4748cc.mov" autoplay></video>
+<video controls src="/assets/videos/8e2b2823-b22c-4bf8-afb8-cf585d4748cc.mov" autoplay loop="true"></video>
