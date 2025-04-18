@@ -7,6 +7,7 @@ image: /assets/images/5c0fe1d8-a02f-4e90-b955-56fca549570d.jpeg
 description: 
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114178978011823066
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lklovwvvr62x
+rating: 4
 tags:
   - photography
   - non-fiction
