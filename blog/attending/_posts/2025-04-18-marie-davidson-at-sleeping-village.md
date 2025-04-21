@@ -6,7 +6,7 @@ toc: true
 image: /assets/images/a34ed525-2000-4f56-a730-59fe16c1066b.jpeg
 description: 
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114377167452391508
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lndpe4osgw2l
 tags:
   - sleeping-village-venue
   - music
