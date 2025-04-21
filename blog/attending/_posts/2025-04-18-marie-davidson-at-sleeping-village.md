@@ -5,7 +5,7 @@ title: "Marie Davidson at Sleeping Village"
 toc: true
 image: /assets/images/a34ed525-2000-4f56-a730-59fe16c1066b.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114377167452391508
 bluesky_status_url: false
 tags:
   - sleeping-village-venue
