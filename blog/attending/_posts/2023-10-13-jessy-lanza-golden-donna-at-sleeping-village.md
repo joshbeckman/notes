@@ -7,6 +7,7 @@ image: /assets/images/6F27683308A84FE78E879D496603A5C1.jpeg
 description: 
 tags: 
 - music
+- sleeping-village-venue
 ---
 
 ![Jessy Lanza](/assets/images/6F27683308A84FE78E879D496603A5C1.jpeg)
