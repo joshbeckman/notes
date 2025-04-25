@@ -5,7 +5,7 @@ title: "Empire of The Sun at Radius"
 toc: true
 image: /assets/images/d4a4109f-4d8a-45aa-bfe7-c91497e23c45.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114399809729693066
 bluesky_status_url: false
 tags:
   - music
