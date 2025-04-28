@@ -5,7 +5,7 @@ title: "Rally for Trans Visibility"
 toc: true
 image: /assets/images/ede3d011-758c-4987-bef4-3655f7fb8cbd.jpeg
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114416105611881024
 bluesky_status_url: false
 tags:
   - chicago
