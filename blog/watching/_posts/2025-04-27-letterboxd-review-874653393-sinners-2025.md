@@ -8,7 +8,7 @@ tmdb_id: 1233413
 letterboxd_id: sinners-2025
 image: https://a.ltrbxd.com/resized/film-poster/1/1/1/6/6/0/0/1116600-sinners-2025-0-600-0-900-crop.jpg?v=00ce32e0ba
 description: 
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114417502887237943
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/sinners-2025/
 tags:
