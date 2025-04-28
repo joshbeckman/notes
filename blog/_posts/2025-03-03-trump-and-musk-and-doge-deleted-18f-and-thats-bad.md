@@ -11,6 +11,7 @@ tags:
   - united-states
   - trump
   - software-engineering
+  - protest
 ---
 
 I don't quite know why, but this latest move by President Trump and Elon Musk and their idiotic [Department of Government Efficiency (DOGE)](https://en.wikipedia.org/wiki/Department_of_Government_Efficiency) extra-governmental team is putting me in a mood to write something. I've already been [physically protesting against this group](https://www.joshbeckman.org/blog/rallying-duckworth-and-durbin) - to my elected representatives - to little effect.
