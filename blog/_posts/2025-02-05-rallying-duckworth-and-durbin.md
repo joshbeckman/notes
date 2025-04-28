@@ -10,6 +10,8 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lhhqes544r24
 tags:
   - united-states
   - chicago
+  - protest
+  - government
 ---
 
 
