@@ -8,6 +8,7 @@ _site/
 .strava_token
 .mastodon_social_token
 .strava_token
+.mapbox_token
 .bundle/
 vendor/
 Library.xml

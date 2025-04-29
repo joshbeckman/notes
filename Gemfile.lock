@@ -119,6 +119,7 @@ GEM
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     plist (3.7.2)
+    polylines (0.4.0)
     prism (1.4.0)
     public_suffix (6.0.1)
     racc (1.8.1)
@@ -174,6 +175,7 @@ DEPENDENCIES
   jekyll-toc
   kramdown-math-katex
   plist
+  polylines
   readwise!
   rubocop
   strava-ruby-client

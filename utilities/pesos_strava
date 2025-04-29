@@ -1,7 +1,14 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
+require 'cgi'
+require 'json'
+require 'jekyll'
+require 'net/http'
+require 'polylines'
 require 'strava-ruby-client'
+require_relative 'models/post'
+require_relative 'models/asset'
 
 # ref: https://www.strava.com/settings/api
 
@@ -10,26 +17,251 @@ module PESOS
 
     class Error < StandardError; end
 
+    attr_reader :client, :site
+
     def initialize
-      # ref: https://www.markhneedham.com/blog/2020/12/15/strava-authorization-error-missing-read-permission/
-      puts token
+      @site = Jekyll::Site.new(Jekyll.configuration({}))
+      @site.read
       @client = ::Strava::Api::Client.new(
         access_token: token
       )
     end
 
-    def activities
-      @client.athlete_activities
+    def map_recent_activities(&block)
+      @client.athlete_activities.map do |activity|
+        yield activity
+      end
+    end
+
+    def map_all_activities(&block)
+      @client.athlete_activities(per_page: 30) do |activity|
+        yield activity
+      end
+    end
+
+    def athlete_stats
+      @client.athlete_stats(@client.athlete.id)
+    end
+
+    def heart_rate_zones
+      @client.athlete_zones.heart_rate.zones
+    end
+
+    def mapbox_image_url(activity)
+      map = activity.map
+      return unless map&.summary_polyline && activity&.start_latlng.any?
+
+      decoded_summary_polyline = Polylines::Decoder.decode_polyline(map.summary_polyline)
+      start_latlng = decoded_summary_polyline[0]
+      end_latlng = decoded_summary_polyline[-1]
+      mapbox_image_url = "https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/path-5+787af2-1.0(#{CGI.escape(map.summary_polyline)}),pin-s-s+e5b22e(#{start_latlng[1]},#{start_latlng[0]}),pin-s-f+89ae00(#{end_latlng[1]},#{end_latlng[0]})/auto/800x800?access_token=#{mapbox_token}"
+    end
+
+    def reverse_geocode(lat, lng)
+      uri = URI.parse("https://api.mapbox.com/geocoding/v5/mapbox.places/#{lng},#{lat}.json?access_token=#{mapbox_token}")
+      request = Net::HTTP::Get.new(uri)
+      request.content_type = 'application/json'
+      req_options = {
+        use_ssl: uri.scheme == 'https'
+      }
+      res = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
+        http.request(request)
+      end
+
+      unless res.is_a?(Net::HTTPSuccess)
+        puts res.body
+        raise Error, 'Reverse geocode request failed'
+      end
+
+      resp_body = JSON.parse(res.body)
+      resp_body['features'].first['place_name']
+    end
+
+    def import_exercise_stats
+      # write data to a file in _data as yaml
+      stats = athlete_stats
+      data = {
+        ytd_run_totals: {
+          count: stats.ytd_run_totals.count,
+          distance_in_miles: stats.ytd_run_totals.distance_in_miles_s,
+          pace_per_mile: stats.ytd_run_totals.pace_per_mile_s,
+          elapsed_time_in_hours: stats.ytd_run_totals.elapsed_time_in_hours_s,
+        },
+        all_run_totals: {
+          count: stats.all_run_totals.count,
+          distance_in_miles: stats.all_run_totals.distance_in_miles_s,
+          pace_per_mile: stats.all_run_totals.pace_per_mile_s,
+          elapsed_time_in_hours: stats.all_run_totals.elapsed_time_in_hours_s,
+        },
+        ytd_ride_totals: {
+          count: stats.ytd_ride_totals.count,
+          distance_in_miles: stats.ytd_ride_totals.distance_in_miles_s,
+          pace_per_mile: stats.ytd_ride_totals.pace_per_mile_s,
+          elapsed_time_in_hours: stats.ytd_ride_totals.elapsed_time_in_hours_s,
+        },
+        all_ride_totals: {
+          count: stats.all_ride_totals.count,
+          distance_in_miles: stats.all_ride_totals.distance_in_miles_s,
+          pace_per_mile: stats.all_ride_totals.pace_per_mile_s,
+          elapsed_time_in_hours: stats.all_ride_totals.elapsed_time_in_hours_s,
+        },
+      }
+      File.open(File.expand_path('../_data/strava_stats.yml', __dir__), 'w') do |file|
+        file.write(data.to_yaml)
+      end
+    end
+
+    def import_recent_activities
+      @client.athlete_activities.map do |activity|
+        import_activity(activity) unless post_exists?(activity) && post_old_enough?(activity)
+      end
+    end
+
+    def import_all_activities
+      @client.athlete_activities(per_page: 100) do |activity|
+        import_activity(activity) unless post_exists?(activity) && post_old_enough?(activity)
+      end
+    end
+
+    def post_exists?(activity)
+      site.posts.docs.any? do |post|
+        next false unless post.data['strava_activity_url']
+
+        post.data['strava_activity_url'] == activity.strava_url
+      end
+    end
+
+    def post_old_enough?(activity)
+      case activity.sport_type
+      when 'Hike'
+        # give me a day to write up a hike
+        activity.start_date < (Time.now - 24 * 60 * 60)
+      else
+        # give me 6 hours to write up a run or ride or whatever
+        activity.start_date < (Time.now - 6 * 60 * 60)
+      end
+    end
+
+    def import_activity(partial_activity)
+      puts "Importing activity #{partial_activity.id}"
+      activity = client.activity(partial_activity.id)
+      image = nil
+      if activity.total_photo_count.positive?
+        photo = client.activity_photos(activity.id).first
+        # urls is a hash with keys of image width
+        # choose the largest image
+        asset = Asset.new(url: photo.urls[photo.urls.keys.max], category: 'images')
+        asset.download
+        image = asset.public_path
+      end
+      post = Post.new(
+        title: "#{activity.name} #{activity.sport_type_emoji}",
+        body: post_body(activity),
+        date: activity.start_date,
+        strava_activity_url: activity.strava_url,
+        layout: 'Exercise',
+        category: 'exercise',
+        tags: [sport_type_tag(activity.sport_type)],
+        slug: activity.id,
+        image: image,
+        exercise_data: exercise_data(activity),
+      )
+      post.create_file
+    end
+
+    def post_body(activity)
+      location = if activity.segment_efforts.any?
+        effort = activity.segment_efforts.first
+        "#{effort.segment.city}, #{effort.segment.state}, #{effort.segment.country} (#{effort.name})"
+      elsif activity.start_latlng.any?
+        reverse_geocode(activity.start_latlng[0], activity.start_latlng[1])
+      else
+        'Unknown location (probably inside)'
+      end
+      <<~BODY
+        #{activity.description}
+
+        #{location}
+      BODY
+    end
+
+    def exercise_data(activity)
+      {
+        emoji: activity.sport_type_emoji,
+        average_heartrate: "#{activity.average_heartrate}bpm",
+        max_heartrate: "#{activity.max_heartrate}bpm",
+        average_watts: "#{activity.average_watts}W",
+        max_watts: "#{activity.max_watts}W",
+        distance_in_miles: activity.distance_in_miles_s,
+        pace_per_mile: activity.pace_per_mile_s,
+        elevation_high: "#{activity.elev_high}m",
+        elevation_low: "#{activity.elev_low}m",
+        total_elevation_gain_in_feet: activity.total_elevation_gain_in_feet_s,
+        end_latlng: activity.end_latlng,
+        start_latlng: activity.start_latlng,
+        similar_activities_count: activity.similar_activities&.effort_count,
+        similar_activities_trend: activity.similar_activities&.trend&.direction,
+        mapbox_image_url: mapbox_image_url(activity),
+      }
     end
 
     private
 
+    def sport_type_tag(type)
+      case type
+      when 'Run'
+        'running'
+      when 'Ride'
+        'cycling'
+      when 'Swim'
+        'swimming'
+      when 'WeightTraining'
+        'weight-training'
+      when 'Walk'
+        'walking'
+      when 'Hike'
+        'hiking'
+      when 'AlpineSki'
+        'skiing'
+      when 'Snowboard'
+        'snowboarding'
+      when 'NordicSki'
+        'cross-country-skiing'
+      when 'Rowing'
+        'rowing'
+      when 'Elliptical'
+        'elliptical'
+      else
+        type.downcase
+      end
+    end
+
     def token
-      ENV.fetch('STRAVA_ACCESS_TOKEN', File.read('.strava_token').strip)
+      uri = URI.parse("https://joshbeckman-stravaoauthclient.web.val.run/token")
+      request = Net::HTTP::Get.new(uri)
+      request.content_type = 'application/json'
+      req_options = {
+        use_ssl: uri.scheme == 'https'
+      }
+      res = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
+        http.request(request)
+      end
+
+      unless res.is_a?(Net::HTTPSuccess)
+        puts res.body
+        raise Error, 'Token refresh request failed'
+      end
+
+      resp_body = JSON.parse(res.body)
+      resp_body['access_token']
+    end
+
+    def mapbox_token
+      @mapbox_token ||= ENV.fetch('MAPBOX_TOKEN', File.read(File.expand_path('.mapbox_token')).strip)
     end
   end
 end
 
 strava = PESOS::Strava.new
-activities = strava.activities
-puts activities.first
+# strava.import_exercise_stats
+strava.import_recent_activities
