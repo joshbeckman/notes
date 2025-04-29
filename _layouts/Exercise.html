@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+{%- include head.html -%}
+<body>
+  <div class="row">
+    <div class="column navigation centered">
+      <header class="content">
+        {% if page.image %}
+          <img class="cover-image" src="{{ page.image }}" alt="{{ page.title }}">
+        {% else %}
+        <div class="contour-filler"></div>
+        {% endif %}
+      {%- if page.description -%}
+          <p class="description">{{page.description}}</p>
+      {%- endif -%}
+      </header>
+    </div>
+    <div class="column">
+      <article class="content">
+        {%- include Nav.html -%}
+        {%- include Toc.html -%}
+        <section class="h-entry {% for category in page.categories %}{{category}} {% endfor %}">
+            {% if page.image %}
+              <div class="print-only print-header-image">
+                <img class="no-lightbox print-only" src="{{ page.image }}" alt="{{ page.title }}">
+              </div>
+            {% endif %}
+            <div class="page-title">
+              {%- if page.hide_title != true -%} 
+                  <h1 class="p-name">{{page.title}}</h1>
+              {%- endif -%}
+            </div>
+          <section class="u-in-reply-to h-cite">
+            {%- include Content.html -%}
+            {%- include ExerciseMeta.html -%}
+            {%- include Reference.html -%}
+          </section>
+            {%- include Backlinks.html -%}
+            {%- include Social.html -%}
+            <h2 class="print-hidden">Widgets</h2>
+            <br>
+            {%- include NetworkDetails.html -%}
+            {%- include Insight.html -%}
+        </section>
+        {%- include Footer.html -%}
+        {%- include Network.html post=page -%}
+      </article>
+    </div>
+  </div>
+</body>
+</html>
