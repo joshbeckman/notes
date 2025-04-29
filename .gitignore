@@ -5,8 +5,10 @@ _site/
 *.DS_Store
 .readwise_token
 .omdb_token
+.strava_token
 .mastodon_social_token
 .strava_token
+.mapbox_token
 .bundle/
 vendor/
 Library.xml

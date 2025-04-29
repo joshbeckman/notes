@@ -18,6 +18,8 @@ Post = Struct.new(
   :hide_title,
   :mastodon_social_status_url,
   :bluesky_status_url,
+  :strava_activity_url,
+  :exercise_data,
   :letterboxd_review_url,
   :hacker_news_url,
   :rating,
@@ -25,6 +27,7 @@ Post = Struct.new(
   :slug,
   :tags,
   :title,
+  :layout,
   keyword_init: true
 ) do
   def movie_cover_image
@@ -69,32 +72,31 @@ Post = Struct.new(
   def create_file
     filename = "#{category}/_posts/#{date.strftime('%Y-%m-%d')}-#{slug}.md"
 
+    front_matter = {
+      'layout' => layout || 'Post',
+      'date' => date.strftime('%Y-%m-%d %H:%M:%S %z'),
+      'title' => title,
+      'toc' => true,
+      'image' => image,
+      'description' => description,
+    }
+    front_matter['hide_title'] = true if hide_title
+    front_matter['canonical'] = canonical if canonical
+    front_matter['rating'] = rating if rating
+    front_matter['imdb_id'] = imdb_id if imdb_id
+    front_matter['tmdb_id'] = tmdb_id if tmdb_id
+    front_matter['song_link'] = song_link if song_link
+    front_matter['letterboxd_id'] = letterboxd_id if letterboxd_id
+    front_matter['in_reply_to'] = in_reply_to if in_reply_to
+    front_matter['mastodon_social_status_url'] = mastodon_social_status_url unless mastodon_social_status_url.nil?
+    front_matter['bluesky_status_url'] = bluesky_status_url unless bluesky_status_url.nil?
+    front_matter['strava_activity_url'] = strava_activity_url unless strava_activity_url.nil?
+    front_matter['letterboxd_review_url'] = letterboxd_review_url unless letterboxd_review_url.nil?
+    front_matter['hacker_news_url'] = hacker_news_url unless hacker_news_url.nil?
+    front_matter['exercise_data'] = exercise_data.transform_keys(&:to_s) if exercise_data
+    front_matter['tags'] = tags if tags&.any?
     File.open(filename, 'w') do |file|
-      file.puts '---'
-      file.puts 'layout: Post'
-      file.puts "date: #{date.strftime('%Y-%m-%d %H:%M:%S %z')}"
-      file.puts "title: \"#{title}\""
-      file.puts 'toc: true'
-      file.puts 'hide_title: true' if hide_title
-      file.puts "canonical: #{canonical}" if canonical
-      file.puts "rating: #{rating}" if rating
-      file.puts "imdb_id: #{imdb_id}" if imdb_id
-      file.puts "tmdb_id: #{tmdb_id}" if tmdb_id
-      file.puts "song_link: #{song_link}" if song_link
-      file.puts "letterboxd_id: #{letterboxd_id}" if letterboxd_id
-      file.puts "image: #{image}"
-      file.puts "description: #{description}"
-      file.puts "in_reply_to: #{in_reply_to}" if in_reply_to
-      file.puts "mastodon_social_status_url: #{mastodon_social_status_url}" unless mastodon_social_status_url.nil?
-      file.puts "bluesky_status_url: #{bluesky_status_url}" unless bluesky_status_url.nil?
-      file.puts "letterboxd_review_url: #{letterboxd_review_url}" unless letterboxd_review_url.nil?
-      file.puts "hacker_news_url: #{hacker_news_url}" unless hacker_news_url.nil?
-      if tags&.any?
-        file.puts 'tags:'
-        tags.each do |tag|
-          file.puts "  - #{tag}"
-        end
-      end
+      file.puts front_matter.to_yaml
       file.puts '---'
       file.puts ''
       file.puts body

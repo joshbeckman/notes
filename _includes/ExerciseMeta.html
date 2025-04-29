@@ -1,0 +1,65 @@
+<div class="metadata">
+  {%- if page.exercise_data['mapbox_image_url'] -%}
+  <p>
+    <img width="800" height="800" src="{{page.exercise_data['mapbox_image_url']}}" alt="Map of {{page.title}}" class="exercise-map">
+  </p>
+  {%- endif -%}
+  <table class="exercise-metadata">
+    <thead>
+      <tr>
+        <td colspan="2">
+          Exercise Data
+        </td>
+      </tr>
+    </thead>
+    <tr>
+      <td>
+      Average Heart Rate
+      </td>
+      <td>
+      {{page.exercise_data['average_heartrate']}}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Maximum Heart Rate
+      </td>
+      <td>
+        {{page.exercise_data['max_heartrate']}}
+      </td>
+    </tr>
+    {% if page.exercise_data['distance_in_miles'] %}
+    <tr>
+      <td>
+        Distance
+      </td>
+      <td>
+        {{page.exercise_data['distance_in_miles']}}
+      </td>
+    </tr>
+    {% endif %}
+    {% if page.exercise_data['pace_per_mile'] %}
+    <tr>
+      <td>
+        Pace
+      </td>
+      <td>
+        {{page.exercise_data['pace_per_mile']}}
+      </td>
+    </tr>
+    {% endif %}
+    {% if page.exercise_data['total_elevation_gain_in_feet'] != '0ft' %}
+    <tr>
+      <td>
+        Total Elevation Gain
+      </td>
+      <td>
+        {{page.exercise_data['total_elevation_gain_in_feet']}}
+      </td>
+    </tr>
+    {% endif %}
+  </table>
+  {%- if page.strava_activity_url -%}
+  <p>View more <a href="{{page.strava_activity_url}}" target="_blank">on Strava</a></p>
+  {%- endif -%}
+</div>
