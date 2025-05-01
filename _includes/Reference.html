@@ -22,7 +22,7 @@
       {%- if page.date -%}
       <li class="filed date">
         <a href="/search/?q=%27{{ page.date | date: '%Y-%m-%d' }}">
-            <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y, %B %d' }}</time>
+            <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y, %B %d, %A' }}</time>
         </a>
       </li>
       {%- endif -%}
