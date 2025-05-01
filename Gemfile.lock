@@ -46,8 +46,12 @@ GEM
     faraday-net_http (3.4.0)
       net-http (>= 0.5.0)
     ffi (1.17.2-arm64-darwin)
+    ffi (1.17.2-x86_64-linux-gnu)
     forwardable-extended (2.6.0)
     google-protobuf (4.30.2-arm64-darwin)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.30.2-x86_64-linux)
       bigdecimal
       rake (>= 13)
     hashie (5.0.0)
@@ -112,6 +116,8 @@ GEM
       uri
     nokogiri (1.18.8-arm64-darwin)
       racc (~> 1.4)
+    nokogiri (1.18.8-x86_64-linux-gnu)
+      racc (~> 1.4)
     parallel (1.27.0)
     parser (3.3.8.0)
       ast (~> 2.4.1)
@@ -149,6 +155,8 @@ GEM
     safe_yaml (1.0.5)
     sass-embedded (1.87.0-arm64-darwin)
       google-protobuf (~> 4.30)
+    sass-embedded (1.87.0-x86_64-linux-gnu)
+      google-protobuf (~> 4.30)
     securerandom (0.4.1)
     strava-ruby-client (2.2.0)
       activesupport
@@ -160,11 +168,12 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.6.0)
-    uri (1.0.2)
+    uri (1.0.3)
     webrick (1.9.1)
 
 PLATFORMS
   arm64-darwin-24
+  x86_64-linux
 
 DEPENDENCIES
   jekyll
