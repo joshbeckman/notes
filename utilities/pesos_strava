@@ -188,6 +188,7 @@ module PESOS
     def exercise_data(activity)
       {
         emoji: activity.sport_type_emoji,
+        external_id: activity.external_id,
         average_heartrate: "#{activity.average_heartrate}bpm",
         max_heartrate: "#{activity.max_heartrate}bpm",
         average_watts: "#{activity.average_watts}W",
