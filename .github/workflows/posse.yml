@@ -173,6 +173,25 @@ jobs:
       - name: Push changes
         if: steps.any_changes_pesos_hn.outputs.changed != 0
         run: git push
+      - name: Import Strava
+        id: import_strava
+        run: bundle exec utilities/pesos_strava
+        env:
+          MAPBOX_TOKEN: ${{ secrets.MAPBOX_TOKEN }}
+      - name: Determine if changes were made
+        id: any_changes_pesos_strava
+        run: echo "changed=$(git status --porcelain exercise assets | wc -l)" >> $GITHUB_OUTPUT
+      - name: Commit changes
+        if: steps.any_changes_pesos_strava.outputs.changed != 0
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "josh@joshbeckman.org"
+          git add exercise
+          git add assets
+          git commit -m "new(usr): PESOS Strava"
+      - name: Push changes
+        if: steps.any_changes_pesos_strava.outputs.changed != 0
+        run: git push
       - name: Optimize images
         id: optimize_images
         run: bundle exec utilities/optimize_images

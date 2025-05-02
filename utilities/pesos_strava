@@ -263,5 +263,4 @@ module PESOS
 end
 
 strava = PESOS::Strava.new
-# strava.import_exercise_stats
 strava.import_recent_activities

@@ -96,6 +96,7 @@ feed:
     - blog
     - notes
     - replies
+    - exercise
 
 # Disqus Comments
 # disqus:
