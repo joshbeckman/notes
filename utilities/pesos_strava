@@ -14,7 +14,6 @@ require_relative 'models/asset'
 
 module PESOS
   class Strava
-
     class Error < StandardError; end
 
     attr_reader :client, :site
@@ -27,16 +26,12 @@ module PESOS
       )
     end
 
-    def map_recent_activities(&block)
-      @client.athlete_activities.map do |activity|
-        yield activity
-      end
+    def map_recent_activities(&)
+      @client.athlete_activities.map(&)
     end
 
-    def map_all_activities(&block)
-      @client.athlete_activities(per_page: 30) do |activity|
-        yield activity
-      end
+    def map_all_activities(&)
+      @client.athlete_activities(per_page: 30, &)
     end
 
     def athlete_stats
@@ -49,12 +44,12 @@ module PESOS
 
     def mapbox_image_url(activity)
       map = activity.map
-      return unless map&.summary_polyline && activity&.start_latlng.any?
+      return unless map&.summary_polyline && activity&.start_latlng&.any?
 
       decoded_summary_polyline = Polylines::Decoder.decode_polyline(map.summary_polyline)
       start_latlng = decoded_summary_polyline[0]
       end_latlng = decoded_summary_polyline[-1]
-      mapbox_image_url = "https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/path-5+787af2-1.0(#{CGI.escape(map.summary_polyline)}),pin-s-s+e5b22e(#{start_latlng[1]},#{start_latlng[0]}),pin-s-f+89ae00(#{end_latlng[1]},#{end_latlng[0]})/auto/800x800?access_token=#{mapbox_token}"
+      "https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/path-5+787af2-1.0(#{CGI.escape(map.summary_polyline)}),pin-s-s+e5b22e(#{start_latlng[1]},#{start_latlng[0]}),pin-s-f+89ae00(#{end_latlng[1]},#{end_latlng[0]})/auto/800x800?access_token=#{mapbox_token}"
     end
 
     def reverse_geocode(lat, lng)
@@ -85,30 +80,28 @@ module PESOS
           count: stats.ytd_run_totals.count,
           distance_in_miles: stats.ytd_run_totals.distance_in_miles_s,
           pace_per_mile: stats.ytd_run_totals.pace_per_mile_s,
-          elapsed_time_in_hours: stats.ytd_run_totals.elapsed_time_in_hours_s,
+          elapsed_time_in_hours: stats.ytd_run_totals.elapsed_time_in_hours_s
         },
         all_run_totals: {
           count: stats.all_run_totals.count,
           distance_in_miles: stats.all_run_totals.distance_in_miles_s,
           pace_per_mile: stats.all_run_totals.pace_per_mile_s,
-          elapsed_time_in_hours: stats.all_run_totals.elapsed_time_in_hours_s,
+          elapsed_time_in_hours: stats.all_run_totals.elapsed_time_in_hours_s
         },
         ytd_ride_totals: {
           count: stats.ytd_ride_totals.count,
           distance_in_miles: stats.ytd_ride_totals.distance_in_miles_s,
           pace_per_mile: stats.ytd_ride_totals.pace_per_mile_s,
-          elapsed_time_in_hours: stats.ytd_ride_totals.elapsed_time_in_hours_s,
+          elapsed_time_in_hours: stats.ytd_ride_totals.elapsed_time_in_hours_s
         },
         all_ride_totals: {
           count: stats.all_ride_totals.count,
           distance_in_miles: stats.all_ride_totals.distance_in_miles_s,
           pace_per_mile: stats.all_ride_totals.pace_per_mile_s,
-          elapsed_time_in_hours: stats.all_ride_totals.elapsed_time_in_hours_s,
-        },
+          elapsed_time_in_hours: stats.all_ride_totals.elapsed_time_in_hours_s
+        }
       }
-      File.open(File.expand_path('../_data/strava_stats.yml', __dir__), 'w') do |file|
-        file.write(data.to_yaml)
-      end
+      File.write(File.expand_path('../_data/strava_stats.yml', __dir__), data.to_yaml)
     end
 
     def import_recent_activities
@@ -132,14 +125,14 @@ module PESOS
     end
 
     def post_old_enough?(activity)
-      case activity.sport_type
-      when 'Hike'
-        # give me a day to write up a hike
-        activity.start_date < (Time.now - 24 * 60 * 60)
-      else
-        # give me 6 hours to write up a run or ride or whatever
-        activity.start_date < (Time.now - 6 * 60 * 60)
-      end
+      activity.start_date < case activity.sport_type
+                            when 'Hike'
+                              # give me a day to write up a hike
+                              (Time.now - (24 * 60 * 60))
+                            else
+                              # give me 6 hours to write up a run or ride or whatever
+                              (Time.now - (6 * 60 * 60))
+                            end
     end
 
     def import_activity(partial_activity)
@@ -164,20 +157,20 @@ module PESOS
         tags: [sport_type_tag(activity.sport_type)],
         slug: activity.id,
         image: image,
-        exercise_data: exercise_data(activity),
+        exercise_data: exercise_data(activity)
       )
       post.create_file
     end
 
     def post_body(activity)
       location = if activity.segment_efforts.any?
-        effort = activity.segment_efforts.first
-        "#{effort.segment.city}, #{effort.segment.state}, #{effort.segment.country} (#{effort.name})"
-      elsif activity.start_latlng.any?
-        reverse_geocode(activity.start_latlng[0], activity.start_latlng[1])
-      else
-        'Unknown location (probably inside)'
-      end
+                   effort = activity.segment_efforts.first
+                   "#{effort.segment.city}, #{effort.segment.state}, #{effort.segment.country} (#{effort.name})"
+                 elsif activity.start_latlng.any?
+                   reverse_geocode(activity.start_latlng[0], activity.start_latlng[1])
+                 else
+                   'Unknown location (probably inside)'
+                 end
       <<~BODY
         #{activity.description}
 
@@ -202,7 +195,7 @@ module PESOS
         start_latlng: activity.start_latlng,
         similar_activities_count: activity.similar_activities&.effort_count,
         similar_activities_trend: activity.similar_activities&.trend&.direction,
-        mapbox_image_url: mapbox_image_url(activity),
+        mapbox_image_url: mapbox_image_url(activity)
       }
     end
 
@@ -238,7 +231,7 @@ module PESOS
     end
 
     def token
-      uri = URI.parse("https://joshbeckman-stravaoauthclient.web.val.run/token")
+      uri = URI.parse('https://joshbeckman-stravaoauthclient.web.val.run/token')
       request = Net::HTTP::Get.new(uri)
       request.content_type = 'application/json'
       req_options = {
@@ -258,7 +251,8 @@ module PESOS
     end
 
     def mapbox_token
-      @mapbox_token ||= ENV.fetch('MAPBOX_TOKEN', File.read(File.expand_path('.mapbox_token')).strip)
+      @mapbox_token ||= ENV['MAPBOX_TOKEN'] || (
+        File.exist?(File.expand_path('.mapbox_token')) ? File.read(File.expand_path('.mapbox_token')).strip : nil)
     end
   end
 end
