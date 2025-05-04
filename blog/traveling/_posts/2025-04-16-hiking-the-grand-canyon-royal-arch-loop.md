@@ -13,10 +13,6 @@ tags:
 - united-states
 ---
 
-
-> [!NOTE]
-> I took a lot of video on this trip. I'm going to edit it into something fun. I'll link that here when it's ready.
-
 As we left [our last backpacking trailhead](https://www.joshbeckman.org/blog/traveling/cirque-of-the-towers-2024), we all agreed we should hike the Grand Canyon next. It's beautiful, and not even _that_ high of elevation (not like the mountain passes we had just finished). We would just have to plan for water, but we could do that.
 
 So we chose the Royal Arch Loop: [US National Park Service guide](https://www.nps.gov/grca/planyourvisit/upload/Royal_Arch_Loop.pdf), [AllTrails overview](https://www.alltrails.com/trail/us/arizona/royal-arch-route--2). None of us had done the hike before, but two had hiked the Escalante trail nearby and one had done a river rafting trip down the Colorado River the year before. I had never been inside Grand Canyon National Park, so I was excited.
@@ -40,12 +36,12 @@ Everyone is in pretty good spirits on the first steps of a hike. There's lots of
 ![Flowers](/assets/images/94a2ae79-dee3-4c23-b9be-231b98abe886.jpeg)
 ![Leaves](/assets/images/38379426-d406-452e-98c4-7113cdc19c59.jpeg)
 
-At the rim, the temperature was mid-70 degrees Fahrenheit. Every thousand feet of elevation drop, you can expect the temperature to rise by around 5 degrees. The river is about 4500 feet below the rim, and we saw 98 degrees in the sun at the river.
+At the rim, the temperature was mid-70 degrees Fahrenheit. Every thousand feet of elevation drop, you can expect the temperature to rise by around 5 degrees. The river is about 4500 feet below the rim, and it was 98 degrees in the sun at the river.
 
 ![Yucca](/assets/images/b55a3819-d75a-4f53-bc92-3a60fe958941.jpeg)
 ![Josh](/assets/images/dc763f36-1fa9-4c31-88fb-4761132276a8.jpeg)
 
-The full Royal Arch Loop is around 34 miles of hiking. We all carried water, but I was worried by the heat at the rim. So, at the last moment, I grabbed an extra gallon jug of water to carry by hand. By [late morning of that first day](https://www.joshbeckman.org/exercise/14180053427), the thin plastic had brushed a cactus and sprung a leak. Luckily, I patched it by melting a bit of the plastic cap onto the hole: the first patch of many it would receive as I cradled that jug through every step of the 34 miles.
+The full Royal Arch Loop is around 34 miles of hiking. We all carried water, but I was worried by the heat at the rim. So, at the last moment, I grabbed an extra gallon jug of water to carry by hand. By [late morning of that first day](https://www.joshbeckman.org/exercise/14180053427), the thin plastic had brushed a cactus and sprung a leak. Luckily, I was able to patch it by melting a bit of the plastic cap onto the hole: the first patch of many it would receive as I cradled that jug through every step of the 34 miles.
 
 ![Josh hiking](/assets/images/37a06a69-9bab-4b52-8b89-6228790d6ec2.jpeg)
 ![Bush](/assets/images/0a34ebe1-af1c-421f-9c3a-97c0d58bb2a0.jpeg)
@@ -167,7 +163,7 @@ Day 4:
 
 ## Day 5
 
-The final morning, we left by 6am. But still [the climb](https://www.joshbeckman.org/exercise/14180140914) was immense: we needed to gain around 4000ft of elevation and the son got hotter every hour.
+The final morning, we left by 6am. But still [the climb](https://www.joshbeckman.org/exercise/14180140914) was immense: we needed to gain around 4000ft of elevation and the sun got hotter every hour.
 
 ![rock face](/assets/images/521e4bcc-1824-4dec-8d42-e180d41ceb39.jpeg)
 ![hiking out](/assets/images/f3668898-a5b2-4736-9b97-2b4ae9caf2e3.jpeg)
@@ -196,13 +192,16 @@ The Life Straw was incredibly useful. At the river, we collected water in a four
 
 I really only ate at night/morning and when we had water. I had a ton of food left over in my pack, based on previous hikes in temperate climates. I ate 3 of the 6 dinners I had packed.
 
-This was my first backpacking trip wearing [the Garmin Instinct 2X Solar](https://www.joshbeckman.org/blog/buttons-are-for-doing-exchanging-the-apple-watch-ultra). I had hoped it could last without a battery pack, solely on solar, but I did end up charging it on the third night. One recharge was sufficient for the rest of the trip. I was using it to track every hike - around 11h/day - and I think the weak GPS signal really taxed the battery. But it was reliable.
+This was my first backpacking trip wearing [the Garmin Instinct 2X Solar](https://www.joshbeckman.org/blog/buttons-are-for-doing-exchanging-the-apple-watch-ultra) watch. I had hoped it could last without a battery pack, solely on solar, but I did end up charging it on the third night. One recharge was sufficient for the rest of the trip. I was using it to track every hike - around 11h/day - and I think the weak GPS signal really taxed the battery. But it was reliable.
 
 ## Flagstaff
 
 After the hike, we drove straight to Flagstaff and recuperated there for a day. The first night we devoured huge fantastic pizzas from Oregano's. The day after, we ate a great lunch at Diablo Burger and a warm dinner with cold beers at Mother Road Brewery. I recommend them all heartily.
 
 ## Further Reading
+
+> [!NOTE]
+> I took a lot of video on this trip. I'm going to edit it into something fun. I'll link that here when it's ready.
 
 My friend Joe wrote [his own review of the trail on AllTrails](https://www.alltrails.com/members/joe-powers-16/feedItem/45f3e000-15c0-11f0-8080-80015d769868#comments).
 
