@@ -37,4 +37,4 @@ He played his earlier album, which was absolutely the best choice. The crowd was
 
 <iframe allow="autoplay *; encrypted-media *;" frameborder="0" height="150" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/6s-to-9s-feat-rationale/1438818174?i=1438818511"></iframe>
 
-[^1]: Previously, this title was held by The Rand Stage at _Electric Forest_.
+[^1]: Previously, this title was held by The Ranch Stage at _Electric Forest_.
