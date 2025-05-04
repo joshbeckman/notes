@@ -24,7 +24,9 @@ jobs:
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 0 # Increment this number if you need to re-download cached gems
       - name: Setup ImageMagick
-        run: sudo apt-get install imagemagick
+        run: |
+          sudo apt-get update
+          sudo apt-get install imagemagick
       - name: Optimize images
         id: optimize_images
         run: bundle exec utilities/optimize_images
