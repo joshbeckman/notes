@@ -4,9 +4,9 @@ date: '2025-04-16 20:11:39 -0500'
 title: Hiking the Grand Canyon Royal Arch Loop
 toc: true
 image: "/assets/images/5a158adc-e292-4d7b-8d53-c7c079c82b2f.jpeg"
-description:
-mastodon_social_status_url: 'false'
-bluesky_status_url: 'false'
+description: Beautiful and dangerous
+mastodon_social_status_url: false
+bluesky_status_url: false
 tags:
 - hiking
 - travel
@@ -153,7 +153,7 @@ As my feet hit the sand again, I dropped my pack and jumped fully into the rushi
 
 We relaxed on the beach that afternoon, basking in the shade as the rafters floated by. I think I ate 3000 calories and drank a couple gallons of water. We played games with the same deck of cards we've carried on the previous hikes.
 
-Before dark, we left the river and [climbed up to our tents](https://www.joshbeckman.org/exercise/14180128415) for one final night. This is what we _should_ have been doing every day: hiking from dawn twilight to late morning, then resting in the sparse shade until late afternoon, and then hiking again until dark. We had learned the hard way.
+Before dark, we left the river and [climbed up to our tents](https://www.joshbeckman.org/exercise/14180128415) for one final night. This is what we _should_ have been doing every day: hiking from dawn twilight to late morning, then resting in the sparse shade for a couple hours until afternoon, and then hiking again until dark. We had learned the hard way.
 
 ![campsite](/assets/images/f20cdf85-b971-4a43-8ef1-343a1b3e84e7.jpeg)
 ![sunset](/assets/images/d3ee45ff-4ffd-4834-8609-6563872e9f95.jpeg)
@@ -200,7 +200,7 @@ This was my first backpacking trip wearing [the Garmin Instinct 2X Solar](https:
 
 ## Flagstaff
 
-After the hike, we drove straight to Flagstaff and recuperated there for a day. The first night we devoured huge fantastic pizzas from Oregano's. The day after, we ate a great lunch at Diablo Burger and a warm dinner with cold beers at Mother Road Brewery.
+After the hike, we drove straight to Flagstaff and recuperated there for a day. The first night we devoured huge fantastic pizzas from Oregano's. The day after, we ate a great lunch at Diablo Burger and a warm dinner with cold beers at Mother Road Brewery. I recommend them all heartily.
 
 ## Further Reading
 
