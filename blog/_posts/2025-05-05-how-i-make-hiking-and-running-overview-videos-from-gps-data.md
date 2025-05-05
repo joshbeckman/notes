@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/94453524-70d1-41f6-a7a2-eba2221bcc3c.png"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114456436966523571
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3logvtolgsz2p
 tags:
 - tools
 - hiking
