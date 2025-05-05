@@ -5,7 +5,7 @@ title: How I Make Hiking and Running Overview Videos from GPS Data
 toc: true
 image: "/assets/images/94453524-70d1-41f6-a7a2-eba2221bcc3c.png"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114456436966523571
 bluesky_status_url: false
 tags:
 - tools
