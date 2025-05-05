@@ -36,6 +36,21 @@
     <button>Close</button>
   </form>
 </dialog>
+<div class="footer">
+  {% assign build_time = site.time | date_to_xmlschema %}
+  <table>
+      <tr>
+          <td style="text-align: left;">
+              <small>Updated: <time datetime="{{ build_time }}" class="time-relative">{{ build_time }}</time></small>
+          </td>
+          <td style="text-align: right;">
+            <small><code>{{site.version}}</code></small>
+          </td>
+          </td>
+      </tr>
+  </table>
+  </p>
+</div>
 <span class="print-only">{{site.url | domainify}}{{ page.url }}</span>
 <script async src="/assets/js/lazyload.min.js"></script>
 <script async src="/assets/js/hotkeys.min.js"></script>

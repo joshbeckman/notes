@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 {%- include head.html -%}
-{% assign month = site.time | date: "%m" | plus: 0 %}
-{% assign build_time = site.time | date_to_xmlschema %}
 <body>
   <div class="row home">
     <div class="column navigation">
@@ -14,19 +12,8 @@
     <div class="column">
       <article class="content">
         <section class="home">
+            {{ content }}
             <div id="toc-and-metadata">
-                {{ content }}
-                <h2>Recent Posts</h2>
-              {%- for post in site.posts limit:3 -%}
-              {%- include PostListItem.html post=post -%}
-              {%- endfor -%}
-              <p>or dip into posts <a href="/on-this-day">on this day in prior years</a>.</p>
-              <h2>Popular Posts</h2>
-              {%- for post in site.tags['popular'] limit:3 -%}
-              {%- include PostListItem.html post=post -%}
-              {%- endfor -%}
-              <p>or dip into something <a href="/random">at random</a>.</p>
-              <h2>MORE, OTHER, & ADDITIONAL, AND ETCETERA, AND MORE.</h2>
                 <ul id="toc" class="section-nav">
                     <li class="toc-entry toc-h2"><a href="about">About Josh</a>
                         <ul>
@@ -36,8 +23,14 @@
                     </li>
                     <li class="toc-entry toc-h2"><a href="subscribe">Subscribe or Follow</a></li>
                     <li class="toc-entry toc-h2"><a href="blog">Blog</a>
-                    </li>
-                    <li class="toc-entry toc-h2"><a href="on-this-day">On This Day</a>
+                        <ul>
+                            <li class="toc-entry toc-h2"><a href="blog/attending">Concerts</a></li>
+                            <li class="toc-entry toc-h2"><a href="blog/reading">Books</a></li>
+                            <li class="toc-entry toc-h2"><a href="blog/watching">Movies</a></li>
+                            <li class="toc-entry toc-h2"><a href="blog/traveling">Travel</a></li>
+                            <li class="toc-entry toc-h2"><a href="blog/working">Desks</a></li>
+                            <li class="toc-entry toc-h2"><a href="blog/listening">Music</a></li>
+                        </ul>
                     </li>
                     <li class="toc-entry toc-h2"><a href="notes">Notes</a>
                     </li>
@@ -45,17 +38,28 @@
                     <li class="toc-entry toc-h2"><a href="exercise">Exercise Log</a></li>
                     <li class="toc-entry toc-h2"><a href="talks">Talks</a></li>
                     <li class="toc-entry toc-h2"><a href="podcasts">Podcasts</a></li>
-                    <li class="toc-entry toc-h2"><a href="guestbook">Guestbook</a></li>
-                    <li class="toc-entry toc-h2"><a href="insight">Insight</a></li>
-                    <li class="toc-entry toc-h2"><a href="search">Search</a></li>
-                    <li class="toc-entry toc-h2"><a href="heatcal">Heatmap Calendar</a></li>
-                    <li class="toc-entry toc-h2"><a href="network">Network Graph</a></li>
-                    <li class="toc-entry toc-h2"><a href="random">Random Post</a></li>
-                    <li class="toc-entry toc-h2">{{ site.data.seasons[month].name }} {{ site.data.seasons[month].emoji }}</li>
-                    <li class="toc-entry toc-h2">{{site.version}}</li>
-                    <li class="toc-entry toc-h2">Updated: <time datetime="{{ build_time }}" class="time-relative">{{ build_time }}</time></li>
+                    <li class="toc-entry toc-h2"><a href="on-this-day">On This Day</a>
+                    </li>
+                    <li class="toc-entry toc-h2">Tools
+                        <ul>
+                            <li class="toc-entry toc-h2"><a href="search">Search</a></li>
+                            <li class="toc-entry toc-h2"><a href="random">Random Post</a></li>
+                            <li class="toc-entry toc-h2"><a href="insight">Insight</a></li>
+                            <li class="toc-entry toc-h2"><a href="heatcal">Heatmap Calendar</a></li>
+                            <li class="toc-entry toc-h2"><a href="network">Network Graph</a></li>
+                            <li class="toc-entry toc-h2"><a href="guestbook">Guestbook</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
+                <h2>Recent Posts</h2>
+              {%- for post in site.posts limit:3 -%}
+              {%- include PostListItem.html post=post -%}
+              {%- endfor -%}
+              <h2>Popular Posts</h2>
+              {%- for post in site.tags['popular'] limit:3 -%}
+              {%- include PostListItem.html post=post -%}
+              {%- endfor -%}
         </section>
         {%- include Footer.html -%}
       </article>
