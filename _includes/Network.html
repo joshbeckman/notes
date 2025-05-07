@@ -97,6 +97,9 @@ nodeData = nodeData.filter(function (node) {
           },
         },
       },
+    physics: {
+      enabled: false,
+    }
   };
   var network = new vis.Network(networkContainer, data, options);
   network.on("doubleClick", function (params) {
@@ -109,15 +112,15 @@ window.addEventListener('load', function() {
   function buildVisData() {
     var script = document.createElement('script');
     script.src = '/assets/js/vendor/vis-network.min.js';
-    document.body.appendChild(script);
-    getVisData().then(function(data) {
-      data = JSON.parse(data);
-      script.onload = function() {
+    script.onload = function() {
+      getVisData().then(function(data) {
+        data = JSON.parse(data);
         prepareNetwork(data.nodes, data.edges);
-      };
-    }).catch(function(error) {
-      console.error('Error fetching VisData.json:', error);
-    });
+      }).catch(function(error) {
+        console.error('Error fetching VisData.json:', error);
+      });
+    };
+    document.body.appendChild(script);
   }
   var details = document.querySelector('.post-network details');
   if (details) {
