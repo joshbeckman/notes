@@ -8,10 +8,10 @@
           {% endif %}
       </a>
     </td>
-    <td>
+    <td data-label="Date:">
         {{ include.post.date | date: '%B %d %Y' }}
     </td>
-    <td>
+    <td data-label="{% if include.post.exercise_data['distance_in_miles'] %}Distance: {% else %}{% if include.post.exercise_data['max_heartrate'] %}Heart Rate: {% else %}Rating: {% endif %}{% endif %}">
       {%- include PostRating.html post=post -%}
     </td>
 </tr>

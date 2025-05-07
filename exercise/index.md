@@ -13,12 +13,12 @@ My exercise journal, pulled from [Strava](https://www.strava.com/athletes/750032
 {% assign postsByMonth = 
 site.categories['exercise'] | group_by_exp:"post", "post.date | date: '%Y %B'" %}
 {% for day in postsByMonth %}
-  <table>
-    <colgroup>
-      <col />
-      <col style="width: 20ch" />
-      <col style="width: 12ch" />
-    </colgroup>
+  <table class="responsive-table">
+      <colgroup>
+          <col/>
+          <col style="width: 20ch;"/>
+          <col style="width: 12ch;"/>
+      </colgroup>
       <thead>
         <tr>
             <td colspan="3">
@@ -33,10 +33,10 @@ site.categories['exercise'] | group_by_exp:"post", "post.date | date: '%Y %B'" %
             {{ post.title }}
           </a>
         </td>
-        <td>
+        <td data-label="Date:">
             {{ post.date | date: '%d %B %Y' }}
         </td>
-        <td>
+        <td data-label="{% if post.exercise_data['distance_in_miles'] %}Distance: {% else %}Heart Rate: {% endif %}">
             {% if post.exercise_data['distance_in_miles'] %}
                 {{post.exercise_data['distance_in_miles']}}
             {% else %}
