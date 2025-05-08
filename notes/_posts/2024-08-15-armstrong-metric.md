@@ -11,7 +11,7 @@ tags:
 
 _(noun) /ˈɑːmstrɒŋ ˈmɛtrɪk/_
 
-A metric which is too noisy to be monitored (does not indicate system health), but which nonetheless is helpful is understanding [system](https://www.joshbeckman.org/notes/principles-of-system) behavior.
+A metric which is too noisy to be monitored (does not indicate system health), but which nonetheless is helpful in understanding [system](https://www.joshbeckman.org/notes/principles-of-system) behavior.
 
 Named for [Jeff Armstrong](https://github.com/MahlerFive).
 
