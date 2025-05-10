@@ -5,7 +5,7 @@ title: VIAL at Beat Kitchen
 toc: true
 image: "/assets/images/6986b693-79dd-4999-9904-b3ce7e8018d4.jpeg"
 description:
-mastodon_social_status_url: 'false'
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114486155473462677
 bluesky_status_url: 'false'
 tags:
 - music
