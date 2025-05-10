@@ -1,6 +1,6 @@
 ---
 layout: Post
-date: '2025-05-10 21:21:19 +0000'
+date: '2025-05-09 21:21:19 +0000'
 title: VIAL at Beat Kitchen
 toc: true
 image: "/assets/images/6986b693-79dd-4999-9904-b3ce7e8018d4.jpeg"
@@ -12,7 +12,6 @@ tags:
 - beat-kitchen-venue
 - chicago
 ---
-
 
 I didn't get to see [VIAL](https://www.vialband.com/) when they came to Chicago last year, so I was excited  when they were back on tour this month. On top of that, they were going to be at Beat Kitchen, one of the local venues I hadn't gotten to see. (It's a nice venue - feels like an alternate universe version of Schubas Tavern.)
 
