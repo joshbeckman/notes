@@ -23,6 +23,6 @@ What a fun, charismatic show. They had the crowd frothing and running and chanti
 
 There were two Chicago bands that opened for them: Bloom and Sunday Cruise. I really loved Sunday Cruise - they had a lot of great hooks and their lead guitarist was talented and bouncing all over the stage.
 
-{{ "https://music.apple.com/us/album/burnout/1714277905" | itunesify }}
+{{ "https://music.apple.com/us/album/pretty-girl/1707625493?i=1707625558" | itunesify }}
 
 ![Sunday Cruise](/assets/images/819e4fb8-65b3-42b1-98ba-27609585833f.jpeg)
