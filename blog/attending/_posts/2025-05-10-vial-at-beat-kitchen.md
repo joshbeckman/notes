@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/6986b693-79dd-4999-9904-b3ce7e8018d4.jpeg"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114486155473462677
-bluesky_status_url: 'false'
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lou463z7kf2o
 tags:
 - music
 - beat-kitchen-venue
