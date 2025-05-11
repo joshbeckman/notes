@@ -37,6 +37,7 @@ module RawContent
 
     def mastodon_backlinks?(a, b)
       return false unless a.data['mastodon_social_status_url']
+      return false if a.data['mastodon_social_status_url'] == 'false'
       return true if b.content.include?(a.data['mastodon_social_status_url'])
       return false unless b.data['in_reply_to']
 
@@ -46,6 +47,7 @@ module RawContent
 
     def bluesky_backlinks?(a, b)
       return false unless a.data['bluesky_status_url']
+      return false if a.data['bluesky_status_url'] == 'false'
       return true if b.content.include?(a.data['bluesky_status_url'])
       return false unless b.data['in_reply_to']
 
