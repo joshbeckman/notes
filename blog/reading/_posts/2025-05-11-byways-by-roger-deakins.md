@@ -6,8 +6,8 @@ toc: true
 image: "/assets/images/ba62da82-6f64-4cb8-997a-46f23fa181ff.jpeg"
 description:
 rating: 3
-mastodon_social_status_url: 'false'
-bluesky_status_url: 'false'
+mastodon_social_status_url: false
+bluesky_status_url: false
 tags:
 - photography
 - movies
