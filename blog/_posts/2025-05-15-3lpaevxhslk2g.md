@@ -5,7 +5,7 @@ title: 'Vibe-Collapse: When Your Energy Goes Awry'
 toc: true
 image:
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114515896387755995
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lpaevxhslk2g
 tags:
 - workspaces
