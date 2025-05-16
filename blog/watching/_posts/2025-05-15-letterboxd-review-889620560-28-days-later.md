@@ -8,7 +8,7 @@ description:
 rating: 4
 tmdb_id: '170'
 letterboxd_id: 28-days-later
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114518719376588359
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/28-days-later/
 tags:
