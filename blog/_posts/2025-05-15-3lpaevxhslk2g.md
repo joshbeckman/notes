@@ -1,7 +1,7 @@
 ---
 layout: Post
 date: '2025-05-15 20:43:29 +0000'
-title: 'Vibe-Collapse: When Your Energy Goes Awry'
+title: 'Vibe-Collapse'
 toc: true
 image:
 description:
