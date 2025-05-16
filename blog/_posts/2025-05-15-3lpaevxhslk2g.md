@@ -8,11 +8,9 @@ description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114515896387755995
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lpaevxhslk2g
 tags:
-- workspaces
-- communication
-- motivation
-- human-psychology
-- personal-blog
+- llm
+- language
+- software-engineering
 - management
 - bluesky
 ---
