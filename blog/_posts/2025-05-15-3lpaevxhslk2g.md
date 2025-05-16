@@ -9,6 +9,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/114515896387755
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lpaevxhslk2g
 tags:
 - llm
+- ai
 - language
 - software-engineering
 - management
