@@ -13,9 +13,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lpckwhj3u32n
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/28-days-later/
 tags:
 - movies
-- photography
-- entertainment
-- popular
+- videography
 - culture
 - letterboxd
 ---
