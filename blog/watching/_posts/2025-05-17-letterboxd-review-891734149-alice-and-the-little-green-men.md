@@ -8,7 +8,7 @@ description:
 rating: 3
 tmdb_id: '1361962'
 letterboxd_id: alice-and-the-little-green-men
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114531455127178280
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/alice-and-the-little-green-men/
 tags:

@@ -5,7 +5,7 @@ title: Chicago Horror Film Festival 2025
 toc: true
 image:
 description:
-mastodon_social_status_url: 'false'
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114531455144662595
 bluesky_status_url: 'false'
 tags:
 - chicago

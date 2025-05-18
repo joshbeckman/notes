@@ -8,7 +8,7 @@ description:
 rating: 4
 tmdb_id: '1174240'
 letterboxd_id: vampire-zombiesfrom-space
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114531455109398612
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/vampire-zombiesfrom-space/
 tags:
