@@ -11,6 +11,7 @@ permalink: /assets/js/SearchData.json
        "tags": null,
        "date": null,
        "book": null,
+       "image": null,
        "author_id": null,
        "type": "tag",
        "url": "/search?q=%27{{ tag | first }}&keys=tags"
@@ -25,6 +26,7 @@ permalink: /assets/js/SearchData.json
        "tags": {{ page.tags | join: " " | jsonify }},
        "date": "{{ page.date | date_to_xmlschema }}",
        "book": {{ post.book | jsonify }},
+       "image": {{ page.image | default: null | jsonify }},
        "author_id": {{ post.author_id | jsonify }},
        "type": "page",
        "url": "{{ page.url }}"
@@ -39,6 +41,7 @@ permalink: /assets/js/SearchData.json
        "tags": {{ post.tags | join: " " | jsonify }},
        "date": "{{ post.date | date_to_xmlschema }}",
        "book": {{ post.book | jsonify }},
+       "image": {{ post.image | default: null | jsonify }},
        "author_id": {{ post.author_id | jsonify }},
        "type": "post",
        "url": "{{ post.url }}"
