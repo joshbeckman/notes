@@ -36,6 +36,15 @@ module ReadwiseExtras
       highlight.should_import?(book)
     end
 
+    def should_import_document?(doc)
+      doc_post = site.posts.docs.find do |post|
+        post.data['document_id'] == doc.id
+      end
+      return false if doc_post && doc_post.data['forked']
+
+      doc.notes&.length&.positive? && !doc.notes.match?(/^ignore$/i)
+    end
+
     def import_book(book)
       return unless should_import_book?(book)
 
@@ -53,10 +62,92 @@ module ReadwiseExtras
 
       File.write("notes/_posts/#{highlight.formatted_date}-#{highlight.highlight_id}.md", highlight.post_text(book))
     end
+
+    def import_document(doc)
+      return unless should_import_document?(doc)
+
+      File.write("notes/_posts/#{doc.formatted_date}-#{doc.id}.md", doc.post_text)
+    end
   end
 end
 
 module ReadwiseExtras
+  module Document
+    def post_text
+      [
+        '---',
+        "title: \"#{combined_title}\"",
+        "tags: #{formatted_tags}",
+        "canonical: #{source_url}",
+        "author: #{author_stripped}",
+        "author_id: #{author_id}",
+        "book: #{id}",
+        "book_title: \"#{stripped_title}\"",
+        "readwise_url: #{url}",
+        "image: #{image_url}",
+        "favicon_url: #{favicon_url}",
+        "source_emoji: #{source_emoji}",
+        'show_book_meta: true',
+        'hide_title: true',
+        (navigable_url? ? "source_url: \"#{source_url}\"" : nil),
+        '---',
+        '',
+        notes
+      ].compact.join("\n")
+    end
+
+    def combined_title
+      "#{stripped_title} via #{author_stripped}"
+    end
+
+    def author_id
+      @author_id ||= Digest::MD5.hexdigest(author_stripped)
+    end
+
+    def author_stripped
+      @author_stripped ||= author.to_s.split("\n").reject(&:empty?).join(' ')
+    end
+
+    def stripped_title
+      @stripped_title ||= title.gsub('"', "'")
+    end
+
+    def formatted_tags
+      base_tags = tags.map { |t| t['name'] }
+      base_tags << 'inbox' if base_tags.empty?
+      base_tags.flatten.join(' ')
+    end
+
+    def formatted_date
+      Time.parse(created_at).to_date.to_s
+    end
+
+    def source_emoji
+      if source_url&.match?(/^mailto:/)
+        '✉️'
+      elsif %w[books supplementals].include?(category)
+        '📕'
+      else
+        '🌐'
+      end
+    end
+
+    def navigable_url?
+      return true if source_url && !source_url.match?(/^mailto:/)
+
+      false
+    end
+
+    def favicon_url
+      return nil unless source_url&.match?(%r{^https{0,1}://})
+
+      hostname = URI.parse(source_url).hostname
+      return nil unless hostname
+
+      "https://s2.googleusercontent.com/s2/favicons?domain=#{hostname}"
+    end
+  end
+
   module Book
     def post_text
       [
@@ -262,6 +353,7 @@ module ReadwiseExtras
   end
 end
 Readwise::Book.include(ReadwiseExtras::Book)
+Readwise::Document.include(ReadwiseExtras::Document)
 Readwise::Highlight.include(ReadwiseExtras::Highlight)
 
 # Steps:
@@ -269,16 +361,17 @@ Readwise::Highlight.include(ReadwiseExtras::Highlight)
 class Importer
   def self.import
     client = Readwise::Client.new(token: ENV.fetch('READWISE_TOKEN', nil))
-    limit = ENV['READWISE_LIMIT']&.to_i
     jekyll = ReadwiseExtras::Jekyll.new
 
-    books = client.export(updated_after: Time.parse('2000-01-01').iso8601)
-    books = books.sample(limit) if limit
-
+    updated_after = Date.today.prev_year.to_time
+    books = client.export(updated_after: updated_after.iso8601)
     books.each do |book|
-      # turn this off for now because Readwise is not good about allowing you to edit the book notes
-      # jekyll.import_book(book)
       jekyll.import_book_highlights(book)
+    end
+
+    docs = client.get_documents(location: 'archive', updated_after: updated_after.iso8601)
+    docs.each do |doc|
+      jekyll.import_document(doc)
     end
   end
 
@@ -292,5 +385,5 @@ class Importer
   end
 end
 
-Importer.wipe_posts
+# Importer.wipe_posts
 Importer.import
