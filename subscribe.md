@@ -13,7 +13,7 @@ Subscribe to the [unified RSS/Atom feed](/feed.xml) for new posts ~daily. There 
 - [Replies & Threads RSS feed](/feed/replies.xml)
 - [Exercise Log RSS feed](/feed/exercise.xml)
 
-If you prefer federated social networks, blog posts are [syndicated to Mastodon](https://mastodon.social/@joshbeckman) and [syndicated to Bluesky](https://bsky.app/profile/joshbeckman.org). You can also reply/messaage me on both of those and I'll respond.
+If you prefer federated social networks, blog posts are [syndicated to Mastodon](https://mastodon.social/@joshbeckman) and [syndicated to Bluesky](https://bsky.app/profile/joshbeckman.org). You can also reply/messaage me on both of those and I'll respond. Or contact me through [one of my other active accounts](/about/#active-accounts).
 
 If you prefer email newsletters:
 
