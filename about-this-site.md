@@ -68,6 +68,9 @@ You can read about everything else I use to build things at [/uses](/uses).
 - Refactor insights logic to operate via LLM tools instead of plain RAG
 - [More ideas](https://github.com/joshbeckman/notes/issues?q=is%3Aopen+is%3Aissue+-label%3Apost)
 
+### 2025-05-18
+- Importing Reader top-level document notes as Notes posts
+
 ### 2025-03-15
 - Add a [Heatmap Calendar](/heatcal) of posts
 
