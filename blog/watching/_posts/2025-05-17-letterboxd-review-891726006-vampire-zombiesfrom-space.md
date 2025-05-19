@@ -12,11 +12,8 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/114531455109398
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lpi7vzrarf2v
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/vampire-zombiesfrom-space/
 tags:
-- fiction
-- popular
 - movies
 - chicago
-- entertainment
 - letterboxd
 ---
 
