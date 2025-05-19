@@ -9,7 +9,7 @@ rating: 3
 tmdb_id: '1292164'
 letterboxd_id: the-nature-of-death
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114532885485444046
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lpiuakjrqw2t
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/the-nature-of-death/
 tags:
 - chicago

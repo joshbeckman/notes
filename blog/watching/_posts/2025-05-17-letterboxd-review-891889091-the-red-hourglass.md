@@ -9,7 +9,7 @@ rating: 2
 tmdb_id: '1375382'
 letterboxd_id: the-red-hourglass
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114532885513575804
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lpiualc5cg2j
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/the-red-hourglass/
 tags:
 - movies
