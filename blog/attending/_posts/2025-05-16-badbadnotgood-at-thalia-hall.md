@@ -5,7 +5,7 @@ title: BADBADNOTGOOD at Thalia Hall
 toc: true
 image: "/assets/images/9891062c-96f5-4b05-8993-edb08e4ced8c.jpeg"
 description:
-mastodon_social_status_url: 'false'
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114532885457280567
 bluesky_status_url: 'false'
 tags:
 - thalia-hall-venue

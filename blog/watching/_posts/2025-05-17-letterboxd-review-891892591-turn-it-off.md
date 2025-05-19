@@ -8,7 +8,7 @@ description:
 rating: 4
 tmdb_id: '1457627'
 letterboxd_id: turn-it-off
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114532885541595693
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/turn-it-off/
 tags:
