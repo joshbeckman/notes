@@ -44,6 +44,9 @@ These are the short films we watched at this year's annual [Chicago Horror Film 
 
 Others we watched:
 - [Alice and the Little Green Men](https://www.joshbeckman.org/blog/watching/letterboxd-review-891734149-alice-and-the-little-green-men)
+- [The Nature of Death](https://www.joshbeckman.org/blog/watching/letterboxd-review-891887279-the-nature-of-death)
+- [Turn It Off](https://www.joshbeckman.org/blog/watching/letterboxd-review-891892591-turn-it-off)
+- [The Red Hourglass](https://www.joshbeckman.org/blog/watching/letterboxd-review-891889091-the-red-hourglass)
 - [Vampire Zombies...from Space!](https://www.joshbeckman.org/blog/watching/letterboxd-review-891726006-vampire-zombiesfrom-space)
 
 This was my second year attending, and I'll keep coming back for as much fun as it is.
