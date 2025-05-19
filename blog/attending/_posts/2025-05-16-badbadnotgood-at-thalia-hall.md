@@ -1,6 +1,6 @@
 ---
 layout: Post
-date: '2025-05-16 19:32:00 -0500'
+date: '2025-05-16 15:32:00 -0500'
 title: BADBADNOTGOOD at Thalia Hall
 toc: true
 image: "/assets/images/9891062c-96f5-4b05-8993-edb08e4ced8c.jpeg"
