@@ -78,7 +78,6 @@ module ReadwiseExtras
         '---',
         "title: \"#{combined_title}\"",
         "tags: #{formatted_tags}",
-        "canonical: #{source_url}",
         "author: #{author_stripped}",
         "author_id: #{author_id}",
         "book: #{id}",

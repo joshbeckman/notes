@@ -1,7 +1,6 @@
 ---
 title: "Book Review: On the Edge: The Gamblers via TheZvi"
 tags: inbox
-canonical: https://thezvi.wordpress.com/2024/09/24/book-review-on-the-edge-the-gamblers/
 author: TheZvi
 author_id: 10851c5165482b1779d34314facc0f2b
 book: 01j8hxx0bxnwvt97pxxqrpzyp7

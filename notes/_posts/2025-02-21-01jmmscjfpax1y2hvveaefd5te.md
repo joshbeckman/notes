@@ -1,7 +1,6 @@
 ---
 title: "The Unbrickable Pledge via usetrmnl.com"
 tags: inbox
-canonical: https://usetrmnl.com/blog/the-unbrickable-pledge
 author: usetrmnl.com
 author_id: 33684d68eafe82a3fa944345dc847b1f
 book: 01jmmscjfpax1y2hvveaefd5te

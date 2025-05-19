@@ -1,7 +1,6 @@
 ---
 title: "The Utility Is a Bug Not a Feature via daniel.industries"
 tags: inbox
-canonical: https://daniel.industries/2025/03/01/the-utility-is-a-bug-not-a-feature/
 author: daniel.industries
 author_id: db28822a4c9231fc029e841e6e1f596f
 book: 01jn9c4sd60vsvqjasf6fepgk4

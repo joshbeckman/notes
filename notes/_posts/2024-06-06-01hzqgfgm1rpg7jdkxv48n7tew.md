@@ -1,7 +1,6 @@
 ---
 title: "How to converse online via hello@manuelmoreale.com (Manuel Moreale)"
 tags: inbox
-canonical: https://manuelmoreale.com/@/page/RYtycIPIBuhww5um
 author: hello@manuelmoreale.com (Manuel Moreale)
 author_id: 220eb66e53f0e09cdac4d3683dfa6365
 book: 01hzqgfgm1rpg7jdkxv48n7tew
