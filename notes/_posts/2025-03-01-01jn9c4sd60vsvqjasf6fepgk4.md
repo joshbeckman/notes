@@ -1,6 +1,6 @@
 ---
 title: "The Utility Is a Bug Not a Feature via daniel.industries"
-tags: inbox
+tags: protest social-media
 author: daniel.industries
 author_id: db28822a4c9231fc029e841e6e1f596f
 book: 01jn9c4sd60vsvqjasf6fepgk4
@@ -14,4 +14,4 @@ hide_title: true
 source_url: "https://daniel.industries/2025/03/01/the-utility-is-a-bug-not-a-feature/"
 ---
 
-Damn, this text is so rich. It makes me want to rally my friends.
+Damn, this text is so rich. It makes me want to rally my friends. to get off the dumb social media and build our own social media.

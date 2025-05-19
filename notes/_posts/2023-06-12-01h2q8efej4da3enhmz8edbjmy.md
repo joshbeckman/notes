@@ -1,6 +1,6 @@
 ---
 title: "Language Model Sketchbook, or Why I Hate Chatbots via Maggie Appleton"
-tags: inbox
+tags: llm interfaces
 author: Maggie Appleton
 author_id: 66e53d512e874efe267f7ea8faea1a1f
 book: 01h2q8efej4da3enhmz8edbjmy

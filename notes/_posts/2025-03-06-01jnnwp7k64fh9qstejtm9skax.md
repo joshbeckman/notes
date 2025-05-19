@@ -1,6 +1,6 @@
 ---
 title: "How I use LLMs via Andrej Karpathy"
-tags: inbox
+tags: llm tools
 author: Andrej Karpathy
 author_id: 4c403b237e3599d8b28a013d30b458be
 book: 01jnnwp7k64fh9qstejtm9skax
