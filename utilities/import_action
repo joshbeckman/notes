@@ -362,7 +362,7 @@ class Importer
     client = Readwise::Client.new(token: ENV.fetch('READWISE_TOKEN', nil))
     jekyll = ReadwiseExtras::Jekyll.new
 
-    updated_after = Date.today.prev_year.to_time
+    updated_after = Date.today.prev_month.to_time
     books = client.export(updated_after: updated_after.iso8601)
     books.each do |book|
       jekyll.import_book_highlights(book)
