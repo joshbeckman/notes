@@ -5,7 +5,7 @@ title: The last Redacted at the Music Box
 toc: true
 image: "/assets/images/db40036e-ad5d-4ac1-9db3-ad503c84fd85.png"
 description:
-mastodon_social_status_url: 'false'
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114540677559276635
 bluesky_status_url: 'false'
 tags:
 - music-box-venue
