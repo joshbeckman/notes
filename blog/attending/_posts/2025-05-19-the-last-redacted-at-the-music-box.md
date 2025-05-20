@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/db40036e-ad5d-4ac1-9db3-ad503c84fd85.png"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114540677559276635
-bluesky_status_url: 'false'
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lpmcxwxynf2h
 tags:
 - music-box-venue
 - live-theater
