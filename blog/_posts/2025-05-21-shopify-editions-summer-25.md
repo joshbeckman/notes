@@ -5,7 +5,7 @@ title: Shopify Editions Summer '25
 toc: true
 image: "/assets/images/0c8d98d0-3d14-44fa-a205-059aedab9b9d.png"
 description:
-mastodon_social_status_url: 'false'
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114546338982041380
 bluesky_status_url: 'false'
 tags:
 - shopify
