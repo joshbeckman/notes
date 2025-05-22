@@ -15,6 +15,5 @@ They guide me in the right direction.
 ---
 
 {% for proverb in site.data.proverbs %}
-{{ proverb | upcase }}
-
+<p class="departure">{{ proverb | upcase }}</p>
 {% endfor %}
