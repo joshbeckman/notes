@@ -8,7 +8,7 @@ description:
 rating: 4
 tmdb_id: '1239655'
 letterboxd_id: friendship-2024
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114558357488337518
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/friendship-2024/
 tags:
