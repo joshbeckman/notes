@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "organization": "joshbeckman.org",
+  "requirements": {
+      "minProtocolVersion": "2025-03-26"
+  },
+  "servers": [
+      {
+          "id": "main-server",
+          "name": "joshbeckman.org Content",
+          "endpoint": "https://joshbeckman--1818d72637f311f089f39e149126039e.web.val.run/mcp",
+          "capabilities": [
+              "tools"
+          ]
+      }
+  ]
+}
