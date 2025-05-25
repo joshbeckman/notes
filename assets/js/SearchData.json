@@ -13,6 +13,7 @@ permalink: /assets/js/SearchData.json
        "book": null,
        "image": null,
        "author_id": null,
+       "backlinks": [],
        "type": "tag",
        "url": "/search?q=%27{{ tag | first }}&keys=tags"
     },{%- assign i = i | plus: 1 -%}
@@ -28,6 +29,7 @@ permalink: /assets/js/SearchData.json
        "book": {{ post.book | jsonify }},
        "image": {{ page.image | default: null | jsonify }},
        "author_id": {{ post.author_id | jsonify }},
+       "backlinks": [],
        "type": "page",
        "url": "{{ page.url }}"
     },{%- assign i = i | plus: 1 -%}
@@ -43,6 +45,11 @@ permalink: /assets/js/SearchData.json
        "book": {{ post.book | jsonify }},
        "image": {{ post.image | default: null | jsonify }},
        "author_id": {{ post.author_id | jsonify }},
+       "backlinks": [
+            {%- for b in post.backlinks -%}
+            {{ b.url | jsonify }}{%- unless forloop.last -%},{%- endunless -%}
+            {% endfor %}
+       ],
        "type": "post",
        "url": "{{ post.url }}"
     }{%- unless forloop.last -%},{%- endunless -%}{%- assign i = i | plus: 1 -%}
