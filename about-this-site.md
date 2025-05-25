@@ -9,10 +9,33 @@ redirect_from:
   - /colophon
 ---
 
-I [wrote up the process and theory behind this website](https://www.joshbeckman.org/opening-up-my-highlights-notes/), but basically it's an export and reformatting of my highlights and notes of my online (and some offline) reading ([script here](https://github.com/joshbeckman/notes/blob/master/utilities/import_action)).
+This site is my way of [working in the open](https://www.joshbeckman.org/opening-up-my-highlights-notes/) - a public repository of my knowledge, research, and writing that serves both as a personal memory aid and a resource I share with others.
 
-I use it to jostle loose ideas when I'm researching a particular problem in software design or writing topic.
-I usually either ask it for a random note or search by keyword.
+### [Notes](/notes)
+
+My primary knowledge collection, imported from [Readwise/Reader](https://readwise.io/read) highlights of online content and physical book reading, plus manual notes from conversations with peers. I use these as supporting research for my writing and as a memory aid for my work.
+
+### [Blog](/blog)
+
+All of my original writing, including essays, personal life stories, travel writing, and reviews of concerts, movies, and music.
+
+### [Exercise](/exercise)
+
+My exercise log from recent years, which I use to reflect on my health and explore my environment.
+
+### [Replies](/replies)
+
+Cross-posted replies I make on social networks and other external sites, archived here for completeness and reference.
+
+### Pages
+
+Various personal projects and reference content (social accounts, newsletter signup, etc.).
+
+## How I Use It
+
+I regularly review my posts to discover new connections and add links between them. The dense interlinking and backlink display creates a cross-pollination effect that helps surface related ideas. I don't have a rigid research-to-writing workflow, but the site helps me identify patterns and develop new ideas over time.
+
+For syndication, I follow [specific rules](https://www.joshbeckman.org/blog/rules-for-syndication-on-my-site) to ensure content works well both on my site and on external platforms without losing context.
 
 ## Features
 

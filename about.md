@@ -12,10 +12,10 @@ redirect_from:
   - /verify
 ---
 
-I'm currently working as a Senior Staff Engineer at [Shopify](//shopify.com), building [a visual programming platform](https://www.shopify.com/flow) for merchants and improving the interfaces for Shopify developers.
-I live in Chicago and [Chicago](/tags#chicago) is a great place to live.
+I'm currently working as a Senior Staff Engineer at [Shopify](https://shopify.com), building [a visual programming platform](https://www.shopify.com/flow) for merchants and improving [the interfaces for Shopify developers](https://shopify.dev/).
+I live in Chicago and [Chicago](/tags#chicago) is a great place to live. I've been traveling and backpacking more frequently, exploring new places, and spending time cultivating my garden.
 
-I'm an experienced startup operator with a history of scaling tech and teams. I'm a self-taught software developer, (and tech lead, and manager, yadda yadda) with a much wider-ranging career and education before that. I strive to bring curiosity, encouragement, and first-principles thinking to the work I'm doing.
+I'm an engineering leader specializing in complex systems design and delivery at scale. I cut my technical teeth in high-velocity startup environments. Now I lead multiple teams within Shopify's large engineering organization to deliver highly complex interfaces at scale and speed. I focus on being a technical expert who can advise teams and drive technical design decisions in complex systems. I'm particularly excited about integrating AI and LLMs into software development practices and building systems that make these technologies accessible to the public.
 
 My email address is `josh@joshbeckman.org`. I strongly prefer email as a communication method, so email me if you have a comment about something I've written - or write a post on your own site. Or you can follow/message me on open social networks (see *Verification* below).
 
