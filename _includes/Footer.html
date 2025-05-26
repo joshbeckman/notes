@@ -265,7 +265,7 @@ window.addEventListener('load', function () {
         window.location.href = "/";
     }
     function insight() {
-        var details = document.querySelector('.post-insight details')
+        var details = document.querySelector('.post-insight details') || document.querySelector('.post-insight-agent details');
       if (details) {
         details.open = !details.open;
         details.scrollIntoView({behavior: "smooth"});
@@ -275,7 +275,7 @@ window.addEventListener('load', function () {
       }
     }
     function source() {
-        var link = document.querySelector('a.quoteback-arrow') || document.querySelector('a.social-letterboxd') || document.querySelector('a.letterboxd-link') || document.querySelector('a.amazon-link') || document.querySelector('a.in_reply_to-source');
+        var link = document.querySelector('a.quoteback-arrow') || document.querySelector('a.social-letterboxd') || document.querySelector('a.letterboxd-link') || document.querySelector('a.amazon-link') || document.querySelector('a.in_reply_to-source') || document.querySelector('a.source-url') || document.querySelector('a.canonical-url') || document.querySelector('a.asin-url');
         if (link) {
             link.click();
         } else {

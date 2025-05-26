@@ -1332,7 +1332,8 @@ div.highlighter-rouge.language-go::before {
 #cusdis_thread iframe {
    min-height: 22rem;
 }
-.post-insight {
+.post-insight,
+.post-insight-agent {
   margin: 1em 0;
 }
 details {

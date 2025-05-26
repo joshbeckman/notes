@@ -1,0 +1,73 @@
+<div class="post-insight-agent print-hidden">
+  <details closed class="print-hidden">
+    <summary>Insight Agent</summary>
+    <div id="post-insight-agent">
+      <p>This widget generates “insights” about the post using an agentic loop and MCP server for this site.</p>
+      <hr>
+    </div>
+    <div id="post-insight-agent-loading" class="lds-ellipsis"><div></div><div></div><div></div><div></div><em>Generating</em></div>
+  </details>
+</div>
+<script>
+(function(){
+    var postInsightUrl = 'https://joshbeckman--d1be1cf4398811f0a2079e149126039e.web.val.run';
+    var post = "{{ page.url }}";
+    var loaded = false;
+    var startTime = new Date();
+    var endTime = new Date();
+    document.querySelector('.post-insight-agent details').addEventListener('toggle', function(event) {
+        if (!loaded) {
+            fetchPostInsight(post);
+        }
+    });
+
+    function startLoading() {
+        document.getElementById('post-insight-agent-loading').style.display = 'block';
+        startTime = new Date();
+    }
+    function stopLoading() {
+        document.getElementById('post-insight-agent-loading').style.display = 'none';
+        endTime = new Date();
+    }
+    function openInsightLinksInNewTab() {
+        document.querySelectorAll('#post-insight-agent a').forEach(function (el) {
+          if (!el.target) {
+            el.target = '_blank';
+          }
+        });
+    }
+    function fetchPostInsight(post) {
+        loaded = true;
+        startLoading();
+        if (!post.startsWith('https://')) {
+            post = 'https://www.joshbeckman.org' + post;
+        }
+        var body = {
+            postUrl: post,
+        };
+        // use fetch to POST the body to the postInsightUrl
+        fetch(postInsightUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(body),
+        }).then(response => response.json()).then(data => {
+            stopLoading();
+            if (data.error) {
+                console.error('Error from insight agent:', data.error);
+                document.getElementById('post-insight-agent').innerHTML = '<p>Error generating insight. Please try again later.</p>';
+                return;
+            }
+            var lastMessage = data[data.length - 1];
+            document.getElementById('post-insight-agent').innerHTML = lastMessage.text_html;
+            openInsightLinksInNewTab();
+        }).catch(error => {
+            stopLoading();
+            console.error('Error fetching post insight:', error);
+            document.getElementById('post-insight-agent').innerHTML = '<p>Error generating insight. Please try again later.</p>';
+        });
+    }
+
+})();
+</script>
