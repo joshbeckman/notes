@@ -7,6 +7,7 @@ image: /assets/images/BBB0300693044FB6BA418D53AFCC24E3.jpeg
 description: 
 tags: 
   - music
+  - salt-shed-venue
 ---
 
 ![](/assets/images/155CAA8570C64938829332F7DF7CFEDB.jpeg)

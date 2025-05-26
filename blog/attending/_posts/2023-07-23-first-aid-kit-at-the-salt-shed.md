@@ -5,6 +5,7 @@ image: "/assets/images/IMG_1530.jpeg"
 date: '2023-07-23 01:48:00'
 tags:
 - music
+- salt-shed-venue
 redirect_from:
 - "/first-aid-kit-at-the-salt-shed"
 - "/first-aid-kit-at-the-salt-shed/"

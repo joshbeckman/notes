@@ -9,6 +9,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/114009112412332
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3liaaxzqup223
 tags:
   - music
+  - aragon-venue
 ---
 
 

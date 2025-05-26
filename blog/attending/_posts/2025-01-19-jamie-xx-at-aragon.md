@@ -10,6 +10,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lg5mi5d62225
 tags:
   - music
   - chicago
+  - aragon-venue
 ---
 
 ![Jamie XX at Aragon](/assets/images/9594d46d-c5c0-4dcd-a8a3-dac138052733.jpeg)

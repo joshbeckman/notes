@@ -7,6 +7,7 @@ image: /assets/images/d27a9a98-67fd-4e18-866b-acb703f16014.jpeg
 description: 
 tags: 
   - music
+  - aragon-venue
 ---
 
 ![IMG_2998](/assets/images/d27a9a98-67fd-4e18-866b-acb703f16014.jpeg)

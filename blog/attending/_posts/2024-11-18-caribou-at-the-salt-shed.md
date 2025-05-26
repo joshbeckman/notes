@@ -9,6 +9,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/113519372225151
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lbgrduj2ik2m
 tags: 
   - music
+  - salt-shed-venue
 ---
 
 

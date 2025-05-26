@@ -8,6 +8,7 @@ description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/112862543490763333
 tags: 
   - music
+  - salt-shed-venue
 ---
 
 

@@ -5,7 +5,9 @@ title: Zeds Dead at Salt Shed
 toc: true
 image: /assets/images/270C6E1571BD4A6294C05A1B0B127105.jpeg
 description: 
-tags: music
+tags: 
+  - music
+  - salt-shed-venue
 ---
 
 With Emily and Bill and Kylie and Shannon and Brian and his new girlfriend Alex\. 

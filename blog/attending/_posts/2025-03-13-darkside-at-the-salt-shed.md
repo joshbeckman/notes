@@ -10,7 +10,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lke5jl4trh2k
 tags:
   - music
   - concerts
-  - the-salt-shed
+  - salt-shed-venue
 ---
 
 
