@@ -12,12 +12,11 @@ tags:
 - ai
 - language
 - software-engineering
-- management
 - bluesky
 ---
 
 Coworker: Is there a phrase for when you've vibe-coded yourself into a corner and you are far outside your knowledge of what it's been doing for you?
 
-Me: Vibe-collapse 
+Me: **Vibe-collapse**
 
 The vibes are off [the rails]
