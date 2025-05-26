@@ -5,7 +5,7 @@ title: Tennis at The Salt Shed
 toc: true
 image: "/assets/images/180ce528-b2b8-497a-a90b-f5a5b50cbebb.jpeg"
 description:
-mastodon_social_status_url: 'false'
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114575345844330713
 bluesky_status_url: 'false'
 tags:
 - concerts
