@@ -5,7 +5,7 @@ title: The Smaller Shape of AI-First Companies
 toc: true
 image: "/assets/images/47f2ec47-d7d4-4c8d-b054-4680e4c10950.jpeg"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114609315826774471
 bluesky_status_url: false
 tags:
 - ai
