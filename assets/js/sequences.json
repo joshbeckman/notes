@@ -1,15 +1,4 @@
 ---
 permalink: /assets/js/sequences.json
 ---
-[
-  {%- for sequence in site.data.sequences -%}
-    [
-      {%- for item in sequence -%}
-        {
-          "url": "{{item.url}}",
-          "title": "{{item.title | escape}}"
-        }{%- unless forloop.last -%},{%- endunless -%}
-      {%- endfor -%}
-    ]{%- unless forloop.last -%},{%- endunless -%}
-  {% endfor %}
-]
+{{ site.data.sequences | jsonify }}

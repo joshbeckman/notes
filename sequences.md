@@ -1,52 +1,31 @@
 ---
 layout: Page
 title: Sequences
+searchable: true
 ---
 
-These are post sequences: chains of posts where each links to the next. The minimum sequence length is 3 posts (two is just a link). Sequences can be used to explore a thought in depth, following a curated path through related content.
+These are post sequences: chains of posts where each links to the next. The minimum sequence length is 3 posts (two is just a link). Sequences can be used to explore a thought in depth, following a curated path through related posts, notes, and comments.
 
 The sequences are ordered by length, with the longest first.
 
-<div id="sequences-container">
-  <p>Loading sequences...</p>
-</div>
+{% for sequence in site.data.sequences %}
+<h2 id="{{sequence.id}}">{{ sequence.topic | default: "Untitled" }} Sequence ({{ sequence.posts.size }} posts) <a href="#{{sequence.id}}">#</a></h2>
 
-<script>
-async function loadSequences() {
-  try {
-    const response = await fetch('/assets/js/sequences.json');
-    const sequences = await response.json();
-    sequences.sort((a, b) => b.length - a.length);
-    const container = document.getElementById('sequences-container');
-    if (sequences.length === 0) {
-      container.innerHTML = '<p>No sequences found.</p>';
-      return;
-    }
-    let html = `<p>${sequences.length} sequences found</p>`;
-    sequences.forEach((sequence, index) => {
-      html += `<div class="sequence">`;
-      html += `<h3>Sequence ${index + 1} (${sequence.length} posts)</h3>`;
-      html += `<ol>`;
-      sequence.forEach((post, postIndex) => {
-        html += `<li>`;
-        html += `<a href="${post.url}">${post.title}</a>`;
-        if (postIndex < sequence.length - 1) {
-          html += ` → `;
-        }
-        html += `</li>`;
-      });
-      
-      html += `</ol>`;
-      html += `</div>`;
-    });
-    
-    container.innerHTML = html;
-    
-  } catch (error) {
-    console.error('Error loading sequences:', error);
-    document.getElementById('sequences-container').innerHTML = '<p>Error loading sequences.</p>';
-  }
-}
+Topic: <a href="/search/?q=%27{{ sequence.topic }}&keys=tags" class="">{{ sequence.topic | default: "No topic specified" }}</a>
+{% if sequence.start_date and sequence.end_date %}
+*{{ sequence.start_date | date: "%B %Y" }} - {{ sequence.end_date | date: "%B %Y" }}*
+{% endif %}
 
-document.addEventListener('DOMContentLoaded', loadSequences);
-</script>
+<ol>
+{% for post in sequence.posts %}
+  <li><a href="{{ post.url }}">{{ post.title }}</a>
+  {% unless forloop.last %}
+  &rarr;
+  {% endunless %}
+  </li>
+{% endfor %}
+</ol>
+
+{% endfor %}
+
+

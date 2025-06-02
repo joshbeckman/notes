@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative '../utilities/models/sequence'
+
 module RawContent
   class Generator < Jekyll::Generator
     def generate(site)
@@ -67,12 +69,14 @@ module RawContent
         next if item.data['backlinks'].empty?
 
         item.data['backlinks'].each do |backlink_item|
-          sequence = build_sequence_backwards(item, backlink_item, all_items)
-          sequences << sequence if sequence.length >= min_sequence_length && !sequence_exists?(sequences, sequence)
+          sequence_posts = build_sequence_backwards(item, backlink_item, all_items)
+          if sequence_posts.length >= min_sequence_length && !sequence_exists?(sequences, sequence_posts)
+            sequences << Sequence.create(sequence_posts)
+          end
         end
       end
 
-      sequences
+      sequences.sort_by { |seq| seq.posts.length }.reverse
     end
 
     def build_sequence_backwards(end_item, current_item, _all_items)
@@ -87,13 +91,13 @@ module RawContent
         current_item = current_item.data['backlinks'].first
       end
 
-      sequence.map { |item| { 'url' => item.url, 'title' => item.data['title'] || item.name } }
+      sequence
     end
 
-    def sequence_exists?(sequences, new_sequence)
-      new_urls = new_sequence.map { |item| item[:url] || item['url'] }
+    def sequence_exists?(sequences, new_sequence_posts)
+      new_urls = new_sequence_posts.map(&:url)
       sequences.any? do |existing_sequence|
-        existing_urls = existing_sequence.map { |item| item[:url] || item['url'] }
+        existing_urls = existing_sequence['posts'].map { |item| item['url'] }
         existing_urls == new_urls
       end
     end
