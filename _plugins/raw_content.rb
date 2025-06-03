@@ -71,7 +71,13 @@ module RawContent
         item.data['backlinks'].each do |backlink_item|
           sequence_posts = build_sequence_backwards(item, backlink_item, all_items)
           if sequence_posts.length >= min_sequence_length && !sequence_exists?(sequences, sequence_posts)
-            sequences << Sequence.create(sequence_posts)
+            seq = Sequence.create(sequence_posts)
+            seq.posts.each do |post|
+              post.data['sequences'] ||= []
+              post.data['sequences'] << seq
+              post.data['sequences'].uniq!
+            end
+            sequences << seq
           end
         end
       end

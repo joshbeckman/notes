@@ -7,7 +7,8 @@
 
 <!-- Add backlinks to the current page --> 
 {%- assign link_count = page.backlinks | size -%}
-{%- if link_count > 0 -%}
+{%- assign seq_count = page.sequences | size -%}
+{%- if link_count > 0 or seq_count > 0 -%}
 <div class="backlinks" id="jekyll-seamless-backlinks">
     <h3 class="">Referenced By</h3>
     <p class="">
@@ -16,6 +17,13 @@
             <li>
               <a href="{{note.url}}">
                 {{ note.title | truncate: 70}}
+              </a>
+            </li>
+        {%- endfor -%}
+        {%- for seq in page.sequences -%}
+            <li>
+              <a href="/sequences#{{seq.id}}">
+                {{ seq.topic | default: "Untitled" }} sequence
               </a>
             </li>
         {%- endfor -%}
