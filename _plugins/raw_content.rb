@@ -72,13 +72,18 @@ module RawContent
           sequence_posts = build_sequence_backwards(item, backlink_item, all_items)
           if sequence_posts.length >= min_sequence_length && !sequence_exists?(sequences, sequence_posts)
             seq = Sequence.create(sequence_posts)
-            seq.posts.each do |post|
-              post.data['sequences'] ||= []
-              post.data['sequences'] << seq
-              post.data['sequences'].uniq!
-            end
             sequences << seq
           end
+        end
+      end
+
+      sequences = remove_contained_sequences(sequences)
+
+      sequences.each do |seq|
+        seq.posts.each do |post|
+          post.data['sequences'] ||= []
+          post.data['sequences'] << seq
+          post.data['sequences'].uniq!
         end
       end
 
@@ -105,6 +110,31 @@ module RawContent
       sequences.any? do |existing_sequence|
         existing_urls = existing_sequence['posts'].map { |item| item['url'] }
         existing_urls == new_urls
+      end
+    end
+
+    def remove_contained_sequences(sequences)
+      sequences_to_keep = []
+
+      sequences.sort_by { |seq| seq.posts.length }.reverse.each do |current_seq|
+        current_urls = current_seq.posts.map(&:url)
+
+        is_contained = sequences_to_keep.any? do |kept_seq|
+          kept_urls = kept_seq.posts.map(&:url)
+          sequence_contained_in?(current_urls, kept_urls)
+        end
+
+        sequences_to_keep << current_seq unless is_contained
+      end
+
+      sequences_to_keep
+    end
+
+    def sequence_contained_in?(shorter_urls, longer_urls)
+      return false if shorter_urls.length >= longer_urls.length
+
+      (0..longer_urls.length - shorter_urls.length).any? do |start_index|
+        longer_urls[start_index, shorter_urls.length] == shorter_urls
       end
     end
   end
