@@ -40,9 +40,9 @@ class Optimizer
     puts "resizing: #{path}"
     case File.extname(path).downcase
     when '.jpg', '.jpeg'
-      `convert #{path} -strip -resize #{max_width}x#{max_height} -define jpeg:extent=976kb #{path}`
+      `convert #{path} -resize #{max_width}x#{max_height} -define jpeg:extent=976kb #{path}`
     else
-      `convert #{path} -strip -resize #{max_width}x#{max_height} #{path}`
+      `convert #{path} -resize #{max_width}x#{max_height} #{path}`
     end
   end
 end
