@@ -5,13 +5,12 @@ title: Shopify Summit 2025
 toc: true
 image: "/assets/images/be7157fd-64aa-4be9-ae33-049b5a8e907b.jpeg"
 description:
-mastodon_social_status_url: 'false'
-bluesky_status_url: 'false'
+mastodon_social_status_url: false
+bluesky_status_url: false
 tags:
 - shopify
 - canada
 ---
-
 
 ![Shopify Summit Times newspaper](/assets/images/be7157fd-64aa-4be9-ae33-049b5a8e907b.jpeg)
 
@@ -19,7 +18,7 @@ Shopify's annual company-wide summit was amazingly fun and productive, again ([p
 
 I spent a day in 1:1s and management/alignment/politics/trust-building and a day hacking on several prototypes (half of which I'll end up shipping) and a day leading a masterclass and booth at Shopify's Editions.dev conference. 
 
-<video controls src="/assets/videos/7751fa44-6a26-4893-af7b-ba90fd3c3d1c.quicktime"></video>
+<video controls src="/assets/videos/7751fa44-6a26-4893-af7b-ba90fd3c3d1c.mov"></video>
 
 [Here's a view of my main desk for the week](https://www.joshbeckman.org/blog/working/desk-may-30th-2025), though I floated around and walked like 8 miles each day (between walking to to Enercare and walking to find people/things inside Enercare).
 
