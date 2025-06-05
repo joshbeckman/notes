@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/be7157fd-64aa-4be9-ae33-049b5a8e907b.jpeg"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114629146206314118
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lqtm6ttaim2m
 tags:
 - shopify
 - canada

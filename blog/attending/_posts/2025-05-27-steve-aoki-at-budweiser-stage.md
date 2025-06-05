@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/bdc63181-393b-4a3d-bec1-da6a75e44454.jpeg"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114629146177694896
-bluesky_status_url: 'false'
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lqtm6s6rf72m
 tags:
 - shopify
 - concerts
