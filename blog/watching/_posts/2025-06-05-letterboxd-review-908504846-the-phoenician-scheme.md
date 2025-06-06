@@ -8,7 +8,7 @@ description:
 rating: 4
 tmdb_id: '1137350'
 letterboxd_id: the-phoenician-scheme
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114635523623801580
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/the-phoenician-scheme/
 tags:
