@@ -26,8 +26,8 @@ Well, we're gonna have to break this down a bit.
 - Apple studio monitor
 - Logitech Brio webcam
 - Workbench lights
-- Focusrite Scarlet Solo
-- Samson Q2U microphone
+- [Focusrite Scarlet Solo](https://us.focusrite.com/products/scarlett-solo-3rd-gen-refurbished)
+- [Samson Q2U microphone](https://samsontech.com/products/microphones/usb-microphones/q2u/)
 - Bose IE2 in-ear-monitor headphones
 - Raspberry Pi
 - iPhone 12 mini
