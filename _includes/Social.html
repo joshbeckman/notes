@@ -1,31 +1,111 @@
-{%- comment -%}
- *
- * This file contains the markup for the links that refer back to this file.
- * You can find the final thing at the end of every post inside a small greyish box
- *
-{%- endcomment -%}
-
 <div class="post-social print-hidden">
-  <h3 class="print-hidden">
-      Comment/Reply
-  </h3>
-  <ul class="social-mastodon-bluesky">
-    {%- if page.letterboxd_review_url -%}
-    <li><a class="social-letterboxd" href="{{page.letterboxd_review_url}}" target="_blank">on Letterboxd</a></li>
-    {%- endif -%}
-    {%- if page.mastodon_social_status_url -%}
-    <li><a href="{{page.mastodon_social_status_url}}" target="_blank">on Mastodon</a></li>
-    {%- endif -%}
-    {%- if page.bluesky_status_url -%}
-    <li><a href="{{page.bluesky_status_url}}" target="_blank">on Bluesky</a></li>
-    {%- endif -%}
-    {%- if page.hacker_news_url -%}
-    <li><a href="{{page.hacker_news_url}}" target="_blank">on HackerNews</a></li>
-    {%- endif -%}
-    {%- if page.strava_activity_url -%}
-    <li><a href="{{page.strava_activity_url}}" target="_blank">on Strava</a></li>
-    {%- endif -%}
-    <li><a href="/about#active-accounts">via email</a></li>
-  </ul>
-  <p>You can <a href="/subscribe">subscribe or follow</a> and reply through those channels.</p>
+  <details closed class="print-hidden">
+    <summary>
+      Comments &amp; Replies
+    </summary>
+    <ul class="social-links">
+      {%- if page.letterboxd_review_url -%}
+      <li><a class="social-letterboxd" href="{{page.letterboxd_review_url}}" target="_blank">on Letterboxd</a></li>
+      {%- endif -%}
+      {%- if page.mastodon_social_status_url -%}
+      <li><a class="social-mastodon" href="{{page.mastodon_social_status_url}}" target="_blank">on Mastodon</a></li>
+      {%- endif -%}
+      {%- if page.bluesky_status_url -%}
+      <li><a class="social-bluesky" href="{{page.bluesky_status_url}}" target="_blank">on Bluesky</a></li>
+      {%- endif -%}
+      {%- if page.hacker_news_url -%}
+      <li><a class="social-hn" href="{{page.hacker_news_url}}" target="_blank">on HackerNews</a></li>
+      {%- endif -%}
+      {%- if page.strava_activity_url -%}
+      <li><a class="social-strava" href="{{page.strava_activity_url}}" target="_blank">on Strava</a></li>
+      {%- endif -%}
+      <li><a class="social-email" href="/about#active-accounts">via email</a></li>
+    </ul>
+    <p>You can <a href="/subscribe">subscribe or follow</a> or reply here:</p>
+    <div id="async_cusdis_thread"
+      data-theme="auto"
+      data-host="https://cusdis.com"
+      data-app-id="0bbb76b5-e971-4d9c-8fa7-a4c9e1ff0984"
+      data-page-id="{{ page.url }}"
+      data-page-url="{{ site.url }}{{ page.url }}"
+      data-page-title="{{ page.title }}"
+    ></div>
+  </details>
 </div>
+<script>
+(function() {
+    var mastodon = document.querySelector('.social-mastodon');
+    var details = document.querySelector('.post-social details');
+    details.addEventListener('toggle', function() {
+        if (!details.open) {
+            return;
+        }
+        loadBluesky();
+        loadCusdis();
+        loadMastodon();
+    });
+    function loadMastodon() {
+        var mastodon = document.querySelector('.social-mastodon');
+        if (!mastodon) {
+            return;
+        }
+        var mastodonStatusID = mastodon.getAttribute('href').match(/\/@[^/]+\/(\d+)/);
+        fetch(`https://mastodon.social/api/v1/statuses/${mastodonStatusID[1]}`)
+            .then(response => response.json())
+            .then(data => {
+                var reblogs = data.reblogs_count || 0;
+                var favourites = data.favourites_count || 0;
+                var replies = data.replies_count || 0;
+                if (reblogs > 0 && favourites > 0 && replies > 0) {
+                    mastodon.textContent = `${reblogs} boosts, ${favourites} favorites, and ${replies} replies on Mastodon`;
+                } else if (reblogs > 0 && favourites > 0) {
+                    mastodon.textContent = `${reblogs} boosts and ${favourites} favorites on Mastodon`;
+                } else if (reblogs > 0 && replies > 0) {
+                    mastodon.textContent = `${reblogs} boosts and ${replies} replies on Mastodon`;
+                } else if (favourites > 0 && replies > 0) {
+                    mastodon.textContent = `${favourites} favorites and ${replies} replies on Mastodon`;
+                } else if (reblogs > 0) {
+                    mastodon.textContent = `${reblogs} boosts on Mastodon`;
+                } else if (favourites > 0) {
+                    mastodon.textContent = `${favourites} favorites on Mastodon`;
+                } else if (replies > 0) {
+                    mastodon.textContent = `${replies} replies on Mastodon`;
+                }
+            })
+            .catch(error => console.error('Error fetching Mastodon status:', error));
+    }
+    function loadCusdis() {
+        var cusdis = document.getElementById('async_cusdis_thread');
+        if (!cusdis) {
+            return;
+        }
+        cusdis.id = 'cusdis_thread';
+        var script = document.createElement('script');
+        script.src = 'https://cusdis.com/js/cusdis.es.js';
+        document.body.appendChild(script);
+    }
+    function loadBluesky() {
+        var bluesky = document.querySelector('.social-bluesky');
+        if (!bluesky) {
+            return;
+        }
+        var blueskyPostID = bluesky.getAttribute('href').match(/\/post\/([^/]+)/);
+        fetch(`https://public.api.bsky.app/xrpc/app.bsky.feed.getPosts?uris=at://did:plc:oclgvsz6g6bsosawrkchxyyq/app.bsky.feed.post/${blueskyPostID[1]}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data && data.posts && data.posts.length > 0) {
+                    var likes = data.posts[0].likeCount || 0;
+                    var replies = data.posts[0].replyCount || 0;
+                    if (likes > 0 && replies > 0) {
+                        bluesky.textContent = `${likes} likes and ${replies} replies on Bluesky`;
+                    } else if (likes > 0) {
+                        bluesky.textContent = `${likes} likes on Bluesky`;
+                    } else if (replies > 0) {
+                        bluesky.textContent = `${replies} replies on Bluesky`;
+                    }
+                }
+            })
+            .catch(error => console.error('Error fetching Bluesky post:', error));
+    }
+})();
+</script>
