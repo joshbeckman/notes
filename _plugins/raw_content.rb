@@ -31,6 +31,7 @@ module RawContent
       end
 
       site.data['sequences'] = calculate_sequences(site)
+      site.data['anchors'] = calculate_anchors(site)
     end
 
     private
@@ -136,6 +137,28 @@ module RawContent
       (0..longer_urls.length - shorter_urls.length).any? do |start_index|
         longer_urls[start_index, shorter_urls.length] == shorter_urls
       end
+    end
+
+    def calculate_anchors(site)
+      all_posts = site.posts.docs
+      posts_with_backlinks = all_posts.select { |post| post.data['backlinks'] && !post.data['backlinks'].empty? }
+
+      return [] if posts_with_backlinks.empty?
+
+      posts_with_counts = posts_with_backlinks.map do |post|
+        {
+          'url' => post.url,
+          'title' => post.data['title'],
+          'date' => post.date,
+          'backlink_count' => post.data['backlinks'].length,
+          'backlinks' => post.data['backlinks'].map { |bl| { 'url' => bl.url, 'title' => bl.data['title'] } }
+        }
+      end
+
+      posts_with_counts.sort_by! { |post| post['backlink_count'] }.reverse!
+
+      top_5_percent_count = [(posts_with_counts.length * 0.05).ceil, 1].max
+      posts_with_counts.first(top_5_percent_count)
     end
   end
 end
