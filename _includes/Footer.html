@@ -144,7 +144,7 @@ window.addEventListener('load', function () {
 })();
 
 (function logoAnimator() {
-  var paths = document.querySelectorAll('.name-svg path');
+  var paths = document.querySelectorAll('.name-svg path, .name-svg circle');
   var lastPathIndex = paths.length - 1;
   [].slice.call(paths).map(function(path) {
     path.setAttribute('stroke-dasharray', path.getTotalLength());
