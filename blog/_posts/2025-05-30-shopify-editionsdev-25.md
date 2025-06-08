@@ -5,7 +5,7 @@ title: Shopify Editions.dev '25
 toc: true
 image: "/assets/images/dd4278f3-bd05-41ec-85b8-4c82860bb16e.png"
 description:
-mastodon_social_status_url: 'false'
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114649662829962404
 bluesky_status_url: 'false'
 tags:
 - shopify
