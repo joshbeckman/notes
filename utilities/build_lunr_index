@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const lunr = require('lunr');
 
-const DATA_FILE = path.join(__dirname, '../_site/assets/js/searchData.json');
+const DATA_FILE = path.join(__dirname, '../_site/assets/js/SearchData.json');
 const OUTPUT_FILE = path.join(__dirname, '../_site/assets/js/lunr-index.json');
 
 try {
