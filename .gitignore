@@ -15,5 +15,6 @@ _site/
 vendor/
 Library.xml
 .aider*
+node_modules/
 
 **/.claude/settings.local.json

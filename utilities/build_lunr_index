@@ -1,0 +1,37 @@
+#!/usr/bin/env node
+
+const fs = require('fs');
+const path = require('path');
+const lunr = require('lunr');
+
+const DATA_FILE = path.join(__dirname, '../_site/assets/js/searchData.json');
+const OUTPUT_FILE = path.join(__dirname, '../_site/assets/js/lunr-index.json');
+
+try {
+  const rawData = fs.readFileSync(DATA_FILE, 'utf8');
+  const searchData = JSON.parse(rawData);
+  const documents = Object.values(searchData);
+  const idx = lunr(function () {
+    this.ref('url');
+    this.field('title', { boost: 10 });
+    this.field('content');
+    this.field('tags');
+    this.field('author_id');
+    this.field('book');
+    this.field("image");
+    documents.forEach(function (doc) {
+      this.add(doc);
+    }, this);
+  });
+  const outputDir = path.dirname(OUTPUT_FILE);
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true });
+  }
+  fs.writeFileSync(OUTPUT_FILE, JSON.stringify(idx));
+  console.log(`Lunr index built successfully with ${documents.length} documents`);
+  console.log(`Index saved to: ${OUTPUT_FILE}`);
+  
+} catch (error) {
+  console.error('Error building Lunr index:', error.message);
+  process.exit(1);
+}
