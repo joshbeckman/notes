@@ -190,6 +190,8 @@ module PESOS
         pace_per_mile: activity.pace_per_mile_s,
         elevation_high: "#{activity.elev_high}m",
         elevation_low: "#{activity.elev_low}m",
+        moving_time_in_hours_s: activity.moving_time_in_hours_s,
+        elapsed_time_in_hours_s: activity.elapsed_time_in_hours_s,
         total_elevation_gain_in_feet: activity.total_elevation_gain_in_feet_s,
         end_latlng: activity.end_latlng,
         start_latlng: activity.start_latlng,
