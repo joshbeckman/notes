@@ -77,7 +77,7 @@ You can read about everything else I use to build things at [/uses](/uses).
 - Site version: {{site.version}}
 - Build time: <time datetime="{{ build_time }}">{{ build_time }}</time>
 - Posts count: {{site.posts.size}}
-- Tags count: {{ site.tags.size }}
+- [Tags](/tags) count: {{ site.tags.size }}
 - First post date: <time datetime="{{ oldest_post.date | date_to_xmlschema }}">{{ oldest_post.date | date: "%B %d, %Y" }}</time>
 
 ## Changelog
