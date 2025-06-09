@@ -5,8 +5,8 @@ title: Shopify Editions.dev '25
 toc: true
 image: "/assets/images/dd4278f3-bd05-41ec-85b8-4c82860bb16e.png"
 description:
-mastodon_social_status_url: 'false'
-bluesky_status_url: 'false'
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114649662829962404
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lr4pqornr22m
 tags:
 - shopify
 - canada
@@ -14,7 +14,7 @@ tags:
 ---
 
 
-<img width="760" alt="schedule slide" src="/assets/images/dd4278f3-bd05-41ec-85b8-4c82860bb16e.png" />
+<img width="760" alt="flow masterclass schedule slide" src="/assets/images/dd4278f3-bd05-41ec-85b8-4c82860bb16e.png" />
 
 This year's [Shopify Editions.dev](https://editions.dev/pages/editions-dev) conference was held on the final day of [Shopify Summit 2025](https://www.joshbeckman.org/blog/traveling/shopify-summit-2025) and I went across the street to Toronto's Automotive Building to meet and support Shopify's huge developer/partner ecosystem. It's a big event to promote the features in [Shopify Editions Summer '25](https://www.joshbeckman.org/blog/shopify-editions-summer-25) and gather feedback from the community.
 
@@ -28,7 +28,7 @@ It was exhausting, exhilarating, and very successful! We had all the seats fille
 
 And attendees really liked the masterclass!
 
-<img width="689" alt="Attendee survey feedback" src="/assets/images/12feb85b-f73b-47fb-84dd-2812b96c62d0.png" />
+<img width="689" alt="Attendee survey feedback: loved flow masterclass, the guy there is a Jedi" src="/assets/images/12feb85b-f73b-47fb-84dd-2812b96c62d0.png" />
 
 I even got a callout in [this linkedin post](https://www.linkedin.com/pulse/circle-21st-edition-shop-circle-limsf/?trackingId=YbHROY34RLuZUNvS%2BGqgSw%3D%3D#:~:text=teams%2C%20including%20a-,standout,-session%20by%20Josh) afterward - in the same breath as _Harley_!
 
