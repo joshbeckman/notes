@@ -5,7 +5,7 @@ title: Tracing Sequences and Finding Anchors
 toc: true
 image: "/assets/images/0446fa9e-88c8-4bec-982f-0940c4007afa.jpeg"
 description:
-mastodon_social_status_url: 'false'
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114657458052945348
 bluesky_status_url: 'false'
 tags:
 - personal-blog
