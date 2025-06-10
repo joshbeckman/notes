@@ -75,10 +75,10 @@
             document.getElementById('post-insight-agent').innerHTML += lastMessage.text_html;
             openInsightLinksInNewTab();
             if ('Notification' in window && Notification.permission === 'granted') {
-              new Notification('Insight generated', {
+              (new Notification('Insight generated', {
                 body: 'for "' + document.title + '"',
                 icon: 'https://www.joshbeckman.org/assets/img/profile.png',
-              });
+              })).addEventListener("click", (event) => { window.parent.parent.focus() });
             }
         }).catch(error => {
             stopLoading();
