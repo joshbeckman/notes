@@ -30,7 +30,7 @@ I built [a Jekyll plugin for my site last year to calculate each post's backlink
 
 I realized that I could, [in that same plugin](https://github.com/joshbeckman/notes/blob/5097938f139c5c8d88a582f5c0abe3ada1aaacbe/_plugins/raw_content.rb#L62), walk those backlinks back and build a set of sequences for the site. So now, that's a new tool: [Sequences](/sequences). For now, the minimum sequence length is 3 posts (two is just a link). I use the sequences to explore a thought in depth, following a curated path through related posts, notes, and comments. I like to think of each new sequence as a happy little discovery of reasoning.
 
-Currently, the longest sequences are 6 posts long. I hope to grow longer chains.
+As of writing, the longest sequences are 6 posts long.
 
 ## Anchors
 
@@ -39,6 +39,8 @@ A couple days later, after browsing these sequences, I started to see the same f
 > I wonder which posts are the most backlinked? Which ones are carrying the most weight for the rest of the site? What are the [emerging centers](https://www.joshbeckman.org/notes/475090054)?
 
 So I [added that to the Jekyll plugin](https://github.com/joshbeckman/notes/commit/b1d89c8819dd391e142de2edbd50e9dc1462b546#diff-11600b9c18477e9076c4a4be95e66e5a99b88d22426613c5dd4cba3d24f69a5e) and site build too: summing up the count of backlinks to each post and selecting the top most-linked ones into [Anchors](/anchors). For now, I'm just considering the top 5% of posts with the most backlinks: I don't need to game this system. These posts act as central hubs that my thinking and notes naturally gravitate toward and references. Or, maybe, hopefully, new anchors are founded.
+
+As of writing, the heaviest anchors hold down 6 backlinks.
 
 ## The Plugin
 
