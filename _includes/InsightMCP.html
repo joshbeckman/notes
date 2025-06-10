@@ -18,6 +18,11 @@
     var details = document.querySelector('.post-insight-agent details')
     details.addEventListener('toggle', function(event) {
         if (!loaded && details.open) {
+            if ('Notification' in window && Notification.permission === 'default') {
+              setTimeout(function() {
+                Notification.requestPermission();
+              }, 1000);
+            }
             fetchPostInsight(post);
         }
     });
@@ -63,9 +68,20 @@
             }
             var lastMessage = data[data.length - 1];
             var firstMessage = data[0];
+            if (!lastMessage || !firstMessage) {
+                document.getElementById('post-insight-agent').innerHTML = '<p>Error generating insight. Please try again later.</p>';
+                loaded = false;
+                return;
+            }
             document.getElementById('post-insight-agent').innerHTML = '<blockquote> ' + firstMessage.text_html + '</blockquote>';
             document.getElementById('post-insight-agent').innerHTML += lastMessage.text_html;
             openInsightLinksInNewTab();
+            if ('Notification' in window && Notification.permission === 'granted') {
+              new Notification('Insight generated', {
+                body: 'for "' + document.title + '"',
+                icon: 'https://www.joshbeckman.org/assets/img/favicon.png',
+              });
+            }
         }).catch(error => {
             stopLoading();
             console.error('Error fetching post insight:', error);
