@@ -58,6 +58,16 @@
       </td>
     </tr>
     {% endif %}
+    {% if page.exercise_data['elapsed_time_in_hours_s'] %}
+    <tr>
+      <td>
+        Total Time
+      </td>
+      <td>
+        {{page.exercise_data['elapsed_time_in_hours_s']}}
+      </td>
+    </tr>
+    {% endif %}
   </table>
   {%- if page.strava_activity_url -%}
   <p>View more <a href="{{page.strava_activity_url}}" target="_blank">on Strava</a></p>
