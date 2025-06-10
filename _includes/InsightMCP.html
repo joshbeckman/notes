@@ -64,15 +64,29 @@
                 loaded = false;
                 return;
             }
-            var lastMessage = data[data.length - 1];
-            var firstMessage = data[0];
-            if (!lastMessage || !firstMessage) {
+            if (!data || data.length === 0) {
                 document.getElementById('post-insight-agent').innerHTML = '<p>Error generating insight. Please try again later.</p>';
                 loaded = false;
                 return;
             }
-            document.getElementById('post-insight-agent').innerHTML = '<blockquote> ' + firstMessage.text_html + '</blockquote>';
-            document.getElementById('post-insight-agent').innerHTML += lastMessage.text_html;
+            var html = '';
+            for (var i = 0; i < data.length; i++) {
+                var message = data[i];
+                if (message.role === 'user') {
+                    html += '<blockquote>' + message.text_html + '</blockquote>';
+                } else if (message.type === 'mcp_tool_use') {
+                    var nextMessage = data[i + 1];
+                    if (nextMessage && nextMessage.type === 'mcp_tool_result') {
+                        html += `<details><summary><code>${message.name}</code></summary><pre>(${JSON.stringify(message.input)})</pre>${nextMessage.content[0].text_html}</details>`;
+                        i++;
+                    } else {
+                        html += `<details><summary><code>${message.name}(${JSON.stringify(message.input)})</code></summary>`;
+                    }
+                } else if (message.type === 'text') {
+                    html += message.text_html;
+                }
+            }
+            document.getElementById('post-insight-agent').innerHTML = html;
             openInsightLinksInNewTab();
             if ('Notification' in window && Notification.permission === 'granted') {
               (new Notification('Insight generated', {
