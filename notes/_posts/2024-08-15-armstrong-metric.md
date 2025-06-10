@@ -18,3 +18,5 @@ Named for [Jeff Armstrong](https://github.com/MahlerFive).
 Example:
 
 > We can’t set up an alert for transient errors because the number/rate of transient errors is an Armstrong metric - it fluctuates outside of our control and sometimes for desired reasons.
+
+These should be [traced and sampled instead](https://www.joshbeckman.org/notes/554607073).
