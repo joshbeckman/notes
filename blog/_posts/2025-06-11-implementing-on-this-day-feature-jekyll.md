@@ -5,7 +5,6 @@ bluesky_status_url: false
 mastodon_social_status_url: false
 tags:
 - jekyll
-- language-ruby
 - code-snippets
 - personal-blog
 ---
