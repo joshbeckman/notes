@@ -1,6 +1,8 @@
 ---
 title: Building an "On This Day" Feature for My Jekyll Site
 date: '2025-06-11 08:00:00'
+bluesky_status_url: false
+mastodon_social_status_url: false
 tags:
 - jekyll
 - language-ruby
