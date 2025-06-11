@@ -16,7 +16,7 @@ tags:
 
 <img width="634" alt="Heatmap calendar" src="/assets/images/ee8815cf-8280-44b0-8e8f-02721dc1d814.png" />
 
-Over the weekend I built a new page on this site: [the Heatcal](/heatcal). It's just a simple visualization of the posts I've made as a heat map on a calendar grid. Darker dates have more posts. Clicking on a date can show you the posts on that day.
+Over the weekend I built a new page on this site: [the Heatcal](/heatcal). It's just a simple visualization of the posts I've made as a heat map on a calendar grid ([more calendars!](https://www.joshbeckman.org/blog/everywhere-a-calendar)). Darker dates have more posts. Clicking on a date can show you the posts on that day.
 
 I missed the full date index that I used to have in a previous version of this site, where I could scroll through the full timeline of things I've written. And this visual display is super easy to scan - most of what I get as I scroll down the page is a sense of my creative output waxing and waning over time. I've come to embrace that more and more this last year.
 
