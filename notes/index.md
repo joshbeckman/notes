@@ -15,5 +15,5 @@ Or you can start by browsing [my favorites](/search?q=%27favorite&keys=tags).
 Here are the most recent additions:
 
 {% for post in site.categories['notes'] limit: 50 %}
-{%- include PostListItem.html post=post -%}
+{%- include PostListItem.html post=post dated=true -%}
 {% endfor %}

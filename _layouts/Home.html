@@ -57,7 +57,7 @@
             </div>
                 <h2>Recent Posts</h2>
               {%- for post in site.posts limit:3 -%}
-              {%- include PostListItem.html post=post -%}
+              {%- include PostListItem.html post=post dated=true -%}
               {%- endfor -%}
               <h2>Popular Posts</h2>
               {%- for post in site.tags['popular'] limit:3 -%}

@@ -19,6 +19,6 @@ site.categories['traveling'] | group_by_exp:"post", "post.date | date: '%Y'" %}
 {% for day in postsByMonth %}
   <h3 id="{{ day.name }}">{{ day.name }}</h3>
   {% for post in day.items %}
-  {%- include PostListItem.html post=post -%}
+  {%- include PostListItem.html post=post dated=true -%}
   {% endfor %}
 {% endfor %}

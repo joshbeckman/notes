@@ -5,6 +5,8 @@ date: '2015-07-27 00:00:00'
 tags:
 - end-user-programming
 - code-snippets
+- language-ruby
+- jekyll
 redirect_from:
 - "/scripting-ruby-with-no-internet"
 - "/scripting-ruby-with-no-internet/"

@@ -11,6 +11,7 @@ tags:
 - bluesky
 - code-snippets
 - personal-blog
+- jekyll
 ---
 
 As the inverse of how I set up [cross\-posting to Bluesky](https://www.joshbeckman.org/blog/crossposting-to-bluesky-from-jekyll) for this site \(to ensure that I am publishing on my own site and syndicating elsewhere: POSSE\), I have now set up cross\-posting *from* Bluesky *into* this site\. This inverse \- archiving content from other networks into my home site \- is called Publish Elsewhere Syndicate On Site: PESOS\.

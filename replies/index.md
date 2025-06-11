@@ -15,5 +15,5 @@ Replies I make on social networks and other external sites, mirrored here for co
 ---
 
 {% for post in site.categories['replies'] %}
-{%- include PostListItem.html post=post -%}
+{%- include PostListItem.html post=post dated=true -%}
 {% endfor %}
