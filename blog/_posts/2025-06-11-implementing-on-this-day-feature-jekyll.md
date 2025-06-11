@@ -70,6 +70,7 @@ There are some obvious directions this could go:
 
 - **Date Range**: Show posts from this week in history, not just this exact date
 - **Extract as Plugin**: Create a reusable Jekyll plugin for this feature
+- **Sequences**: Consider [Sequences](/sequences) and display ones that started on this exact date
 
 But honestly, the current implementation works perfectly for my needs. It's one of those features where the simple solution is often the right solution.
 
