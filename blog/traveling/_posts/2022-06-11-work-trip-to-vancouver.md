@@ -8,6 +8,7 @@ date: '2022-06-11 03:26:00'
 tags:
 - shopify
 - travel
+- canada
 redirect_from:
 - "/work-trip-to-vancouver"
 - "/work-trip-to-vancouver/"
