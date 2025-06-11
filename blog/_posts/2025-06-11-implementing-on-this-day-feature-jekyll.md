@@ -2,7 +2,7 @@
 title: Building an "On This Day" Feature for My Jekyll Site
 date: '2025-06-11 08:00:00'
 bluesky_status_url: false
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114665242508716162
 tags:
 - jekyll
 - code-snippets
