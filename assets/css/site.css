@@ -548,6 +548,7 @@ blockquote {
   height: 300px;
   max-width: 100%;
   max-height: 100%;
+  margin-top: 1em;
 }
 .post-network details {
   position: relative;
@@ -1344,6 +1345,9 @@ details {
   padding: 0.5em 1em;
   border-radius: 4px;
 }
+details.small {
+  font-size: 0.9em;
+}
 details summary {
   display: list-item;
   text-transform: uppercase;
@@ -1354,7 +1358,7 @@ details[open] {
   padding: 0 1em 1em;
 }
 details[open] > summary {
-  padding: 0.5em 0 1em;
+  padding: 0.5em 0 0;
 }
 details summary:hover {
   cursor: pointer;

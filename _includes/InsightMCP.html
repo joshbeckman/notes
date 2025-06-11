@@ -77,7 +77,7 @@
                 } else if (message.type === 'mcp_tool_use') {
                     var nextMessage = data[i + 1];
                     if (nextMessage && nextMessage.type === 'mcp_tool_result') {
-                        html += `<details><summary><code>${message.name}</code></summary><pre>(${JSON.stringify(message.input)})</pre>${nextMessage.content[0].text_html}</details>`;
+                        html += `<details class="small"><summary><code>${message.name}</code></summary><pre>(${JSON.stringify(message.input)})</pre>${nextMessage.content[0].text_html}</details>`;
                         i++;
                     } else {
                         html += `<details><summary><code>${message.name}(${JSON.stringify(message.input)})</code></summary>`;
