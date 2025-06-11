@@ -7,7 +7,7 @@ tags:
 - personal-blog
 ---
 
-These are anchor posts: the top 5% of posts with the most backlinks, providing anchoring weight for the site. These posts act as central hubs that other thinking and posts naturally gravitate toward and references. (See also: [Sequences](/sequences).)
+These are anchor posts: the top 5% of posts with the most backlinks, providing anchoring weight for the site. These posts act as central hubs that other thinking and posts naturally gravitate toward and references. Read about [how these are found](https://www.joshbeckman.org/blog/tracing-sequences-and-finding-anchors). (See also: [Sequences](/sequences).)
 
 The anchors are ordered by number of backlinks, with the most-referenced first.
 
