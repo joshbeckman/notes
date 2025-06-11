@@ -40,6 +40,8 @@ A couple days later, after browsing these sequences, I started to see the same f
 
 So I [added that to the Jekyll plugin](https://github.com/joshbeckman/notes/commit/b1d89c8819dd391e142de2edbd50e9dc1462b546#diff-11600b9c18477e9076c4a4be95e66e5a99b88d22426613c5dd4cba3d24f69a5e) and site build too: summing up the count of backlinks to each post and selecting the top most-linked ones into [Anchors](/anchors). For now, I'm just considering the top 5% of posts with the most backlinks: I don't need to game this system. These posts act as central hubs that my thinking and notes naturally gravitate toward and references. Or, maybe, hopefully, new anchors are founded.
 
+I think of them as my own [little campfires](https://www.joshbeckman.org/notes/474848174) in [the garden](https://www.joshbeckman.org/notes/474848212).
+
 As of writing, the heaviest anchors hold down 6 backlinks.
 
 ## The Plugin
