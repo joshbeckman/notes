@@ -6,7 +6,7 @@ permalink: /assets/js/SearchData.json
   {%- for tag in site.tags -%}
     "{{ i }}": {
        "doc":  {{ tag | first | escape | jsonify }},
-       "title": {{ tag | first | append: " (tag)" | jsonify }},
+       "title": {{ tag | first | jsonify }},
        "content": {{ tag | first | jsonify }},
        "tags": null,
        "date": null,

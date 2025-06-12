@@ -200,6 +200,13 @@ Fuse = (function(){"use strict";function e(e,t){var n=Object.keys(e);if(Object.g
                     resultDate.innerHTML = doc.date.split('T')[0];
                     resultDateDiv.appendChild(resultDate);
                     resultLink.appendChild(resultDateDiv);
+                } else if (doc.type) {
+                    var resultDateDiv = document.createElement('div');
+                    resultDateDiv.classList.add('search-result-date');
+                    var resultDate = document.createElement('small');
+                    resultDate.innerHTML = doc.type.charAt(0).toUpperCase() + doc.type.slice(1);
+                    resultDateDiv.appendChild(resultDate);
+                    resultLink.appendChild(resultDateDiv);
                 }
             }
 

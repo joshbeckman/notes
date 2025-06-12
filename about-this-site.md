@@ -31,6 +31,10 @@ Cross-posted replies I make on social networks and other external sites, archive
 
 Various personal projects and reference content (social accounts, newsletter signup, etc.).
 
+### Tools
+
+I also build lots and lots of tools to help me make the most of my writing and knowledge collection.
+
 ## How I Use It
 
 I regularly review my posts to discover new connections and add links between them. The dense interlinking and backlink display creates a cross-pollination effect that helps surface related ideas. I don't have a rigid research-to-writing workflow, but the site helps me identify patterns and develop new ideas over time.
