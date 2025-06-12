@@ -4,6 +4,7 @@ title: Note on constant attention
 date: '2020-05-31 00:00:00'
 tags:
 - maintenance
+- officeluv
 redirect_from:
 - "/constant-attention"
 - "/constant-attention/"

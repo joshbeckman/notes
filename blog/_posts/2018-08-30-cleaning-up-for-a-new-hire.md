@@ -4,6 +4,7 @@ title: Cleaning Up For a New Hire
 date: '2018-08-30 00:00:00'
 tags:
 - hiring
+- officeluv
 redirect_from:
 - "/cleaning-up-for-a-new-hire"
 - "/cleaning-up-for-a-new-hire/"

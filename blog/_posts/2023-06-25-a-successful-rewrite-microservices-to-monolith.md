@@ -7,6 +7,7 @@ description: I was invited onto the Never Rewrite podcast last week to talk abou
 date: '2023-06-25 15:36:18'
 tags:
 - infrastructure
+- officeluv
 redirect_from:
 - "/a-successful-rewrite-microservices-to-monolith"
 - "/a-successful-rewrite-microservices-to-monolith/"

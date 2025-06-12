@@ -4,6 +4,7 @@ title: Recruitment Searching on GitHub
 date: '2016-09-08 00:00:00'
 tags:
 - hiring
+- officeluv
 redirect_from:
 - "/recruitment-searching-on-github"
 - "/recruitment-searching-on-github/"
