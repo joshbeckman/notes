@@ -13,5 +13,5 @@ These are little sayings that I've picked up from others and some that I've foun
 They guide me in the right direction.
 
 {% for proverb in site.data.proverbs %}
-<p class="departure">{{ proverb | upcase }}</p>
+<p id="{{proverb | slugify}}" class="departure"><a href="#{{proverb | slugify}}">#</a> {{ proverb | upcase }}</p>
 {% endfor %}

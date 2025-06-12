@@ -19,6 +19,22 @@ permalink: /assets/js/SearchData.json
        "url": "/search?q=%27{{ tag | first }}&keys=tags"
     },{%- assign i = i | plus: 1 -%}
   {% endfor %}
+  {% for proverb in site.data.proverbs -%}
+    "{{ i }}": {
+       "doc":  {{ proverb | jsonify }},
+       "title": {{ proverb | jsonify }},
+       "content": {{ proverb | jsonify }},
+       "tags": null,
+       "date": null,
+       "book": null,
+       "image": null,
+       "author_id": null,
+       "sequences": [],
+       "backlinks": [],
+       "type": "proverb",
+       "url": "/proverbs#{{ proverb | slugify }}"
+    },{%- assign i = i | plus: 1 -%}
+  {% endfor %}
   {%- for page in site.pages -%}
   {%- if page.searchable -%}
     "{{ i }}": {
