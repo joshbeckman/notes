@@ -50,6 +50,7 @@ These are me, but I don't actively use them. If *you* happen to use these networ
 | GitLab | [@joshbeckman](https://gitlab.com/joshbeckman) |
 | LinkedIn | [@josh-beckman-0aa20b50](https://www.linkedin.com/in/josh-beckman-0aa20b50) |
 | Spotify | [@andjosh](https://open.spotify.com/user/u7mkuzxzdh9igmc9ob8vbvvlr) |
+| Wordpress | [@joshbecause](https://wordpress.com/reader/users/joshbecause) |
 
 ### Inactive Accounts
 These were me, but I don't use them any more.
