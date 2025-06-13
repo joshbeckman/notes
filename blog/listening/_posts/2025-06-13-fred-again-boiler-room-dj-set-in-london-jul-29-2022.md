@@ -7,7 +7,7 @@ image: /assets/images/album_art/fredagain-boilerroomfredagaininlondonjul292022dj
 description:
 rating: 5
 song_link: https://music.apple.com/us/album/boiler-room-fred-again-in-london-jul-29-2022-dj-mix/1653471640
-mastodon_social_status_url: 'false'
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114674441019136669
 bluesky_status_url: 'false'
 tags:
 - music

@@ -5,7 +5,7 @@ title: I Built an MCP Server for My Site
 toc: true
 image: "/assets/images/be179fb8-6147-4832-81f6-3f5d208be8c5.jpeg"
 description:
-mastodon_social_status_url: 'false'
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114674440968062198
 bluesky_status_url: 'false'
 tags:
 - ai
