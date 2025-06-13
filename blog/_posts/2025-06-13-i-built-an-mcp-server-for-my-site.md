@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/be179fb8-6147-4832-81f6-3f5d208be8c5.jpeg"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114674440968062198
-bluesky_status_url: 'false'
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lrhpui66es2u
 tags:
 - ai
 - llm
