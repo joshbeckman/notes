@@ -38,9 +38,9 @@ permalink: /assets/js/SearchData.json
   {%- for page in site.pages -%}
   {%- if page.searchable -%}
     "{{ i }}": {
-       "doc":  {{ page.title | strip_html | escape | jsonify }},
-       "title": {{ page.title | strip_html | jsonify }},
-       "content": {{ page.raw_content | strip_html | jsonify }},
+       "doc":  {{ page.title | escape | jsonify }},
+       "title": {{ page.title | jsonify }},
+       "content": {{ page.raw_content | jsonify }},
        "tags": {{ page.tags | join: " " | jsonify }},
        "date": "{{ page.date | date_to_xmlschema }}",
        "book": {{ post.book | jsonify }},
@@ -55,9 +55,9 @@ permalink: /assets/js/SearchData.json
   {% endfor %}
   {%- for post in site.posts -%}
     "{{ i }}": {
-       "doc":  {{ post.title | strip_html | escape | jsonify }},
-       "title": {{ post.title | strip_html | jsonify }},
-       "content": {{ post.raw_content | strip_html | jsonify }},
+       "doc":  {{ post.title | escape | jsonify }},
+       "title": {{ post.title | jsonify }},
+       "content": {{ post.raw_content | jsonify }},
        "tags": {{ post.tags | join: " " | jsonify }},
        "date": "{{ post.date | date_to_xmlschema }}",
        "book": {{ post.book | jsonify }},
