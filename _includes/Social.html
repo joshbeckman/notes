@@ -83,6 +83,34 @@
         var script = document.createElement('script');
         script.src = 'https://cusdis.com/js/cusdis.es.js';
         document.body.appendChild(script);
+
+        function adjustIframeHeight(iframe) {
+            var heights = [];
+            function load() {
+                if (!iframe.contentWindow.document.body) {
+                    return setTimeout(load, 500);
+                }
+                var height = iframe.contentWindow.document.body.scrollHeight;
+                // Set the iframe height
+                iframe.style.height = height + 'px';
+                heights.push(height);
+                // if the height has been the same for 1.5 seconds, stop polling
+                if (heights.length > 3 && heights[heights.length - 1] === heights[heights.length - 2] && heights[heights.length - 2] === heights[heights.length - 3]) {
+                    return;
+                }
+                setTimeout(load, 500);
+            };
+            load();
+        }
+        // poll to get the iframe
+        (function waitForIframe() {
+            var myIframe = document.querySelector('#cusdis_thread iframe');
+            if (myIframe) {
+                adjustIframeHeight(myIframe);
+            } else {
+                setTimeout(waitForIframe, 100);
+            }
+        })();
     }
     function loadBluesky() {
         var bluesky = document.querySelector('.social-bluesky');
