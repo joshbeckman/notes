@@ -64,7 +64,7 @@ This stuff is so early, I implemented a discovery mechanism based on [someone's 
 
 You can use the MCP server remotely by calling [`joshbeckman--1818d72637f311f089f39e149126039e.web.val.run/mcp`](https://joshbeckman--1818d72637f311f089f39e149126039e.web.val.run/mcp).
 
-you can use the MCP server locally via [`mcp-remote`](https://github.com/geelen/mcp-remote#readme):
+You can use the MCP server locally via [`mcp-remote`](https://github.com/geelen/mcp-remote#readme):
 
 ```bash
 npx -y mcp-remote https://joshbeckman--1818d72637f311f089f39e149126039e.web.val.run/mcp
