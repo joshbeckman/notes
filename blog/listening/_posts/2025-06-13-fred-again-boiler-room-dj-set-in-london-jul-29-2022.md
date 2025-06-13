@@ -3,7 +3,7 @@ layout: Post
 date: '2025-06-13 03:05:11 +0000'
 title: Fred again... Boiler Room (DJ Set) in London, Jul 29, 2022
 toc: true
-image:
+image: /assets/images/album_art/fredagain-boilerroomfredagaininlondonjul292022djmix.jpg
 description:
 rating: 5
 song_link: https://music.apple.com/us/album/boiler-room-fred-again-in-london-jul-29-2022-dj-mix/1653471640
