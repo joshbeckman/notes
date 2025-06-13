@@ -3,6 +3,6 @@ permalink: /assets/js/proverbs.json
 ---
 [
   {%- for proverb in site.data.proverbs -%}
-    "{{proverb}}"{%- unless forloop.last -%},{%- endunless -%}
+    {{proverb | jsonify}}{%- unless forloop.last -%},{%- endunless -%}
   {% endfor %}
 ]
