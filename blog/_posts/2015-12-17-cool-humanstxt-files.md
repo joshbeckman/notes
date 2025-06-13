@@ -6,7 +6,6 @@ redirect_from:
 - "/cool-humanstxt-files"
 - "/cool-humanstxt-files/"
 tags:
-- blogroll
 - research
 ---
 
