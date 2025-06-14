@@ -5,7 +5,7 @@ title: '"No Kings" Protest in Chicago'
 toc: true
 image: "/assets/images/06e5b473-4488-4e84-81be-2442bb0de60b.jpeg"
 description:
-mastodon_social_status_url: 'false'
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114684342019205045
 bluesky_status_url: 'false'
 tags:
 - chicago
