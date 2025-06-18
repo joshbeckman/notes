@@ -69,11 +69,11 @@
                 loaded = false;
                 return;
             }
-            var html = '';
+            var html = '<p>Insight generated in ' + ((endTime - startTime) / 1000).toFixed(1) + 's</p>';
             for (var i = 0; i < data.length; i++) {
                 var message = data[i];
                 if (message.role === 'user') {
-                    html += '<blockquote>' + message.text_html + '</blockquote>';
+                    html += '<details class="small"><summary>Prompt</summary>' + message.text_html + '</details>';
                 } else if (message.type === 'mcp_tool_use') {
                     var nextMessage = data[i + 1];
                     if (nextMessage && nextMessage.type === 'mcp_tool_result') {
@@ -84,6 +84,10 @@
                     }
                 } else if (message.type === 'text') {
                     html += message.text_html;
+                } else if (message.type === 'thinking') {
+                    html += `<details class="small"><summary>Thinking</summary><p>${message.thinking}</p></details>`;
+                } else {
+                    console.warn('Unknown message type:', message.type);
                 }
             }
             document.getElementById('post-insight-agent').innerHTML = html;

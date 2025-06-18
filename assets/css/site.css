@@ -467,6 +467,11 @@ blockquote,
 figcaption {
   max-inline-size: 70ch;
 }
+thought_process {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
 figure,
 video,
 img {
@@ -478,6 +483,7 @@ figure {
 }
 p,
 li,
+thought_process,
 blockquote {
   line-height: 1.5;
 }
@@ -485,6 +491,7 @@ p,
 li,
 figcaption,
 table,
+thought_process,
 blockquote {
   hyphens: auto;
   text-wrap: pretty;
