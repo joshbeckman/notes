@@ -4,6 +4,7 @@ title: Few Things
 date: '2015-06-22 00:00:00'
 tags:
 - narro
+- hacker-news
 redirect_from:
 - "/few-things"
 - "/few-things/"
