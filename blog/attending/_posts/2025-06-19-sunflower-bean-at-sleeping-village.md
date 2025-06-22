@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/106873a6-033d-4e17-89f4-dc1a26da921f.jpeg"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114727520957409030
-bluesky_status_url: 'false'
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ls7c6go44t2k
 tags:
 - concerts
 - sleeping-village-venue
