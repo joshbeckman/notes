@@ -5,7 +5,7 @@ title: Confidence Man at Chicago Pride Fest
 toc: true
 image: "/assets/images/b2eff1b6-f534-43fd-a078-27a977196073.jpeg"
 description:
-mastodon_social_status_url: 'false'
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114727520984838419
 bluesky_status_url: 'false'
 tags:
 - concerts
