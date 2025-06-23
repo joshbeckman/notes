@@ -9,7 +9,7 @@ rating: 4
 tmdb_id: '1100988'
 letterboxd_id: 28-years-later
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114731791256546900
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lsb6uetwfv2p
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/28-years-later/
 tags:
 - movies
