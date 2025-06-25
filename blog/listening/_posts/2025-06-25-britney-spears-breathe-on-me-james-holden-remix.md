@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/723ca6ab-34e7-4d69-806c-97e572250aa3.png"
 description:
 rating: 5
-mastodon_social_status_url: 'false'
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114742393242325630
 bluesky_status_url: 'false'
 tags:
 - music
