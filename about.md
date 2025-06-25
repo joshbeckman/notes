@@ -25,7 +25,7 @@ You can read more [about this site](/about-this-site) or the [tools I use](/uses
 
 ## Support
 
-In addition to writing and sharing tools on this site, I maintain many open-source software projects. I welcome any issues or ideas you may open there and _especially_ any code you can contribute. Creating and _maintaining_ open-source software and open writing takes a lot of time and money, so fund my software maintenance and writing [via GitHub Sponsors](https://github.com/sponsors/joshbeckman).
+If you find value in my work, please consider [supporting me through sponsorship](/sponsorship/).
 
 ## Verification
 
