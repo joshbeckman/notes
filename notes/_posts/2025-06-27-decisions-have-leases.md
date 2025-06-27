@@ -5,7 +5,7 @@ title: Decisions Have Leases
 toc: true
 image:
 description: No decision is final
-mastodon_social_status_url: 'false'
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114756541005356127
 bluesky_status_url: 'false'
 tags:
 - decisions
