@@ -6,7 +6,7 @@ toc: true
 image:
 description: No decision is final
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114756541005356127
-bluesky_status_url: 'false'
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lsm6l7u2uy2m
 tags:
 - decisions
 - shopify
