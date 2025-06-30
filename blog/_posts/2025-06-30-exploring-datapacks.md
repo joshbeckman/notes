@@ -96,7 +96,7 @@ This makes datapacks ideal for sensitive domains - medical records, financial da
 I'm convinced enough to start experimenting with datapacks for my own site. My initial plans:
 
 1. **Themed collections**: Curated sets of posts on specific topics
-2. **Sequence packs**: Complete post series with proper ordering and context
+2. **Sequence packs**: Complete post series ([sequences](https://www.joshbeckman.org/blog/tracing-sequences-and-finding-anchors)) with proper ordering and context
 3. **Project documentation**: All writings related to specific projects I've worked on
 
 The goal isn't to replace my website or [MCP server](https://www.joshbeckman.org/blog/i-built-an-mcp-server-for-my-site), but to offer high-value, pre-processed knowledge products that save readers time and enhance their AI interactions. It's also as easy door for me to bring my site content into LLM interfaces that don't support me connecting my own MCP server (e.g. work LLMs, Claude for iOS, etc.)
