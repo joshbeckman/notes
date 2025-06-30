@@ -17,4 +17,4 @@ These are the posts I've written on this day in previous years:
 {% endif %}
 {% endfor %}
 
-Or browse the [heatmap calendar](/heatcal).
+Alternatively, you can look through [the daily review](/notes/daily-review) or browse the [heatmap calendar](/heatcal).

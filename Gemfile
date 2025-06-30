@@ -30,7 +30,7 @@ end
 
 gem 'kramdown-math-katex'
 gem 'plist'
-gem 'readwise', github: 'joshbeckman/readwise-ruby', branch: 'feature/readwise-api-v3'
+gem 'readwise'
 gem 'strava-ruby-client'
 gem 'polylines'
 

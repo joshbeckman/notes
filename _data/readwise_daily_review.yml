@@ -1,0 +1,198 @@
+---
+:id: 164807389
+:url: https://readwise.io/reviews/164807389
+:completed: false
+:highlights:
+- !ruby/struct:Struct::ReadwiseHighlight
+  book_id: ''
+  color:
+  created_at:
+  end_location:
+  external_id:
+  highlight_id: '420197422'
+  highlighted_at: '2022-11-23T04:11:32.857036Z'
+  is_discard:
+  is_favorite:
+  location: 52
+  location_type: order
+  note: ''
+  readwise_url:
+  tags: []
+  text: And some of these things we do, and some of them we don’t (like the horse),
+    and it is better than a movie, because it doesn’t end, and we are not acting,
+    and I am not wearing any makeup.
+  updated_at:
+  url:
+- !ruby/struct:Struct::ReadwiseHighlight
+  book_id: ''
+  color:
+  created_at:
+  end_location:
+  external_id:
+  highlight_id: '483910961'
+  highlighted_at: '2023-02-28T14:18:45.637018Z'
+  is_discard:
+  is_favorite:
+  location: 47722
+  location_type: offset
+  note: ''
+  readwise_url:
+  tags: []
+  text: |-
+    One thing I've noticed is that a lot of colleagues don't know how to give good situation reports. One common error, especially amongst engineers, is to start from first observations and work towards a conclusion. This is exactly how one should think about technical problems, but it's not a very effective way of communicating, especially when you're trying to relay information up a chain of command.
+
+    Here's how I learned to give a situation report during my brief stint in the armed forces:
+    1. "I am" (identify yourself & other parties involved; give location where appilcable)
+    2. "I see" (What is on your radar? What's the problem? What situation is developing? Which milestone have you reached?)
+    3. "I'm doing" (How are you responding to what you see?)
+    4. "I want" (How can your interlocutor help? What resources do you need?)
+
+    The mnemonic for this is rather funny: [["I'm lost. I can't see shit. I'm doing fuck all. I want to go home."::highlight]]
+
+    I think it works rather well in civilian life, too: "I'm working on $FEATURE. I'm noticing that page load times have doubled. I'm caching the results to try to reduce that a bit. Could Bob have a look at the database indexes?"
+  updated_at:
+  url:
+- !ruby/struct:Struct::ReadwiseHighlight
+  book_id: ''
+  color:
+  created_at:
+  end_location:
+  external_id:
+  highlight_id: '554808582'
+  highlighted_at: '2023-06-28T04:08:21.244927Z'
+  is_discard:
+  is_favorite:
+  location: 2
+  location_type: order
+  note: "[Good] Creation is repairing the surrounding context."
+  readwise_url:
+  tags: []
+  text: This is a fundamental view of the world. It says that when you build a thing
+    you cannot merely build that thing in isolation, but must also repair the world
+    around it, and within it, so that the larger world at that one place becomes more
+    coherent, and more whole; and the thing which you make takes its place in the
+    web of nature, as you make it.
+  updated_at:
+  url:
+- !ruby/struct:Struct::ReadwiseHighlight
+  book_id: ''
+  color:
+  created_at:
+  end_location:
+  external_id:
+  highlight_id: '473002145'
+  highlighted_at: '2023-02-09T00:56:59.855708Z'
+  is_discard:
+  is_favorite:
+  location: 10479
+  location_type: offset
+  note: If you squint this is almost like the relationship software engineers have
+    with performance optimization. You want things to be fast, you say we don’t tolerate
+    anything slow, etc. but you actually need to allow slow code to operate a product.
+  readwise_url:
+  tags: []
+  text: In general, the chief compliance officer at any company has a dial in front
+    of her that she can turn to get More Crime or Less Crime, and at a normal company
+    — a bank, for instance — her job consists of (1) turning it most of the way toward
+    Less Crime, but (2) not all the way, and (3) acting very contrite when politicians
+    and regulators yell at her about the residual crime. “We have a zero-tolerance
+    policy for crime,” she will say, and almost mean.
+  updated_at:
+  url:
+- !ruby/struct:Struct::ReadwiseHighlight
+  book_id: ''
+  color:
+  created_at:
+  end_location:
+  external_id:
+  highlight_id: '681443100'
+  highlighted_at: '2024-02-21T18:39:08.584979Z'
+  is_discard:
+  is_favorite:
+  location: 13513
+  location_type: offset
+  note: Coding the perimeter of the problem allows you to multiply your efforts instead
+    of linearly scaling them.
+  readwise_url:
+  tags: []
+  text: |-
+    ...so what really Google is trying to do is create an operating system for the world's information. Yeah, maybe ad-funded and with unusually good search and heterogeneous but essentially an operating system and these are all the Googlers running around writing each feature independently for each type of data on each platform.
+
+    But this is the multics model, right? And you're trying to solve a cube problem with a linear solution, and that's not really going to work out well.
+
+    But, if we can get those developers to [[move from coding the volume of this problem space to coding the perimeter (like they did with UNIX) then we would become exponentially more efficient.::highlight]]
+  updated_at:
+  url:
+- !ruby/struct:Struct::ReadwiseHighlight
+  book_id: ''
+  color:
+  created_at:
+  end_location:
+  external_id:
+  highlight_id: '502040271'
+  highlighted_at: '2023-04-02T17:43:41.011050Z'
+  is_discard:
+  is_favorite:
+  location: 11359
+  location_type: offset
+  note: ''
+  readwise_url:
+  tags: []
+  text: |-
+    All you crazy MFs are completely overlooking the fact that **software engineering exists as a discipline because you cannot EVER under any circumstances TRUST CODE.** That’s why we have *reviewers*. And *linters*. And *debuggers*. And *unit tests*. And *integration tests*. And *staging environments*. And *runbooks*. And all of goddamned *Operational Excellence*. And *security checkers*, and *compliance scanners*, and on, and on and on!
+
+    So the next one of you to complain that “you can’t trust LLM code” gets a little badge that says “Welcome to *engineering* motherfucker”. You’ve finally learned the secret of the trade: Don’t. Trust. Anything!
+  updated_at:
+  url:
+- !ruby/struct:Struct::ReadwiseHighlight
+  book_id: ''
+  color:
+  created_at:
+  end_location:
+  external_id:
+  highlight_id: '632503274'
+  highlighted_at: '2023-11-27T04:22:08.778859Z'
+  is_discard:
+  is_favorite:
+  location: 3609
+  location_type: offset
+  note: |-
+    Behaviors and properties can be either *observed* or *tracked* (via reporting) or *verified* (before releasing the software).
+
+    You get the best results by evolving beliefs into asserted properties, followed by verified behaviors, but there is a surprising amount of value in just moving them into tracked behaviors or properties. It helps you understand the level of effort that’ll be required before you can begin reasoning about
+    your software again.
+  readwise_url:
+  tags: []
+  text: |-
+    Post-Apocalyptic [or bad] software is hard to modify because it doesn’t behave in predictable ways, instead you only have **beliefs** about how it works. [...] It’s hard to write software based on beliefs, because they’re often wrong, so you end up having to empirically verify your solution, step by step. [Or you keep using beliefs, which leads to unreasonable software.]
+
+    We make unreasonable software reasonable by turning each *belief* into either a **behavior** or a **property**. *Behaviors* are aspects of software that can be validated empircally against an environment. *Properties* are aspects of software that can be validated statically or through local exercise.
+  updated_at:
+  url:
+- !ruby/struct:Struct::ReadwiseHighlight
+  book_id: ''
+  color:
+  created_at:
+  end_location:
+  external_id:
+  highlight_id: '209715360'
+  highlighted_at: '2021-08-06T16:17:16.335451Z'
+  is_discard:
+  is_favorite:
+  location: 108
+  location_type: order
+  note: ''
+  readwise_url:
+  tags: []
+  text: 'Do you ever wish that your highlights were tagged with useful keywords and
+    categories, but never bothered because the process of tagging is just too cumbersome?
+    There''s an easy way to tag your highlights, found only in Readwise called, inline
+    tagging. An inline tag is a special note taken while you read that''s automatically
+    converted into a tag in Readwise. Tagging in the moment is much faster than tagging
+    after the fact, and once your highlights have keywords and categories, they''re
+    much easier to review and reference. Simply highlight a passage and add a note
+    beginning with a period (.) followed by a single word or abbreviation (with no
+    spaces). You can also train Readwise to interpret shorthand! Read more here: [How
+    to Tag Your Highlights While You Read](https://blog.readwise.io/tag-your-highlights-while-you-read/).'
+  updated_at:
+  url:
