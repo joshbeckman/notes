@@ -1,7 +1,7 @@
 ---
 layout: Post
 date: '2025-06-30 13:07:03 +0000'
-title: Exploring Datapacks
+title: Exploring Datapacks for LLMs
 toc: true
 image: "/assets/images/9ff9e3af-c9f4-4fa4-bf64-8fcf200aa8b0.jpeg"
 description:
