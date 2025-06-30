@@ -8,7 +8,7 @@ description:
 rating: 5
 tmdb_id: '12477'
 letterboxd_id: grave-of-the-fireflies
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114771424979274143
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/grave-of-the-fireflies/
 tags:
