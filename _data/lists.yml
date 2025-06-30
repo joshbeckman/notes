@@ -20,6 +20,8 @@
       description: piano chord reference
     - url: https://whenisgood.net
       description: Find a time to meet with friends
+    - url: https://www.rsstocal.com
+      description: Convert RSS feeds to iCal
 - title: Webrings
   items:
     - url: https://webring.stavros.io
