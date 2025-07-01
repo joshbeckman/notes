@@ -4,6 +4,7 @@ title: Daily Review
 categories:
 - notes
 permalink: /notes/daily-review/
+searchable: true
 tags:
 - index
 ---
