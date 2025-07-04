@@ -5,7 +5,7 @@ title: 'Field Recording #1'
 toc: true
 image: https://i3.ytimg.com/vi/jCwa-KYJh44/hqdefault.jpg
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114796179569210283
 bluesky_status_url: false
 youtube_video_id: jCwa-KYJh44
 youtube_video_url: https://www.youtube.com/watch?v=jCwa-KYJh44
