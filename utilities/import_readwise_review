@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'jekyll'
+require 'readwise'
+
+class Importer
+  def self.import
+    client = Readwise::Client.new(token: ENV.fetch('READWISE_TOKEN', nil))
+    review = client.daily_review
+    review_yaml = review.serialize.to_yaml
+    File.write('_data/readwise_daily_review.yml', review_yaml)
+  end
+end
+
+Importer.import
