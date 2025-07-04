@@ -59,6 +59,8 @@ module PESOS
         slug: slug,
         title: title
       )
+      return post_obj.filename if post_obj.file_exists?
+
       post_obj.tags = (post_obj.suggested_tags || []).push('youtube').uniq
       post_obj.create_file
     end

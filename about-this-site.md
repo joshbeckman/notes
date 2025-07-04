@@ -92,6 +92,9 @@ You can read about everything else I use to build things at [/uses](/uses).
 - photos page
 - [More ideas](https://github.com/joshbeckman/notes/issues?q=is%3Aopen+is%3Aissue+-label%3Apost)
 
+### 2025-07-04
+- Import videos from YouTube as blog posts
+
 ### 2025-06-29
 - Add [Daily Review](/notes/daily-review) page to display daily reviews from Readwise
 

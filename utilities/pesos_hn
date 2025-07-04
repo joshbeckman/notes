@@ -49,6 +49,8 @@ module PESOS
         slug: slug,
         title: title
       )
+      return post.filename if post.file_exists?
+
       post.tags = (post.suggested_tags || []).push('hacker-news').uniq
       post.create_file
     end
