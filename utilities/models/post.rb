@@ -28,6 +28,8 @@ Post = Struct.new(
   :tags,
   :title,
   :layout,
+  :youtube_video_id,
+  :youtube_video_url,
   keyword_init: true
 ) do
   def movie_cover_image
@@ -93,6 +95,8 @@ Post = Struct.new(
     front_matter['strava_activity_url'] = strava_activity_url unless strava_activity_url.nil?
     front_matter['letterboxd_review_url'] = letterboxd_review_url unless letterboxd_review_url.nil?
     front_matter['hacker_news_url'] = hacker_news_url unless hacker_news_url.nil?
+    front_matter['youtube_video_id'] = youtube_video_id unless youtube_video_id.nil?
+    front_matter['youtube_video_url'] = youtube_video_url unless youtube_video_url.nil?
     front_matter['exercise_data'] = exercise_data.transform_keys(&:to_s) if exercise_data
     front_matter['tags'] = tags if tags&.any?
     File.open(filename, 'w') do |file|

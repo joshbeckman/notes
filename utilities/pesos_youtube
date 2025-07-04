@@ -1,0 +1,113 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'jekyll'
+require 'rexml/document'
+require 'net/http'
+require 'time'
+require_relative 'models/post'
+require_relative 'models/asset'
+
+module PESOS
+  class YouTube
+    class Error < StandardError; end
+
+    attr_reader :site
+
+    def initialize
+      @site = Jekyll::Site.new(Jekyll.configuration({}))
+      @channel_id = ENV.fetch('YOUTUBE_CHANNEL_ID', 'UC_MWtCevvDyb7csiGKWTYCA')
+      @site.read
+    end
+
+    def import_posts
+      posts = outbox.filter do |item|
+        next false if post_exists?(item['videoId'])
+
+        true
+      end
+      posts.each { |post| import_post(post) }
+    end
+
+    def post_exists?(video_id)
+      site.posts.docs.any? do |post|
+        post.data['youtube_video_id'] == video_id
+      end
+    end
+
+    def import_post(post)
+      title = post['title']
+      video_id = post['videoId']
+      slug = "youtube-#{video_id}"
+      thumbnail_url = extract_thumbnail_url(post)
+      description = post['media:description'] || ''
+
+      embed_html = %(<iframe width="100%" height="340" src="https://www.youtube-nocookie.com/embed/#{video_id}" title="#{title.gsub('"',
+                                                                                                                                    '&quot;')}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>)
+
+      body_content = [embed_html, description].reject(&:empty?).join("\n\n")
+
+      post_obj = Post.new(
+        body: body_content,
+        category: 'blog',
+        date: Time.parse(post['published']),
+        youtube_video_id: video_id,
+        youtube_video_url: "https://www.youtube.com/watch?v=#{video_id}",
+        bluesky_status_url: false,
+        mastodon_social_status_url: false,
+        image: thumbnail_url,
+        slug: slug,
+        title: title
+      )
+      post_obj.tags = (post_obj.suggested_tags || []).push('youtube').uniq
+      post_obj.create_file
+    end
+
+    def extract_thumbnail_url(post)
+      return nil unless post['media:thumbnail']
+
+      if post['media:thumbnail'].is_a?(Hash)
+        post['media:thumbnail']['url']
+      else
+        post['media:thumbnail']
+      end
+    end
+
+    def outbox
+      uri = URI.parse("https://www.youtube.com/feeds/videos.xml?channel_id=#{@channel_id}")
+      req = Net::HTTP::Get.new(uri)
+      req['Accept'] = 'application/rss+xml'
+      res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
+        http.request(req)
+      end
+
+      unless res.is_a?(Net::HTTPSuccess)
+        puts res.body
+        raise Error, 'YouTube RSS request failed'
+      end
+
+      doc = REXML::Document.new(res.body)
+      doc.elements['feed'].elements.map do |item|
+        next unless item.name == 'entry'
+
+        item.elements.each_with_object({}) do |element, hash|
+          case element.name
+          when 'group'
+            element.elements.each do |media_element|
+              hash["media:#{media_element.name}"] = if media_element.name == 'thumbnail'
+                                                      media_element.attributes['url']
+                                                    else
+                                                      media_element.text
+                                                    end
+            end
+          else
+            hash[element.name] = element.text
+          end
+        end
+      end.compact
+    end
+  end
+end
+
+youtube = PESOS::YouTube.new
+youtube.import_posts
