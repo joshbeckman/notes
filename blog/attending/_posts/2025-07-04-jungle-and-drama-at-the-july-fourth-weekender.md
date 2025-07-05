@@ -18,7 +18,7 @@ The organizers of [The July Fourth Weekender](https://www.frontgatetickets.com/e
 
 ![Todd Terje performing at the Weekender against the Chicago skyline in sunny clouds](/assets/images/e24b23bc-4406-4ef5-b903-15d0518498e5.jpeg)
 
-We came in the catch the end of *Pretty Girl* and she was excitedly playing for a sparse but appreciative crowd. The we got to see a previous favorite of ours - *DJ Boring* - who lead into the first act I was really excited to see: *Todd Terje**. It was incredibly hot in the sun - every sparse cloud cover felt like a drop of ten degrees.
+We came in the catch the end of *Pretty Girl* and she was excitedly playing for a sparse but appreciative crowd. The we got to see a previous favorite of ours - *DJ Boring* - who lead into the first act I was really excited to see: *Todd Terje*. It was incredibly hot in the sun - every sparse cloud cover felt like a drop of ten degrees.
 
 He handed over the stage - which was filling up with VIP members behind the decks - to local favorite *[DRAMA](https://thedramaduo.com/)* who I have loved for many years. I hadn't seen them live since years ago  at some west-side street festival. It was fun to dance to some live vocals.
 
