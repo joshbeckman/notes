@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/e24b23bc-4406-4ef5-b903-15d0518498e5.jpeg"
 description: A hot summer night and Jungle brought the heat
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114801836436234969
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ltacbai5qz2a
 tags:
 - chicago
 - music
