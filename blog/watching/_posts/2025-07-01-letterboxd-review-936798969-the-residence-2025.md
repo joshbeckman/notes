@@ -7,7 +7,7 @@ image: https://a.ltrbxd.com/resized/film-poster/1/3/6/5/5/5/6/1365556-the-reside
 description:
 rating: 4
 letterboxd_id: the-residence-2025
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114802548451603199
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/the-residence-2025/
 tags:
