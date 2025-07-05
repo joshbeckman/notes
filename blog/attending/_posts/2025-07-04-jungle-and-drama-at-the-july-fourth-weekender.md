@@ -1,12 +1,12 @@
 ---
 layout: Post
-date: '2025-07-04 11:03:48 -0500'
+date: '2025-07-04 16:03:48 -0500'
 title: Jungle and Drama at the July Fourth Weekender
 toc: true
 image: "/assets/images/e24b23bc-4406-4ef5-b903-15d0518498e5.jpeg"
 description: A hot summer night and Jungle brought the heat
-mastodon_social_status_url: 'false'
-bluesky_status_url: 'false'
+mastodon_social_status_url: false
+bluesky_status_url: false
 tags:
 - chicago
 - music
