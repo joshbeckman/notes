@@ -9,7 +9,7 @@ rating: 4
 tmdb_id: '574475'
 letterboxd_id: final-destination-bloodlines
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114816725288056848
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ltgvtuh6re2s
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/final-destination-bloodlines/
 tags:
 - movies
