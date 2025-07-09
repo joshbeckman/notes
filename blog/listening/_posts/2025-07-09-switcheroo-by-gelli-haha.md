@@ -7,7 +7,7 @@ image: "/assets/images/album_art/gellihaha-switcheroo.jpg"
 description:
 rating: 5
 song_link: https://album.link/i/1797636807
-mastodon_social_status_url: 'false'
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114823793332879162
 bluesky_status_url: 'false'
 tags:
 - music
