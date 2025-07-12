@@ -7,7 +7,7 @@ image: "/assets/images/album_art/wetleg-moisturizer.jpg"
 description:
 rating: 4
 song_link: https://music.apple.com/us/album/moisturizer/1802918329
-mastodon_social_status_url: 'false'
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114842894883580040
 bluesky_status_url: 'false'
 tags:
 - music
