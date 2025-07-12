@@ -310,4 +310,33 @@ window.addEventListener('load', function () {
       }
     });
 });
+(function addCopyButtons() {
+    const divs = document.querySelectorAll('div.highlighter-rouge');
+    divs.forEach(wrapper => {
+        const pre = wrapper.querySelector('pre');
+        wrapper.style.position = 'relative';
+        const copyButton = document.createElement('button');
+        copyButton.textContent = 'Copy';
+        copyButton.style.position = 'absolute';
+        copyButton.style.top = '16px';
+        copyButton.style.fontSize = '0.8em';
+        copyButton.style.right = '-2px';
+        copyButton.style.padding = '0.5em';
+        copyButton.style.borderRadius = '0';
+        copyButton.style.borderTopRightRadius = '5px';
+        copyButton.style.zIndex = '100';
+        copyButton.addEventListener('click', function() {
+            const text = pre.textContent || pre.innerText;
+            navigator.clipboard.writeText(text).then(function() {
+                copyButton.textContent = 'Copied!';
+                setTimeout(function() {
+                    copyButton.textContent = 'Copy';
+                }, 2000);
+            }).catch(function(err) {
+                console.error('Failed to copy text: ', err);
+            });
+        });
+        wrapper.appendChild(copyButton);
+    });
+})();
 </script>
