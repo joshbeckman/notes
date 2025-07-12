@@ -8,7 +8,7 @@ description:
 rating: 4
 song_link: https://music.apple.com/us/album/moisturizer/1802918329
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114842894883580040
-bluesky_status_url: 'false'
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ltsjqj4rwy2f
 tags:
 - music
 ---

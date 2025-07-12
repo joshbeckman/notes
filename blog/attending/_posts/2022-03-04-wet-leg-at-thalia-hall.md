@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/ba6cb4bd-1bb2-46e8-82a6-10103f7762bc.jpeg"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114842894826835836
-bluesky_status_url: 'false'
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ltsjqfx7ff2y
 tags:
 - concerts
 - thalia-hall-venue

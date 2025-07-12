@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/5481192a-cbf1-4c75-b6b8-4c4f42441127.jpeg"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114842894857345772
-bluesky_status_url: 'false'
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ltsjqhkdk525
 tags:
 - concerts
 - chicago
