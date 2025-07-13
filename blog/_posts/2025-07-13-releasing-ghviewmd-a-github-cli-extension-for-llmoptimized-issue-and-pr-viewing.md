@@ -7,7 +7,7 @@ toc: true
 image: "/assets/images/ae2799ba-8cdd-4f60-a717-a78675ae8448.jpeg"
 description: A new GitHub CLI extension that renders issues and pull requests in clean
   markdown format, perfect for feeding to LLMs or offline viewing
-mastodon_social_status_url: 'false'
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114844317210566071
 bluesky_status_url: 'false'
 tags:
 - tools
