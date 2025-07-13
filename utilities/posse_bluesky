@@ -56,15 +56,16 @@ module POSSE
     def post(post)
       puts "Posting: #{url(post)}"
       title = if post.data['hide_title']
-               nil
-             else
-               post.data['title']
-             end
+                nil
+              else
+                post.data['title']
+              end
       message = [
         url(post),
         title,
-        excerpt(post),
+        excerpt(post)
       ].compact.join("\n\n")
+      message = truncate_message(message, 300)
       status = post_status(message, post)
       puts "Posted:  #{url(post)} to #{status['url']}"
       bluesky_status_url = status['url']
@@ -82,6 +83,15 @@ module POSSE
     end
 
     private
+
+    def truncate_message(message, max_length)
+      return message if message.length <= max_length
+
+      truncated = message[0, max_length - 3]
+      last_space = truncated.rindex(' ')
+      truncated = truncated[0, last_space] if last_space
+      "#{truncated}..."
+    end
 
     def available?(post)
       uri = URI.parse(url(post))
