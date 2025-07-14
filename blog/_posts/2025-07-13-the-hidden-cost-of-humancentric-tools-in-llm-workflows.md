@@ -6,6 +6,7 @@ image: "/assets/images/c27d3253-ff59-419c-9d5f-b055bb857167.jpeg"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114847135889506262
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ltufz3jant2x
+hacker_news_url: https://news.ycombinator.com/item?id=44551171
 tags:
 - tools
 - llm
