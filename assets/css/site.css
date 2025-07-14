@@ -1344,7 +1344,7 @@ div.highlighter-rouge.language-go::before {
 .post-insight-agent {
   margin: 1em 0;
 }
-.post-social {
+.post-social, .post-network {
   margin: 0 0 1em;
 }
 details {
