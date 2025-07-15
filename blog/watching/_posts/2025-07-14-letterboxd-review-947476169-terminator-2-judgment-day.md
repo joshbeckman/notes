@@ -9,7 +9,7 @@ rating: 4
 tmdb_id: '280'
 letterboxd_id: terminator-2-judgment-day
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114856376488824623
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ltyjd5txiy2m
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/terminator-2-judgment-day/
 tags:
 - movies
