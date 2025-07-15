@@ -5,6 +5,7 @@ date: '2015-07-14 00:00:00'
 tags:
 - hiring
 - threadmeup
+- open-source
 redirect_from:
 - "/contribute-to-open-source-as-a-code-test"
 - "/contribute-to-open-source-as-a-code-test/"
