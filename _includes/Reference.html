@@ -9,13 +9,20 @@
               <a href="/search/?q=%27{{ tag }}&keys=tags" class="">{{ tag }}</a>
           </li>
       {%- endfor -%}
+      {% assign cat_acc = "" %}
+      {% for category in page.categories %}
+          <li class="filed category">
+              <a href="/{{cat_acc}}{{ category | slugify }}">{{ category  | capitalize }}</a>
+          </li>
+          {% assign cat_acc = cat_acc | append: category | slugify | append: "/" %}
+      {%- endfor -%}
       {%- if page.book -%}
           <li class="filed source">
               <a href="/search/?q=%27{{ page.book }}&keys=book" class="">{{ page.book_title }}</a>
           </li>
       {%- endif -%}
       {%- if page.author_id -%}
-          <li class="filed source">
+          <li class="filed author">
               <a href="/search/?q=%27{{ page.author_id }}+%7C+%27%22{{page.author}}%22" class="">{{ page.author }}</a>
           </li>
       {%- endif -%}

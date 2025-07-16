@@ -980,7 +980,17 @@ li.filed:before {
   left: -0.3em;
 }
 li.filed.source:before {
-  content: "≡";
+  content: "»";
+}
+li.filed.author:before {
+  content: "@";
+  font-size: 0.75em;
+  left: -0.45em;
+  top: -0.15em;
+}
+li.filed.category:before {
+  content: "∈";
+  top: -0.1em;
 }
 li.filed.insight a {
    color: #FF7900;
