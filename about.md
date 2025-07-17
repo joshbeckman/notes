@@ -33,15 +33,15 @@ If you find value in my work, please consider [supporting me through sponsorship
 
 If you see an account that looks like it might be me but isn't listed here, please let me know.
 
+| Email | `josh@joshbeckman.org` |
+| GitHub | [@joshbeckman](https://github.com/joshbeckman) |
 | Mastodon | [@joshbeckman@mastodon.social](https://mastodon.social/@joshbeckman) |
 | Bluesky | [@joshbeckman.org](https://bsky.app/profile/joshbeckman.org) |
-| GitHub | [@joshbeckman](https://github.com/joshbeckman) |
 | Letterboxd | [@joshbeckman](https://letterboxd.com/joshbeckman/) |
 | Apple Music | [@andjosh](https://music.apple.com/profile/andjosh) |
 | YouTube | [@joshbeckmanchannel](https://www.youtube.com/@joshbeckmanchannel) |
 | Strava | [@beckman_josh](https://www.strava.com/athletes/beckman_josh) |
 | Hacker News | [@bckmn](https://news.ycombinator.com/user?id=bckmn) |
-| Email | `josh@joshbeckman.org` |
 
 ### Passive Accounts
 These are me, but I don't actively use them. If *you* happen to use these networks, feel free to interact with me and I'll see it eventually.
