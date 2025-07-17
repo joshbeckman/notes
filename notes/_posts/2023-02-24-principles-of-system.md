@@ -1,6 +1,6 @@
 ---
 title: Principles of Good Systems &#x2B22;
-tags: system-design scalability observability safety
+tags: system-design scalability observability safety favorite
 author: Josh Beckman
 book: joshbeckman
 book_title: "Josh's Thoughts"
