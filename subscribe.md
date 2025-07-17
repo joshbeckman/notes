@@ -2,6 +2,7 @@
 layout: Page
 title: Subscribe or Follow
 tags: index
+permalink: /subscribe/
 toc: true
 searchable: true
 emoji: '📶'
