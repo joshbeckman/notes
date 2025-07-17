@@ -7,6 +7,7 @@ description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114847135889506262
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ltufz3jant2x
 hacker_news_url: https://news.ycombinator.com/item?id=44551171
+redirect_from: /blog/the-hidden-cost-of-humancentric-tools-in-llm-workflows
 tags:
 - tools
 - llm
@@ -16,7 +17,7 @@ tags:
 
 ![Vines growing on telephone wires](/assets/images/c27d3253-ff59-419c-9d5f-b055bb857167.jpeg)
 
-I built and [released `gh-view-md`](https://www.joshbeckman.org/blog/releasing-ghviewmd-a-github-cli-extension-for-llmoptimized-issue-and-pr-viewing) because I think we're entering an important phase of LLM development: tool refactoring and script extraction.
+I built and [released `gh-view-md`](https://www.joshbeckman.org/blog/practicing/releasing-ghviewmd-a-github-cli-extension-for-llmoptimized-issue-and-pr-viewing) because I think we're entering an important phase of LLM development: tool refactoring and script extraction.
 
 As you build LLM interfaces and agent-powered features, you'll quickly discover something important: *offering* tools to your LLM can get you a working solution, but your first version will likely be inefficient. Multiple tool calls. Excessive tokens. Extended processing time. Failure modes where the right tools weren't called to provide the right context.
 

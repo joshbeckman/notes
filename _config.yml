@@ -94,6 +94,7 @@ feed:
   posts_limit: 25
   categories:
     - blog
+    - practicing
     - notes
     - replies
     - exercise

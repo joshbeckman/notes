@@ -3,6 +3,7 @@
   Reference
   </h3>
   <ul class="filed">
+      {% if page.categories %}
       <li class="filed category">
       {% assign cat_acc = "" %}
       {% for category in page.categories %}
@@ -13,6 +14,7 @@
           {% assign cat_acc = cat_acc | append: category | slugify | append: "/" %}
       {%- endfor -%}
       </li>
+      {%- endif -%}
       {%- if page.tags -%}
       <li class="filed">
           {%- for tag in page.tags -%}

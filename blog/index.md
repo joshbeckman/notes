@@ -9,12 +9,13 @@ tags:
 ---
 
 <div id="toc-and-metadata"><ul id="toc" class="section-nav">
-<li class="toc-entry toc-h2"><a href="/blog/attending">Concerts</a></li>
-<li class="toc-entry toc-h2"><a href="/blog/reading">Books</a></li>
-<li class="toc-entry toc-h2"><a href="/blog/watching">Movies</a></li>
-<li class="toc-entry toc-h2"><a href="/blog/traveling">Travel</a></li>
-<li class="toc-entry toc-h2"><a href="/blog/working">Desks</a></li>
-<li class="toc-entry toc-h2"><a href="/blog/listening">Music</a></li>
+<li class="toc-entry toc-h2"><a href="/blog/attending">Attending</a></li>
+<li class="toc-entry toc-h2"><a href="/blog/listening">Listening</a></li>
+<li class="toc-entry toc-h2"><a href="/blog/practicing">Practicing</a></li>
+<li class="toc-entry toc-h2"><a href="/blog/reading">Reading</a></li>
+<li class="toc-entry toc-h2"><a href="/blog/traveling">Traveling</a></li>
+<li class="toc-entry toc-h2"><a href="/blog/watching">Watching</a></li>
+<li class="toc-entry toc-h2"><a href="/blog/working">Working</a></li>
 </ul></div>
 
 I have some collections for specific topics (above) or you can browse the full list (below).
