@@ -762,18 +762,19 @@ article div.highlight {
   font-size: 100px;
 }
 nav {
+  margin-bottom: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+nav a {
+  display: inline-block;
+}
+nav a.homepage {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-weight: bold;
-  margin-bottom: 2em;
-}
-nav .page-link {
-  white-space: nowrap;
-  max-width: 12em;
-  display: inline-block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  vertical-align: bottom;
 }
 .row.home .column.navigation header {
   font-size: 1.6em;
@@ -997,6 +998,9 @@ li.filed.insight a {
 }
 li.filed.insight:before {
   content: "?";
+}
+li.filed.permalink:before {
+  content: "∞";
 }
 li.filed.date:before {
   content: "≈";

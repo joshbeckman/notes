@@ -3,19 +3,26 @@
   Reference
   </h3>
   <ul class="filed">
-      <!-- Loop through page categories and print them in tags -->
-      {%- for tag in page.tags -%}
-          <li class="filed">
-              <a href="/search/?q=%27{{ tag }}&keys=tags" class="">{{ tag }}</a>
-          </li>
-      {%- endfor -%}
+      <li class="filed category">
       {% assign cat_acc = "" %}
       {% for category in page.categories %}
-          <li class="filed category">
-              <a href="/{{cat_acc}}{{ category | slugify }}">{{ category  | capitalize }}</a>
-          </li>
+          <a href="/{{cat_acc}}{{ category | slugify }}">{{ category  | capitalize }}</a>
+            {%- if forloop.last == false -%}
+            &nbsp;/
+            {%- endif -%}
           {% assign cat_acc = cat_acc | append: category | slugify | append: "/" %}
       {%- endfor -%}
+      </li>
+      {%- if page.tags -%}
+      <li class="filed">
+          {%- for tag in page.tags -%}
+          <a href="/search/?q=%27{{ tag }}&keys=tags" class="">{{ tag }}</a>
+            {%- if forloop.last == false -%}
+            ,&nbsp;
+            {%- endif -%}
+          {%- endfor -%}
+      </li>
+      {% endif %}
       {%- if page.book -%}
           <li class="filed source">
               <a href="/search/?q=%27{{ page.book }}&keys=book" class="">{{ page.book_title }}</a>
@@ -33,6 +40,9 @@
         </a>
       </li>
       {%- endif -%}
+      <li class="filed permalink">
+        <a href="{{ page.url }}" class="permalink" title="Permanent link to this page">Permalink</a>
+      </li>
       <li class="filed edit">
       {%- if page.readwise_url -%}
         <a id="edit-link" href="{{ page.readwise_url }}" target="_blank" rel="noopener noreferrer">Edit</a>

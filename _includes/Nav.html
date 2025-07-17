@@ -1,4 +1,7 @@
 <nav>
-  <span class="print-only">{{ site.title }} ({{ site.url | domainify }})</span>
-  <a href="/">home</a>{% for category in page.categories %} / <a href="/{{cat_acc}}{{ category | slugify }}">{{ category  }}</a>{% assign cat_acc = cat_acc | append: category | slugify | append: "/" %}{% endfor %}{% if page.url != "/" %} / <a href="{{ page.url }}" class="page-link">{{ page.title | slugify  }}</a>{% endif %}
+  <a class="homepage" href="/">
+      {{ site.title }}
+      <span class="print-only">({{ site.url | domainify }})</span>
+  </a>
+  <a href="/subscribe/">Subscribe</a>
 </nav>
