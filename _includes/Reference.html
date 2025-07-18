@@ -4,8 +4,8 @@
   </h3>
   <ul class="filed">
       {% if page.categories %}
-      <li class="filed category">
       {% assign cat_acc = "" %}
+      <li class="filed category">
       {% for category in page.categories %}
           <a href="/{{cat_acc}}{{ category | slugify }}">{{ category  | capitalize }}</a>
             {%- if forloop.last == false -%}
@@ -17,23 +17,23 @@
       {%- endif -%}
       {%- if page.tags -%}
       <li class="filed">
-          {%- for tag in page.tags -%}
-          <a href="/search/?q=%27{{ tag }}&keys=tags" class="">{{ tag }}</a>
+      {%- for tag in page.tags -%}
+          <a href="/search/?q=%27{{ tag }}&keys=tags">{{ tag }}</a>
             {%- if forloop.last == false -%}
             ,&nbsp;
             {%- endif -%}
-          {%- endfor -%}
+      {%- endfor -%}
       </li>
       {% endif %}
       {%- if page.book -%}
-          <li class="filed source">
-              <a href="/search/?q=%27{{ page.book }}&keys=book" class="">{{ page.book_title }}</a>
-          </li>
+      <li class="filed source">
+          <a href="/search/?q=%27{{ page.book }}&keys=book">{{ page.book_title }}</a>
+      </li>
       {%- endif -%}
       {%- if page.author_id -%}
-          <li class="filed author">
-              <a href="/search/?q=%27{{ page.author_id }}+%7C+%27%22{{page.author}}%22" class="">{{ page.author }}</a>
-          </li>
+      <li class="filed author">
+          <a href="/search/?q=%27{{ page.author_id }}+%7C+%27%22{{page.author}}%22">{{ page.author }}</a>
+      </li>
       {%- endif -%}
       {%- if page.date -%}
       <li class="filed date">
