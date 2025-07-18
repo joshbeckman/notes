@@ -6,7 +6,7 @@ toc: true
 image:
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114876165756284942
-bluesky_status_url: 'false'
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lubck77yee2w
 tags:
 - llm
 - code-snippets
