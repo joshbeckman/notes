@@ -5,7 +5,7 @@ title: Telling Claude Code Who I Am
 toc: true
 image:
 description:
-mastodon_social_status_url: 'false'
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114876165756284942
 bluesky_status_url: 'false'
 tags:
 - llm
