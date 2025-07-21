@@ -12,4 +12,4 @@ tags:
 - bluesky
 ---
 
-[@simonwillison.net](https://bsky.app/profile/did:plc:kft6lu4trxowqmter2b6vg[6z) I've always been a fa](https://simonwillison.net/series/)n of your site’s [Series section](simonwillison.net/series/) and I feel like yours is a hand-curated version of what I'm automating here. I'd be interested to see what sequences/anchors fall out of running this analysis on your huge blog corpus!
+[@simonwillison.net](https://bsky.app/profile/did:plc:kft6lu4trxowqmter2b6vg[6z) I've always been a fan of your site’s [Series section](simonwillison.net/series/) and I feel like yours is a hand-curated version of what I'm automating here. I'd be interested to see what sequences/anchors fall out of running this analysis on your huge blog corpus!
