@@ -18,4 +18,6 @@ At Shopify, we use [Buildkite](http://buildkite.com/) for running continuous int
 
 So, I built my own implementation: [Get a browser notification on buildkite build status change](https://gist.github.com/joshbeckman/d4eb63983519a198595ca63df4a287df). Now I can let my browser tell me when to check back on those tabs.
 
+<script src="https://gist.github.com/joshbeckman/d4eb63983519a198595ca63df4a287df.js"></script>
+
 You can use this (like I do) with [Violentmonkey](https://violentmonkey.github.io/) or some other userscript extension in your browser or you can wrap this up as [a bookmarklet](https://www.joshbeckman.org/blog/my-bookmarks-are-all-bookmarklets) just as easily.
