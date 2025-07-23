@@ -15,8 +15,7 @@
 {%- else -%}
 <meta content="article" property="og:type">
 {%- endif -%}
-{%- if page.searchable -%}
-{%- else -%}
+{%- if page.searchable == false -%}
 <meta name="robots" content="noindex">
 {%- endif -%}
 <meta content="{{ site.url }}{{ page.url }}" property="og:url">
