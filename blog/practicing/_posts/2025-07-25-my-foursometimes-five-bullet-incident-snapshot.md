@@ -18,17 +18,18 @@ tags:
 
 I’ve written more incident docs than I'll ever remember, and the ones that cause the fewest quesitons all open with the same, brutally short rubric:
 
-1. Detection speed – slow | medium | fast  
-2. Mitigation speed – slow | medium | fast  
-3. Remediation speed – N/A | slow | medium | fast  
-4. Impact scope – low | medium | high  
-5. Communication speed – N/A | slow | medium | fast  <!-- optional -->
+1. Detection speed – slow / medium / fast  
+2. Mitigation speed – slow / medium / fast  
+3. Remediation speed – N/A / slow / medium / fast  
+4. Impact scope – low / medium / high  
+5. Communication speed – N/A / slow / medium / fast  <!-- optional -->
 
 That’s the whole elevator pitch: *How long did we fly blind? How long were users hurt? How long until systems were clean? How big was the blast radius? How quickly did we tell people?*
 
 ## Terms
 
 Why “mitigation,” not “resolution”?  
+
 “Resolution” usually means *completely finished* (see ITIL, StatusPage). Bullet #2 is only “the bleeding stopped,” not “root cause removed.” Industry vernacular calls that **mitigation** (think MTTM (mean time to mitigate) in Google SRE books), so I do too.
 
 ## Rough Aces
