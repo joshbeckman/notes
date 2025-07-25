@@ -1252,10 +1252,19 @@ div.highlighter-rouge::before {
   font-size: 0.8em;
   font-weight: bold;
   position: relative;
-  bottom: -1rem;
+  bottom: -1.2rem;
   width: calc(100% - 1em);
   margin-left: auto;
   margin-right: auto;
+}
+div.highlighter-rouge .copy-button {
+  position: absolute;
+  top: 1.2rem;
+  font-size: 0.8em;
+  right: -2px;
+    padding: 0.5em;
+    border-radius: 0px 5px 0px 0px;
+    z-index: 100;
 }
 div.highlighter-rouge.language-md::before {
   content: "Markdown";
