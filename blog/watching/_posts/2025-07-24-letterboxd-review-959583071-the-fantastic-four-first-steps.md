@@ -8,7 +8,7 @@ description:
 rating: 2
 tmdb_id: '617126'
 letterboxd_id: the-fantastic-four-first-steps
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114916503592479979
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/the-fantastic-four-first-steps/
 tags:
