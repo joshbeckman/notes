@@ -36,11 +36,16 @@ Why “mitigation,” not “resolution”?
 
 Defining the axes (recap)
 
-• Detection    Fast < 5 m · Med 5-30 m · Slow > 30 m  
-• Mitigation    Fast < 15 m · Med 15-60 m · Slow > 60 m  
-• Remediation    Fast < 24 h · Med 24 h-7 d · Slow > 7 d · N/A  
-• Impact    Low < 1 % traffic · Med 1-10 % · High > 10 % (pick one driver)  
-• Communication    Fast < 10 m · Med 10-30 m · Slow > 30 m · N/A  
+- Detection
+  - Fast < 5 m · Med 5-30 m · Slow > 30 m  
+- Mitigation
+  - Fast < 15 m · Med 15-60 m · Slow > 60 m  
+- Remediation
+  - Fast < 24 h · Med 24 h-7 d · Slow > 7 d · N/A  
+- Impact
+  - Low < 1 % traffic · Med 1-10 % · High > 10 % (pick one driver)  
+- Communication
+  - Fast < 10 m · Med 10-30 m · Slow > 30 m · N/A  
 
 ## Context
 
