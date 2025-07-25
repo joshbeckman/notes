@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/956166c6-08dc-4d91-b5f5-60b333b506ff.jpeg"
 description: Detection → Mitigation → Remediation → Impact (+ Comms) in under sixty
   seconds
-mastodon_social_status_url: 'false'
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114915802512933060
 bluesky_status_url: 'false'
 tags:
 - metrics
