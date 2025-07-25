@@ -4,7 +4,7 @@ date: '2025-07-25 20:22:35 +0000'
 title: My “Four-(Sometimes Five-) Bullet” Incident Snapshot
 toc: true
 image: "/assets/images/956166c6-08dc-4d91-b5f5-60b333b506ff.jpeg"
-description: Detection → Mitigation → Remediation → Impact (+ Comms) in under sixty
+description: Detection → Mitigation → Remediation → Impact (+ Comms) in a minute
   seconds
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114915802512933060
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lusvsznowj27
