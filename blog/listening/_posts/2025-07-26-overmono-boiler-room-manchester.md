@@ -5,7 +5,7 @@ title: Overmono Boiler Room Manchester
 toc: true
 image: "/assets/images/00092490-e479-42e1-ace9-76ecd602c0d6.png"
 description:
-mastodon_social_status_url: 'false'
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114920756059976367
 bluesky_status_url: 'false'
 tags:
 - music
