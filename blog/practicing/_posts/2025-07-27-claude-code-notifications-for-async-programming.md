@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/5d859726-2875-445c-acb8-f433bef74e4b.png"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114926418464779885
-bluesky_status_url: 'false'
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3luxmokkm7d2i
 tags:
 - ai
 - tools
