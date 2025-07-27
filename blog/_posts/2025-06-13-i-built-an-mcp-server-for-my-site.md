@@ -70,4 +70,17 @@ You can use the MCP server locally via [`mcp-remote`](https://github.com/geelen/
 npx -y mcp-remote https://joshbeckman--1818d72637f311f089f39e149126039e.web.val.run/mcp
 ```
 
+Or you can use the streamable-http remote connection. Here's an example configuration for claude code:
+
+```json
+{
+  "mcpServers": {
+    "josh-beckman-notes": {
+      "type": "http",
+      "url": "https://joshbeckman--1818d72637f311f089f39e149126039e.web.val.run/mcp",
+      "headers": {}
+    }
+  }
+}
+```
 Please drop a line if you use it! Or if you have any suggestions on how to improve it.
