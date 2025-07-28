@@ -1,0 +1,114 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'jekyll'
+require 'yaml'
+require_relative 'models/weather'
+
+# Backfill weather data for existing exercise posts
+class WeatherBackfill
+  attr_reader :site
+
+  def initialize
+    @site = Jekyll::Site.new(Jekyll.configuration({}))
+    @site.read
+  end
+
+  def run(limit = nil)
+    count = 0
+    skipped = 0
+    errors = 0
+
+    exercise_posts = site.posts.docs.select do |post|
+      post.data['layout'] == 'Exercise' || post.data['category'] == 'exercise'
+    end
+
+    # Sort by date descending to process newest first
+    exercise_posts.sort_by! { |post| post.data['date'] }.reverse!
+
+    # Apply limit if specified
+    exercise_posts = exercise_posts.first(limit) if limit
+
+    puts "Processing #{exercise_posts.count} exercise posts#{limit ? " (limited to #{limit})" : ''}"
+    puts "Total exercise posts found: #{site.posts.docs.count { |p| p.data['layout'] == 'Exercise' || p.data['category'] == 'exercise' }}"
+
+    exercise_posts.each do |post|
+      exercise_data = post.data['exercise_data']
+      
+      if exercise_data.nil?
+        puts "Skipping #{post.data['title']} - no exercise_data"
+        skipped += 1
+        next
+      end
+
+      # Check if post has start_latlng
+      start_latlng = exercise_data['start_latlng']
+      if start_latlng.nil? || start_latlng.empty?
+        puts "Skipping #{post.data['title']} - no start_latlng"
+        skipped += 1
+        next
+      end
+
+      # Check if weather data already exists
+      if exercise_data['weather']
+        puts "Skipping #{post.data['title']} - weather data already exists"
+        skipped += 1
+        next
+      end
+
+      # Fetch weather data
+      begin
+        lat, lng = start_latlng
+        weather = Models::Weather.fetch_conditions(lat, lng, post.data['date'])
+        
+        if weather
+          # Read the post file
+          file_path = post.path
+          content = File.read(file_path)
+          
+          # Parse front matter and content
+          if content =~ /\A(---\s*\n.*?\n?)^((---|\.\.\.)\s*$\n?)/m
+            front_matter = YAML.load($1)
+            post_content = $'
+          else
+            puts "Error parsing front matter for #{post.data['title']}"
+            errors += 1
+            next
+          end
+          
+          # Update exercise_data with weather
+          front_matter['exercise_data']['weather'] = weather
+          
+          # Write updated file
+          File.open(file_path, 'w') do |file|
+            file.write(YAML.dump(front_matter))
+            file.write("---\n")
+            file.write(post_content)
+          end
+          
+          puts "✓ Updated #{post.data['title']} with weather data"
+          count += 1
+        else
+          puts "Failed to fetch weather for #{post.data['title']}"
+          errors += 1
+        end
+        
+        # Be nice to the API
+        sleep 0.5
+      rescue StandardError => e
+        puts "Error processing #{post.data['title']}: #{e.message}"
+        errors += 1
+      end
+    end
+
+    puts "\nBackfill complete!"
+    puts "Updated: #{count} posts"
+    puts "Skipped: #{skipped} posts"
+    puts "Errors: #{errors} posts"
+  end
+end
+
+# Run the backfill
+limit = ARGV[0]&.to_i
+backfill = WeatherBackfill.new
+backfill.run(limit)

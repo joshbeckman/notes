@@ -9,6 +9,7 @@ require 'polylines'
 require 'strava-ruby-client'
 require_relative 'models/post'
 require_relative 'models/asset'
+require_relative 'models/weather'
 
 # ref: https://www.strava.com/settings/api
 
@@ -72,77 +73,6 @@ module PESOS
       resp_body['features'].first['place_name']
     end
 
-    def fetch_weather_conditions(activity)
-      lat, lng = activity.start_latlng
-      date = activity.start_date.strftime('%Y-%m-%d')
-      hour = activity.start_date.hour
-      uri = URI.parse("https://archive-api.open-meteo.com/v1/archive?latitude=#{lat}&longitude=#{lng}&start_date=#{date}&end_date=#{date}&hourly=temperature_2m,apparent_temperature,precipitation,rain,weathercode,windspeed_10m,winddirection_10m,relativehumidity_2m&timezone=auto")
-      request = Net::HTTP::Get.new(uri)
-      req_options = {
-        use_ssl: uri.scheme == 'https'
-      }
-      res = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
-        http.request(request)
-      end
-
-      unless res.is_a?(Net::HTTPSuccess)
-        puts "Weather fetch failed: #{res.body}"
-        return nil
-      end
-
-      resp_body = JSON.parse(res.body)
-      hourly_data = resp_body['hourly']
-      hour_index = hour
-      {
-        temperature: "#{hourly_data['temperature_2m'][hour_index]}°C",
-        apparent_temperature: "#{hourly_data['apparent_temperature'][hour_index]}°C",
-        precipitation: "#{hourly_data['precipitation'][hour_index]}mm",
-        rain: "#{hourly_data['rain'][hour_index]}mm",
-        humidity: "#{hourly_data['relativehumidity_2m'][hour_index]}%",
-        weathercode: weather_description(hourly_data['weathercode'][hour_index]),
-        windspeed: "#{hourly_data['windspeed_10m'][hour_index]}km/h",
-        winddirection: "#{hourly_data['winddirection_10m'][hour_index]}°"
-      }
-    rescue StandardError => e
-      puts "Error fetching weather: #{e.message}"
-      nil
-    end
-
-    def weather_description(code)
-      # WMO Weather interpretation codes
-      # https://open-meteo.com/en/docs
-      case code
-      when 0 then 'Clear sky'
-      when 1 then 'Mainly clear'
-      when 2 then 'Partly cloudy'
-      when 3 then 'Overcast'
-      when 45 then 'Fog'
-      when 48 then 'Depositing rime fog'
-      when 51 then 'Light drizzle'
-      when 53 then 'Moderate drizzle'
-      when 55 then 'Dense drizzle'
-      when 56 then 'Light freezing drizzle'
-      when 57 then 'Dense freezing drizzle'
-      when 61 then 'Slight rain'
-      when 63 then 'Moderate rain'
-      when 65 then 'Heavy rain'
-      when 66 then 'Light freezing rain'
-      when 67 then 'Heavy freezing rain'
-      when 71 then 'Slight snow fall'
-      when 73 then 'Moderate snow fall'
-      when 75 then 'Heavy snow fall'
-      when 77 then 'Snow grains'
-      when 80 then 'Slight rain showers'
-      when 81 then 'Moderate rain showers'
-      when 82 then 'Violent rain showers'
-      when 85 then 'Slight snow showers'
-      when 86 then 'Heavy snow showers'
-      when 95 then 'Thunderstorm'
-      when 96 then 'Thunderstorm with slight hail'
-      when 99 then 'Thunderstorm with heavy hail'
-      else "Unknown (#{code})"
-      end
-    end
 
     def import_exercise_stats
       # write data to a file in _data as yaml
@@ -272,7 +202,8 @@ module PESOS
         mapbox_image_url: mapbox_image_url(activity)
       }
       if activity.start_latlng&.any?
-        weather = fetch_weather_conditions(activity)
+        lat, lng = activity.start_latlng
+        weather = Models::Weather.fetch_conditions(lat, lng, activity.start_date)
         data[:weather] = weather if weather
       end
       data
