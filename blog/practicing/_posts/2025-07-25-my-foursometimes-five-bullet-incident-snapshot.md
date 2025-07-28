@@ -26,6 +26,8 @@ I’ve written more incident docs than I'll ever remember, and the ones that cau
 
 That’s the whole elevator pitch: *How long did we fly blind? How long were users hurt? How long until systems were clean? How big was the blast radius? How quickly did we tell people?*
 
+> I kinda think of this like the retrospective or past-tense of [a four-point situation report](https://www.joshbeckman.org/notes/483910961).
+
 ## Terms
 
 Why “mitigation,” not “resolution”?  
