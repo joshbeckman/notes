@@ -21,6 +21,10 @@ const FIELDS = [
 const READ_PASSWORD = Deno.env.get("READ_PASSWORD") || "read123";
 const WRITE_PASSWORD = Deno.env.get("WRITE_PASSWORD") || "write123";
 const JINA_AI_TOKEN = Deno.env.get("JINA_AI_TOKEN");
+const VONAGE_API_KEY = Deno.env.get("VONAGE_API_KEY");
+const VONAGE_API_SECRET = Deno.env.get("VONAGE_API_SECRET");
+const VONAGE_FROM_NUMBER = Deno.env.get("VONAGE_FROM_NUMBER");
+const JOSH_PHONE_NUMBER = Deno.env.get("JOSH_PHONE_NUMBER");
 
 // Initialize default values if they don't exist
 async function initializeStorage() {
@@ -612,6 +616,55 @@ async function setupMcpServer(): Promise<McpServer> {
             return {
                 content: [{ type: "text", text: `Email "${subject}" sent successfully!` }]
             };
+        }
+    );
+    server.registerTool(
+        "text_josh",
+        {
+            title: "Text Josh Beckman",
+            description: "Send a text message (SMS) to Josh Beckman's phone.",
+            inputSchema: {
+                body: z.string().max(160, "SMS messages should be 160 characters or less"),
+            },
+        },
+        async ({ body }) => {
+            if (!VONAGE_API_KEY || !VONAGE_API_SECRET || !VONAGE_FROM_NUMBER || !JOSH_PHONE_NUMBER) {
+                return {
+                    content: [{ type: "text", text: "Missing Vonage credentials or phone numbers. Please set VONAGE_API_KEY, VONAGE_API_SECRET, VONAGE_FROM_NUMBER, and JOSH_PHONE_NUMBER environment variables." }]
+                };
+            }
+
+            try {
+                const response = await fetch("https://rest.nexmo.com/sms/json", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                    },
+                    body: new URLSearchParams({
+                        api_key: VONAGE_API_KEY,
+                        api_secret: VONAGE_API_SECRET,
+                        from: VONAGE_FROM_NUMBER,
+                        to: JOSH_PHONE_NUMBER,
+                        text: body,
+                    }).toString(),
+                });
+
+                const result = await response.json();
+                if (result.messages && result.messages[0] && result.messages[0].status === "0") {
+                    return {
+                        content: [{ type: "text", text: `Text message sent successfully! Message ID: ${result.messages[0]["message-id"]}` }]
+                    };
+                } else {
+                    const errorText = result.messages?.[0]?.["error-text"] || "Unknown error";
+                    return {
+                        content: [{ type: "text", text: `Failed to send text message: ${errorText}` }]
+                    };
+                }
+            } catch (error) {
+                return {
+                    content: [{ type: "text", text: `Error sending text message: ${error.message}` }]
+                };
+            }
         }
     );
 
