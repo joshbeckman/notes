@@ -7,6 +7,7 @@ class SiteVersion
 
   def inject
     @site.config['version'] = ENV.fetch('SITE_VERSION', version)
+    @site.config['build_time'] = Time.now.utc.iso8601
   end
 
   # Returns the version of the site
