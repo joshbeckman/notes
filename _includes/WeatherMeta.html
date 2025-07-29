@@ -1,0 +1,45 @@
+{%- if page.exercise_data and page.exercise_data['weather'] -%}
+<div class="weather-metadata">
+  <table class="weather-table">
+    <thead>
+      <tr>
+        <td colspan="2">
+          Weather Conditions
+        </td>
+      </tr>
+    </thead>
+    <tr>
+      <td>Conditions</td>
+      <td>{{ page.exercise_data['weather'][':weathercode'] }}</td>
+    </tr>
+    <tr>
+      <td>Temperature</td>
+      <td>{{ page.exercise_data['weather'][':temperature'] }}</td>
+    </tr>
+    <tr>
+      <td>Feels Like</td>
+      <td>{{ page.exercise_data['weather'][':apparent_temperature'] }}</td>
+    </tr>
+    <tr>
+      <td>Humidity</td>
+      <td>{{ page.exercise_data['weather'][':humidity'] }}</td>
+    </tr>
+    {%- if page.exercise_data['weather'][':precipitation'] and page.exercise_data['weather'][':precipitation'] != '0.0mm' -%}
+    <tr>
+      <td>Precipitation</td>
+      <td>{{ page.exercise_data['weather'][':precipitation'] }}</td>
+    </tr>
+    {%- endif -%}
+    {%- if page.exercise_data['weather'][':rain'] and page.exercise_data['weather'][':rain'] != '0.0mm' -%}
+    <tr>
+      <td>Rain</td>
+      <td>{{ page.exercise_data['weather'][':rain'] }}</td>
+    </tr>
+    {%- endif -%}
+    <tr>
+      <td>Wind</td>
+      <td>{{ page.exercise_data['weather'][':windspeed'] }} @ {{ page.exercise_data['weather'][':winddirection'] }}</td>
+    </tr>
+  </table>
+</div>
+{%- endif -%}
