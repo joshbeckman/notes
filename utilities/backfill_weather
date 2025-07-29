@@ -29,14 +29,13 @@ class WeatherBackfill
     # Apply limit if specified
     exercise_posts = exercise_posts.first(limit) if limit
 
-    puts "Processing #{exercise_posts.count} exercise posts#{limit ? " (limited to #{limit})" : ''}"
+    puts "Processing #{exercise_posts.count} exercise posts#{" (limited to #{limit})" if limit}"
     puts "Total exercise posts found: #{site.posts.docs.count { |p| p.data['layout'] == 'Exercise' || p.data['category'] == 'exercise' }}"
 
     exercise_posts.each do |post|
       exercise_data = post.data['exercise_data']
-      
+
       if exercise_data.nil?
-        puts "Skipping #{post.data['title']} - no exercise_data"
         skipped += 1
         next
       end
@@ -44,14 +43,12 @@ class WeatherBackfill
       # Check if post has start_latlng
       start_latlng = exercise_data['start_latlng']
       if start_latlng.nil? || start_latlng.empty?
-        puts "Skipping #{post.data['title']} - no start_latlng"
         skipped += 1
         next
       end
 
       # Check if weather data already exists
       if exercise_data['weather']
-        puts "Skipping #{post.data['title']} - weather data already exists"
         skipped += 1
         next
       end
@@ -59,40 +56,39 @@ class WeatherBackfill
       # Fetch weather data
       begin
         lat, lng = start_latlng
-        weather = Models::Weather.fetch_conditions(lat, lng, post.data['date'])
-        
+        post_date = post.data['date']
+        days_ago = (Time.now.to_date - post_date.to_date).to_i
+
+        puts "Processing #{post.data['title']} from #{post_date.strftime('%Y-%m-%d')} (#{days_ago} days ago)..."
+
+        weather = Models::Weather.fetch_conditions(lat, lng, post_date)
         if weather
           # Read the post file
           file_path = post.path
           content = File.read(file_path)
-          
           # Parse front matter and content
           if content =~ /\A(---\s*\n.*?\n?)^((---|\.\.\.)\s*$\n?)/m
-            front_matter = YAML.load($1)
-            post_content = $'
+            front_matter = YAML.load(::Regexp.last_match(1))
+            post_content = ::Regexp.last_match.post_match
           else
             puts "Error parsing front matter for #{post.data['title']}"
             errors += 1
             next
           end
-          
           # Update exercise_data with weather
           front_matter['exercise_data']['weather'] = weather
-          
           # Write updated file
           File.open(file_path, 'w') do |file|
             file.write(YAML.dump(front_matter))
             file.write("---\n")
             file.write(post_content)
           end
-          
-          puts "✓ Updated #{post.data['title']} with weather data"
+          puts "✓ Updated #{post.data['title']} with weather data (#{weather[:temperature]}, #{weather[:weathercode]})"
           count += 1
         else
-          puts "Failed to fetch weather for #{post.data['title']}"
+          puts "✗ No weather data available for #{post.data['title']} on #{post_date.strftime('%Y-%m-%d')}"
           errors += 1
         end
-        
         # Be nice to the API
         sleep 0.5
       rescue StandardError => e
