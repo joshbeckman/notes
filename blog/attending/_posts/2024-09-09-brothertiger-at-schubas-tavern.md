@@ -9,6 +9,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/113120179665763
 tags: 
   - music
   - chicago
+  - schubas-tavern-venue
 ---
 
 
