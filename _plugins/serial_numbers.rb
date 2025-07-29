@@ -18,9 +18,11 @@ module SerialNumbers
         # Format serial number as YYYY.SSS.###
         serial_number = format('%04d.%s.%03d', year, series_code, counter)
         post.data['serial_number'] = serial_number
+        post.data['redirect_from'] ||= []
+        post.data['redirect_from'] << "/#{serial_number}" unless post.data['redirect_from'].include?("/#{serial_number}")
       end
 
-      site.pages.each do |page|
+      pages_to_process = site.pages.map do |page|
         # Skip special pages and assets
         next if page.url.include?('assets')
         next if page.url.include?('.json')
@@ -28,8 +30,18 @@ module SerialNumbers
         next if page.url == '/404.html'
         next if page.data['layout'].nil?
 
-        # Use current year for pages without dates
-        year = page.data['date'] ? Date.parse(page.data['date'].to_s).year : Date.today.year
+        date = if page.data['date']
+                 Date.parse(page.data['date'].to_s)
+               else
+                 get_first_commit_date(page.path)
+               end
+
+        { page: page, date: date }
+      end.compact
+
+      pages_to_process.sort_by { |item| item[:date] }.each do |item|
+        page = item[:page]
+        year = item[:date].year
         series_code = 'PAE'
 
         counters[year][series_code] += 1
@@ -63,7 +75,7 @@ module SerialNumbers
         if cleaned.length == 3
           cleaned.upcase
         else
-          middle_index = cleaned.length / 2 - (cleaned.length.even? ? 1 : 0)
+          middle_index = (cleaned.length / 2) - (cleaned.length.even? ? 1 : 0)
           (cleaned[0] + cleaned[middle_index] + cleaned[-1]).upcase
         end
       elsif cleaned.length == 2
@@ -76,6 +88,21 @@ module SerialNumbers
         # Default fallback
         'PST'
       end
+    end
+
+    def get_first_commit_date(file_path)
+      # Get the first commit date for a file using git log
+
+      output = `git log --follow --format=%aI --reverse -- "#{file_path}" 2>/dev/null | head -1`
+      if output && !output.strip.empty?
+        Date.parse(output.strip)
+      else
+        # Fallback to current date if git command fails or no commits found
+        Date.today
+      end
+    rescue StandardError
+      # Fallback to current date on any error
+      Date.today
     end
   end
 end
