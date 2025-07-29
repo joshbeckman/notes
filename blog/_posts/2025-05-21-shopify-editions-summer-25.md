@@ -9,9 +9,8 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/114546338982041
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lpotgg4cqn2w
 tags:
 - shopify
+serial_number: 2025.BLG.077
 ---
-
-
 ![Flow in Editions](/assets/images/0c8d98d0-3d14-44fa-a205-059aedab9b9d.png)
 
 I'm so proud to see my teams' work featured in today's [Summer ’25 Shopify Editions](https://www.shopify.com/editions/summer2025#operations). Shopify Flow has callouts in both the Operations and Developer sections with great new capabilities that expand what merchants and developers can build on Shopify.

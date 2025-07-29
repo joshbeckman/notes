@@ -7,8 +7,8 @@ tags:
 redirect_from:
 - "/rate-limit-node-mongodb"
 - "/rate-limit-node-mongodb/"
+serial_number: 2016.BLG.003
 ---
-
  **Update:** After a request by [Jason Humphrey](https://github.com/GreenPioneer), I’ve released this implementation as a standalone NPM module: [mongo-throttle](https://github.com/andjosh/mongo-throttle).
 
 I needed to build a rate-limiting middleware for the new [Narro public API](http://docs.narro.co), and I was [inspired to make the database do my heavy lifting]( /2016/03/12/databases-doing-dirty-work/). In Narro’s case, that’s MongoDB.

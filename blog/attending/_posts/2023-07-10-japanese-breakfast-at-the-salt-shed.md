@@ -10,8 +10,8 @@ tags:
 redirect_from:
 - "/japanese-breakfast-at-the-salt-shed"
 - "/japanese-breakfast-at-the-salt-shed/"
+serial_number: 2023.BLG.030
 ---
-
 <figure class="kg-card kg-image-card kg-width-wide"><img src="/assets/images/IMG_1473-1.jpeg" class="kg-image" alt=""  width="2000" height="1500"  sizes="(min-width: 1200px) 1200px"></figure>
 
 Last minute, we decided to buy some cheap resale tickets for the **Japanese Breakfast** show at The Salt Shed down the street. We'd seen her perform a couple years ago at Thalia Hall (and thoroughly enjoyed her enthusiasm), so I knew it would be good a second time.

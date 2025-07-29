@@ -1,19 +1,19 @@
 ---
 layout: Post
-date: 2024-12-07 17:48:19 +0000
-title: "Cross-Posting From Mastodon to Jekyll"
+date: 2024-12-07 17:48:19.000000000 +00:00
+title: Cross-Posting From Mastodon to Jekyll
 toc: true
-image: /assets/images/3476482D4C4A481B8E375E6D7EE2690C.png
+image: "/assets/images/3476482D4C4A481B8E375E6D7EE2690C.png"
 description: Archiving and syndicating Mastodon posts in Jekyll
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113613740967238375
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lcqoftcmzd2s
-tags: 
-  - mastodon
-  - code-snippets
-  - personal-blog
-  - jekyll
+tags:
+- mastodon
+- code-snippets
+- personal-blog
+- jekyll
+serial_number: 2024.BLG.127
 ---
-
 As the inverse of how I set up [cross\-posting to Mastodon](https://www.joshbeckman.org/blog/how-to-crosspost-to-mastodon-with-jekyll) for this site \(to ensure that I am publishing on my own site and syndicating elsewhere: POSSE\), I have now set up cross\-posting *from* Mastodon *into* this site\. This inverse \- archiving content from other networks into my home site \- is called Publish Elsewhere Syndicate On Site: PESOS\.
 
 ![example Mastodon post](/assets/images/3476482D4C4A481B8E375E6D7EE2690C.png)

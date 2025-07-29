@@ -8,8 +8,8 @@ tags:
 redirect_from:
 - "/on-reading-fine-structure"
 - "/on-reading-fine-structure/"
+serial_number: 2015.BLG.019
 ---
-
 I’ve sent these thoughts & instructions to friends more than once, so I should probably write them down.
 
 From my [Reading Lists]( /lists/reading), [Fine Structure](http://qntm.org/structure) _Sam Hughes_

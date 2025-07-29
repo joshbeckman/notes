@@ -1,14 +1,14 @@
 ---
 layout: Post
-date: 2022-03-12 05:13:26 +0000
-title: "Donny Benét at Lincoln Hall"
+date: 2022-03-12 05:13:26.000000000 +00:00
+title: Donny Benét at Lincoln Hall
 toc: true
-image: /assets/images/EEE02DE03CBF4D75880B4EDC82C50210.jpeg
-description: 
-tags: 
-  - music
+image: "/assets/images/EEE02DE03CBF4D75880B4EDC82C50210.jpeg"
+description:
+tags:
+- music
+serial_number: 2022.BLG.010
 ---
-
 ![](/assets/images/13A5CA4698504150866AA43EB19BBA2A.jpeg)
 
 Ned had an extra ticket so I went with him and it was a lovely show\. Fun and funny and packed and the venue was good and no bullshit \(he skipped the beat before the encore\) and the crowd was into it\.

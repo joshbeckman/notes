@@ -8,8 +8,8 @@ redirect_from:
 - "/bemily-wedding"
 - "/bemily-wedding/"
 tags: friends
+serial_number: 2022.BLG.012
 ---
-
 <figure class="kg-card kg-image-card"><img src="/assets/images/7B42AD30-B507-40D0-94CF-8EDCA1F75629.jpeg" /></figure>
 
 We had simply the best of times at Bill and Emily's wedding a few weeks ago. Marybeth officiated the ceremony (she worked very hard and it all paid off - heartfelt and entertaining). The reception at Salvage One out in Chicago's West Loop nieghborhood was eclectic and filled with non-stop dancing.

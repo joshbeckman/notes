@@ -3,13 +3,13 @@ title: Principles of Good Systems &#x2B22;
 tags: system-design scalability observability safety favorite
 author: Josh Beckman
 book: joshbeckman
-book_title: "Josh's Thoughts"
-image: /assets/img/profile.png
-favicon_url: /assets/img/profile.png
-source_emoji: 🌐
+book_title: Josh's Thoughts
+image: "/assets/img/profile.png"
+favicon_url: "/assets/img/profile.png"
+source_emoji: "\U0001F310"
 toc: true
+serial_number: 2023.NTS.306
 ---
-
 These are qualities of a good system that we should strive to fulfill with what we design. Without fulfilling each of these attributes, the system is much more likely to fail in its goal.
 
 This details here are a work-in-progress. [Make a pull-request](https://github.com/joshbeckman/notes/blob/master/_posts/2023-02-24-principles-of-system.md) if you have suggested changes.

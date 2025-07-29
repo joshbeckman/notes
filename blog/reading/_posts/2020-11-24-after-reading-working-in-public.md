@@ -11,8 +11,8 @@ tags:
 redirect_from:
 - "/after-reading-working-in-public"
 - "/after-reading-working-in-public/"
+serial_number: 2020.BLG.022
 ---
-
 <figure class="kg-card kg-image-card"><img src="/assets/images/E0B3D1A6-2CFD-4AED-B1B4-9D871A7FAA43.jpeg" /></figure>
 
 I’ve been a distant fan of [Nadia Eghbal](https://nadiaeghbal.com) for years, following her wonderful notes and speaking. When she released her first book this summer, I eagerly pre-ordered a copy (and with beautiful printing from [Stripe Press](https://press.stripe.com) no less!)

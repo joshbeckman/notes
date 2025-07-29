@@ -1,20 +1,20 @@
 ---
 layout: Post
-date: 2024-12-07 18:43:45 +0000
-title: "Rules for Syndication on My Site"
+date: 2024-12-07 18:43:45.000000000 +00:00
+title: Rules for Syndication on My Site
 toc: true
-image: /assets/images/CB23E538E04949B59577C8CF6AC08F37.jpeg
-description: 
+image: "/assets/images/CB23E538E04949B59577C8CF6AC08F37.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113613740983548639
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lcqoftfpub2p
-tags: 
-  - mastodon
-  - bluesky
-  - social-networks
-  - personal-blog
-  - popular
+tags:
+- mastodon
+- bluesky
+- social-networks
+- personal-blog
+- popular
+serial_number: 2024.BLG.128
 ---
-
 With all my recent [outward](https://www.joshbeckman.org/blog/how-to-crosspost-to-mastodon-with-jekyll) [posting](https://www.joshbeckman.org/blog/crossposting-to-bluesky-from-jekyll) and [inward](https://www.joshbeckman.org/blog/pesos-mastodon-to-jekyll) importing of my writing on various platforms, I should write down how I’m planning all of this\. Otherwise, it could get messy: POSSE and PESOS jangling noisily\.
 
 ![sketch](/assets/images/CB23E538E04949B59577C8CF6AC08F37.jpeg)

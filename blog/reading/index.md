@@ -1,15 +1,15 @@
 ---
 layout: Page
 title: Reading
-emoji: 📚
+emoji: "\U0001F4DA"
 searchable: true
 categories:
 - blog
 tags:
 - publishing
 - index
+serial_number: 2024.PAE.009
 ---
-
 ## Current
 
 _The Power Broker_ by Robert Caro

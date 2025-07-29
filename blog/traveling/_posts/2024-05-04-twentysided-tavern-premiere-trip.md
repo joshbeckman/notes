@@ -1,16 +1,16 @@
 ---
 layout: Post
-date: 2024-05-04 17:01:44 +0000
-title: "Twenty-Sided Tavern Premiere Trip"
+date: 2024-05-04 17:01:44.000000000 +00:00
+title: Twenty-Sided Tavern Premiere Trip
 toc: true
-image: /assets/images/34A97CA251E044C5AAF1B5D7CE69BEC9.jpeg
-description: 
+image: "/assets/images/34A97CA251E044C5AAF1B5D7CE69BEC9.jpeg"
+description:
 tags:
 - travel
 - live-theater
 - friends
+serial_number: 2024.BLG.044
 ---
-
 We traveled to Brooklyn for the weekend to see our friend Maddie premiere her Off\-Broadway show: [Twenty\-Sided Tavern](https://thetwentysidedtavern.com)\.
 
 By “we” I mean myself and Marybeth and Bill and Emily and Paul and Dan\. And by “Brooklyn” I mean Crown Heights\. And by “traveled” I mean ride and walk and eat and drink and laugh\.

@@ -1,11 +1,11 @@
 ---
 layout: Page
 title: Sponsorship
-permalink: /sponsorship/
+permalink: "/sponsorship/"
 searchable: true
 tags: index
+serial_number: 2025.PAE.006
 ---
-
 In addition to writing and sharing tools on this site, I maintain many open-source software projects. I welcome any issues or ideas you may open there and _especially_ any code you can contribute. Creating and _maintaining_ open-source software and open writing takes a lot of time and money, so fund my software maintenance and writing [via GitHub Sponsors](https://github.com/sponsors/joshbeckman).
 
 ## Why Sponsor?

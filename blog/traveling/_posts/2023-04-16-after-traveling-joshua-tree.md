@@ -9,8 +9,8 @@ tags:
 redirect_from:
 - "/after-traveling-joshua-tree"
 - "/after-traveling-joshua-tree/"
+serial_number: 2023.BLG.021
 ---
-
 We drove the ~5 hours between Death Valley and Joshua Tree in a single afternoon. And if I hadn't just been thoroughly spoiled by [the beauty and variety of Death Valley (previous post),]( /after-traveling-death-valley/) I would have gasped at the desert and mountains we passed along the way: pure rock dust passing into fields of green and back again.
 
 <figure class="kg-card kg-gallery-card kg-width-wide kg-card-hascaption"><div class="kg-gallery-container"><div class="kg-gallery-row">

@@ -1,9 +1,10 @@
 ---
 title: From the Desk of Josh Beckman
 layout: Home
-permalink: /
+permalink: "/"
 hide_title: true
 hide_footer: true
+serial_number: 2023.PAE.003
 ---
 Hello, friends. I'm [Josh](/about/). This is where I work in public.
 

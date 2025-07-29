@@ -7,8 +7,8 @@ tags:
 redirect_from:
 - "/cubic-mapping-of-text"
 - "/cubic-mapping-of-text/"
+serial_number: 2015.BLG.014
 ---
-
 For the past several months, I’ve taken daily notes. Previously, I scribbled and jotted thoughts into several paperback notebooks, but now I type daily into my iOS/OSX Notes application. Each day begins with a new note, date stamped at the top.
 
 Recently, I found a method to export these notes as delectable plain text. I’m thinking of performing serious analysis on them - most importantly topic mapping. I want to create something I can poke at and watch grow.

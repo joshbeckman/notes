@@ -217,6 +217,22 @@ jobs:
       - name: Push changes
         if: steps.any_changes_pesos_youtube.outputs.changed != 0
         run: git push
+      - name: Serialize
+        id: serialize
+        run: bundle exec utilities/serialize
+      - name: Determine if changes were made
+        id: any_changes_serialize
+        run: echo "changed=$(git status --porcelain **/*.md | wc -l)" >> $GITHUB_OUTPUT
+      - name: Commit changes
+        if: steps.any_changes_serialize.outputs.changed != 0
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "josh@joshbeckman.org"
+          git add **/*.md
+          git commit -m "chg(dev): Serialize"
+      - name: Push changes
+        if: steps.any_changes_serialize.outputs.changed != 0
+        run: git push
       - name: Optimize images
         id: optimize_images
         run: bundle exec utilities/optimize_images

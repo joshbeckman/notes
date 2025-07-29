@@ -1,17 +1,17 @@
 ---
 layout: Post
-date: 2024-02-19 15:32:33 +0000
+date: 2024-02-19 15:32:33.000000000 +00:00
 title: Building a Network Graph Site Index
 toc: true
-image: /assets/images/4C804249D0304C4CBA565320A8D782C6.png
-description: 
-tags: 
+image: "/assets/images/4C804249D0304C4CBA565320A8D782C6.png"
+description:
+tags:
 - interfaces
 - personal-blog
 - network-theory
 - taxonomy
+serial_number: 2024.BLG.023
 ---
-
 I had a fun time this morning building a network view/graph for this site\.
 
 I’ve been wanting to walk a visual path through this notes garden for a while\. Browsing posts “near” each other and [finding edges that need pruning or encouragement](https://www.joshbeckman.org/blog/weeding-the-edges)\. I imagined a networked view of posts connected by their tags/topics and sources and backlinks\. I have really enjoyed the exercise of [programming these notes](https://www.joshbeckman.org/notes/472520959) and this site, and I want to lean into it\. A new interface might produce new thinking.

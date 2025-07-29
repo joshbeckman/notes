@@ -9,8 +9,8 @@ tags:
 - personal-blog
 - time
 - tools
+serial_number: 2025.BLG.090
 ---
-
 I've always been drawn to the little moments of rediscovery that my Day One journal creates with its "On This Day" feature. It's delightful to stumble across a post you wrote years ago on the same date. So I decided to implement a similar feature on my Jekyll site, allowing me to revisit past posts from the same day in my history.
 
 ## The Simple Solution

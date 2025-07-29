@@ -1,18 +1,16 @@
 ---
 layout: Post
-date: 2024-06-22 00:00:00 +0000
-title: "Analytics Experiment: Switching from Tinylytics to Goatcounter"
+date: 2024-06-22 00:00:00.000000000 +00:00
+title: 'Analytics Experiment: Switching from Tinylytics to Goatcounter'
 toc: true
-image: /assets/images/badd8389-5711-46d5-911c-654df98368bd.png
-description: 
+image: "/assets/images/badd8389-5711-46d5-911c-654df98368bd.png"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/112661531596178805
-tags: 
-  - metrics
-  - personal-blog
+tags:
+- metrics
+- personal-blog
+serial_number: 2024.BLG.058
 ---
-
-
-
 I haven't had analytics on this site/blog in many years, but as I'm trying to use it more to engage with the rest of the Internet, I'm finding myself wondering:
 
 > What has been helpful for people? How are they getting here?

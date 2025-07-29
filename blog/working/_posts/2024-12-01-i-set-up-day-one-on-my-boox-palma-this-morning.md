@@ -1,17 +1,17 @@
 ---
 layout: Post
-date: 2024-12-01 15:23:46 +0000
-title: "I set up Day One on my Boox Palma this morning"
+date: 2024-12-01 15:23:46.000000000 +00:00
+title: I set up Day One on my Boox Palma this morning
 toc: true
-image: /assets/images/0335CC879B6645B0891389EEEC844884.jpeg
-description: 
+image: "/assets/images/0335CC879B6645B0891389EEEC844884.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113578765640822511
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lcb5ev6c4u2b
-tags: 
-  - tools
-  - writing
+tags:
+- tools
+- writing
+serial_number: 2024.BLG.118
 ---
-
 And also connected my mechanical keyboard to the device via bluetooth\. I'm thinking this might be a fun way to journal and draft things away from other distractions and maybe outside in the sun\.
 
 ![typing on the boox palma](/assets/images/0335CC879B6645B0891389EEEC844884.jpeg)

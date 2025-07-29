@@ -1,19 +1,18 @@
 ---
 layout: Post
-date: 2025-03-20 13:05:52 +0000
-title: "A Heatmap Calendar for My Site"
+date: 2025-03-20 13:05:52.000000000 +00:00
+title: A Heatmap Calendar for My Site
 toc: true
-image: /assets/images/ee8815cf-8280-44b0-8e8f-02721dc1d814.png
-description: 
+image: "/assets/images/ee8815cf-8280-44b0-8e8f-02721dc1d814.png"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114195966414844441
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lktadf6stj26
 tags:
-  - personal-blog
-  - data
-  - interfaces
+- personal-blog
+- data
+- interfaces
+serial_number: 2025.BLG.049
 ---
-
-
 <img width="634" alt="Heatmap calendar" src="/assets/images/ee8815cf-8280-44b0-8e8f-02721dc1d814.png" />
 
 Over the weekend I built a new page on this site: [the Heatcal](/heatcal). It's just a simple visualization of the posts I've made as a heat map on a calendar grid ([more calendars!](https://www.joshbeckman.org/blog/everywhere-a-calendar)). Darker dates have more posts. Clicking on a date can show you the posts on that day.

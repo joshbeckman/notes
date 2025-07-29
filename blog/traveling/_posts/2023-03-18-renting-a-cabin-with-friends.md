@@ -9,8 +9,8 @@ tags:
 redirect_from:
 - "/renting-a-cabin-with-friends"
 - "/renting-a-cabin-with-friends/"
+serial_number: 2023.BLG.016
 ---
-
 <figure class="kg-card kg-image-card"><img src="/assets/images/L1030510.jpeg" /></figure>
 
 We drove through a snowstorm out to Galena, IL to stay in a giant cabin with a group of friends last weekend.

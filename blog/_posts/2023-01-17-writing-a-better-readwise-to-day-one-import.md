@@ -11,8 +11,8 @@ tags:
 redirect_from:
 - "/writing-a-better-readwise-to-day-one-import"
 - "/writing-a-better-readwise-to-day-one-import/"
+serial_number: 2023.BLG.003
 ---
-
 <figure class="kg-card kg-image-card"><img src="/assets/images/Screenshot-2023-01-16-at-7.31.03-PM.png" /></figure>
 
 I had the day off from work today in honor of Martin Luther King Jr. and the work of others like him to improve us.

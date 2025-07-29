@@ -1,15 +1,15 @@
 ---
 layout: Post
-date: 2023-12-17 04:15:12 +0000
+date: 2023-12-17 04:15:12.000000000 +00:00
 title: Zeds Dead at Salt Shed
 toc: true
-image: /assets/images/270C6E1571BD4A6294C05A1B0B127105.jpeg
-description: 
-tags: 
-  - music
-  - salt-shed-venue
+image: "/assets/images/270C6E1571BD4A6294C05A1B0B127105.jpeg"
+description:
+tags:
+- music
+- salt-shed-venue
+serial_number: 2023.BLG.049
 ---
-
 With Emily and Bill and Kylie and Shannon and Brian and his new girlfriend Alex\. 
 The show was fantastic\. Wreckno was the opener (and Bussy before that) and they did a great set as well\. 
 

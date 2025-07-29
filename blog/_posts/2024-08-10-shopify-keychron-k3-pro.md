@@ -1,19 +1,17 @@
 ---
 layout: Post
-date: 2024-08-10 00:00:00 +0000
-title: "Shopify Keychron K3 Pro"
+date: 2024-08-10 00:00:00.000000000 +00:00
+title: Shopify Keychron K3 Pro
 toc: true
-image: /assets/images/1f4dae48-73ae-4241-803c-04d299cce802.jpeg
-description: 
+image: "/assets/images/1f4dae48-73ae-4241-803c-04d299cce802.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/112938984439606626
-tags: 
-  - tools
-  - folk-creations
-  - shopify
+tags:
+- tools
+- folk-creations
+- shopify
+serial_number: 2024.BLG.080
 ---
-
-
-
 This spring I replaced my [Customized Keychron K1](https://www.joshbeckman.org/blog/keyboard-update-customized-keychron-k1) with a customized [Shopify Keychron K3 Pro](https://shopify.supply/products/shopify-keyboard). Mine won't look like the one you can order from the public Shopify store because I got an early employees-only version.
 
 ![L1080125](/assets/images/1f4dae48-73ae-4241-803c-04d299cce802.jpeg)

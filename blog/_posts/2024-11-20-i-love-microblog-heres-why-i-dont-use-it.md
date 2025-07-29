@@ -1,20 +1,18 @@
 ---
 layout: Post
-date: 2024-11-20 08:01:14 -0600
-title: "I Love micro.blog - Here’s Why I Don’t Use It"
+date: 2024-11-20 08:01:14.000000000 -06:00
+title: I Love micro.blog - Here’s Why I Don’t Use It
 toc: true
-image: /assets/images/b40df2a3-ce7d-4273-ab07-f9307b74288e.png
-description: 
+image: "/assets/images/b40df2a3-ce7d-4273-ab07-f9307b74288e.png"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113516542549278628
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lbhzldjzcy2u
-tags: 
-  - personal-blog
-  - social-networks
-  - publishing
+tags:
+- personal-blog
+- social-networks
+- publishing
+serial_number: 2024.BLG.115
 ---
-
-
-
 I spent last night reactivating my [micro.blog](http://micro.blog/) account and trying to run some imports of my [Jekyll](http://jekyllrb.com/) posts from my main site.
 <img width="222" alt="Screenshot 2024-11-20 at 08 02 59" src="/assets/images/b40df2a3-ce7d-4273-ab07-f9307b74288e.png">
 

@@ -9,8 +9,8 @@ tags:
 redirect_from:
 - "/after-reading-valuable-humans-in-transit"
 - "/after-reading-valuable-humans-in-transit/"
+serial_number: 2022.BLG.024
 ---
-
 <figure class="kg-card kg-image-card"><img src="/assets/images/IMG_0164.jpeg" /></figure>
 
 When I think of great internet writing - not writing that happened to be put online but writing that is informed by and uses the nature of the internet ot its advantage - I think of [qntm](https://qntm.org).

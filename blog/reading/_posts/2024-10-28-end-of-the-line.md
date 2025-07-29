@@ -1,16 +1,16 @@
 ---
 layout: Post
-date: 2024-10-28 00:00:00 +0000
-title: "End of The Line"
+date: 2024-10-28 00:00:00.000000000 +00:00
+title: End of The Line
 toc: true
 rating: 3
-image: /assets/images/55bf2a24-66ed-404c-b400-3e5b6a60f4aa.jpeg
-description: 
+image: "/assets/images/55bf2a24-66ed-404c-b400-3e5b6a60f4aa.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113383478072825996
-tags: 
-  - photography
+tags:
+- photography
+serial_number: 2024.BLG.107
 ---
-
 ![book on countertop](/assets/images/55bf2a24-66ed-404c-b400-3e5b6a60f4aa.jpeg)
 
 My friend Ned lent me this photo book for the week and I thoroughly enjoyed it. The photos are well-crafted, and the author details exactly how he crafted them. What's better than that in a photo book?

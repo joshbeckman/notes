@@ -16,9 +16,8 @@ tags:
 - llm
 - education
 - automation
+serial_number: 2025.BLG.100
 ---
-
-
 ![Josh carrying a big pack](/assets/images/9ff9e3af-c9f4-4fa4-bf64-8fcf200aa8b0.jpeg)
 
 I was skeptical when reading [Will Larson's datapack concept](https://www.joshbeckman.org/notes/906991341): a static export of content on a specific topic, uploaded as a file to an LLM client. In a world where LLMs are trained on the entire web and MCP servers can provide structured access to any site's content, why would we need yet another medium to give context to LLM agents?

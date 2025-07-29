@@ -1,16 +1,15 @@
 ---
 layout: Post
-date: 2025-03-05 04:06:05 +0000
-title: "How I'm Tracking and Influencing My U.S. Legislators"
+date: 2025-03-05 04:06:05.000000000 +00:00
+title: How I'm Tracking and Influencing My U.S. Legislators
 toc: true
-image: /assets/images/030aabff-8f7b-4f87-9b52-80228af3bbfa.jpeg
-description: 
+image: "/assets/images/030aabff-8f7b-4f87-9b52-80228af3bbfa.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114108205783433506
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ljmb6iy6ba2q
 tags: political-science state-government communication social-networks united-states
+serial_number: 2025.BLG.039
 ---
-
-
 The U.S. legislative body is in a tough spot these days. In light of an executive branch that I didn't vote for and that I see actively harming those around me, as well as a judicial branch that I see acting against my wishes, I am trying to turn more to my legislators (U.S. Representatives and Senators) as my conduits for making things better.
 
 I want more of my neighbors to do the same, so here are the steps I'm taking that I think you can follow.

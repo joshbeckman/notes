@@ -19,8 +19,8 @@ tags:
 - culture
 - history
 - letterboxd
+serial_number: 2025.BLG.085
 ---
-
 <img src="https://a.ltrbxd.com/resized/film-poster/5/1/3/2/3/51323-chinatown-0-600-0-900-crop.jpg?v=b8e65cb89f"/>
 
 There are so many stylings and quips and perfectly timed jokes that I felt like I was watching a wristwatch tick. It is incredibly and deceptively engaging to watch the main character make wrong turn after surprisingly wrong turn, even while his moxie convinces you he's know what he's doing and tricks you into thinking he's on the right path. It's like listening to music where every expected chord resolution is skipped and [you reach for it on the next beat](https://www.joshbeckman.org/notes/898112564). (And the soundtrack!)

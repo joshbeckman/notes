@@ -10,8 +10,8 @@ tags:
 redirect_from:
 - "/scripting-ruby-with-no-internet"
 - "/scripting-ruby-with-no-internet/"
+serial_number: 2015.BLG.018
 ---
-
 As I sit, I’m riding on the commuter rail as it creaks and staggers its way North. I intended to write some thoughts down, but got distracted in the hassle of touching a new Jekyll post.
 
 So, I wrote [a little Ruby script](https://github.com/andjosh/dotfiles/blob/master/bin/jpost) - aptly - for creating a new Jekyll draft or post from the command line.

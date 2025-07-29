@@ -9,8 +9,8 @@ tags:
 redirect_from:
 - "/youtube-to-apple-music-download-script"
 - "/youtube-to-apple-music-download-script/"
+serial_number: 2023.BLG.004
 ---
-
 <figure class="kg-card kg-image-card"><img src="/assets/images/L1030087.jpeg" /></figure>
 
 I've long had some bookmarked DJ sets or live performances on YouTube that I would love to have available as I run or work. Viewing them on YouTube is usually not a great option because you have to keep the web page open, it inserts ads into the video and audio, etc. It's not optimized for listening, not like my Apple Music apps.

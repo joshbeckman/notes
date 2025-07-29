@@ -1,17 +1,15 @@
 ---
 layout: Post
-date: 2024-09-12 00:00:00 +0000
-title: "Why I Don't Use a Macropad"
+date: 2024-09-12 00:00:00.000000000 +00:00
+title: Why I Don't Use a Macropad
 toc: true
-image: 
-description: 
+image:
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113304204994700357
-tags: 
-  - tools
+tags:
+- tools
+serial_number: 2024.BLG.092
 ---
-
-
-
 I just spent a few minutes envisioning myself buying and enjoying a [Work Louder x Figma Creator Micro macro pad](https://worklouder.cc/figma/). I'm not going to buy it.
 
 I bought a [Megalodon Triple Knob Macro Pad](https://www.keebmonkey.com/products/megalodon-triple-knob-macro-pad) last year, customized it, _really_ tried to love it, and then returned it.

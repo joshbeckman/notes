@@ -1,13 +1,13 @@
 ---
 layout: Post
-date: 2024-02-04 17:03:20 +0000
-title: "Things Become Other Things by Craig Mod"
+date: 2024-02-04 17:03:20.000000000 +00:00
+title: Things Become Other Things by Craig Mod
 toc: true
 rating: 5
-image: /assets/images/7DAC5541F29449828537B5F8F4ED4EC2.jpeg
+image: "/assets/images/7DAC5541F29449828537B5F8F4ED4EC2.jpeg"
 tags: walking travel photography
+serial_number: 2024.BLG.014
 ---
-
 ![](/assets/images/7338CC83FF1348EB862A4C0D19DD7A8E.jpeg)
 
 I finished reading [Things Become Other Things](https://shop.specialprojects.jp/products/things-become-other-things-1st-ed/) this morning\. I started it earlier in the week and devoured it quickly; I’ve long been a fan and [supporter of Craig Mod](https://www.joshbeckman.org/blog/who-and-why-and-how-im-funding#membership)\. This is the second ~book~ piece of art I’ve bought from Craig Mod \- I recommend [Kissa By Kissa](https://www.joshbeckman.org/books/after-reading-kissa-by-kissa) to everyone\.

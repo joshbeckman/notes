@@ -1,20 +1,19 @@
 ---
 layout: Post
-date: 2025-02-18 21:18:32 +0000
-title: "Raycast Snippets for Conventional Comments & Commits"
+date: 2025-02-18 21:18:32.000000000 +00:00
+title: Raycast Snippets for Conventional Comments & Commits
 toc: true
-image: /assets/images/raycast-conventional-commit.png
-description: 
+image: "/assets/images/raycast-conventional-commit.png"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114027510737905977
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3liiggmbrdw2a
 tags:
-  - tools
-  - code-snippets
-  - communication
-  - software-engineering
+- tools
+- code-snippets
+- communication
+- software-engineering
+serial_number: 2025.BLG.030
 ---
-
-
 ![raycast interface](/assets/images/raycast-conventional-commit.png)
 
 I've been using [Raycast](https://www.raycast.com/) for the past couple years on my MacOS computers for keyboard-based hotkeys/launching/etc. It also has excellent snippet/text-expansion support.

@@ -8,8 +8,8 @@ redirect_from:
 tags:
 - narro
 - platforms
+serial_number: 2015.BLG.025
 ---
-
 I just pressed the button to submit _[Narro](//narro.co) for iOS_ into the App Store. After 12 revisions, 3 weeks of testing, and 15 external beta testers, I think it’s ready to go.
 
 I’ve worked on teams submitting apps into closed platforms (iOS, Android, Blackberry), but this is my first app submission alone. As I settle in for the inevitable waiting period while Big Apple looks over my code, here are some thoughts:

@@ -17,6 +17,6 @@ tags:
 - writing
 - art
 - letterboxd
+serial_number: 2025.BLG.087
 ---
-
  <p><img src="https://a.ltrbxd.com/resized/film-poster/1/0/2/5/0/4/7/1025047-the-phoenician-scheme-0-600-0-900-crop.jpg?v=606059b69f"/></p> <p>I think Wes Anderson films are better understood as a series of set-piece miniatures, each separate from the other, impeccably-lit, characters moving on tracks to position, visible only through a telescope on the other side of the room. Each movement evokes a laugh at the absurdity or the satisfaction of resolution.</p><p>And it's lovely if you can enjoy that (I enjoy that).</p> 

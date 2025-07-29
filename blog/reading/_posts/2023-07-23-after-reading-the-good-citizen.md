@@ -2,8 +2,7 @@
 toc: true
 title: 'After Reading: The Good Citizen'
 image: "/assets/images/L1050179.JPG"
-description: A woven history of violated and reclaimed citizenship in the United
-  States
+description: A woven history of violated and reclaimed citizenship in the United States
 date: '2023-07-23 18:13:33'
 tags:
 - books
@@ -13,8 +12,8 @@ tags:
 redirect_from:
 - "/after-reading-the-good-citizen"
 - "/after-reading-the-good-citizen/"
+serial_number: 2023.BLG.035
 ---
-
 <figure class="kg-card kg-image-card kg-width-wide"><img src="/assets/images/L1050179-1.JPG" class="kg-image" alt=""  width="2000" height="1333"  sizes="(min-width: 1200px) 1200px"></figure>
 
 I've been a fan of Benjamin Rasmussen's work for years, ever since I was just starting out as a photojournalist. And so I jumped at the chance to fund a printing of his work - he funded the printing of [_The Good Citizen_](https://gostbooks.com/product/the-good-citizen/) through [Kickstarter in the spring of 2022](https://www.kickstarter.com/projects/gblimitededitions/the-good-citizen-by-benjamin-rasmussen/).

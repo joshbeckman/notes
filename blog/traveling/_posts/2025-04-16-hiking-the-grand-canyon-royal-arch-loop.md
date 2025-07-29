@@ -11,8 +11,8 @@ tags:
 - hiking
 - travel
 - united-states
+serial_number: 2025.BLG.059
 ---
-
 As we left [our last backpacking trailhead](https://www.joshbeckman.org/blog/traveling/cirque-of-the-towers-2024), we all agreed we should hike the Grand Canyon next. It's beautiful, and not even _that_ high of elevation (not like the mountain passes we had just finished). We would just have to plan for water, but we could do that.
 
 So we chose the Royal Arch Loop: [US National Park Service guide](https://www.nps.gov/grca/planyourvisit/upload/Royal_Arch_Loop.pdf), [AllTrails overview](https://www.alltrails.com/trail/us/arizona/royal-arch-route--2). None of us had done the hike before, but two had hiked the Escalante trail nearby and one had done a river rafting trip down the Colorado River the year before. I had never been inside Grand Canyon National Park, so I was excited.

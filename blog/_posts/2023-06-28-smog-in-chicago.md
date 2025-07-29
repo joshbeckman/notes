@@ -9,8 +9,8 @@ tags:
 redirect_from:
 - "/smog-in-chicago"
 - "/smog-in-chicago/"
+serial_number: 2023.BLG.027
 ---
-
 <figure class="kg-card kg-image-card"><img src="/assets/images/L1050064.jpeg" /></figure>
 
 Chicago had the worst air quality in the nation today.   

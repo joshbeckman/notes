@@ -2,8 +2,7 @@
 toc: true
 title: 'After Reading: The Americans'
 image: "/assets/images/IMG_0154.jpeg"
-description: On reading the street photography touchstone way past when I should
-  have.
+description: On reading the street photography touchstone way past when I should have.
 date: '2022-12-12 04:29:10'
 tags:
 - photography
@@ -12,8 +11,8 @@ tags:
 redirect_from:
 - "/after-reading-the-americans"
 - "/after-reading-the-americans/"
+serial_number: 2022.BLG.022
 ---
-
 Though I photographed professionally for years, and though I spent a great deal of that time photographing in the street, emulating the great street photographers, I had not read Robert Frank's _The Americans_ in person before this week. It's the most iconic street photography book - shot 1955-56.
 
 I picked it up on my last walk through the bookstore - found it nestled between the bindings of the much larger format contemporary photography books.

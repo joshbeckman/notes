@@ -10,8 +10,8 @@ tags:
 redirect_from:
 - "/analyzing-data-through-sound"
 - "/analyzing-data-through-sound/"
+serial_number: 2015.BLG.006
 ---
-
 Why isn’t more data analysis done over mediums of sound? It’s one of two senses nearly all my electronics engage me with. The other is visual, and is the main/only way people analyze large data sets. Why not take advantage of the other?
 
 It seems like our hearing is primed to pick up minute changes, just as much as our sight. Blind individuals can learn to navigate the world using only sound. As I sit, hurtling on this train, I can hear every shake of the car. That’s more than I can say of my feet feeling the shake through the floor.

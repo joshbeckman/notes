@@ -12,9 +12,8 @@ tags:
 - hiking
 - running
 - videography
+serial_number: 2025.BLG.064
 ---
-
-
 I've been making these overview videos of my bigger/recent hikes ([Grand Canyon Royal Arch Loop](https://www.joshbeckman.org/blog/traveling/hiking-the-grand-canyon-royal-arch-loop), [Cirque of The Towers](https://www.joshbeckman.org/blog/traveling/cirque-of-the-towers-2024)). It's not hard, these days, to get a bird's-eye overview reel of your GPS-tracked run or hike with your smartwatch or smartphone. And I find it's a pretty reminder of the route you took - rather than the route you planned.
 
 <img width="614" alt="video recap example" src="/assets/images/94453524-70d1-41f6-a7a2-eba2221bcc3c.png" />

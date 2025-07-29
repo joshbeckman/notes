@@ -11,9 +11,8 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/114842894883580
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ltsjqj4rwy2f
 tags:
 - music
+serial_number: 2025.BLG.108
 ---
-
-
 The new [Wet Leg](https://wetlegband.com/) album is a sophomore. And that's not bad, but it's like a slight side-step from their first album that I *loved loved loved*. It kinda sounds like spent a summer hanging out around Radiohead and that reformed their original brash tone a bit. It sounds less like an apartment party and more like a nighttime set on a rooftop. 
 
 It's a short album but the last song always leaves me singing. I'm hoping to see them live again this year ([previously](https://www.joshbeckman.org/blog/attending/wet-leg-at-thalia-hall)).

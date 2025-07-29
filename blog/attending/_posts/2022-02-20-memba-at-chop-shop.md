@@ -1,14 +1,14 @@
 ---
 layout: Post
-date: 2022-02-20 05:00:30 +0000
-title: "Memba at Chop Shop"
+date: 2022-02-20 05:00:30.000000000 +00:00
+title: Memba at Chop Shop
 toc: true
-image: /assets/images/4DD73F465E5B4970B0DA3B3B58E2D3C4.jpeg
-description: 
-tags: 
-  - music
+image: "/assets/images/4DD73F465E5B4970B0DA3B3B58E2D3C4.jpeg"
+description:
+tags:
+- music
+serial_number: 2022.BLG.007
 ---
-
 ![](/assets/images/4DD73F465E5B4970B0DA3B3B58E2D3C4.jpeg)
 
 Marybeth and I went with Bill, Emily, Kate, Shannon, Kylie, Grant, and Eddie\.

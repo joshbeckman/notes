@@ -7,8 +7,8 @@ tags:
 redirect_from:
 - "/memory-leaks-using-canvas-in-node"
 - "/memory-leaks-using-canvas-in-node/"
+serial_number: 2015.BLG.022
 ---
-
 At [ThreadMeUp](//threadmeup.com), we do much of our image manipulation and generation using HTML5 `Canvas` objects. This allows us to build some interesting tech, like mirroring client-side interactions with the `canvas` onto a Node server representation.
 
 Recently, we ran into a problem where concurrent or repetitive `canvas` manipulations on the server would produce huge memory leaks. This has happened for us while using the [Fabric.js](http://fabricjs.com/) library for abstraction as well as with the bare [`node-canvas`](https://github.com/Automattic/node-canvas) package.

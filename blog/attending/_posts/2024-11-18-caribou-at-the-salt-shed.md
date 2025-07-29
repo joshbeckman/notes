@@ -1,18 +1,17 @@
 ---
 layout: Post
-date: 2024-11-18 02:39:06 +0000
-title: "Caribou at The Salt Shed"
+date: 2024-11-18 02:39:06.000000000 +00:00
+title: Caribou at The Salt Shed
 toc: true
-image: /assets/images/D73CD8969CF64F04B7602680754EA3C7.jpeg
+image: "/assets/images/D73CD8969CF64F04B7602680754EA3C7.jpeg"
 description: Another really fun Caribou show.
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113519372225151186
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lbgrduj2ik2m
-tags: 
-  - music
-  - salt-shed-venue
+tags:
+- music
+- salt-shed-venue
+serial_number: 2024.BLG.114
 ---
-
-
 ![](/assets/images/D73CD8969CF64F04B7602680754EA3C7.jpeg)
 
 The [last time we saw Caribou play](https://www.joshbeckman.org/blog/attending/caribou-and-jessy-lanza), I had the time of my life\. This show did not disappoint, even with high expectations\.

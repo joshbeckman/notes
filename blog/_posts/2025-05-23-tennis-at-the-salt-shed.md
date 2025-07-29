@@ -10,9 +10,8 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lq3pn6wc3y2o
 tags:
 - concerts
 - salt-shed-venue
+serial_number: 2025.BLG.079
 ---
-
-
 ![Tennis in concert](/assets/images/180ce528-b2b8-497a-a90b-f5a5b50cbebb.jpeg)
 
 Paul and Dan pulled me in to go see [Tennis](https://tennis-music.com/) perform at the Salt Shed on their farewell tour. We got close to the stage and the whole evening felt intimate. [Billie Marten](https://www.billiemarten.com/) opened for them and she was ethereal. When Tennis took the stage, they settled into a groove and never left it.

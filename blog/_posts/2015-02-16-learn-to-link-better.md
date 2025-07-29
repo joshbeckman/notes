@@ -8,8 +8,8 @@ redirect_from:
 tags:
 - personal-blog
 - interfaces
+serial_number: 2015.BLG.005
 ---
-
 Links within your text do two things:
 
 1. Provide me with valuable information or context

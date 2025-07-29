@@ -10,8 +10,8 @@ tags:
 redirect_from:
 - "/writing-great-product-release-emails"
 - "/writing-great-product-release-emails/"
+serial_number: 2020.BLG.008
 ---
-
 <figure class="kg-card kg-image-card"><img src="/assets/images/88FB6267-145F-436A-B547-CC195F476DC1.jpeg" /></figure>
 
 If you release software, you’ll need to communicate new features and bug-fixes to your users. Eleni has written about how OfficeLuv [practices writing our customer-facing blog posts announcing features](https://medium.com/@elenichappen/write-the-post-before-the-feature-7597eb1cab65) before we build, but we don’t announce every feature in our customer-facing changelog. We do, however, put out an internal product release email every week. It has remained a constant pulse over our 4 years, but we’ve improved the structure and content over time.

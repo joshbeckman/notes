@@ -1,8 +1,9 @@
 ---
 layout: Post
-date: 2024-02-02 03:52:31 +0000
+date: 2024-02-02 03:52:31.000000000 +00:00
 title: Weeding The Edges
 tags: note-taking gardening
+serial_number: 2024.BLG.012
 ---
 A thought I wrote in the margins while reading an essay on online\-space\-gardening by [Annika Hansteen\-Izora](https://www.annikaizora.com) in [the _Can You Imagine?_ zine](https://www.joshbeckman.org/books/after-reading-can-you-imagine-a-library-of-possibilities-for-reimagining-the-web-by-sublime): 
 

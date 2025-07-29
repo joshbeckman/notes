@@ -1,13 +1,13 @@
 ---
 layout: Post
-date: 2024-02-07 00:47:36 +0000
-title: "The Devils"
+date: 2024-02-07 00:47:36.000000000 +00:00
+title: The Devils
 rating: 4
 imdb_id: tt0066993
 image: https://m.media-amazon.com/images/M/MV5BYTZmNDBkMTEtODIyYS00MmFhLWIwNzUtNmY1OGU0M2Q5OGY1XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg
 tags: religion
+serial_number: 2024.BLG.017
 ---
-
 Brandon and Matt and I had our regular scary movie night at Matt’s place this week\!
 
 Usually we hem and haw for a while about what movie we should watch, but Matt had one queued up for us: *The Devils* was available on The Criterion Channel\.

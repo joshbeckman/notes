@@ -1,17 +1,16 @@
 ---
 title: About The Site Index
-tags: index
-image: /assets/img/profile.png
-favicon_url: /assets/img/profile.png
-source_emoji: 🌐
-toc: true
 tags:
 - index
 - information-theory
 - system-design
 - taxonomy
+image: "/assets/img/profile.png"
+favicon_url: "/assets/img/profile.png"
+source_emoji: "\U0001F310"
+toc: true
+serial_number: 2024.NTS.036
 ---
-
 [The topics](/tags) are categories; they are used as tags.
 Any note can be tagged with one or more topics.
 The numbers don't matter; what matters is that they are numerically sorted and numerically related.

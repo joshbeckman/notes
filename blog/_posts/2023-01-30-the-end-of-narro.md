@@ -2,16 +2,16 @@
 toc: true
 title: The End of Narro
 image: "/assets/images/Screen-Shot-2023-01-22-at-10.54.43-copy.jpg"
-description: The timeline and reasoning behind why I shut down Narro, the best
-  way to listen to the internet.
+description: The timeline and reasoning behind why I shut down Narro, the best way
+  to listen to the internet.
 date: '2023-01-30 14:01:58'
 tags:
 - narro
 redirect_from:
 - "/the-end-of-narro"
 - "/the-end-of-narro/"
+serial_number: 2023.BLG.005
 ---
-
 Over the past few months, I have been shutting down [Narro](https://www.narro.co). This week I have been spinning down the last remaining servers, disassembling the final pieces.
 
 I initially published the [announcement on the Narro blog](https://blog.narro.co/post/704215532872876032/notice-narro-shutting-down), but a summary is that the service had become a burden to operate and was no longer profitable enough to sustain itself. Here, I want to expand a bit on why and how I shut down the service and company. I’ve set up a separate, dedicated page to document Narro’s history and features:

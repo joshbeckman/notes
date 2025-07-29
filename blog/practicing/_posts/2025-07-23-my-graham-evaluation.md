@@ -11,9 +11,8 @@ tags:
 - llm
 - human-psychology
 - identity
+serial_number: 2025.BLG.113
 ---
-
-
 So yesterday someone at work shared [this fun video](https://x.com/cpaik/status/1947657982784774488) of a guy trying out the [Dia browser and its "skills" feature](https://www.diabrowser.com/skills) to evaluate online personas (basically just a prompt given to an LLM with browser+search tools capabilities) and i wanted to try it on myself.
 
 ## Prompt

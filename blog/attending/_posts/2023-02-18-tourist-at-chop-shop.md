@@ -1,14 +1,14 @@
 ---
 layout: Post
-date: 2023-02-18 05:34:45 +0000
-title: "Tourist at Chop Shop"
+date: 2023-02-18 05:34:45.000000000 +00:00
+title: Tourist at Chop Shop
 toc: true
-image: /assets/images/FC3B277175BA4891BFE7DB85B66A4D0F.jpeg
-description: 
-tags: 
+image: "/assets/images/FC3B277175BA4891BFE7DB85B66A4D0F.jpeg"
+description:
+tags:
 - music
+serial_number: 2023.BLG.008
 ---
-
 ![](/assets/images/FC3B277175BA4891BFE7DB85B66A4D0F.jpeg)
 
 <video controls src="/assets/videos/35A174E74335472BA7CF9862552C9BF3.mov"></video>

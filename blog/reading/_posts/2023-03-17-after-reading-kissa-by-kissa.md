@@ -11,8 +11,8 @@ tags:
 redirect_from:
 - "/after-reading-kissa-by-kissa"
 - "/after-reading-kissa-by-kissa/"
+serial_number: 2023.BLG.015
 ---
-
 <figure class="kg-card kg-image-card"><img src="/assets/images/6FAB5F47-4C9D-42B7-B1F7-CC971832EDEE.jpeg" /></figure>
 
 Last night, as I lay in bed, I read _[Kissa By Kissa](https://shop.specialprojects.jp/products/kissa-by-kissa-4th-ed)_. The whole thing in one sitting.

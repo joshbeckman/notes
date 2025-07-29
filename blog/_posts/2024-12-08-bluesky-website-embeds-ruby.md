@@ -1,18 +1,18 @@
 ---
 layout: Post
-date: 2024-12-08 17:02:25 +0000
+date: 2024-12-08 17:02:25.000000000 +00:00
 title: Adding Website Card Embeds to my Bluesky Posts
 toc: true
-image: /assets/images/E0F9F28442EB4E069171E4F4D69368CE.png
-description: 
+image: "/assets/images/E0F9F28442EB4E069171E4F4D69368CE.png"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113618400598758317
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lcsqms45562x
 tags:
 - bluesky
 - code-snippets
 - language-ruby
+serial_number: 2024.BLG.129
 ---
-
 Bluesky’s AT Protocol and client app has some interesting choices\. One of them is that links inside posts *don’t* get unfurled into previews/cards\. So when I started [syndicating links to my posts to Bluesky](https://www.joshbeckman.org/blog/crossposting-to-bluesky-from-jekyll), they didn’t really look like much: just truncated blue text\. Because every client has to provide the website preview themselves.
 
 Their [API docs page](https://docs.bsky.app/docs/advanced-guides/posts#website-card-embeds) has some reasoning about this:

@@ -10,8 +10,8 @@ tags:
 redirect_from:
 - "/getting-social-online"
 - "/getting-social-online/"
+serial_number: 2023.BLG.028
 ---
-
 “Parasocial” mediums are optimized for creating [parasocial](https://en.wikipedia.org/wiki/Parasocial_interaction) relationships moreso than social relationships: conversations flow in one direction, from creator to audience, where the creator produces and the audience consumes.
 
 "Social" mediums are optimized for people having conversations with each other, and not for producing and consuming “content”.

@@ -1,18 +1,17 @@
 ---
 layout: Post
-date: 2025-03-15 16:32:39 +0000
-title: "First Roll of Film Shot on the XA2"
+date: 2025-03-15 16:32:39.000000000 +00:00
+title: First Roll of Film Shot on the XA2
 toc: true
-image: /assets/images/c4bae1d8-886a-4019-a0cc-77d80683dabd.jpeg
-description: 
+image: "/assets/images/c4bae1d8-886a-4019-a0cc-77d80683dabd.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114167652792808461
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lkgnxw5sfk26
 tags:
-  - photography
-  - cameras
+- photography
+- cameras
+serial_number: 2025.BLG.047
 ---
-
-
 My grandma found an old tiny camera in her basement that wasn't working and asked me if I would use it. This isn't the first time this has happened - I think I've gotten three other cameras this way.
 
 This one turned out to be a cute little [Olympus XA2](https://casualphotophile.com/2023/05/23/olympus-xa2-point-and-shoot-35mm-film-camera-review/). After a bit of cleaning and some new batteries, I had it working again.

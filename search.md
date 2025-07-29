@@ -1,13 +1,13 @@
 ---
 layout: Search
 title: Search
-permalink: /search/
+permalink: "/search/"
 emoji: "*️⃣"
 tags: index
 toc: true
 searchable: true
+serial_number: 2023.PAE.006
 ---
-
 ---
 
 Alternatively, you can [browse the index](/tags/).

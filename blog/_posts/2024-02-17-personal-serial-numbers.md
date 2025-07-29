@@ -1,16 +1,16 @@
 ---
 layout: Post
-date: 2024-02-17 17:22:03 +0000
-title: "Personal Serial Numbers"
+date: 2024-02-17 17:22:03.000000000 +00:00
+title: Personal Serial Numbers
 toc: true
-image: /assets/images/EE755FE2535D4A56A4D1831A3443507F.jpeg
+image: "/assets/images/EE755FE2535D4A56A4D1831A3443507F.jpeg"
 tags:
 - identity
 - publishing
 - building
 - taxonomy
+serial_number: 2024.BLG.020
 ---
-
 ![](/assets/images/EE755FE2535D4A56A4D1831A3443507F.jpeg)
 
 I was listening to [Van Neistat](https://www.youtube.com/channel/UC5mPJA4y5G8Z6aNkY6AxgAw) yesterday and he mentioned a habit of adding serial numbers to pieces he builds\. I like that \- a fun little stamp on an item that gives it a name all its own\. As a complement to version numbers \(which should follow [semantic versioning](https://semver.org) format\) which identify the model used for a build, a serial number to identify *that specific instance* of a build is useful\.

@@ -1,13 +1,13 @@
 ---
 layout: Post
-date: 2022-01-23 05:41:00 +0000
+date: 2022-01-23 05:41:00.000000000 +00:00
 title: Game and drinks night at Paul and Dan’s
 toc: true
-image: /assets/images/AC993B8AF8104CD0A9906AAB9C4A6262.jpeg
-description: 
+image: "/assets/images/AC993B8AF8104CD0A9906AAB9C4A6262.jpeg"
+description:
 tags: cocktails games
+serial_number: 2022.BLG.003
 ---
-
 After taking the train back from the suburbs, we went straight to Paul and Dan’s for a game night\.
 And they had come up with a dink activity for us all\!
 

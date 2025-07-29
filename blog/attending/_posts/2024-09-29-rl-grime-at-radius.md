@@ -1,18 +1,15 @@
 ---
 layout: Post
-date: 2024-09-29 00:00:00 +0000
-title: "RL Grime at Radius"
+date: 2024-09-29 00:00:00.000000000 +00:00
+title: RL Grime at Radius
 toc: true
-image: /assets/images/79045c0d-9bf5-440e-893d-6c07e1343216.jpeg
-description: 
+image: "/assets/images/79045c0d-9bf5-440e-893d-6c07e1343216.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113281555318792828
-tags: 
-  - music
+tags:
+- music
+serial_number: 2024.BLG.099
 ---
-
-
-
-
 ![IMG_3700](/assets/images/79045c0d-9bf5-440e-893d-6c07e1343216.jpeg)
 
 We weren't going to go because I had a flight at 8am the next morning.

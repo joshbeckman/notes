@@ -1,19 +1,19 @@
 ---
 layout: Post
-date: 2024-12-27 22:42:10 +0000
-title: "Auckland, New Zealand"
+date: 2024-12-27 22:42:10.000000000 +00:00
+title: Auckland, New Zealand
 toc: true
 category: traveling
-image: /assets/images/C609013F3A4749DFBBB516BA41432AEE.jpeg
-description: 
+image: "/assets/images/C609013F3A4749DFBBB516BA41432AEE.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113864713059173929
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lgdwschfg72k
-tags: 
+tags:
 - travel
 - new-zealand
 - exploration
+serial_number: 2024.TEG.001
 ---
-
 A modern city built between the volcanoes and the sea.
 
 ![](/assets/images/1E19CE55D2964AC3B0BD600E49D38EFB.jpeg)

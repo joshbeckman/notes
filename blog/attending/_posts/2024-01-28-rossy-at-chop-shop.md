@@ -1,11 +1,11 @@
 ---
 layout: Post
-date: 2024-01-28 06:02:14 +0000
+date: 2024-01-28 06:02:14.000000000 +00:00
 title: Rossy at Chop Shop
-image: /assets/images/5A4A14471DF6402C8846DF58A74C20F4.jpeg
+image: "/assets/images/5A4A14471DF6402C8846DF58A74C20F4.jpeg"
 tags: music
+serial_number: 2024.BLG.010
 ---
-
 ![](/assets/images/5A4A14471DF6402C8846DF58A74C20F4.jpeg)
 
 We went to go see Rossy at Chop Shop and she was great as always\. I think this is the second or third time seeing her perform \(Heatwave and I think somewhere before that\)\. In my head, she’s like a heavier bass version of Allison Wonderland\. She kept the crowd engaged, even though things weren’t packed \(due to crappy weather\)\. She even came down  to chat with the crowd after the set, and Marybeth gave her a hug and thanks\.

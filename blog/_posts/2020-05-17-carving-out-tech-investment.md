@@ -9,8 +9,8 @@ tags:
 redirect_from:
 - "/carving-out-tech-investment"
 - "/carving-out-tech-investment/"
+serial_number: 2020.BLG.006
 ---
-
 At OfficeLuv, we track our individual tasks into epics, like most other product teams. Also like most others, we’ve had one ongoing group called ‘Tech Debt’ since day 2. Recently, I went grooming through a bunch of the stories in there and decided to break that topic into two separate ideas, one for Tech Debt and one for Tech Investment.
 
 Many people have already expounded on Technical Debt, how to curtail it, and when to accept it. In short, they are the aspects of your product that were built in quick or dirty ways as a trade-off for early usability, while accepting that they will need to be reworked in the future. It’s analogous to debt because it’s a loan you take out to buy a feature or a customer right now, with the understanding that you will pay it back in the future. It can be in the technical domain, in the design domain, or in the product usage domain.

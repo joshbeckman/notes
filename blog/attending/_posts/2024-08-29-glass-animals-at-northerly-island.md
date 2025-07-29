@@ -1,18 +1,16 @@
 ---
 layout: Post
-date: 2024-08-29 00:00:00 -0500
-title: "Glass Animals at Northerly Island"
+date: 2024-08-29 00:00:00.000000000 -05:00
+title: Glass Animals at Northerly Island
 toc: true
-image: /assets/images/5198a262-e081-4e83-88d2-3c0512877ba3.jpeg
-description: 
+image: "/assets/images/5198a262-e081-4e83-88d2-3c0512877ba3.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113069219735103705
-tags: 
-  - music
-  - chicago
+tags:
+- music
+- chicago
+serial_number: 2024.BLG.087
 ---
-
-
-
 ![Glass Animals on the stage at Northerly Island, bathed in green](/assets/images/5198a262-e081-4e83-88d2-3c0512877ba3.jpeg)
 
 Bill offered me a ticket because someone was sick and couldn't go. It was only $25, a sale from LiveNation earlier in the year to fill seats.

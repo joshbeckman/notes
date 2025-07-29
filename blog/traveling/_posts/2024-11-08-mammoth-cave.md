@@ -1,19 +1,18 @@
 ---
 layout: Post
-date: 2024-11-08 00:00:00 +0000
-title: "Mammoth Cave"
+date: 2024-11-08 00:00:00.000000000 +00:00
+title: Mammoth Cave
 toc: true
-image: /assets/images/b811a7c0-8bc8-463f-bb8d-1eba312b11a4.jpeg
-description: 
+image: "/assets/images/b811a7c0-8bc8-463f-bb8d-1eba312b11a4.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113861876330260274
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lg6z2m2lyw2u
 tags:
-  - travel
-  - united-states
-  - exploration
+- travel
+- united-states
+- exploration
+serial_number: 2024.BLG.110
 ---
-
-
 John wanted to go to Mammoth Cave for the long weekend and I hadn't been since I was a kid so I was happy to join. The drive was terrible because my car broke down in Indianapolis but we persevered and the rainy weather was perfect for hiking underground through miles and miles of the biggest cave system in the world.
 
 ![lantern light cave tour](/assets/images/b811a7c0-8bc8-463f-bb8d-1eba312b11a4.jpeg)

@@ -8,8 +8,8 @@ tags:
 redirect_from:
 - "/the-great-discontent-issue-one"
 - "/the-great-discontent-issue-one/"
+serial_number: 2014.BLG.001
 ---
-
 I was eager to back the Kickstarter campaign for the first physical issue of The Great Discontent back in [early February](https://www.kickstarter.com/projects/essmaker/the-great-discontent-magazine-issue-1). The investment paid off on Thursday afternoon when I picked up my copy from the mailroom.
 
 I’ve already spent some hours reading the beginning pieces, and I can tell the rest will be just as enjoyable. I just want to put down some initial thoughts on the makeup of the magazine (book?) and its internal formatting styles.

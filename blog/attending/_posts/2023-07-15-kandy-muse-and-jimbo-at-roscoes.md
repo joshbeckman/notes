@@ -8,8 +8,8 @@ tags:
 redirect_from:
 - "/kandy-muse-and-jimbo-at-roscoes"
 - "/kandy-muse-and-jimbo-at-roscoes/"
+serial_number: 2023.BLG.031
 ---
-
 We braved the storms last night to watch Kandy Muse and Jimbo perform at Roscoe’s, and it was a fantastic decision.
 
 Watching Kandy command the crowd with sultry stares and seeing Jimbo rip the head off a doll to drink out of it like a water bottle (on the same stage) is a singular experience.

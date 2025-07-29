@@ -11,8 +11,8 @@ tags:
 redirect_from:
 - "/after-reading-high-output-management"
 - "/after-reading-high-output-management/"
+serial_number: 2022.BLG.019
 ---
-
 <figure class="kg-card kg-image-card"><img src="/assets/images/IMG_0124.jpeg" /></figure>
 
 I had been recommended this book by another Staff+ engineer at Shopify (after having been recommended this by many other leads in many other organizations over the years). He claimed that it had revitalized his daily task prioritization and his relationship to the calendar. I thought that sounded good.

@@ -1,7 +1,7 @@
 ---
 layout: Post
 date: '2025-05-15 20:43:29 +0000'
-title: 'Vibe-Collapse'
+title: Vibe-Collapse
 toc: true
 image:
 description:
@@ -13,8 +13,8 @@ tags:
 - language
 - software-engineering
 - bluesky
+serial_number: 2025.BLG.068
 ---
-
 Coworker: Is there a phrase for when you've vibe-coded yourself into a corner and you are far outside your knowledge of what it's been doing for you?
 
 Me: **Vibe-collapse**

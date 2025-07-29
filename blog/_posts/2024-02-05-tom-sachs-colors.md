@@ -1,11 +1,11 @@
 ---
 layout: Post
-date: 2024-02-05 20:43:34 +0000
-title: "Tom Sachs's COLOR Hex Codes"
-image: /assets/images/tom-sachs-color.png
+date: 2024-02-05 20:43:34.000000000 +00:00
+title: Tom Sachs's COLOR Hex Codes
+image: "/assets/images/tom-sachs-color.png"
 tags: art popular
+serial_number: 2024.BLG.016
 ---
-
 I come back to [COLOR](https://vimeo.com/33998046) by Tom Sachs whenever I want to force myself into an artistic decision.
 
 It tells me: take a stance on the infinite spectrum of artistic choice, commit, and defend your reasons. They're as good as any others.

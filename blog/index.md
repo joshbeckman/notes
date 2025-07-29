@@ -6,8 +6,8 @@ tags:
 - index
 - publishing
 - personal-blog
+serial_number: 2024.PAE.001
 ---
-
 <div id="toc-and-metadata"><ul id="toc" class="section-nav">
 <li class="toc-entry toc-h2"><a href="/blog/attending">Attending</a></li>
 <li class="toc-entry toc-h2"><a href="/blog/listening">Listening</a></li>

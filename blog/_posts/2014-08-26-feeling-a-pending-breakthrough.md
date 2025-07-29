@@ -7,8 +7,8 @@ redirect_from:
 - "/feeling-a-pending-breakthrough/"
 tags:
 - competition
+serial_number: 2014.BLG.002
 ---
-
 From The Verge, [This is Uber’s playbook for sabotaging Lyft](http://www.theverge.com/2014/8/26/6067663/this-is-ubers-playbook-for-sabotaging-lyft):
 
 > Using contractors it calls “brand ambassadors,” Uber requests rides from Lyft and other competitors, recruits their drivers, and takes multiple precautions to avoid detection. The effort, which Uber appears to be rolling out nationally, has already resulted in thousands of canceled Lyft rides and made it more difficult for its rival to gain a foothold in new markets.

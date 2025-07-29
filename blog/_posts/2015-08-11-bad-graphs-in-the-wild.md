@@ -10,8 +10,8 @@ tags:
 redirect_from:
 - "/bad-graphs-in-the-wild"
 - "/bad-graphs-in-the-wild/"
+serial_number: 2015.BLG.020
 ---
-
 <figure class="kg-card kg-image-card"><img src="/assets/images/1.jpg" /></figure>
 
 I recently used this example as a source of interview questions, so I thought it would be worthwhile to write it down.

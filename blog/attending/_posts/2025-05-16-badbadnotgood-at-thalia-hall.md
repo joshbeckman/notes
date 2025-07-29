@@ -11,9 +11,8 @@ tags:
 - thalia-hall-venue
 - music
 - concerts
+serial_number: 2025.BLG.069
 ---
-
-
 I got offered an extra ticket to attend this show with some friends, and this was my first time in the seated balcony. We got there early to get a spot right on the rail and the extra effort was worth it. Getting to see the projectionist work throughout the show was an interesting treat.
 
 ![BADBADNOTGOOD](/assets/images/9891062c-96f5-4b05-8993-edb08e4ced8c.jpeg)

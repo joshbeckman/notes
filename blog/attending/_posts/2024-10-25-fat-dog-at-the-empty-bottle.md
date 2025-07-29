@@ -1,18 +1,16 @@
 ---
 layout: Post
-date: 2024-10-25 00:00:00 +0000
-title: "Fat Dog at The Empty Bottle"
+date: 2024-10-25 00:00:00.000000000 +00:00
+title: Fat Dog at The Empty Bottle
 toc: true
-image: /assets/images/dd6af622-7ee9-42dc-9a52-32085d455e9d.jpeg
-description: 
+image: "/assets/images/dd6af622-7ee9-42dc-9a52-32085d455e9d.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113383478054719298
-tags: 
-  - music
-  - chicago
+tags:
+- music
+- chicago
+serial_number: 2024.BLG.105
 ---
-
-
-
 I bought tickets to this show back in June when Bill told me they were coming to Chicago. At the time, the band had only released two songs and I like them, so I bought in.
 
 The week of the show, Bill almost backed out. But we were able to make the timing work. We showed up and turns out that Bill forgot he had bought five tickets, so we had a good laugh about that.

@@ -8,8 +8,8 @@ redirect_from:
 tags:
 - folk-creations
 - threadmeup
+serial_number: 2015.BLG.007
 ---
-
 Some time ago, a group of us from [ThreadMeUp](http://tech.threadmeup.com) took a trip out to one of our suppliers’ warehouses. &nbsp;We were given a tour of the packing floor, one with over 200 employees actively carrying products to and fro.
 
 To transport the products from storage to a boxed shipment, each individual used what seemed like a flatbed, motorized cart. They would continuously drive the carts from location to location, a perfectly synchronized ballet around each other.

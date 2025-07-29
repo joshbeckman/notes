@@ -2,7 +2,8 @@
 toc: true
 title: An Autumn with Out of Office Hours
 image: "/assets/images/96B2B946-7500-48A0-8168-360450087625.jpeg"
-description: Reflecting on what went well and what to improve after a season of mentoring brand new software engineers.
+description: Reflecting on what went well and what to improve after a season of mentoring
+  brand new software engineers.
 date: '2020-12-12 00:00:00'
 tags:
 - mentoring
@@ -10,8 +11,8 @@ tags:
 redirect_from:
 - "/an-autumn-with-out-of-office-hours"
 - "/an-autumn-with-out-of-office-hours/"
+serial_number: 2020.BLG.024
 ---
-
 <figure class="kg-card kg-image-card"><img src="/assets/images/96B2B946-7500-48A0-8168-360450087625.jpeg" /></figure>
 
 I registered for [Out of Office Hours](https://www.outofofficehours.com) in July, then was invited to the August cohort, so I’ve been in the mentoring cohort for the last four months. I plan on mentoring there for as long as I’m useful - the commitment is so easy and I have an opportunity to have really uplifting conversations a few times a month.

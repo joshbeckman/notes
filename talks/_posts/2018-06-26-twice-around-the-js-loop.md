@@ -1,14 +1,14 @@
 ---
 title: Twice Around The JS Event Loop
-date: 2018-06-26 00:00:00 Z
-redirect_to: "https://ghpages.joshbeckman.org/presents/twice-around-the-javascript-event-loop"
+date: 2018-06-26 00:00:00.000000000 Z
+redirect_to: https://ghpages.joshbeckman.org/presents/twice-around-the-javascript-event-loop
 presented_at: Chicago JavaScript Meetup
 tags:
 - software-engineering
 - code-snippets
 - officeluv
+serial_number: 2018.TLS.003
 ---
-
 <section data-markdown>
 
 # {{ page.title }}

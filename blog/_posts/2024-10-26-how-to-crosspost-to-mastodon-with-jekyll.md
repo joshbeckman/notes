@@ -1,23 +1,21 @@
 ---
 layout: Post
-date: 2024-10-26 00:00:00 +0000
-title: "How to Cross-Post to Mastodon with Jekyll"
+date: 2024-10-26 00:00:00.000000000 +00:00
+title: How to Cross-Post to Mastodon with Jekyll
 toc: true
-image: /assets/images/77061f6f-8d03-4f1a-bff0-f21a1d6f7229.png
-description: 
+image: "/assets/images/77061f6f-8d03-4f1a-bff0-f21a1d6f7229.png"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113374983387877870
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lbpkxxhoem2t
-tags: 
-  - personal-blog
-  - blogs
-  - publishing
-  - code-snippets
-  - mastodon
-  - jekyll
+tags:
+- personal-blog
+- blogs
+- publishing
+- code-snippets
+- mastodon
+- jekyll
+serial_number: 2024.BLG.106
 ---
-
-
-
 I publish posts on this site first - Publish On Site Syndicate Elsewhere (POSSE). I want this site to be the canonical source of my writing, the one true place for people (and myself) to read my notes and posts. Social networks come and go, but my site remains. But I want to [get social online](https://www.joshbeckman.org/blog/getting-social-online) and Mastodon is currently in fashion, so I want to show my stuff to people talking in that world.
 
 Then [a scheduled/cron workflow/job in GitHub Actions](https://github.com/joshbeckman/notes/blob/master/.github/workflows/posse.yml) (which hosts the repository for the code/contents of this site) runs twice a day. I use GitHub actions because they run this code for free and provide nice ways to read/manipulate the code in the repository.

@@ -9,8 +9,8 @@ tags:
 redirect_from:
 - "/handy-kue-cli-maintenance"
 - "/handy-kue-cli-maintenance/"
+serial_number: 2018.BLG.001
 ---
-
 Building systems at my last few companies, it has been enormously useful to have a robust queueing platform. I’ve tried Amazon’s SQS, NATS, and a couple others but Automattic’s [Kue](https://github.com/Automattic/kue) has been the best combination of performance and introspection.
 
 Once you’re really using any queue for large batching tasks, you will eventually run into issues with stuck jobs and jobs that need to be evicted early. This is called _queue maintenance_. You should have code that automatically sweeps the queue clean based on your own rules of retry, etc.

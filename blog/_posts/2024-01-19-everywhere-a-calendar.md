@@ -1,13 +1,13 @@
 ---
 layout: Post
-date: 2024-01-19 03:39:13 +0000
+date: 2024-01-19 03:39:13.000000000 +00:00
 title: Everywhere a calendar
 toc: true
-image: /assets/images/7FD8F42FFDC84AC3AD14C9DC8E613522.png
+image: "/assets/images/7FD8F42FFDC84AC3AD14C9DC8E613522.png"
 description: Show me more time-aligned data
 tags: time
+serial_number: 2024.BLG.007
 ---
-
 Most data \- my data, that I manage on platforms or in apps \- has a time component\. It’s either explicit \(“this happened then”\) or implicit \(“this was true as of this time”\); data <=> facts, and [facts incorporate time](https://www.joshbeckman.org/notes/623459232)\. I should be able to view \(and ideally manipulate\!\) that time in tools dedicated to visualizing time: calendars\.
 
 Calendar apps are having a bit of a moment right now? The new [Hey calendar](https://www.hey.com/calendar/) and the new [Notion calendar](https://www.notion.so/product/calendar) were recently released, but I’m a bit confused by what they thought needed to be improved\. Neither really brings *more* into the calendar; they mostly just allow you to annotate\. At least the Hey calendar adds some fun things like day labels and photos and habits and a scrollable view\. The Notion calendar is just a regular calendar \(a la Google or Apple\) but with links to Notion pages for each event\. But neither really allows me to understand my time beyond calendar events and TODO items\.

@@ -9,15 +9,14 @@ description: A new GitHub CLI extension that renders issues and pull requests in
   markdown format, perfect for feeding to LLMs or offline viewing
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114844317210566071
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ltufyzykbe2o
-redirect_from: /blog/releasing-ghviewmd-a-github-cli-extension-for-llmoptimized-issue-and-pr-viewing
+redirect_from: "/blog/releasing-ghviewmd-a-github-cli-extension-for-llmoptimized-issue-and-pr-viewing"
 tags:
 - tools
 - llm
 - language-ruby
 - open-source
+serial_number: 2025.BLG.109
 ---
-
-
 ![A beautiful mountain view](/assets/images/ae2799ba-8cdd-4f60-a717-a78675ae8448.jpeg)
 
 At work, I'm using LLMs to help analyze GitHub issues and pull requests - asking them to suggest next steps or implement features based on conversations. The problem? Getting that content into a format that's actually useful for LLMs has been tedious.

@@ -6,9 +6,9 @@ tags:
 - index
 - personal-blog
 redirect_from:
-  - /colophon
+- "/colophon"
+serial_number: 2024.PAE.016
 ---
-
 This site is my way of [working in the open](https://www.joshbeckman.org/opening-up-my-highlights-notes/) - a public repository of my knowledge, research, and writing that serves both as a personal memory aid and a resource I share with others.
 
 ### [Notes](/notes)

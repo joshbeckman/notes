@@ -2,11 +2,11 @@
 layout: Page
 title: Redirecting to Random Note...
 hide_title: true
-permalink: /random/
+permalink: "/random/"
 tags: index
-emoji: '🔀'
+emoji: "\U0001F500"
+serial_number: 2023.PAE.004
 ---
-
 Loading...
 
 <script>

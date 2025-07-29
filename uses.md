@@ -3,13 +3,13 @@ layout: Page
 title: Uses
 searchable: true
 toc: true
-permalink: /uses/
-emoji: 🛠️
+permalink: "/uses/"
+emoji: "\U0001F6E0️"
 tags:
 - personal-blog
 - tools
+serial_number: 2024.PAE.018
 ---
-
 What tools am I using? (Following the [`/uses` pattern](https://uses.tech).)
 
 Well, we're gonna have to break this down a bit.

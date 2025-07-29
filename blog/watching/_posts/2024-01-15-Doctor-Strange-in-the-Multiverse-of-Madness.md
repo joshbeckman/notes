@@ -7,8 +7,8 @@ rating: 3
 imdb_id: tt9419884
 tags:
 - movies
+serial_number: 2024.BLG.006
 ---
-
 I had heard this movie was kind of trippy so I was looking forward to watching it unfold in unexpected ways. It had some good visual moments, but it had too many laugh-out-loud cheesy moments to be very impactful.
 
 There were multiple moments where Paul and I said to each other, "they wanted you to know that cinematographers were involved in this movie," or, "this is where the composers were brought it to inform the visuals."

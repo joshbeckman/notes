@@ -12,8 +12,8 @@ tags:
 redirect_from:
 - "/after-reading-the-creative-act"
 - "/after-reading-the-creative-act/"
+serial_number: 2023.BLG.033
 ---
-
 <figure class="kg-card kg-image-card"><img src="/assets/images/IMG_0836.jpeg" /></figure>
 
 This book had a lot of fluff in it, mostly around Rick's spiritual experience creating art. Those parts were colorful, but not super valuable to me.

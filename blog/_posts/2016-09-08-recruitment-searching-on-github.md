@@ -8,8 +8,8 @@ tags:
 redirect_from:
 - "/recruitment-searching-on-github"
 - "/recruitment-searching-on-github/"
+serial_number: 2016.BLG.011
 ---
-
 We’re currently looking for Senior Mobile (iOS / Android) and Senior Fullstack Engineers [at OfficeLuv](//www.officeluv.com/careers). Finding great developers is…difficult. I will occasionally search for individuals on GitHub, where I can find a scrap of contact information and reach out.
 
 [GitHub](//github.com) doesn’t exactly provide a fantastic interface for perusing influential users, but it does have a [reasonably advanced search](//github.com/search/advanced). From there, you can select people using a certain language, in a certain location, and with a certain number of followers. I use the followers as [an admittedly flawed] proxy for proficiency. You could alternatively substitute number of public repositories as a proxy for proficiency.

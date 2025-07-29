@@ -13,8 +13,8 @@ tags:
 redirect_from:
 - "/after-watching-how-buildings-learn"
 - "/after-watching-how-buildings-learn/"
+serial_number: 2022.BLG.023
 ---
-
 <figure class="kg-card kg-image-card"><img src="/assets/images/Screenshot-2022-12-12-at-9.57.54-PM.png" /></figure>
 
 Austin Kleon mentioned 'Low Road' buildings in [his latest newsletter](https://austinkleon.substack.com/p/building-my-dream-studio), which sent me searching for what the heck that meant. I found the _[How Buildings Learn](https://www.youtube.com/@brandst/videos)_ series by Stewart Brand, uploaded to YouTube in all its 1990s glory.

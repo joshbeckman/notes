@@ -9,8 +9,8 @@ tags:
 redirect_from:
 - "/lab-girl-hope-jahren"
 - "/lab-girl-hope-jahren/"
+serial_number: 2018.BLG.009
 ---
-
 I was generously gifted [Lab Girl by Hope Jahren](https://www.penguinrandomhouse.com/books/248239/lab-girl-by-hope-jahren/9781101873724/) through Jane Kim in her last week at OfficeLuv. I finished it today, after about a month.
 
 I loved the rhythm of this book: chapters alternated between her memories and thoughtful paths into botanical research. I love connections between a life experience and scientific themes or analogies. I loved the author’s tone and her wit; I wanted to meet her more with each section. I loved the way it would cause me to drift my eyes off the page in thought after reading a scientific explanation and would glue my eyes to the page through a teaching experience.

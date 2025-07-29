@@ -1,21 +1,20 @@
 ---
 layout: Post
-date: 2025-03-22 14:47:30 +0000
-title: "How and Why I Read Hacker News"
+date: 2025-03-22 14:47:30.000000000 +00:00
+title: How and Why I Read Hacker News
 toc: true
-image: /assets/images/f241d9da-6b14-4848-ab03-a48e0f6db6c6.png
-description: 
+image: "/assets/images/f241d9da-6b14-4848-ab03-a48e0f6db6c6.png"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114207993214972242
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lkylaiaq3f2k
 tags:
-  - hacker-news
-  - programming-languages
-  - software-engineering
-  - personal-blog
-  - culture
+- hacker-news
+- programming-languages
+- software-engineering
+- personal-blog
+- culture
+serial_number: 2025.BLG.050
 ---
-
-
 I saw recently that [YCombinator celebrated its 20th anniversary](https://news.ycombinator.com/item?id=43332658).
 
 [Hacker News is slightly younger](https://www.paulgraham.com/hackernews.html) - 18 years old - but [others have been reflecting](https://vickiboykis.com/2025/03/17/20-years-of-yc/) on the two together which got me thinking: I find the news site incredibly valuable and it's controversial, both for me and for others.

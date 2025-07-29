@@ -1,15 +1,15 @@
 ---
 layout: Post
-date: 2024-06-17 00:00:00 +0000
-title: "Mdou Moctar at The Empty Bottle"
+date: 2024-06-17 00:00:00.000000000 +00:00
+title: Mdou Moctar at The Empty Bottle
 toc: true
-image: /assets/images/90cb8c44-79ec-4883-89e1-b7b5648edfd5.jpeg
-description: 
+image: "/assets/images/90cb8c44-79ec-4883-89e1-b7b5648edfd5.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/112644535811461487
-tags: 
-  - music
+tags:
+- music
+serial_number: 2024.BLG.055
 ---
-
 ![IMG_3144](/assets/images/90cb8c44-79ec-4883-89e1-b7b5648edfd5.jpeg)
 
 I’ve loved each of his albums, reeling guitar licks and melodies that make you swirl your head. 

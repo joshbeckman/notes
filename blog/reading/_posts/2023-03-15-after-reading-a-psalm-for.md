@@ -10,8 +10,8 @@ tags:
 redirect_from:
 - "/after-reading-a-psalm-for"
 - "/after-reading-a-psalm-for/"
+serial_number: 2023.BLG.014
 ---
-
 <figure class="kg-card kg-image-card"><img src="/assets/images/IMG_0521.jpeg" /></figure>
 
 I finished reading _A Psalm For The Wild-Built_ as I drank my coffee on our last morning in the cabin we rented with eight of our close friends over a long weekend on the banks of a creek in the midst of a snowstorm.

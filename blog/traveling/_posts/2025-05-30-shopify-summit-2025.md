@@ -10,8 +10,8 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lqtm6ttaim2m
 tags:
 - shopify
 - canada
+serial_number: 2025.BLG.083
 ---
-
 ![Shopify Summit Times newspaper](/assets/images/be7157fd-64aa-4be9-ae33-049b5a8e907b.jpeg)
 
 Shopify's annual company-wide summit was amazingly fun and productive, again ([previously](https://www.joshbeckman.org/blog/traveling/shopify-summit-2024)). Again, the company rented out the entire Enercare Center on Toronto's waterfront. It's an amazing takeover of a huge space, filling it with a gigantic hackathon and party.

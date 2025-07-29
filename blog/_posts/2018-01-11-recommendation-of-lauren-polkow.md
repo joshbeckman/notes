@@ -8,8 +8,8 @@ tags:
 redirect_from:
 - "/recommendation-of-lauren-polkow"
 - "/recommendation-of-lauren-polkow/"
+serial_number: 2018.BLG.002
 ---
-
 <figure class="kg-card kg-image-card"><img src="/assets/images/IMG_0024.jpg" class="kg-image" alt ></figure>
 
 When I sat down with Lauren for the first time, I knew immediately that it was the chance of a lifetime to work with her. Such a spark of energy, intelligence, and enthusiasm for the customer walked into the room that it was impossible to resist the opportunity to learn. She is one of the best guides I have found, and the best product leader that I have known.

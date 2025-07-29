@@ -1,15 +1,15 @@
 ---
 layout: Post
-date: 2023-12-11 04:04:09 +0000
+date: 2023-12-11 04:04:09.000000000 +00:00
 title: Braiding Sweetgrass
 toc: true
 rating: 5
-image: /assets/images/9D1781AC166F44C0ACF23CEE395182CC.jpeg
-description: 
+image: "/assets/images/9D1781AC166F44C0ACF23CEE395182CC.jpeg"
+description:
 tags:
 - non-fiction
+serial_number: 2023.BLG.043
 ---
-
 I finished reading [Braiding Sweetgrass](https://milkweed.org/book/braiding-sweetgrass) tonight and I am filled with gratitude\.
 
 It took me a long time to finish this book, because I was overcome with emotion after several of the chapters\. It conveyed so well the idea of a gratitude culture of a society where abundance is encouraged and reciprocity interactions and drives at abundance\.

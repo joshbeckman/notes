@@ -17,6 +17,6 @@ tags:
 - art
 - editing
 - letterboxd
+serial_number: 2025.BLG.105
 ---
-
  <p><img src="https://a.ltrbxd.com/resized/film-poster/5/0/2/6/2/2/502622-final-destination-bloodlines-0-600-0-900-crop.jpg?v=3c04d3a110"/></p> <p>After the first death scene I said, “ok, I’m appreciating the CGI here.” Out loud. To my friends, who laughed. </p><p>From then on it was a roller coaster of winks and deaths that never left you long without laughing and lurching in horror all at once. </p><p>And then the credits rolled and there were FOUR puppeteers credited?! There were practical effects in this thing?!</p> 

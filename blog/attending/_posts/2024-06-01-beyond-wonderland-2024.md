@@ -1,17 +1,15 @@
 ---
 layout: Post
-date: 2024-06-01 00:00:00 +0000
-title: "Beyond Wonderland 2024"
+date: 2024-06-01 00:00:00.000000000 +00:00
+title: Beyond Wonderland 2024
 toc: true
-image: /assets/images/7ca58d13-e68b-402c-9ebe-0ffa1e12e25f.jpeg
-description: 
+image: "/assets/images/7ca58d13-e68b-402c-9ebe-0ffa1e12e25f.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/112661531577992672
-tags: 
-  - music
+tags:
+- music
+serial_number: 2024.BLG.048
 ---
-
-
-
 This festival replaced [Heatwave](https://heatwavemusicfestival.com) - an incredible misnomer that brought 45ºF weather in June 2023 - but it's basically the same thing.
 
 ![IMG_3087](/assets/images/7ca58d13-e68b-402c-9ebe-0ffa1e12e25f.jpeg)

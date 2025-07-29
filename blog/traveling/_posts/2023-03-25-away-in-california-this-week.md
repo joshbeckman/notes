@@ -9,8 +9,8 @@ tags:
 redirect_from:
 - "/away-in-california-this-week"
 - "/away-in-california-this-week/"
+serial_number: 2023.BLG.018
 ---
-
 <figure class="kg-card kg-image-card"><img src="/assets/images/L1040445.JPG" /></figure>
 
 I'm away, hiking, scrambling, and breathing in California this week with my good friend John. But I have half an hour before another night hike, so here are some vignettes.

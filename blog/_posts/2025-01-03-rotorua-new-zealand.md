@@ -1,19 +1,19 @@
 ---
 layout: Post
-date: 2025-01-03 19:25:00 +0000
-title: "Rotorua, New Zealand"
+date: 2025-01-03 19:25:00.000000000 +00:00
+title: Rotorua, New Zealand
 toc: true
 category: traveling
-image: /assets/images/C4D1922318454A75AE2B92C0B6B22288.jpeg
-description: 
+image: "/assets/images/C4D1922318454A75AE2B92C0B6B22288.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113864713076916987
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lgdwsfjlcu2i
-tags: 
+tags:
 - travel
 - new-zealand
 - exploration
+serial_number: 2025.TEG.001
 ---
-
 A mountain lake town where you can walk between the hot springs and the redwoods.
 
 ![](/assets/images/1DC154D10BE3486E91113F5C699FE02D.jpeg)

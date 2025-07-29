@@ -9,8 +9,8 @@ tags:
 redirect_from:
 - "/indigenous-peoples-day-walk"
 - "/indigenous-peoples-day-walk/"
+serial_number: 2022.BLG.017
 ---
-
 <figure class="kg-card kg-image-card kg-width-full"><img src="/assets/images/87292558-CB40-49F0-B070-F0E203B76AFC_1_201_a-1.jpeg" class="kg-image" alt  width="2000" height="1333" ></figure>
 
 I spent the day walking the Illinois & Michigan Canal trail with my friend Bill, his dog Kona, and his neice.

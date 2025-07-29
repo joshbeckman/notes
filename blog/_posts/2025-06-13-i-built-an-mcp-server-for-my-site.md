@@ -12,9 +12,8 @@ tags:
 - llm
 - tools
 - personal-blog
+serial_number: 2025.BLG.091
 ---
-
-
 ![gross wires and ethernet](/assets/images/be179fb8-6147-4832-81f6-3f5d208be8c5.jpeg)
 
 After watching [the specification](https://modelcontextprotocol.io/introduction) build up this spring, I got around to building my own MCP server (for the posts on this site) a couple weeks ago. Since then I've been building agents on it and having a grand ol' time seeing how they explore and what they find, hidden in thousands of entries.

@@ -1,28 +1,46 @@
+#!/usr/bin/env ruby
 # frozen_string_literal: true
 
-module SerialNumbers
-  class Generator < Jekyll::Generator
-    def generate(site)
-      # Track counters per category per year
-      counters = Hash.new { |h, k| h[k] = Hash.new(0) }
+require 'jekyll'
+require 'date'
+require 'yaml'
+require 'time'
 
+module SerialNumbers
+  class Serializer
+    def initialize
+      @site = Jekyll::Site.new(Jekyll.configuration({}))
+      @site.read
+      @counters = Hash.new { |h, k| h[k] = Hash.new(0) }
+    end
+
+    def serialize_all
+      serialize_posts
+      serialize_pages
+    end
+
+    private
+
+    def serialize_posts
       # Process posts chronologically to ensure consistent numbering
-      site.posts.docs.sort_by(&:date).each do |post|
+      @site.posts.docs.sort_by(&:date).each do |post|
         year = post.date.year
         category = determine_category(post)
         series_code = generate_series_code(category)
 
-        counters[year][series_code] += 1
-        counter = counters[year][series_code]
+        @counters[year][series_code] += 1
+        counter = @counters[year][series_code]
 
         # Format serial number as YYYY.SSS.###
         serial_number = format('%04d.%s.%03d', year, series_code, counter)
-        post.data['serial_number'] = serial_number
-        post.data['redirect_from'] ||= []
-        post.data['redirect_from'] << "/#{serial_number}" unless post.data['redirect_from'].include?("/#{serial_number}")
-      end
 
-      pages_to_process = site.pages.map do |page|
+        # Update the post file with serial number
+        update_file_with_serial_number(post.path, serial_number)
+      end
+    end
+
+    def serialize_pages
+      pages_to_process = @site.pages.map do |page|
         # Skip special pages and assets
         next if page.url.include?('assets')
         next if page.url.include?('.json')
@@ -44,15 +62,15 @@ module SerialNumbers
         year = item[:date].year
         series_code = 'PAE'
 
-        counters[year][series_code] += 1
-        counter = counters[year][series_code]
+        @counters[year][series_code] += 1
+        counter = @counters[year][series_code]
 
         serial_number = format('%04d.%s.%03d', year, series_code, counter)
-        page.data['serial_number'] = serial_number
+
+        # Update the page file with serial number
+        update_file_with_serial_number(page.path, serial_number)
       end
     end
-
-    private
 
     def determine_category(post)
       if post.data['category']
@@ -92,7 +110,6 @@ module SerialNumbers
 
     def get_first_commit_date(file_path)
       # Get the first commit date for a file using git log
-
       output = `git log --follow --format=%aI --reverse -- "#{file_path}" 2>/dev/null | head -1`
       if output && !output.strip.empty?
         Date.parse(output.strip)
@@ -104,5 +121,39 @@ module SerialNumbers
       # Fallback to current date on any error
       Date.today
     end
+
+    def update_file_with_serial_number(file_path, serial_number)
+      return unless File.exist?(file_path)
+
+      content = File.read(file_path)
+
+      # Check if file has YAML front matter
+      if content =~ /\A(---\s*\n.*?\n?)^((---|\.\.\.)\s*$\n?)/m
+        front_matter = ::Regexp.last_match(1)
+        after_front_matter = ::Regexp.last_match.post_match
+
+        # Parse YAML front matter with permitted classes
+        yaml_content = YAML.safe_load(front_matter, permitted_classes: [Date, Time, DateTime, Symbol]) || {}
+
+        # Only update if serial_number is different or doesn't exist
+        if yaml_content['serial_number'] != serial_number
+          yaml_content['serial_number'] = serial_number
+
+          # Reconstruct the file with updated front matter
+          # Remove the leading --- from to_yaml output
+          yaml_string = yaml_content.to_yaml.gsub(/\A---\s*\n/, '')
+          new_content = "---\n#{yaml_string}---\n#{after_front_matter}"
+
+          File.write(file_path, new_content)
+          puts "Updated: #{file_path} with serial number: #{serial_number}"
+        end
+      else
+        puts "Warning: #{file_path} has no YAML front matter"
+      end
+    end
   end
 end
+
+# Run the serializer
+serializer = SerialNumbers::Serializer.new
+serializer.serialize_all

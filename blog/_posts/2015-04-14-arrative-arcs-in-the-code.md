@@ -7,8 +7,8 @@ redirect_from:
 - "/arrative-arcs-in-the-code/"
 tags:
 - software-engineering
+serial_number: 2015.BLG.009
 ---
-
 A good method has narrative structure. There’s an establishing scene, a rising action, and a conclusion to tie up loose ends. After reading more fiction recently, I’ve been finding fictional story structure seep into my code - for the better.
 
 In the narrative, a good author keeps the outside information to a minimum. The more information the reader has to bring to the table, the harder it is to understand. A good narrative encapsulates all its necessary information. Similarly, a good method will reference as few global variables as possible. This not only reduces the struggle to understand the code, it also tends to increase efficiency and speed of execution.

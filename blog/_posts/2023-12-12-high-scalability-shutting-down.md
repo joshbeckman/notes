@@ -1,13 +1,13 @@
 ---
 layout: Post
-date: 2023-12-12 19:33:40 +0000
+date: 2023-12-12 19:33:40.000000000 +00:00
 title: High Scalability Shutting Down
 toc: true
-image: 
-description: 
+image:
+description:
 tags: blogs
+serial_number: 2023.BLG.044
 ---
-
 Highscalability\.com posted today that he’s shutting down \(selling\) the site.
 And I commented on there about how much it meant to me to read his posts a while back\. 
 

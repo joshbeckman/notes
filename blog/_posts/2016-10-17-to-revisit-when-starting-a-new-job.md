@@ -7,8 +7,8 @@ tags:
 redirect_from:
 - "/to-revisit-when-starting-a-new-job"
 - "/to-revisit-when-starting-a-new-job/"
+serial_number: 2016.BLG.012
 ---
-
 After starting at and helping to start companies multiple times, I’ve noticed a few writings and lectures that I tend to revisit each time. Even when not moving to a new group, I tend to watch or read these every few months. The beginning of this list came out of a question from the wonderful [Jane Kim](https://twitter.com/happygeometry).
 
 I read [Ray Dalio’s Principles](https://www.principles.com) (which are conveniently located online, now) to remind myself of the unapologetic beauty of truth in action and truth in words. The pamphlet is a bit heavy-handed with the imperative advice, but I find it compelling nonetheless.

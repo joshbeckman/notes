@@ -1,20 +1,19 @@
 ---
 layout: Post
-date: 2025-03-24 13:05:49 +0000
-title: "Filtered for Your Environment as Treatment"
+date: 2025-03-24 13:05:49.000000000 +00:00
+title: Filtered for Your Environment as Treatment
 toc: true
-image: 
-description: 
+image:
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114218616338668223
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ll5c7fgawe2k
 tags:
-  - tools
-  - medicine
-  - habits
-  - environment
+- tools
+- medicine
+- habits
+- environment
+serial_number: 2025.BLG.052
 ---
-
-
 First thing I did this morning after I got dressed was grab a screwdriver and tighten up the screws in the door handle to the common mail area of our building.
 
 Yesterday, I had noticed that the handle was a bit loose. And it would only get more loose, faster, if it wasn't fixed now. It's a small thing, but one of my mantras recently has been "environment as treatment," and fixing this was a part of fixing my environment so it would fix me. A collection of thoughts supporting this:

@@ -7,8 +7,8 @@ tags:
 redirect_from:
 - "/my-bookmarks-are-all-bookmarklets"
 - "/my-bookmarks-are-all-bookmarklets/"
+serial_number: 2016.BLG.004
 ---
-
 I love all my bookmarks. None of them actually go to any websites, though. They’re all bookmarklets.
 
 > A [bookmarklet](https://en.wikipedia.org/wiki/Bookmarklet) is a little app that runs in your browser.

@@ -1,18 +1,16 @@
 ---
 layout: Post
-date: 2024-09-22 00:00:00 +0000
-title: "Riot Fest 2024, Saturday"
+date: 2024-09-22 00:00:00.000000000 +00:00
+title: Riot Fest 2024, Saturday
 toc: true
-image: /assets/images/ae039424-1e78-4d61-b6e4-9f0114255578.jpeg
-description: 
+image: "/assets/images/ae039424-1e78-4d61-b6e4-9f0114255578.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113207946137833948
-tags: 
-  - music
-  - chicago
+tags:
+- music
+- chicago
+serial_number: 2024.BLG.097
 ---
-
-
-
 We went along with friends to [Riot Fest](https://riotfest.org/chicago/lineup/) on Saturday. It was previously farther outside the city but this year they moved it back to Douglas Park inside the city and we have to encourage that.
 
 ## Clutch

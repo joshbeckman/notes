@@ -9,8 +9,8 @@ tags:
 redirect_from:
 - "/after-reading-life-in-code"
 - "/after-reading-life-in-code/"
+serial_number: 2017.BLG.006
 ---
-
 After reading [her excerpts](https://www.theverge.com/2017/8/29/16193444/ellen-ullman-life-in-code-book-excerpt-silicon-valley-startup) from the last few months, I picked up [Ellen Ullman’s _Life in Code_](https://us.macmillan.com/lifeincode/ellenullman/9780374534516/). I finished the collection of essays yesterday.
 
 Last night, I woke from a dream. I had been programming within a group, each of us helping to shape the code - the program was physical, ethereal, and whipped like mesh within the circle we formed. Multiple streams of data flowed up through the floor, repeating and undulating into the program we were forming. The data, the events, and our hands moved into and out of a computer machine learning system so that we pushed and pulled at whole the shape to fit what we wanted to show.

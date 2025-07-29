@@ -1,11 +1,11 @@
 ---
 layout: Page
 title: Counter
-permalink: /counter/
-emoji: 🍃
+permalink: "/counter/"
+emoji: "\U0001F343"
 tags: index
+serial_number: 2024.PAE.031
 ---
-
 This is a page that displays the life of my counter.
 
 You can choose to grow the counter or you can destroy it.

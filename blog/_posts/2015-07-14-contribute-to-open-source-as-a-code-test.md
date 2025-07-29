@@ -9,8 +9,8 @@ tags:
 redirect_from:
 - "/contribute-to-open-source-as-a-code-test"
 - "/contribute-to-open-source-as-a-code-test/"
+serial_number: 2015.BLG.015
 ---
-
 I counted up the number of open source code projects I actively used or extended today. Just in the last twenty hours, I tallied over 50 libraries and applications and resources.
 
 When I’m evaluating potential hires onto [our team](http://tech.threadmeup.com), I’m looking at things like previous work experience. I’m also actively looking for proof of someone giving back to the development community.

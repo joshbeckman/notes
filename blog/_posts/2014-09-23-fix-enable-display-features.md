@@ -7,8 +7,8 @@ tags:
 redirect_from:
 - "/fix-enable-display-features"
 - "/fix-enable-display-features/"
+serial_number: 2014.BLG.004
 ---
-
 In the official Google Analytics iOS SDK documentation, this function call will enable Display Features in your app:
 
 ```obj-c

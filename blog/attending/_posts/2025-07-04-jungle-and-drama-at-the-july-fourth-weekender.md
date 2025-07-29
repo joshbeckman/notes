@@ -11,9 +11,8 @@ tags:
 - chicago
 - music
 - concerts
+serial_number: 2025.BLG.104
 ---
-
-
 The organizers of [The July Fourth Weekender](https://www.frontgatetickets.com/events/the-july-fourth-weekender) (Front Gate Tickets) had us worried because they didn't release/send the tickets under 4 hours before the gates opened! But they arrived and we arrived at the Lakefront Green (Fullerton and the Lakefront trail).
 
 ![Todd Terje performing at the Weekender against the Chicago skyline in sunny clouds](/assets/images/e24b23bc-4406-4ef5-b903-15d0518498e5.jpeg)

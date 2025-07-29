@@ -10,9 +10,8 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ls7c6go44t2k
 tags:
 - concerts
 - sleeping-village-venue
+serial_number: 2025.BLG.095
 ---
-
-
 ![Sunflower Bean at Sleeping Village](/assets/images/106873a6-033d-4e17-89f4-dc1a26da921f.jpeg)
 
 An end to a wonderful day of [tennis and baseball](https://www.joshbeckman.org/exercise/14851542630) with Ned as we rode the Blue Line north to meet Grant at one of my favorite venues: Sleeping Village. The atmosphere is always supportive and the bar is good and the venue is tight and every spot has a good view.

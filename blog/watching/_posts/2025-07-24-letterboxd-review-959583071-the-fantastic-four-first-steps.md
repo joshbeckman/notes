@@ -17,6 +17,6 @@ tags:
 - science
 - technology
 - letterboxd
+serial_number: 2025.BLG.114
 ---
-
  <p><img src="https://a.ltrbxd.com/resized/film-poster/5/4/3/9/6/7/543967-the-fantastic-four-first-steps-0-600-0-900-crop.jpg?v=ab7c919b04"/></p> <p>Lots of pretty CGI and claims of someone being smart but not doing smart on screen and lots of magic claiming to be science and confusing changes of scale I think is just not for me.</p> 

@@ -11,9 +11,8 @@ tags:
 - metrics
 - software-engineering
 - incident-management
+serial_number: 2025.BLG.115
 ---
-
-
 ![A tree falls in the forest](/assets/images/956166c6-08dc-4d91-b5f5-60b333b506ff.jpeg)
 
 I’ve written more incident docs than I'll ever remember, and the ones that cause the fewest quesitons all open with the same, brutally short rubric:

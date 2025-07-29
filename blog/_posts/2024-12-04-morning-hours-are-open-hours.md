@@ -1,16 +1,16 @@
 ---
 layout: Post
-date: 2024-12-04 13:30:31 +0000
-title: "Morning Hours are Open Hours"
+date: 2024-12-04 13:30:31.000000000 +00:00
+title: Morning Hours are Open Hours
 toc: true
-image: 
-description: 
+image:
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113595759502356005
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lciousuktm2n
 tags:
 - habits
+serial_number: 2024.BLG.122
 ---
-
 I’ve gone back \- these past couple weeks \- to waking up with an hour or two to myself before work\. I love how I’ve been feeling, but it shouldn’t be a surprise: I’m a morning person\.
 
 I used to do this back when I had an actual commute to work \(riding the train or walking or biking\): wake up a couple hours before I was expected at work, just so I could exercise at a gym and then commute\. I would listen to podcasts and bump around/into other people and it grounded me in the world\.

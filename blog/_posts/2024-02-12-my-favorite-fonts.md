@@ -1,15 +1,15 @@
 ---
 layout: Post
-date: 2024-02-12 03:12:16 +0000
-title: "My favorite fonts"
+date: 2024-02-12 03:12:16.000000000 +00:00
+title: My favorite fonts
 toc: true
-image: /assets/images/5166335D6672479491DDD5854A5D8ECF.png
+image: "/assets/images/5166335D6672479491DDD5854A5D8ECF.png"
 tags:
 - interfaces
 - personal-blog
 - notation
+serial_number: 2024.BLG.018
 ---
-
 ![](/assets/images/5166335D6672479491DDD5854A5D8ECF.png)
 
 I hate getting an `I` confused with an `l` confused with a `1` , so I usually favor serif fonts\. But, I have to admit that for user interfaces like websites \(with links and buttons and icons\), sans\-serif fonts work better\.

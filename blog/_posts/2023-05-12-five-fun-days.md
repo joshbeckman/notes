@@ -7,8 +7,8 @@ tags:
 redirect_from:
 - "/five-fun-days"
 - "/five-fun-days/"
+serial_number: 2023.BLG.023
 ---
-
 📝
 
 Originally sent in email form, now posted in its entirety. Written by [Marybeth Kram]( /author/marybeth/)

@@ -1,13 +1,13 @@
 ---
 layout: Post
-date: 2023-12-08 22:15:10 +0000
+date: 2023-12-08 22:15:10.000000000 +00:00
 title: New KO II Synth from Teenage Engineering
 toc: true
-image: /assets/images/6A459F89ABA642608C11FC1C5F17ED5E.jpeg
-description: 
+image: "/assets/images/6A459F89ABA642608C11FC1C5F17ED5E.jpeg"
+description:
 tags: music
+serial_number: 2023.BLG.042
 ---
-
 New KO synth arrived today\!
 
 ![](/assets/images/6A459F89ABA642608C11FC1C5F17ED5E.jpeg)

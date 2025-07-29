@@ -6,8 +6,8 @@ categories:
 - blog
 tags:
 - index
+serial_number: 2025.PAE.008
 ---
-
 Lessons learned and observations from working in the software engineering industry.
 
 {% assign postsByMonth = 

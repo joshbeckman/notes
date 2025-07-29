@@ -1,15 +1,15 @@
 ---
 layout: Page
 title: Working
-emoji: 🪑
+emoji: "\U0001FA91"
 searchable: true
 categories:
 - blog
 tags:
 - workspaces
 - index
+serial_number: 2024.PAE.012
 ---
-
 These are the desks I have worked at over the years.
 
 I spend something like 8 hours every day at a desk, so it's a big part of my life that I'm constantly trying to improve.

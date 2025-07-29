@@ -2,15 +2,16 @@
 toc: true
 title: Grapetooth at West Fest
 image: "/assets/images/IMG_1443.jpeg"
-description: Grapetooth was a fun, tongue in cheek show on a perfect sticky summer night
+description: Grapetooth was a fun, tongue in cheek show on a perfect sticky summer
+  night
 date: '2023-07-08 03:11:00'
 tags:
 - music
 redirect_from:
 - "/grapetooth-at-west-fest"
 - "/grapetooth-at-west-fest/"
+serial_number: 2023.BLG.029
 ---
-
 Ned and I walked down to West Fest to see **Grapetooth** play. On the way, we walked behind a handful of twenty-somethings smoking a joint and knew we were heading to the same show.
 
 <figure class="kg-card kg-image-card kg-width-wide"><img src="/assets/images/IMG_1443-1.jpeg" class="kg-image" alt=""  width="2000" height="1500"  sizes="(min-width: 1200px) 1200px"></figure>

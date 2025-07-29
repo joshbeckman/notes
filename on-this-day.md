@@ -5,8 +5,8 @@ searchable: true
 tags:
 - index
 - personal-blog
+serial_number: 2025.PAE.001
 ---
-
 These are the posts I've written on this day in previous years:
 
 {% assign today = site.time | date: "%m-%d" %}

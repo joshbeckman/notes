@@ -1,14 +1,14 @@
 ---
 layout: Post
-date: 2024-02-22 22:07:34 +0000
-title: "Rachel By The Bay"
+date: 2024-02-22 22:07:34.000000000 +00:00
+title: Rachel By The Bay
 toc: true
-image: /assets/images/28CC2C6B09EC4990A3A0463E75FE612B.png
-description: 
-tags: 
+image: "/assets/images/28CC2C6B09EC4990A3A0463E75FE612B.png"
+description:
+tags:
 - blogroll
+serial_number: 2024.BLG.027
 ---
-
 I've been reading this blog https://rachelbythebay\.com for so many years
 now that it's become one of my canonical ideas of what valuable writing
 online should be\.

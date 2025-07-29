@@ -10,8 +10,8 @@ tags:
 - threadmeup
 - mentoring
 - software-engineering
+serial_number: 2015.BLG.008
 ---
-
 <figure class="kg-card kg-image-card"><img src="/assets/images/tmu_eng.jpg" class="kg-image" alt ></figure>
 
 We have daily code reviews at 1pm. Everyone in the engineering team sits around our big wooden table and one person tethers their screen to the big television. People can eat their lunch here, but everyone pays attention.

@@ -1,19 +1,17 @@
 ---
 layout: Post
-date: 2024-08-10 00:00:00 +0000
-title: "Home Studio Over Shared Office"
+date: 2024-08-10 00:00:00.000000000 +00:00
+title: Home Studio Over Shared Office
 toc: true
-image: /assets/images/fa43d9e3-f4f8-4104-a4b9-1e0c7562fe29.jpeg
-description: 
+image: "/assets/images/fa43d9e3-f4f8-4104-a4b9-1e0c7562fe29.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/112941816473223130
-tags: 
-  - work
-  - workspaces
-  - tools
+tags:
+- work
+- workspaces
+- tools
+serial_number: 2024.BLG.079
 ---
-
-
-
 I've been going back and forth in my head for the last couple years, bouncing between the dream of a bright coworking space and the lure of my perfected home studio.
 
 Every time I go on a work trip for Shopify and share an office floor with a bunch of coworkers, I have serendipitous run-ins and catch glimpses of good ideas on whiteboards and enjoy the walk around the block and love the friends I make. And every time I get back home and go back to my bunker studio (e.g. [Desk, January 14, 2024](https://www.joshbeckman.org/blog/working/desk-january-14-2024)) I yearn to get those feelings back in my day-to-day work. 

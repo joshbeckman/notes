@@ -1,18 +1,18 @@
 ---
 layout: Post
-date: 2024-07-04 00:00:00 +0000
-title: "Using an LLM and RAG to Wring Insights From My Posts"
+date: 2024-07-04 00:00:00.000000000 +00:00
+title: Using an LLM and RAG to Wring Insights From My Posts
 toc: true
-image: /assets/images/1ee188b4-30f7-4a14-a60a-3f11905a8058.png
-description: 
+image: "/assets/images/1ee188b4-30f7-4a14-a60a-3f11905a8058.png"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/112732310405920997
-tags: 
-  - llm
-  - personal-blog
-  - code-snippets
-  - popular
+tags:
+- llm
+- personal-blog
+- code-snippets
+- popular
+serial_number: 2024.BLG.062
 ---
-
 <img width="554" alt="Screenshot 2024-07-04 at 15 40 39" src="/assets/images/1ee188b4-30f7-4a14-a60a-3f11905a8058.png">
 
 I've been using large language models - [LLMs](https://www.joshbeckman.org/tags/#llm) - and [retrieval-augmented generation](https://www.joshbeckman.org/search/?q=rag) - RAG - at [work](https://www.shopify.com) for over a year now. I use it to write code, to refine my ideas and writing, and we have been building products on top of it.

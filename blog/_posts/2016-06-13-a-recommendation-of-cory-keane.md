@@ -7,8 +7,8 @@ tags:
 redirect_from:
 - "/a-recommendation-of-cory-keane"
 - "/a-recommendation-of-cory-keane/"
+serial_number: 2016.BLG.007
 ---
-
 Cory is as earnest as he is steadfast. He is as honest as he is pragmatic. We built a team together, around the ideals we share. We set out goals a year in advance and completed them in half the time. I would work with him again, and I would recommend him to guide a project in any climate.
 
 Over multiple years, I have worked with Cory through times thick and thin. He is constant and eager to improve in both, and drove the rest of us around him to follow suit. He worked tirelessly to plan every sprint, from epics to describing individual tasks. He devoted his attention first and foremost to the understanding and clarity of the team around him. Rather than beginning his own tasks, Cory made it his priority to have everyone on the same and the right page. Thus, the entire team moved together as a unit, able to act with information.

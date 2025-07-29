@@ -1,17 +1,17 @@
 ---
 layout: Post
-date: 2024-12-04 20:29:47 +0000
-title: "Apple Music Replay 2024"
+date: 2024-12-04 20:29:47.000000000 +00:00
+title: Apple Music Replay 2024
 toc: true
-image: /assets/images/7D002B16AD954C999B610C0B316DE8C3.jpeg
+image: "/assets/images/7D002B16AD954C999B610C0B316DE8C3.jpeg"
 description: I recommend all this
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113662813124306905
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ldghrc7m6o2c
-tags: 
-  - music
-  - data
+tags:
+- music
+- data
+serial_number: 2024.BLG.123
 ---
-
 It’s still strange to me that Spotify Wrapped and [Apple Music](https://music.apple.com/profile/andjosh) Replay and others prompt me to view my “2024 Listening” well before the year is done\. But here are some highlights from this year’s data:
 - ~65k min
 - Top artist: Four Set

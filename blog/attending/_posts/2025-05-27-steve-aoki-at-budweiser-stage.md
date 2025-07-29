@@ -11,9 +11,8 @@ tags:
 - shopify
 - concerts
 - canada
+serial_number: 2025.BLG.080
 ---
-
-
 ![Aoki on stage](/assets/images/bdc63181-393b-4a3d-bec1-da6a75e44454.jpeg)
 
 For [Shopify's Summit '25](https://www.joshbeckman.org/blog/traveling/shopify-summit-2025), the company rented out the Budweiser stage again ([previously](https://www.joshbeckman.org/blog/attending/the-roots-weezer-girl-talk-at-budweiser-stage)). The weather was beautiful again and I got closer to the stage.

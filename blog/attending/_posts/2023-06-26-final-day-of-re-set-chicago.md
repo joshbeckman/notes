@@ -2,16 +2,16 @@
 toc: true
 title: Final Day of Re:SET Chicago
 image: "/assets/images/IMG_1375.jpeg"
-description: LCD Soundsystem, Jamie XX, and Idles at the last day of the first
-  year of this festival
+description: LCD Soundsystem, Jamie XX, and Idles at the last day of the first year
+  of this festival
 date: '2023-06-26 03:23:00'
 tags:
 - music
 redirect_from:
 - "/final-day-of-re-set-chicago"
 - "/final-day-of-re-set-chicago/"
+serial_number: 2023.BLG.026
 ---
-
 This was the first year of this festival, held in the West of Chicago at Riis Park, and we went on the last day.
 
 The evening was delayed due to wind, cancelling the **l'rain** set that I was looking forward to seeing.

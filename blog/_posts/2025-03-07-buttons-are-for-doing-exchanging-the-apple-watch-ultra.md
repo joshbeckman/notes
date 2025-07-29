@@ -1,18 +1,17 @@
 ---
 layout: Post
-date: 2025-03-07 13:56:13 +0000
-title: "Buttons are for Doing: Exchanging the Apple Watch Ultra"
+date: 2025-03-07 13:56:13.000000000 +00:00
+title: 'Buttons are for Doing: Exchanging the Apple Watch Ultra'
 toc: true
-image: /assets/images/43694bc5-43e2-46a1-a7ac-de4526c2a712.jpeg
-description: 
+image: "/assets/images/43694bc5-43e2-46a1-a7ac-de4526c2a712.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114122360709272961
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ljskdepn5x2f
 tags:
-  - tools
-  - interfaces
+- tools
+- interfaces
+serial_number: 2025.BLG.040
 ---
-
-
 I traded in my [Apple Watch Ultra](https://www.apple.com/apple-watch-ultra-2/) this week. I haven't been using it since I got this [Garmin Instinct 2x Solar](https://www.garmin.com/en-US/p/884585/pn/010-02805-11) a couple months ago. It's got better battery, buttons, and the same basic capabilities, for much less bank.
 
 ![Garmin Instinct 2x solar](/assets/images/43694bc5-43e2-46a1-a7ac-de4526c2a712.jpeg)

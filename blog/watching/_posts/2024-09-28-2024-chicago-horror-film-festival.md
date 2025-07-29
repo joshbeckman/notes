@@ -1,17 +1,17 @@
 ---
 layout: Post
-date: 2024-09-28 00:00:00 +0000
-title: "2024 Chicago Horror Film Festival"
+date: 2024-09-28 00:00:00.000000000 +00:00
+title: 2024 Chicago Horror Film Festival
 toc: true
 rating: 4
-image: /assets/images/horror-festival-sched.jpeg
-description: 
+image: "/assets/images/horror-festival-sched.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113281555302715961
-tags: 
-  - movies
-  - chicago
+tags:
+- movies
+- chicago
+serial_number: 2024.BLG.098
 ---
-
 Matt and Brandon and I had a lovely evening of horror short (and a couple feature-length!) films at the Logan Square Theater on the first night of [their annual horror film fest](https://chicagohorrorfilmfest.ticketspice.com/chicago-horror-film-festival).
 
 We got to watch:

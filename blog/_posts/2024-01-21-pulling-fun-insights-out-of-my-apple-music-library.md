@@ -1,13 +1,13 @@
 ---
 layout: Post
-date: 2024-01-21 18:42:27 +0000
+date: 2024-01-21 18:42:27.000000000 +00:00
 title: Pulling Fun Insights Out of My Apple Music Library
 toc: true
-image: /assets/images/E3C149B261194795BA6D316104BA1706.png
+image: "/assets/images/E3C149B261194795BA6D316104BA1706.png"
 description: I wrote an Apple Music Library parser for fun
 tags: code-snippets
+serial_number: 2024.BLG.009
 ---
-
 A month ago I had a thought: I should be able to get those “[Your year in music](https://replay.music.apple.com/)” stats whenever I want\.
 
 I have a huge library of music \- especially in this age of streaming music where “add to library” costs ​*nothing*​\. I am always recommending albums to friends and I’d love a way to share that publicly \(the music streaming services are woefully walled from each other\)\. And I have been wanting to re\-discover songs from my “listening archives” \- songs that I used to love and have forgotten\.

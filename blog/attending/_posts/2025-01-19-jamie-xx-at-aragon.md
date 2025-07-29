@@ -1,18 +1,18 @@
 ---
 layout: Post
-date: 2025-01-17 20:38:06 +0000
-title: "Jamie XX at Aragon"
+date: 2025-01-17 20:38:06.000000000 +00:00
+title: Jamie XX at Aragon
 toc: true
-image: /assets/images/9594d46d-c5c0-4dcd-a8a3-dac138052733.jpeg
-description: 
+image: "/assets/images/9594d46d-c5c0-4dcd-a8a3-dac138052733.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113859051278350597
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lg5mi5d62225
 tags:
-  - music
-  - chicago
-  - aragon-venue
+- music
+- chicago
+- aragon-venue
+serial_number: 2025.BLG.007
 ---
-
 ![Jamie XX at Aragon](/assets/images/9594d46d-c5c0-4dcd-a8a3-dac138052733.jpeg)
 
 We had a large group of us for the Jamie XX _In Waves_ concert. Drinks at Fat Cat beforehand. The lighting rigs were extended out into the packed crowd and it made the Aragon Ballroom feel like a happily writhing rave dance floor. And _everyone_ was dancing, stomping, yelling, sweating, in waves.

@@ -16,8 +16,8 @@ tags:
 - writing
 - art
 - letterboxd
+serial_number: 2025.BLG.101
 ---
-
  <p><img src="https://a.ltrbxd.com/resized/film-poster/1/3/6/5/5/5/6/1365556-the-residence-2025-0-600-0-900-crop.jpg?v=ae1ae88cef"/></p>
  
  We watched all of this fun Agatha-Christie-murder-mystery - beat by beat so similar to [Clued In](https://www.highstakesproductions.org/clued-in.html) - in about a week. The format is just perfect for unfolding a story with fast comedy timing.

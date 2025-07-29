@@ -1,12 +1,12 @@
 ---
 layout: Page
 title: Style Guide
-permalink: /style-guide/
+permalink: "/style-guide/"
 searchable: true
-emoji: 🎨
+emoji: "\U0001F3A8"
 tags: index
+serial_number: 2024.PAE.026
 ---
-
 I kinda wanted to start from [Tom Sachs's COLOR Hex Codes](https://www.joshbeckman.org/blog/tom-sachs-colors) but I like my colors a bit more exciting than his. Mostly because I work more in a digital medium where bright colors are more common.
 
 Then I started pulling together other aspects of my site that I wanted to document. I've been working on this site for a while now and I've got a lot of customizations that I've made. I wanted to document them so that I could remember them and so that I could share them with others as a reference when I build new sites.

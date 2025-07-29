@@ -15,9 +15,8 @@ tags:
 - work
 - management
 - tools
+serial_number: 2025.BLG.084
 ---
-
-
 ![branches](/assets/images/47f2ec47-d7d4-4c8d-b054-4680e4c10950.jpeg)
 
 I've been thinking about what [Anjan Katta said in his recent interview](https://www.joshbeckman.org/notes/889671175) about AI companies - that the point isn't building foundation models, but using AI to solve what makes companies break down. That most organizations fall apart, producing bad work, because they scale past the Dunbar number and accumulate bureaucracy, meetings, and [overhead that suffocates actual work](https://www.joshbeckman.org/blog/hard-numbers-calculator).

@@ -1,19 +1,17 @@
 ---
 layout: Post
-date: 2024-09-30 00:00:00 +0000
-title: "Montreal, September 2024"
+date: 2024-09-30 00:00:00.000000000 +00:00
+title: Montreal, September 2024
 toc: true
-image: /assets/images/ca0b9776-701f-4113-a0c4-68166bdd4b4c.jpeg
-description: 
+image: "/assets/images/ca0b9776-701f-4113-a0c4-68166bdd4b4c.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113287217701227591
-tags: 
-  - travel
-  - canada
-  - shopify
+tags:
+- travel
+- canada
+- shopify
+serial_number: 2024.BLG.100
 ---
-
-
-
 I got to travel to Montreal this fall for a Shopify burst (meeting with the teams I lead).
 
 I left home early to land still in the morning so I could explore the city a bit. I took a ride share into the downtown area and it was pretty empty. I walked for a bit and found a boulangerie, picked up a sandwich on fresh baguette, and ate in a sunny city park. 

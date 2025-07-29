@@ -10,9 +10,8 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lpmcxwxynf2h
 tags:
 - music-box-venue
 - live-theater
+serial_number: 2025.BLG.076
 ---
-
-
 ![Redacted](/assets/images/db40036e-ad5d-4ac1-9db3-ad503c84fd85.png)
 
 We got to see the last [Redacted at the Music Box Theatre](https://musicboxtheatre.com/films-and-events/redacted) tonight. Our good friend [Rob](https://www.instagram.com/robgrabo/) has been the organizer for years and our good friend Laura has directed many of them and starred in many as well. [Marybeth](https://marybethkram.com/) has also played a role in past shows.

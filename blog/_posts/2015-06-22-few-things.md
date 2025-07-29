@@ -8,8 +8,8 @@ tags:
 redirect_from:
 - "/few-things"
 - "/few-things/"
+serial_number: 2015.BLG.013
 ---
-
 Note from my journal, 2015/06/18:
 
 > Few things are more stressful, or pleasurable to your ego, than getting [featured on a tech news site](http://www.producthunt.com/tech/narro).

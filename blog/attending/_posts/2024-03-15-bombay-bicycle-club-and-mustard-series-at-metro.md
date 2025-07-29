@@ -1,15 +1,15 @@
 ---
 layout: Post
-date: 2024-03-15 02:23:13 +0000
-title: "Bombay Bicycle Club and Mustard Service at Metro"
+date: 2024-03-15 02:23:13.000000000 +00:00
+title: Bombay Bicycle Club and Mustard Service at Metro
 toc: true
-image: /assets/images/EE2C29AFFF2244EEB98166CCFDF56478.jpeg
-description: 
-tags: 
-  - music
-  - metro-venue
+image: "/assets/images/EE2C29AFFF2244EEB98166CCFDF56478.jpeg"
+description:
+tags:
+- music
+- metro-venue
+serial_number: 2024.BLG.034
 ---
-
 ![](/assets/images/EE2C29AFFF2244EEB98166CCFDF56478.jpeg)
 
 I implored people to get tickets to their show when it was announced \- their latest album was so good\. We went with Paul and Dan and Walters and Ned bought a last\-minute ticket as well\.

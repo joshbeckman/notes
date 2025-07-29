@@ -9,8 +9,8 @@ tags:
 redirect_from:
 - "/after-reading-a-philosophy-of-software-design"
 - "/after-reading-a-philosophy-of-software-design/"
+serial_number: 2023.BLG.032
 ---
-
 <figure class="kg-card kg-image-card"><img src="/assets/images/IMG_1500.jpeg" /></figure>
 
 I had been recommended this book a handful of times by coworkers at Shopify, so I finally ordered it, hoping that I would find it as valuable as those others.

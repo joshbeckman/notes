@@ -1,19 +1,19 @@
 ---
 layout: Post
-date: 2024-11-17 15:51:09 +0000
-title: "Christian Mackie’s Photography Zines"
+date: 2024-11-17 15:51:09.000000000 +00:00
+title: Christian Mackie’s Photography Zines
 toc: true
 rating: 3
-image: /assets/images/8D417517231C40A9AF16DC3B80DC375C.png
-description: 
+image: "/assets/images/8D417517231C40A9AF16DC3B80DC375C.png"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113502386158619186
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lb5zykbecx2i
-tags: 
-  - photography
-  - shopify
-  - publishing
+tags:
+- photography
+- shopify
+- publishing
+serial_number: 2024.BLG.112
 ---
-
 [Christian Mackie](https://www.mackiec.xyz) is my coworker at [Shopify](http://shopify.com)\. He’s also a prolific photographer, and one I admire because of how he is able to package his work\.
 
 I first encountered his work when he shared his [Japan 4x6](https://www.mackiec.xyz/japan-4x6-project) project, “An experimental online gallery that mimics the experience of sequencing physical 4x6 prints on a tabletop\.” It reminded me of [Daniel Arnold](https://www.joshbeckman.org/notes/797756758)’s fun [Image Database](https://imagedatabase.nyc) project/site/thing and was equally a joy to explore and play with\.

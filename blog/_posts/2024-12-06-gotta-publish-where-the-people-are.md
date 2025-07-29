@@ -1,18 +1,18 @@
 ---
 layout: Post
-date: 2024-12-06 13:07:49 +0000
-title: "Gotta Publish Where The People Are"
+date: 2024-12-06 13:07:49.000000000 +00:00
+title: Gotta Publish Where The People Are
 toc: true
-image: 
-description: 
+image:
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113607082872401963
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lcnps2vrrg2h
 tags:
 - publishing
 - social-networks
 - personal-blog
+serial_number: 2024.BLG.125
 ---
-
 I have been writing my movie reviews on my personal site but I doubt anyone is reading them\. Instead, I need to make sure they publish somewhere that people will read them\. I *want* people to engage with them, after all\.
 
 So, I need to either POSSE \(syndicate\) *into* another space where people will engage with it or PESOS \(archive\) into my personal site, *out of* that space after publishing it there for other people\.

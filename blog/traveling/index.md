@@ -1,15 +1,15 @@
 ---
 layout: Page
 title: Traveling
-emoji: 🌋
+emoji: "\U0001F30B"
 searchable: true
 categories:
 - blog
 tags:
 - travel
 - index
+serial_number: 2024.PAE.015
 ---
-
 This is still a work-in-progress.
 
 Probably something like: each post has a latitude and longitude and they're all displayed on a map.

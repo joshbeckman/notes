@@ -1,19 +1,19 @@
 ---
 layout: Post
-date: 2025-01-09 02:10:18 +0000
-title: "Auckland, New Zealand, Part 2"
+date: 2025-01-09 02:10:18.000000000 +00:00
+title: Auckland, New Zealand, Part 2
 toc: true
 category: traveling
-image: /assets/images/88F1BEFDB55145EABDD93DF43040F556.jpeg
-description: 
+image: "/assets/images/88F1BEFDB55145EABDD93DF43040F556.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113864713125484864
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lgdwsnlr6s2b
-tags: 
+tags:
 - travel
 - new-zealand
 - exploration
+serial_number: 2025.TEG.004
 ---
-
 Returning to enjoy the ocean and the views.
 
 ![](/assets/images/88F1BEFDB55145EABDD93DF43040F556.jpeg)

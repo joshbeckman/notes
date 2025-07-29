@@ -1,13 +1,13 @@
 ---
 title: Don't Call Back, I'll Just Wait Here
-date: 2017-06-21 00:00:00 Z
-redirect_to: "https://ghpages.joshbeckman.org/presents/escape-callbacks-koa-async-await"
+date: 2017-06-21 00:00:00.000000000 Z
+redirect_to: https://ghpages.joshbeckman.org/presents/escape-callbacks-koa-async-await
 presented_at: Chicago Node.js Meetup
 tags:
 - software-engineering
 - code-snippets
+serial_number: 2017.TLS.001
 ---
-
 ## JavaScript has non-blocking async i/o
 
 ![](https://media.giphy.com/media/26AHIA6ExwHzK1Tkk/giphy.gif)

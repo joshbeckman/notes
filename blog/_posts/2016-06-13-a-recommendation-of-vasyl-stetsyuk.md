@@ -7,8 +7,8 @@ tags:
 redirect_from:
 - "/a-recommendation-of-vasyl-stetsyuk"
 - "/a-recommendation-of-vasyl-stetsyuk/"
+serial_number: 2016.BLG.009
 ---
-
 Vasyl is an eager and diligent QA Lead. While we were working together, a member of our team remarked that they had met no other QA leader more interested in the actual technology, and I would agree. He is a splendid team leader, and defined our testing processes for the group. I would trust him to test my applications again in a heartbeat.
 
 Not all QA developers are actually interested in the technology beneath their feet, but Vasyl is enamored with it. When working with the rest of our team, he wouldn’t stop at understanding the desired behavior, he would ask questions until he understood the underlying mechanics of the server or animation itself. This meant that, when he inevitably found bugs in the software, he would have a high likelihood of pinpointing the root cause of the bug. This saved us hours of effort in reproducing behavior, and greatly accelerated our development cycles.

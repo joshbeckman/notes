@@ -1,15 +1,15 @@
 ---
 layout: Post
-date: 2023-12-27 15:58:24 +0000
+date: 2023-12-27 15:58:24.000000000 +00:00
 title: Tomorrow, and Tomorrow, and Tomorrow
 toc: true
 rating: 4
-asin: 0593321200
+asin: '0593321200'
 tags:
 - fiction
 - games
+serial_number: 2023.BLG.052
 ---
-
 I finished reading *Tomorrow, and Tomorrow, and Tomorrow* on Christmas Day
 This book was a bit slow for me to start, but \(as evidenced by me finishing it in ~2w\) easy to finish\. I read the vast majority of it while seated on the plane to and from Florida\.
 

@@ -1,19 +1,18 @@
 ---
 layout: Post
-date: 2025-03-27 16:00:00 +0000
-title: "Kelly Lee Owens at Metro"
+date: 2025-03-27 16:00:00.000000000 +00:00
+title: Kelly Lee Owens at Metro
 toc: true
-image: /assets/images/85e774ef-9278-40ea-97d4-2f9d1a188a31.jpeg
-description: 
+image: "/assets/images/85e774ef-9278-40ea-97d4-2f9d1a188a31.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114278074101713675
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3llxp5moscr2k
 tags:
-  - metro-venue
-  - chicago
-  - music
+- metro-venue
+- chicago
+- music
+serial_number: 2025.BLG.054
 ---
-
-
 ![concert photo](/assets/images/85e774ef-9278-40ea-97d4-2f9d1a188a31.jpeg)
 
 I have been listening to a lot of Kelly Lee Owens [in the last year](https://www.joshbeckman.org/blog/listening/apple-music-replay-2024) and so I was very excited for this show. We got there early and a good spot on the platform and rocked out the whole show. 

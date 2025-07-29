@@ -6,8 +6,8 @@ tags: social-networks
 redirect_from:
 - "/github-as-social-media"
 - "/github-as-social-media/"
+serial_number: 2015.BLG.012
 ---
-
 GitHub already allows you to follow other users publicly. It displays your _followers_ publicly, too.
 
 Wouldn’t it be possible to make your GitHub account even more sociable? Someone could build a third-party application for this. Here’s the sequence of events I’m imagining to make GitHub-as-a-social-messaging-platform (_SocialHub_?) possible.

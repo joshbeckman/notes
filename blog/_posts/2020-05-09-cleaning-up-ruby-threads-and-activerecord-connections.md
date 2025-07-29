@@ -7,8 +7,8 @@ tags:
 redirect_from:
 - "/cleaning-up-ruby-threads-and-activerecord-connections"
 - "/cleaning-up-ruby-threads-and-activerecord-connections/"
+serial_number: 2020.BLG.005
 ---
-
 Recently, we had an opportunity to trivially parallelize some ActiveRecord queries in our Ruby server. In a common response structure, we needed to both query for the actual data requested along with some meta-information about pagination, etc.
 
 Instead of querying for both parts of this response in sequence, we could query for both concurrently, using Ruby’s thread implementation. By default, Ruby threads will execute until they are waiting on an I/O event (like a database query), at which point they hand off Ruby’s GIL execution lock to another thread. Once the I/O response is ready, the kernel will pre-emptively pause another thread to pick it back up. This allows you to wait for multiple I/O responses at the same time, rather than in sequence.

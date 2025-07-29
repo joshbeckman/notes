@@ -1,17 +1,15 @@
 ---
 layout: Post
-date: 2024-09-07 00:00:00 +0000
-title: "That Hurts My Feelings"
+date: 2024-09-07 00:00:00.000000000 +00:00
+title: That Hurts My Feelings
 toc: true
-image: 
-description: 
+image:
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113100362363567210
-tags: 
-  - blogroll
+tags:
+- blogroll
+serial_number: 2024.NTS.162
 ---
-
-
-
 > [...] and every time I think of it, I feel unbridled happiness, followed by a twinge of grief. It’s wild how even the fondest memories can find a way to hurt your feelings.
 
 I found Hallie Haglund through [The Flop House](https://www.flophousepodcast.com) podcast. She's a fantastic writer, one that inspires me to pour my actual thoughts and _feelings_ into words, even if it seems trite. 

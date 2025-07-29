@@ -9,8 +9,8 @@ tags:
 redirect_from:
 - "/desk-september-2014"
 - "/desk-september-2014/"
+serial_number: 2014.BLG.003
 ---
-
 <figure class="kg-card kg-image-card"><img src="/assets/images/283B253A-704F-47A2-BE61-2483C81B3AF2.jpeg" /></figure>
 
 Since there's a bunch of space on the Aggrego floor these days, I've taken a corner office.

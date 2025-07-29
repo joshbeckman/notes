@@ -11,6 +11,7 @@ tags:
 redirect_from:
 - "/opening-up-my-highlights-notes"
 - "/opening-up-my-highlights-notes/"
+serial_number: 2023.BLG.009
 ---
 ![Screenshot of notes site](/assets/images/Screenshot-2023-02-18-at-12.21.40-PM.png)
 

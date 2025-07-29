@@ -1,14 +1,14 @@
 ---
 layout: Post
-date: 2024-02-26 03:56:16 +0000
-title: "Steve Reed’s 50th Birthday in Disneyworld"
+date: 2024-02-26 03:56:16.000000000 +00:00
+title: Steve Reed’s 50th Birthday in Disneyworld
 toc: true
-image: /assets/images/CAAF8BA832344466B8D295F310A214EC.jpeg
-description: 
-tags: 
+image: "/assets/images/CAAF8BA832344466B8D295F310A214EC.jpeg"
+description:
+tags:
 - travel
+serial_number: 2024.BLG.029
 ---
-
 ![](/assets/images/CAAF8BA832344466B8D295F310A214EC.jpeg)
 
 <video controls src="/assets/videos/480D46CCCE12443A847525527E354D77.mov"></video>

@@ -7,8 +7,8 @@ tags:
 redirect_from:
 - "/vaibhav-krishna-guruswamy-recommendation"
 - "/vaibhav-krishna-guruswamy-recommendation/"
+serial_number: 2015.BLG.002
 ---
-
 I have known Krishna since interviewing him over a scrambled, laggy Skype connection for a position with me at [Aggrego](http://aggrego.com). That was in December of 2013. We decided to hire him, and I am lucky we did.
 
 At Aggrego, Krishna rose from helping me scaffold out products in multiple languages to conceiving entire queueing and caching systems on his own. He fit into our process seamlessly, and was a continuously surprising source of deep-code knowledge. His algorithmic approach to our codebase was an important asset.

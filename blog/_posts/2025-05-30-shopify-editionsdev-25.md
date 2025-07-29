@@ -11,9 +11,8 @@ tags:
 - shopify
 - canada
 - software-engineering
+serial_number: 2025.BLG.082
 ---
-
-
 <img width="760" alt="flow masterclass schedule slide" src="/assets/images/dd4278f3-bd05-41ec-85b8-4c82860bb16e.png" />
 
 This year's [Shopify Editions.dev](https://editions.dev/pages/editions-dev) conference was held on the final day of [Shopify Summit 2025](https://www.joshbeckman.org/blog/traveling/shopify-summit-2025) and I went across the street to Toronto's Automotive Building to meet and support Shopify's huge developer/partner ecosystem. It's a big event to promote the features in [Shopify Editions Summer '25](https://www.joshbeckman.org/blog/shopify-editions-summer-25) and gather feedback from the community.

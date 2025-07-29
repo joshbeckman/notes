@@ -9,9 +9,8 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/114779202830676
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lswammnyxq2v
 tags:
 - code-snippets
+serial_number: 2025.BLG.102
 ---
-
-
 <img width="398" alt="buildkite notification example" src="/assets/images/3675f995-d38f-4b29-9e3f-97af6a80f6ae.png" />
 
 At Shopify, we use [Buildkite](http://buildkite.com/) for running continuous integration tests. That means I'm opening up and monitoring Buildkite builds dozens of times a day, checking on them, browsing them, etc. Sadly, Buildkite's interface doesn't provide browser notifications for build status (e.g. when it fails or succeeds).

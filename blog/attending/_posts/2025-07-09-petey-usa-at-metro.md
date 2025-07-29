@@ -11,9 +11,8 @@ tags:
 - concerts
 - chicago
 - metro-venue
+serial_number: 2025.BLG.107
 ---
-
-
 I've been a fan of [Petey](https://www.peteyswebsite.com/) since his first album *Lean Into Life*. I've played _Don't Tell The Boys_ at a loud, yelling volume and yelled along. And no one else I knew had heard of him. I'd never had a chance to hear him play live until this week.
 
 ![Petey playing at the Metro stage](/assets/images/5481192a-cbf1-4c75-b6b8-4c4f42441127.jpeg)

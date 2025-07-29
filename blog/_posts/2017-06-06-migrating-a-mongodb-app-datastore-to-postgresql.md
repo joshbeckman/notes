@@ -7,8 +7,8 @@ tags:
 redirect_from:
 - "/migrating-a-mongodb-app-datastore-to-postgresql"
 - "/migrating-a-mongodb-app-datastore-to-postgresql/"
+serial_number: 2017.BLG.003
 ---
-
 A couple weeks ago, [Narro](https://narro.co) had a nice uptick in usage from Pro users that resulted in a large increase in data stored by the application. That is always pleasant but this time, I had a corresponding uptick in price for the data storage. Time for a change!
 
 ### Backstory

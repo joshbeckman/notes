@@ -1,13 +1,13 @@
 ---
 layout: Post
-date: 2024-03-14 16:09:22 +0000
-title: "What we talk about when we talk about tech debt"
+date: 2024-03-14 16:09:22.000000000 +00:00
+title: What we talk about when we talk about tech debt
 toc: true
-tags: 
+tags:
 - software-engineering
 - popular
+serial_number: 2024.BLG.033
 ---
-
 Recently, I've been talking with people about what we should identify as "tech debt"\.
 
 When we talk about "tech debt", we are talking about: "an undesirable technical environment to build the software we want, leading to undesirable implementations\." That's the definition that resonates with me\.

@@ -12,9 +12,8 @@ tags:
 - music
 - culture
 - entertainment
+serial_number: 2025.BLG.098
 ---
-
-
 I don't know who else needs to hear this great remix today but I stumbled upon [this set by Jamie xx at _ARTE_ in Adidas Arena, Paris](https://www.youtube.com/watch?v=P0GpUQpMBZY) (from [his _In Waves_ tour](https://www.joshbeckman.org/blog/attending/jamie-xx-at-aragon)) which lead me to _this_ fantastic [set by Four Tet for _ARTE_ at Sónar 2025](https://www.youtube.com/watch?v=OmC6KIwjgFY&t=649s) where he featured [this unreleased remix by James Holden of _Breathe on Me_ by Britney Spears](https://www.jamesholden.org/index.php?p=12989) that hooked me and I was able to hunt down and has been stuck in my head all evening:
 
 <audio src="https://www.jamesholden.org/audio/britney%20spears%20james%20holden%20vocal.mp3" controls></audio>

@@ -2,8 +2,7 @@
 toc: true
 title: Work Trip to Vancouver
 image: "/assets/images/FD003BCD-B395-42BB-85C4-705DE3DD4DF0.jpeg"
-description: Our team went to a Shopify Burst in Vancouver in the beginning of
-  June.
+description: Our team went to a Shopify Burst in Vancouver in the beginning of June.
 date: '2022-06-11 03:26:00'
 tags:
 - shopify
@@ -12,8 +11,8 @@ tags:
 redirect_from:
 - "/work-trip-to-vancouver"
 - "/work-trip-to-vancouver/"
+serial_number: 2022.BLG.015
 ---
-
 <figure class="kg-card kg-image-card kg-width-full"><img src="/assets/images/E91C6181-2FBF-4E16-B42D-DFAA2D82A874.jpeg" class="kg-image" alt  width="2000" height="1333" ></figure>
 
 I went to Vancouver for a Shopify team session.

@@ -11,8 +11,8 @@ tags:
 redirect_from:
 - "/good-first-issue-is-a-gift"
 - "/good-first-issue-is-a-gift/"
+serial_number: 2023.BLG.011
 ---
-
 <figure class="kg-card kg-image-card"><img src="/assets/images/Screenshot-2023-02-26-at-1.40.40-PM.png" /></figure>
 
 When I started my latest open-source project, a [simple Ruby wrapper of the Readwise API](https://github.com/andjosh/readwise-ruby/tree/368f22298cc9cb4ebb49eb6e432411216b89e211), I went through my usual checklist of things to set up: a license, a README, a code of conduct, a changelog, and I ended by spending time making simple issues.

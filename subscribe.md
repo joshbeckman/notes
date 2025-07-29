@@ -2,12 +2,12 @@
 layout: Page
 title: Subscribe or Follow
 tags: index
-permalink: /subscribe/
+permalink: "/subscribe/"
 toc: true
 searchable: true
-emoji: '📶'
+emoji: "\U0001F4F6"
+serial_number: 2024.PAE.005
 ---
-
 ## RSS Feeds
 
 Subscribe to the [unified RSS/Atom feed](/feed.xml) for new posts ~daily. There are dedicated feeds for each category, if you want a subset:

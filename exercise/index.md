@@ -1,13 +1,13 @@
 ---
 layout: Page
 title: Exercise
-emoji: 🏋
+emoji: "\U0001F3CB"
 searchable: true
 tags:
 - exercise
 - index
+serial_number: 2025.PAE.003
 ---
-
 My exercise journal, pulled from [Strava](https://www.strava.com/athletes/75003252).
 
 {% assign postsByMonth = 

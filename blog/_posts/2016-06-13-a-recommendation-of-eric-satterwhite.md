@@ -7,8 +7,8 @@ tags:
 redirect_from:
 - "/a-recommendation-of-eric-satterwhite"
 - "/a-recommendation-of-eric-satterwhite/"
+serial_number: 2016.BLG.008
 ---
-
 Working with Eric is, I imagine, akin to preparing dinner with a sushi master chef. He is one of the most confident developers, and rightly so. I have learned more from him in the last year than any other on our team. Eric’s not content with his current abilities, though - he is constantly seeking new challenges and paradigms to test.
 
 When we hired Eric, he blew through all of my coding tests. I had to think of new ones. Over the course of working with our team, he would rewrite entire services, imposing consistent architecture and documentation. Usually, he would just be let loose on a microservice with the words, “How can we make this better?” and Eric would produce entire libraries that we could reuse in multiple layers and locations. He repeatedly saw straight through problems to the core and fixed the machinery beneath.

@@ -7,8 +7,8 @@ tags:
 redirect_from:
 - "/on-adding-react-native-to-android-ios"
 - "/on-adding-react-native-to-android-ios/"
+serial_number: 2017.BLG.004
 ---
-
 > I write in defense of the beliefs I fear are least defensible. Everything else feels like homework.   
 > - Sarah Manguso, _300 Arguments_
 

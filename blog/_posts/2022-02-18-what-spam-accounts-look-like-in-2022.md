@@ -10,8 +10,8 @@ tags:
 - narro
 - research
 - popular
+serial_number: 2022.BLG.006
 ---
-
 I fell down this rabbit hole while trying to investigate some spammy account behavior on [Narro](https://www.narro.co). I've been running Narro as a SAAS application with a free trial for several years now, which means I have dealt with a lot of spam account creation.
 
 Every once in a while, when I notice a new spam pattern take shape, I dig in to understand their goal. As I got more curious about the actual goal behind this recent account type, I started to write it down, as a snapshot of a (seemingly) popular spam account archetype in 2022. Of course, it related to cryptocurrencies. So I figured they might be doing something new and special.

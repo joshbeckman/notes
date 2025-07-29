@@ -1,18 +1,17 @@
 ---
 layout: Post
-date: 2025-02-22 07:28:56 -0600
-title: "Music Frozen Dancing 2025"
+date: 2025-02-22 07:28:56.000000000 -06:00
+title: Music Frozen Dancing 2025
 toc: true
-image: /assets/images/4de7db9c-03dd-4eec-9691-5254b72c21b7.jpeg
-description: 
+image: "/assets/images/4de7db9c-03dd-4eec-9691-5254b72c21b7.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114065743909806064
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lizfr23qqb24
 tags:
-  - chicago
-  - music
+- chicago
+- music
+serial_number: 2025.BLG.033
 ---
-
-
 It's a very Chicago thing to spend the last Saturday of February standing out in the cold in a street music festival to dance along with punk and hard pop and synth bands. But we love [Music Frozen Dancing](https://www.musicfrozendancing.com/) every year.
 
 ![giving them the finger](/assets/images/4de7db9c-03dd-4eec-9691-5254b72c21b7.jpeg)

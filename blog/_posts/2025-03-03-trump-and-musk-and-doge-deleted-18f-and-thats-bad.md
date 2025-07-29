@@ -1,19 +1,19 @@
 ---
 layout: Post
-date: 2025-03-03 14:02:03 +0000
-title: "Trump and Musk and DOGE Deleted 18F and That's Bad"
+date: 2025-03-03 14:02:03.000000000 +00:00
+title: Trump and Musk and DOGE Deleted 18F and That's Bad
 toc: true
-image: /assets/images/418601541-c3c6e53e-f511-43d3-993b-06a49969eb9a.png
+image: "/assets/images/418601541-c3c6e53e-f511-43d3-993b-06a49969eb9a.png"
 description: They're removing the efficiency and safety
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114099709544141102
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ljiigta5yu2o
 tags:
-  - united-states
-  - trump
-  - software-engineering
-  - protest
+- united-states
+- trump
+- software-engineering
+- protest
+serial_number: 2025.BLG.038
 ---
-
 I don't quite know why, but this latest move by President Trump and Elon Musk and their idiotic [Department of Government Efficiency (DOGE)](https://en.wikipedia.org/wiki/Department_of_Government_Efficiency) extra-governmental team is putting me in a mood to write something. I've already been [physically protesting against this group](https://www.joshbeckman.org/blog/rallying-duckworth-and-durbin) - to my elected representatives - to little effect.
 
 At the end of last week, Musk laid off the entire [18F](https://18f.org/) team. I have a long-time friend who had worked in that group for years; luckily they're still at work within the government, having moved recently to an adjacent team in the [USDS](https://www.usds.gov/). Additionally, I have [parasocial friends](https://eli.li/93401-2025-03-01-14-40-24) who also worked directly to improve the United States' digital technology in 18F who are now gone from that service. I *know* how essential these software engineers and designers were to the functioning of our government's software and infrastructure.

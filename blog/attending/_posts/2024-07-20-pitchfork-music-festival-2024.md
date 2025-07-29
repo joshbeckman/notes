@@ -1,17 +1,15 @@
 ---
 layout: Post
-date: 2024-07-20 00:00:00 +0000
-title: "Pitchfork Music Festival 2024"
+date: 2024-07-20 00:00:00.000000000 +00:00
+title: Pitchfork Music Festival 2024
 toc: true
-image: /assets/images/6e92f58e-0103-438c-bc4f-aec6159c8790.jpeg
-description: 
+image: "/assets/images/6e92f58e-0103-438c-bc4f-aec6159c8790.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/112862543458568086
-tags: 
-  - music
+tags:
+- music
+serial_number: 2024.BLG.068
 ---
-
-
-
 ![IMG_3345](/assets/images/6e92f58e-0103-438c-bc4f-aec6159c8790.jpeg)
 
 This year's Pitchfork festival had high highs and low lows. I've gone to a few of the previous years, but not usually for all three full days. I think I went to all three last year?

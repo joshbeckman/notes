@@ -11,8 +11,8 @@ tags:
 redirect_from:
 - "/a-successful-rewrite-microservices-to-monolith"
 - "/a-successful-rewrite-microservices-to-monolith/"
+serial_number: 2023.BLG.025
 ---
-
 <figure class="kg-card kg-image-card"><img src="/assets/images/services_20170409-1.png" /></figure>
 
 I was invited onto the _Never Rewrite_ podcast last week to talk about... when and why I think you should rewrite software.

@@ -8,8 +8,8 @@ redirect_from:
 tags:
 - threadmeup
 - venture-capital
+serial_number: 2015.BLG.011
 ---
-
 When you’re leading a team of developers for a startup company, you often get asked to define hard numbers. You get asked questions like:
 
 > How much money would it take you to build the ideal solution?

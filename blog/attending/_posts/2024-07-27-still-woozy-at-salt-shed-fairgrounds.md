@@ -1,18 +1,16 @@
 ---
 layout: Post
-date: 2024-07-27 00:00:00 +0000
-title: "Still Woozy at Salt Shed Fairgrounds"
+date: 2024-07-27 00:00:00.000000000 +00:00
+title: Still Woozy at Salt Shed Fairgrounds
 toc: true
-image: /assets/images/e446b89d-b3f0-45b8-bf13-53be8b4abeb5.jpeg
-description: 
+image: "/assets/images/e446b89d-b3f0-45b8-bf13-53be8b4abeb5.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/112862543490763333
-tags: 
-  - music
-  - salt-shed-venue
+tags:
+- music
+- salt-shed-venue
+serial_number: 2024.BLG.072
 ---
-
-
-
 ![IMG_3370](/assets/images/e446b89d-b3f0-45b8-bf13-53be8b4abeb5.jpeg)
 
 I have loved **Still Woozy** since he released _Cooks_ in 2017. I remember blasting _Lucy_ in the car ride home from Electric Forest in 2019 over and over and over. Back then he only had like 4 or 5 singles released, but I made a significant mental note to follow him.

@@ -10,8 +10,8 @@ tags:
 redirect_from:
 - "/on-theory-building-as-an-engineering-team"
 - "/on-theory-building-as-an-engineering-team/"
+serial_number: 2020.BLG.017
 ---
-
 Recently, I was reading [Marc Booker’s post](http://brooker.co.za/blog/2020/06/23/code.html) about the need for documentation outside of the codebase. [A thoughtful comment](https://news.ycombinator.com/item?id=23751652) on the post led me to [Peter Naur’s paper on Programming as Theory Building](http://pages.cs.wisc.edu/~remzi/Naur.pdf), which I recommend reading<sup><a href="#fn:1">1</a></sup>. In it, Naur argues that the act of programming is not a practice of writing code but the work of creating a theory of the problem at hand and a theory of the system to address it. As a team exercise, we practiced documenting our theories of the OfficeLuv system and found it very rewarding.
 
 In my mind, there is a hierarchy of explanatory documentation that programmers pass between each other. At the bottom there is the pulse of the commit history. This documentation is a permanent record, but the explanations themselves are brief, incomplete, and ephemeral.

@@ -1,18 +1,16 @@
 ---
 layout: Post
-date: 2024-10-09 00:00:00 +0000
-title: "AIR at Auditorium Theater"
+date: 2024-10-09 00:00:00.000000000 +00:00
+title: AIR at Auditorium Theater
 toc: true
-image: /assets/images/1135c6d1-ca15-4ef3-a2e6-ed4c37eae893.jpeg
-description: 
+image: "/assets/images/1135c6d1-ca15-4ef3-a2e6-ed4c37eae893.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113284387133030251
-tags: 
-  - music
-  - chicago
+tags:
+- music
+- chicago
+serial_number: 2024.BLG.102
 ---
-
-
-
 ![AIR](/assets/images/1135c6d1-ca15-4ef3-a2e6-ed4c37eae893.jpeg)
 
 We were lucky enough to see AIR play their _Moon Safari_ album at a packed theater with a group of friends and it was fantastic floating through space with everyone.

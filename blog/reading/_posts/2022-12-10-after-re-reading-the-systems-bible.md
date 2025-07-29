@@ -9,8 +9,8 @@ tags:
 redirect_from:
 - "/after-re-reading-the-systems-bible"
 - "/after-re-reading-the-systems-bible/"
+serial_number: 2022.BLG.021
 ---
-
 I first read this book under a different name - _Systemantics_ - as a photocopier-scanned PDF found online who-knows-where over ten years ago.
 
 It made a significant impact on me, a budding software developer being entrusted to build decently sized software systems with little oversight. It instilled in me a very healthy skepticism of my own (and anyone else's) ability to design the perfect system, the perfect software architecture, even the ability to diagnose a system's flaws. It trained me to distrust anything I built until proven otherwise, to assume some amount of failure in the operation of everything built around me.

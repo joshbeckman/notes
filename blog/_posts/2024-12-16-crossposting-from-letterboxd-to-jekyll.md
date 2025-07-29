@@ -1,19 +1,19 @@
 ---
 layout: Post
-date: 2024-12-16 04:00:23 +0000
+date: 2024-12-16 04:00:23.000000000 +00:00
 title: Cross-posting From Letterboxd to Jekyll
 toc: true
-image: /assets/images/03C77ACF666F433E835E19772DAEF9D6.png
-description: 
+image: "/assets/images/03C77ACF666F433E835E19772DAEF9D6.png"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113662813185021566
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ldghrg4sby2j
-tags: 
-  - code-snippets
-  - personal-blog
-  - letterboxd
-  - jekkyll
+tags:
+- code-snippets
+- personal-blog
+- letterboxd
+- jekkyll
+serial_number: 2024.BLG.132
 ---
-
 I want to [meet the movie\-lovers where they are](https://www.joshbeckman.org/blog/gotta-publish-where-the-people-are), so I’m going to try writing [my movie journal on Letterboxd](https://letterboxd.com/joshbeckman/). I have friends there already\. Unfortunately, Letterboxd doesn’t have an API to post *from* my site *into* it, so I have to post *there* and pull them in ​*here*​\.
 
 So, similar to [what I built for Mastodon](http://localhost:4000/blog/pesos-mastodon-to-jekyll), I’m now pulling my Letterboxd reviews into [the watching blog](https://www.joshbeckman.org/blog/watching/) category \(PESOS\)\. I still want them here for archival/linking/discovery/etc\. And this way the other systems of syndicating them to Mastodon and Bluesky can also “just work” once imported\.

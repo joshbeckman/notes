@@ -8,8 +8,8 @@ tags:
 redirect_from:
 - "/to-pick-a-nectarine"
 - "/to-pick-a-nectarine/"
+serial_number: 2023.BLG.037
 ---
-
 <figure class="kg-card kg-image-card"><img src="/assets/images/Screenshot-2023-07-30-at-9.14.53-PM-2.png" /></figure>
 
 Every spring, I eagerly plant outside as soon as the soil is soft enough for my hands to turn over. We don't get much sun on our patio, probably not enough to sustain produce-bearing trees and bushes. But this year, I found a fruit tree for sale on one of those early days, when I was hopeful.

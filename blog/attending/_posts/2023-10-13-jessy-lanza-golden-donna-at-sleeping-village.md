@@ -1,15 +1,15 @@
 ---
 layout: Post
-date: 2023-10-13 03:33:11 +0000
-title: "Jessy Lanza & Golden Donna at Sleeping Village"
+date: 2023-10-13 03:33:11.000000000 +00:00
+title: Jessy Lanza & Golden Donna at Sleeping Village
 toc: true
-image: /assets/images/6F27683308A84FE78E879D496603A5C1.jpeg
-description: 
-tags: 
+image: "/assets/images/6F27683308A84FE78E879D496603A5C1.jpeg"
+description:
+tags:
 - music
 - sleeping-village-venue
+serial_number: 2023.BLG.039
 ---
-
 ![Jessy Lanza](/assets/images/6F27683308A84FE78E879D496603A5C1.jpeg)
 
 I always love going to Sleeping Village and so when I saw Jessy Lanza (who I have [really enjoyed in the past](/blog/attending/caribou-and-jessy-lanza)) was going to be there, I grabbed tickets for a group of us\. It was a great show\.

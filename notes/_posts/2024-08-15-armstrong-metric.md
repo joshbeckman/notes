@@ -1,14 +1,14 @@
 ---
 title: Armstrong Metric
 image: https://avatars.githubusercontent.com/u/1952127
-source_emoji: 🌐
+source_emoji: "\U0001F310"
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/112972963248340393
 tags:
 - metrics
 - observability
 - noise
+serial_number: 2024.NTS.151
 ---
-
 _(noun) /ˈɑːmstrɒŋ ˈmɛtrɪk/_
 
 A metric which is too noisy to be monitored (does not indicate system health), but which nonetheless is helpful in understanding [system](https://www.joshbeckman.org/notes/principles-of-system) behavior.

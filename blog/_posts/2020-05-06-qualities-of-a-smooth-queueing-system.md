@@ -9,8 +9,8 @@ tags:
 redirect_from:
 - "/qualities-of-a-smooth-queueing-system"
 - "/qualities-of-a-smooth-queueing-system/"
+serial_number: 2020.BLG.004
 ---
-
 This morning, [Eleni](https://elenichappen.com) and I were reflecting on how our queueing system has evolved at [OfficeLuv](https://www.officeluv.com) over the past year.
 
 We now process thousands of jobs per second across hundreds of job types. Our queue reliability and performance allow us to keep our fast customer and admin response times while increasing scale and keeping our development costs and headcount down. Here’s everything we’ve configured or built into our queues that allow them to grow into the backbone of our architecture while, most importantly, not keeping us up at night.

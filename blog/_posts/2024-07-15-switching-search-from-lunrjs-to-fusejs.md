@@ -1,18 +1,16 @@
 ---
 layout: Post
-date: 2024-07-15 00:00:00 +0000
-title: "Switching Search from Lunr.js to Fuse.js"
+date: 2024-07-15 00:00:00.000000000 +00:00
+title: Switching Search from Lunr.js to Fuse.js
 toc: true
-image: 
-description: 
+image:
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/112794595485989662
-tags: 
-  - personal-blog
-  - search
+tags:
+- personal-blog
+- search
+serial_number: 2024.BLG.067
 ---
-
-
-
 I've been annoyed with the search results - on [this site search](/search/) - from [lunr.js](https://lunrjs.com) recently.
 
 For example: I search "eden" or "garden of eden" and the results don't contain [this note describing a "Garden-of-Eden configuration"](https://www.joshbeckman.org/notes/264827193). I'm using the exact same sequence of characters and it won't find the result I want. Lunr just plain [doesn't support exact-phrase matching](https://github.com/olivernn/lunr.js/issues/62). 

@@ -8,8 +8,8 @@ tags:
 redirect_from:
 - "/a-recommendation-of-nevzat-cubukcu"
 - "/a-recommendation-of-nevzat-cubukcu/"
+serial_number: 2018.BLG.004
 ---
-
 <figure class="kg-card kg-image-card"><img src="/assets/images/IMG_0465.jpg" /></figure>
 
 We hired Nevzat as our third engineer and Android device expert. How can you _not_ be impressed when he came to the interview with projects to demonstrate complex matrix manipulations of on-device images that he built to teach himself the Android SDK? He, of course, continued to teach himself while on our team. He also pulled us to place customer delight in the front of our minds while also tirelessly improving out product.

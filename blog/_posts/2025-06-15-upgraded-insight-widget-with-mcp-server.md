@@ -1,17 +1,17 @@
 ---
 layout: Post
 date: '2025-06-15 00:00:00 +0000'
-title: "Upgraded Insight Widget with MCP Server"
+title: Upgraded Insight Widget with MCP Server
 toc: true
-image: /assets/images/insight-mcp.png
-description: 
+image: "/assets/images/insight-mcp.png"
+description:
 tags:
-  - ai
-  - llm
-  - tools
-  - personal-blog
+- ai
+- llm
+- tools
+- personal-blog
+serial_number: 2025.BLG.094
 ---
-
 So I've been running an [insight widget](/blog/using-an-llmand-rag-to-wring-insights-from-my-posts) on my site for about a year now. It's been a nice little tool for reflecting on my posts, but the LLM landscape is still moving incredibly fast and it was time for an upgrade.
 
 A few weeks back I [built an MCP server](/blog/i-built-an-mcp-server-for-my-site) for this site, and obviously the really interesting question was: what could I actually *do* with direct LLM access to my entire post archive?

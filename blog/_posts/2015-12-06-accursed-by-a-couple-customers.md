@@ -8,8 +8,8 @@ redirect_from:
 tags:
 - threadmeup
 - venture-capital
+serial_number: 2015.BLG.027
 ---
-
 I’ve seeing a trend with some of the start up companies I’ve worked at. It tends to happen that a prolific and available customer drives the majority of revenue or traffic. That’s all well and good but what usually happens is that one (or two) customers start making decisions in their best interest. Who can blame them?
 
 The original path that would lead to many more customers for the startup is abandoned for this one customer group. It’s hard to break cycle. You tell yourself the customer in hand is worth more than all the customers in the bush. Every article out there is telling you how lucky it is to have paying customers. You must be doing something right!

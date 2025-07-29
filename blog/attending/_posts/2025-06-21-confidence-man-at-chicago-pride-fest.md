@@ -10,9 +10,8 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ls7c6i7gdi2r
 tags:
 - concerts
 - chicago
+serial_number: 2025.BLG.096
 ---
-
-
 ![Confidence Man at Chicago Pride Fest 2025](/assets/images/b2eff1b6-f534-43fd-a078-27a977196073.jpeg)
 
 This weekend, our friend Maddie was in town and we got to introduce her to the sweaty fantastic energy that is [_Confidence Man_](https://www.confidenceman.com.au) - and in 90ºF heat at a crowded [Pride Fest](https://northalsted.com/main-events/chicago-pride-fest/), no less! She was grinning and dancing the whole time.

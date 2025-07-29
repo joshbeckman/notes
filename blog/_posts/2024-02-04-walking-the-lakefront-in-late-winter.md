@@ -1,11 +1,11 @@
 ---
 layout: Post
-date: 2024-02-04 20:43:34 +0000
-title: "Walking The Lakefront in Late Winter"
-image: /assets/images/39E845F2ADBC47A88CEBE5A72C8C06BE.jpeg
+date: 2024-02-04 20:43:34.000000000 +00:00
+title: Walking The Lakefront in Late Winter
+image: "/assets/images/39E845F2ADBC47A88CEBE5A72C8C06BE.jpeg"
 tags: walking chicago
+serial_number: 2024.BLG.015
 ---
-
 ![](/assets/images/9A8BC7A68635495A85A12337D6C3EF0E.jpeg)
 
 ![](/assets/images/EC07FC14A6A143D08A6EE59B8B12E5D7.jpeg)

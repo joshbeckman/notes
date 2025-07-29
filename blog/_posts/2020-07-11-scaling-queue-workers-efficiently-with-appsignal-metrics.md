@@ -8,8 +8,8 @@ tags:
 redirect_from:
 - "/scaling-queue-workers-efficiently-with-appsignal-metrics"
 - "/scaling-queue-workers-efficiently-with-appsignal-metrics/"
+serial_number: 2020.BLG.016
 ---
-
 AppSignal asked me to write for their blog. My first post is about some techniques we’ve been using at OfficeLuv to responsively scale our queueing systems based on usage. From the introduction:
 
 > Most web apps can benefit from a background queue, often used to process error-prone or time-consuming side jobs. These background jobs can vary from sending emails, to updating caches, to performing core business logic.

@@ -7,8 +7,8 @@ tags:
 redirect_from:
 - "/timestamp-chicago-tech-meetup"
 - "/timestamp-chicago-tech-meetup/"
+serial_number: 2015.BLG.016
 ---
-
 I leave work just before 6pm, walking about a mile to an office in River North. I stand outside the front door of the building with a small group of other attendees, waiting for someone upstairs to unlock the door remotely.
 
 Once inside, we find that we are the only attendees yet to arrive. There are large tubs of beer, cooling on ice, and Gatorade dispensers full of vodka-lemonade placed on a ping-pong table in the center of the room. There are about 20 warm pizzas, piled in a corner. On each wall of the room hangs a 60” television monitor cycling through various graphs displaying current users of the company website and phone application. As the evening advances, the lines tick upward.

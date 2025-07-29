@@ -1,17 +1,15 @@
 ---
 layout: Post
-date: 2024-11-06 07:58:21 -0600
-title: "Sick today"
+date: 2024-11-06 07:58:21.000000000 -06:00
+title: Sick today
 toc: true
-image: 
-description: 
+image:
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113437269555435263
 tags:
-  - united-states
+- united-states
+serial_number: 2024.BLG.109
 ---
-
-
-
 I'm feeling sick this morning because Trump was re-elected.
 
 Any large group has incoherent and mentally unwell people among it. Usually, the majority of us focus on helping them. We work with them to come back to a shared understanding of what's true about the world and common values of who people are and what is worth pursuing. The unwell people can yell at their imaginations and it doesn't really hurt us and eventually the imaginary demons go away.

@@ -7,8 +7,8 @@ tags:
 redirect_from:
 - "/middleware-in-go"
 - "/middleware-in-go/"
+serial_number: 2015.BLG.001
 ---
-
 I’ve been writing two main types of Go programs recently. One routes `http` input through a series of transformations and calculations and one receives `http` input to transform or return data stores.
 
 For the latter, I had a hard time figuring out the best way to maintain a persistent database connection while still taking advantage of Go’s concurrency. I settled on writing an entensible middleware to establish a connection and clone sessions for each incoming request.

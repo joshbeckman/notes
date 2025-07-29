@@ -1,21 +1,21 @@
 ---
 layout: Post
-date: 2024-11-24 11:07:16 -0600
-title: "Cross-posting to Bluesky from Jekyll"
+date: 2024-11-24 11:07:16.000000000 -06:00
+title: Cross-posting to Bluesky from Jekyll
 toc: true
-image: /assets/images/f01fc394-41e8-4b0e-a599-88b0218c57de.png
-description: 
+image: "/assets/images/f01fc394-41e8-4b0e-a599-88b0218c57de.png"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113539189969260739
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lbpkxxku5c2b
-tags: 
-  - code-snippets
-  - personal-blog
-  - publishing
-  - blogs
-  - bluesky
-  - jekyll
+tags:
+- code-snippets
+- personal-blog
+- publishing
+- blogs
+- bluesky
+- jekyll
+serial_number: 2024.BLG.117
 ---
-
 Just like how I set up [cross-posting to Mastodon](https://www.joshbeckman.org/blog/how-to-crosspost-to-mastodon-with-jekyll) for this site (to ensure that I am publishing on my own site and syndicating elsewhere: POSSE), I have now set up cross-posting from this site to [my Bluesky account](https://bsky.app/profile/joshbeckman.org).
 
 ## Workflow

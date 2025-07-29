@@ -7,8 +7,8 @@ tags:
 redirect_from:
 - "/switching-away-from-the-moonlander-keyboard"
 - "/switching-away-from-the-moonlander-keyboard/"
+serial_number: 2021.BLG.004
 ---
-
 After [using the Moonlander keyboard]( /ergodox-moonlander-week-3/)for a number of months, I've now switched back to a 'normal' layout keyboard.
 
 I gave it a good run, but I found myself spending way too much time fiddling with the inversion angle, making new layouts for the keybindings, messing around with macro functionality that I repeatedly forgot, and lots of other distractions. It was a nice piece of hardware, but I felt my mind get tangled up in its configurations.

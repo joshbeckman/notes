@@ -1,14 +1,14 @@
 ---
 layout: Post
-date: 2024-03-29 01:00:46 +0000
-title: "Colin Stetson at Bohemian National Cemetery"
+date: 2024-03-29 01:00:46.000000000 +00:00
+title: Colin Stetson at Bohemian National Cemetery
 toc: true
-image: /assets/images/816EFA4287B34B9ABC9C1B4607352EBA.jpeg
-description: 
-tags: 
-  - music
+image: "/assets/images/816EFA4287B34B9ABC9C1B4607352EBA.jpeg"
+description:
+tags:
+- music
+serial_number: 2024.BLG.038
 ---
-
 ![](/assets/images/8923A119EDB54BB1AA4BD32F6BB63716.jpeg)
 
 ![](/assets/images/816EFA4287B34B9ABC9C1B4607352EBA.jpeg)

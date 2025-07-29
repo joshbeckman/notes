@@ -7,8 +7,8 @@ tags:
 redirect_from:
 - "/watching-strangeloop-2022-videos"
 - "/watching-strangeloop-2022-videos/"
+serial_number: 2022.BLG.020
 ---
-
 I wasn't excited by the dozens of podcast episodes I had already downloaded to my phone, and I needed something to speak at me while I exercised this evening, so I put one some videos from the Strangeloop 2022 conference. [This one](https://www.youtube.com/watch?v=ifYuvgXZ108) and [this one](https://www.youtube.com/watch?v=KqhvZ4xTnhQ) and then [this one](https://www.youtube.com/watch?v=ufIndNknUdA&t=2347s). What did I take away from these? What will I remember?
 
 I checked in on a project I had held in my mind as a reference for 'a great demo' from _years_ ago - one that inspired me. And that project had fallen behind my expectations, but advanced in a new direction. The main takeaway was that manipulation of generics is more powerful when building a humanist system, because humans manipulate metaphors, rather than the content/thing itself.

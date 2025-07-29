@@ -12,9 +12,8 @@ tags:
 - entertainment
 - movies
 - personal-blog
+serial_number: 2025.BLG.075
 ---
-
-
 These are the short films we watched at this year's annual [Chicago Horror Film Festival](https://www.chicagohorrorfilmfest.com) that didn't have an IMDB/Letterboxd entry:
 
 - Eye Candy

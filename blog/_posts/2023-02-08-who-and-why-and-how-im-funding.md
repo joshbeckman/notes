@@ -2,8 +2,8 @@
 toc: true
 title: Who and Why and How I'm Funding
 image: "/assets/images/L1020944.jpeg"
-description: A breakdown of how I'm funding individuals in 2023, who they are,
-  and why I think individual funding is important.
+description: A breakdown of how I'm funding individuals in 2023, who they are, and
+  why I think individual funding is important.
 date: '2023-02-08 22:39:26'
 tags:
 - funding
@@ -11,8 +11,8 @@ tags:
 redirect_from:
 - "/who-and-why-and-how-im-funding"
 - "/who-and-why-and-how-im-funding/"
+serial_number: 2023.BLG.007
 ---
-
 <figure class="kg-card kg-image-card"><img src="/assets/images/L1020944.jpeg" /></figure>
 
 I was having a long conversation about sponsorship models with [my cousin Colleen](https://www.youtube.com/@GoodDogGrooming) as she starts to expand her own funding sources, and figured I should publish some notes on different funding relationships.

@@ -2,13 +2,13 @@
 toc: true
 title: Your App Is Not Better Than An Open Protocol
 date: '2015-02-15 00:00:00'
-tags: 
+tags:
 - software-engineering
 redirect_from:
 - "/using-open-protocols"
 - "/using-open-protocols/"
+serial_number: 2015.BLG.004
 ---
-
 Open protocols power the web. They should be powering the interactions to your next application, too. RSS, SMS, plaintext-email, HTML5 - these are the easiest, fastest ways to get users into your system. Open protocols are the lowest barriers to entry. Your potential users already have them and know exactly how to use them!
 
 When Twitter was gathering steam back in 2009-10, it did so because [tweeting was done via SMS](https://blog.twitter.com/2010/introducing-fast-follow-and-other-sms-tips) and not over a proprietary interface. Everyone was getting a feature-phone. [WhatsApp emulates simple SMS paradigms](http://www.whatsapp.com) to gain traction and meet basic needs. GitHub [allows for RSS access to repos, users, and issues](https://help.github.com/articles/viewing-your-feeds/) so you don’t have to log in or open a browser to be updated. The best services don’t require a visit to the website to be notified. I can reply on Slack and Trello via email notifications.

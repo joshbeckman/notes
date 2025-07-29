@@ -9,8 +9,8 @@ tags:
 redirect_from:
 - "/after-reading-the-design-of-everyday-things"
 - "/after-reading-the-design-of-everyday-things/"
+serial_number: 2023.BLG.012
 ---
-
 <figure class="kg-card kg-image-card"><img src="/assets/images/IMG_0459.jpeg" /></figure>
 
 I finished reading Don Norman’s _The Design of Everyday Things_ last night. Looking [at my highlights](https://www.joshbeckman.org/search/?q=%2725051458&keys=book), it was a useful book.

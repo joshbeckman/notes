@@ -1,20 +1,18 @@
 ---
 layout: Post
-date: 2024-11-23 22:13:53 -0600
-title: "Kiki's Delivery Service"
+date: 2024-11-23 22:13:53.000000000 -06:00
+title: Kiki's Delivery Service
 toc: true
 rating: 4
 imdb_id: tt0097814
 image: https://m.media-amazon.com/images/M/MV5BOTFhYWI1NGUtZWFhZS00MTdkLWIzZTItMDBhNWNiZDNlMjYyXkEyXkFqcGc@._V1_SX300.jpg
-description: 
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113542022287290280
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lbqt7xkf2s2n
-tags: 
-  - movies
+tags:
+- movies
+serial_number: 2024.BLG.116
 ---
-
-
-
 A lovely heartfelt self-discovery film for kids. My favorite character was her cat companion - they animated his jumps better than any I've seen before.
 
 For some reason, it was really comforting to me that the witches exist in the regular world and have regular world problems like the rest of us.

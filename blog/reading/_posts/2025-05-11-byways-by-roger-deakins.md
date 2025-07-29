@@ -11,9 +11,8 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lovykq2cem2l
 tags:
 - photography
 - movies
+serial_number: 2025.BLG.066
 ---
-
-
 My friend Ned picked up this book after we went to an exhibit of Deakins' photography at the Atheneum Center and watched a screening of a film on which he was Director of Photography: [No Country for Old Men](https://www.joshbeckman.org/blog/watching/letterboxd-review-823846485-no-country-for-old-men).
 
 ![Byways book](/assets/images/ba62da82-6f64-4cb8-997a-46f23fa181ff.jpeg)

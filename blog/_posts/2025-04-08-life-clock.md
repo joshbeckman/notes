@@ -1,24 +1,23 @@
 ---
 layout: Post
-date: 2025-04-08 12:42:53 +0000
-title: "Life Clock"
+date: 2025-04-08 12:42:53.000000000 +00:00
+title: Life Clock
 toc: true
-image: /assets/images/8eec76d6-a4a6-414d-aa3b-c5d6da4404f0.jpeg
-description: 
+image: "/assets/images/8eec76d6-a4a6-414d-aa3b-c5d6da4404f0.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114302854447520150
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lmcpcgo6u22v
 tags:
-  - personal-blog
-  - software-engineering
-  - time
-  - motivation
-  - tools
+- personal-blog
+- software-engineering
+- time
+- motivation
+- tools
 redirect_from:
-  - /counter-redirect
-  - /counter-redirect/
+- "/counter-redirect"
+- "/counter-redirect/"
+serial_number: 2025.BLG.058
 ---
-
-
 After [I built my little counter](https://www.joshbeckman.org/blog/breathing-life-into-my-little-counter) last year, it got a flurry of attention. It [got pretty large](https://www.joshbeckman.org/replies/113703362386236392) and was killed off a bunch as well. But after a while the attention fell off and I was really the only one tending to it, growing it. And something so big and bold needed more activity.
 
 So last week, in the spirit of [Time Since Launch (CW&T)](https://cwandt.com/products/time-since-launch?variant=19682206089275) and [Your Life in Weeks (Wait But Why)](https://waitbutwhy.com/2014/05/life-weeks.html), I made it my own *Life Clock*. It now counts the hours since I was born.

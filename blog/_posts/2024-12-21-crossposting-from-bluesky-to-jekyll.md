@@ -1,9 +1,9 @@
 ---
 layout: Post
-date: 2024-12-21 17:25:52 +0000
-title: "Cross-posting from Bluesky to Jekyll"
+date: 2024-12-21 17:25:52.000000000 +00:00
+title: Cross-posting from Bluesky to Jekyll
 toc: true
-image: /assets/images/94DC2326C74C413C8550148F3A798DD2.png
+image: "/assets/images/94DC2326C74C413C8550148F3A798DD2.png"
 description: Archiving and syndicating Bluesky posts to my site
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113694841211210705
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lduow5rw6s2y
@@ -12,8 +12,8 @@ tags:
 - code-snippets
 - personal-blog
 - jekyll
+serial_number: 2024.BLG.137
 ---
-
 As the inverse of how I set up [cross\-posting to Bluesky](https://www.joshbeckman.org/blog/crossposting-to-bluesky-from-jekyll) for this site \(to ensure that I am publishing on my own site and syndicating elsewhere: POSSE\), I have now set up cross\-posting *from* Bluesky *into* this site\. This inverse \- archiving content from other networks into my home site \- is called Publish Elsewhere Syndicate On Site: PESOS\.
 
 As part of [publishing where the people are](https://www.joshbeckman.org/blog/gotta-publish-where-the-people-are), I want to reply to Bluesky posts in Bluesky\. But I still want them here for archival/linking/discovery/etc\. So, I’ve set up a new section on this site for [replies and threads](https://www.joshbeckman.org/replies/)\.

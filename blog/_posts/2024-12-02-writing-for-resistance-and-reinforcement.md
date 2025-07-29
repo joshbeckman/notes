@@ -1,17 +1,17 @@
 ---
 layout: Post
-date: 2024-12-02 13:52:44 +0000
-title: "Writing for Resistance and Reinforcement"
+date: 2024-12-02 13:52:44.000000000 +00:00
+title: Writing for Resistance and Reinforcement
 toc: true
-image: 
-description: 
+image:
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113595759471842062
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lciousp3sf2d
 tags:
 - publishing
 - writing
+serial_number: 2024.BLG.119
 ---
-
 One of the things I want to do as I continue to embed myself in my personal site is use it to \- in whatever small way \- help others\.
 
 One way I can do that, following the recent US election, is to resist fascism and political movements I know are harmful to people\. I need to commit to publishing my thoughts about how we should be governing ourselves and what I want government to do\.

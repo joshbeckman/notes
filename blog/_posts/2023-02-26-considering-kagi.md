@@ -12,8 +12,8 @@ redirect_from:
 tags:
 - tools
 - search
+serial_number: 2023.BLG.010
 ---
-
 ## How It Started
 
 I found myself often frustrated with the search results and experience on Google recently. I use my keyboard for everything on my computer but it forced me to use the mouse. I wanted to search for a specific showtime for an upcoming concert but the entire screen was filled with ads and other ‘summarization’ features that prevented me from finding a link quickly. Search results were often to spam websites. Clicking on links usually triggered a redirect to the site (from Google) that had a high latency at the least convenient times.

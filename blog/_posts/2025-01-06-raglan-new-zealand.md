@@ -1,19 +1,19 @@
 ---
 layout: Post
-date: 2025-01-06 04:04:36 +0000
-title: "Raglan, New Zealand"
+date: 2025-01-06 04:04:36.000000000 +00:00
+title: Raglan, New Zealand
 toc: true
 category: traveling
-image: /assets/images/58067817769A418D90B35E195F26EAC3.jpeg
-description: 
+image: "/assets/images/58067817769A418D90B35E195F26EAC3.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113864713110307720
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lgdwskhhgs2k
-tags: 
+tags:
 - travel
 - new-zealand
 - exploration
+serial_number: 2025.TEG.003
 ---
-
 A surfer town with a view of the jungle.
 
 ![](/assets/images/C581C56E92EE406189E269E37E35366C.jpeg)

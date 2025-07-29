@@ -14,9 +14,8 @@ tags:
 - tools
 - epistemology
 - popular
+serial_number: 2025.BLG.089
 ---
-
-
 ![balloons on a chain link fence](/assets/images/0446fa9e-88c8-4bec-982f-0940c4007afa.jpeg)
 
 I've added two new research tools to my site. They act as a mirror to help me find emergent thinking and encourage exploration of the relationships between my years of reading and writing. They [make the links legible](https://www.joshbeckman.org/blog/learn-to-link-better) and help me strengthen the centers (instead of [weeding the edges](https://www.joshbeckman.org/blog/weeding-the-edges)).

@@ -8,8 +8,8 @@ tags:
 redirect_from:
 - "/after-traveling-death-valley"
 - "/after-traveling-death-valley/"
+serial_number: 2023.BLG.020
 ---
-
 I went through and selected a first edit of my photos from Death Valley and I ended with too many to pull into a post here. I was never a good editor of my own work. So I'm left keeping much less than I like but also hopefully less than would bore you. I'll try to put some words in between.
 
 <figure class="kg-card kg-image-card kg-width-full kg-card-hascaption"><img src="/assets/images/L1030746-1.JPG" class="kg-image" alt  width="2000" height="1333" ><figcaption>The view from Red Cathedral in Golden Canyon</figcaption></figure>

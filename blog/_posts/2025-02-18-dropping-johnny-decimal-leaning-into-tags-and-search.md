@@ -1,10 +1,10 @@
 ---
 layout: Post
-date: 2025-02-18 14:01:18 +0000
-title: "Dropping Johnny Decimal: Leaning Into Tags and Search"
+date: 2025-02-18 14:01:18.000000000 +00:00
+title: 'Dropping Johnny Decimal: Leaning Into Tags and Search'
 toc: true
-image: /assets/images/8eb3446f-a17c-4963-8b3e-75f7c8029036.jpeg
-description: 
+image: "/assets/images/8eb3446f-a17c-4963-8b3e-75f7c8029036.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114026098465391036
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lihseee2d42a
 tags:
@@ -12,9 +12,8 @@ tags:
 - search
 - information-theory
 - network-theory
+serial_number: 2025.BLG.028
 ---
-
-
 ![a radial black tree fern](/assets/images/8eb3446f-a17c-4963-8b3e-75f7c8029036.jpeg)
 
 I am dropping the use of the [Johnny Decimal](https://johnnydecimal.com) categorization framework on this site. For just over a year, I [used it to govern and organize the tags](https://www.joshbeckman.org/notes/about-the-index) used between the posts and pages here.

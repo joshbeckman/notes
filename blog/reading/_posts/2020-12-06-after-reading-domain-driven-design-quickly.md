@@ -8,8 +8,8 @@ tags:
 redirect_from:
 - "/after-reading-domain-driven-design-quickly"
 - "/after-reading-domain-driven-design-quickly/"
+serial_number: 2020.BLG.023
 ---
-
 I read this on recommendation from other people at Shopify. The concepts were good, and I highlighted several sentences, but the text was heavy with jargon.
 
 I was a bit familiar with the concepts of DDD already, but this expanded with helpful examples and additional branches.

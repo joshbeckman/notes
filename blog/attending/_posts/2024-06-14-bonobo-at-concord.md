@@ -1,17 +1,15 @@
 ---
 layout: Post
-date: 2024-06-14 00:00:00 +0000
-title: "Bonobo at Concord"
+date: 2024-06-14 00:00:00.000000000 +00:00
+title: Bonobo at Concord
 toc: true
-image: /assets/images/80c4ac66-001d-4eac-ba6b-292d39e26c40.jpeg
-description: 
+image: "/assets/images/80c4ac66-001d-4eac-ba6b-292d39e26c40.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/112653037706690321
-tags: 
-  - music
+tags:
+- music
+serial_number: 2024.BLG.053
 ---
-
-
-
 I've really enjoyed listening to Bonobo in the past, and so when he announced a DJ set at the opening of a new venue down the street - [Outset](https://outsetlive.com) - I jumped at tickets. 
 
 ![IMG_3122](/assets/images/80c4ac66-001d-4eac-ba6b-292d39e26c40.jpeg)

@@ -8,8 +8,8 @@ toc: true
 imdb_id: tt23561236
 image: https://m.media-amazon.com/images/M/MV5BZDlkZmRlYTctNGJmNy00MjVkLThjZDQtMWY5Zjg2NjlhZDZkXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_SX300.jpg
 rating: 4
+serial_number: 2024.BLG.003
 ---
-
 Jeffrey Wright was great.
 
 I really enjoyed this movie more than I expected to (I expected it to be predictable, and it wasn't).

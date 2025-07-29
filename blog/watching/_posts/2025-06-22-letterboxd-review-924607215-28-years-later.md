@@ -19,6 +19,6 @@ tags:
 - music
 - writing
 - letterboxd
+serial_number: 2025.BLG.097
 ---
-
  <p><img src="https://a.ltrbxd.com/resized/film-poster/9/9/2/7/8/6/992786-28-years-later-0-600-0-900-crop.jpg?v=014e09c066"/></p> <p>What a unique fingerprint this movie will leave in my mind.</p><p>I had moments of appreciating the cinematography. It had moments where I loved the editing. It had moments that gave me genuine horror. It had moments where we, the whole audience, were laughing in disbelief and shock. It had guttural, glistening gore. I’m not even sure I liked it. </p><p>I’m glad the plot had no connection to the original. I’m glad they kept the music similar.</p> 

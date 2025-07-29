@@ -7,14 +7,13 @@ description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114847135889506262
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ltufz3jant2x
 hacker_news_url: https://news.ycombinator.com/item?id=44551171
-redirect_from: /blog/the-hidden-cost-of-humancentric-tools-in-llm-workflows
+redirect_from: "/blog/the-hidden-cost-of-humancentric-tools-in-llm-workflows"
 tags:
 - tools
 - llm
 - optimization
+serial_number: 2025.BLG.110
 ---
-
-
 ![Vines growing on telephone wires](/assets/images/c27d3253-ff59-419c-9d5f-b055bb857167.jpeg)
 
 I built and [released `gh-view-md`](https://www.joshbeckman.org/blog/practicing/releasing-ghviewmd-a-github-cli-extension-for-llmoptimized-issue-and-pr-viewing) because I think we're entering an important phase of LLM development: tool refactoring and script extraction.

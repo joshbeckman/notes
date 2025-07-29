@@ -1,21 +1,20 @@
 ---
 layout: Post
-date: 2025-03-17 13:01:09 +0000
-title: "Bedmounds by Noah Kalina"
+date: 2025-03-17 13:01:09.000000000 +00:00
+title: Bedmounds by Noah Kalina
 toc: true
-image: /assets/images/5c0fe1d8-a02f-4e90-b955-56fca549570d.jpeg
-description: 
+image: "/assets/images/5c0fe1d8-a02f-4e90-b955-56fca549570d.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114178978011823066
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lklovwvvr62x
 rating: 4
 tags:
-  - photography
-  - non-fiction
-  - art
-  - books
+- photography
+- non-fiction
+- art
+- books
+serial_number: 2025.BLG.048
 ---
-
-
 Noah sent me a signed copy of his book when I [called in to his _Hotline Show_](https://www.joshbeckman.org/replies/strange-lights-in-the-sky). Unexpected and generous and made me smile - much like the show.
 
 Like most of his projects, this is a collection of ritual photos - of a simple thing: a mood of bedsheets from each room he's stayed at. It spans multiple years and includes homes and hotels and trailers.

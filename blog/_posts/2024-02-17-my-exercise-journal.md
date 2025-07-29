@@ -1,15 +1,15 @@
 ---
 layout: Post
-date: 2024-02-17 20:40:00 +0000
-title: "My exercise journal"
+date: 2024-02-17 20:40:00.000000000 +00:00
+title: My exercise journal
 toc: true
-image: /assets/images/85D36A3E7A494A1BB6C903D58345FF09.png
-description: 
-tags: 
+image: "/assets/images/85D36A3E7A494A1BB6C903D58345FF09.png"
+description:
+tags:
 - exercise
 - note-taking
+serial_number: 2024.BLG.021
 ---
-
 I was reading [this blog post](https://2ndbreakfast.audreywatters.com/the-case-for-a-paper-journal/?utm_source=substack&utm_medium=email) about how and why this professional runner likes keeping a plain paper notebook for a weight\-lifting and running journal\. It got me thinking: I’ve fallen into something like this over the last few months\.
 
 Not writing things down in paper, but keeping a journal of my exercise\. I keep mine in my digital journal, where I can include photos and attach date/location stamp stuff\. I used to keep a paper weightlifting journal in high school \(because we didn’t have phones everywhere\)\. But I prefer the digital medium because I can include photos and because my hands shake too much \(when I’m really lifting weights\) to write clearly\.

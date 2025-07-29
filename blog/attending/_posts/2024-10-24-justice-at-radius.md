@@ -1,16 +1,16 @@
 ---
 layout: Post
-date: 2024-10-24 00:00:00 +0000
-title: "Justice at Radius"
+date: 2024-10-24 00:00:00.000000000 +00:00
+title: Justice at Radius
 toc: true
-image: /assets/images/a1a981e7-47fc-4610-aac6-1d84303d4233.jpeg
-description: 
+image: "/assets/images/a1a981e7-47fc-4610-aac6-1d84303d4233.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113383478036384190
-tags: 
-  - music
-  - chicago
+tags:
+- music
+- chicago
+serial_number: 2024.BLG.104
 ---
-
 ![Justice performing](/assets/images/a1a981e7-47fc-4610-aac6-1d84303d4233.jpeg)
 
 I've loved _Justice_'s music since we would listen to their debut album on the long drive between Chicago and University of Illinois and yell, "Justice!" as we passed the blazingly-lit Effingham cross on the night highway.

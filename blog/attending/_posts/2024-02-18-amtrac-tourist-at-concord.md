@@ -1,14 +1,14 @@
 ---
 layout: Post
-date: 2024-02-18 02:14:04 +0000
-title: "Amtrac & Tourist at Concord"
+date: 2024-02-18 02:14:04.000000000 +00:00
+title: Amtrac & Tourist at Concord
 toc: true
-image: /assets/images/3288515C7C184F28915E1341DE7C8C40.jpeg
-description: 
-tags: 
+image: "/assets/images/3288515C7C184F28915E1341DE7C8C40.jpeg"
+description:
+tags:
 - music
+serial_number: 2024.BLG.022
 ---
-
 ![Tourist](/assets/images/3288515C7C184F28915E1341DE7C8C40.jpeg)
 
 ![Amtrac](/assets/images/5DB61B5C61B74CDCBD58D9788B9C590B.jpeg)

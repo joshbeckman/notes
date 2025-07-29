@@ -1,12 +1,13 @@
 ---
 layout: Page
 title: Guestbook
-permalink: /guestbook/
-emoji: 💌
+permalink: "/guestbook/"
+emoji: "\U0001F48C"
 searchable: true
 tags:
 - index
 - personal-blog
+serial_number: 2024.PAE.020
 ---
 At our home, we have a guestbook in the guest room. It’s a fun way to see who has visited and when.
 

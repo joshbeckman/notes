@@ -1,14 +1,14 @@
 ---
 layout: Post
-date: 2021-11-20 03:01:06 +0000
+date: 2021-11-20 03:01:06.000000000 +00:00
 title: Caribou and Jessy Lanza at Riviera
 toc: true
-image: /assets/images/EE81114422AA4C6385185B2A19FA57FE.jpeg
-description: 
+image: "/assets/images/EE81114422AA4C6385185B2A19FA57FE.jpeg"
+description:
 tags:
 - music
+serial_number: 2021.BLG.006
 ---
-
 ![](/assets/images/EE81114422AA4C6385185B2A19FA57FE.jpeg)
 
 One of the best concerts I’ve ever been to\. Jessy Lanza was a *fantastic* opener and really captured our attention\. She played a great building set and had quirky visuals of old folks dancing and just completely won over the crowd\.

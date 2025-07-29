@@ -1,17 +1,15 @@
 ---
 layout: Post
-date: 2024-06-28 00:00:00 +0000
-title: "Shopify Summit 2024"
+date: 2024-06-28 00:00:00.000000000 +00:00
+title: Shopify Summit 2024
 toc: true
-image: /assets/images/d9f08a45-5c70-4364-9130-0793c38ad9c1.jpeg
-description: 
+image: "/assets/images/d9f08a45-5c70-4364-9130-0793c38ad9c1.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/112788933052679041
-tags: 
-  - shopify
+tags:
+- shopify
+serial_number: 2024.BLG.060
 ---
-
-
-
 I spent the week in Toronto's Enercare Center, talking to hundreds of the thousands of people there with me.
 
 ![IMG_3257](/assets/images/d9f08a45-5c70-4364-9130-0793c38ad9c1.jpeg)

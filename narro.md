@@ -4,9 +4,10 @@ toc: true
 title: Narro
 image: "/assets/images/apps.png"
 date: '2023-01-30 04:17:14'
-permalink: /narro/
+permalink: "/narro/"
 tags: narro
 searchable: true
+serial_number: 2023.PAE.001
 ---
 ![Narro](/assets/images/apps.png)
 

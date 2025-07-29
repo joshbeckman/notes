@@ -9,7 +9,7 @@ tags:
 redirect_from:
 - "/after-reading-the-color-of-law"
 - "/after-reading-the-color-of-law/"
+serial_number: 2020.BLG.019
 ---
-
 A great and terrible catalog on the history of systematic racial oppression throughout the United States. Several examples were not far from where I read this and they hit close to home.
 

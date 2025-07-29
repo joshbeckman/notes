@@ -5,8 +5,8 @@ searchable: true
 tags:
 - index
 - personal-blog
+serial_number: 2025.PAE.004
 ---
-
 These are post sequences: chains of posts where each links to the next. The minimum sequence length is 3 posts (two is just a link). Sequences can be used to explore a thought in depth, following a curated path through related posts, notes, and comments. Read about [how these are found](https://www.joshbeckman.org/blog/tracing-sequences-and-finding-anchors). (See also: [Anchors](/anchors).)
 
 The sequences are ordered by length, with the longest first. So far, there are {{ site.data.sequences.size }} known sequences.

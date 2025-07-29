@@ -1,16 +1,16 @@
 ---
 layout: Post
-date: 2024-06-16 00:00:00 +0000
-title: "Coffee Walk While Learning Starbucks"
+date: 2024-06-16 00:00:00.000000000 +00:00
+title: Coffee Walk While Learning Starbucks
 toc: true
-image: 
-description: 
+image:
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/112641705054000929
-tags: 
-  - walking
-  - cooking
+tags:
+- walking
+- cooking
+serial_number: 2024.BLG.054
 ---
-
 I like talking long walks on Sunday. It rests me a bit and rejuvenates my connection to the neighborhood. 
 
 Today I’m listening to [the Acquired podcast about the history of Starbucks with Howard Schultz](https://www.acquired.fm/episodes/starbucks-with-howard-schultz) while I walk. And I’m trying to find new local coffee roasters. 

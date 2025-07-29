@@ -1,14 +1,15 @@
 ---
 layout: Page
 title: Insight
-permalink: /insight/
-emoji: 💡
+permalink: "/insight/"
+emoji: "\U0001F4A1"
 searchable: true
 tags:
 - index
 - personal-blog
 - llm
 - ai
+serial_number: 2024.PAE.022
 ---
 This page generates "insights" from my posts - you can [read about how it works](https://www.joshbeckman.org/blog/using-an-llmand-rag-to-wring-insights-from-my-posts).
 

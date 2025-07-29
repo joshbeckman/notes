@@ -7,8 +7,8 @@ tags:
 redirect_from:
 - "/ways-im-available-to-help"
 - "/ways-im-available-to-help/"
+serial_number: 2020.BLG.014
 ---
-
 > TLDR: email me at josh at joshbeckman.org
 
 To better open my experience and privilege as a resource for others, I wanted to take some time to explicitly write down the ways I’m available to help folks on the internet that I don’t already know. This is an initial list that will probably grow, shrink, and change over time. This post and some of the wording in it was heavily inspired by [Will Larson](https://lethain.com/ways-i-help/)’s post on the same topic.

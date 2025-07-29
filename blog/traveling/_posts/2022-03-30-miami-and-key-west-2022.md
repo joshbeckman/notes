@@ -10,8 +10,8 @@ tags:
 redirect_from:
 - "/miami-and-key-west-2022"
 - "/miami-and-key-west-2022/"
+serial_number: 2022.BLG.011
 ---
-
 <figure class="kg-card kg-image-card"><img src="/assets/images/D9242631-E3E2-437A-8988-63815B7DD74C.jpeg" /></figure>
 
 Marybeth and I took a trip down to Key West and Miami at the end of March.

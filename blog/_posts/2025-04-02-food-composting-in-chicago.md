@@ -1,21 +1,20 @@
 ---
 layout: Post
-date: 2025-04-02 12:43:20 +0000
-title: "Food Composting in Chicago"
+date: 2025-04-02 12:43:20.000000000 +00:00
+title: Food Composting in Chicago
 toc: true
-image: /assets/images/2ce39967-1e6b-4049-9e09-30a1b82f00e3.jpeg
-description: 
+image: "/assets/images/2ce39967-1e6b-4049-9e09-30a1b82f00e3.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114269576197946323
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lltwfa5ckh26
 tags:
-  - chicago
-  - environment
-  - gardening
-  - food
-  - recycling
+- chicago
+- environment
+- gardening
+- food
+- recycling
+serial_number: 2025.BLG.057
 ---
-
-
 ![Ad for food composting on the L in Chicago](/assets/images/2ce39967-1e6b-4049-9e09-30a1b82f00e3.jpeg)
 
 By composting your food waste, you can greatly cut down on your garbage output and greatly reduce the smelliness in your garbage. It also reduces greenhouse emissions and provides a cheap way to enrich soil for growing plants or more food. Where I grew up, we always had a compost pile in our yard. But in a city, we don't usually have that space. But we can still compost.

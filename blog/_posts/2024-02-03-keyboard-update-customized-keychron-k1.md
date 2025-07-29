@@ -1,12 +1,12 @@
 ---
 layout: Post
-date: 2024-02-03 17:48:56 +0000
-title: "Customized Keychron K1"
+date: 2024-02-03 17:48:56.000000000 +00:00
+title: Customized Keychron K1
 toc: true
-image: /assets/images/0D0C0732479844BC89816879C8C01510.jpeg
+image: "/assets/images/0D0C0732479844BC89816879C8C01510.jpeg"
 tags: tools folk-creations
+serial_number: 2024.BLG.013
 ---
-
 I use a keyboard for 8\+ hours every day, so I need mine to be a help to my hands and not a hindrance\. I’ve been building on a Keychron K1 base for a few months now and here’s how I got there\.
 
 ## History

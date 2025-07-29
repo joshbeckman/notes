@@ -1,20 +1,18 @@
 ---
 layout: Post
-date: 2024-07-11 00:00:00 +0000
-title: "Bully at Empty Bottle"
+date: 2024-07-11 00:00:00.000000000 +00:00
+title: Bully at Empty Bottle
 toc: true
-image: /assets/images/f5422003-4e9b-4ea8-93cc-74f9c9c38e75.jpeg
-description: 
+image: "/assets/images/f5422003-4e9b-4ea8-93cc-74f9c9c38e75.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/112794595458071001
-tags: 
-  - music
-  - chicago
-  - recreational-drugs
-  - cocktails
+tags:
+- music
+- chicago
+- recreational-drugs
+- cocktails
+serial_number: 2024.BLG.064
 ---
-
-
-
 ![IMG_3290](/assets/images/f5422003-4e9b-4ea8-93cc-74f9c9c38e75.jpeg)
 
 This show was part of the [Nothing/Assumed series](https://www.wbez.org/culture-the-arts/2024/01/26/chicago-sober-events-the-nothing-assumed-music-series-at-empty-bottle) of sober events for sober artists. I got a great draft N/A cocktail from the bar: cucumber and raspberry shrub, I think.

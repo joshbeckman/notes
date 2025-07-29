@@ -8,8 +8,8 @@ tags:
 redirect_from:
 - "/timestamp---chicago-startup-tech-dinner"
 - "/timestamp---chicago-startup-tech-dinner/"
+serial_number: 2017.BLG.005
 ---
-
 I am invited to a dinner with other team leaders from other tech startup companies in the city. We meet at a comfortable restaurant and order cocktails. Out of our nine members, two are women. Eight are white. Two business founders, three engineers, two product managers, two marketers.
 
 I spend the first third of the time swapping engineering stacks with the person next to me. He is “an expert on Facebook tech,” and an enthusiastic supporter of [Flow](https://flow.org) and [React Native](https://facebook.github.io/react-native/). He doesn’t build in strict React Native, though: he builds apps based on a third party solution that manages React Native for you. His buddy is the founder of that third party. The app he is building has missed its expected launch date and his boss, across the table, is unhappy about that.

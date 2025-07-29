@@ -1,18 +1,18 @@
 ---
 layout: Post
-date: 2024-08-17 00:00:00 +0000
-title: "Big Wild at Red Rocks"
+date: 2024-08-17 00:00:00.000000000 +00:00
+title: Big Wild at Red Rocks
 toc: true
-image: /assets/images/02ba18c4-2c7e-4807-8ef7-184e8fec8b6e.jpeg
-description: 
+image: "/assets/images/02ba18c4-2c7e-4807-8ef7-184e8fec8b6e.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/112987115341153767
-tags: 
-  - music
-  - physical-architecture
-  - friends
-  - travel
+tags:
+- music
+- physical-architecture
+- friends
+- travel
+serial_number: 2024.BLG.084
 ---
-
 We took a shuttle bus from the train station [in Denver](/blog/traveling/denver-august-2024) out of the city and up the mountain to the best outdoor venue I've ever seen.[^1] Of course, Red Rocks had been built up for me as a bucket-list venue, and it held up. 
 
 When Bill and Emily said they had booked the trip for the weekend, Marybeth and I nudged our way in. We've seen Big Wild a couple times before, but I knew the outdoor amphitheater was going to be his sweet spot. 

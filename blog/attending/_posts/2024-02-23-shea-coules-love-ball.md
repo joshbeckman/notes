@@ -1,14 +1,14 @@
 ---
 layout: Post
-date: 2024-02-23 02:36:21 +0000
-title: "Shea Couleé's Love Ball"
+date: 2024-02-23 02:36:21.000000000 +00:00
+title: Shea Couleé's Love Ball
 toc: true
-image: /assets/images/13AABB7A23FC4E1498B373CC9CE03E8C.jpeg
-description: 
-tags: 
-  - music
+image: "/assets/images/13AABB7A23FC4E1498B373CC9CE03E8C.jpeg"
+description:
+tags:
+- music
+serial_number: 2024.BLG.028
 ---
-
 ![](/assets/images/13AABB7A23FC4E1498B373CC9CE03E8C.jpeg)
 
 We sat too far back at Concord for my liking, but we still had a grand old time at the Love Ball\.

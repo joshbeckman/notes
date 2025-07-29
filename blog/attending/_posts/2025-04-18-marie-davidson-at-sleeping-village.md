@@ -1,19 +1,18 @@
 ---
 layout: Post
-date: 2025-04-18 07:35:05 -0500
-title: "Marie Davidson at Sleeping Village"
+date: 2025-04-18 07:35:05.000000000 -05:00
+title: Marie Davidson at Sleeping Village
 toc: true
-image: /assets/images/a34ed525-2000-4f56-a730-59fe16c1066b.jpeg
-description: 
+image: "/assets/images/a34ed525-2000-4f56-a730-59fe16c1066b.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114377167452391508
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lndpe4osgw2l
 tags:
-  - sleeping-village-venue
-  - music
-  - chicago
+- sleeping-village-venue
+- music
+- chicago
+serial_number: 2025.BLG.060
 ---
-
-
 I love the Sleeping Village venue. It's a bit of a bike ride to get there, but there's good food nearby and good drinks inside and a relaxed patio atmosphere that make it easy to enjoy. We got a great spot for Marie's show, even with the crowd getting dense after a false start with some broken CDJ equipment.
 
 ![Marie Davidson DJing](/assets/images/a34ed525-2000-4f56-a730-59fe16c1066b.jpeg)

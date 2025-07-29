@@ -7,8 +7,8 @@ redirect_from:
 - "/increased-speed-and-urgency/"
 tags:
 - work
+serial_number: 2015.BLG.024
 ---
-
 From Jack Dorsey’s re-introduction as CEO of Twitter today:
 
 > My focus is to build teams that move fast, and learn faster. In the past 3 months we have increased our speed and urgency at both companies.[October 5, 2015](https://twitter.com/jack/status/651003529444765696)

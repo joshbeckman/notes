@@ -11,9 +11,8 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/114823793332879
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ltk2c32ntg2e
 tags:
 - music
+serial_number: 2025.BLG.106
 ---
-
-
 This album is so far my favorite of the summer. It's irreverent (just what I need as a tonic as the American government tumbles into terrifyingly serious disarray), off-kilter (a song about peeing into a jar), and contains some lovely synth hooks that have put the songs on repeat in my head and kept me dancing as the hot days roll in.
 
 The line on [Gelli's artist bio](https://gelli.world/gelli-haha) is perfect:

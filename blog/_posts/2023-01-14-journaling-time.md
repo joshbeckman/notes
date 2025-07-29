@@ -2,11 +2,11 @@
 layout: Post
 title: Journaling time
 toc: true
-image: 
-description: 
+image:
+description:
 tags: note-taking meditation
+serial_number: 2023.BLG.001
 ---
-
 I make reading time for myself every day\. \(I am really enjoying the Reader app for consuming everything, encouraging ‘discarding’ of updates, and encouragement to note/notate what I read\.\)
 I need to writing time for myself every day as well\. I have been pretty good at making a journal ‘entry’ every day now for a while, but I don’t think they’re all beneficial as sources of reflection or inspiration \(what I want out of my journaling practice and content\)\.
 This \- right here \- *this* is what I need to be spending more time doing\. I’ve gotten better at making this time and filling it with writing practice ​*at work*​, but I need to make the same space and change in my personal time\.

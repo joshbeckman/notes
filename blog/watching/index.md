@@ -1,15 +1,15 @@
 ---
 layout: Page
 title: Watching
-emoji: 🎬
+emoji: "\U0001F3AC"
 searchable: true
 categories:
 - blog
 tags:
 - movies
 - index
+serial_number: 2024.PAE.011
 ---
-
 These are movies I've been watching.
 
 {% assign postsByMonth = 

@@ -1,19 +1,19 @@
 ---
 layout: Post
-date: 2025-01-05 09:44:02 +0000
-title: "Wellington, New Zealand"
+date: 2025-01-05 09:44:02.000000000 +00:00
+title: Wellington, New Zealand
 toc: true
 category: traveling
-image: /assets/images/A178EBB0287747E3AA5A59D19D14ECEA.jpeg
-description: 
+image: "/assets/images/A178EBB0287747E3AA5A59D19D14ECEA.jpeg"
+description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113864713093382658
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lgdwshz6up2k
-tags: 
+tags:
 - travel
 - new-zealand
 - movies
+serial_number: 2025.TEG.002
 ---
-
 A city pressed by wind between the hills and the sea.
 
 ![](/assets/images/82F2077A823A4276BB0B5C7B809D05B1.jpeg)

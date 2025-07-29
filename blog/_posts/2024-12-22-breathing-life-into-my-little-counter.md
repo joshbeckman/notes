@@ -1,20 +1,20 @@
 ---
 layout: Post
-date: 2024-12-22 16:01:29 +0000
-title: "Hacking Life into My Little Counter"
-image: /assets/images/47E8A68F0D414D79AF690B9B473DF9AD.jpeg
+date: 2024-12-22 16:01:29.000000000 +00:00
+title: Hacking Life into My Little Counter
+image: "/assets/images/47E8A68F0D414D79AF690B9B473DF9AD.jpeg"
 description: And interactive art piece, counting care
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113697670105981335
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ldvx4h7cwg2i
-tags: 
-  - shopify
-  - hacking
-  - machines
-  - folk-creations
-  - workspaces
-  - popular
+tags:
+- shopify
+- hacking
+- machines
+- folk-creations
+- workspaces
+- popular
+serial_number: 2024.BLG.140
 ---
-
 I always have fun bringing the digital into the physical world\. Things that you can touch and hear give tactile joy \- bonus points if there’s no/low\-power display\. So someone at work posted that [the Shopify Counter](https://shopify.supply/products/shopify-counter) was available for something like 10% of [the manufacturer’s list price](https://www.smiirl.com/en/counter/category/social#buyit), I jumped at the chance to pick one up and hack something together\. By default, the counter guides you to configure sales/orders to display, but we can have more fun than that\.
 
 ![counter](/assets/images/47E8A68F0D414D79AF690B9B473DF9AD.jpeg)

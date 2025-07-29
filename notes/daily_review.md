@@ -3,12 +3,12 @@ layout: Page
 title: Daily Review
 categories:
 - notes
-permalink: /notes/daily-review/
+permalink: "/notes/daily-review/"
 searchable: true
 tags:
 - index
+serial_number: 2025.PAE.007
 ---
-
 This is a mirror of my [daily review provided by Readwise]({{site.data.readwise_daily_review[':url']}}) (a spaced repetition system for my notes).
 
 {% for highlight in site.data.readwise_daily_review[':highlights'] %}

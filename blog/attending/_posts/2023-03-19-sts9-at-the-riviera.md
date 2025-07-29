@@ -1,13 +1,13 @@
 ---
 layout: Post
-date: 2023-03-19 02:35:45 +0000
-title: "STS9 at The Riviera"
+date: 2023-03-19 02:35:45.000000000 +00:00
+title: STS9 at The Riviera
 toc: true
-image: /assets/images/7DCE4C6A1C5448999D1E9E9A82973FE0.jpeg
-tags: 
-  - music
+image: "/assets/images/7DCE4C6A1C5448999D1E9E9A82973FE0.jpeg"
+tags:
+- music
+serial_number: 2023.BLG.017
 ---
-
 With Dan, Paul, and Walters\.
 
 The concert went sooo long, and had so much down time between the opener \(Zoska\) and the main show \(and an intermission *and* an encore\)\.

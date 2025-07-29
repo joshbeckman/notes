@@ -8,8 +8,8 @@ tags:
 redirect_from:
 - "/beyonce-at-soldier-field"
 - "/beyonce-at-soldier-field/"
+serial_number: 2023.BLG.036
 ---
-
 <figure class="kg-card kg-image-card kg-width-wide"><img src="/assets/images/IMG_1547-1.jpeg" class="kg-image" alt=""  width="2000" height="1125"  sizes="(min-width: 1200px) 1200px"></figure>
 
 You're pretty sure it's going to be a fun night when, as you walk up to your friends' apartment, you run into a couple _more_ friends also going to the show.
