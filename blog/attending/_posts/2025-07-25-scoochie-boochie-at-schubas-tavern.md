@@ -5,7 +5,7 @@ title: Scoochie Boochie at Schubas Tavern
 toc: true
 image: "/assets/images/34ef684d-6d10-4514-9022-fc4623f6b5c3.jpeg"
 description:
-mastodon_social_status_url: 'false'
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114934931716086287
 bluesky_status_url: 'false'
 tags:
 - music
