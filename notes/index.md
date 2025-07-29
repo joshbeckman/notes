@@ -4,7 +4,7 @@ title: Notes
 emoji: "\U0001F4DD"
 tags:
 - index
-serial_number: 2024.PAE.002
+serial_number: 2024.PAE.001
 ---
 I collect notes from things I read and hear.
 There are currently {{ site.categories['notes'].size }} notes collected here.
