@@ -11,9 +11,8 @@ tags:
 - music
 - chicago
 - schubas-tavern-venue
+serial_number: 2025.BLG.116
 ---
-
-
 ![Scoochie Boochie](/assets/images/34ef684d-6d10-4514-9022-fc4623f6b5c3.jpeg)
 
 A friend of mine came into town and stayed with me this weekend and his friend was playing a concert at Schubas so we bought tickets early and it was a sold out show and our friend was working the merch table and also danced on stage dressed as Jesus Christ and everyone on the floor knew all the lyrics except for us.

@@ -4,7 +4,7 @@ title: Photography
 emoji: "\U0001F3DE️"
 categories:
 - blog
-serial_number: 2024.PAE.013
+serial_number: 2024.PAE.011
 ---
 {% assign photo_feature_post = site.categories['blog'] | find_exp: "item", "item.photo_feature" %}
 <a href="{{ photo_feature_post.url }}">
