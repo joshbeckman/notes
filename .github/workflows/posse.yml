@@ -228,7 +228,7 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "josh@joshbeckman.org"
-          git add **/*.md
+          git add \*\*/\*.md
           git commit -m "chg(dev): Serialize"
       - name: Push changes
         if: steps.any_changes_serialize.outputs.changed != 0
