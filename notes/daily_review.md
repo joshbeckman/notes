@@ -19,3 +19,7 @@ This is a mirror of my [daily review provided by Readwise]({{site.data.readwise_
 {% endif %}
 {% endfor %}
 {% endfor %}
+
+You've now [completed the daily review]({{site.data.readwise_daily_review[':url']}}).
+
+Alternatively, you can look through [posts from this day in history](/on-this-day) or browse the [heatmap calendar](/heatcal) or choose a post [at random](/random).
