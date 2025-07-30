@@ -222,7 +222,7 @@ jobs:
         run: bundle exec utilities/serialize
       - name: Determine if changes were made
         id: any_changes_serialize
-        run: echo "changed=$(git status --porcelain **/*.md | wc -l)" >> $GITHUB_OUTPUT
+        run: echo "changed=$(git status --porcelain \*\*/\*.md | wc -l)" >> $GITHUB_OUTPUT
       - name: Commit changes
         if: steps.any_changes_serialize.outputs.changed != 0
         run: |
