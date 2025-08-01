@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/e97cb160-e10e-4f27-a5c3-f39f1455e29f.jpeg"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114954027779060038
-bluesky_status_url: 'false'
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lvduzua7wv2e
 tags:
 - chicago
 - vic-theatre-venue
