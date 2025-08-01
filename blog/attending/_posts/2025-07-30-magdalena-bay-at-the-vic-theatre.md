@@ -11,9 +11,8 @@ tags:
 - chicago
 - vic-theatre-venue
 - concerts
+serial_number: 2025.BLG.119
 ---
-
-
 ![Magdalena Bay on stage in a beam of light with a vampire hand and sun as artwork](/assets/images/e97cb160-e10e-4f27-a5c3-f39f1455e29f.jpeg)
 
 I absolutely _adored_ Magdalena Bay's latest album, "Imaginal Disk", so I jumped on a last-minute ticket (with a group of friends) when they were going to perform a sold out pre-Lollapalooza "aftershow".
