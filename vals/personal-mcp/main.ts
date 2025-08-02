@@ -5,6 +5,7 @@ import { StreamableHTTPServerTransport } from "npm:@modelcontextprotocol/sdk@1.1
 import { McpServer, ResourceTemplate } from "npm:@modelcontextprotocol/sdk@1.16.0/server/mcp.js";
 import { email } from "https://esm.town/v/std/email";
 import { blob } from "https://esm.town/v/std/blob";
+import { sqlite } from "https://esm.town/v/std/sqlite";
 
 const app = new Hono();
 
@@ -17,6 +18,12 @@ const FIELDS = [
   "status",
   "timezone",
 ];
+
+// Custom Zod schema for username validation
+const usernameSchema = z.string()
+  .min(1, "Username cannot be empty")
+  .max(39, "Username must be 39 characters or less")
+  .regex(/^[a-zA-Z0-9][a-zA-Z0-9._-]*[a-zA-Z0-9]$/, "Username must start and end with alphanumeric characters, and can contain letters, numbers, dots, underscores, and hyphens");
 // Get environment variables
 const READ_PASSWORD = Deno.env.get("READ_PASSWORD") || "read123";
 const WRITE_PASSWORD = Deno.env.get("WRITE_PASSWORD") || "write123";
@@ -40,6 +47,50 @@ async function initializeStorage() {
     });
     await blob.setJSON(STORAGE_KEY, defaultValues);
   }
+}
+
+// Initialize SQLite tables for message tracking
+async function initializeDatabase() {
+  // already done, so no need to reinitialize
+  // await Promise.all([
+  //   sqlite.execute(`
+  //     CREATE TABLE IF NOT EXISTS personal_mcp_emails (
+  //       id INTEGER PRIMARY KEY AUTOINCREMENT,
+  //       subject TEXT NOT NULL,
+  //       body TEXT NOT NULL,
+  //       from_sender TEXT NOT NULL,
+  //       to_recipient TEXT NOT NULL,
+  //       reply_to TEXT,
+  //       sent_at DATETIME DEFAULT CURRENT_TIMESTAMP
+  //     )
+  //   `),
+  //   sqlite.execute(`
+  //     CREATE TABLE IF NOT EXISTS personal_mcp_sms_messages (
+  //       id INTEGER PRIMARY KEY AUTOINCREMENT,
+  //       body TEXT NOT NULL,
+  //       from_sender TEXT NOT NULL,
+  //       to_recipient TEXT NOT NULL,
+  //       sent_at DATETIME DEFAULT CURRENT_TIMESTAMP
+  //     )
+  //   `)
+  // ]);
+  if (Math.random() < 0.5) {
+      return; // 50% chance to skip cleanup
+  }
+  // Clean up old entries (older than 2 weeks) in parallel
+  const twoWeeksAgo = new Date();
+  twoWeeksAgo.setDate(twoWeeksAgo.getDate() - 14);
+  const cutoffDate = twoWeeksAgo.toISOString();
+  await Promise.all([
+    sqlite.execute({
+      sql: `DELETE FROM personal_mcp_emails WHERE sent_at < ?`,
+      args: [cutoffDate]
+    }),
+    sqlite.execute({
+      sql: `DELETE FROM personal_mcp_sms_messages WHERE sent_at < ?`,
+      args: [cutoffDate]
+    })
+  ]);
 }
 
 // Helper function to get current values
@@ -597,37 +648,48 @@ async function setupMcpServer(): Promise<McpServer> {
         }
     );
     server.registerTool(
-        "email_josh",
+        "send_email_to_josh",
         {
             title: "Email Josh Beckman",
-            description: "Send an email to Josh Beckman. The body should be a plain text message in markdown syntax.",
+            description: "Send an email to Josh Beckman. The 'subject' is the email subject line to uniquely identify the topic. The 'body' is the email content in plain text (markdown syntax supported). The 'from' field should uniquely identify the sender (either an agent's handle or a human user's username/handle). The optional 'replyTo' field sets the reply-to email address for responses to have Josh respond directly rather than through this MCP server.",
             inputSchema: {
                 subject: z.string(),
                 body: z.string(),
-                replyTo: z.string().email("Must be a valid email address"),
+                from: usernameSchema,
+                replyTo: z.string().email("Must be a valid email address").optional(),
             },
         },
-        async ({ subject, body, replyTo }) => {
-            await email({
+        async ({ subject, body, from, replyTo }) => {
+            const emailBody = `${body}\n\nFrom: ${from}`;
+            if (!replyTo) {
+              replyTo = 'joshbeckman-personal-mcp@valtown.email';
+            }
+            const emailOptions: any = {
               subject: subject,
-              text: body,
+              text: emailBody,
               replyTo: replyTo,
+            };
+            await email(emailOptions);
+            await sqlite.execute({
+              sql: `INSERT INTO personal_mcp_emails (subject, body, from_sender, to_recipient, reply_to) VALUES (?, ?, ?, ?, ?)`,
+              args: [subject, body, from, 'josh@joshbeckman.org', replyTo]
             });
             return {
-                content: [{ type: "text", text: `Email "${subject}" sent successfully!` }]
+                content: [{ type: "text", text: `Email "${subject}" sent successfully!\n\nFrom: ${from}${replyTo ? `\nReply-To: ${replyTo}` : ''}` }]
             };
         }
     );
     server.registerTool(
-        "text_josh",
+        "send_sms_text_to_josh",
         {
             title: "Text Josh Beckman",
-            description: "Send a text message (SMS) to Josh Beckman's phone.",
+            description: "Send a text message (SMS) to Josh Beckman's phone. The 'body' is the SMS text message content. The 'from' field should uniquely identify the sender (either an agent's handle or a human user's username/handle).",
             inputSchema: {
-                body: z.string().max(160, "SMS messages should be 160 characters or less"),
+                body: z.string().max(150, "SMS messages should be 150 characters or less"),
+                from: usernameSchema,
             },
         },
-        async ({ body }) => {
+        async ({ body, from }) => {
             if (!VONAGE_API_KEY || !VONAGE_API_SECRET || !VONAGE_FROM_NUMBER || !JOSH_PHONE_NUMBER) {
                 return {
                     content: [{ type: "text", text: "Missing Vonage credentials or phone numbers. Please set VONAGE_API_KEY, VONAGE_API_SECRET, VONAGE_FROM_NUMBER, and JOSH_PHONE_NUMBER environment variables." }]
@@ -645,14 +707,18 @@ async function setupMcpServer(): Promise<McpServer> {
                         api_secret: VONAGE_API_SECRET,
                         from: VONAGE_FROM_NUMBER,
                         to: JOSH_PHONE_NUMBER,
-                        text: body,
+                        text: `${from}:\n\n${body}`,
                     }).toString(),
                 });
 
                 const result = await response.json();
                 if (result.messages && result.messages[0] && result.messages[0].status === "0") {
+                    await sqlite.execute({
+                      sql: `INSERT INTO personal_mcp_sms_messages (body, from_sender, to_recipient) VALUES (?, ?, ?)`,
+                      args: [body, from, JOSH_PHONE_NUMBER]
+                    });
                     return {
-                        content: [{ type: "text", text: `Text message sent successfully! Message ID: ${result.messages[0]["message-id"]}` }]
+                        content: [{ type: "text", text: `Text message sent successfully!\n\nFrom: ${from}\nMessage ID: ${result.messages[0]["message-id"]}` }]
                     };
                 } else {
                     const errorText = result.messages?.[0]?.["error-text"] || "Unknown error";
@@ -667,6 +733,116 @@ async function setupMcpServer(): Promise<McpServer> {
             }
         }
     );
+    server.registerTool(
+        "search_josh_sms_responses",
+        {
+            title: "Search Josh's SMS Responses",
+            description: "Search for SMS messages sent by Josh. The 'to' field should be the username of the recipient (either an agent's handle or a human user's username/handle). The 'body_contains' field is an optional search string to filter messages by content.",
+            inputSchema: {
+                to: usernameSchema,
+                body_contains: z.string().optional(),
+            },
+        },
+        async ({ to, body_contains }) => {
+            if (!JOSH_PHONE_NUMBER) {
+                return {
+                    content: [{ type: "text", text: "JOSH_PHONE_NUMBER not configured" }]
+                };
+            }
+            let sql = `SELECT * FROM personal_mcp_sms_messages WHERE from_sender = ? AND to_recipient = ?`;
+            const args: any[] = [JOSH_PHONE_NUMBER, to];
+            if (body_contains) {
+                sql += ` AND body LIKE ?`;
+                args.push(`%${body_contains}%`);
+            }
+            sql += ` ORDER BY sent_at DESC LIMIT 50`;
+            try {
+                const results = await sqlite.execute({ sql, args });
+                if (!results.rows || results.rows.length === 0) {
+                    return {
+                        content: [{ type: "text", text: `No SMS messages found from Josh to ${to}${body_contains ? ` containing "${body_contains}"` : ''}` }]
+                    };
+                }
+                const messages = results.rows.map((row: any) => ({
+                    body: row[1],
+                    sent_at: row[4]
+                }));
+                let responseText = `Found ${messages.length} SMS message${messages.length === 1 ? '' : 's'} from Josh to ${to}${body_contains ? ` containing "${body_contains}"` : ''}:\n\n`;
+                messages.forEach((msg, index) => {
+                    responseText += `[${new Date(msg.sent_at).toLocaleString()}]\n${msg.body}\n`;
+                    if (index < messages.length - 1) responseText += '\n---\n\n';
+                });
+                return {
+                    content: [{ type: "text", text: responseText }]
+                };
+            } catch (error) {
+                return {
+                    content: [{ type: "text", text: `Error searching SMS messages: ${error.message}` }]
+                };
+            }
+        }
+    );
+    server.registerTool(
+        "search_josh_email_responses",
+        {
+            title: "Search Josh's Email Responses",
+            description: "Search for emails sent by Josh. The 'to' field should be the username of the recipient (either an agent's handle or a human user's username/handle). The 'body_contains' and 'subject_contains' fields are optional search strings to filter messages by content and subject.",
+            inputSchema: {
+                to: usernameSchema,
+                body_contains: z.string().optional(),
+                subject_contains: z.string().optional(),
+            },
+        },
+        async ({ to, body_contains, subject_contains }) => {
+            let sql = `SELECT * FROM personal_mcp_emails WHERE from_sender = 'josh@joshbeckman.org' AND to_recipient = ?`;
+            const args: any[] = [to];
+            if (body_contains) {
+                sql += ` AND body LIKE ?`;
+                args.push(`%${body_contains}%`);
+            }
+            if (subject_contains) {
+                sql += ` AND subject LIKE ?`;
+                args.push(`%${subject_contains}%`);
+            }
+            sql += ` ORDER BY sent_at DESC LIMIT 50`;
+            console.log(`Searching emails with SQL: ${sql}, args: ${JSON.stringify(args)}`);
+            try {
+                const results = await sqlite.execute({ sql, args });
+                if (!results.rows || results.rows.length === 0) {
+                    let searchCriteria = `from Josh to ${to}`;
+                    if (body_contains) searchCriteria += ` with body containing "${body_contains}"`;
+                    if (subject_contains) searchCriteria += ` with subject containing "${subject_contains}"`;
+                    return {
+                        content: [{ type: "text", text: `No emails found ${searchCriteria}` }]
+                    };
+                }
+                const emails = results.rows.map((row: any) => ({
+                    subject: row[1],
+                    body: row[2],
+                    to: row[4],
+                    sent_at: row[6]
+                }));
+                let searchCriteria = '';
+                if (body_contains) searchCriteria += ` with body containing "${body_contains}"`;
+                if (subject_contains) searchCriteria += ` with subject containing "${subject_contains}"`;
+                let responseText = `Found ${emails.length} email${emails.length === 1 ? '' : 's'} from Josh to ${to}${searchCriteria}:\n\n`;
+                emails.forEach((email, index) => {
+                    responseText += `[${new Date(email.sent_at).toISOString()}]\n`;
+                    responseText += `To: ${email.to}\n`;
+                    responseText += `Subject: ${email.subject}\n`;
+                    responseText += `\n${email.body}\n`;
+                    if (index < emails.length - 1) responseText += '\n---\n\n';
+                });
+                return {
+                    content: [{ type: "text", text: responseText }]
+                };
+            } catch (error) {
+                return {
+                    content: [{ type: "text", text: `Error searching emails: ${error.message}` }]
+                };
+            }
+        }
+    );
 
     return server;
   } catch (error) {
@@ -674,6 +850,9 @@ async function setupMcpServer(): Promise<McpServer> {
     throw error;
   }
 }
+
+// Initialize database on startup
+await initializeDatabase();
 
 const mcpServer = await setupMcpServer();
 
