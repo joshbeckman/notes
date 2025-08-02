@@ -6,6 +6,7 @@ import { McpServer, ResourceTemplate } from "npm:@modelcontextprotocol/sdk@1.16.
 import { email } from "https://esm.town/v/std/email";
 import { blob } from "https://esm.town/v/std/blob";
 import { sqlite } from "https://esm.town/v/std/sqlite";
+import Push from "npm:pushover-notifications";
 
 const app = new Hono();
 
@@ -18,6 +19,7 @@ const FIELDS = [
   "status",
   "timezone",
 ];
+const INBOUND_EMAIL_ADDRESS = 'joshbeckman-personal-mcp@valtown.email';
 
 // Custom Zod schema for username validation
 const usernameSchema = z.string()
@@ -662,7 +664,7 @@ async function setupMcpServer(): Promise<McpServer> {
         async ({ subject, body, from, replyTo }) => {
             const emailBody = `${body}\n\nFrom: ${from}`;
             if (!replyTo) {
-              replyTo = 'joshbeckman-personal-mcp@valtown.email';
+              replyTo = INBOUND_EMAIL_ADDRESS;;
             }
             const emailOptions: any = {
               subject: subject,
@@ -675,111 +677,39 @@ async function setupMcpServer(): Promise<McpServer> {
               args: [subject, body, from, 'josh@joshbeckman.org', replyTo]
             });
             return {
-                content: [{ type: "text", text: `Email "${subject}" sent successfully!\n\nFrom: ${from}${replyTo ? `\nReply-To: ${replyTo}` : ''}` }]
+                content: [{ type: "text", text: `Email "${subject}" sent!\n\nFrom: ${from}${replyTo ? `\nReply-To: ${replyTo}` : ''}` }]
             };
         }
     );
     server.registerTool(
-        "send_sms_text_to_josh",
+        "send_push_notification_to_josh",
         {
-            title: "Text Josh Beckman",
-            description: "Send a text message (SMS) to Josh Beckman's phone. The 'body' is the SMS text message content. The 'from' field should uniquely identify the sender (either an agent's handle or a human user's username/handle).",
+            title: "Push Notification to Josh Beckman",
+            description: "Send a push notification to Josh Beckman. The 'title' is the notification title, and the 'body' is the notification content. The 'from' field should uniquely identify the sender (either an agent's handle or a human user's username/handle).",
             inputSchema: {
-                body: z.string().max(150, "SMS messages should be 150 characters or less"),
+                title: z.string().max(50, "Title should be 50 characters or less"),
+                body: z.string().max(150, "Notification messages should be 150 characters or less"),
                 from: usernameSchema,
             },
         },
-        async ({ body, from }) => {
-            if (!VONAGE_API_KEY || !VONAGE_API_SECRET || !VONAGE_FROM_NUMBER || !JOSH_PHONE_NUMBER) {
-                return {
-                    content: [{ type: "text", text: "Missing Vonage credentials or phone numbers. Please set VONAGE_API_KEY, VONAGE_API_SECRET, VONAGE_FROM_NUMBER, and JOSH_PHONE_NUMBER environment variables." }]
-                };
-            }
-
-            try {
-                const response = await fetch("https://rest.nexmo.com/sms/json", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/x-www-form-urlencoded",
-                    },
-                    body: new URLSearchParams({
-                        api_key: VONAGE_API_KEY,
-                        api_secret: VONAGE_API_SECRET,
-                        from: VONAGE_FROM_NUMBER,
-                        to: JOSH_PHONE_NUMBER,
-                        text: `${from}:\n\n${body}`,
-                    }).toString(),
-                });
-
-                const result = await response.json();
-                if (result.messages && result.messages[0] && result.messages[0].status === "0") {
-                    await sqlite.execute({
-                      sql: `INSERT INTO personal_mcp_sms_messages (body, from_sender, to_recipient) VALUES (?, ?, ?)`,
-                      args: [body, from, JOSH_PHONE_NUMBER]
-                    });
-                    return {
-                        content: [{ type: "text", text: `Text message sent successfully!\n\nFrom: ${from}\nMessage ID: ${result.messages[0]["message-id"]}` }]
-                    };
-                } else {
-                    const errorText = result.messages?.[0]?.["error-text"] || "Unknown error";
-                    return {
-                        content: [{ type: "text", text: `Failed to send text message: ${errorText}` }]
-                    };
+        async ({ title, body, from }) => {
+            const message = `${body}\nFrom: ${from}`;
+            const pushover = new Push({
+                token: Deno.env.get("PUSHOVER_API_TOKEN"),
+                user: Deno.env.get("PUSHOVER_USER_KEY"),
+            });
+            pushover.send({
+                title: title,
+                message: message,
+            }, (error, result) => {
+                if (error) {
+                    console.error("Error sending push notification:", error);
+                    throw new Error("Failed to send push notification");
                 }
-            } catch (error) {
-                return {
-                    content: [{ type: "text", text: `Error sending text message: ${error.message}` }]
-                };
-            }
-        }
-    );
-    server.registerTool(
-        "search_josh_sms_responses",
-        {
-            title: "Search Josh's SMS Responses",
-            description: "Search for SMS messages sent by Josh. The 'to' field should be the username of the recipient (either an agent's handle or a human user's username/handle). The 'body_contains' field is an optional search string to filter messages by content.",
-            inputSchema: {
-                to: usernameSchema,
-                body_contains: z.string().optional(),
-            },
-        },
-        async ({ to, body_contains }) => {
-            if (!JOSH_PHONE_NUMBER) {
-                return {
-                    content: [{ type: "text", text: "JOSH_PHONE_NUMBER not configured" }]
-                };
-            }
-            let sql = `SELECT * FROM personal_mcp_sms_messages WHERE from_sender = ? AND to_recipient = ?`;
-            const args: any[] = [JOSH_PHONE_NUMBER, to];
-            if (body_contains) {
-                sql += ` AND body LIKE ?`;
-                args.push(`%${body_contains}%`);
-            }
-            sql += ` ORDER BY sent_at DESC LIMIT 50`;
-            try {
-                const results = await sqlite.execute({ sql, args });
-                if (!results.rows || results.rows.length === 0) {
-                    return {
-                        content: [{ type: "text", text: `No SMS messages found from Josh to ${to}${body_contains ? ` containing "${body_contains}"` : ''}` }]
-                    };
-                }
-                const messages = results.rows.map((row: any) => ({
-                    body: row[1],
-                    sent_at: row[4]
-                }));
-                let responseText = `Found ${messages.length} SMS message${messages.length === 1 ? '' : 's'} from Josh to ${to}${body_contains ? ` containing "${body_contains}"` : ''}:\n\n`;
-                messages.forEach((msg, index) => {
-                    responseText += `[${new Date(msg.sent_at).toLocaleString()}]\n${msg.body}\n`;
-                    if (index < messages.length - 1) responseText += '\n---\n\n';
-                });
-                return {
-                    content: [{ type: "text", text: responseText }]
-                };
-            } catch (error) {
-                return {
-                    content: [{ type: "text", text: `Error searching SMS messages: ${error.message}` }]
-                };
-            }
+            });
+            return {
+                content: [{ type: "text", text: `Push notification sent!\n\nTitle: ${title}\nFrom: ${from}` }]
+            };
         }
     );
     server.registerTool(
