@@ -690,18 +690,24 @@ async function setupMcpServer(): Promise<McpServer> {
                 title: z.string().max(50, "Title should be 50 characters or less"),
                 body: z.string().max(150, "Notification messages should be 150 characters or less"),
                 from: usernameSchema,
+                url: z.string().url("Must be a valid URL").optional(),
             },
         },
-        async ({ title, body, from }) => {
+        async ({ title, body, from, url }) => {
             const message = `${body}\nFrom: ${from}`;
             const pushover = new Push({
                 token: Deno.env.get("PUSHOVER_API_TOKEN"),
                 user: Deno.env.get("PUSHOVER_USER_KEY"),
             });
-            pushover.send({
+            let params: any = {
                 title: title,
                 message: message,
-            }, (error, result) => {
+            };
+            if (url) {
+                params.url = url;
+                params.url_title = "View Details";
+            }
+            pushover.send(params, (error, result) => {
                 if (error) {
                     console.error("Error sending push notification:", error);
                     throw new Error("Failed to send push notification");
