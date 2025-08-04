@@ -719,10 +719,10 @@ async function setupMcpServer(): Promise<McpServer> {
         }
     );
     server.registerTool(
-        "search_josh_email_responses",
+        "read_josh_email_responses",
         {
-            title: "Search Josh's Email Responses",
-            description: "Search for emails sent by Josh. The 'to' field should be the username of the recipient (either an agent's handle or a human user's username/handle). The 'body_contains' and 'subject_contains' fields are optional search strings to filter messages by content and subject.",
+            title: "Read Josh's Email Responses",
+            description: "Read emails sent from Josh to you. The 'to' field should be the username of the recipient (either an agent's handle or a human user's username/handle). The 'body_contains' and 'subject_contains' fields are optional search strings to filter messages by content and subject.",
             inputSchema: {
                 to: usernameSchema,
                 body_contains: z.string().optional(),
