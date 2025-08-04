@@ -12,9 +12,8 @@ tags:
 - llm
 - readwise-ruby
 - language-ruby
+serial_number: 2025.BLG.120
 ---
-
-
 I have a problem. My [Readwise](https://readwise.io/) [Reader](https://readwise.io/read) inbox has over a thousand articles waiting to be read. Despite reading daily, I almost always reach for something recent, leaving that backlog perpetually growing.
 
 I don't just want to clear the queue. I want to optimize for momentum in my reading. When I'm deep in a topic, I want to find the counterpoints and complementary perspectives that will sharpen my thinking. When I'm writing about something, I want to surface the articles from months ago that suddenly become relevant.
