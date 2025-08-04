@@ -5,7 +5,7 @@ title: 'Building Paperboy: A Personal Reading Recommendation Engine'
 toc: true
 image: "/assets/images/c403a529-190b-4c2a-8ac4-5ba840c320d8.png"
 description:
-mastodon_social_status_url: 'false'
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114972426892917389
 bluesky_status_url: 'false'
 tags:
 - automation
