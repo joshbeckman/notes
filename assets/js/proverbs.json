@@ -2,7 +2,7 @@
 permalink: /assets/js/proverbs.json
 ---
 [
-  {%- for proverb in site.data.proverbs -%}
-    {{proverb | jsonify}}{%- unless forloop.last -%},{%- endunless -%}
+  {%- for proverb in site.categories['proverbs'] -%}
+    {{proverb.title | jsonify}}{%- unless forloop.last -%},{%- endunless -%}
   {% endfor %}
 ]

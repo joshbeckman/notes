@@ -15,7 +15,7 @@
       {%- endfor -%}
       </li>
       {%- endif -%}
-      {%- if page.tags -%}
+      {%- if page.tags.size > 0 -%}
       <li class="filed">
       {%- for tag in page.tags -%}
           <a href="/search/?q=%27{{ tag }}&keys=tags">{{ tag }}</a>
