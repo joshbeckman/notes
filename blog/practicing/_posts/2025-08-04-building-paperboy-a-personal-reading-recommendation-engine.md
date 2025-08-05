@@ -152,4 +152,107 @@ Honestly, I think Readwise should be building something like this directly into 
 
 For now though, I'm happy with my personal newspaper delivery service. Even after just one day, it's already surfacing gems from my backlog that perfectly complement my current work. That's worth the dollar and the weekly ritual.
 
+## Example Newspaper
+
+```md
+## Your Personal Evening Edition • Summer 2025
+
+*Good evening, Josh. While you've been building MCP servers and pondering the dual nature of writing for humans and AI training, your unread collection has been quietly accumulating some remarkable pieces that seem almost handpicked for your current intellectual journey.*
+
+---
+
+## 📊 YOUR READING PATTERNS DECODED
+
+Your recent consumption tells a fascinating story: **40% AI and Technology Engineering** (the practical stuff, not the hype), **25% Technology Criticism** (platform economics and digital rights), **15% Financial Markets** (Matt Levine's influence showing), and the rest split between engineering leadership and personal optimization. You're clearly in an experimental phase with AI tools while maintaining a healthy skepticism about the broader implications.
+
+**Translation**: You want depth over breadth, practical wisdom over quick takes, and you're building while critically evaluating.
+
+---
+
+## 🚨 MUST READ TONIGHT
+*These five pieces are practically speaking your language*
+
+### 1. The Memory Problem Solver
+**[Building proactive AI agents](https://read.readwise.io/read/01jxwe3aah9vcayxvx0hk6g11s)** by Bryan Houlton
+
+Remember your MCP server experiments? Houlton built Orin, an AI tutoring system with "decaying-resolution memory" that gets more specific as interactions increase. It's not just another AI agent story—it's a blueprint for the kind of personalized, context-aware systems you're clearly fascinated by.
+
+*Why now*: This directly extends your current AI agent work with a practical memory architecture approach.
+
+### 2. The Thinking Tool Breakthrough 
+**[The 'think' tool: Enabling Claude to stop and think in complex tool use situations](https://read.readwise.io/read/01jz3sax9b1bgjbqn15s9v53mg)** by Anthropic
+
+This isn't marketing fluff—it's the technical explanation of how Claude's "think" tool actually works to improve problem-solving by creating assessment pauses. Given your LLM optimization interests, this is essentially a look under the hood of the cognitive architecture you're working with daily.
+
+*Why now*: Perfect timing as you optimize LLM workflows and tool chains.
+
+### 3. The PRD-to-Iteration Pipeline
+**[Align, Plan, Ship: From Ideas to Iterations with PRD-Driven AI Agents](https://read.readwise.io/read/01jy6wyx3b1kdb8z72smg7rrsm)** by Oleksiy Kovyrin
+
+Kovyrin describes using AI agents to transform PRDs into detailed project plans and focused tasks. This matches your specification-driven development philosophy perfectly—it's process optimization with AI that actually makes sense.
+
+*Why now*: Bridges your engineering leadership experience with your current AI tool experimentation.
+
+### 4. The Citation-Aware Writing Assistant
+**[Google's NotebookLM Aims to Be the Ultimate Writing Assistant](https://read.readwise.io/read/01hhxc2t6vnc1w1jgsv6e9j0x0)** by Steven Levy (WIRED)
+
+NotebookLM analyzes research material while maintaining proper citations—solving the "AI writing for AI training" problem you've been thinking about. It's a concrete example of how AI can enhance rather than replace the human writing process.
+
+*Why now*: Directly relevant to your content strategy and writing-as-AI-training-data concerns.
+
+### 5. The Developer Learning Manual
+**[10 things software developers should learn about learning](https://read.readwise.io/read/01hvh1wp8x7186gn51nn20b57c)** by Abi Noda
+
+Noda breaks down how developers actually learn and retain information, with practical implications for hiring and training. This combines your engineering leadership background with your continuous learning philosophy.
+
+*Why now*: Actionable insights for both personal development and team building.
+
+---
+
+## 🔗 INTERESTING CONNECTIONS
+*Unexpected ways these pieces link to your work*
+
+### The Personal Agent Ecosystem
+**[Who will build new search engines for new personal AI agents?](https://read.readwise.io/read/01hse7ttbec3k2s4s903ck60hn)** by Interconnected
+
+Your MCP server work is part of a larger trend toward personal AI agents that need new search infrastructure. This piece connects the dots between your current projects and the emerging ecosystem they'll operate in.
+
+### The Alternative Web Vision
+**[We can have a different web](https://read.readwise.io/read/01hwtyngdtnaa3spvnvehn8wqt)** by Molly White
+
+White's vision for a web beyond platform domination directly supports your POSSE philosophy and personal publishing infrastructure work. It's the ideological foundation for the technical work you're doing.
+
+### The Personal Site Manifesto
+**[Why Have a Personal Site Instead of Social Media?](https://read.readwise.io/read/01j1m9xm39h4144phktdn1xnvx)** by Kev Quirk
+
+Quirk articulates the ownership and control benefits that drive your cross-platform syndication systems. It's validation for your technical choices from a philosophical perspective.
+
+---
+
+## 📚 FOR LATER
+*Lower priority but still in your wheelhouse*
+
+- **[Remaking the app store](https://read.readwise.io/read/01hnr96cegfhdf77z8fwwh22kb)** by Benedict Evans - Platform economics meets regulatory reality
+- **[AI: the not-so-good parts](https://read.readwise.io/read/01hmd4t7mkhfrhnswka46942j4)** by Xe's Blog - Critical counterbalance to AI enthusiasm 
+- **[How bad are search results? Let's compare Google, Bing, Marginalia, Kagi, Mwmbl, and ChatGPT](https://read.readwise.io/read/01hk0drhypbhs1j9dm6x8nb63t)** by Dan Luu - Technical analysis of search quality degradation
+
+---
+
+## 🧵 TOPIC THREADS
+*How these pieces weave together*
+
+**The Personal AI Infrastructure Stack**: Articles 1, 2, 3, and 6 form a complete picture of building personal AI systems that actually work—from memory architecture to tool chains to search infrastructure.
+
+**The Independent Creator's Toolkit**: Articles 4, 7, and 8 support your vision of controlled, cross-platform content creation that serves both human readers and AI training while maintaining ownership.
+
+**The Critical Technologist's Reading List**: Articles 5, 9, 10, and 11 provide the analytical framework for evaluating new tools and platforms without falling into either extreme hype or dismissal.
+
+---
+
+*That's your evening reading sorted. These aren't just articles—they're the next chapters in the story you're already writing about personal technology sovereignty and practical AI integration.*
+
+**Happy reading,** 
+*The Paperboy* 📰
+```
+
 <img width="2000" height="1000" alt="Paperboy repo header" src="/assets/images/c403a529-190b-4c2a-8ac4-5ba840c320d8.png" />
