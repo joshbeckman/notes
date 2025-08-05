@@ -1,6 +1,7 @@
 ---
 layout: Page
 title: Sequences
+permalink: /sequences/
 searchable: true
 tags:
 - index

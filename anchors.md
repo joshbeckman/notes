@@ -1,6 +1,7 @@
 ---
 layout: Page
 title: Anchors
+permalink: /anchors/
 searchable: true
 tags:
 - index

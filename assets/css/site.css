@@ -527,6 +527,9 @@ h2,
 h3 {
   margin-top: 1em;
 }
+ul {
+  list-style: circle;
+}
 ol li::marker {
   font-variant-numeric: tabular-nums;
 }
