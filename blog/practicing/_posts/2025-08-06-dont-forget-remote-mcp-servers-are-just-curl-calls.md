@@ -310,7 +310,8 @@ call_mcp_tool(
 ## GraphQL
 
 Here's an example GraphQL type defition for that parsed `output` structure:
-```gql
+
+```grapgql
 type Output {
   content: [MCPContent!]!
 }
