@@ -18,7 +18,7 @@ You can call any [`streamable-http` transport](https://modelcontextprotocol.io/s
 
 And lots of things take [cURL](https://curl.se/) as example configuration (like [Shopify Flow](https://www.shopify.com/flow)!), so it's a good starting point for building things.
 
-## Example
+## cURL Translation Template
 
 Here's an example MCP server configuration/structure you might see documented (e.g. [the MCP server for this site](https://www.joshbeckman.org/blog/i-built-an-mcp-server-for-my-site)), for example to copy into your Claude Code or Cursor settings:
 ```json
@@ -89,8 +89,8 @@ curl -X POST https://joshbeckman--1818d72637f311f089f39e149126039e.web.val.run/m
 Notes on how to fill in the template:
 - If you don't have a session ID, you can use any unique string (like a UUID or a timestamp or even just `1`).
 - Replace `<SERVER_URL>` with the URL of the MCP server.
-- Replace `<AUTH_HEADERS_IF_ANY>` with any required authorization headers (like `Authorization` header).` Or if there are no auth headers, just remove that line.
-- Replace `<TOOL-NAME>` with the name of the tool you want to call.
+- Replace `<AUTH_HEADERS_IF_ANY>` with any required authorization headers (like `Authorization` header). Or if there are no auth headers, just remove that line.
+- Replace `<TOOL_NAME>` with the name of the tool you want to call.
 - Replace `<ARG_1>` and `<VALUE_1>` with the actual arguments for the tool call.
 - If the tool has multiple arguments, you can add more key-value pairs in the `arguments` object.
 - If an argument's value is a string, make sure to wrap it in quotes. If it's a number, you can just use the number without quotes.
@@ -116,7 +116,7 @@ curl -s -X POST <SERVER_URL> \
     | grep -v '\[DONE\]'
 ```
 
-And here's how we can parse that JSON with the `jq` command line utility to, for example, extract the first `text` from the response:
+And here's how we can parse that JSON with the `jq` command line utility to, for example, extract the first `text` item from the response:
 ```bash
 # Parse response to extract first text content
 curl -s -X POST <SERVER_URL> \
