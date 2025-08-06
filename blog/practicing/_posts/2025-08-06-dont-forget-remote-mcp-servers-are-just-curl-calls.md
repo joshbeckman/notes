@@ -3,10 +3,8 @@ layout: Post
 date: '2025-08-06 03:20:57 +0000'
 title: 'Don''t Forget: Remote MCP Servers are Just cURL Calls'
 toc: true
-image:
-description:
-mastodon_social_status_url: 'false'
-bluesky_status_url: 'false'
+mastodon_social_status_url: false
+bluesky_status_url: false
 tags:
 - code-snippets
 - software-engineering
