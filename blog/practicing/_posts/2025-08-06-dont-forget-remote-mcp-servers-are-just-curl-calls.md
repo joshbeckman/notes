@@ -9,9 +9,8 @@ tags:
 - code-snippets
 - software-engineering
 - llm
+serial_number: 2025.BLG.121
 ---
-
-
 You can call any [`streamable-http` transport](https://modelcontextprotocol.io/specification/2025-06-18/basic/transports#streamable-http) MCP (Model Context Protocol) [server tool](https://modelcontextprotocol.io/specification/2025-06-18/server/tools) with any HTTP client - even cURL!
 
 And lots of things take [cURL](https://curl.se/) as example configuration (like [Shopify Flow](https://www.shopify.com/flow)!), so it's a good starting point for building things.
