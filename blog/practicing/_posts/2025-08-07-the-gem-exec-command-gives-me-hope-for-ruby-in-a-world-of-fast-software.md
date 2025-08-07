@@ -5,7 +5,7 @@ title: The gem exec command gives me hope for Ruby in a world of fast software
 toc: true
 image:
 description:
-mastodon_social_status_url: 'false'
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114988024149248879
 bluesky_status_url: 'false'
 tags:
 - language-ruby
