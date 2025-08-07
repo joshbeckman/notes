@@ -6,7 +6,7 @@ title: I'm More Optimistic About LLMs When The Press Releases are Only Increment
 toc: true
 image: "/assets/images/0de7c5d9-ccb5-47b8-8419-5b12c752163b.gif"
 description:
-mastodon_social_status_url: 'false'
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/114985892302325909
 bluesky_status_url: 'false'
 tags:
 - ai
