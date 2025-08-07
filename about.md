@@ -42,6 +42,8 @@ If you see an account that looks like it might be me but isn't listed here, plea
 | YouTube | [@joshbeckmanchannel](https://www.youtube.com/@joshbeckmanchannel) |
 | Strava | [@beckman_josh](https://www.strava.com/athletes/beckman_josh) |
 | Hacker News | [@bckmn](https://news.ycombinator.com/user?id=bckmn) |
+| Ruby Gems | [@joshbeckman](https://rubygems.org/profiles/joshbeckman) |
+| NPM | [@andjosh](https://www.npmjs.com/~andjosh) |
 
 ### Passive Accounts
 These are me, but I don't actively use them. If *you* happen to use these networks, feel free to interact with me and I'll see it eventually.
