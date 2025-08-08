@@ -16,9 +16,8 @@ tags:
 - machine-learning
 - communication
 - research
+serial_number: 2025.BLG.122
 ---
-
-
 [A coworker friend](https://www.sohanjain.com/) of mine asked me yesterday, "You seem to be publishing a ton recently [on building with LLMs]. Conscious decision to post more? or are you just hacking more?"
 
 Honestly, it's both. I've just gotten so optimistic about what large language/image/video models can do _right now_ and I feel like they're actually _slowing down_ in their progress.

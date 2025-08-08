@@ -11,9 +11,8 @@ tags:
 - language-ruby
 - tools
 - open-source
+serial_number: 2025.BLG.123
 ---
-
-
 As more and more software is being developed quickly by LLMs, I'm seeing this "fast software" as akin to "[fast fashion](https://en.wikipedia.org/wiki/Fast_fashion)". I'm seeing more people gravitate to Python and JavaScript as the common language for their scripts and one-off commands. I think it's because of the simplicity and ease of sharing these scripts with one-click-copy-and-run commands powered by [`npx`](https://docs.npmjs.com/cli/v9/commands/npx?v=true) and [`uvx`](https://pypi.org/project/uv/). 
 
 I personally gravitate toward Ruby as my lingua franca and while the rubygems ecosystem is loving and healthy, I saw the friction imposed by explicitly installing gems to be slowing that adoption in an LLM-driven world. But behold! The community has already seen this as well and we have an equivalent in `gem exec` ([initial pushback](https://github.com/rubygems/rubygems/issues/2872), then [RFC](https://github.com/rubygems/rfcs/pull/45), then [implementation](https://github.com/rubygems/rubygems/pull/6309)) that is available today.
