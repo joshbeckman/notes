@@ -17,9 +17,8 @@ tags:
 - software-engineering
 - system-design
 - interfaces
+serial_number: 2025.BLG.125
 ---
-
-
 ![Handles](/assets/images/bc5cfb31-6430-4fa0-8176-f891f86dc8b6.jpeg)
 
 My team is building an agent for complex, multi-language artifacts with interdependent parts. We keep coming back to this hierarchy:
