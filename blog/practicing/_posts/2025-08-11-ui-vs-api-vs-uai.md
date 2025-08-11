@@ -5,7 +5,7 @@ title: UI vs. API. vs. UAI
 toc: true
 image: "/assets/images/0d522991-da20-408a-9433-2e956c3b814f.jpeg"
 description:
-mastodon_social_status_url: 'false'
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115010650254233029
 bluesky_status_url: 'false'
 tags:
 - interfaces
