@@ -10,9 +10,8 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lw4zoqyzkc2k
 tags:
 - interfaces
 - llm
+serial_number: 2025.BLG.126
 ---
-
-
 ![Vending machine](/assets/images/0d522991-da20-408a-9433-2e956c3b814f.jpeg)
 
 First we built a **user interface (UI)** when the application was just going to be operated by humans. There's a whole branch of study around good and bad patterns in that design practice, focusing on how we make things easily operable by humans.
