@@ -7,6 +7,7 @@ image: "/assets/images/0d522991-da20-408a-9433-2e956c3b814f.jpeg"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115010650254233029
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lw4zoqyzkc2k
+hacker_news_url: "https://news.ycombinator.com/item?id=44865916"
 tags:
 - interfaces
 - llm
