@@ -62,7 +62,7 @@ module RawContent
 
     def calculate_sequences(site)
       all_items = site.posts.docs
-      min_sequence_length = 3
+      min_sequence_length = 4
       sequences = []
 
       all_items.each do |item|
