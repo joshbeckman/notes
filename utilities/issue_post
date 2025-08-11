@@ -32,8 +32,10 @@ class IssuePoster
            end
     date = parse_date(frontmatter['date'])
     rating = parse_rating(frontmatter['rating'])
-    category = frontmatter['category'] || 'blog'
+    category = frontmatter['category']
     slug = frontmatter['slug'] || title.gsub(/[^a-zA-Z0-9\s]/, '').gsub(/\s+/, '-').downcase
+    raise 'Category is required' if category.nil? || category.empty?
+
     assets = extract_assets(body)
     assets.map(&:download)
     post = Post.new(
