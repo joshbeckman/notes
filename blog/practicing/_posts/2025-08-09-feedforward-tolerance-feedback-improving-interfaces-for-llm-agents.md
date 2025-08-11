@@ -7,6 +7,8 @@ image: "/assets/images/bc5cfb31-6430-4fa0-8176-f891f86dc8b6.jpeg"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115000018134389281
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lvyclrvl642p
+redirect_from:
+- /blog/feedforward-tolerance-feedback-improving-interfaces-for-llm-agents
 tags:
 - AI
 - LLM
