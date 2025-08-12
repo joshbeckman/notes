@@ -11,9 +11,8 @@ tags:
 - music
 - metro-venue
 - concerts
+serial_number: 2025.BLG.127
 ---
-
-
 I hadn't seen BMSR before but everyone else had and so I didn't know the treat I was in for.
 
 ![Black Moth Super Rainbow on stage](/assets/images/de393d15-9920-4cc2-a09d-af9542962ecc.jpeg)
