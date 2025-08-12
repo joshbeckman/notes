@@ -5,7 +5,7 @@ title: My Markdown Preview Utility
 toc: true
 image: "/assets/images/83488d01-ae66-42c1-bcaf-2b2e01cff096.png"
 description:
-mastodon_social_status_url: 'false'
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115017020104107179
 bluesky_status_url: 'false'
 tags:
 - code-snippets
