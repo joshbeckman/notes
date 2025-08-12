@@ -10,6 +10,8 @@ Hello, friends. I'm [Josh](/about/).
 
 I'm a software engineer building gardens, systems, and tools.
 
+You can read [what I'm writing](/blog/) or [what I'm reading](/notes/).
+
 ## What I Believe
 
 ### On Making
@@ -60,6 +62,7 @@ I'm a software engineer building gardens, systems, and tools.
 - **Anything you do not give freely becomes lost to you** — Generosity creates abundance.
 - **Life is a gift meant to be given away** — We mature by finding worthy causes for our time and energy. Parenting is one long gifting of your rights into another.
 - **The only thing you can truly control is your own brain** — Focus energy where you have agency. Persistence and determination alone are omnipotent. Press on.
+- **Things come and go in seasons** — You don't have to embrace your current season, but recognizing it gives you control.
 
 {% assign month = site.time | date: "%m" | plus: 0 %}
 The season is: {{ site.data.seasons[month].name }} {{ site.data.seasons[month].emoji }}
