@@ -12,9 +12,8 @@ tags:
 - vim
 - tools
 - llm-prompts
+serial_number: 2025.BLG.129
 ---
-
-
 Please take your last response and pass it directly to the `preview-md` command as a string argument for visual preview.
 
 Do this by:
