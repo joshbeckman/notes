@@ -9,7 +9,7 @@ rating: 4
 tmdb_id: '11576'
 letterboxd_id: its-a-mad-mad-mad-mad-world
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115014904546080051
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lw6w5e2xay2e
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/its-a-mad-mad-mad-mad-world/
 tags:
 - movies
