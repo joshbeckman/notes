@@ -5,7 +5,7 @@ title: Black Mother Super Rainbow at Metro
 toc: true
 image: "/assets/images/de393d15-9920-4cc2-a09d-af9542962ecc.jpeg"
 description:
-mastodon_social_status_url: 'false'
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115014181066460973
 bluesky_status_url: 'false'
 tags:
 - music
