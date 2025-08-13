@@ -702,27 +702,27 @@ table td { padding: 0.5rem; }
   padding: 1em 0;
 }
 
-article blockquote {
+blockquote {
   margin-left: auto;
   margin-right: auto;
 }
-article ol,
-article ul {
+ol,
+ul {
   padding-inline-start: 2.5ch;
 }
-article ol li {
+ol li {
   margin-left: 1ch;
 }
-article ul li {
+ul li {
   margin-left: 1ch;
 }
-article blockquote ol,
-article blockquote ul,
-article blockquote p {
+blockquote ol,
+blockquote ul,
+blockquote p {
   margin-left: 2ch;
   width: calc(100% - 4ch);
 }
-article blockquote blockquote {
+blockquote blockquote {
   margin: 0 2ch;
   width: calc(100% - 4ch);
   box-shadow: none;
@@ -1444,7 +1444,6 @@ details summary:hover {
         background: black;
         border-color: darkgray;
     }
-    
     table.responsive-table thead {
         background-color: rgba(255, 255, 255, 0.1);
     }
