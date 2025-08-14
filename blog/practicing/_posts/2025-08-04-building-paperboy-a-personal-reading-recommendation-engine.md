@@ -12,6 +12,7 @@ tags:
 - llm
 - readwise-ruby
 - language-ruby
+- popular
 serial_number: 2025.BLG.120
 ---
 I have a problem. My [Readwise](https://readwise.io/) [Reader](https://readwise.io/read) inbox has over a thousand articles waiting to be read. Despite reading daily, I almost always reach for something recent, leaving that backlog perpetually growing.

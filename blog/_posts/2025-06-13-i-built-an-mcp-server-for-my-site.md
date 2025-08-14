@@ -12,6 +12,7 @@ tags:
 - llm
 - tools
 - personal-blog
+- popular
 serial_number: 2025.BLG.091
 ---
 ![gross wires and ethernet](/assets/images/be179fb8-6147-4832-81f6-3f5d208be8c5.jpeg)
