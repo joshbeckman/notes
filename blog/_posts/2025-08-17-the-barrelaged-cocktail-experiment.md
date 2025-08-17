@@ -5,13 +5,12 @@ title: The Barrel-Aged Cocktail Experiment
 toc: true
 image: "/assets/images/0a764c9b-824d-419e-80f2-967d8e2bef5c.jpeg"
 description:
-mastodon_social_status_url: 'false'
-bluesky_status_url: 'false'
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115045316476989414
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lwmgd34pb62e
 tags:
 - cocktails
+serial_number: 2025.BLG.130
 ---
-
-
 We went to [The Office](https://www.theaviary.com/the-office) (beneath [The Aviary](https://www.theaviary.com/the-aviary)) for Marybeth's birthday last year and on their menu they had a barrel-aged [Boulevardier](https://www.diffordsguide.com/cocktails/recipe/2955/boulevardier-cocktail) cocktail and it was one of the best I'd ever tasted. Theirs was aged for... 3 months? 6 months? Something like that. The flavors had blended so perfectly that the usual bite of that cocktail had given way to an incredibly smooth palate and my interest was piqued.
 
 I researched how possible it would be for me to make this thing at home and found that [there are places online](https://www.barrelsonline.com/) that will sell you a decent cocktail-making barrel for like $50. Once it arrived in my kitchen, I learned that barrels are just wooden slats tied together with metal bands. This means the barrel leaks. The way to seal a barrel is to fill it with water to let the wood soak and swell and seal the cracks between the slats. This takes some time (days). Once it stops swelling, you might , as I did, still have some leaks to plug with beeswax. Once you're done sealing the thing, the barrel might look a bit... gummy. Your friends might ask questions about the hygiene of this thing, and you might have to talk about the ani-microbial properties of wood and alcohol.
