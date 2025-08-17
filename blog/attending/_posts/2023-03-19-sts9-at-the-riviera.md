@@ -4,6 +4,7 @@ date: 2023-03-19 02:35:45.000000000 +00:00
 title: STS9 at The Riviera
 toc: true
 image: "/assets/images/7DCE4C6A1C5448999D1E9E9A82973FE0.jpeg"
+photo_feature: true
 tags:
 - music
 serial_number: 2023.BLG.017

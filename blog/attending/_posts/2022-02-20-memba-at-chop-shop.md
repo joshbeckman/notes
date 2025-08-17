@@ -4,6 +4,7 @@ date: 2022-02-20 05:00:30.000000000 +00:00
 title: Memba at Chop Shop
 toc: true
 image: "/assets/images/4DD73F465E5B4970B0DA3B3B58E2D3C4.jpeg"
+photo_feature: true
 description:
 tags:
 - music

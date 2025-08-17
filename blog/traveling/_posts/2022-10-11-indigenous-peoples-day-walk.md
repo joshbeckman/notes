@@ -3,6 +3,7 @@ toc: true
 title: Indigenous Peoples Day Walk
 image: "/assets/images/87292558-CB40-49F0-B070-F0E203B76AFC_1_201_a.jpeg"
 description: Walking the I&M Canal on a warm fall holiday.
+photo_feature: true
 date: '2022-10-11 03:24:42'
 tags:
 - travel

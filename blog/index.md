@@ -16,6 +16,7 @@ serial_number: 2024.PAE.002
 <li class="toc-entry toc-h2"><a href="/blog/traveling">Traveling</a></li>
 <li class="toc-entry toc-h2"><a href="/blog/watching">Watching</a></li>
 <li class="toc-entry toc-h2"><a href="/blog/working">Working</a></li>
+<li class="toc-entry toc-h2"><a href="/blog/photos">Photographing</a></li>
 </ul></div>
 
 I have some collections for specific topics (above) or you can browse the full list (below).

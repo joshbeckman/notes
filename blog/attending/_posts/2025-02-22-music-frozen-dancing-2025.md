@@ -5,6 +5,7 @@ title: Music Frozen Dancing 2025
 toc: true
 image: "/assets/images/4de7db9c-03dd-4eec-9691-5254b72c21b7.jpeg"
 description:
+photo_feature: true
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114065743909806064
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lizfr23qqb24
 tags:

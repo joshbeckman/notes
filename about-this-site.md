@@ -78,11 +78,13 @@ You can read about everything else I use to build things at [/uses](/uses).
 
 {% assign build_time = site.time | date_to_xmlschema %}
 {% assign oldest_post = site.posts | last %}
+{% assign newest_post = site.posts | first %}
 - Site version: {{site.version}}
 - Build time: <time datetime="{{ build_time }}">{{ build_time }}</time>
 - Posts count: {{site.posts.size}}
 - [Tags](/tags) count: {{ site.tags.size }}
 - First post date: <time datetime="{{ oldest_post.date | date_to_xmlschema }}">{{ oldest_post.date | date: "%B %d, %Y" }}</time>
+- Last post date: <time datetime="{{ newest_post.date | date_to_xmlschema }}">{{ newest_post.date | date: "%B %d, %Y" }}</time>
 
 ## Changelog
 

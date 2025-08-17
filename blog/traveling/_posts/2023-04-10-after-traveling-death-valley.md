@@ -3,6 +3,7 @@ toc: true
 title: 'After Traveling: Death Valley'
 image: "/assets/images/L1030746.JPG"
 date: '2023-04-10 13:11:24'
+photo_feature: true
 tags:
 - travel
 redirect_from:

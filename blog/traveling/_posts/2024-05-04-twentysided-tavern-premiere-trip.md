@@ -5,6 +5,7 @@ title: Twenty-Sided Tavern Premiere Trip
 toc: true
 image: "/assets/images/34A97CA251E044C5AAF1B5D7CE69BEC9.jpeg"
 description:
+photo_feature: true
 tags:
 - travel
 - live-theater

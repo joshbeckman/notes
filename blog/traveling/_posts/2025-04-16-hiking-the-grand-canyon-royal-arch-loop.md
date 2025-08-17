@@ -5,6 +5,7 @@ title: Hiking the Grand Canyon Royal Arch Loop
 toc: true
 image: "/assets/images/5a158adc-e292-4d7b-8d53-c7c079c82b2f.jpeg"
 description: Beautiful and dangerous
+photo_feature: true
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114451482821050920
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3loepgsncb22h
 tags:

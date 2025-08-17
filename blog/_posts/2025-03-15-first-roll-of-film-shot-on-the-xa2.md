@@ -5,6 +5,7 @@ title: First Roll of Film Shot on the XA2
 toc: true
 image: "/assets/images/c4bae1d8-886a-4019-a0cc-77d80683dabd.jpeg"
 description:
+photo_feature: true
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114167652792808461
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lkgnxw5sfk26
 tags:

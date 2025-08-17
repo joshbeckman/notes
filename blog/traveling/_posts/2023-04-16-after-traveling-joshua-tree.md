@@ -3,6 +3,7 @@ toc: true
 title: 'After Traveling: Joshua Tree'
 image: "/assets/images/A7021913-16D1-4B3B-B2F5-E482A5B99EB6_1_201_a.jpeg"
 description: Scrambling around the playground that is Joshua Tree national park
+photo_feature: true
 date: '2023-04-16 20:56:15'
 tags:
 - travel
