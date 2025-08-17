@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/0a764c9b-824d-419e-80f2-967d8e2bef5c.jpeg"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115045316476989414
-bluesky_status_url: 'false'
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lwmgd34pb62e
 tags:
 - cocktails
 ---
