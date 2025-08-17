@@ -683,7 +683,8 @@ table td { padding: 0.5rem; }
   padding: 2em 0px;
   margin: auto;
 }
-.column .content img {
+.column .content img,
+.photos .content img {
    box-shadow: 0 1px 3px 0 rgb(0,0,0,.25);
 }
 .filing-row {
@@ -700,6 +701,24 @@ table td { padding: 0.5rem; }
   margin: auto;
   display: block;
   padding: 1em 0;
+}
+.row .photos {
+  margin: 0 auto;
+  max-width: 100%;
+  width: calc(1.33 * 100vh);
+}
+.row .photos article {
+  margin: 1em;
+}
+.row .photos p,
+.row .photos h1,
+.row .photos h2,
+.row .photos h3,
+.row .photos h4,
+.row .photos table,
+.row .photos hr
+{
+  max-inline-size: none;
 }
 
 blockquote {

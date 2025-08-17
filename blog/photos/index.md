@@ -1,5 +1,5 @@
 ---
-layout: Page
+layout: Photos
 title: Photographs
 image: /assets/images/photography.jpeg
 permalink: /blog/photos/
