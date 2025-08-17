@@ -1,6 +1,6 @@
 ---
 layout: Page
-title: About Josh
+title: About Josh Beckman
 permalink: "/about/"
 searchable: true
 image: "/assets/images/FBFE9CF8-7D9A-4B63-9816-3A5D2F31B959.jpeg"
