@@ -6,7 +6,6 @@ tags:
 - work
 - motivation
 - professional
+serial_number: 2025.PVS.003
 ---
-
-
 taken from Tom Sachs
