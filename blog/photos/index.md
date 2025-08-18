@@ -15,6 +15,6 @@ serial_number: 2024.PAE.008
 {% assign image_url = photo_feature_post.photo_feature %}
 {% endif %}
 <a href="{{ photo_feature_post.url }}" title="{{ photo_feature_post.title | escape}}">
-<img src="{{ image_url }}" alt="{{ photo_feature_post.title | escape }}" class="no-lightbox"/>
+<img class="lazyload no-lightbox" data-src="{{ image_url }}" alt="{{ photo_feature_post.title | escape }}"/>
 </a>
 {% endfor %}

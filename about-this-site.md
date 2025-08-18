@@ -94,6 +94,9 @@ You can read about everything else I use to build things at [/uses](/uses).
 - photos page
 - [More ideas](https://github.com/joshbeckman/notes/issues?q=is%3Aopen+is%3Aissue+-label%3Apost)
 
+### 2025-08-17
+- Add a [basic photos page](/blog/photos) to display photo-featured posts
+
 ### 2025-07-04
 - Import videos from YouTube as blog posts
 
