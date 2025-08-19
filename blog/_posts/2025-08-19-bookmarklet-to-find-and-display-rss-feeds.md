@@ -5,7 +5,7 @@ title: Bookmarklet to Find and Display RSS Feeds
 toc: true
 image: "/assets/images/1da6be97-f108-41e4-8708-5ebf0705cd9c.png"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115055943405367191
 bluesky_status_url: false
 tags:
 - code-snippets
