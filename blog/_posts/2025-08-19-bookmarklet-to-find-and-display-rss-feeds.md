@@ -10,9 +10,8 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lwr5do2qzg27
 tags:
 - code-snippets
 - language-javascript
+serial_number: 2025.BLG.131
 ---
-
-
 I wanted to get notified when my friend Kevin posts new photos to [his Flickr profile](https://www.flickr.com/photos/thekevinchang/). Flickr's documentation _says_ [it supports many feed formats](https://www.flickr.com/services/feeds) (including RSS/XML) but in order to actually _get_ those feed URLs, you have to go spelunking into the source code of the page and then decode the HTML entities the developers mistakenly left behind:
 
 <img width="359" height="97" alt="atom URL in source of page" src="/assets/images/42a2217f-2366-4403-8e98-c037df90c95b.png" />
