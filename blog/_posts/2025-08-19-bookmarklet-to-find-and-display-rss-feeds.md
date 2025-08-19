@@ -3,7 +3,7 @@ layout: Post
 date: '2025-08-19 12:57:51 +0000'
 title: Bookmarklet to Find and Display RSS Feeds
 toc: true
-image: "/assets/images/42a2217f-2366-4403-8e98-c037df90c95b.png"
+image: "/assets/images/1da6be97-f108-41e4-8708-5ebf0705cd9c.png"
 description:
 mastodon_social_status_url: false
 bluesky_status_url: false
