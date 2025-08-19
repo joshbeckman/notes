@@ -5,7 +5,7 @@ image: "/assets/images/talks.jpeg"
 tags:
 - communication
 - index
-serial_number: 2024.PAE.006
+serial_number: 2024.PAE.004
 ---
 These are talks I've given over the years.
 

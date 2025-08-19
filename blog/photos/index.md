@@ -6,7 +6,7 @@ permalink: "/blog/photos/"
 searchable: true
 categories:
 - blog
-serial_number: 2024.PAE.013
+serial_number: 2024.PAE.008
 ---
 This is a stream of my favorite photographs.
 
