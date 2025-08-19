@@ -12,6 +12,6 @@ source_emoji: "\U0001F310"
 show_book_meta: true
 hide_title: true
 source_url: https://usetrmnl.com/blog/the-unbrickable-pledge
-serial_number: 2025.NTS.026
+serial_number: 2025.NTE.026
 ---
 Nothing lets me buy with confidence more than pledges like this. I'll gladly pay a higher price for confidence like this.

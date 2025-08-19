@@ -10,7 +10,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lubck77yee2w
 tags:
 - llm
 - code-snippets
-serial_number: 2025.NTS.102
+serial_number: 2025.NTE.102
 ---
 Added this to my `~/.claude/CLAUDE.md` yesterday to work better across work/personal machines and help claude (and other LLM agents) understand me when I speak in first person:
 

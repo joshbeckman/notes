@@ -7,7 +7,7 @@ tags:
 - metrics
 - observability
 - noise
-serial_number: 2024.NTS.151
+serial_number: 2024.NTE.151
 ---
 _(noun) /ˈɑːmstrɒŋ ˈmɛtrɪk/_
 

@@ -12,7 +12,7 @@ tags:
 - travel
 - new-zealand
 - exploration
-serial_number: 2025.TEG.004
+serial_number: 2025.TVG.004
 ---
 Returning to enjoy the ocean and the views.
 

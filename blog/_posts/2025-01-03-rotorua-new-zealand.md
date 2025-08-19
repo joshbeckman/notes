@@ -12,7 +12,7 @@ tags:
 - travel
 - new-zealand
 - exploration
-serial_number: 2025.TEG.001
+serial_number: 2025.TVG.001
 ---
 A mountain lake town where you can walk between the hot springs and the redwoods.
 

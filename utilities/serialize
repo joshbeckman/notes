@@ -86,15 +86,34 @@ module SerialNumbers
 
     def generate_series_code(category)
       # Generate a 3-letter code from the category name
-      cleaned = category.to_s.downcase.gsub(/[^a-z]/, '')
+      # Singularize plural categories first
+      singularized = category.to_s.downcase
+      singularized = singularized.chomp('ies').concat('y') if singularized.end_with?('ies')
+      singularized = singularized.chomp('es') if singularized.end_with?('ses', 'xes', 'zes', 'ches', 'shes')
+      singularized = singularized.chomp('s') if singularized.end_with?('s') && !singularized.end_with?('ss')
+
+      cleaned = singularized.gsub(/[^a-z]/, '')
 
       if cleaned.length >= 3
         # Take first letter, middle letter, and last letter for longer words
         if cleaned.length == 3
           cleaned.upcase
         else
-          middle_index = (cleaned.length / 2) - (cleaned.length.even? ? 1 : 0)
-          (cleaned[0] + cleaned[middle_index] + cleaned[-1]).upcase
+          # Find middle consonants, prioritizing them over vowels
+          middle_chars = cleaned[1..-2] # Get all middle characters
+          consonants = middle_chars.chars.select { |c| !%w[a e i o u].include?(c) }
+
+          if consonants.any?
+            # Use the consonant closest to the middle
+            middle_index = middle_chars.length / 2
+            # Find the consonant closest to the middle position
+            best_consonant = consonants.min_by { |c| (middle_chars.index(c) - middle_index).abs }
+            (cleaned[0] + best_consonant + cleaned[-1]).upcase
+          else
+            # Fall back to middle character if no consonants
+            middle_index = cleaned.length / 2
+            (cleaned[0] + cleaned[middle_index] + cleaned[-1]).upcase
+          end
         end
       elsif cleaned.length == 2
         # For 2-letter categories, add the first letter again

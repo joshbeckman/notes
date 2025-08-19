@@ -7,7 +7,7 @@ rating: 3
 imdb_id: tt9419884
 tags:
 - movies
-serial_number: 2024.BLG.005
+serial_number: 2024.BLG.006
 ---
 I had heard this movie was kind of trippy so I was looking forward to watching it unfold in unexpected ways. It had some good visual moments, but it had too many laugh-out-loud cheesy moments to be very impactful.
 

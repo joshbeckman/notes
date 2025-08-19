@@ -12,7 +12,7 @@ source_emoji: "\U0001F310"
 show_book_meta: true
 hide_title: true
 source_url: https://maggieappleton.com/lm-sketchbook
-serial_number: 2023.NTS.495
+serial_number: 2023.NTE.495
 ---
 These are wonderful non-chat interfaces for LLMs that I would totally use.
 

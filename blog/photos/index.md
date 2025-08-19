@@ -1,14 +1,13 @@
 ---
 layout: Photos
 title: Photographs
-image: /assets/images/photography.jpeg
-permalink: /blog/photos/
+image: "/assets/images/photography.jpeg"
+permalink: "/blog/photos/"
 searchable: true
 categories:
 - blog
-serial_number: 2024.PAE.008
+serial_number: 2024.PAE.013
 ---
-
 This is a stream of my favorite photographs.
 
 {% assign photo_feature_posts = site.categories['blog'] | where_exp: "item", "item.photo_feature" %}

@@ -10,6 +10,6 @@ in_reply_to: https://bsky.app/profile/joshbeckman.org/post/3lra6ji5j5u2k
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lraukvpsmc2t
 tags:
 - bluesky
-serial_number: 2025.RLS.009
+serial_number: 2025.RPY.009
 ---
 [@andymatuschak.org](https://bsky.app/profile/did:plc:rtxilcy6fbyjtblrioz3iobn) I think this is something right in line with your explorations of knowledge base insights. Next up, I’ll have LLMs help me reflect on what the sequences represent.

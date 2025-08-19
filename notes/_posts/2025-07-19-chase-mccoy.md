@@ -9,7 +9,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/114881822311986
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ludswl2hfj2w
 tags:
 - blogroll
-serial_number: 2025.NTS.105
+serial_number: 2025.NTE.105
 ---
 This morning I found [Chase McCoy](https://chsmc.org/)'s awesome "weblog about exploring and building the world wide web" this morning. 
 

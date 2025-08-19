@@ -10,7 +10,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lbqt7xskgo2s
 tags:
 - blogroll
 - photography
-serial_number: 2024.NTS.219
+serial_number: 2024.NTE.219
 ---
 I have fallen in love with [Noah Kalina's Hotline Show](https://www.youtube.com/playlist?list=PL9uM7B29r8g-ZQt8riVJarhlOea8x7-Mp) on YouTube (he also has [a newsletter](https://noahkalina.com/newsletter) on [his main website](https://noahkalina.com/)).
 

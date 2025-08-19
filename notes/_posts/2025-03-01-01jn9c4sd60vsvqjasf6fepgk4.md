@@ -12,6 +12,6 @@ source_emoji: "\U0001F310"
 show_book_meta: true
 hide_title: true
 source_url: https://daniel.industries/2025/03/01/the-utility-is-a-bug-not-a-feature/
-serial_number: 2025.NTS.030
+serial_number: 2025.NTE.030
 ---
 Damn, this text is so rich. It makes me want to rally my friends. to get off the dumb social media and build our own social media.

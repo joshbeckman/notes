@@ -12,7 +12,6 @@ tags:
 - schubas-tavern-venue
 serial_number: 2024.BLG.090
 ---
-
 ![Brothertiger at Schubas](/assets/images/8f56420b-4ae5-4289-b068-64570bfa7522.jpeg)
 
 Paul recommended Brothertiger to us and was very excited to see him play. We didn't know him but we'll trust Paul's excitement. I like shows at Scuba's because they're small and the crowd is usually enthusiastic.

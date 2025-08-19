@@ -12,7 +12,7 @@ source_emoji: "\U0001F310"
 show_book_meta: true
 hide_title: true
 source_url: https://www.monperrus.net/martin/store-data-paper
-serial_number: 2025.NTS.081
+serial_number: 2025.NTE.081
 ---
 This is an interesting collection of data printing techniques for paper, with reference for storage rate per sheet. 
 

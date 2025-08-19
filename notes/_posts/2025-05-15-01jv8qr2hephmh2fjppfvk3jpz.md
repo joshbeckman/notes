@@ -12,6 +12,6 @@ source_emoji: "\U0001F310"
 show_book_meta: true
 hide_title: true
 source_url: https://www.anthropic.com/news/golden-gate-claude
-serial_number: 2025.NTS.067
+serial_number: 2025.NTE.067
 ---
 Golden Gate Claude is the pragmatic, open, controlled, good version of the ugly, hidden, ham-fisted [White Farmer Genocide Grok](https://thezvi.wordpress.com/2025/05/16/regarding-south-africa/). The former boosted feature weights, the latter appended to a system prompt.

@@ -12,6 +12,6 @@ source_emoji: "\U0001F310"
 show_book_meta: true
 hide_title: true
 source_url: https://tratt.net/laurie/blog/2025/llm_inflation.html
-serial_number: 2025.NTS.118
+serial_number: 2025.NTE.118
 ---
 In the past we tried to obfuscate by compressing text/images/messages. Will we see an option to obfuscate (with LLMs) by inflating text and hiding messages within output? It’s less efficient, but probably possible?

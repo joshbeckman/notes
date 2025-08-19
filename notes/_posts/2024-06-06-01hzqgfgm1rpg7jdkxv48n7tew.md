@@ -12,7 +12,7 @@ source_emoji: "\U0001F310"
 show_book_meta: true
 hide_title: true
 source_url: https://manuelmoreale.com/@/page/RYtycIPIBuhww5um
-serial_number: 2024.NTS.101
+serial_number: 2024.NTE.101
 ---
 One thing I've been contemplating along this line is: what about a form at the bottom of my posts that allows someone to respond right there (in real-time as they are reading) but just gets sent to me? And then I can post the comment if I think it's valuable, or I'll respond. 
 

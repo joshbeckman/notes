@@ -12,7 +12,7 @@ tags:
 - travel
 - new-zealand
 - exploration
-serial_number: 2025.TEG.003
+serial_number: 2025.TVG.003
 ---
 A surfer town with a view of the jungle.
 

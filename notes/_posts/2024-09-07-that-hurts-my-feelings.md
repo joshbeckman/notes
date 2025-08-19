@@ -8,7 +8,7 @@ description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113100362363567210
 tags:
 - blogroll
-serial_number: 2024.NTS.162
+serial_number: 2024.NTE.162
 ---
 > [...] and every time I think of it, I feel unbridled happiness, followed by a twinge of grief. It’s wild how even the fondest memories can find a way to hurt your feelings.
 

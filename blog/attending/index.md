@@ -8,7 +8,7 @@ categories:
 tags:
 - music
 - index
-serial_number: 2024.PAE.009
+serial_number: 2024.PAE.008
 ---
 Concerts are the best way to listen to music. You should go to them and support the artists you like.
 

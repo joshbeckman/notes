@@ -12,7 +12,7 @@ tags:
 - travel
 - new-zealand
 - exploration
-serial_number: 2024.TEG.001
+serial_number: 2024.TVG.001
 ---
 A modern city built between the volcanoes and the sea.
 
