@@ -24,6 +24,7 @@ Post = Struct.new(
   :hacker_news_url,
   :rating,
   :song_link,
+  :photo_feature,
   :slug,
   :tags,
   :title,
@@ -92,8 +93,9 @@ Post = Struct.new(
     hash['song_link'] = song_link if song_link
     hash['letterboxd_id'] = letterboxd_id if letterboxd_id
     hash['in_reply_to'] = in_reply_to if in_reply_to
-    hash['mastodon_social_status_url'] = mastodon_social_status_url unless mastodon_social_status_url.nil?
-    hash['bluesky_status_url'] = bluesky_status_url unless bluesky_status_url.nil?
+    hash['photo_feature'] = bool_or_string(photo_feature) unless photo_feature.nil?
+    hash['mastodon_social_status_url'] = bool_or_string(mastodon_social_status_url) unless mastodon_social_status_url.nil?
+    hash['bluesky_status_url'] = bool_or_string(bluesky_status_url) unless bluesky_status_url.nil?
     hash['strava_activity_url'] = strava_activity_url unless strava_activity_url.nil?
     hash['letterboxd_review_url'] = letterboxd_review_url unless letterboxd_review_url.nil?
     hash['hacker_news_url'] = hacker_news_url unless hacker_news_url.nil?
@@ -102,6 +104,14 @@ Post = Struct.new(
     hash['exercise_data'] = exercise_data.transform_keys(&:to_s) if exercise_data
     hash['tags'] = tags if tags&.any?
     hash
+  end
+
+  def bool_or_string(value)
+    if value == 'true' || value == 'false'
+      value == 'true'
+    else
+      value
+    end
   end
 
   def file_exists?
