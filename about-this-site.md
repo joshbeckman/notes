@@ -91,8 +91,10 @@ You can read about everything else I use to build things at [/uses](/uses).
 ### Unreleased
 - `/projects` page
 - podcast rendering
-- photos page
 - [More ideas](https://github.com/joshbeckman/notes/issues?q=is%3Aopen+is%3Aissue+-label%3Apost)
+
+### 2025-08-20
+- Render next/previous posts in the same subcategory on post pages
 
 ### 2025-08-17
 - Add a [basic photos page](/blog/photos) to display photo-featured posts
