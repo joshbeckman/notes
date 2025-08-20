@@ -4,6 +4,7 @@ about: Draft a music ablum post
 title: '[music]'
 ---
 
+---
 title: NAME by NAME
 rating: 1
 album:
