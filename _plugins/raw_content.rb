@@ -17,6 +17,9 @@ module RawContent
         end.compact
         post.data['backlinks'] = (post_backlinks + page_backlinks).compact
       end
+
+      calculate_category_navigation(site)
+
       site.pages.each do |page|
         page.data['raw_content'] = page.content
         post_backlinks = site.posts.docs.select { |other_post| backlinks?(page, other_post) }
@@ -35,6 +38,36 @@ module RawContent
     end
 
     private
+
+    def calculate_category_navigation(site)
+      posts_by_category = {}
+      site.posts.docs.each do |post|
+        next unless post.data['categories'] && !post.data['categories'].empty?
+
+        category = post.data['categories'].last
+        posts_by_category[category] ||= []
+        posts_by_category[category] << post
+      end
+      posts_by_category.each do |_category, posts|
+        posts.each_with_index do |post, index|
+          if index > 0
+            prev_post = posts[index - 1]
+            post.data['prev_post_in_category'] = {
+              'url' => prev_post.url,
+              'title' => prev_post.data['title']
+            }
+          end
+
+          next unless index < posts.length - 1
+
+          next_post = posts[index + 1]
+          post.data['next_post_in_category'] = {
+            'url' => next_post.url,
+            'title' => next_post.data['title']
+          }
+        end
+      end
+    end
 
     def backlinks?(a, b)
       b.content.include?(a.url) || mastodon_backlinks?(a, b) || bluesky_backlinks?(a, b)

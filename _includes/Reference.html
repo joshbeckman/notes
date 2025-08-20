@@ -41,10 +41,10 @@
             <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y, %B %d, %A' }}</time>
         </a>
       </li>
-      {%- endif -%}
       <li class="filed permalink">
         <a href="{{ page.url }}" class="permalink" title="Permanent link to this page">Permalink</a> to <code>{{page.serial_number}}</code>
       </li>
+      {%- endif -%}
       <li class="filed edit">
       {%- if page.readwise_url -%}
         <a id="edit-link" href="{{ page.readwise_url }}" target="_blank" rel="noopener noreferrer">Edit</a>
@@ -53,4 +53,30 @@
       {%- endif -%}
       </li>
   </ul>
+  {%- if page.prev_post_in_category or page.next_post_in_category -%}
+  <table class="next-prev-posts">
+      <thead>
+    <tr>
+      <td style="text-align: left; width: 50%;">
+          <small>&larr; Previous</small>
+      </td>
+      <td style="text-align: right; width: 50%;">
+          <small>&rarr; Next</small>
+      </td>
+    </tr>
+        </thead>
+    <tr>
+      <td style="text-align: left; width: 50%;">
+        {%- if page.prev_post_in_category -%}
+        <a href="{{ page.prev_post_in_category.url }}">{{ page.prev_post_in_category.title }}</a>
+        {%- endif -%}
+      </td>
+      <td style="text-align: right; width: 50%;">
+        {%- if page.next_post_in_category -%}
+        <a href="{{ page.next_post_in_category.url }}">{{ page.next_post_in_category.title }}</a>
+        {%- endif -%}
+      </td>
+    </tr>
+  </table>
+  {%- endif -%}
 </div>
