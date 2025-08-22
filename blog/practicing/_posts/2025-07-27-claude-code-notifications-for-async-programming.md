@@ -59,6 +59,9 @@ Here's what I have in my `~/.claude/settings.json` user settings:
 
 This just uses some AppleScript to send a nice summary into my Notification Center and I can deal with it immediately or later.
 
+> [!NOTE]
+> You will be prompted to allow notifications from "Script Editor" and you'll need to enable them. If you miss this dialog, go to "System Settings > Notifications" and enable notifications for the "Script Editor" application.
+
 I've also tried a more aggressive version that puts up a dialog box (overlays and interrupts what I'm doing):
 
 ```json
