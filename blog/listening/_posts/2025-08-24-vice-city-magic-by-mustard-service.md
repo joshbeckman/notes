@@ -8,7 +8,7 @@ description:
 rating: 4
 song_link: https://music.apple.com/us/album/vice-city-magic/1812961236
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115082121940661787
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lx4reddxzy2o
 tags:
 - music
 ---
