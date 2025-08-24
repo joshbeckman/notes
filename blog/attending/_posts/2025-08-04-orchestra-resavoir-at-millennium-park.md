@@ -5,7 +5,7 @@ title: Orchestra Resavoir at Millennium Park
 toc: true
 image: "/assets/images/1e1a1417-1775-4d9a-99d0-16f6cd6fbcfc.jpeg"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115084243342388873
 bluesky_status_url: false
 tags:
 - music
