@@ -4,6 +4,7 @@
 require './utilities/apple_music_library_parser'
 
 parser = AppleMusicLibraryParser.new('Library.xml')
+export_id = parser.save_to_database('apple_music_stats.db', File.mtime('Library.xml'))
 
 file = File.open('blog/listening/index.md', 'w')
 file.puts '---'

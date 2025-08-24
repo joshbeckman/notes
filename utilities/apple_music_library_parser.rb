@@ -6,6 +6,7 @@ require_relative 'apple_music_library_parser/artist'
 require_relative 'apple_music_library_parser/playlist'
 require_relative 'apple_music_library_parser/track'
 require_relative 'apple_music_library_parser/genre'
+require_relative 'apple_music_library_parser/database'
 
 class AppleMusicLibraryParser
   attr_reader :plist, :tracks, :playlists
@@ -98,6 +99,49 @@ class AppleMusicLibraryParser
 
   def forgotten_loved_tracks(limit: 10)
     loved_tracks.sort_by { |t| t.play_date_utc || DateTime.new }.take(limit)
+  end
+
+  def save_to_database(db_path = 'apple_music_stats.db', export_date = DateTime.now)
+    db = Database.new(db_path)
+
+    library_id = @plist['Library Persistent ID']
+    export_id = db.save_library_export(library_id, @tracks.count, export_date)
+
+    @tracks.each do |track|
+      next unless track.persistent_id
+
+      db.save_track(track)
+      db.save_track_stats(track, export_id)
+    end
+
+    export_id
+  ensure
+    db&.close
+  end
+
+  def get_listening_deltas(db_path = 'apple_music_stats.db', export_id = nil)
+    db = Database.new(db_path)
+
+    export_id ||= db.get_all_exports.first['id'] if db.get_all_exports.any?
+    return [] unless export_id
+
+    db.get_played_tracks(export_id)
+  ensure
+    db&.close
+  end
+
+  def get_track_history(persistent_id, db_path = 'apple_music_stats.db')
+    db = Database.new(db_path)
+    db.get_listening_history(persistent_id)
+  ensure
+    db&.close
+  end
+
+  def get_export_summaries(db_path = 'apple_music_stats.db')
+    db = Database.new(db_path)
+    db.get_all_exports
+  ensure
+    db&.close
   end
 
   private

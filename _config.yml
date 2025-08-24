@@ -142,6 +142,10 @@ exclude:
   - .readwise_token
   - README.md
   - utilities/
+  - *.db
+  - *.prompt.yml
+  - package.json
+  - package-lock.json
   - vals/
 #   - .jekyll-cache/
 #   - gemfiles/
