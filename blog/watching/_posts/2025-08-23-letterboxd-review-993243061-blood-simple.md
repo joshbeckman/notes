@@ -8,7 +8,7 @@ description:
 rating: 4
 tmdb_id: '11368'
 letterboxd_id: blood-simple
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115082841445749999
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/blood-simple/
 tags:
