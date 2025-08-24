@@ -7,7 +7,7 @@ image: "/assets/images/album_art/mustardservice-vicecitymagic.jpg"
 description:
 rating: 4
 song_link: https://music.apple.com/us/album/vice-city-magic/1812961236
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115082121940661787
 bluesky_status_url: false
 tags:
 - music
