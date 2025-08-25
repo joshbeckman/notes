@@ -20,7 +20,7 @@ tags:
 - system-design
 - interfaces
 - popular
-serial_number: 2025.BLG.126
+serial_number: 2025.BLG.127
 ---
 ![Handles](/assets/images/bc5cfb31-6430-4fa0-8176-f891f86dc8b6.jpeg)
 

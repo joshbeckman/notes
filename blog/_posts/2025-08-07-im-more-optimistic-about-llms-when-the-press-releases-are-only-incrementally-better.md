@@ -16,7 +16,7 @@ tags:
 - machine-learning
 - communication
 - research
-serial_number: 2025.BLG.123
+serial_number: 2025.BLG.124
 ---
 [A coworker friend](https://www.sohanjain.com/) of mine asked me yesterday, "You seem to be publishing a ton recently [on building with LLMs]. Conscious decision to post more? or are you just hacking more?"
 

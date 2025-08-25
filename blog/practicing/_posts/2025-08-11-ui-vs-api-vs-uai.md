@@ -12,7 +12,7 @@ tags:
 - interfaces
 - llm
 - popular
-serial_number: 2025.BLG.128
+serial_number: 2025.BLG.129
 ---
 ![Vending machine](/assets/images/0d522991-da20-408a-9433-2e956c3b814f.jpeg)
 

@@ -16,6 +16,6 @@ tags:
 - entertainment
 - art
 - letterboxd
-serial_number: 2025.BLG.133
+serial_number: 2025.BLG.134
 ---
  <p><img src="https://a.ltrbxd.com/resized/sm/upload/kv/7n/p8/tv/fMC8JBWx2VjsJ53JopAcFjqmlYv-0-600-0-900-crop.jpg?v=3d69c00608"/></p> <p><em>This review may contain spoilers.</em></p> <p>A mobius strip of dreams that I enjoyed more while watching it than I did while turning it over in my mind the rest of the night. Like a dream, I guess.</p> 
