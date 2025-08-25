@@ -3,8 +3,8 @@
 
 require './utilities/apple_music_library_parser'
 
-parser = AppleMusicLibraryParser.new('Library.xml')
-export_id = parser.save_to_database('apple_music_stats.db', File.mtime('Library.xml'))
+LIBRARY_FILE = 'Library.xml'
+parser = AppleMusicLibraryParser.new(LIBRARY_FILE)
 
 file = File.open('blog/listening/index.md', 'w')
 file.puts '---'
@@ -44,7 +44,27 @@ file.puts
 file.puts '## Listening Stats'
 file.puts 'I generate this page from my Apple Music library using [a script I wrote](/blog/pulling-fun-insights-out-of-my-apple-music-library). Feel free to use it, too!'
 file.puts
-file.puts "Last updated: #{DateTime.now.strftime('%Y-%m-%d')}"
+file.puts "Last updated: #{File.mtime(LIBRARY_FILE).strftime('%Y-%m-%d')}"
+file.puts
+file.puts '## Recently Played Albums'
+file.puts 'This is a list of the albums I\'ve played recently.'
+file.puts
+file.puts '| Art | Artist | Album |'
+file.puts '| --- | ------ | ----- |'
+parser.recently_played_albums.each do |album|
+  album.download_album_art
+  file.puts "| #{album.album_art_md} | #{album.artist} | #{album.name} |"
+end
+file.puts
+file.puts '## Recently Loved Albums'
+file.puts 'This is a list of the albums I\'ve loved recently.'
+file.puts
+file.puts '| Art | Artist | Album |'
+file.puts '| ------ | ----- | --------- |'
+parser.recently_loved_albums.each do |album|
+  album.download_album_art
+  file.puts "| #{album.album_art_md} | #{album.artist} | #{album.name} |"
+end
 file.puts
 file.puts '## Top Played Tracks'
 file.puts 'This is a list of the top played tracks in my library.'
@@ -88,24 +108,4 @@ parser.top_genres.each do |genre|
   time = genre.total_time / 1000
   time_format = "#{time / 3600}h #{(time % 3600) / 60}m #{time % 60}s"
   file.puts "| #{genre.name} | #{genre.track_count} | #{genre.play_count} | #{time_format} |"
-end
-file.puts
-file.puts '## Recently Played Albums'
-file.puts 'This is a list of the albums I\'ve played recently.'
-file.puts
-file.puts '| Art | Artist | Album | Date Added |'
-file.puts '| --- | ------ | ----- | --------- |'
-parser.recently_played_albums.each do |album|
-  album.download_album_art
-  file.puts "| #{album.album_art_md} | #{album.artist} | #{album.name} | #{album.date_added&.strftime('%Y-%m-%d')} |"
-end
-file.puts
-file.puts '## Recently Loved Albums'
-file.puts 'This is a list of the albums I\'ve loved recently.'
-file.puts
-file.puts '| Art | Artist | Album | Date Added |'
-file.puts '| ------ | ----- | --------- |'
-parser.recently_loved_albums.each do |album|
-  album.download_album_art
-  file.puts "| #{album.album_art_md} | #{album.artist} | #{album.name} | #{album.date_added&.strftime('%Y-%m-%d')} |"
 end

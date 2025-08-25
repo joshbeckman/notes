@@ -104,6 +104,12 @@ class AppleMusicLibraryParser
   def save_to_database(db_path = 'apple_music_stats.db', export_date = DateTime.now)
     db = Database.new(db_path)
 
+    if db.export_exists_for_date?(export_date)
+      existing_export = db.get_export_by_date(export_date)
+      puts "Export already exists for #{export_date.strftime('%Y-%m-%d')} (ID: #{existing_export['id']}), skipping duplicate save"
+      return existing_export['id']
+    end
+
     library_id = @plist['Library Persistent ID']
     export_id = db.save_library_export(library_id, @tracks.count, export_date)
 

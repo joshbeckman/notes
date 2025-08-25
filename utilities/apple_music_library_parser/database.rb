@@ -92,13 +92,12 @@ class AppleMusicLibraryParser
     end
 
     def save_track(track)
-      @db.execute(<<-SQL,
+      @db.execute(<<-SQL, [track.persistent_id,
         INSERT OR REPLACE INTO tracks (
           persistent_id, track_id, name, artist, album, album_artist,#{' '}
           genre, year, total_time, updated_at
         ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
       SQL
-                  track.persistent_id,
                   track.track_id,
                   track.name,
                   track.artist,
@@ -106,17 +105,16 @@ class AppleMusicLibraryParser
                   track.album_artist,
                   track.genre,
                   track.year,
-                  track.total_time)
+                  track.total_time])
     end
 
     def save_track_stats(track, export_id)
-      @db.execute(<<-SQL,
+      @db.execute(<<-SQL, [track.persistent_id,
         INSERT OR REPLACE INTO track_stats (
           persistent_id, export_id, play_count, play_date_utc,#{' '}
           skip_count, skip_date, rating, loved, date_added, date_modified
         ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
       SQL
-                  track.persistent_id,
                   export_id,
                   track.play_count,
                   track.play_date_utc&.to_s,
@@ -125,7 +123,7 @@ class AppleMusicLibraryParser
                   track.rating,
                   track.loved ? 1 : 0,
                   track.date_added&.to_s,
-                  track.date_modified&.to_s)
+                  track.date_modified&.to_s])
     end
 
     def get_previous_stats(persistent_id, before_export_id = nil)
@@ -236,6 +234,23 @@ class AppleMusicLibraryParser
         GROUP BY le.id
         ORDER BY le.export_date DESC
       SQL
+    end
+
+    # Check if an export already exists for the given date
+    def export_exists_for_date?(export_date)
+      result = @db.get_first_value(
+        'SELECT COUNT(*) FROM library_exports WHERE DATE(export_date) = DATE(?)',
+        export_date.to_s
+      )
+      result > 0
+    end
+
+    # Get export by date
+    def get_export_by_date(export_date)
+      @db.get_first_row(
+        'SELECT * FROM library_exports WHERE DATE(export_date) = DATE(?)',
+        export_date.to_s
+      )
     end
 
     # Returns all artists with plays between exports, sorted by plays added (descending)
