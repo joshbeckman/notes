@@ -8,7 +8,7 @@ description:
 rating: 3
 tmdb_id: '9003'
 letterboxd_id: hellraiser
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115101936240627054
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/hellraiser/
 tags:
