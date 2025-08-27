@@ -8,7 +8,7 @@ categories:
 tags:
 - publishing
 - index
-serial_number: 2024.PAE.012
+serial_number: 2024.PAE.009
 ---
 ## Current
 

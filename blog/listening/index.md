@@ -11,7 +11,7 @@ tags:
 - index
 redirect_from:
 - "/music"
-serial_number: 2024.PAE.011
+serial_number: 2024.PAE.013
 ---
 Albums that moved me enough to write about them.
 
