@@ -23,7 +23,8 @@ module SerialNumbers
 
     def serialize_posts
       # Process posts chronologically to ensure consistent numbering
-      @site.posts.docs.sort_by(&:date).each do |post|
+      # Secondary sort by title for posts with the same date
+      @site.posts.docs.sort_by { |post| [post.date, post.data['title'] || ''] }.each do |post|
         year = post.date.year
         category = determine_category(post)
         series_code = generate_series_code(category)
@@ -57,7 +58,7 @@ module SerialNumbers
         { page: page, date: date }
       end.compact
 
-      pages_to_process.sort_by { |item| item[:date] }.each do |item|
+      pages_to_process.sort_by { |item| [item[:date], item[:page].data['title'] || ''] }.each do |item|
         page = item[:page]
         year = item[:date].year
         series_code = 'PAE'

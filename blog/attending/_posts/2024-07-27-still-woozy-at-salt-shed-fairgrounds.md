@@ -9,7 +9,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/112862543490763
 tags:
 - music
 - salt-shed-venue
-serial_number: 2024.BLG.072
+serial_number: 2024.BLG.073
 ---
 ![IMG_3370](/assets/images/e446b89d-b3f0-45b8-bf13-53be8b4abeb5.jpeg)
 

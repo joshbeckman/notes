@@ -15,6 +15,6 @@ tags:
 - movies
 - chicago
 - letterboxd
-serial_number: 2025.BLG.070
+serial_number: 2025.BLG.074
 ---
  <p><img src="https://a.ltrbxd.com/resized/film-poster/1/0/6/1/3/4/9/1061349-vampire-zombiesfrom-space-0-600-0-900-crop.jpg?v=42d9d102fa"/></p> <p>I got to see this with Matt and Brandon in the feature film spot for our day at the 2025 Chicago Horror Film Festival. </p><p>As the story unfolded I really cared less and less about any plot, and it did start to drag a bit, but the jokes and gore kept me laughing and grimacing throughout and that was enough to make it a highlight.</p> 

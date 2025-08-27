@@ -12,7 +12,7 @@ tags:
 - movies
 - death
 - identity
-serial_number: 2024.BLG.073
+serial_number: 2024.BLG.072
 ---
 > The next thing you know you're looking back instead of forward. And now, at the climax of all those years of worry, sleepless nights, and denials, Bill finally finds himself staring his death in the face, surrounded by people he no longer recognizes and feels no closer attachment to than the thousands of relatives who'd come before. And as the Sun continues to set, he finally comes to realize the dumb irony in how he had been waiting for this moment his entire life, this stupid awkward moment of death that had invaded and distracted so many days with stress and wasted time.
 

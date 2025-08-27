@@ -15,6 +15,6 @@ tags:
 - chicago
 - entertainment
 - letterboxd
-serial_number: 2025.BLG.071
+serial_number: 2025.BLG.070
 ---
  <p><img src="https://a.ltrbxd.com/resized/film-poster/1/2/4/9/8/8/3/1249883-alice-and-the-little-green-men-0-600-0-900-crop.jpg?v=76ba3c55d5"/></p> <p>I got to watch this as part of the Chicago Horror Film Festival, and it was one of the better short films. </p><p>It was actually able to build some suspense in the short runtime, and the resolution felt earned. Really effective last five seconds.</p> 

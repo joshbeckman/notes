@@ -8,7 +8,7 @@ categories:
 tags:
 - workspaces
 - index
-serial_number: 2024.PAE.012
+serial_number: 2024.PAE.013
 ---
 These are the desks I have worked at over the years.
 

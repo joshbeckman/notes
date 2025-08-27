@@ -18,6 +18,6 @@ tags:
 - performance
 - art
 - letterboxd
-serial_number: 2025.BLG.043
+serial_number: 2025.BLG.044
 ---
  <p><img src="https://a.ltrbxd.com/resized/film-poster/3/4/3/3/7/7/343377-two-knights-of-vaudeville-0-600-0-900-crop.jpg?v=e88130f78b"/></p> <p>We got to watch this with live accompaniment by the Alvin Cobb Jr Trio at The Music Box. Syncopated jazz made the movie’s beats hit better but wasn’t enough to save the thin plot. </p><p>I’m sure this was more interesting when it first screened, but the climax was more of a falling action for me.</p> 

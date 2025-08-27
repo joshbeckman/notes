@@ -14,6 +14,6 @@ letterboxd_review_url: https://letterboxd.com/joshbeckman/film/parasite-2019/
 tags:
 - letterboxd
 - movies
-serial_number: 2024.BLG.136
+serial_number: 2024.BLG.135
 ---
  <p><img src="https://a.ltrbxd.com/resized/film-poster/4/2/6/4/0/6/426406-parasite-0-600-0-900-crop.jpg?v=8f5653f710"/></p> <p>I remember watching this in theaters when it released and remember being awestruck by the performances of the family and remember being gripped by the gruesome twists of the metaphorical knife.</p><p>On a re-watch, I was amazed as I traced the pieces of the story weave their way into a perfect fit.</p> 

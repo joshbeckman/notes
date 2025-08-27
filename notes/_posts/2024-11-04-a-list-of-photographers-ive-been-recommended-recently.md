@@ -10,7 +10,7 @@ tags:
 - photography
 - chicago
 - state-government
-serial_number: 2024.NTE.210
+serial_number: 2024.NTE.208
 ---
 From Noah Kahlina in his latest YouTube video, a list of political photographers:
 - [Frank Thorp V (@frankthorpv) • Instagram](https://www.instagram.com/frankthorpv/?hl=en)

@@ -10,7 +10,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3liaaxzqup223
 tags:
 - music
 - aragon-venue
-serial_number: 2025.BLG.024
+serial_number: 2025.BLG.025
 ---
 Sarah Barthel, the lead singer, was definitely still sick after cancelling an earlier stop on the tour. But it was a banger of a show anyway. We went with a whole group and Marybeth made Valentines for everyone. 
 
