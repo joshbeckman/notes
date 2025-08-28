@@ -17,7 +17,7 @@ You can read [what I'm writing](/blog/) or [what I'm reading](/notes/).
 ### On Making
 
 - **Make things. Not too much. Mostly for others** — Our job is to help others. Be of service.
-- **Building means repairing the world around it** — Creation must make the surrounding context more whole. Form, in Context, evaluated against Fit.
+- **Building something means repairing the world around it** — Creation must make the surrounding context more whole. Form, in Context, evaluated against Fit.
 - **Publishing is everything** — Nothing matters until it's in use. Shipping is a feature. Publish to replenish.
 - **It's not fully shipped until it's fast** — Performance determines whether something is usable.
 - **Before making it better, stop making it worse** — Stabilize before optimizing.
@@ -27,13 +27,11 @@ You can read [what I'm writing](/blog/) or [what I'm reading](/notes/).
 
 ### On Craft and Flow
 
-- **Do it right, or you'll need to do it over** — Debt compounds faster than you think. Half measures are as bad as nothing at all.
+- **Do it right, or you'll need to do it over** — Debt and investment compound faster than you think. Half measures are as bad as nothing at all.
 - **One change makes seven** — Everything is connected; plan accordingly. Favor focus over features. Adding anything dilutes everything else.
-- **Bugs and features don't add, they compound** — Complexity grows exponentially.
-- **Resource constraints enable creativity; bureaucratic constraints destroy it** — Know which constraints to embrace. With enough workarounds you develop style.
-- **Slow is smooth. Smooth is fast** — Rushing creates more problems than it solves.
-- **Non-blocking is better than blocking** — Keep systems and people moving. Responsive is better than fast. Design for failure.
+- **Slow is smooth. Smooth is fast** — Rushing creates more problems than it solves. Non-blocking is better than blocking.
 - **Approachable is better than simple** — Easy to start with beats theoretically pure. Practicality beats purity.
+- **Resource constraints enable creativity; bureaucratic constraints destroy it** — Know which constraints to embrace. With enough workarounds you develop style.
 
 ### On People, Communication, and Leadership
 
@@ -53,7 +51,7 @@ You can read [what I'm writing](/blog/) or [what I'm reading](/notes/).
 - **Personal growth has no speed limit** — Keep your identity as small as possible. Growth mindset beats fixed mindset every time.
 - **Some lessons aren't worth learning** — Choose empowering beliefs over limiting ones, even if those limits are sometimes true.
 - **Mood follows action expresses mood** — Being enthusiastic is worth 25 IQ points. If you can't get out of it, get into it. Pleasure in the job puts perfection in the work.
-- **Compete with yourself and root for everyone else** — Success isn't zero-sum.
+- **Compete with yourself and root for everyone else** — Success and failure aren't zero-sum.
 
 ### On Life Philosophy
 
@@ -61,7 +59,7 @@ You can read [what I'm writing](/blog/) or [what I'm reading](/notes/).
 - **Working on human thriving is the entire point** — Technology serves humanity, not vice versa.
 - **Anything you do not give freely becomes lost to you** — Generosity creates abundance.
 - **Life is a gift meant to be given away** — We mature by finding worthy causes for our time and energy. Parenting is one long gifting of your rights into another.
-- **The only thing you can truly control is your own brain** — Focus energy where you have agency. Persistence and determination alone are omnipotent. Press on.
+- **The only thing you can truly control is your own brain** — Focus energy where you have agency. Persistence and determination alone are omnipotent.
 - **Things come and go in seasons** — You don't have to embrace your current season, but recognizing it gives you control.
 
 {% assign month = site.time | date: "%m" | plus: 0 %}
