@@ -16,6 +16,6 @@ tags:
 - entertainment
 - non-fiction
 - letterboxd
+serial_number: 2025.BLG.139
 ---
-
  <p><img src="https://a.ltrbxd.com/resized/film-poster/2/7/0/2/2702-citizen-kane-0-600-0-900-crop.jpg?v=56bbc53dfd"/></p> <p>I was waffling between a four and a five but what’s it matter?</p><p>Ned thought I was joking when I walked off the plane and said I watched Citizen Kane.</p> 
