@@ -8,7 +8,7 @@ description:
 rating: 5
 song_link: https://music.apple.com/us/album/just-cosmo-ep/1691054773
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115140876247428287
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lxwucpa4k22z
 tags:
 - music
 ---
