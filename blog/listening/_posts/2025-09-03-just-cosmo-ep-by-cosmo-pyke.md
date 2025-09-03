@@ -7,7 +7,7 @@ image: "/assets/images/album_art/cosmopyke-justcosmoep.jpg"
 description:
 rating: 5
 song_link: https://music.apple.com/us/album/just-cosmo-ep/1691054773
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115140876247428287
 bluesky_status_url: false
 tags:
 - music
