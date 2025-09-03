@@ -11,9 +11,8 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/115140876247428
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lxwucpa4k22z
 tags:
 - music
+serial_number: 2025.BLG.141
 ---
-
-
 Man, this would be one of my deserted island albums.
 
 I don't know how I found this when it was released in 2017 but it was truly a gift. Since then, I will forget about it for a while, remember it (like I did last night), rediscover it, and listen to it a few times and just smile with gratitude.
