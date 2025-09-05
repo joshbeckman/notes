@@ -66,6 +66,16 @@ Asset = Struct.new(:url, :category, :path, :alt, keyword_init: true) do
     end
   end
 
+  def insert_into_content(content)
+    return content if path.nil?
+
+    if image?
+      content.gsub(url, public_path)
+    else
+      content.gsub(url, standalone_md)
+    end
+  end
+
   private
 
   def find_largest_video_from_m3u8(m3u8_path)
@@ -141,16 +151,6 @@ Asset = Struct.new(:url, :category, :path, :alt, keyword_init: true) do
         `rm -rf #{temp_dir}`
         segments.first
       end
-    end
-  end
-
-  def insert_into_content(content)
-    return content if path.nil?
-
-    if image?
-      content.gsub(url, public_path)
-    else
-      content.gsub(url, standalone_md)
     end
   end
 end
