@@ -11,8 +11,8 @@ tags:
 - sports
 - tennis
 - travel
+serial_number: 2025.BLG.140
 ---
-
 After reading about the old version of the US Open [from David Foster Wallace](https://www.joshbeckman.org/blog/reading/string-theory-by-david-foster-wallace) (on my way to stumbling into a tournament [in New Zealand](https://www.joshbeckman.org/blog/traveling/auckland-new-zealand)) I was excited to go see the big modern cultural and competitive event in person. Ned had been before, so he organized the tickets and got us good seats for the third round on Saturday night and Sunday night of the long Labor Day weekend. 
 
 ![us open on Saturday night](/assets/images/adff9d65-3a90-4b05-81ef-33885b8dedd6.jpeg)
