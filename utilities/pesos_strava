@@ -141,17 +141,24 @@ module PESOS
       puts "Importing activity #{partial_activity.id}"
       activity = client.activity(partial_activity.id)
       image = nil
+      video = nil
       if activity.total_photo_count.positive?
-        photo = client.activity_photos(activity.id).first
+        photos = client.activity_photos(activity.id)
+        photo = photos.first
         # urls is a hash with keys of image width
         # choose the largest image
         asset = Asset.new(url: photo.urls[photo.urls.keys.max], category: 'images')
         asset.download
         image = asset.public_path
+        if photo.video_url
+          asset = Asset.new(url: photo.video_url, category: 'videos')
+          asset.download
+          video = asset.standalone_md
+        end
       end
       post = Post.new(
         title: "#{activity.name} #{activity.sport_type_emoji}",
-        body: post_body(activity, image),
+        body: post_body(activity: activity, image: image, video: video),
         date: activity.start_date,
         strava_activity_url: activity.strava_url,
         layout: 'Exercise',
@@ -164,7 +171,7 @@ module PESOS
       post.create_file
     end
 
-    def post_body(activity, image = nil)
+    def post_body(activity:, image: nil, video: nil)
       location = if activity.segment_efforts.any?
                    effort = activity.segment_efforts.first
                    "#{effort.segment.city}, #{effort.segment.state}, #{effort.segment.country} (#{effort.name})"
@@ -173,8 +180,15 @@ module PESOS
                  else
                    'Unknown location (probably inside)'
                  end
+      media = if video
+                video
+              elsif image
+                "![#{activity.name}](#{image})"
+              else
+                ''
+              end
       <<~BODY
-        #{image ? "![#{activity.name}](#{image})" : ''}
+        #{media}
 
         #{activity.description}
 

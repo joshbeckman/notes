@@ -32,7 +32,7 @@ end
 gem 'kramdown-math-katex'
 gem 'plist'
 gem 'readwise'
-gem 'strava-ruby-client'
+gem 'strava-ruby-client', git: 'https://github.com/joshbeckman/strava-ruby-client/', branch: 'master'
 gem 'polylines'
 
 gem 'jekyll-mastodon_webfinger', '~> 1.0'
