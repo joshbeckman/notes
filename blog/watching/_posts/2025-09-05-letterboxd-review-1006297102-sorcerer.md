@@ -8,7 +8,7 @@ description:
 rating: 5
 tmdb_id: '38985'
 letterboxd_id: sorcerer
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115161394159648115
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/sorcerer/
 tags:
