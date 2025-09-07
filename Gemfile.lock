@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/joshbeckman/strava-ruby-client
-  revision: 09f1fc3fe614eec02dbd2b29451b22d397d4e75b
-  branch: master
+  revision: 5e599057d61a1bcc2c6be37350ea7f140c846459
+  branch: patch-1
   specs:
     strava-ruby-client (2.3.0)
       activesupport
