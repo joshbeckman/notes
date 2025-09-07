@@ -5,7 +5,7 @@ title: Ric Wilson and Air Credits at Edgewater Music Fest
 toc: true
 image: "/assets/images/7a08aa7f-be86-4a80-b01e-106cfb6c1413.jpeg"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115164218274232381
 bluesky_status_url: false
 tags:
 - concerts
