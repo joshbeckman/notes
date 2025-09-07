@@ -11,6 +11,7 @@ tags:
 - chicago
 - recreational-drugs
 - cocktails
+- empty-bottle-venue
 serial_number: 2024.BLG.064
 ---
 ![IMG_3290](/assets/images/f5422003-4e9b-4ea8-93cc-74f9c9c38e75.jpeg)

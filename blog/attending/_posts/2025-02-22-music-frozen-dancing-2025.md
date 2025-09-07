@@ -11,6 +11,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lizfr23qqb24
 tags:
 - chicago
 - music
+- empty-bottle-venue
 serial_number: 2025.BLG.033
 ---
 It's a very Chicago thing to spend the last Saturday of February standing out in the cold in a street music festival to dance along with punk and hard pop and synth bands. But we love [Music Frozen Dancing](https://www.musicfrozendancing.com/) every year.

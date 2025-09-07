@@ -8,6 +8,7 @@ description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/112862543441632006
 tags:
 - music
+- empty-bottle-venue
 serial_number: 2023.BLG.022
 ---
 ![IMG_0854](/assets/images/83ec758e-67b0-4396-b7bd-8b4b7bb19ffd.jpeg)
