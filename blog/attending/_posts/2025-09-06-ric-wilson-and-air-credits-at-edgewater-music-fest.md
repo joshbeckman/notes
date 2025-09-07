@@ -10,9 +10,8 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lyb7zemfci2l
 tags:
 - concerts
 - chicago
+serial_number: 2025.BLG.144
 ---
-
-
 Two Chicago bands playing in the street on a cool summer night got the crowd bouncing.
 
 ![Air Credits at edgewater music fest](/assets/images/7a08aa7f-be86-4a80-b01e-106cfb6c1413.jpeg)
