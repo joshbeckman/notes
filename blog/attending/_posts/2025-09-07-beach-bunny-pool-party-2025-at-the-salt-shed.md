@@ -5,7 +5,7 @@ title: Beach Bunny Pool Party 2025 at The Salt Shed
 toc: true
 image: "/assets/images/c735e7fb-9221-42f7-a9a7-16ecf1bb4404.jpeg"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115169196307418650
 bluesky_status_url: false
 tags:
 - salt-shed-venue
