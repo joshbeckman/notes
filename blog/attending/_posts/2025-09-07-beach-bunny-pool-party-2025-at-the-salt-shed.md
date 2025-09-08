@@ -11,9 +11,8 @@ tags:
 - salt-shed-venue
 - concerts
 - chicago
+serial_number: 2025.BLG.145
 ---
-
-
 This second time seeing Chicago-native [Beach Bunny](https://www.beachbunnymusic.com/) ([previously](https://www.joshbeckman.org/blog/attending/riot-fest-2024-saturday#beach-bunny)) was in much colder weather but the stage still exudes warm spirits.
 
 They have held this Pool Party for the last three years where they have a bunch of other bands perform with them for a whole afternoon and holding this kinda party-show at Salt Shed is the best: lots of food vendors, shops, space, and a skyline sunset make it especially lovely to listen to five sets.
