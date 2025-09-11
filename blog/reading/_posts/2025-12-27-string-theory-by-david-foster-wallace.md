@@ -20,4 +20,4 @@ My brother recommended me this book years ago and then again this fall so I pick
 
 It imbues you with love the the action and appreciation for the effort of professional players (and the gifts they carry). Some comments don't age well, but it's thoroughly entertaining. [Here are my highlights](https://www.joshbeckman.org/sources/#47665545).
 
-Shortly after reading this, I was lucky enough to attend the ATP Auckland Open / ASB Classic to witness great players up close and it helped solidify the book in my mind.
+Shortly after reading this, I was lucky enough to [attend the ATP Auckland Open / ASB Classic](https://www.joshbeckman.org/blog/traveling/auckland-new-zealand) to witness great players up close and it helped solidify the book in my mind.
