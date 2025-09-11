@@ -10,9 +10,8 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lyllzwuxll2t
 tags:
 - salt-shed-venue
 - concerts
+serial_number: 2025.BLG.146
 ---
-
-
 ![Wet Leg on stage at The Salt Shed Fairgrounds](/assets/images/ca616dfb-66ff-4084-a6e2-020eff6d1db8.jpeg)
 
 This second time seeing [Wet Leg](https://wetlegband.com/) ([previously](https://www.joshbeckman.org/blog/attending/wet-leg-at-thalia-hall)) was  bigger in every way. Bigger stage, bigger band, bigger venue, bigger swagger. It's their [Moisturizer](https://www.joshbeckman.org/blog/listening/moisturizer-by-wet-leg) tour but they played nearly every song off their two albums and still ended before an hour and a half. 
