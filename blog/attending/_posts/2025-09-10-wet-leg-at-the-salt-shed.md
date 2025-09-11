@@ -5,7 +5,7 @@ title: Wet Leg at The Salt Shed
 toc: true
 image: "/assets/images/ca616dfb-66ff-4084-a6e2-020eff6d1db8.jpeg"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115187581832111512
 bluesky_status_url: false
 tags:
 - salt-shed-venue
