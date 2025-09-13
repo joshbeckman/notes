@@ -26,4 +26,4 @@ I'm so glad I jumped at the chance to see this show. Darius had a great album ou
 
 {{ "https://music.apple.com/us/album/cherie/1659048252?i=1659049423" | itunesify }}
 
-This was my first concert at [Outset](https://outsetlive.com/), even though it's within walking distance and I've bought tickets for shows there in the past. It's just that those shows got moved to Concord (sister theater) at the last minute. Well, this time I bought a ticket to a show at Concord and it was moved last minute to Outset - a happy surprise. 
+This was my first concert at [Outset](https://outsetlive.com/), even though it's within walking distance and I've bought tickets for shows there in the past. It's just that those shows got moved to Concord (sister theater) at the last minute ([previously](https://www.joshbeckman.org/blog/attending/bonobo-at-concord)). Well, this time I bought a ticket to a show at Concord and it was moved last minute to Outset - a happy surprise. 
