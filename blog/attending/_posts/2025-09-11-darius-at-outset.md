@@ -5,7 +5,7 @@ title: Darius at Outset
 toc: true
 image: "/assets/images/35ab88c3-b180-4b47-91da-72d70c28c205.jpeg"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115198195963404927
 bluesky_status_url: false
 tags:
 - concerts
