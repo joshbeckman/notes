@@ -15,7 +15,6 @@ tags:
 - movies
 - art
 - entertainment
-- personal-blog
 - letterboxd
 serial_number: 2025.BLG.053
 ---
