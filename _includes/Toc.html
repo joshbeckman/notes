@@ -1,5 +1,3 @@
-<div id="toc-and-metadata">
-  {%- if page.toc == true -%}
-    {{ content | toc_only }}
-  {%- endif -%}
-</div>
+{%- if page.toc == true -%}
+  {{ content | toc_only }}
+{%- endif -%}

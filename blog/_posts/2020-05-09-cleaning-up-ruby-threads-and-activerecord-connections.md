@@ -24,7 +24,7 @@ After a few concurrent requests to the server running that code, though, you wil
 
 The limit on your database connection count is of course ultimately dictated by your database server, but usually the limit is set by your ActiveRecord database pool size configuration, which defaults to 5. Since ActiveRecord’s number of database connections is limited, and your code keeps holding on to connections while asking for new ones in each request, you will eventually run out of connections.
 
-To fix this problem, you just need to tell ActiveRecord that you’re done with the connections created within your thread(s). There’s a method dedicated to this [on `ActiveRecord::Base` called `clear_active_connections!`](https://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/ConnectionHandler.html#method-i-clear_active_connections-21). After the connections are returned to the pool, they can be re-used by the next thread.<sup><a href="#fn:1">1</a></sup>
+To fix this problem, you just need to tell ActiveRecord that you’re done with the connections created within your thread(s). There’s a method dedicated to this [on `ActiveRecord::Base` called `clear_active_connections!`](https://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/ConnectionHandler.html#method-i-clear_active_connections-21). After the connections are returned to the pool, they can be re-used by the next thread.[^1]
 
 ```ruby
 resource, total_count = [
@@ -59,7 +59,5 @@ pool_size = server_thread_count * (your_code_thread_count + 1)
 
 If you go increase that pool limit, your `ActiveRecord::ConnectionTimeoutError` exceptions will immediately disappear. You’ll get the speed improvements of concurrent I/O in your Ruby threads while keeping your ActiveRecord connections clean. And all it’ll cost you is a higher pool size.
 
-1. 
-
-As an alternative, [ActiveRecord also has a `with_connection` method](https://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/ConnectionPool.html#method-i-with_connection) that you can use as a wrapper. I don’t prefer this method, as it will _always_ check out a database connection (and return it for you), even if the execution doesn’t end up needing it. I would recommend clearing any connections that happen to have been used instead. [↩︎](#fnref:1)
+[^1]: As an alternative, [ActiveRecord also has a `with_connection` method](https://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/ConnectionPool.html#method-i-with_connection) that you can use as a wrapper. I don’t prefer this method, as it will _always_ check out a database connection (and return it for you), even if the execution doesn’t end up needing it. I would recommend clearing any connections that happen to have been used instead.
 

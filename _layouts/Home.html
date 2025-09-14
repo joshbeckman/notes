@@ -2,17 +2,16 @@
 <html lang="en">
 {%- include head.html -%}
 <body>
-  <div class="row home">
-    <div class="column navigation">
-      <header class="content centered">
-          <div class="contour-filler"></div>
-        {%- include Masthead.html -%}
+  <div class="container">
+      <header class="header">
+          <div class="titles">
+              {%- include Masthead.html -%}
+              <p class="site-subtitle">{{ site.description }}</p>
+          </div>
       </header>
-    </div>
-    <div class="column">
-      <article class="content">
-        <section class="home">
-            {{ content }}
+      <main class="content home">
+          <article class="text">
+              {%- include Content.html -%}
             <div id="toc-and-metadata">
                 <ul id="toc" class="section-nav">
                     <li class="toc-entry toc-h2"><a href="about">About Josh</a>
@@ -62,10 +61,9 @@
                     <li class="toc-entry toc-h2"><a href="proverbs">Proverbs</a></li>
                 </ul>
             </div>
-        </section>
-        {%- include Footer.html -%}
-      </article>
-    </div>
+          </article>
+      </main>
   </div>
+  {%- include Footer.html -%}
 </body>
 </html>

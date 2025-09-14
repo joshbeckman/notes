@@ -7,6 +7,9 @@ tags:
 - index
 serial_number: 2024.PAE.006
 ---
+
+![](/assets/images/talks.jpeg)
+
 These are talks I've given over the years.
 
 {% assign postsByYear = 

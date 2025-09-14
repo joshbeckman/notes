@@ -12,7 +12,7 @@ module Jekyll
       # and we need to set the height to 450px to avoid scrollbars
       width = 'height="450"' if url.query.nil?
       <<~HTML
-        <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" #{width} style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="#{url}"></iframe>
+        <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" #{width} style="width:100%;overflow:hidden;border-radius:0.8em;border:1px solid var(--c-bg-alt);" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="#{url}"></iframe>
       HTML
     end
   end

@@ -38,7 +38,8 @@ Each article has a cryptocurrency headline - taken from the source article it is
 
 Ok, so this stuff is headline clickbait...for what?
 
-<figure class="kg-card kg-image-card kg-card-hascaption"><img src="/assets/images/8E421573-D3A4-4879-997C-B0E8FDB6C282.jpeg" class="kg-image" alt  width="2000" height="1186"  sizes="(min-width: 720px) 720px"><figcaption>Top Crypto News is exciting, at least!</figcaption></figure>
+<img src="/assets/images/8E421573-D3A4-4879-997C-B0E8FDB6C282.jpeg" class="kg-image" alt="Top Crypto News is exciting, at least!"  width="2000" height="1186"  sizes="(min-width: 720px) 720px">
+
 ### The Source Material
 
 Let's look at this source blog, _Top Crypto News_. [Every post on _this_ site](https://www.topcryptonews.net/worlds-biggest-crypto-investor-gives-bitcoins-most-important-date-this-year/)is just a reblog of a YouTube video, pulled from various channels about cryptocurrencies. Even those articles are either empty (just an embed of the YouTube video) or contain auto-generated text unrelated to the topic (the same text found on the Blogger and WordPress and Weebly sites).

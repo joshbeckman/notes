@@ -12,7 +12,7 @@ redirect_from:
 - "/on-theory-building-as-an-engineering-team/"
 serial_number: 2020.BLG.017
 ---
-Recently, I was reading [Marc Booker’s post](http://brooker.co.za/blog/2020/06/23/code.html) about the need for documentation outside of the codebase. [A thoughtful comment](https://news.ycombinator.com/item?id=23751652) on the post led me to [Peter Naur’s paper on Programming as Theory Building](http://pages.cs.wisc.edu/~remzi/Naur.pdf), which I recommend reading<sup><a href="#fn:1">1</a></sup>. In it, Naur argues that the act of programming is not a practice of writing code but the work of creating a theory of the problem at hand and a theory of the system to address it. As a team exercise, we practiced documenting our theories of the OfficeLuv system and found it very rewarding.
+Recently, I was reading [Marc Booker’s post](http://brooker.co.za/blog/2020/06/23/code.html) about the need for documentation outside of the codebase. [A thoughtful comment](https://news.ycombinator.com/item?id=23751652) on the post led me to [Peter Naur’s paper on Programming as Theory Building](http://pages.cs.wisc.edu/~remzi/Naur.pdf), which I recommend reading[^1]. In it, Naur argues that the act of programming is not a practice of writing code but the work of creating a theory of the problem at hand and a theory of the system to address it. As a team exercise, we practiced documenting our theories of the OfficeLuv system and found it very rewarding.
 
 In my mind, there is a hierarchy of explanatory documentation that programmers pass between each other. At the bottom there is the pulse of the commit history. This documentation is a permanent record, but the explanations themselves are brief, incomplete, and ephemeral.
 
@@ -36,7 +36,5 @@ I think it’s key to have each team member write their theories on their own. T
 
 Don’t spend time trying to pull a single Grand Unifying Theory of The Program out of several individual theories. Our document ended up as a series of sentences and paragraphs, along with a few references and examples. Again, I think this may be possible at the subsystem level, but unlikely to exist at the level of a sufficiently complex product.
 
-1. 
-
-If you find it repetitive, I recommend skipping to the final couple pages where Naur talks about how best to actually _apply_ “Theory Building” on your own. It comes after the actual paper. [↩︎](#fnref:1)
+[^1]: If you find it repetitive, I recommend skipping to the final couple pages where Naur talks about how best to actually _apply_ “Theory Building” on your own. It comes after the actual paper.
 

@@ -24,9 +24,9 @@ Well, we're gonna have to break this down a bit.
 - Macbook Pro (2023, work)
 - paper and pencil
 - Apple studio monitor
-- Logitech Brio webcam
+- [OBSBOT Meet 2 Webcam](https://www.obsbot.com/obsbot-meet-2-4k-webcam)
 - Workbench lights
-- [Focusrite Scarlet Solo](https://us.focusrite.com/products/scarlett-solo-3rd-gen-refurbished)
+- [Focusrite Scarlet Solo](https://us.focusrite.com/products/scarlett-solo-3rd-gen-refurbished) audio interface
 - [Samson Q2U microphone](https://samsontech.com/products/microphones/usb-microphones/q2u/)
 - Bose IE2 in-ear-monitor headphones
 - Raspberry Pi

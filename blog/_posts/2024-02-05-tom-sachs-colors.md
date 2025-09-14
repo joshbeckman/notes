@@ -10,7 +10,7 @@ I come back to [COLOR](https://vimeo.com/33998046) by Tom Sachs whenever I want 
 
 It tells me: take a stance on the infinite spectrum of artistic choice, commit, and defend your reasons. They're as good as any others.
 
-<iframe src="https://player.vimeo.com/video/33998046?h=8810b92a8d&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/33998046?h=8810b92a8d&title=0&byline=0&portrait=0" width="100%" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 
 This time, I realized that I haven't seen these colors (the static set they use in their studio) written out online. I think Sachs might hate these being reduced to hex codes, so I'm going to do it here.
 

@@ -12,6 +12,8 @@ redirect_from:
 - "/verify"
 serial_number: 2023.PAE.002
 ---
+![Josh having fun in front of a Matisse mural](/assets/images/FBFE9CF8-7D9A-4B63-9816-3A5D2F31B959.jpeg)
+
 I'm currently working as a Senior Staff Engineer at [Shopify](https://shopify.com), building [a visual programming platform](https://www.shopify.com/flow) for merchants and improving [the interfaces for Shopify developers](https://shopify.dev/).
 I live in Chicago and [Chicago](/tags#chicago) is a great place to live. I've been traveling and backpacking more frequently, exploring new places, and spending time cultivating my garden.
 

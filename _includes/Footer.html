@@ -40,7 +40,7 @@
   <table>
       <tr>
           <td style="text-align: left;">
-              <small>Updated: <time datetime="{{ site.build_time }}" class="time-relative">{{ site.build_time }}</time></small>
+              <small>Site updated: <time datetime="{{ site.build_time }}" class="time-relative">{{ site.build_time }}</time></small>
           </td>
           <td style="text-align: right;">
             <small><code>{{site.version}}</code></small>
@@ -54,6 +54,39 @@
 <script async src="/assets/js/hotkeys.min.js"></script>
 <script data-goatcounter="https://joshbeckman.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <script>
+(function figurePadding() {
+        document.addEventListener('DOMContentLoaded', function() {
+            const imgWrappers = document.querySelectorAll('.img-wrapper');
+            imgWrappers.forEach(function(wrapper) {
+                const img = wrapper.querySelector('img');
+                if (img) {
+                    function setPadding() {
+                        if (img.naturalHeight && img.naturalWidth) {
+                            const aspectRatio = (img.naturalHeight / img.naturalWidth) * 100;
+                            wrapper.style.paddingBottom = aspectRatio + '%';
+                        }
+                    }
+                    if (img.complete && img.naturalHeight) {
+                        setPadding();
+                    } else {
+                        img.addEventListener('load', setPadding);
+                        img.addEventListener('error', function() {
+                            wrapper.style.paddingBottom = '56.25%'; // 16:9 fallback
+                        });
+                    }
+                }
+            });
+            var figures = document.querySelectorAll('.with-caption');
+            if (figures) { 
+                figures.forEach(figure => { 
+                    if (figure.nextElementSibling && figure.nextElementSibling.classList.contains('with-caption') || 
+                        !figure.nextElementSibling && figure.previousElementSibling.classList.contains('with-caption')) {
+                        figure.classList.add('special-caption');
+                    }
+                });
+            }
+        });
+})();
 if (document.getElementById("cusdis_thread")) {
   var script = document.createElement('script');
   script.src = 'https://cusdis.com/js/cusdis.es.js';
@@ -66,26 +99,11 @@ if (document.getElementById("cusdis_thread")) {
     searchInput.focus();
   }
 })();
-
-(function hideDuplicateImages() {
-    let headerImages = document.querySelectorAll('header img');
-    let articleImages = document.querySelectorAll('article section img');
-    let headerImageSrcs = headerImages.length > 0 ? [].slice.call(headerImages).map(function (img) {
-        return img.src;
-    }) : [];
-    for (let i = 0; i < articleImages.length; i++) {
-        let img = articleImages[i];
-        if (img.classList.contains('print-only')) {
-            continue;
-        }
-        if (headerImageSrcs.indexOf(img.src) > -1) {
-            img.parentNode.removeChild(img);
-        }
-    }
-})();
-
 function prepareImagesForLightbox() {
-    let images = document.querySelectorAll('article section img, header img');
+    if (window.innerWidth < 1500) {
+        return;
+    }
+    let images = document.querySelectorAll('article section img, header img, .text img');
     for (let i = 0; i < images.length; i++) {
         if (images[i].classList.contains('no-lightbox')) {
             continue;
@@ -109,20 +127,22 @@ function prepareImagesForLightbox() {
     var script2 = document.createElement('script');
     script2.src = '/assets/js/photoswipe-lightbox.umd.min.js';
     script2.async = true;
-    document.body.appendChild(script2);
     var bothLoaded = 0;
     script.onload = script2.onload = function () {
+      console.log('PhotoSwipe scripts loaded');
         bothLoaded++;
         if (bothLoaded < 2) {
             return;
         }
         var lightbox = new PhotoSwipeLightbox({
-            gallery: 'article section, header',
+            gallery: 'article section, header, .text',
             children: 'a.ps',
             pswpModule: PhotoSwipe
         });
         lightbox.init();
+      console.log('PhotoSwipe lightbox initialized');
     };
+    document.body.appendChild(script2);
 }
 window.addEventListener('load', prepareImagesForLightbox);
 window.addEventListener('load', function () {

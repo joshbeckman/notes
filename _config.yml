@@ -9,7 +9,7 @@ repo_edit_url: "http://github.com/joshbeckman/notes/edit/master/"
 #######################################################################
 
 title: Josh Beckman
-description: Things collected from online and elsewhere
+description: Building in the open
 copyright: 
   # year: 2023
   # msg: Josh Beckman
@@ -91,6 +91,7 @@ plugins:
   - jekyll-redirect-from
     # - jekyll-tidy
 feed:
+  disable_in_development: true
   posts_limit: 25
   categories:
     - blog

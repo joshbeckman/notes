@@ -33,7 +33,7 @@
         {%- assign replaced_content = replaced_content | replace: bracket_link,link_text -%}
     {%- endfor -%}
 
-    {{ replaced_content | inject_anchors }}
+    {{ replaced_content | wrap_media | inject_anchors }}
 <a class="p-author h-card" style="display: none;" href="https://www.joshbeckman.org/about">
     Josh Beckman
 </a>

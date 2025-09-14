@@ -33,6 +33,6 @@ Monday morning we woke up to [run a final farewell in Prospect Park](https://www
 
 ## Video
 
-I'm trying to take more and trying to get better at editing video. Editing video is teaching me how I need to be shooting video. I'm trying to edit and publish quickly, to get more reps in. Here's a vignette of the weekend:
-
 <iframe width="100%" height="350" src="https://www.youtube-nocookie.com/embed/ZINChZYlY7s?si=05_oMuOEwIH2iNYG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+I'm trying to take more and trying to get better at editing video. Editing video is teaching me how I need to be shooting video. I'm trying to edit and publish quickly, to get more reps in.

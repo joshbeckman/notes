@@ -8,10 +8,6 @@ serial_number: 2023.PAE.003
 ---
 Hello, friends. I'm [Josh](/about/).
 
-I'm a software engineer building gardens, systems, and tools.
-
-You can read [what I'm writing](/blog/) or [what I'm reading](/notes/).
-
 ## What I Believe
 
 ### On Making

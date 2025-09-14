@@ -1,11 +1,9 @@
 {%- if page.in_reply_to -%}
-  <div class="in_reply_to-metadata">
-    <h3 class="">
-      In Reply To: <a href="{{ page.in_reply_to }}" class="in_reply_to-thread">thread</a>
-    </h3>
-    {%- if page.canonical -%}
-    <a href="{{ page.canonical }}" class="in_reply_to-source" style="display:none" >
-        View Source</a>
-    {%- endif -%}
-  </div>
+<h3 class="">
+  In Reply To: <a href="{{ page.in_reply_to }}" class="in_reply_to-thread">thread</a>
+</h3>
+{%- if page.canonical -%}
+<a href="{{ page.canonical }}" class="in_reply_to-source" style="display:none" >
+    View Source</a>
+{%- endif -%}
 {%- endif -%}
