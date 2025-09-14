@@ -57,7 +57,7 @@ The existing tools each solve part of this:
 - Copy/paste from the web loses formatting and context
 - The GitHub MCP server requires multiple calls to get all comments and events, which is slow and error-prone
 
-I wanted something that captured *everything* in a format that's both human and AI readable, in a single tool call I can give an LLM agent.
+I wanted something that captured *everything* in a format that's both human and AI readable, in a single tool call I can give an LLM agent. I needed to [replicate the user interface into the user-agent interface](https://www.joshbeckman.org/blog/practicing/ui-vs-api-vs-uai).
 
 ## Smart Features
 
