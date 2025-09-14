@@ -94,7 +94,7 @@ You can read about everything else I use to build things at [/uses](/uses).
 - [More ideas](https://github.com/joshbeckman/notes/issues?q=is%3Aopen+is%3Aissue+-label%3Apost)
 
 ### 2025-09-14
-- Site layout redesign
+- Site layout redesign ([details](/blog/practicing/website-redesign))
 
 ### 2025-08-20
 - Render next/previous posts in the same subcategory on post pages
