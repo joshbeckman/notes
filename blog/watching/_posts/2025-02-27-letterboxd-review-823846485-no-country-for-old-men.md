@@ -14,7 +14,6 @@ letterboxd_review_url: https://letterboxd.com/joshbeckman/film/no-country-for-ol
 tags:
 - movies
 - entertainment
-- personal-blog
 - philosophy
 - letterboxd
 serial_number: 2025.BLG.036
