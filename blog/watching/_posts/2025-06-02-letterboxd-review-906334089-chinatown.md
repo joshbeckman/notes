@@ -15,7 +15,6 @@ tags:
 - movies
 - entertainment
 - music
-- personal-blog
 - culture
 - history
 - letterboxd
