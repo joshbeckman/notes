@@ -10,8 +10,8 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lystekwp5l2g
 tags:
 - personal-blog
 - interfaces
+serial_number: 2025.BLG.149
 ---
-
 I've spent the last week or so redesigning my personal blog/site to make images/video/code/tables stand out more while remaining readably inline. I recoded a video walkthrough:
 
 <iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/ssEja-yAUqI?si=hV7BAmRmUpcMl_Na" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
