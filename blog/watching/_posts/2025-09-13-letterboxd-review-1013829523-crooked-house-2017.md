@@ -8,7 +8,7 @@ description:
 rating: 2
 tmdb_id: '419835'
 letterboxd_id: crooked-house-2017
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115201741715883204
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/crooked-house-2017/
 tags:
