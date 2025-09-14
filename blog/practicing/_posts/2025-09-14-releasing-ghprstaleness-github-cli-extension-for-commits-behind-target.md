@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/d8238fc8-3f69-4c51-9be0-94d238607ceb.png"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115203860421219532
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lystemi2ds2c
 tags:
 - tools
 - llm
