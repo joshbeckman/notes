@@ -5,7 +5,7 @@ title: Website Redesign
 toc: true
 image: "/assets/images/03127241-d3f8-482d-9d88-79a64c3495cf.png"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115203860383373489
 bluesky_status_url: false
 tags:
 - personal-blog
