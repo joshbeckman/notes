@@ -2,7 +2,7 @@
 layout: Page
 title: Music Listening
 toc: true
-emoji: "\U0001F3B6"
+emoji: 🎶
 searchable: true
 categories:
 - blog
@@ -10,8 +10,7 @@ tags:
 - music
 - index
 redirect_from:
-- "/music"
-serial_number: 2024.PAE.009
+- /music
 ---
 Albums that moved me enough to write about them.
 
@@ -34,39 +33,39 @@ Albums that moved me enough to write about them.
 ## Listening Stats
 I generate this page from my Apple Music library using [a script I wrote](/blog/pulling-fun-insights-out-of-my-apple-music-library). Feel free to use it, too!
 
-Last updated: 2025-08-24
+Last updated: 2025-09-15
 
 ## Recently Played Albums
 This is a list of the albums I've played recently.
 
 | Art | Artist | Album |
 | --- | ------ | ----- |
-| ![Mustard Service - Vice City Magic](/assets/images/album_art/mustardservice-vicecitymagic.jpg) | Mustard Service | Vice City Magic |
-| ![Sofia Kourtesis - Volver - EP](/assets/images/album_art/sofiakourtesis-volverep.jpg) | Sofia Kourtesis | Volver - EP |
+| ![Parcels - LOVED](/assets/images/album_art/parcels-loved.jpg) | Parcels | LOVED |
+| ![SG Lewis - Anemoia](/assets/images/album_art/sglewis-anemoia.jpg) | SG Lewis | Anemoia |
+| ![Hot Chip - Joy In Repetition](/assets/images/album_art/hotchip-joyinrepetition.jpg) | Hot Chip | Joy In Repetition |
+| ![Weval - CHOROPHOBIA](/assets/images/album_art/weval-chorophobia.jpg) | Weval | CHOROPHOBIA |
+|  | Underworld | Underworld | Boiler Room: London |
+| ![Kaitlyn Aurelia Smith - Gush](/assets/images/album_art/kaitlynaureliasmith-gush.jpg) | Kaitlyn Aurelia Smith | Gush |
+| ![Daphni - Eleven - Single](/assets/images/album_art/daphni-elevensingle.jpg) | Daphni | Eleven - Single |
+| ![Tangerine Dream - Hyperborea (Deluxe Edition)](/assets/images/album_art/tangerinedream-hyperboreadeluxeedition.jpg) | Tangerine Dream | Hyperborea (Deluxe Edition) |
 | ![KAYTRANADA - AIN'T NO DAMN WAY!](/assets/images/album_art/kaytranada-aintnodamnway.jpg) | KAYTRANADA | AIN'T NO DAMN WAY! |
-| ![Confidence Man - 3AM (LA LA LA)](/assets/images/album_art/confidenceman-3amlalala.jpg) | Confidence Man | 3AM (LA LA LA) |
-| ![SG Lewis - AudioLust & HigherLove](/assets/images/album_art/sglewis-audiolusthigherlove.jpg) | SG Lewis | AudioLust & HigherLove |
-| ![Acetone - Acetone](/assets/images/album_art/acetone-acetone.jpg) | Acetone | Acetone |
-|  | Abrão, Glowal & 8Kays | Lane 8 Spring 2024 Mixtape (DJ Mix) |
-| ![About Group - Late Night Tales: Hot Chip](/assets/images/album_art/aboutgroup-latenighttaleshotchip.jpg) | About Group | Late Night Tales: Hot Chip |
-| ![Able Noise - High Tide](/assets/images/album_art/ablenoise-hightide.jpg) | Able Noise | High Tide |
-| ![Abbey Simon - Chopin Piano Works (The VoxBox Edition)](/assets/images/album_art/abbeysimon-chopinpianoworksthevoxboxedition.jpg) | Abbey Simon | Chopin Piano Works (The VoxBox Edition) |
+| ![Beach Bunny - Emotional Creature](/assets/images/album_art/beachbunny-emotionalcreature.jpg) | Beach Bunny | Emotional Creature |
 
 ## Recently Loved Albums
 This is a list of the albums I've loved recently.
 
 | Art | Artist | Album |
 | ------ | ----- | --------- |
+| ![Weval - CHOROPHOBIA](/assets/images/album_art/weval-chorophobia.jpg) | Weval | CHOROPHOBIA |
+| ![Tangerine Dream - Hyperborea (Deluxe Edition)](/assets/images/album_art/tangerinedream-hyperboreadeluxeedition.jpg) | Tangerine Dream | Hyperborea (Deluxe Edition) |
+| ![UTFO - Hits](/assets/images/album_art/utfo-hits.jpg) | UTFO | Hits |
+| ![Kaitlyn Aurelia Smith - Gush](/assets/images/album_art/kaitlynaureliasmith-gush.jpg) | Kaitlyn Aurelia Smith | Gush |
 | ![SG Lewis - AudioLust & HigherLove](/assets/images/album_art/sglewis-audiolusthigherlove.jpg) | SG Lewis | AudioLust & HigherLove |
 | ![Sofia Kourtesis - Volver - EP](/assets/images/album_art/sofiakourtesis-volverep.jpg) | Sofia Kourtesis | Volver - EP |
 | ![Mustard Service - Vice City Magic](/assets/images/album_art/mustardservice-vicecitymagic.jpg) | Mustard Service | Vice City Magic |
 | ![Barry Can't Swim - Loner](/assets/images/album_art/barrycantswim-loner.jpg) | Barry Can't Swim | Loner |
 | ![Tony Njoku - ALL OUR KNIVES ARE ALWAYS SHARP](/assets/images/album_art/tonynjoku-allourknivesarealwayssharp.jpg) | Tony Njoku | ALL OUR KNIVES ARE ALWAYS SHARP |
 | ![Wet Leg - moisturizer](/assets/images/album_art/wetleg-moisturizer.jpg) | Wet Leg | moisturizer |
-| ![Young Fathers - 28 Years Later (Original Motion Picture Soundtrack)](/assets/images/album_art/youngfathers-28yearslateroriginalmotionpicturesoundtrack.jpg) | Young Fathers | 28 Years Later (Original Motion Picture Soundtrack) |
-| ![Gelli Haha - Switcheroo](/assets/images/album_art/gellihaha-switcheroo.jpg) | Gelli Haha | Switcheroo |
-| ![Black Moth Super Rainbow - Soft New Magic Dream](/assets/images/album_art/blackmothsuperrainbow-softnewmagicdream.jpg) | Black Moth Super Rainbow | Soft New Magic Dream |
-| ![Death In Vegas - Death Mask](/assets/images/album_art/deathinvegas-deathmask.jpg) | Death In Vegas | Death Mask |
 
 ## Top Played Tracks
 This is a list of the top played tracks in my library.
@@ -82,7 +81,7 @@ This is a list of the top played tracks in my library.
 | Sylvan Esso | ![Sylvan Esso - Sylvan Esso](/assets/images/album_art/sylvanesso-sylvanesso.jpg) | Come Down | 82 | 4h 1m 59s |
 | Peter Broderick | ![Peter Broderick - Partners](/assets/images/album_art/peterbroderick-partners.jpg) | In a Landscape | 82 | 14h 15m 12s |
 |  | ![ - Her OST](/assets/images/album_art/-herost.jpg) | Song On The Beach | 78 | 4h 36m 29s |
-|  | ![ - Her OST](/assets/images/album_art/-herost.jpg) | Photograph | 76 | 3h 8m 48s |
+| Peter Broderick | ![Peter Broderick - How They Are](/assets/images/album_art/peterbroderick-howtheyare.jpg) | Guilt's Tune | 76 | 5h 39m 3s |
 
 ## Top Played Albums
 This is a list of the top played albums in my library (by ratio of song plays to songs in the album).
@@ -110,24 +109,24 @@ This is a list of the top played artists in my library (by song plays).
 | Caribou | 969 | 9 |
 | Peter Broderick | 930 | 33 |
 | Sylvan Esso | 896 | 13 |
+| KAYTRANADA | 866 | 12 |
 | Nils Frahm | 860 | 8 |
-| KAYTRANADA | 784 | 11 |
 | José González | 773 | 10 |
 | Shane Carruth | 765 | 51 |
-| Still Woozy | 659 | 14 |
+| Beach Bunny | 661 | 17 |
 
 ## Top Genres
 This is a list of the top genres my library (by track count).
 
 | Genre | Track Count | Song Play Count | Total Time |
 | ------ | ---------- | -------------- | --------------- |
-| Electronic | 4927 | 20796 | 388h 19m 34s |
-| Alternative | 4577 | 18784 | 288h 28m 49s |
-| Dance | 3066 | 8273 | 190h 14m 36s |
-| Hip-Hop/Rap | 2627 | 7856 | 144h 10m 3s |
-| Rock | 1590 | 4044 | 109h 3m 46s |
-| Pop | 1323 | 4664 | 86h 25m 53s |
-| Soundtrack | 1052 | 3478 | 55h 12m 54s |
-| R&B/Soul | 976 | 3169 | 59h 28m 0s |
-| Classical | 866 | 2563 | 62h 28m 20s |
-| Jazz | 849 | 3544 | 81h 7m 19s |
+| Electronic | 4978 | 21010 | 393h 33m 5s |
+| Alternative | 4612 | 18846 | 291h 1m 47s |
+| Dance | 3050 | 8300 | 190h 12m 23s |
+| Hip-Hop/Rap | 2650 | 7856 | 145h 21m 10s |
+| Rock | 1590 | 4046 | 109h 2m 2s |
+| Pop | 1322 | 4664 | 86h 19m 7s |
+| Soundtrack | 1064 | 3478 | 55h 56m 3s |
+| R&B/Soul | 975 | 3181 | 59h 14m 15s |
+| Classical | 864 | 2563 | 62h 23m 39s |
+| Jazz | 849 | 3554 | 81h 7m 21s |
