@@ -88,7 +88,7 @@ endfunction
 
 And I also have made a [Claude slash command](https://docs.anthropic.com/en/docs/claude-code/slash-commands) to have the LLM agent render its last message to me as a markdown preview in the browser:
 
-```
+```md
 ---
 description: Preview Last Response as Markdown
 allowed-tools: Bash(preview-md:*)
