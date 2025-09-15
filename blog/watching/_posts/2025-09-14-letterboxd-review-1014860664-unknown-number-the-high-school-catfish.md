@@ -8,7 +8,7 @@ description:
 rating: 3
 tmdb_id: '1517772'
 letterboxd_id: unknown-number-the-high-school-catfish
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115207419629515922
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/unknown-number-the-high-school-catfish/
 tags:
