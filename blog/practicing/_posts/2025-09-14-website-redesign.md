@@ -10,7 +10,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lystekwp5l2g
 tags:
 - personal-blog
 - interfaces
-serial_number: 2025.BLG.149
+serial_number: 2025.BLG.150
 ---
 I've spent the last week or so redesigning my personal blog/site to make images/video/code/tables stand out more while remaining readably inline. I recoded a video walkthrough:
 

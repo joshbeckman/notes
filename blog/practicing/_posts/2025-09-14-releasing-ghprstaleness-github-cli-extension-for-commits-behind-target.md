@@ -12,7 +12,7 @@ tags:
 - llm
 - language-ruby
 - open-source
-serial_number: 2025.BLG.150
+serial_number: 2025.BLG.151
 ---
 Working in a monorepo and with a merge-queue (as we are now doing inside Shopify - I'm [grappling](https://www.joshbeckman.org/notes/01jwtzrp79033w8x8dc8sje7d6) with it), it becomes imperative that pull-requests (proposed changes) are compared and tested against the most up-to-date version of the codebase. To ensure tests and reviews are accurate, they need to cross the smallest gap possible.
 

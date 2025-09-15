@@ -16,6 +16,6 @@ tags:
 - movies
 - entertainment
 - letterboxd
+serial_number: 2025.BLG.149
 ---
-
  <p><img src="https://a.ltrbxd.com/resized/film-poster/1/3/9/3/7/7/5/1393775-unknown-number-the-high-school-catfish-0-600-0-900-crop.jpg?v=2ca7cc0cd5"/></p> <p>The story so far:<br />Cell phones were created.<br />This has made a lot of people very sad and been widely regarded as a bad move.</p> 
