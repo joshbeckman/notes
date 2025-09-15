@@ -1454,28 +1454,31 @@ div.highlighter-rouge.language-md::before {
 }
 div.highlighter-rouge.language-ts::before,
 div.highlighter-rouge.language-typescript::before {
-  content: "TypeScript Code";
+  content: "TypeScript";
 }
 div.highlighter-rouge.language-js::before,
 div.highlighter-rouge.language-javascript::before {
-  content: "JavaScript Code";
+  content: "JavaScript";
+}
+div.highlighter-rouge.language-json::before {
+  content: "JSON";
 }
 div.highlighter-rouge.language-py::before,
 div.highlighter-rouge.language-python::before {
-  content: "Python Code";
+  content: "Python";
 }
 div.highlighter-rouge.language-rb::before,
 div.highlighter-rouge.language-ruby::before {
-  content: "Ruby Code";
+  content: "Ruby";
 }
 div.highlighter-rouge.language-obj-c::before {
-  content: "Objective-C Code";
+  content: "Objective-C";
 }
 div.highlighter-rouge.language-swift::before {
-  content: "Swift Code";
+  content: "Swift";
 }
 div.highlighter-rouge.language-go::before {
-  content: "Go Code";
+  content: "Go";
 }
 .highlight .hll { background-color: #ffffcc }
 .highlight .c { color: #aaaaaa; font-style: italic } /* Comment */
