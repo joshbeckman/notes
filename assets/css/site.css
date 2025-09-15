@@ -1452,6 +1452,12 @@ div.highlighter-rouge .copy-button {
 div.highlighter-rouge.language-md::before {
   content: "Markdown";
 }
+div.highlighter-rouge.language-sh::before {
+  content: "Bash";
+}
+div.highlighter-rouge.language-vim::before {
+  content: "Vimscript";
+}
 div.highlighter-rouge.language-ts::before,
 div.highlighter-rouge.language-typescript::before {
   content: "TypeScript";
