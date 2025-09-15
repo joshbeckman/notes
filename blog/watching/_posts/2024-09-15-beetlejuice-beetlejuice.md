@@ -12,6 +12,8 @@ tags:
 - movies
 serial_number: 2024.BLG.093
 ---
+![Beetlejuice Beetlejuice](https://m.media-amazon.com/images/M/MV5BYmRlYzE3ZTYtNjIyZi00MWYyLWEzZDItOWI5NzM1Yjc0NmI5XkEyXkFqcGc@._V1_SX300.jpg)
+
 Who doesn't love a magical demon playing in a world of '80s music and practical effects?
 
 If you liked the original, you'll laugh with this one, and I loved the original.
