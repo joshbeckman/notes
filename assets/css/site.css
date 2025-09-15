@@ -644,8 +644,10 @@ h1 {
   height: 1px;
   background: var(--c-josh);
 }
-.text h1::before {
-  left: calc(100% + var(--l-gap)/2);
+@media (min-width: 900px) {
+  .text h1::before {
+    left: calc(100% + var(--l-gap)/2);
+  }
 }
 a.anchor {
   position: absolute;
@@ -892,6 +894,7 @@ body::before {
 }
 .text audio:not(:last-child),
 .text blockquote:not(:last-child),
+.text h1:not(:last-child),
 .text h2:not(:last-child),
 .text h3:not(:last-child),
 .text h4:not(:last-child),
