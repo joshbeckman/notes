@@ -4,7 +4,7 @@ date: '2025-08-31 21:53:41 -0500'
 title: US Open in NYC
 toc: true
 image: "/assets/images/adff9d65-3a90-4b05-81ef-33885b8dedd6.jpeg"
-description:
+photo_feature: true
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115150070178315183
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ly2wxmzpbj2o
 tags:
