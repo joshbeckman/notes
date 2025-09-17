@@ -744,9 +744,124 @@ table th tr, table thead tr {
   border-bottom: 1px solid var(--c-text);
 }
 table th, table td { padding: 0.5rem; }
-.footer table,
-.footer table tr {
-  border: none;
+.footer {
+  padding: 0 0 18ch;
+  display: grid;
+  grid-gap: 8ch var(--l-gap);
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "titles titles" "menu menu";
+  margin-top: 18ch;
+}
+@media (min-width: 1150px) {
+  .footer {
+    grid-template-columns: repeat(3, var(--l-column));
+    grid-template-areas: "titles menu menu";
+  }
+}
+@media (min-width: 1500px) {
+  .footer {
+    margin-top: 30ch;
+    padding: 0 0 30ch;
+  }
+}
+.titles {
+  grid-area: titles;
+}
+.site-title {
+  grid-area: title;
+  text-transform: uppercase;
+}
+.site-subtitle {
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--c-text-alt);
+  grid-area: subtitle;
+  text-transform: uppercase;
+}
+@media (min-width: 900px) {
+  .site-subtitle {
+    font-size: 13px;
+    line-height: 20px;
+  }
+}
+.menu {
+  grid-area: menu;
+  position: relative;
+}
+.menu::after {
+  position: absolute;
+  top: 0;
+  bottom: -18ch;
+  left: calc(33.333% + 0.6ch);
+  width: 1px;
+  background: var(--c-bg-alt);
+  z-index: 0;
+}
+@media (min-width: 500px) {
+  .menu::after {
+    content: "";
+  }
+}
+@media (min-width: 1150px) {
+  .menu::after {
+    left: 50%;
+    bottom: -30ch;
+  }
+}
+.menu-item {
+  display: grid;
+  grid-gap: 0 var(--l-gap);
+  margin-bottom: 2ch;
+  grid-template-columns: 1fr;
+  grid-template-areas: "title" "link";
+}
+@media (min-width: 500px) {
+  .menu-item {
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: "title link";
+  }
+}
+@media (min-width: 1150px) {
+  .menu-item {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.menu-item-title {
+  grid-area: title;
+  margin-bottom: 2ch;
+}
+@media (min-width: 500px) {
+  .menu-item-title {
+    margin-bottom: 0;
+  }
+}
+.menu-item-link {
+  grid-area: link;
+  justify-self: start;
+  transition-property: color;
+}
+.menu-item-link::after,
+.menu-item-title::after {
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--c-text-alt);
+  content: attr(data-label);
+  display: block;
+}
+@media (min-width: 900px) {
+  .menu-item-link::after,
+  .menu-item-title::after {
+    font-size: 13px;
+    line-height: 20px;
+  }
+}
+.menu-item-with-title:not(:first-child) {
+  margin-top: 6ch;
+}
+@media (min-width: 500px) {
+  .menu-item-with-title:not(:first-child) {
+    margin-top: 4ch;
+  }
 }
 
 /* Responsive tables */
@@ -1041,6 +1156,8 @@ article div.highlight {
 :modal {
   border: 2px solid var(--c-text-alt);
   max-width: 66ch;
+  color: var(--c-text);
+  background-color: var(--c-bg);
 }
 #hotkeyDialog button {
   margin: auto;

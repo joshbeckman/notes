@@ -36,19 +36,55 @@
     <button>Close</button>
   </form>
 </dialog>
-<div class="footer">
-  <table>
-      <tr>
-          <td style="text-align: left;">
-              <small>Site updated: <time datetime="{{ site.build_time }}" class="time-relative">{{ site.build_time }}</time></small>
-          </td>
-          <td style="text-align: right;">
-            <small><code>{{site.version}}</code></small>
-          </td>
-      </tr>
-  </table>
-  </p>
+<footer class="footer">
+        <div class="titles">
+          <a class="site-title" href="{{ site.url }}">{{site.title}}</a>
+          <p class="site-subtitle">{{ site.description }}</p>
+        </div>
+        <nav class="menu">
+<div class="menu-item menu-item-with-title">
+    <span class="menu-item-title" data-label="where to find me">PRESENCE</span>        <a class="menu-item-link" href="/subscribe" data-label="RSS / Social / Newsletter">Subscribe</a>    </div>
+<div class="menu-item">
+            <a class="menu-item-link" href="/about" data-label="contact / accounts">About</a>    </div>
+<div class="menu-item menu-item-with-title">
+    <span class="menu-item-title" data-label="of this site">SECTIONS</span>        <a class="menu-item-link" href="/blog" data-label="my writing">Blog</a>    </div>
+<div class="menu-item">
+            <a class="menu-item-link" href="/notes" data-label="found writing">Notes</a>    </div>
+<div class="menu-item">
+            <a class="menu-item-link" href="/replies" data-label="to others">Replies</a>    </div>
+<div class="menu-item">
+            <a class="menu-item-link" href="/blog/photos" data-label="taken">Photos</a>    </div>
+<div class="menu-item">
+            <a class="menu-item-link" href="/exercise" data-label="log">Exercise</a>    </div>
+<div class="menu-item">
+            <a class="menu-item-link" href="/talks" data-label="I've given">Talks</a>    </div>
+<div class="menu-item">
+            <a class="menu-item-link" href="/podcasts" data-label="I've been on">Podcasts</a>    </div>
+<div class="menu-item">
+            <a class="menu-item-link" href="/proverbs" data-label="guidance">Proverbs</a>    </div>
+<div class="menu-item menu-item-with-title">
+    <span class="menu-item-title" data-label="on this site">TOOLS</span>        <a class="menu-item-link" href="/search" data-label="posts & pages">Search</a>    </div>
+<div class="menu-item">
+            <a class="menu-item-link" href="/on-this-day" data-label="in time">On This Day</a>    </div>
+<div class="menu-item">
+            <a class="menu-item-link" href="/random" data-label="discovery">Random</a>    </div>
+<div class="menu-item">
+            <a class="menu-item-link" href="/guestbook" data-label="to sign">Guestbook</a>    </div>
+<div class="menu-item">
+            <a class="menu-item-link" href="/sequences" data-label="research chains">Sequences</a>    </div>
+<div class="menu-item">
+            <a class="menu-item-link" href="/anchors" data-label="most linked">Anchors</a>    </div>
+<div class="menu-item">
+            <a class="menu-item-link" href="/network" data-label="graph">Network</a>    </div>
+<div class="menu-item menu-item-with-title">
+    <span class="menu-item-title" data-label="build">SITE</span>
+  <a class="menu-item-link" href="/about-this-site" data-label="version">{{site.version}}</a>
 </div>
+<div class="menu-item">
+    <span class="menu-item-link" data-label="updated"><time datetime="{{ site.build_time }}" class="time-relative">{{site.build_time}}</time></span>
+</div>
+</nav>
+</footer>
 <span class="print-only">{{site.url | domainify}}{{ page.url }}</span>
 <script async src="/assets/js/lazyload.min.js"></script>
 <script async src="/assets/js/hotkeys.min.js"></script>

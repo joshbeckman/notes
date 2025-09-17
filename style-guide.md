@@ -11,6 +11,8 @@ I kinda wanted to start from [Tom Sachs's COLOR Hex Codes](https://www.joshbeckm
 
 Then I started pulling together other aspects of my site that I wanted to document. I've been working on this site for a while now and I've got a lot of customizations that I've made. I wanted to document them so that I could remember them and so that I could share them with others as a reference when I build new sites.
 
+This is style guidance (colors, typography, buttons, forms, etc.). For a demonstration of these styles in action, see [the test post/page](/blog/test).
+
 ## Colors
 
 This is the default palette. Often, I'll use these colors as a starting point and then adjust them to fit the requirements of the interface.
