@@ -46,6 +46,8 @@
     <span class="menu-item-title" data-label="where to find me">PRESENCE</span>        <a class="menu-item-link" href="/subscribe" data-label="RSS / Social / Newsletter">Subscribe</a>    </div>
 <div class="menu-item">
             <a class="menu-item-link" href="/about" data-label="contact / accounts">About</a>    </div>
+<div class="menu-item">
+            <a class="menu-item-link" id="status-fetch" href="#" data-label="????????">Status</a>    </div>
 <div class="menu-item menu-item-with-title">
     <span class="menu-item-title" data-label="of this site">SECTIONS</span>        <a class="menu-item-link" href="/blog" data-label="my writing">Blog</a>    </div>
 <div class="menu-item">
@@ -223,7 +225,6 @@ window.addEventListener('load', function () {
     requestAnimationFrame(step);
   }
 })();
-(function setTimeAgo() {
 function timeAgo(date) {
     var now = new Date();
     var seconds = Math.floor((now - date) / 1000);
@@ -263,6 +264,7 @@ function timeAgo(date) {
         return date.toLocaleDateString();
     }
 }
+(function setTimeAgo() {
   function timeAgoInterval() {
     var timeElements = document.querySelectorAll('time');
     var ago;
@@ -385,5 +387,32 @@ window.addEventListener('load', function () {
         });
         wrapper.appendChild(copyButton);
     });
+})();
+(function statusFetcher() {
+    const statusLink = document.getElementById('status-fetch');
+    if (!statusLink) {
+        return;
+    }
+  function listener(event) {
+    event.preventDefault();
+    fetchStatus();
+  }
+  statusLink.addEventListener('click', listener);
+  function fetchStatus() {
+    statusLink.dataset.label = 'Fetching...';
+    var headers = new Headers();
+    headers.append('Authorization', 'Bearer this-is-a-read-password');
+  fetch('https://joshbeckman--5ffab9e262b911f09d000224a6c84d84.web.val.run/api', { mode: 'cors', headers: headers })
+        .then(response => response.json())
+        .then(data => {
+          statusLink.textContent = data.status;
+          statusLink.dataset.label = timeAgo(new Date(data.updated_at));
+          statusLink.removeEventListener('click', listener);
+        })
+        .catch(error => {
+            console.error('Error fetching status:', error);
+            statusLink.textContent = 'Status Unavailable';
+        });
+  }
 })();
 </script>
