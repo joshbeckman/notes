@@ -17,6 +17,6 @@ It's a good thing there's a stage as big as this to hold Lady Gaga's drama. She 
 
 ![Lady Gaga at The Mayhem Ball](/assets/images/4c249f76-d25f-411a-95b9-5e69a4e13f9e.jpeg)
 
-<video controls src="/assets/videos/a4728c49-dec6-496f-ade6-0c71e184211d.quicktime"></video>
+<video controls src="/assets/videos/a4728c49-dec6-496f-ade6-0c71e184211d.mov"></video>
 
 Every seat was filled but everyone was standing (we were in section 109 on generosity from a friend, who then got sick and had to drop so we gave some generosity to more friends). I've never seen so many skulls at a concert. Lady Gaga's heavy breathing into the microphone after every dance number connected us and will live in my memory.
