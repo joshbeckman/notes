@@ -13,7 +13,7 @@ tags:
 ---
 
 
-It's a good thing there's a stage as big as this to hold Lady Gaga's drama. She _needs_ (and deserves) a _lot_ of attention.
+It's a good thing there's a stage as big as this to hold [Lady Gaga](https://www.ladygaga.com/us-en/)'s drama. She _needs_ (and deserves) a _lot_ of attention.
 
 ![Lady Gaga at The Mayhem Ball](/assets/images/4c249f76-d25f-411a-95b9-5e69a4e13f9e.jpeg)
 

@@ -13,7 +13,7 @@ tags:
 ---
 
 
-This was my fourth time seeing Big Wild ([previously](https://www.joshbeckman.org/blog/attending/big-wild-at-red-rocks)) and it seemed like the shortest concert; I wanted it to last so much longer.
+This was my fourth time seeing [Big Wild](https://bigwildmusic.com/) ([previously](https://www.joshbeckman.org/blog/attending/big-wild-at-red-rocks)) and it seemed like the shortest concert; I wanted it to last so much longer.
 
 ![Big Wild at Salt Shed](/assets/images/88336bbc-0f1d-41b1-bf13-2a77b4de73b3.jpeg)
 
