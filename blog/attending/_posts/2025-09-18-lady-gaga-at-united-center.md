@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/4c249f76-d25f-411a-95b9-5e69a4e13f9e.jpeg"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115238539752429337
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lzca6vmzk32x
 tags:
 - united-center-venue
 - concerts

@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/88336bbc-0f1d-41b1-bf13-2a77b4de73b3.jpeg"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115238539796997384
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lzca6x7zeb2i
 tags:
 - salt-shed-venue
 - concerts
