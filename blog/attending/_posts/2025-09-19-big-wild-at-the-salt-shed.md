@@ -19,6 +19,6 @@ This was my fourth time seeing Big Wild ([previously](https://www.joshbeckman.or
 
 We originally had floor/GA tickets, but sold them and bought premium balcony-seated tickets at the last minute due to Marybeth's pregnancy. The view and sound from the balcony inside the Shed was perfect. 
 
-<video controls src="/assets/videos/0db5dbea-a75c-44c7-8d6b-0649399e23ea.quicktime"></video>
+<video controls src="/assets/videos/0db5dbea-a75c-44c7-8d6b-0649399e23ea.mov"></video>
 
 I'm amazed at how Jackson Stell can start singing the next song in a new key while the previous melody ends. The seamless transition sounds like a wavering bridge that carries us smoothly across.
