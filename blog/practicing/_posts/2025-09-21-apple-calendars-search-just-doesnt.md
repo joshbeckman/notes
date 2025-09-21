@@ -5,7 +5,7 @@ title: Apple Calendar's Search Just Doesn't
 toc: true
 image:
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115244905700926445
 bluesky_status_url: false
 tags:
 - interfaces
