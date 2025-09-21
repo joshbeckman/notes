@@ -140,7 +140,8 @@ Asset = Struct.new(:url, :category, :path, :alt, keyword_init: true) do
 
       output_file = "#{temp_dir}/output.mp4"
       puts 'Concatenating segments with ffmpeg...'
-      ffmpeg_cmd = "ffmpeg -f concat -safe 0 -i #{concat_file} -c copy #{output_file} -y -loglevel error"
+      # Use proper transcoding instead of -c copy to ensure valid MP4 output
+      ffmpeg_cmd = "ffmpeg -f concat -safe 0 -i #{concat_file} -c:v libx264 -c:a aac -movflags +faststart #{output_file} -y -loglevel error"
       result = `#{ffmpeg_cmd} 2>&1`
 
       if $?.success? && File.exist?(output_file)
