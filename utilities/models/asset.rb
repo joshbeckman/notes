@@ -64,6 +64,14 @@ Asset = Struct.new(:url, :category, :path, :alt, keyword_init: true) do
       `mv #{path} #{new_path}`
       self.path = new_path
     end
+
+    # rename .quicktime to .mov
+    if path.split('.').last == 'quicktime'
+      new_path = path.gsub(/\.quicktime$/, '.mov')
+      puts "Renaming #{path} to #{new_path}"
+      `mv #{path} #{new_path}`
+      self.path = new_path
+    end
   end
 
   def insert_into_content(content)
