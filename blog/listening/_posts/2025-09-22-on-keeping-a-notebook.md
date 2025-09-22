@@ -4,7 +4,7 @@ date: 2025-09-22
 title: On Keeping a Notebook by Joan Didion, Read by Parker Posey
 rating: 5
 image: "/assets/images/selected-shorts.jpg"
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115248464320185924
 bluesky_status_url: false
 tags:
 - writing
