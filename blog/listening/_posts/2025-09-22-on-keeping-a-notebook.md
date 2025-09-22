@@ -8,8 +8,8 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/115248464320185
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lzgna3dct72t
 tags:
 - writing
+serial_number: 2025.BLG.156
 ---
-
 This is my favorite essay on writing, by Joan Didion, read by Parker Posey.
 
 <audio controls>
