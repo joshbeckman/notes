@@ -56,6 +56,9 @@ jobs:
           OMDB_TOKEN: ${{ secrets.OMDB_TOKEN }}
       - name: Run optimize_images
         run: bundle exec utilities/optimize_images
+      - name: Serialize
+        id: serialize
+        run: bundle exec utilities/serialize
       - name: Commit changes
         run: |
           git config --global user.name "GitHub Actions"
