@@ -5,7 +5,7 @@ title: Polo & Pan at The Salt Shed
 toc: true
 image: "/assets/images/908af08c-c65b-42cc-80f0-0fb8e931e21a.jpeg"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115254128700385229
 bluesky_status_url: false
 tags:
 - concerts
