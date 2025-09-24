@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/e870664f-3072-44bb-9a46-1a80e47f116f.jpeg"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115257654682352136
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lzkptf4fhs2o
 tags:
 - flora
 serial_number: 2025.BLG.155
