@@ -556,8 +556,7 @@ figcaption {
 @media (min-width: 1150px) {
   figcaption {
     position: absolute;
-    bottom: -4ch;
-    max-width: 37ch;
+    max-width: calc(var(--l-column) + var(--l-gap));
   }
   .special-caption figcaption {
     position: static;
