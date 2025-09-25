@@ -82,4 +82,4 @@ The box is zero-zum but your impact shouldn't be. Good leaders need to be [striv
 
 Take five minutes and sketch your box. You might be surprised by the gaps between what you think the shape is and what you actually draw out. More importantly, they might explain why your last review felt off, why you're exhausted, or where you need to focus next.
 
-[^1]: I actually drafted this post in 2024, over a year ago, after giving this advice several times to peers inside Shopify. I'm publishing it now because I started giving the same advice again.
+[^1]: I actually drafted this post in 2024, over a year ago, after giving this advice several times to peers inside Shopify. I actually took the role and started using this model in 2023. I'm publishing it now because I started giving the same advice again and I think it's widely useful.
