@@ -1138,8 +1138,8 @@ blockquote {
 .text ol {
   counter-reset: ol;
 }
-.text ol li::before {
-  content: counters(ol, ".", decimal) ".";
+.text ol > li::before {
+  content: counter(ol, decimal) ".";
   counter-increment: ol;
   font-size: 0.9em;
   top: 0.1em;
