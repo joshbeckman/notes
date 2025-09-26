@@ -26,7 +26,6 @@ end
 
 group :development do
   gem 'rubocop'
-  gem 'sqlite3'
 end
 
 gem 'kramdown-math-katex'
