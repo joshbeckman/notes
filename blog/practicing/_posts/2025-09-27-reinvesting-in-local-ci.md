@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/289ad3e9-b5f4-4225-b130-12353c24b777.jpeg"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115277469899556985
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lztjgate4g2o
 tags:
 - tests
 - software-engineering
