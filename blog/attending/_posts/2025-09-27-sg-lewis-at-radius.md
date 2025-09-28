@@ -5,7 +5,7 @@ title: S.G. Lewis at Radius
 toc: true
 image: "/assets/images/8742a445-064c-4d18-9390-4e525d6f0b0a.jpeg"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115283126386753171
 bluesky_status_url: false
 tags:
 - concerts
