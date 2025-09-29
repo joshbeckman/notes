@@ -1,6 +1,6 @@
 ---
 layout: Page
-title: Redirecting to Random Note...
+title: Redirecting to Random Post...
 hide_title: true
 permalink: "/random/"
 tags: index
