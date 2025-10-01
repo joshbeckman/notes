@@ -90,6 +90,7 @@
 </nav>
 </footer>
 <span class="print-only">{{site.url | domainify}}{{ page.url }}</span>
+<div id="qrcode" class="print-only" style="width: 130px;height: 130px"></div>
 <script async src="/assets/js/lazyload.min.js"></script>
 <script async src="/assets/js/hotkeys.min.js"></script>
 <script data-goatcounter="https://joshbeckman.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
@@ -417,4 +418,19 @@ window.addEventListener('load', function () {
         });
   }
 })();
+window.addEventListener('beforeprint', function() {
+    var script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js';
+    script.addEventListener('load', function() {
+        var qrcode = new QRCode(document.getElementById('qrcode'), {
+          text: document.location.href,
+          width: 128,
+          height: 128,
+          colorDark: '#000',
+          colorLight: '#fff',
+          correctLevel: QRCode.CorrectLevel.H
+        });
+    });
+    document.body.appendChild(script);
+});
 </script>
