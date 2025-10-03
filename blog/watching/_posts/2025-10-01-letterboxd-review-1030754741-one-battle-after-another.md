@@ -18,6 +18,6 @@ tags:
 - art
 - culture
 - letterboxd
+serial_number: 2025.BLG.162
 ---
-
  <p><img src="https://a.ltrbxd.com/resized/film-poster/9/5/1/2/7/7/951277-one-battle-after-another-0-600-0-900-crop.jpg?v=d27c4cc662"/></p> <p>This movie is long but earns the runtime by keeping you running through its entirety. A deep family backstory builds into a crescendo and then "goes kinetic" with methodical and punctuated motion.</p><p>The car chase scene was reminiscent of <em>Vertigo</em> on speed - equally hypnotic and teeth-clenching - definitely the best sequence. Sen Penn is <em>the</em> driving force throughout: the protagonist is such only in name, and Penn's antagonist fascism is the real life of the second half. An incredible, physical performance.</p><p>I want more absurdist contemporary fantasies like this (and <em>Eddington</em> and <em>The Substance</em>). But I hope people are actually be inspired and take an oppositional stance instead of taking the satire and going home.</p><p>(I think it would be fun to watch this paired with <em>Bones and All</em>: two stories of a girl and her father left by her mother, and the girl is problematic because of her mother, and they are left on the run.)</p> 
