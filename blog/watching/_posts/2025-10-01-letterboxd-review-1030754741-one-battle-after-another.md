@@ -8,7 +8,7 @@ description:
 rating: 5
 tmdb_id: '1054867'
 letterboxd_id: one-battle-after-another
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115311445924743418
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/one-battle-after-another/
 tags:
