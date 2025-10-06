@@ -5,7 +5,7 @@ title: ICE on Chicago's Lips
 toc: true
 image:
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115327731942966070
 bluesky_status_url: false
 tags:
 - chicago
