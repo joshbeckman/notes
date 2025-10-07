@@ -1307,9 +1307,6 @@ cite .u-url, cite .non-url {
   content: "∈";
   top: -0.1em;
 }
-.text ul li.filed.insight a {
-   color: #FF7900;
-}
 .text ul li.filed.insight:before {
   content: "?";
 }

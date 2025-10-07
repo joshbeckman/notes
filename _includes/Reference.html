@@ -44,6 +44,9 @@
       <li class="filed permalink">
         <a href="{{ page.url }}" class="permalink" title="Permanent link to this page">Permalink</a> to <code>{{page.serial_number}}</code>
       </li>
+      <li class="filed insight">
+        <a href="/insight?post={{ page.url | url_encode }}" class="insight" title="See if AI has insight about this post">Insight</a>
+      </li>
       {%- endif -%}
       <li class="filed edit print-hidden">
       {%- if page.readwise_url -%}
