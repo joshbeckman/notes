@@ -123,13 +123,28 @@ Asset = Struct.new(:url, :category, :path, :alt, keyword_init: true) do
 
     return nil if segments.empty?
 
+    temp_dir = "/tmp/m3u8_segments_#{Time.now.to_i}"
+    `mkdir -p #{temp_dir}`
+
     if segments.length == 1
-      segments.first
+      puts 'Found single segment, downloading and converting to MP4...'
+      segment_file = "#{temp_dir}/segment.ts"
+      `curl -sL -o #{segment_file} "#{segments.first}"`
+
+      output_file = "#{temp_dir}/output.mp4"
+      ffmpeg_cmd = "ffmpeg -i #{segment_file} -c:v libx264 -c:a aac -movflags +faststart #{output_file} -y -loglevel error"
+      result = `#{ffmpeg_cmd} 2>&1`
+
+      if $?.success? && File.exist?(output_file)
+        `rm -rf #{segment_file}`
+        output_file
+      else
+        puts "ffmpeg conversion failed: #{result}"
+        `rm -rf #{temp_dir}`
+        nil
+      end
     else
       puts "Found #{segments.length} segments, downloading and concatenating..."
-
-      temp_dir = "/tmp/m3u8_segments_#{Time.now.to_i}"
-      `mkdir -p #{temp_dir}`
 
       segment_files = []
       segments.each_with_index do |segment_url, index|
@@ -148,7 +163,6 @@ Asset = Struct.new(:url, :category, :path, :alt, keyword_init: true) do
 
       output_file = "#{temp_dir}/output.mp4"
       puts 'Concatenating segments with ffmpeg...'
-      # Use proper transcoding instead of -c copy to ensure valid MP4 output
       ffmpeg_cmd = "ffmpeg -f concat -safe 0 -i #{concat_file} -c:v libx264 -c:a aac -movflags +faststart #{output_file} -y -loglevel error"
       result = `#{ffmpeg_cmd} 2>&1`
 
@@ -158,7 +172,7 @@ Asset = Struct.new(:url, :category, :path, :alt, keyword_init: true) do
       else
         puts "ffmpeg concatenation failed: #{result}"
         `rm -rf #{temp_dir}`
-        segments.first
+        nil
       end
     end
   end
