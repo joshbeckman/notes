@@ -85,6 +85,8 @@ encoding: utf-8
 theme: null
 plugins:
   - jekyll-feed
+  - jekyll-github-alerts
+  - jekyll-octicons
   - jekyll-sitemap
   - jekyll/mastodon_webfinger
   - jekyll-toc

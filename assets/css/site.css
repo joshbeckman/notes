@@ -408,6 +408,14 @@ template {
   --c-bg-alt: hsl(0, 0%, 94%);
   --c-text: hsl(0, 0%, 5%);
   --c-text-alt: hsl(0, 0%, 50%);
+  --c-red: #bd2024;
+  --c-orange: #FF7900;
+  --c-yellow: #FFCC00;
+  --c-green: #237F52;
+  --c-dark-green: #3C341F;
+  --c-blue: #0969DA;
+  --c-dark-blue: #004B87;
+  --c-purple: #9370d8;
   --c-josh: #903465;
   --c-link: #0969DA;
   --c-link-visited: rebeccapurple;
@@ -652,6 +660,36 @@ a.anchor {
   position: absolute;
   right: 0;
   top: 0;
+}
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+.octicon {
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+  margin-right: 0.5em;
+}
+.text .markdown-alert p:first-of-type {
+  margin-bottom: 1em;
+}
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--c-dark-blue);
+}
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--c-green);
+}
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--c-orange);
+}
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--c-purple);
+}
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--c-red);
 }
 .octicon.octicon-link {
   position: relative;

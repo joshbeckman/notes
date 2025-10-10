@@ -18,6 +18,8 @@ gem 'jekyll'
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem 'jekyll-feed'
+  gem 'jekyll-github-alerts'
+  gem 'jekyll-octicons'
   gem 'jekyll-redirect-from'
   gem 'jekyll-sitemap'
   gem 'jekyll-toc'
