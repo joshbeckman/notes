@@ -23,11 +23,10 @@ Because I had somet time on my hands and because I find the tone of writing ente
 
 I kind of think that if you buy this book, it should come with a copy of _[Thinking in &nbsp;Systems](https://en.wikipedia.org/wiki/Thinking_In_Systems:_A_Primer)_ - and vice versa. One will incinerate your confidence in system design and the other will rekindle your hope.
 
+> [!TIP]
+> [All notes](https://www.joshbeckman.org/search/?q=%2724551309&keys=book) in the notes garden.
+
 > ANY LARGE SYSTEM IS GOING TO BE OPERATING MOST OF THE TIME IN FAILURE MODE.
 
 <figure class="kg-card kg-image-card"><img src="/assets/images/IMG_0139.jpeg" class="kg-image" alt  width="2000" height="1500"  sizes="(min-width: 720px) 720px"></figure>
-
-🍃
-
-[More notes](https://notes.joshbeckman.org/tags/#books-24551371) in the notes garden.
 
