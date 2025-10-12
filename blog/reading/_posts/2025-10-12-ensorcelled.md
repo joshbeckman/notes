@@ -10,7 +10,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/115362404480428
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3m2zag36j5o2h
 tags:
 - writing
-serial_number: 2025.BLG.166
+serial_number: 2025.BLG.167
 ---
 I pre-ordered *[Ensorcelled](https://eliotpeper.com/books/ensorcelled)* on a recommendation from Craig Mod and read it this morning over tea and cold sunshine and it had me brushing away tears by the end.
 

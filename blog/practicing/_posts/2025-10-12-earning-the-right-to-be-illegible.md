@@ -12,9 +12,8 @@ tags:
 - software-engineering
 - communication
 - leadership
-serial_number: 2025.BLG.165
+serial_number: 2025.BLG.166
 ---
-
 [Seeing like a software company](https://www.seangoedecke.com/seeing-like-a-software-company/) is the best writing about large-company software engineering I've read in quite a while.[^1]
 
 In it, Goedecke maps the concepts of *[Seeing Like A State](https://en.wikipedia.org/wiki/Seeing_Like_a_State)* into a corporate atmosphere:
