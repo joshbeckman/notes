@@ -677,7 +677,7 @@ a.anchor {
   margin-bottom: 1em;
 }
 .markdown-alert.markdown-alert-note .markdown-alert-title {
-  color: var(--c-dark-blue);
+  color: var(--c-green);
 }
 .markdown-alert.markdown-alert-tip .markdown-alert-title {
   color: var(--c-green);
