@@ -7,7 +7,7 @@ image: "/assets/images/a1d49987-ccff-4cb5-9fd9-128f3421b8b6.jpeg"
 description:
 rating: 4
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115362404480428702
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3m2zag36j5o2h
 tags:
 - writing
 serial_number: 2025.BLG.166
