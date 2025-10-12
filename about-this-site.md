@@ -70,6 +70,8 @@ Popularity is tracked by [Goatcounter](https://www.goatcounter.com/) - public st
 
 Guestbook comments are powered by [Cusdis](https://cusdis.com/).
 
+Webmentions are received at [webmention.io](https://webmention.io/api/mentions.html?token=4N8Bpl6KX64j8VB4k5A3ww).
+
 Serverless scripts (e.g. for [generating insights](/insight)) are hosted/run by [Val Town](https://www.val.town).
 
 You can read about everything else I use to build things at [/uses](/uses).
