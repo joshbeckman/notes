@@ -14,7 +14,6 @@ tags:
 - leadership
 serial_number: 2025.BLG.165
 ---
-![Writing on a desk in the yard](/assets/images/d09a6887-eafc-4037-ab7f-0ee489b7cee4.jpeg)
 
 [Seeing like a software company](https://www.seangoedecke.com/seeing-like-a-software-company/) is the best writing about large-company software engineering I've read in quite a while.[^1]
 
