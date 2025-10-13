@@ -2,7 +2,7 @@
 layout: Page
 title: Music Listening
 toc: true
-emoji: 🎶
+emoji: "\U0001F3B6"
 searchable: true
 categories:
 - blog
@@ -10,7 +10,8 @@ tags:
 - music
 - index
 redirect_from:
-- /music
+- "/music"
+serial_number: 2024.PAE.009
 ---
 Albums that moved me enough to write about them.
 
