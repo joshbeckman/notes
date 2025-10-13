@@ -6,11 +6,11 @@ toc: true
 image: "/assets/images/a1d49987-ccff-4cb5-9fd9-128f3421b8b6.jpeg"
 description:
 rating: 4
-mastodon_social_status_url: false
-bluesky_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115362404480428702
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3m2zag36j5o2h
 tags:
 - writing
-serial_number: 2025.BLG.166
+serial_number: 2025.BLG.167
 ---
 I pre-ordered *[Ensorcelled](https://eliotpeper.com/books/ensorcelled)* on a recommendation from Craig Mod and read it this morning over tea and cold sunshine and it had me brushing away tears by the end.
 

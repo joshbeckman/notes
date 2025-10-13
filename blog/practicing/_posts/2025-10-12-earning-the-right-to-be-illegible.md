@@ -5,16 +5,15 @@ title: Earning the Right to Be Illegible
 toc: true
 image: "/assets/images/d09a6887-eafc-4037-ab7f-0ee489b7cee4.jpeg"
 description:
-mastodon_social_status_url: false
-bluesky_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115362404450655735
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3m2zafzscac2i
 tags:
 - management
 - software-engineering
 - communication
 - leadership
-serial_number: 2025.BLG.165
+serial_number: 2025.BLG.166
 ---
-
 [Seeing like a software company](https://www.seangoedecke.com/seeing-like-a-software-company/) is the best writing about large-company software engineering I've read in quite a while.[^1]
 
 In it, Goedecke maps the concepts of *[Seeing Like A State](https://en.wikipedia.org/wiki/Seeing_Like_a_State)* into a corporate atmosphere:
