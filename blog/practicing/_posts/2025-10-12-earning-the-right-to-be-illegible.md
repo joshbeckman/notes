@@ -14,7 +14,7 @@ tags:
 - leadership
 serial_number: 2025.BLG.166
 ---
-[Seeing like a software company](https://www.seangoedecke.com/seeing-like-a-software-company/) is the best writing about large-company software engineering I've read in quite a while.[^1]
+[Seeing like a software company](https://www.seangoedecke.com/seeing-like-a-software-company/) is the best writing about large-company software engineering I've read in quite a while.
 
 In it, Goedecke maps the concepts of *[Seeing Like A State](https://en.wikipedia.org/wiki/Seeing_Like_a_State)* into a corporate atmosphere:
 
@@ -33,7 +33,7 @@ And Goedecke even has [some tips on how to break those legibility rules](https:/
 
 I think you should always know the degree of illegibility that you are _consciously allowed_ by your lead/organization and I think you should approach it like tending a fire or refilling a battery. You should be earning and spending your illegibility budget strategically.
 
-The more senior[^2] you get, the more illegible work you're allowed/encouraged to do.
+The more senior[^1] you get, the more illegible work you're allowed/encouraged to do.
 
 That's because you are trusted much more by the organization as you gain a larger scope / get more senior. That's essentially what a more senior role entails: trusting you to have wider effects with less oversight.
 
@@ -53,5 +53,4 @@ You need to ebb and flow into and out of legibility to get things done in any gi
 
 Leadership is partly about legibly conveying your illegible findings/hunches. This is where I find the most value in being a senior crafter engineer: developing your taste and leaning on it to move quickly - illegibly - and then packing up your work into highly legible projects or features or strategy for the rest of the organization. Just don't forget to recharge that battery after you've spent it.
 
-[^1]: I really resonate with all of it *except* the "Sociopaths, clueless, and losers" section, which I very much disagree with and would remove. I do not endorse that section.
-[^2]: I'm going to kinda use the terms "more senior" and "higher career level" and "higher scope" interchangeably here. I don't *like* the term "senior" because of the tenure connotation, but it conveys the career ladder level concept succinctly.
+[^1]: I'm going to kinda use the terms "more senior" and "higher career level" and "higher scope" interchangeably here. I don't *like* the term "senior" because of the tenure connotation, but it conveys the career ladder level concept succinctly.
