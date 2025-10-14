@@ -39,10 +39,11 @@ Want an entry path to the garden? Recent topics include:
 - [Cooking](https://notes.joshbeckman.org/tags/#cooking)
 - Or spin the wheel for a [random note](https://notes.joshbeckman.org/random)
 
+<img src="/assets/images/L1030347.jpeg" class="kg-image" alt="Fox helped build the notes garden." width="2000" height="1333"  sizes="(min-width: 720px) 720px">
+
 I'm not the first person to open up their highlights and notes for public browsing, and I _highly recommend_ browsing other people's note gardens: you will certainly find new ideas, research, or random interesting rabbit holes. Here are a few of my favorites:
 
 - [Maggie Appleton](https://maggieappleton.com)
 - [Andy Matuschak](https://notes.andymatuschak.org/About_these_notes?stackedNotes=zUw5PuD8op9oq8kHvni6sug6eRTNtR9Wqma)
 - [Nadia Asparouhova](https://nadia.xyz/notes/)
 - [Gwern](https://gwern.net/about)
-<figure class="kg-card kg-image-card kg-card-hascaption"><img src="/assets/images/L1030347.jpeg" class="kg-image" alt  width="2000" height="1333"  sizes="(min-width: 720px) 720px"><figcaption>Fox helped build the notes garden.</figcaption></figure>
