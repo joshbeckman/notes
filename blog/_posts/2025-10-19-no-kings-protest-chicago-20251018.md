@@ -4,7 +4,7 @@ date: '2025-10-19 16:04:25 +0000'
 title: No Kings Protest, Chicago, 2025-10-18
 toc: true
 image: "/assets/images/77430079-5c1f-4c10-bf85-2116ecd2ed57.jpeg"
-description:
+photo_feature: true
 mastodon_social_status_url: false
 bluesky_status_url: false
 tags:

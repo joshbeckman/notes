@@ -4,7 +4,7 @@ date: '2025-09-21 15:41:04 -0500'
 title: Bending the Fiddle Leaf Fig
 toc: true
 image: "/assets/images/e870664f-3072-44bb-9a46-1a80e47f116f.jpeg"
-description:
+photo_feature: true
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115257654682352136
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lzkptf4fhs2o
 tags:

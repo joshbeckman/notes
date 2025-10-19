@@ -47,6 +47,7 @@ class IssuePoster
       hide_title: frontmatter['hide_title'],
       song_link: frontmatter['song_link'],
       description: frontmatter['description'],
+      photo_feature: frontmatter['photo_feature'],
       date: date,
       image: assets.find(&:image?)&.public_path || frontmatter['image'],
       imdb_id: frontmatter['imdb_id'],

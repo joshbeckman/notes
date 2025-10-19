@@ -4,7 +4,7 @@ date: '2025-10-16 06:26:16 -0500'
 title: Bedmounds in Montreal
 toc: true
 image: "/assets/images/36741523-77df-4ae2-abc1-64c49d28d5ab.jpeg"
-description:
+photo_feature: true
 mastodon_social_status_url: false
 bluesky_status_url: false
 tags:

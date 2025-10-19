@@ -4,7 +4,7 @@ date: '2025-09-22 16:31:46 -0500'
 title: Polo & Pan at The Salt Shed
 toc: true
 image: "/assets/images/908af08c-c65b-42cc-80f0-0fb8e931e21a.jpeg"
-description:
+photo_feature: true
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115254128700385229
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lzj5px54se2t
 tags:
