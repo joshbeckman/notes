@@ -5,7 +5,7 @@ title: No Kings Protest, Chicago, 2025-10-18
 toc: true
 image: "/assets/images/77430079-5c1f-4c10-bf85-2116ecd2ed57.jpeg"
 photo_feature: true
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115402042497511656
 bluesky_status_url: false
 tags:
 - chicago

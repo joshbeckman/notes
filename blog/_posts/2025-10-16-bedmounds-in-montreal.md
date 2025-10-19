@@ -5,7 +5,7 @@ title: Bedmounds in Montreal
 toc: true
 image: "/assets/images/36741523-77df-4ae2-abc1-64c49d28d5ab.jpeg"
 photo_feature: true
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115402042466170348
 bluesky_status_url: false
 tags:
 - canada
