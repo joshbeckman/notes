@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/36741523-77df-4ae2-abc1-64c49d28d5ab.jpeg"
 photo_feature: true
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115402042466170348
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3m3ktpdcbik2o
 tags:
 - canada
 serial_number: 2025.BLG.168
