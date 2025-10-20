@@ -12,7 +12,7 @@ tags:
 - protest
 - united-states
 - videography
-serial_number: 2025.BLG.169
+serial_number: 2025.BLG.170
 ---
 We protested Trump and his fascist federal government actions again ([previously](https://www.joshbeckman.org/blog/no-kings-protest-in-chicago)). And by "We" I mean "We the people": 300,000 of my fellow Chicago citizens and 2,700 other cities across the United States. It was the largest protest in the history of this country.
 
