@@ -118,15 +118,79 @@ Fuse = (function(){"use strict";function e(e,t){var n=Object.keys(e);if(Object.g
                 }, batchMillis);
             }
 
+            // Text fragments are supported in all modern browsers (Chrome 80+, Edge 80+, Safari 16.1+, Firefox 131+)
+            // Ref: https://developer.mozilla.org/en-US/docs/Web/URI/Fragment/Text_fragments
+            function buildTextFragment(text, contentPositions) {
+                if (!text || typeof text !== 'string') {
+                    return '';
+                }
+                if (!contentPositions || contentPositions.length === 0) {
+                    return '';
+                }
+
+                var MIN_FRAGMENT_LENGTH = 50;
+                var position = contentPositions[0];
+                var matchedText = text.substring(position[0], position[1] + 1).normalize('NFC').trim();
+
+                if (matchedText.length < MIN_FRAGMENT_LENGTH) {
+                    return ':~:text=' + encodeURIComponent(matchedText);
+                }
+
+                var textStart = text.substring(position[0], text.length)
+                    .normalize('NFC')
+                    .split('\n')[0]
+                    .split('[')[0]
+                    .split(/\s+/)
+                    .slice(0, 3)
+                    .join(' ')
+                    .trim();
+
+                var textEnd = text.substring(0, position[1] + 1)
+                    .normalize('NFC')
+                    .split('\n')
+                    .pop()
+                    .split(']')
+                    .pop()
+                    .split(/\s+/)
+                    .slice(-3)
+                    .join(' ')
+                    .trim();
+
+                if (textStart && textEnd) {
+                    return ':~:text=' + encodeURIComponent(textStart) + ',' + encodeURIComponent(textEnd);
+                } else if (matchedText.length > 0) {
+                    return ':~:text=' + encodeURIComponent(matchedText);
+                }
+                return '';
+            }
+
             function addResult(resultsList, result) {
                 var doc = result.item;
                 var resultsListItem = document.createElement('li');
                 resultsListItem.classList.add('search-results-list-item');
                 resultsList.appendChild(resultsListItem);
 
+                var contentPositions = result.matches.filter(function(match){
+                    return match.key == 'content';
+                }).map(function(match){
+                    return match.indices.sort(function(a, b){
+                        return (b[1] - b[0]) - (a[1] - a[0]);
+                    });
+                })[0];
+
+                var textFragment = '';
+                if (contentPositions && doc.content) {
+                    textFragment = buildTextFragment(doc.content, contentPositions);
+                }
+
+                var resultUrl = doc.url;
+                if (textFragment) {
+                    resultUrl += '#' + textFragment;
+                }
+
                 var resultLink = document.createElement('a');
                 resultLink.classList.add('search-result');
-                resultLink.setAttribute('href', doc.url);
+                resultLink.setAttribute('href', resultUrl);
                 resultsListItem.appendChild(resultLink);
 
                 var resultTitle = document.createElement('div');
