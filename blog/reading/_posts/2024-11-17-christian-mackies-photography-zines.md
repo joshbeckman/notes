@@ -31,6 +31,7 @@ So when I discovered that Christian had printed a couple zines of his photos, I 
 I’m collecting quite a few zines lately\. Personal ones like these are the best\.
 
 
-
+> [!NOTE]
+> Christian says he uses [Mixam](https://mixam.com/) for his zine printing: "essentially the standard for cost effective zine printing at scale. Quality is perfectly reasonable."
 
 
