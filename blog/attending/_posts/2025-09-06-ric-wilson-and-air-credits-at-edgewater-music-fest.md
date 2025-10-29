@@ -10,7 +10,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lyb7zemfci2l
 tags:
 - concerts
 - chicago
-serial_number: 2025.BLG.144
+serial_number: 2025.BLG.145
 ---
 Two Chicago bands playing in the street on a cool summer night got the crowd bouncing.
 

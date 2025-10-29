@@ -9,7 +9,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/115244905700926
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lzf2nqgf442m
 tags:
 - interfaces
-serial_number: 2025.BLG.156
+serial_number: 2025.BLG.157
 ---
 I cannot, for the life of me, figure out what Apple Calendar's search feature doesn't return events/results with titles that exactly match my query.  
 

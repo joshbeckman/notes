@@ -10,7 +10,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lzj5px54se2t
 tags:
 - concerts
 - salt-shed-venue
-serial_number: 2025.BLG.158
+serial_number: 2025.BLG.159
 ---
 [Polo & Pan](https://poloandpan.komi.io/) came to the Salt Shed for our friend Paul's birthday and brought [Tycho](https://tychomusic.com/) along as an opener. We ate and played at bit at [Elston Electric](https://www.elstonelectric.com/) beforehand, but soon moved out into the sunset to enjoy the music.
 

@@ -11,7 +11,7 @@ tags:
 - vim
 - tools
 - llm-prompts
-serial_number: 2025.BLG.130
+serial_number: 2025.BLG.131
 ---
 I write a lot of [markdown](https://www.markdownguide.org/) and I am delivered a lot of markdown, increasingly from LLM agents. And while markdown is easy to read inline, often I want a preview of how it will render or maybe I just need to take a nice screenshot for a presentation to the CTO later or maybe I just want to read the long LLM output in a proportional font.
 

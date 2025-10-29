@@ -11,7 +11,7 @@ tags:
 - metrics
 - software-engineering
 - incident-management
-serial_number: 2025.BLG.115
+serial_number: 2025.BLG.116
 ---
 ![A tree falls in the forest](/assets/images/956166c6-08dc-4d91-b5f5-60b333b506ff.jpeg)
 

@@ -11,7 +11,7 @@ tags:
 - chicago
 - fascism
 - united-states
-serial_number: 2025.BLG.163
+serial_number: 2025.BLG.164
 ---
 Over the weekend, ICE and illegal federal raids were asked/talked about in most conversations. We haven't seen any in person, yet, but their disgusting actions are all over the news and there are helicopters overhead.
 

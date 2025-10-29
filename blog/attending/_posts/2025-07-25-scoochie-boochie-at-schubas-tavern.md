@@ -11,7 +11,7 @@ tags:
 - music
 - chicago
 - schubas-tavern-venue
-serial_number: 2025.BLG.116
+serial_number: 2025.BLG.117
 ---
 ![Scoochie Boochie](/assets/images/34ef684d-6d10-4514-9022-fc4623f6b5c3.jpeg)
 

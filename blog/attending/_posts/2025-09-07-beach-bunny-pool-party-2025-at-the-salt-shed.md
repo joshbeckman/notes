@@ -11,7 +11,7 @@ tags:
 - salt-shed-venue
 - concerts
 - chicago
-serial_number: 2025.BLG.145
+serial_number: 2025.BLG.146
 ---
 This second time seeing Chicago-native [Beach Bunny](https://www.beachbunnymusic.com/) ([previously](https://www.joshbeckman.org/blog/attending/riot-fest-2024-saturday#beach-bunny)) was in much colder weather but the stage still exudes warm spirits.
 

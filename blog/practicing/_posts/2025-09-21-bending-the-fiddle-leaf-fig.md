@@ -9,7 +9,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/115257654682352
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lzkptf4fhs2o
 tags:
 - flora
-serial_number: 2025.BLG.155
+serial_number: 2025.BLG.156
 ---
 This fiddle leaf fig has been in two homes with us now for about 7 years, maybe 8. It first grew from about  a foot tall to our 8' ceilings at our old home. Once we moved here, to the capacious 25' main room, it struggled to find the light for a bit. 
 

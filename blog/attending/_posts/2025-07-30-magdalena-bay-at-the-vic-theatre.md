@@ -11,7 +11,7 @@ tags:
 - chicago
 - vic-theatre-venue
 - concerts
-serial_number: 2025.BLG.119
+serial_number: 2025.BLG.120
 ---
 ![Magdalena Bay on stage in a beam of light with a vampire hand and sun as artwork](/assets/images/e97cb160-e10e-4f27-a5c3-f39f1455e29f.jpeg)
 

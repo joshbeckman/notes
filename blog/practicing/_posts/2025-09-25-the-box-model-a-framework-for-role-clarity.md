@@ -11,7 +11,7 @@ tags:
 - software-engineering
 - leadership
 - career
-serial_number: 2025.BLG.159
+serial_number: 2025.BLG.160
 ---
 I spent months as a Senior Staff Engineer before realizing nobody had clear and consistent expectations of what I should be doing. In leadership roles, everything becomes less defined. You're responsible for shaping your own position and how you spend your time.
 

@@ -20,9 +20,8 @@ tags:
 - system-design
 - interfaces
 - popular
-serial_number: 2025.BLG.127
+serial_number: 2025.BLG.128
 ---
-
 My team is building an agent for complex, multi-language artifacts with interdependent parts. We keep coming back to this hierarchy:
 
 1. **Feedforward:** Provide the right context to prevent errors

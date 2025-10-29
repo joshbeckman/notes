@@ -11,7 +11,7 @@ tags:
 - music
 - metro-venue
 - concerts
-serial_number: 2025.BLG.128
+serial_number: 2025.BLG.129
 ---
 I hadn't seen BMSR before but everyone else had and so I didn't know the treat I was in for.
 

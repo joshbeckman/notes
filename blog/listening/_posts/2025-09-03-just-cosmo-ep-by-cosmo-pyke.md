@@ -11,7 +11,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/115140876247428
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lxwucpa4k22z
 tags:
 - music
-serial_number: 2025.BLG.142
+serial_number: 2025.BLG.143
 ---
 Man, this would be one of my deserted island albums.
 

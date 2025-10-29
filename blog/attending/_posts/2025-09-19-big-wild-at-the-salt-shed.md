@@ -10,7 +10,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lzca6x7zeb2i
 tags:
 - salt-shed-venue
 - concerts
-serial_number: 2025.BLG.154
+serial_number: 2025.BLG.155
 ---
 This was my fourth time seeing [Big Wild](https://bigwildmusic.com/) ([previously](https://www.joshbeckman.org/blog/attending/big-wild-at-red-rocks)) and it seemed like the shortest concert; I wanted it to last so much longer.
 

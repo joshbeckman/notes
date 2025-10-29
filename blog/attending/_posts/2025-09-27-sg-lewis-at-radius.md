@@ -10,7 +10,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lzvzskuqqv2o
 tags:
 - concerts
 - radius-venue
-serial_number: 2025.BLG.161
+serial_number: 2025.BLG.162
 ---
 I *most* wanted to see the opener, [Sofia Kourtesis](https://sofiakourtesis.com/), a Peruvian producer, vocalist, and DJ from Berlin. So we got there early enough to see the DJ _before_ her and dance ourselves into a good stage-right spot. 
 

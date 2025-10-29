@@ -10,7 +10,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lyllzwuxll2t
 tags:
 - salt-shed-venue
 - concerts
-serial_number: 2025.BLG.146
+serial_number: 2025.BLG.147
 ---
 ![Wet Leg on stage at The Salt Shed Fairgrounds](/assets/images/ca616dfb-66ff-4084-a6e2-020eff6d1db8.jpeg)
 

@@ -11,7 +11,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3luv47lhufs2j
 tags:
 - music
 - concerts
-serial_number: 2025.BLG.117
+serial_number: 2025.BLG.118
 ---
 <img width="1162" height="917" alt="Concert crowd" src="/assets/images/00092490-e479-42e1-ace9-76ecd602c0d6.png" />
 

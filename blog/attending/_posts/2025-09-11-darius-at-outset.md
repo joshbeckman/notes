@@ -10,7 +10,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lyqcuo57pl2c
 tags:
 - concerts
 - outset-venue
-serial_number: 2025.BLG.147
+serial_number: 2025.BLG.148
 ---
 Scenes from the [Darius](https://www.francerocks.com/artist/darius/) show:
 - at one point, someone dancing in the front row takes a FaceTime call and gives their phone to Darius who takes it up on stage and waves to the caller

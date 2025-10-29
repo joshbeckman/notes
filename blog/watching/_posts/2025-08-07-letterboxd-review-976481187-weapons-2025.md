@@ -16,6 +16,6 @@ tags:
 - entertainment
 - movies
 - letterboxd
-serial_number: 2025.BLG.123
+serial_number: 2025.BLG.124
 ---
  <p><img src="https://a.ltrbxd.com/resized/film-poster/9/7/2/1/0/9/972109-weapons-2025-0-600-0-900-crop.jpg?v=8100270337"/></p> <p>Like a kaleidoscope but instead of you rotating <b>it</b>, it rotates <b>you</b> and behind every corner there’s another sick and sloppy toothless grin and still it made me cackle in delight as it sunk its teeth in me.</p> 

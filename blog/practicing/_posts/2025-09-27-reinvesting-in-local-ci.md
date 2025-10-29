@@ -11,7 +11,7 @@ tags:
 - tests
 - software-engineering
 - shopify
-serial_number: 2025.BLG.160
+serial_number: 2025.BLG.161
 ---
 I read [this great post by Brandur](https://brandur.org/nanoglyphs/043-rails-world-2025) over the weekend and got inspired. Specifically, the sketch of a world where continuous integration (CI) for your software is local and takes less than 2min to run!
 

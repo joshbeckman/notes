@@ -9,7 +9,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/115045316476989
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lwmgd34pb62e
 tags:
 - cocktails
-serial_number: 2025.BLG.131
+serial_number: 2025.BLG.132
 ---
 We went to [The Office](https://www.theaviary.com/the-office) (beneath [The Aviary](https://www.theaviary.com/the-aviary)) for Marybeth's birthday last year and on their menu they had a barrel-aged [Boulevardier](https://www.diffordsguide.com/cocktails/recipe/2955/boulevardier-cocktail) cocktail and it was one of the best I'd ever tasted. Theirs was aged for... 3 months? 6 months? Something like that. The flavors had blended so perfectly that the usual bite of that cocktail had given way to an incredibly smooth palate and my interest was piqued.
 

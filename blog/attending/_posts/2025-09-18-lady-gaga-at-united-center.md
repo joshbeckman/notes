@@ -10,7 +10,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lzca6vmzk32x
 tags:
 - united-center-venue
 - concerts
-serial_number: 2025.BLG.153
+serial_number: 2025.BLG.154
 ---
 It's a good thing there's a stage as big as this to hold [Lady Gaga](https://www.ladygaga.com/us-en/)'s drama. She _needs_ (and deserves) a _lot_ of attention.
 

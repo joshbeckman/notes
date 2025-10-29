@@ -16,6 +16,6 @@ tags:
 - entertainment
 - popular
 - letterboxd
-serial_number: 2025.BLG.148
+serial_number: 2025.BLG.149
 ---
  <p><img src="https://a.ltrbxd.com/resized/film-poster/3/5/3/5/9/0/353590-crooked-house-0-600-0-900-crop.jpg?v=8d3dd95cd8"/></p> <p>While I appreciated the color palettes and I appreciated Gillian Anderson, I didn’t find the characters likable in their quirkiness and the detective was mostly annoying. Also he was so mean to his coworker!</p> 
