@@ -5,7 +5,7 @@ title: Making MCP Tool Calls Scriptable with mcp_cli
 toc: true
 image: "/assets/images/f4041c35-1df5-42a4-ac64-2a2ac880ee48.jpeg"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115503266427766115
 bluesky_status_url: false
 tags:
 - llm
