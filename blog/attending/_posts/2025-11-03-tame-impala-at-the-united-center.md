@@ -7,7 +7,7 @@ image: "/assets/images/b5cc7504-7888-43e7-96bb-f4718f671370.jpeg"
 description:
 photo_feature: true
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115518123440117887
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3m56fctwh7p2x
 tags:
 - concerts
 serial_number: 2025.BLG.172
