@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/a83005c6-32d9-4007-8f09-2e8d4cd0847a.png"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115520944857960559
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3m57nfvrdao2n
 tags:
 - shopify
 - united-states
