@@ -11,7 +11,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3m56fctwh7p2x
 tags:
 - concerts
 - united-center-venue
-serial_number: 2025.BLG.172
+serial_number: 2025.BLG.173
 ---
 I had never been to see Tame Impala before but had only heard good things and so I went with friends to watch the most colorful rainbow light show I've ever seen.
 

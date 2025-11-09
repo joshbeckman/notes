@@ -10,7 +10,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3m56fcveqf326
 tags:
 - concerts
 - united-center-venue
-serial_number: 2025.BLG.173
+serial_number: 2025.BLG.174
 ---
 I've long been a fan of KAYTRANADA (see [his latest album](https://www.joshbeckman.org/blog/listening/aint-no-damn-way-by-kaytranada)) but have only ever been able to see him perform at outdoor venues (e.g. Lollapalooza), so I jumped at the chance to see him indoors at The United Center. And, damn, did he deliver.
 
