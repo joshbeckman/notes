@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/b5cc7504-7888-43e7-96bb-f4718f671370.jpeg"
 description:
 photo_feature: true
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115518123440117887
 bluesky_status_url: false
 tags:
 - concerts

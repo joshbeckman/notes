@@ -5,7 +5,7 @@ title: KAYTRANADA and Justice at The United Center
 toc: true
 image: "/assets/images/5e2f2b58-b49b-46cb-a07d-423ef145430d.jpeg"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115518123481710837
 bluesky_status_url: false
 tags:
 - concerts
