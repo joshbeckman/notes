@@ -13,7 +13,7 @@ tags:
 - open-source
 - automation
 - language-ruby
-serial_number: 2025.BLG.173
+serial_number: 2025.BLG.174
 ---
 ![The fall colors in my yard are dazzling me this week](/assets/images/f4041c35-1df5-42a4-ac64-2a2ac880ee48.jpeg)
 
