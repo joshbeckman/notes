@@ -7,6 +7,7 @@ rating: 5
 image: "/assets/images/9D1781AC166F44C0ACF23CEE395182CC.jpeg"
 description:
 book: 30250180
+author: Robin Wall Kimmerer
 tags:
 - non-fiction
 - flora
