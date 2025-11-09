@@ -5,7 +5,7 @@ title: SYSTEMS AND METHODS FOR SELECTIVELY EXECUTING USER-GENERATED LOGIC
 toc: true
 image: "/assets/images/a83005c6-32d9-4007-8f09-2e8d4cd0847a.png"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115520944857960559
 bluesky_status_url: false
 tags:
 - shopify

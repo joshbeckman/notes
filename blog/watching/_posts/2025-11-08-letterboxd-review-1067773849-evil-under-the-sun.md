@@ -8,7 +8,7 @@ description:
 rating: 3
 tmdb_id: '4193'
 letterboxd_id: evil-under-the-sun
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115520945014814821
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/evil-under-the-sun/
 tags:
