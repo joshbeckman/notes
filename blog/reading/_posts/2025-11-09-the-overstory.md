@@ -7,6 +7,8 @@ image: "/assets/images/558dc098-e6ce-4e69-a322-c68928d23dfe.jpeg"
 description:
 mastodon_social_status_url: false
 bluesky_status_url: false
+book: 56149323
+author: Richard Powers
 tags:
 - flora
 - environment
