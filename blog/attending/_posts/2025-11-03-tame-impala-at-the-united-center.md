@@ -19,6 +19,6 @@ I had never been to see Tame Impala before but had only heard good things and so
 
 The music was lovely but I felt a bit let down by Kevin Parker's voice; I heard enough cracks in his falsetto lyrics for it to be distracting. I'm sure he was sick or recovering from something.
 
-<video controls src="/assets/videos/8752a2fa-0f90-488f-a44c-40fb14c6817a.quicktime"></video>
+<video controls src="/assets/videos/8752a2fa-0f90-488f-a44c-40fb14c6817a.mov"></video>
 
 We were surprised by how young the crowd seemed, given we started listening to Tame Impala in college. We were seated near a landing with a great view, so we were treated to a parade of Instagram influencer wannabes that took faux photos in front of us.

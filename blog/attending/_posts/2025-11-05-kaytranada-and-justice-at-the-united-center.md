@@ -14,7 +14,7 @@ serial_number: 2025.BLG.173
 ---
 I've long been a fan of KAYTRANADA (see [his latest album](https://www.joshbeckman.org/blog/listening/aint-no-damn-way-by-kaytranada)) but have only ever been able to see him perform at outdoor venues (e.g. Lollapalooza), so I jumped at the chance to see him indoors at The United Center. And, damn, did he deliver.
 
-<video controls src="/assets/videos/3236b5ea-4b7e-4598-b595-87eee9910cc6.quicktime"></video>
+<video controls src="/assets/videos/3236b5ea-4b7e-4598-b595-87eee9910cc6.mov"></video>
 
 He had center stage and it levitated above the crowd in a dense net of lasers while he danced and posed and generally got the crowd up and dancing along with him. He was having the best time performing, and the enthusiasm spread.
 
