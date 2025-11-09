@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/558dc098-e6ce-4e69-a322-c68928d23dfe.jpeg"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115522361520560173
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3m5abk3bdyl2k
 book: 56149323
 author: Richard Powers
 tags:
