@@ -1010,6 +1010,7 @@ body::before {
 .title {
   text-transform: uppercase;
   margin-bottom: 3ch;
+  word-break: break-word;
 }
 @media (min-width: 1150px) {
   .title {
