@@ -5,7 +5,7 @@ title: Word Count Bookmarklet
 toc: true
 image: "/assets/images/8736b73f-6fd5-4e5d-a3d3-216654c9d160.png"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115532278497276421
 bluesky_status_url: false
 tags:
 - language-javascript

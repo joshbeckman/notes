@@ -5,7 +5,7 @@ title: Mulka Lakefront Marathon 2025
 toc: true
 image: https://i2.ytimg.com/vi/eo135DkzgN0/hqdefault.jpg
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115532278449012866
 bluesky_status_url: false
 youtube_video_id: eo135DkzgN0
 youtube_video_url: https://www.youtube.com/watch?v=eo135DkzgN0

@@ -5,7 +5,7 @@ title: Contributing to Open-Source Should be Required, Like Jury Duty
 toc: true
 image:
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115532278530201756
 bluesky_status_url: false
 tags:
 - open-source
