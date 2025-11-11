@@ -6,7 +6,7 @@ toc: true
 image:
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115532278530201756
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3m5eohtv3y32j
 tags:
 - open-source
 - government
