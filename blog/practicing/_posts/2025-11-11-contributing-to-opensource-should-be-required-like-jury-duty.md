@@ -7,6 +7,7 @@ image:
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115532278530201756
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3m5eohtv3y32j
+hacker_news_url: https://news.ycombinator.com/item?id=45890370
 tags:
 - open-source
 - government
