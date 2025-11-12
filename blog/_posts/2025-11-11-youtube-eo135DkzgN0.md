@@ -1,7 +1,7 @@
 ---
 layout: Post
 date: '2025-11-11 14:02:59 +0000'
-title: Mulka Lakefront Marathon 2025
+title: Lakefront Marathon 2025
 toc: true
 image: https://i2.ytimg.com/vi/eo135DkzgN0/hqdefault.jpg
 description:
