@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/73ab7a5e-aa71-46a8-bc42-7d506473b4bc.jpeg"
 description:
 photo_feature: true
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115556333623678718
 bluesky_status_url: false
 tags:
 - united-states
