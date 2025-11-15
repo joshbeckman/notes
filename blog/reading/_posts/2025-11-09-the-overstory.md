@@ -13,7 +13,7 @@ tags:
 - flora
 - environment
 - fiction
-serial_number: 2025.BLG.177
+serial_number: 2025.BLG.178
 ---
 This book is like a fictional, tragic rhyme with [Braiding Sweetgrass](https://www.joshbeckman.org/blog/reading/braiding-sweetgrass).
 

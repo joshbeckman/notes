@@ -10,7 +10,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3m57nfvrdao2n
 tags:
 - shopify
 - united-states
-serial_number: 2025.BLG.172
+serial_number: 2025.BLG.173
 ---
 Our (me and some of my team members at Shopify) U.S. patent application (number 10677, with the menacing all-caps title "SYSTEMS AND METHODS FOR SELECTIVELY EXECUTING USER-GENERATED LOGIC") was published today. It may be several years before the application grants. This has taken a _long_ time but it's been interesting to see the machinery of patents at work in a large company.
 
