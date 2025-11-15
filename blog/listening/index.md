@@ -2,7 +2,7 @@
 layout: Page
 title: Music Listening
 toc: true
-emoji: "\U0001F3B6"
+emoji: 🎶
 searchable: true
 categories:
 - blog
@@ -10,8 +10,7 @@ tags:
 - music
 - index
 redirect_from:
-- "/music"
-serial_number: 2024.PAE.009
+- /music
 ---
 Albums that moved me enough to write about them.
 
@@ -34,29 +33,32 @@ Albums that moved me enough to write about them.
 ## Listening Stats
 I generate this page from my Apple Music library using [a script I wrote](/blog/pulling-fun-insights-out-of-my-apple-music-library). Feel free to use it, too!
 
-Last updated: 2025-10-12
+Last updated: 2025-11-15
 
 ## Recently Played Albums
 This is a list of the albums I've played recently.
 
 | Art | Artist | Album |
 | --- | ------ | ----- |
-|  | Andhim | Lane 8 Fall 2025 Mixtape (DJ Mix) |
-| ![Daphni - Josephine - EP](/assets/images/album_art/daphni-josephineep.jpg) | Daphni | Josephine - EP |
-| ![Kelly Moran - Don't Trust Mirrors](/assets/images/album_art/kellymoran-donttrustmirrors.jpg) | Kelly Moran | Don't Trust Mirrors |
-| ![BADBADNOTGOOD - Mid Spiral](/assets/images/album_art/badbadnotgood-midspiral.jpg) | BADBADNOTGOOD | Mid Spiral |
-| ![Nala Sinephro - Endlessness](/assets/images/album_art/nalasinephro-endlessness.jpg) | Nala Sinephro | Endlessness |
-| ![Leon Vynehall - Rare, Forever](/assets/images/album_art/leonvynehall-rareforever.jpg) | Leon Vynehall | Rare, Forever |
-| ![Fat Dog - WOOF.](/assets/images/album_art/fatdog-woof.jpg) | Fat Dog | WOOF. |
-| ![Floating Points - Cascade](/assets/images/album_art/floatingpoints-cascade.jpg) | Floating Points | Cascade |
-| ![Jamie xx - In Waves](/assets/images/album_art/jamiexx-inwaves.jpg) | Jamie xx | In Waves |
-| ![Kelly Lee Owens - Dreamstate](/assets/images/album_art/kellyleeowens-dreamstate.jpg) | Kelly Lee Owens | Dreamstate |
+| ![KAYTRANADA - AIN'T NO DAMN WAY!](/assets/images/album_art/kaytranada-aintnodamnway.jpg) | KAYTRANADA | AIN'T NO DAMN WAY! |
+|  | The City of Prague Philharmonic Orchestra & Richard Hein | Melancholia (Original Soundtrack) |
+|  | TEED | When the Lights Go |
+|  | Thelonious Monk | Criss-Cross |
+|  | Theodore Shapiro | Music To Refine To: A Remix Companion to Severance |
+|  | Theodore Shapiro | Music Of Wellness (From Severance: Season 1 Apple TV+ Original Series Soundtrack) - Single |
+|  | Ninajirachi | I Love My Computer |
+|  | Shlohmo | REPULSOR |
+|  | Whitney | Small Talk |
+|  | Khruangbin | The Universe Smiles Upon You ii |
 
 ## Recently Loved Albums
 This is a list of the albums I've loved recently.
 
 | Art | Artist | Album |
 | ------ | ----- | --------- |
+|  | Jane Inc. | A RUPTURE A CANYON A BIRTH |
+|  | Tame Impala | Deadbeat |
+|  | Leon Vynehall | In Daytona Yellow |
 |  | Bicep | Lane 8 Fall 2025 Mixtape (DJ Mix) |
 | ![Geese - Getting Killed](/assets/images/album_art/geese-gettingkilled.jpg) | Geese | Getting Killed |
 | ![SG Lewis - Anemoia](/assets/images/album_art/sglewis-anemoia.jpg) | SG Lewis | Anemoia |
@@ -64,9 +66,6 @@ This is a list of the albums I've loved recently.
 | ![Tangerine Dream - Hyperborea (Deluxe Edition)](/assets/images/album_art/tangerinedream-hyperboreadeluxeedition.jpg) | Tangerine Dream | Hyperborea (Deluxe Edition) |
 | ![UTFO - Hits](/assets/images/album_art/utfo-hits.jpg) | UTFO | Hits |
 | ![Kaitlyn Aurelia Smith - Gush](/assets/images/album_art/kaitlynaureliasmith-gush.jpg) | Kaitlyn Aurelia Smith | Gush |
-| ![SG Lewis - AudioLust & HigherLove](/assets/images/album_art/sglewis-audiolusthigherlove.jpg) | SG Lewis | AudioLust & HigherLove |
-| ![Sofia Kourtesis - Volver - EP](/assets/images/album_art/sofiakourtesis-volverep.jpg) | Sofia Kourtesis | Volver - EP |
-| ![Mustard Service - Vice City Magic](/assets/images/album_art/mustardservice-vicecitymagic.jpg) | Mustard Service | Vice City Magic |
 
 ## Top Played Tracks
 This is a list of the top played tracks in my library.
@@ -105,12 +104,12 @@ This is a list of the top played artists in my library (by song plays).
 
 | Artist | Song Play Count | Song Play Ratio |
 | ------ | -------------- | --------------- |
-| Four Tet | 1158 | 10 |
+| Four Tet | 1162 | 10 |
 | Oddisee | 1083 | 8 |
-| Caribou | 947 | 9 |
-| Peter Broderick | 930 | 32 |
+| Peter Broderick | 930 | 33 |
+| KAYTRANADA | 919 | 12 |
 | Sylvan Esso | 896 | 13 |
-| KAYTRANADA | 878 | 12 |
+| Caribou | 887 | 9 |
 | Nils Frahm | 860 | 8 |
 | José González | 773 | 10 |
 | Shane Carruth | 765 | 51 |
@@ -121,13 +120,13 @@ This is a list of the top genres my library (by track count).
 
 | Genre | Track Count | Song Play Count | Total Time |
 | ------ | ---------- | -------------- | --------------- |
-| Electronic | 4985 | 20645 | 394h 25m 45s |
-| Alternative | 4613 | 18997 | 291h 4m 54s |
-| Dance | 3155 | 8986 | 197h 14m 59s |
-| Hip-Hop/Rap | 2638 | 7890 | 144h 42m 51s |
-| Rock | 1609 | 4086 | 110h 21m 9s |
-| Pop | 1318 | 4674 | 86h 13m 35s |
-| Soundtrack | 1065 | 3478 | 55h 59m 1s |
-| R&B/Soul | 977 | 3184 | 59h 26m 4s |
-| Classical | 864 | 2563 | 62h 23m 39s |
-| Jazz | 847 | 3574 | 80h 59m 52s |
+| Electronic | 5081 | 20875 | 401h 19m 45s |
+| Alternative | 4699 | 19203 | 295h 47m 38s |
+| Dance | 3287 | 9222 | 207h 16m 49s |
+| Hip-Hop/Rap | 2639 | 7890 | 144h 54m 51s |
+| Rock | 1608 | 4090 | 110h 21m 9s |
+| Pop | 1328 | 4703 | 86h 43m 27s |
+| Soundtrack | 1064 | 3474 | 55h 54m 27s |
+| R&B/Soul | 976 | 3185 | 59h 23m 58s |
+| Classical | 864 | 2589 | 62h 23m 39s |
+| Jazz | 845 | 3583 | 80h 51m 24s |
