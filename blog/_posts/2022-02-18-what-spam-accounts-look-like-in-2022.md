@@ -3,6 +3,7 @@ toc: true
 title: Spam Accounts in 2022
 image: "/assets/images/87863FBF-65C7-4DC9-846F-7D760C7BF1D1.jpeg"
 date: '2022-02-18 16:49:43'
+hacker_news_url: https://news.ycombinator.com/item?id=30388074
 redirect_from:
 - "/what-spam-accounts-look-like-in-2022"
 - "/what-spam-accounts-look-like-in-2022/"
