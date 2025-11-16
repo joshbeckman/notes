@@ -9,7 +9,7 @@ rating: 4
 tmdb_id: '701387'
 letterboxd_id: bugonia
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115557758040095377
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3m5pykldfrk2w
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/bugonia/
 tags:
 - environment
