@@ -95,6 +95,11 @@ You can read about everything else I use to build things at [/uses](/uses).
 - podcast rendering
 - [More ideas](https://github.com/joshbeckman/notes/issues?q=is%3Aopen+is%3Aissue+-label%3Apost)
 
+### 2025-11-16
+- Default to showing comments section
+- Add HackerNews comments/points display
+- Add webmention count display and form to submit them
+
 ### 2025-09-14
 - Site layout redesign ([details](/blog/practicing/website-redesign))
 
