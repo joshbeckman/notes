@@ -11,7 +11,7 @@ tags:
 - language-javascript
 - code-snippets
 - writing
-serial_number: 2025.BLG.179
+serial_number: 2025.BLG.181
 ---
 Inspired by [See Your Word Count While You Write from dreeves](https://www.lesswrong.com/posts/8G24bWJ5nE2QjCGAb/see-your-word-count-while-you-write), I whipped up my own word count bookmarklet.
 
