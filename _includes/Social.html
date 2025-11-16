@@ -1,8 +1,6 @@
 <div class="post-social print-hidden">
-  <details closed class="print-hidden">
-    <summary>
-      Comments &amp; Replies
-    </summary>
+  <div class="social-content">
+    <h3>Comments &amp; Replies</h3>
     <ul class="social-links">
       {%- if page.letterboxd_review_url -%}
       <li><a class="social-letterboxd" href="{{page.letterboxd_review_url}}" target="_blank">on Letterboxd</a></li>
@@ -22,9 +20,31 @@
       {%- if page.strava_activity_url -%}
       <li><a class="social-strava" href="{{page.strava_activity_url}}" target="_blank">on Strava</a></li>
       {%- endif -%}
+      <li><a class="social-webmentions" href="https://webmention.io/api/mentions.html?token=4N8Bpl6KX64j8VB4k5A3ww&target=https://www.joshbeckman.org{{ page.url }}" target="_blank"><span data-webmention-count data-url="https://www.joshbeckman.org{{ page.url }}">webmentions</span></a></li>
       <li><a class="social-email" href="/about#active-accounts">via email</a></li>
     </ul>
-    <p>You can <a href="/subscribe">subscribe or follow</a> or reply here:</p>
+    <p>Did you like this post, repost it, or respond to it? Let me know by sending a <a href="https://indieweb.org/Webmention" target="_blank">webmention</a>:
+    <br/>
+    <form
+      id="webmention-form"
+      action="https://webmention.io/www.joshbeckman.org/webmention"
+      method="POST"
+    >
+      <input
+        id="webmention-source"
+        type="url"
+        autocomplete="url"
+        required
+        pattern="^https?:\/\/(.*)"
+        name="source"
+        placeholder="https://example.com/your-post"
+      />
+      <input id="webmention-submit" type="submit" name="submit" value="@ me" />
+      <input id="webmention-format" type="hidden" name="format" value="html" />
+      <input id="webmention-target" type="hidden" name="target" value="{{ site.url }}{{ page.url }}" />
+    </form>
+    </p>
+    <p>or you can <a href="#cusdis" id="cusdis-link">leave a simple comment here</a>.</p>
     <div id="async_cusdis_thread"
       data-theme="auto"
       data-host="https://cusdis.com"
@@ -33,20 +53,59 @@
       data-page-url="{{ site.url }}{{ page.url }}"
       data-page-title="{{ page.title }}"
     ></div>
-  </details>
+  </div>
 </div>
 <script>
 (function() {
-    var mastodon = document.querySelector('.social-mastodon');
-    var details = document.querySelector('.post-social details');
-    details.addEventListener('toggle', function() {
-        if (!details.open) {
+    var postSocial = document.querySelector('.post-social');
+    if (!postSocial) {
+        return;
+    }
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                loadBluesky();
+                loadMastodon();
+                loadHackerNews();
+                loadWebmentions();
+                observer.disconnect();
+            }
+        });
+    }, {
+        rootMargin: '50px'
+    });
+    observer.observe(postSocial);
+
+    var cusdisLink = document.getElementById('cusdis-link');
+    cusdisLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        loadCusdis();
+        cusdisLink.innerText = 'comment here';
+    });
+
+    function pluralize(count, singular, plural) {
+        return count === 1 ? singular : (plural || singular + 's');
+    }
+
+    function loadWebmentions() {
+        var webmentionLink = document.querySelector('.social-webmentions span[data-webmention-count]');
+        if (!webmentionLink) {
             return;
         }
-        loadBluesky();
-        loadCusdis();
-        loadMastodon();
-    });
+        var url = webmentionLink.getAttribute('data-url');
+        fetch(`https://webmention.io/api/count?target=${url}`)
+            .then(response => response.json())
+            .then(data => {
+                var count = data.count || 0;
+                if (count === 0) {
+                    webmentionLink.textContent = 'No webmentions yet';
+                    return;
+                }
+                webmentionLink.textContent = `${count} ${pluralize(count, 'webmention')}`;
+            })
+            .catch(error => console.error('Error fetching webmentions:', error));
+    }
+
     function loadMastodon() {
         var mastodon = document.querySelector('.social-mastodon');
         if (!mastodon) {
@@ -59,20 +118,17 @@
                 var reblogs = data.reblogs_count || 0;
                 var favourites = data.favourites_count || 0;
                 var replies = data.replies_count || 0;
-                if (reblogs > 0 && favourites > 0 && replies > 0) {
-                    mastodon.textContent = `${reblogs} boosts, ${favourites} favorites, and ${replies} replies on Mastodon`;
-                } else if (reblogs > 0 && favourites > 0) {
-                    mastodon.textContent = `${reblogs} boosts and ${favourites} favorites on Mastodon`;
-                } else if (reblogs > 0 && replies > 0) {
-                    mastodon.textContent = `${reblogs} boosts and ${replies} replies on Mastodon`;
-                } else if (favourites > 0 && replies > 0) {
-                    mastodon.textContent = `${favourites} favorites and ${replies} replies on Mastodon`;
-                } else if (reblogs > 0) {
-                    mastodon.textContent = `${reblogs} boosts on Mastodon`;
-                } else if (favourites > 0) {
-                    mastodon.textContent = `${favourites} favorites on Mastodon`;
-                } else if (replies > 0) {
-                    mastodon.textContent = `${replies} replies on Mastodon`;
+                var quotes = data.quotes_count || 0;
+                var parts = [];
+
+                if (reblogs > 0) parts.push(`${reblogs} ${pluralize(reblogs, 'boost')}`);
+                if (favourites > 0) parts.push(`${favourites} ${pluralize(favourites, 'favorite')}`);
+                if (quotes > 0) parts.push(`${quotes} ${pluralize(quotes, 'quote')}`);
+                if (replies > 0) parts.push(`${replies} ${pluralize(replies, 'reply', 'replies')}`);
+
+                if (parts.length > 0) {
+                    var text = parts.join(', ').replace(/, ([^,]*)$/, ', and $1');
+                    mastodon.textContent = `${text} on Mastodon`;
                 }
             })
             .catch(error => console.error('Error fetching Mastodon status:', error));
@@ -127,16 +183,44 @@
                 if (data && data.posts && data.posts.length > 0) {
                     var likes = data.posts[0].likeCount || 0;
                     var replies = data.posts[0].replyCount || 0;
-                    if (likes > 0 && replies > 0) {
-                        bluesky.textContent = `${likes} likes and ${replies} replies on Bluesky`;
-                    } else if (likes > 0) {
-                        bluesky.textContent = `${likes} likes on Bluesky`;
-                    } else if (replies > 0) {
-                        bluesky.textContent = `${replies} replies on Bluesky`;
+                    var parts = [];
+
+                    if (likes > 0) parts.push(`${likes} ${pluralize(likes, 'like')}`);
+                    if (replies > 0) parts.push(`${replies} ${pluralize(replies, 'reply', 'replies')}`);
+
+                    if (parts.length > 0) {
+                        var text = parts.join(', ').replace(/, ([^,]*)$/, ' and $1');
+                        bluesky.textContent = `${text} on Bluesky`;
                     }
                 }
             })
             .catch(error => console.error('Error fetching Bluesky post:', error));
+    }
+    function loadHackerNews() {
+        var hn = document.querySelector('.social-hn');
+        if (!hn) {
+            return;
+        }
+        var hnItemID = hn.getAttribute('href').match(/id=(\d+)/);
+        if (!hnItemID) {
+            return;
+        }
+        fetch(`https://hacker-news.firebaseio.com/v0/item/${hnItemID[1]}.json`)
+            .then(response => response.json())
+            .then(data => {
+                var score = data.score || 0;
+                var comments = data.descendants || 0;
+                var parts = [];
+
+                if (score > 0) parts.push(`${score} ${pluralize(score, 'vote')}`);
+                if (comments > 0) parts.push(`${comments} ${pluralize(comments, 'comment')}`);
+
+                if (parts.length > 0) {
+                    var text = parts.join(', ').replace(/, ([^,]*)$/, ' and $1');
+                    hn.textContent = `${text} on HackerNews`;
+                }
+            })
+            .catch(error => console.error('Error fetching HackerNews item:', error));
     }
 })();
 </script>

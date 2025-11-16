@@ -1420,12 +1420,15 @@ cite .u-url, cite .non-url {
 .search {
   margin: 1em 0;
 }
+#webmention-form,
 #conversation-form,
 .searchbar .search-input-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+#webmention-form input[type="text"],
+#webmention-form input[type="url"],
 #conversation-form input[type="text"],
 .searchbar input[type=text] {
   font-size: inherit;
@@ -1436,6 +1439,7 @@ cite .u-url, cite .non-url {
   display: inline-block;
 }
 button,
+#webmention-form input[type="submit"],
 #conversation-form input[type="submit"],
 .searchbar button[type=submit] {
   padding:0.45rem 2.5ch;
