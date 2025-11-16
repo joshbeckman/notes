@@ -5,6 +5,7 @@ title: Earning the Right to Be Illegible
 toc: true
 image: "/assets/images/d09a6887-eafc-4037-ab7f-0ee489b7cee4.jpeg"
 description:
+hacker_news_url: https://news.ycombinator.com/item?id=45559415
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115362404450655735
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3m2zafzscac2i
 tags:

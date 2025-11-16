@@ -7,6 +7,7 @@ image: "/assets/images/9ff9e3af-c9f4-4fa4-bf64-8fcf200aa8b0.jpeg"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114772827720255747
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lstfzkubpp2a
+hacker_news_url: https://news.ycombinator.com/item?id=44424767
 tags:
 - data
 - research

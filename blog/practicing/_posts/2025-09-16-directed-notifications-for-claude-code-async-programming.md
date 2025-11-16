@@ -7,6 +7,7 @@ image: "/assets/images/ab4a116a-65da-4bc0-84c1-1cbecefc941d.png"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115212358770048207
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lywm55jlwj2u
+hacker_news_url: https://news.ycombinator.com/item?id=45264463
 tags:
 - code-snippets
 - ai

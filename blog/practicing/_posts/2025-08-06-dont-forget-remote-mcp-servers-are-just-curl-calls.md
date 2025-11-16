@@ -5,6 +5,7 @@ title: 'Don''t Forget: Remote MCP Servers are Just cURL Calls'
 toc: true
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114980233146696855
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lvpjgmsesj2a
+hacker_news_url: https://news.ycombinator.com/item?id=45451909
 tags:
 - code-snippets
 - software-engineering

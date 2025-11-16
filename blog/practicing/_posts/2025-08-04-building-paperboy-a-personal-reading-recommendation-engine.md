@@ -7,6 +7,7 @@ image: "/assets/images/c403a529-190b-4c2a-8ac4-5ba840c320d8.png"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/114972426892917389
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lvm2ir7kcn2z
+hacker_news_url: https://news.ycombinator.com/item?id=44800522
 tags:
 - automation
 - llm

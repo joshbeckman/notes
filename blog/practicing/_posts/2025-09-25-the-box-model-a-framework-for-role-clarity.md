@@ -7,6 +7,7 @@ image: "/assets/images/75d5f1fe-d78d-41b8-b2bc-626a27c330eb.jpeg"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115265448374506108
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lzo6lkcvkz2t
+hacker_news_url: https://news.ycombinator.com/item?id=45374982
 tags:
 - software-engineering
 - leadership
