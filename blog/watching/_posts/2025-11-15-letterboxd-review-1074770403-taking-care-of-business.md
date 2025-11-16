@@ -9,7 +9,7 @@ rating: 1
 tmdb_id: '6393'
 letterboxd_id: taking-care-of-business
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115558473428168578
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3m5qcpvxvu62q
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/taking-care-of-business/
 tags:
 - movies
