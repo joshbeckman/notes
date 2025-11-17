@@ -1,0 +1,8 @@
+name: Sort Evidence for Claim
+description: Sort evidence for and against the prior claim
+model: openai/gpt-4o-mini
+modelParameters:
+  temperature: 0.5
+messages:
+  - role: user
+    content: What is the evidence for and against the claim/guidance just stated?
