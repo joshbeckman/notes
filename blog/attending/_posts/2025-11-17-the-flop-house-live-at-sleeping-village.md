@@ -5,7 +5,7 @@ title: The Flop House Live at Sleeping Village
 toc: true
 image: "/assets/images/e6e41542-2f3d-4e2f-a064-2d21869ba960.jpeg"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115563424350792545
 bluesky_status_url: false
 tags:
 - sleeping-village-venue
