@@ -184,11 +184,13 @@
                     var likes = data.posts[0].likeCount || 0;
                     var replies = data.posts[0].replyCount || 0;
                     var reposts = data.posts[0].repostCount || 0;
+                    var quotes = data.posts[0].quoteCount || 0;
                     var parts = [];
 
                     if (likes > 0) parts.push(`${likes} ${pluralize(likes, 'like')}`);
                     if (replies > 0) parts.push(`${replies} ${pluralize(replies, 'reply', 'replies')}`);
                     if (reposts > 0) parts.push(`${reposts} ${pluralize(reposts, 'repost')}`);
+                    if (quotes > 0) parts.push(`${quotes} ${pluralize(quotes, 'quote')}`);
 
                     if (parts.length > 0) {
                         var text = parts.join(', ').replace(/, ([^,]*)$/, ' and $1');
