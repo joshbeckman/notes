@@ -17,7 +17,7 @@ serial_number: 2025.BLG.185
 ---
 When Marybeth and I got married, I bought us a [Some Lines A Day notebook from LEUCHTTURM1917](https://www.leuchtturm1917.us/some-lines-a-day.html) and we started filling it with a daily note (one sentence from each of us) on our favorite part of our day. We had been asking each other this nightly for years, and it was a nice physical structure to keep and reflect on those moments. The structure of this notebook is such that each page is a day of the year, with sections for 5 years on that day. By writing any one day, you read through that day on prior years.
 
-![The autumn leaves force contemplation on us all, don't they?](/assets/images/7521025c-92a3-4a6d-8c06-9abcd751fdd9.jpeg)
+![The autumn leaves force contemplation on us all, I think.](/assets/images/7521025c-92a3-4a6d-8c06-9abcd751fdd9.jpeg)
 
 Recently I found [the two-sentence journal via De minimis non curat Lex](https://alexanderbjoy.com/two-sentence-journal/). In it, Alexander describes how he's adapted a game mechanic from _Thousand Year Old Vampire_ for his own journaling. In the game, your vampire has finite memory, composed of experiences that you have written down during the game (and as the centuries pass, you must choose which aspects of your vampire's life to retain or forget).
 
