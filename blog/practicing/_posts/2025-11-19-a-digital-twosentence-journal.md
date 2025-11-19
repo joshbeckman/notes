@@ -7,7 +7,7 @@ image: "/assets/images/7521025c-92a3-4a6d-8c06-9abcd751fdd9.jpeg"
 description: A vampire's journal and a physical notebook inspired me to write a program
   to store my experiences
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115576876099089918
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3m5yiagp2cc2a
 tags:
 - writing
 - games
