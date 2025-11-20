@@ -7,6 +7,7 @@ image: "/assets/images/EE81114422AA4C6385185B2A19FA57FE.jpeg"
 description:
 tags:
 - music
+- riviera-venue
 serial_number: 2021.BLG.006
 ---
 ![](/assets/images/EE81114422AA4C6385185B2A19FA57FE.jpeg)
