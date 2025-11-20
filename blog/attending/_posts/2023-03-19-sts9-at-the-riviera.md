@@ -7,6 +7,7 @@ image: "/assets/images/7DCE4C6A1C5448999D1E9E9A82973FE0.jpeg"
 photo_feature: true
 tags:
 - music
+- riviera-venue
 serial_number: 2023.BLG.017
 ---
 With Dan, Paul, and Walters\.
