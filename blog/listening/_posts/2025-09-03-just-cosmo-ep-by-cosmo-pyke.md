@@ -13,6 +13,8 @@ tags:
 - music
 serial_number: 2025.BLG.143
 ---
+![Just Cosmo by Cosmo Pyke](/assets/images/album_art/cosmopyke-justcosmoep.jpg)
+
 Man, this would be one of my deserted island albums.
 
 I don't know how I found this when it was released in 2017 but it was truly a gift. Since then, I will forget about it for a while, remember it (like I did last night), rediscover it, and listen to it a few times and just smile with gratitude.
