@@ -8,7 +8,7 @@ description:
 rating: 5
 song_link: https://music.apple.com/us/album/getting-killed/1818548779
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115586074741105108
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3m64kxiaaka2j
 tags:
 - music
 serial_number: 2025.BLG.186
