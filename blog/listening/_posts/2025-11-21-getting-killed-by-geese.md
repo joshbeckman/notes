@@ -7,7 +7,7 @@ image: "/assets/images/album_art/geese-gettingkilled.jpg"
 description:
 rating: 5
 song_link: https://music.apple.com/us/album/getting-killed/1818548779
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115586074741105108
 bluesky_status_url: false
 tags:
 - music
