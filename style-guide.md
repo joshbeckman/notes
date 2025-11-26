@@ -35,6 +35,7 @@ This is the default palette. Often, I'll use these colors as a starting point an
 
 Fonts were [originally explained here](https://www.joshbeckman.org/blog/my-favorite-fonts), but to repeat:
 - [IBM Plex Sans](https://www.ibm.com/plex/) for body text
+- [IBM Plex Sans Condensed](https://www.ibm.com/plex/) for title text
 - [`Berkeley Mono`](https://berkeleygraphics.com/typefaces/berkeley-mono/) for monospace/source-code text
 
 ## Buttons/Forms
