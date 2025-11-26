@@ -1450,6 +1450,7 @@ cite .u-url, cite .non-url {
   padding:0.4rem 2.5ch;
   border-radius: 4px;
   border: 1px solid var(--c-text-alt);
+  color: var(--c-text);
   background-color: var(--c-bg);
   width: calc(100% - 17ch);
   display: inline-block;
