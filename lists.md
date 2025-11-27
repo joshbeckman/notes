@@ -82,8 +82,11 @@ serial_number: 2024.PAE.007
 
 ## Writing
 
-- want: [Kaweco Special Mini Mechanical Pencil - 0.9 mm - Black Body | JetPens](https://www.jetpens.com/Kaweco-Special-Mini-Mechanical-Pencil-0.9-mm-Black-Body/pd/8744)
 - [Uni-ball One P Gel Pen - 0.5 mm - Yogurt Body - Black Ink | JetPens](https://www.jetpens.com/Uni-ball-One-P-Gel-Pen-0.5-mm-Yogurt-Body-Black-Ink/pd/36771#index=1)
 - [P209 Sharp Mechanical Drafting Pencil | Pentel.com – Pentel of America, Ltd.](https://www.pentel.com/products/sharp-mechanical-drafting-pencil?variant=43976381562927)
   - want: [making it pocket-friendly : r/mechanicalpencils](https://www.reddit.com/r/mechanicalpencils/comments/1fwtizw/comment/lqj8wyl/)
+- [Sakura Pigma Micron Pen - Size 10 - 0.6 mm - Black | JetPens](https://www.jetpens.com/Sakura-Pigma-Micron-Pen-Size-10-0.6-mm-Black/pd/31190)
+- [Rite in the Rain Top Spiral Notebook, 3 x 5, No. 135](https://www.riteintherain.com/3x5-top-spiral-notebook#OR35)
+- [Fox & Poet Notizblock *neon* Din A4](https://www.etsy.com/listing/1501783657/notizblock-neon-din-a4?ref=shop_home_active_5&crt=1&logging_key=52253d09206e1149795948b006b017af9b81dc83%3A1501783657)
 - want: [penco® stationery & supplies](https://penco.jp/)
+- want: [Kaweco Special Mini Mechanical Pencil - 0.9 mm - Black Body | JetPens](https://www.jetpens.com/Kaweco-Special-Mini-Mechanical-Pencil-0.9-mm-Black-Body/pd/8744)
