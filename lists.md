@@ -79,3 +79,11 @@ serial_number: 2024.PAE.007
 
 - [Original 874® Work Pants | Dickies US](https://www.dickies.com/en-us/products/original-874-r-work-pants-dk0008740dn)
 - [Men's Long Sleeve Cotton Work Shirt | Wrinkle-Resistant | Red Kap®](https://www.redkap.com/mens-long-sleeve-wrinkle-resistant-cotton-work%C2%A0shirt/036394534821.html)
+
+## Writing
+
+- want: [Kaweco Special Mini Mechanical Pencil - 0.9 mm - Black Body | JetPens](https://www.jetpens.com/Kaweco-Special-Mini-Mechanical-Pencil-0.9-mm-Black-Body/pd/8744)
+- [Uni-ball One P Gel Pen - 0.5 mm - Yogurt Body - Black Ink | JetPens](https://www.jetpens.com/Uni-ball-One-P-Gel-Pen-0.5-mm-Yogurt-Body-Black-Ink/pd/36771#index=1)
+- [P209 Sharp Mechanical Drafting Pencil | Pentel.com – Pentel of America, Ltd.](https://www.pentel.com/products/sharp-mechanical-drafting-pencil?variant=43976381562927)
+  - want: [making it pocket-friendly : r/mechanicalpencils](https://www.reddit.com/r/mechanicalpencils/comments/1fwtizw/comment/lqj8wyl/)
+- want: [penco® stationery & supplies](https://penco.jp/)
