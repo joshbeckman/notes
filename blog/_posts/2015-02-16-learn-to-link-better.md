@@ -5,6 +5,8 @@ date: '2015-02-16 00:00:00'
 redirect_from:
 - "/learn-to-link-better"
 - "/learn-to-link-better/"
+- "/2015/02/16/learn-to-link-better"
+- "/2015/02/16/learn-to-link-better/"
 tags:
 - personal-blog
 - interfaces

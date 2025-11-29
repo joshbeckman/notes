@@ -5,6 +5,8 @@ date: '2016-08-11 00:00:00'
 redirect_from:
 - "/the-benefits-of-daily-code-review"
 - "/the-benefits-of-daily-code-review/"
+- "/2016/08/11/the-benefits-of-daily-code-review"
+- "/2016/08/11/the-benefits-of-daily-code-review/"
 tags:
 - mentoring
 - software-engineering
