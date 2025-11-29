@@ -12,6 +12,52 @@
           Search
         </button>
       </div>
+      <details class="search-filters">
+        <summary>Filters</summary>
+        <div class="search-filters-content">
+          <div class="search-filter-group">
+            <label for="search-keys">Search in</label>
+            <select name="keys" id="search-keys">
+              <option value="">All fields</option>
+              <option value="title">Title only</option>
+              <option value="content">Content only</option>
+              <option value="tags">Tags only</option>
+              <option value="url">URL only</option>
+              <option value="book">Book ID only</option>
+              <option value="author_id">Author ID only</option>
+            </select>
+          </div>
+          <div class="search-filter-group">
+            <label for="search-type">Type</label>
+            <select name="type" id="search-type">
+              <option value="">All types</option>
+              <option value="post">Posts</option>
+              <option value="page">Pages</option>
+              <option value="tag">Tags</option>
+            </select>
+          </div>
+          <div class="search-filter-group">
+            <label for="search-category">Category</label>
+            <select name="category" id="search-category">
+              <option value="">All categories</option>
+              <option value="blog">Blog</option>
+              <option value="notes">Notes</option>
+              <option value="exercise">Exercise</option>
+              <option value="replies">Replies</option>
+              <option value="proverbs">Proverbs</option>
+              <option value="talks">Talks</option>
+            </select>
+          </div>
+          <div class="search-filter-group">
+            <label for="search-after">Published after</label>
+            <input type="date" name="after" id="search-after" />
+          </div>
+          <div class="search-filter-group">
+            <label for="search-before">Published before</label>
+            <input type="date" name="before" id="search-before" />
+          </div>
+        </div>
+      </details>
     </form>
   </div>
   <div id="search-results" class="search-results"></div>

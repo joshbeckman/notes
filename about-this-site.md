@@ -95,6 +95,10 @@ You can read about everything else I use to build things at [/uses](/uses).
 - podcast rendering
 - [More ideas](https://github.com/joshbeckman/notes/issues?q=is%3Aopen+is%3Aissue+-label%3Apost)
 
+### 2025-11-29
+- Add advanced search filters: restrict by field (title, content, tags, etc.), document type, category, and date range
+- Support `q=*` wildcard to return all documents for filter-only searches
+
 ### 2025-11-16
 - Default to showing comments section
 - Add HackerNews comments/points display

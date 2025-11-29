@@ -36,8 +36,10 @@
       </li>
       {%- endif -%}
       {%- if page.date -%}
+      {%- assign date_after = page.date | date: '%Y-%m-%d' -%}
+      {%- assign date_before = page.date | date: '%s' | plus: 86400 | date: '%Y-%m-%d' -%}
       <li class="filed date">
-        <a href="/search/?q=%27{{ page.date | date: '%Y-%m-%d' }}">
+        <a href="/search/?q=*&type=post&after={{ date_after }}&before={{ date_before }}">
             <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y, %B %d, %A' }}</time>
         </a>
       </li>

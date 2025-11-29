@@ -1520,10 +1520,42 @@ ul li.search-results-list-item:last-child {
 .search-result-highlight { 
     font-weight: bold; 
 }
-.search-result-count{ 
+.search-result-count{
   display: block;
   padding: 1em 0 0;
   text-align: right;
+}
+.search-filters {
+  margin-top: 0.75em;
+}
+.search-filters summary {
+  cursor: pointer;
+  font-size: 0.9em;
+  color: var(--c-text-secondary, #666);
+}
+.search-filters-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+.search-filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+  min-width: 120px;
+}
+.search-filter-group label {
+  font-size: 0.85em;
+  color: var(--c-text-secondary, #666);
+}
+.search-filter-group select,
+.search-filter-group input[type="date"] {
+  font-size: inherit;
+  padding: 0.1em 0.5ch;
+  border: 1px solid var(--c-text-alt, #ccc);
+  border-radius: 4px;
+  background: var(--c-bg, #fff);
+  color: var(--c-text, #000);
 }
 .highlighted-text {
   background-color: #fbf5d4;

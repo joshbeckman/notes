@@ -9,6 +9,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/114903776072903
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lunkvy5scu27
 tags:
 - llm
+- llm-prompts
 - human-psychology
 - identity
 serial_number: 2025.BLG.113

@@ -28,19 +28,73 @@ Fuse = (function(){"use strict";function e(e,t){var n=Object.keys(e);if(Object.g
         return responseText;
     }
 
+    function getSearchParams() {
+        var params = new URLSearchParams(window.location.search);
+        return {
+            q: params.get("q") || "",
+            keys: params.get("keys") || "",
+            type: params.get("type") || "",
+            category: params.get("category") || "",
+            after: params.get("after") || "",
+            before: params.get("before") || ""
+        };
+    }
+
+    function getCategoryFromUrl(url) {
+        if (!url) return null;
+        var match = url.match(/^\/([^\/]+)\//);
+        return match ? match[1] : null;
+    }
+
+    function filterResults(results, filters) {
+        return results.filter(function(result) {
+            var doc = result.item;
+
+            if (filters.type && doc.type !== filters.type) {
+                return false;
+            }
+
+            if (filters.category) {
+                var docCategory = getCategoryFromUrl(doc.url);
+                if (docCategory !== filters.category) {
+                    return false;
+                }
+            }
+
+            if (filters.after && doc.date) {
+                var afterDate = new Date(filters.after);
+                var docDate = new Date(doc.date);
+                if (docDate < afterDate) {
+                    return false;
+                }
+            }
+
+            if (filters.before && doc.date) {
+                var beforeDate = new Date(filters.before);
+                var docDate = new Date(doc.date);
+                if (docDate > beforeDate) {
+                    return false;
+                }
+            }
+
+            return true;
+        });
+    }
+
     function searchInit() {
         var dataUrl = "/assets/js/SearchData.json";
 
         getSearchData(dataUrl)
             .then(function(responseText) {
             var docs = JSON.parse(responseText);
-            var keysRestriction = new URLSearchParams(window.location.search).get("keys");
+            var searchParams = getSearchParams();
             var keys = ['title', 'content', 'tags', 'url', 'date', 'book', 'author_id'];
-            if (keysRestriction) {
-              keys = keysRestriction.split(',');
+            if (searchParams.keys) {
+              keys = searchParams.keys.split(',');
             }
 
-            var fuse = new Fuse(Object.values(docs), {
+            var allDocs = Object.values(docs);
+            var fuse = new Fuse(allDocs, {
                 keys: keys,
                 findAllMatches: false,
                 ignoreFieldNorm: true,
@@ -53,13 +107,13 @@ Fuse = (function(){"use strict";function e(e,t){var n=Object.keys(e);if(Object.g
                 threshold: 0.2, // set this to 0 to require a perfect match
                 useExtendedSearch: true, // ref: https://www.fusejs.io/examples.html#extended-search
             });
-            searchLoaded(fuse);
+            searchLoaded(fuse, searchParams, allDocs);
         }).catch(function(err) {
             alert('Failed to load search data: ' + err);
         });
     }
 
-    function searchLoaded(fuse) {
+    function searchLoaded(fuse, searchParams, allDocs) {
         var searchInput = document.getElementById('search-input');
         var searchResults = document.getElementById('search-results');
         var currentInput;
@@ -81,12 +135,21 @@ Fuse = (function(){"use strict";function e(e,t){var n=Object.keys(e);if(Object.g
                 return;
             }
 
-            var results = fuse.search(input);
-            if (results[0] && results[0].score <= 0.3) {
-                results = results.filter(function(result){
-                    return result.score < 0.5;
+            var results;
+            if (input === '*') {
+                results = allDocs.map(function(doc, idx) {
+                    return { item: doc, score: 0, refIndex: idx, matches: [] };
                 });
+            } else {
+                results = fuse.search(input);
+                if (results[0] && results[0].score <= 0.3) {
+                    results = results.filter(function(result){
+                        return result.score < 0.5;
+                    });
+                }
             }
+
+            results = filterResults(results, searchParams);
 
             var countResultsDiv = document.createElement('small');
             countResultsDiv.classList.add('search-result-count');
@@ -309,11 +372,43 @@ Fuse = (function(){"use strict";function e(e,t){var n=Object.keys(e);if(Object.g
         })();
     });
     function searchViaQuery() {
-      var search = new URLSearchParams(window.location.search).get("q");
-      if (!search) { return; }
+      var params = getSearchParams();
 
-      var searchInput = document.getElementById("search-input");
-      searchInput.value = search;
+      if (params.q) {
+        var searchInput = document.getElementById("search-input");
+        searchInput.value = params.q;
+      }
+
+      if (params.keys) {
+        var keysSelect = document.getElementById("search-keys");
+        if (keysSelect) keysSelect.value = params.keys;
+      }
+
+      if (params.type) {
+        var typeSelect = document.getElementById("search-type");
+        if (typeSelect) typeSelect.value = params.type;
+      }
+
+      if (params.category) {
+        var categorySelect = document.getElementById("search-category");
+        if (categorySelect) categorySelect.value = params.category;
+      }
+
+      if (params.after) {
+        var afterInput = document.getElementById("search-after");
+        if (afterInput) afterInput.value = params.after;
+      }
+
+      if (params.before) {
+        var beforeInput = document.getElementById("search-before");
+        if (beforeInput) beforeInput.value = params.before;
+      }
+
+      var hasFilters = params.keys || params.type || params.category || params.after || params.before;
+      if (hasFilters) {
+        var filtersDetails = document.querySelector('.search-filters');
+        if (filtersDetails) filtersDetails.open = true;
+      }
     }
 
     searchViaQuery();
