@@ -12,18 +12,14 @@ redirect_from:
 - "/the-end-of-narro/"
 serial_number: 2023.BLG.005
 ---
-Over the past few months, I have been shutting down [Narro](https://www.narro.co). This week I have been spinning down the last remaining servers, disassembling the final pieces.
+Over the past few months, I have been shutting down [Narro](/narro) (`narro.co`). This week I have been spinning down the last remaining servers, disassembling the final pieces.
 
 I initially published the [announcement on the Narro blog](https://blog.narro.co/post/704215532872876032/notice-narro-shutting-down), but a summary is that the service had become a burden to operate and was no longer profitable enough to sustain itself. Here, I want to expand a bit on why and how I shut down the service and company. I’ve set up a separate, dedicated page to document Narro’s history and features:
 
-<figure class="kg-card kg-bookmark-card"><a class="kg-bookmark-container" href="/narro/"><div class="kg-bookmark-content">
-<div class="kg-bookmark-title">Narro</div>
-<div class="kg-bookmark-description">Narro was a service I operated from 2014-2023 and a company I operated from 2016-2023 that turned your reading list or blog into a podcast. It was the best way to listen to the internet. As one user said: “Pretty much the best thing to happen to your morning commute</div>
-<div class="kg-bookmark-metadata">
-<img class="kg-bookmark-icon" src="/assets/images/favicon-1.png" alt=""><span class="kg-bookmark-author">Josh Beckman</span><span class="kg-bookmark-publisher">Josh Beckman</span>
-</div>
-</div>
-<div class="kg-bookmark-thumbnail"><img src="/assets/images/apps.png" alt=""></div></a></figure>
+> [Narro](/narro) was a service I operated from 2014-2023 and a company I operated from 2016-2023 that turned your reading list or blog into a podcast. It was the best way to listen to the internet. As one user said: “Pretty much the best thing to happen to your morning commute
+
+<img src="/assets/images/apps.png" alt="">
+
 ## Increasing Costs
 
 I have operated Narro as a service since 2014 and I have operated the corporate entity since 2016. Every year saw a growth in user base and most of them actually saw a growth in revenue. I have never been a good marketer of Narro and honestly I never put much effort into marketing at all. So any growth in free accounts was purely word of mouth, any growth in paid accounts was purely due to the utility of the service.
@@ -52,7 +48,8 @@ Once I had decided to shut down the service, I contacted a legal advisor through
 
 I then started communicating the shutdown to Narro users. Effective December 30th, 2022, Narro stopped generating new readings for all accounts. At that time, Narro also stopped any account and subscription charges. All Narro accounts retained access to their readings until January 21st, 2023. At that time, I started turning off Narro services entirely.
 
-<figure class="kg-card kg-image-card kg-card-hascaption"><img src="/assets/images/Screenshot-2023-01-22-at-10.40.28-AM.png" class="kg-image" alt  width="1392" height="280"  sizes="(min-width: 720px) 720px"><figcaption>My account's final reading count on Narro.</figcaption></figure>
+<img src="/assets/images/Screenshot-2023-01-22-at-10.40.28-AM.png" class="kg-image" alt="My final reading count on Narro." width="1392" height="280"  sizes="(min-width: 720px) 720px">
+
 ## Going Forward
 
 In building Narro, I spun off [several](https://github.com/NarroApp) open source [projects](https://github.com/andjosh/staticus) [and](https://github.com/andjosh/gopod) [libraries](https://github.com/andjosh/translate-emoji). These have now been archived or moved under [my personal GitHub account](https://github.com/andjosh) (where I will maintain them and you can [sponsor their development](https://github.com/sponsors/andjosh)!). In the future, I may extract and publish more useful libraries from Narro’s source code.
