@@ -8,7 +8,7 @@ description:
 rating: 3
 tmdb_id: '37257'
 letterboxd_id: witness-for-the-prosecution-1957
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115634905589706438
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/witness-for-the-prosecution-1957/
 tags:
