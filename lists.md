@@ -79,6 +79,7 @@ serial_number: 2024.PAE.007
 
 - [Original 874® Work Pants : Dickies US](https://www.dickies.com/en-us/products/original-874-r-work-pants-dk0008740dn)
 - [Men's Long Sleeve Cotton Work Shirt : Wrinkle-Resistant : Red Kap®](https://www.redkap.com/mens-long-sleeve-wrinkle-resistant-cotton-work%C2%A0shirt/036394534821.html)
+- [VICHCRAFT Chainstitch Embroidery](https://www.vichcraft.com/about)
 
 ## Writing
 

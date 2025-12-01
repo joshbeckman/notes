@@ -6,7 +6,7 @@ searchable: true
 hide_title: true
 serial_number: 2023.PAE.003
 ---
-Hello, friends. I'm [Josh](/about/).
+Hello, friends. I'm Josh. Read [about me](/about) or [my latest posts](/latest).
 
 # What I Believe
 
