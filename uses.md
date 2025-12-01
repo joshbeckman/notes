@@ -17,9 +17,9 @@ Well, we're gonna have to break this down a bit.
 ## Development
 
 ### Hardware
-- Jarvis standing desk ([previously](/blog/working))
+- custom standing shelf-desk ([previously](/blog/working))
 - Keychron K3 Pro keyboard ([customized](https://www.joshbeckman.org/blog/shopify-keychron-k3-pro))
-- Logitech M705 mouse
+- Ergodriven mouse
 - Macbook Air (2022, personal)
 - Macbook Pro (2023, work)
 - paper and pencil
@@ -41,7 +41,7 @@ Well, we're gonna have to break this down a bit.
 - GitHub issues for work journaling/logbook
 - Jekyll and GitHub pages
 - Fastmail for personal email
-- Apple Calendar for personal calendar
+- Fantastical (using Apple calendars) for personal calendar
 - Google for work email/calendar
 - Raycast for quicklinks and launching and text snippets
 - Keyboard Maestro for macros and keybindings
@@ -69,7 +69,7 @@ Well, we're gonna have to break this down a bit.
 - Zoom H4N
 
 ### Software
-- Forecast
+- Overcast for podcasts
 - Apple Music for listening
 
 ## Gardening
@@ -85,17 +85,13 @@ Well, we're gonna have to break this down a bit.
 ## Exercise
 
 ### Hardware
-- Flybird rack
-- Random smattering of weights
-- Fitness Gear adjustable bench
+- Fitness Formula Clubs membershipo
 - Garmin Instinct 2X Solar
 
 ### Software
-- Healthfit
-- Fitbod
-- Strava
-- Garmin Connect
-- Overcast for podcasts
+- Fitbod for weightlifting
+- Strava for running and socializing
+- Garmin Connect for physical/health tracking
 
 ## Carpentry
 
