@@ -8,7 +8,7 @@ description:
 rating: 5
 tmdb_id: '21484'
 letterboxd_id: possession
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115668175588434366
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/possession/
 tags:
