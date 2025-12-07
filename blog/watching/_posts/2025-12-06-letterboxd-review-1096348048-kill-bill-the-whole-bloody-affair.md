@@ -8,7 +8,7 @@ description:
 rating: 5
 tmdb_id: '414419'
 letterboxd_id: kill-bill-the-whole-bloody-affair
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115680905822150886
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/kill-bill-the-whole-bloody-affair/
 tags:
