@@ -2,6 +2,7 @@
 layout: Page
 title: On This Day
 searchable: true
+permalink: /on-this-day
 tags:
 - index
 - personal-blog
