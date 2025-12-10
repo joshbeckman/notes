@@ -12,7 +12,7 @@ serial_number: 2018.BLG.013
 ---
 After interviewing all Summer and Fall, we’ve found the next member of [our OfficeLuv Product Team](https://officeluv.github.io), a talented and thoughtful software engineer.
 
-This hiring cycle, I wanted to approach recruitment as we would a product feature or epic. Part of that, of course, is having a good retrospective. The first post [detailed our hiring steps and flow](https://www.andjosh.com/2018/12/10/hiring-interview-steps/). Here’s the second part, an overview of advancement rates for each stage of our hiring funnel.
+This hiring cycle, I wanted to approach recruitment as we would a product feature or epic. Part of that, of course, is having a good retrospective. The first post [detailed our hiring steps and flow](https://www.joshbeckman.org/blog/hiring-interview-steps). Here’s the second part, an overview of advancement rates for each stage of our hiring funnel.
 
 ## Timeline & Sourcing
 
