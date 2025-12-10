@@ -2,7 +2,7 @@
 layout: Page
 title: Music Listening
 toc: true
-emoji: "\U0001F3B6"
+emoji: 🎶
 searchable: true
 categories:
 - blog
@@ -10,7 +10,7 @@ tags:
 - music
 - index
 redirect_from:
-- "/music"
+- /music
 serial_number: 2024.PAE.009
 ---
 Albums that moved me enough to write about them.
@@ -34,39 +34,39 @@ Albums that moved me enough to write about them.
 ## Listening Stats
 I generate this page from my Apple Music library using [a script I wrote](/blog/pulling-fun-insights-out-of-my-apple-music-library). Feel free to use it, too!
 
-Last updated: 2025-11-15
+Last updated: 2025-12-10
 
 ## Recently Played Albums
 This is a list of the albums I've played recently.
 
 | Art | Artist | Album |
 | --- | ------ | ----- |
-| ![KAYTRANADA - AIN'T NO DAMN WAY!](/assets/images/album_art/kaytranada-aintnodamnway.jpg) | KAYTRANADA | AIN'T NO DAMN WAY! |
-|  | The City of Prague Philharmonic Orchestra & Richard Hein | Melancholia (Original Soundtrack) |
-|  | TEED | When the Lights Go |
-|  | Thelonious Monk | Criss-Cross |
-|  | Theodore Shapiro | Music To Refine To: A Remix Companion to Severance |
-|  | Theodore Shapiro | Music Of Wellness (From Severance: Season 1 Apple TV+ Original Series Soundtrack) - Single |
-|  | Ninajirachi | I Love My Computer |
-|  | Shlohmo | REPULSOR |
-|  | Whitney | Small Talk |
-|  | Khruangbin | The Universe Smiles Upon You ii |
+| ![Gelli Haha - Switcheroo](/assets/images/album_art/gellihaha-switcheroo.jpg) | Gelli Haha | Switcheroo |
+| ![Rival Consoles - Landscape from Memory](/assets/images/album_art/rivalconsoles-landscapefrommemory.jpg) | Rival Consoles | Landscape from Memory |
+| ![Mustard Service - Vice City Magic](/assets/images/album_art/mustardservice-vicecitymagic.jpg) | Mustard Service | Vice City Magic |
+| ![Alice Sara Ott - John Field: Complete Nocturnes](/assets/images/album_art/alicesaraott-johnfieldcompletenocturnes.jpg) | Alice Sara Ott | John Field: Complete Nocturnes |
+|  | Fred again.., Scott Hardkiss & The Japanese House | Live from Lyon, France, Oct 24, 2025 (DJ Mix) |
+| ![Kelly Lee Owens - KELLY - EP](/assets/images/album_art/kellyleeowens-kellyep.jpg) | Kelly Lee Owens | KELLY - EP |
+| ![Vince Guaraldi Trio - A Charlie Brown Christmas (Original 1965 TV Soundtrack) [Expanded Edition]](/assets/images/album_art/vinceguaralditrio-acharliebrownchristmasoriginal1965tvsoundtrackexpandededition.jpg) | Vince Guaraldi Trio | A Charlie Brown Christmas (Original 1965 TV Soundtrack) [Expanded Edition] |
+|  | Jai Paul | Live from Toronto, Canada, Nov 14, 2025 (DJ Mix) |
+| ![Slow Mass - Low on Foot](/assets/images/album_art/slowmass-lowonfoot.jpg) | Slow Mass | Low on Foot |
+| ![Slow Mass - On Watch](/assets/images/album_art/slowmass-onwatch.jpg) | Slow Mass | On Watch |
 
 ## Recently Loved Albums
 This is a list of the albums I've loved recently.
 
 | Art | Artist | Album |
 | ------ | ----- | --------- |
-|  | Jane Inc. | A RUPTURE A CANYON A BIRTH |
-|  | Tame Impala | Deadbeat |
-|  | Leon Vynehall | In Daytona Yellow |
+| ![Alice Sara Ott - John Field: Complete Nocturnes](/assets/images/album_art/alicesaraott-johnfieldcompletenocturnes.jpg) | Alice Sara Ott | John Field: Complete Nocturnes |
+|  | Four Tet & Burial | Live from Toronto, Canada, Nov 14, 2025 (DJ Mix) |
+| ![Juana Molina - DOGA](/assets/images/album_art/juanamolina-doga.jpg) | Juana Molina | DOGA |
+| ![Austra - Chin up Buttercup](/assets/images/album_art/austra-chinupbuttercup.jpg) | Austra | Chin up Buttercup |
+| ![Robyn - Dopamine - Single](/assets/images/album_art/robyn-dopaminesingle.jpg) | Robyn | Dopamine - Single |
+|  | Fred again.., Scott Hardkiss & The Japanese House | Live from Lyon, France, Oct 24, 2025 (DJ Mix) |
+| ![Jane Inc. - A RUPTURE A CANYON A BIRTH](/assets/images/album_art/janeinc-aruptureacanyonabirth.jpg) | Jane Inc. | A RUPTURE A CANYON A BIRTH |
+| ![Tame Impala - Deadbeat](/assets/images/album_art/tameimpala-deadbeat.jpg) | Tame Impala | Deadbeat |
 |  | Bicep | Lane 8 Fall 2025 Mixtape (DJ Mix) |
-| ![Geese - Getting Killed](/assets/images/album_art/geese-gettingkilled.jpg) | Geese | Getting Killed |
-| ![SG Lewis - Anemoia](/assets/images/album_art/sglewis-anemoia.jpg) | SG Lewis | Anemoia |
-| ![Weval - CHOROPHOBIA](/assets/images/album_art/weval-chorophobia.jpg) | Weval | CHOROPHOBIA |
-| ![Tangerine Dream - Hyperborea (Deluxe Edition)](/assets/images/album_art/tangerinedream-hyperboreadeluxeedition.jpg) | Tangerine Dream | Hyperborea (Deluxe Edition) |
-| ![UTFO - Hits](/assets/images/album_art/utfo-hits.jpg) | UTFO | Hits |
-| ![Kaitlyn Aurelia Smith - Gush](/assets/images/album_art/kaitlynaureliasmith-gush.jpg) | Kaitlyn Aurelia Smith | Gush |
+| ![Leon Vynehall - In Daytona Yellow](/assets/images/album_art/leonvynehall-indaytonayellow.jpg) | Leon Vynehall | In Daytona Yellow |
 
 ## Top Played Tracks
 This is a list of the top played tracks in my library.
@@ -79,8 +79,8 @@ This is a list of the top played tracks in my library.
 | Jamie xx | ![Jamie xx - In Colour](/assets/images/album_art/jamiexx-incolour.jpg) | Gosh | 87 | 7h 1m 54s |
 | Sufjan Stevens | ![Sufjan Stevens - Greetings from Michigan - The Great Lake State (Deluxe Version)](/assets/images/album_art/sufjanstevens-greetingsfrommichiganthegreatlakestatedeluxeversion.jpg) | Redford (For Yia-Yia and Pappou) | 87 | 2h 56m 54s |
 | Reptile Youth | ![Reptile Youth - Away - EP](/assets/images/album_art/reptileyouth-awayep.jpg) | Arab Spring Break, Pt. 2 | 86 | 7h 22m 48s |
-| Peter Broderick | ![Peter Broderick - Partners](/assets/images/album_art/peterbroderick-partners.jpg) | In a Landscape | 82 | 14h 15m 12s |
 | Sylvan Esso | ![Sylvan Esso - Sylvan Esso](/assets/images/album_art/sylvanesso-sylvanesso.jpg) | Come Down | 82 | 4h 1m 59s |
+| Peter Broderick | ![Peter Broderick - Partners](/assets/images/album_art/peterbroderick-partners.jpg) | In a Landscape | 82 | 14h 15m 12s |
 |  | ![ - Her OST](/assets/images/album_art/-herost.jpg) | Song On The Beach | 78 | 4h 36m 29s |
 |  | ![ - Her OST](/assets/images/album_art/-herost.jpg) | Photograph | 76 | 3h 8m 48s |
 
@@ -105,7 +105,7 @@ This is a list of the top played artists in my library (by song plays).
 
 | Artist | Song Play Count | Song Play Ratio |
 | ------ | -------------- | --------------- |
-| Four Tet | 1162 | 10 |
+| Four Tet | 1163 | 9 |
 | Oddisee | 1083 | 8 |
 | Peter Broderick | 930 | 33 |
 | KAYTRANADA | 919 | 12 |
@@ -121,13 +121,13 @@ This is a list of the top genres my library (by track count).
 
 | Genre | Track Count | Song Play Count | Total Time |
 | ------ | ---------- | -------------- | --------------- |
-| Electronic | 5081 | 20875 | 401h 19m 45s |
-| Alternative | 4699 | 19203 | 295h 47m 38s |
-| Dance | 3287 | 9222 | 207h 16m 49s |
-| Hip-Hop/Rap | 2639 | 7890 | 144h 54m 51s |
-| Rock | 1608 | 4090 | 110h 21m 9s |
-| Pop | 1328 | 4703 | 86h 43m 27s |
-| Soundtrack | 1064 | 3474 | 55h 54m 27s |
-| R&B/Soul | 976 | 3185 | 59h 23m 58s |
-| Classical | 864 | 2589 | 62h 23m 39s |
-| Jazz | 845 | 3583 | 80h 51m 24s |
+| Electronic | 5147 | 20997 | 405h 26m 54s |
+| Alternative | 4703 | 19250 | 296h 31m 36s |
+| Dance | 3371 | 9469 | 213h 22m 52s |
+| Hip-Hop/Rap | 2638 | 7891 | 144h 51m 0s |
+| Rock | 1621 | 4096 | 111h 14m 48s |
+| Pop | 1328 | 4704 | 86h 45m 11s |
+| Soundtrack | 1075 | 3474 | 56h 25m 6s |
+| R&B/Soul | 979 | 3191 | 59h 38m 15s |
+| Classical | 882 | 2711 | 63h 39m 41s |
+| Jazz | 847 | 3583 | 80h 56m 39s |
