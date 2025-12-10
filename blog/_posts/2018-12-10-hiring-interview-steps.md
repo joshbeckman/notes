@@ -73,5 +73,5 @@ Over the time we interviewed candidates for this role, I moved to sending stagin
 
 When I sent out the on-site interview invites to the other members on our team, I _always_ included the candidate’s resume, a short bio of their past roles, current role, and future role desires, as well as suggestions for questions I thought their should ask the candidate. This allowed our interviewers to prepare quickly and effectively.
 
-In the next part of this retrospective, I’ll go over some of our acceptance rates for each of these stages.
+In [the next part of this retrospective](https://www.joshbeckman.org/blog/hiring-interview-advancement-rate), I’ll go over some of our acceptance rates for each of these stages.
 
