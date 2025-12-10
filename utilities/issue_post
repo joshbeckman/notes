@@ -100,7 +100,7 @@ class IssuePoster
     )
     album.download_album_art(size: 1000)
     post.image = "/#{album.album_art_asset}" if File.exist?(album.album_art_asset)
-    post.body = "![#{album.name} by #{album.artist}](#{post.image})\n\n#{post.body
+    post.body = "![#{album.name} by #{album.artist}](#{post.image})\n\n#{post.body}"
   end
 
   def frontmatter?(body)
