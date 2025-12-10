@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/71f8da65-6b8b-413d-a8fa-384983c1522d.png"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115696498872984632
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3m7nm6n67cj2e
 tags:
 - shopify
 serial_number: 2025.BLG.191
