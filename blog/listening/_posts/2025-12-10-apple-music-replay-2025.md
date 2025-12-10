@@ -5,7 +5,7 @@ title: Apple Music Replay 2025
 toc: true
 image: "/assets/images/6c170300-e555-4bac-ae3f-69778d3de972.jpeg"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115696498934716719
 bluesky_status_url: false
 tags:
 - music
