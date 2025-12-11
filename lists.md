@@ -92,3 +92,10 @@ serial_number: 2024.PAE.007
 - [Fox & Poet Notizblock *neon* Din A4](https://www.etsy.com/listing/1501783657/notizblock-neon-din-a4?ref=shop_home_active_5&crt=1&logging_key=52253d09206e1149795948b006b017af9b81dc83%3A1501783657)
 - want: [penco® stationery & supplies](https://penco.jp/)
 - want: [Kaweco Special Mini Mechanical Pencil - 0.9 mm - Black Body : JetPens](https://www.jetpens.com/Kaweco-Special-Mini-Mechanical-Pencil-0.9-mm-Black-Body/pd/8744)
+
+## Watches
+
+- [Hamilton Ventura Quartz Watch](https://www.hamiltonwatch.com/en-us/h24411732-ventura-quartz.html)
+- [Bulova Lunar Pilot Watch](https://www.bulova.com/us/en/product/96B251.html)
+- [SKX Seiko Watch Corporation](https://www.seikowatches.com/us-en/products/5sports/srpl85)
+- want: [BR-03 Black Matte from Bell & Ross](https://bellross.com/en-us/collections/br-03/products/br-03-black-matte-rubber-strap?country=US)
