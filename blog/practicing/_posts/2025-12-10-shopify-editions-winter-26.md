@@ -15,6 +15,6 @@ Jump to [15:10 of the X spaces livestream](https://x.com/Shopify/status/19987540
 
 <img width="1294" height="712" alt="Editions feature page of Sidekick + Flow" src="/assets/images/71f8da65-6b8b-413d-a8fa-384983c1522d.png" />
 
-Elsewhere, Flow had several other big projects launch, like a whole "test your workflows before you activate them" system and a complete editor redesign: [Shopify Editions Winter '26: The Renaissance Edition](https://www.shopify.com/ca/editions/winter2026#operations).
+Elsewhere, Flow had several other big projects launch, like a whole "[test your workflows before you activate them](https://changelog.shopify.com/posts/flow-preview-workflows-safely-with-test-runs)" system and a complete editor redesign: [Shopify Editions Winter '26: The Renaissance Edition](https://www.shopify.com/ca/editions/winter2026#operations).
 
 It was difficult to get here, and I'm so proud of my team.
