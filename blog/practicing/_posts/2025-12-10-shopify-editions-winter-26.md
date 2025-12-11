@@ -11,7 +11,7 @@ tags:
 - shopify
 serial_number: 2025.BLG.191
 ---
-Jump to [15:10 of the X spaces livestream](https://x.com/Shopify/status/1998754028314882421?s=20) to get a brief overview of a big project I championed for a bit this fall: **AI-generated workflows**. ([view in Editions](https://www.shopify.com/ca/editions/winter2026#sidekick))
+Jump to [15:10 of the X spaces livestream](https://x.com/Shopify/status/1998754028314882421?s=20) to get a brief overview of a big project I championed for a bit this fall: **[AI-generated workflows](https://changelog.shopify.com/posts/create-flow-automations-with-sidekick)** with Sidekick. ([view in Editions](https://www.shopify.com/ca/editions/winter2026#sidekick))
 
 <img width="1294" height="712" alt="Editions feature page of Sidekick + Flow" src="/assets/images/71f8da65-6b8b-413d-a8fa-384983c1522d.png" />
 
