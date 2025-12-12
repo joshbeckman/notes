@@ -9,7 +9,7 @@ rating: 4
 tmdb_id: '29702'
 letterboxd_id: tenebre
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115707814431297683
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3m7smybtoxn2o
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/tenebre/
 tags:
 - movies
