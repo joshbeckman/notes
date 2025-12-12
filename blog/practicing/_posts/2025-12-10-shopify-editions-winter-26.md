@@ -18,3 +18,6 @@ Jump to [15:10 of the X spaces livestream](https://x.com/Shopify/status/19987540
 Elsewhere, Flow had several other big projects launch, like a whole "[test your workflows before you activate them](https://changelog.shopify.com/posts/flow-preview-workflows-safely-with-test-runs)" system and a complete editor redesign: [Shopify Editions Winter '26: The Renaissance Edition](https://www.shopify.com/ca/editions/winter2026#operations).
 
 It was difficult to get here, and I'm so proud of my team.
+
+> [!NOTE]
+> Full Shopify blog post: [How Shopify Flow Automation Got Faster, Safer, and Smarter in 2025](https://www.shopify.com/blog/flow-automation-updates-2025)
