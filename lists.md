@@ -97,5 +97,6 @@ serial_number: 2024.PAE.007
 
 - [Hamilton Ventura Quartz Watch](https://www.hamiltonwatch.com/en-us/h24411732-ventura-quartz.html)
 - [Bulova Lunar Pilot Watch](https://www.bulova.com/us/en/product/96B251.html)
-- [SKX Seiko Watch Corporation](https://www.seikowatches.com/us-en/products/5sports/srpl85)
+- [Seiko SKX Watch Corporation](https://www.seikowatches.com/us-en/products/5sports/srpl85) (the one with rectangular numerals and hands)
+- [Seiko SARB035](https://sixiw.watch/reviews/seiko-sarb035-review-still-worth-it-in-2024/)
 - want: [BR-03 Black Matte from Bell & Ross](https://bellross.com/en-us/collections/br-03/products/br-03-black-matte-rubber-strap?country=US)
