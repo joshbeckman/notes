@@ -10,7 +10,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3m7nm6ofrv32y
 tags:
 - music
 - data
-serial_number: 2025.BLG.192
+serial_number: 2025.BLG.193
 ---
 It’s still strange to me that Spotify Wrapped and [Apple Music](https://music.apple.com/profile/andjosh) Replay and others prompt me to view my “year's Worth of Listening” well before the year is done. But here are some highlights from this year’s data:
 - ~46k minutes listening time (down ~19k min from last year)

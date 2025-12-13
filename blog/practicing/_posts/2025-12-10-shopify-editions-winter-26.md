@@ -9,7 +9,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/115696498872984
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3m7nm6n67cj2e
 tags:
 - shopify
-serial_number: 2025.BLG.191
+serial_number: 2025.BLG.192
 ---
 Jump to [15:10 of the X spaces livestream](https://x.com/Shopify/status/1998754028314882421?s=20) to get a brief overview of a big project I championed for a bit this fall: **[AI-generated workflows](https://changelog.shopify.com/posts/create-flow-automations-with-sidekick)** with Sidekick. ([view in Editions](https://www.shopify.com/ca/editions/winter2026#sidekick))
 
