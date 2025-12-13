@@ -19,7 +19,7 @@ site.categories['watching'] | group_by_exp:"post", "post.date | date: '%Y %B'" %
       <colgroup>
           <col/>
           <col style="width: 20ch;"/>
-          <col style="width: 12ch;"/>
+          <col style="width: 13ch;"/>
       </colgroup>
       <thead>
         <tr>
