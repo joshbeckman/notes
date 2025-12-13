@@ -32,5 +32,9 @@ I don't have a table saw - only my jigsaw - so the cuts aren't straight on this,
 
 I've long wanted to build my own [Rietveld-esque crate stool / table (written up by Piper Haywood)](https://piperhaywood.com/rietveld-stool/), so maybe that will be my next build. The whole idea of [crate furniture](https://piperhaywood.com/rietveld-brigham-didion/?__readwiseLocation=) obviously appeals to me: so functional and efficient and customizable to your own comfort.
 
+More crate furniture (or "box furniture") reading/watching:
+- [Reclaiming simplicity, thrift, and utility](https://brimstonesandtreacle.wordpress.com/2012/02/10/reclaiming-simplicity-thrift-and-utility/?__readwiseLocation=)
+- [Tom Sachs speaking at IKEA: My Personal Journey with Chairs](https://www.youtube.com/watch?v=4ivY5imqoNc)
+
 [^1]: I forgot to accommodate the extra 3/4" on the two cross beams, so I found a way to gracefully improvise.
 
