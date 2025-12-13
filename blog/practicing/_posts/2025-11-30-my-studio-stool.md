@@ -5,8 +5,8 @@ title: My Studio Stool
 toc: true
 image: "/assets/images/fb89850e-8d79-4e0f-9e85-712ab5878942.jpeg"
 description:
-mastodon_social_status_url: false
-bluesky_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115713474578050258
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3m7v5gaxov42y
 tags:
 - building
 - folk-creations
@@ -27,6 +27,14 @@ I used [3/4" A/C birch plywood](https://www.youtube.com/watch?v=pVxldyIa0Bg) for
 ![The deep amber of the birch after finishing with linseed oil is lovely](/assets/images/cd70276d-4136-4e77-908c-81f89469e667.jpeg)
 
 I don't have a table saw - only my jigsaw - so the cuts aren't straight on this, but the seat feels perfectly firm and stable.
+
+## Future
+
+I've long wanted to build my own [Rietveld-esque crate stool / table (written up by Piper Haywood)](https://piperhaywood.com/rietveld-stool/), so maybe that will be my next build. The whole idea of [crate furniture](https://piperhaywood.com/rietveld-brigham-didion/?__readwiseLocation=) obviously appeals to me: so functional and efficient and customizable to your own comfort.
+
+More crate furniture (or "box furniture") reading/watching:
+- [Reclaiming simplicity, thrift, and utility](https://brimstonesandtreacle.wordpress.com/2012/02/10/reclaiming-simplicity-thrift-and-utility/?__readwiseLocation=)
+- [Tom Sachs speaking at IKEA: My Personal Journey with Chairs](https://www.youtube.com/watch?v=4ivY5imqoNc)
 
 [^1]: I forgot to accommodate the extra 3/4" on the two cross beams, so I found a way to gracefully improvise.
 
