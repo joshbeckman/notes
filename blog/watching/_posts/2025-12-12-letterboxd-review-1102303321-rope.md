@@ -8,7 +8,7 @@ description:
 rating: 4
 tmdb_id: '1580'
 letterboxd_id: rope
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115714178547515368
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/rope/
 tags:
