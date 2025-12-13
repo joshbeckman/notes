@@ -126,6 +126,9 @@ window.addEventListener('load', function() {
   if (details) {
     details.addEventListener('toggle', function() {
       if (details.open) {
+        if (window.goatcounter && window.goatcounter.count) {
+          window.goatcounter.count({ path: 'widget-network-graph-open', title: 'Network graph widget', event: true });
+        }
         buildVisData();
       }
     });

@@ -138,6 +138,9 @@
         if (!cusdis) {
             return;
         }
+        if (window.goatcounter && window.goatcounter.count) {
+            window.goatcounter.count({ path: 'widget-cusdis-load', title: 'Cusdis comments widget', event: true });
+        }
         cusdis.id = 'cusdis_thread';
         var script = document.createElement('script');
         script.src = 'https://cusdis.com/js/cusdis.es.js';
