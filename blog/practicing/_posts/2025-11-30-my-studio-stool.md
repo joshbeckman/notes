@@ -28,5 +28,9 @@ I used [3/4" A/C birch plywood](https://www.youtube.com/watch?v=pVxldyIa0Bg) for
 
 I don't have a table saw - only my jigsaw - so the cuts aren't straight on this, but the seat feels perfectly firm and stable.
 
+## Future
+
+I've long wanted to build my own [Rietveld-esque crate stool / table (written up by Piper Haywood)](https://piperhaywood.com/rietveld-stool/), so maybe that will be my next build. The whole idea of [crate furniture](https://piperhaywood.com/rietveld-brigham-didion/?__readwiseLocation=) obviously appeals to me: so functional and efficient and customizable to your own comfort.
+
 [^1]: I forgot to accommodate the extra 3/4" on the two cross beams, so I found a way to gracefully improvise.
 
