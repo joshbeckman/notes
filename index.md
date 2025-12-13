@@ -6,7 +6,7 @@ searchable: true
 hide_title: true
 serial_number: 2023.PAE.003
 ---
-Hello, friends. I'm Josh. Read [about me](/about) or [my latest posts](/latest).
+Hello, friends. I'm Josh. Read [about me](/about) or [my latest posts](/latest) or [jump to navigation](#footer).
 
 # What I Believe
 
@@ -15,6 +15,7 @@ Hello, friends. I'm Josh. Read [about me](/about) or [my latest posts](/latest).
 - **Make things. Not too much. Mostly for others** — Our job is to help others. Be of service.
 - **Building something means repairing the world around it** — Creation must make the surrounding context more whole. Form, in Context, evaluated against Fit.
 - **Publishing is everything** — Nothing matters until it's in use. Shipping is a feature. Publish to replenish.
+- **Pour your heart into what you do** — People recognize care when they see it, and they love things that have been loved.
 - **It's not fully shipped until it's fast** — Performance determines whether something is usable.
 - **Before making it better, stop making it worse** — Stabilize before optimizing.
 - **Work without a vision is toil. Vision without work is a daydream** — Both are necessary. Thinking is work, too.
