@@ -35,6 +35,10 @@ I've long wanted to build my own [Rietveld-esque crate stool / table (written u
 More crate furniture (or "box furniture") reading/watching:
 - [Reclaiming simplicity, thrift, and utility](https://brimstonesandtreacle.wordpress.com/2012/02/10/reclaiming-simplicity-thrift-and-utility/?__readwiseLocation=)
 - [Tom Sachs speaking at IKEA: My Personal Journey with Chairs](https://www.youtube.com/watch?v=4ivY5imqoNc)
+- [Donald Judd Furniture](https://judd.furniture/)
+  - I'd love to make a [Double Back Bench 20](https://judd.furniture/furniture/double-back-bench-20/)
+- Another I want to make many of: [Berlin Hocker stool](https://hartzivmoebel.blogspot.com/p/berliner-hocker.html) (stackable and composable into so many things!)
+- Another I want to make: [Steltman chair](https://rietveldoriginals.com/en/products/steltman-chair#product-details)
 
 [^1]: I forgot to accommodate the extra 3/4" on the two cross beams, so I found a way to gracefully improvise.
 
