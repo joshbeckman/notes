@@ -5,7 +5,7 @@ title: My Studio Stool
 toc: true
 image: "/assets/images/fb89850e-8d79-4e0f-9e85-712ab5878942.jpeg"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115713474578050258
 bluesky_status_url: false
 tags:
 - building
