@@ -3,6 +3,7 @@
 require 'json'
 require 'net/http'
 require 'uri'
+require 'yaml'
 
 Post = Struct.new(
   :body,
@@ -31,6 +32,7 @@ Post = Struct.new(
   :layout,
   :youtube_video_id,
   :youtube_video_url,
+  :serial_number,
   keyword_init: true
 ) do
   def movie_cover_image
@@ -103,6 +105,7 @@ Post = Struct.new(
     hash['youtube_video_url'] = youtube_video_url unless youtube_video_url.nil?
     hash['exercise_data'] = exercise_data.transform_keys(&:to_s) if exercise_data
     hash['tags'] = tags if tags&.any?
+    hash['serial_number'] = serial_number if serial_number
     hash
   end
 
@@ -119,6 +122,7 @@ Post = Struct.new(
   end
 
   def create_file
+    preserve_serial_number_from_existing_file
     File.open(filename, 'w') do |file|
       file.puts front_matter.to_yaml
       file.puts '---'
@@ -126,5 +130,16 @@ Post = Struct.new(
       file.puts body
     end
     filename
+  end
+
+  def preserve_serial_number_from_existing_file
+    return if serial_number
+    return unless file_exists?
+
+    content = File.read(filename)
+    return unless content =~ /\A(---\s*\n.*?\n?)^((---|\.\.\.)\s*$\n?)/m
+
+    yaml_content = YAML.safe_load(::Regexp.last_match(1), permitted_classes: [Date, Time, DateTime, Symbol]) || {}
+    self.serial_number = yaml_content['serial_number']
   end
 end

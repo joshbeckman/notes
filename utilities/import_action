@@ -6,6 +6,7 @@ require 'json'
 require 'readwise'
 require 'time'
 require 'uri'
+require 'yaml'
 
 module ReadwiseExtras
   class Jekyll
@@ -48,7 +49,9 @@ module ReadwiseExtras
     def import_book(book)
       return unless should_import_book?(book)
 
-      File.write("notes/_posts/#{book.formatted_date}-#{book.book_id}.md", book.post_text)
+      path = "notes/_posts/#{book.formatted_date}-#{book.book_id}.md"
+      serial_number = existing_serial_number(path)
+      File.write(path, book.post_text(serial_number: serial_number))
     end
 
     def import_book_highlights(book)
@@ -60,20 +63,34 @@ module ReadwiseExtras
     def import_highlight(highlight, book)
       return unless should_import_highlight?(highlight, book)
 
-      File.write("notes/_posts/#{highlight.formatted_date}-#{highlight.highlight_id}.md", highlight.post_text(book))
+      path = "notes/_posts/#{highlight.formatted_date}-#{highlight.highlight_id}.md"
+      serial_number = existing_serial_number(path)
+      File.write(path, highlight.post_text(book, serial_number: serial_number))
     end
 
     def import_document(doc)
       return unless should_import_document?(doc)
 
-      File.write("notes/_posts/#{doc.formatted_date}-#{doc.id}.md", doc.post_text)
+      path = "notes/_posts/#{doc.formatted_date}-#{doc.id}.md"
+      serial_number = existing_serial_number(path)
+      File.write(path, doc.post_text(serial_number: serial_number))
+    end
+
+    def existing_serial_number(path)
+      return nil unless File.exist?(path)
+
+      content = File.read(path)
+      return nil unless content =~ /\A(---\s*\n.*?\n?)^((---|\.\.\.)\s*$\n?)/m
+
+      yaml_content = YAML.safe_load(::Regexp.last_match(1), permitted_classes: [Date, Time, DateTime, Symbol]) || {}
+      yaml_content['serial_number']
     end
   end
 end
 
 module ReadwiseExtras
   module Document
-    def post_text
+    def post_text(serial_number: nil)
       [
         '---',
         "title: \"#{combined_title}\"",
@@ -89,6 +106,7 @@ module ReadwiseExtras
         'show_book_meta: true',
         'hide_title: true',
         (navigable_url? ? "source_url: \"#{source_url}\"" : nil),
+        (serial_number ? "serial_number: #{serial_number}" : nil),
         '---',
         '',
         notes
@@ -148,7 +166,7 @@ module ReadwiseExtras
   end
 
   module Book
-    def post_text
+    def post_text(serial_number: nil)
       [
         '---',
         "title: \"#{combined_title}\"",
@@ -165,6 +183,7 @@ module ReadwiseExtras
         "source_emoji: #{source_emoji}",
         'show_book_meta: true',
         (navigable_url? ? "source_url: \"#{outbound_url}\"" : nil),
+        (serial_number ? "serial_number: #{serial_number}" : nil),
         '---',
         '',
         note
@@ -291,7 +310,7 @@ module ReadwiseExtras
   end
 
   module Highlight
-    def post_text(book)
+    def post_text(book, serial_number: nil)
       [
         '---',
         "title: \"#{title(book)}\"",
@@ -309,6 +328,7 @@ module ReadwiseExtras
         "favicon_url: #{book.favicon_url}",
         "source_emoji: #{book.source_emoji}",
         (book.navigable_url? ? "source_url: \"#{book.outbound_url(text_fragment: text)}\"" : nil),
+        (serial_number ? "serial_number: #{serial_number}" : nil),
         '---',
         '',
         formatted_text(book)
