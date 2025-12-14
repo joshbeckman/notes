@@ -7,7 +7,7 @@ image: "/assets/images/d58c4f47-21dd-4421-ba86-82db120c0244.jpeg"
 description:
 rating: 4
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115719130796493388
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3m7xnsgd23u22
 tags:
 - wintrust-arena-venue
 - concerts
