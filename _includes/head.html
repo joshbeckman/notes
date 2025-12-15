@@ -48,15 +48,12 @@
 <meta name="theme-color" content="#903465">
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/assets/img/profile.png" type="image/png" sizes="16x16"/>
-{%- if page.layout == 'post-minimal' -%}
-<link href="/assets/css/minimal.css" rel="stylesheet" media="all" class="default" />
-{%- else -%}
 <link href="/assets/css/site.css" rel="stylesheet" media="all" class="default" />
-<link href="/assets/css/photoswipe.css" rel="stylesheet" media="all" class="default" fetchpriority="low" />
+<link rel="preload" href="/assets/css/photoswipe.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+    <link href="/assets/css/photoswipe.css" rel="stylesheet" media="all" class="default" fetchpriority="low" />
+</noscript>
 {%- endif -%}
-<!--[if IE]>
-    <link href="/assets/css/ie-target.css" rel="stylesheet" type="text/css"/>
-<![endif]-->
 {% feed_meta %}
 <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
 <link rel="me" href="https://mastodon.social/@joshbeckman"\>
