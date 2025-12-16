@@ -5,7 +5,7 @@ title: My Raycast Wrapped 2025 (and Prior Years)
 toc: true
 image: "/assets/images/6d14ad30-7d58-48f0-8991-59e64f46378e.png"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115731180977510362
 bluesky_status_url: false
 tags:
 - tools
