@@ -13,6 +13,9 @@ My exercise journal, pulled from [Strava](https://www.strava.com/athletes/750032
 {% assign postsByMonth = 
 site.categories['exercise'] | group_by_exp:"post", "post.date | date: '%Y %B'" %}
 {% for day in postsByMonth %}
+  {% assign active_days = day.items | count_active_days %}
+  {% assign total_seconds = day.items | sum_exercise_time %}
+  {% assign total_miles = day.items | sum_miles %}
   <table class="responsive-table">
       <colgroup>
           <col/>
@@ -21,8 +24,13 @@ site.categories['exercise'] | group_by_exp:"post", "post.date | date: '%Y %B'" %
       </colgroup>
       <thead>
         <tr>
-            <td colspan="3">
+            <td colspan="1">
                 <span id="{{ day.name }}">{{ day.name }}</span>
+            </td>
+            <td colspan="2">
+                <span class="monthly-stats">
+                    {{ active_days }} days · {{ total_seconds | format_duration }} · {{ total_miles | format_miles }}
+                </span>
             </td>
         </tr>
       </thead>

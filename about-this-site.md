@@ -90,6 +90,9 @@ You can read about everything else I use to build things at [/uses](/uses).
 
 ## Changelog
 
+### 2025-12-17
+- Add monthly aggregate stats (active days, total time, miles) to [exercise index](/exercise)
+
 ### Unreleased
 - `/projects` page
 - podcast rendering
