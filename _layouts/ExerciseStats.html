@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+{%- include head.html -%}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+.chart-container {
+    margin: 2rem 0;
+}
+.chart-container h3 {
+    margin-bottom: 1rem;
+}
+.stats-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+.stats-summary .stat {
+    flex: 1;
+    min-width: 150px;
+    padding: 1rem;
+    border: 1px solid var(--c-bg-alt)
+}
+.stats-summary .stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+.stats-summary .stat-label {
+    font-size: 0.875rem;
+    opacity: 0.7;
+}
+</style>
+<body>
+  <div class="container">
+      <header class="header">
+          <div class="titles">
+              {%- include Masthead.html -%}
+              <p class="site-subtitle">{{ site.description }}</p>
+          </div>
+      </header>
+      <main class="content {% for category in page.categories %}{{category}} {% endfor %}">
+          <article class="text">
+              <h1 class="p-name title">{{page.title}}</h1>
+              {%- include Content.html -%}
+
+              <div id="stats-summary" class="stats-summary"></div>
+
+              <div class="chart-container">
+                  <h3>Miles per Month</h3>
+                  <canvas id="chart-miles"></canvas>
+              </div>
+
+              <div class="chart-container">
+                  <h3>Hours per Month</h3>
+                  <canvas id="chart-hours"></canvas>
+              </div>
+
+              <div class="chart-container">
+                  <h3>Average Activity Duration per Month</h3>
+                  <p class="chart-description">Average duration with min/max range shown as shaded area</p>
+                  <canvas id="chart-avg-duration"></canvas>
+              </div>
+
+              <div class="chart-container">
+                  <h3>Heart Rate per Month</h3>
+                  <p class="chart-description">Average heart rate with min/max range</p>
+                  <canvas id="chart-hr"></canvas>
+              </div>
+
+              {%- include Reference.html -%}
+          </article>
+      </main>
+  {%- include Footer.html -%}
+  </div>
+<script>
+var dataUrl = "/assets/js/ExerciseStatsData.json";
+
+async function fetchData(url) {
+    let response = await fetch(url);
+    return response.json();
+}
+
+function formatMinutes(seconds) {
+    return Math.round(seconds / 60);
+}
+
+function renderCharts(data) {
+    var months = data.months;
+    var labels = months.map(m => m.label);
+
+    // Calculate totals for summary
+    var totalHours = months.reduce((sum, m) => sum + m.total_seconds, 0) / 3600;
+    var totalMiles = months.reduce((sum, m) => sum + m.total_miles, 0);
+    var totalActivities = months.reduce((sum, m) => sum + m.count, 0);
+    var totalActiveDays = months.reduce((sum, m) => sum + m.active_days, 0);
+
+    // Render summary
+    document.getElementById('stats-summary').innerHTML = `
+        <div class="stat">
+            <div class="stat-value">${totalActivities.toLocaleString()}</div>
+            <div class="stat-label">Total Activities</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">${totalActiveDays.toLocaleString()}</div>
+            <div class="stat-label">Active Days</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">${totalHours.toFixed(0)}hr</div>
+            <div class="stat-label">Total Hours</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">${totalMiles.toFixed(0)}mi</div>
+            <div class="stat-label">Total Miles</div>
+        </div>
+    `;
+
+    // Prepare data for charts
+    var hoursData = months.map(m => (m.total_seconds / 3600).toFixed(1));
+    var milesData = months.map(m => m.total_miles.toFixed(1));
+
+    // Calculate avg/min/max duration per activity for each month
+    var avgData = [];
+    var minData = [];
+    var maxData = [];
+
+    // Calculate avg/min/max heart rate per month
+    var avgHrData = [];
+    var minHrData = [];
+    var maxHrData = [];
+
+    months.forEach(function(month) {
+        var durations = month.activities.map(a => a.seconds).filter(s => s > 0);
+        if (durations.length > 0) {
+            var avg = durations.reduce((a, b) => a + b, 0) / durations.length;
+            var min = Math.min(...durations);
+            var max = Math.max(...durations);
+            avgData.push(formatMinutes(avg));
+            minData.push(formatMinutes(min));
+            maxData.push(formatMinutes(max));
+        } else {
+            avgData.push(null);
+            minData.push(null);
+            maxData.push(null);
+        }
+
+        // Heart rate calculations
+        var avgHrs = month.activities.map(a => a.avg_hr).filter(hr => hr > 0);
+        var maxHrs = month.activities.map(a => a.max_hr).filter(hr => hr > 0);
+        if (avgHrs.length > 0) {
+            var avgHr = avgHrs.reduce((a, b) => a + b, 0) / avgHrs.length;
+            var minHr = Math.min(...avgHrs);
+            var maxHr = maxHrs.length > 0 ? Math.max(...maxHrs) : Math.max(...avgHrs);
+            avgHrData.push(Math.round(avgHr));
+            minHrData.push(Math.round(minHr));
+            maxHrData.push(Math.round(maxHr));
+        } else {
+            avgHrData.push(null);
+            minHrData.push(null);
+            maxHrData.push(null);
+        }
+    });
+
+    var chartOptions = {
+        responsive: true,
+        interaction: {
+            intersect: false,
+            mode: 'index'
+        },
+        scales: {
+            x: {
+                ticks: {
+                    maxRotation: 45,
+                    minRotation: 45
+                }
+            },
+            y: {
+                beginAtZero: true
+            }
+        },
+        plugins: {
+            legend: {
+                display: false
+            }
+        }
+    };
+
+    // Hours per month chart
+    new Chart(document.getElementById('chart-hours'), {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Hours',
+                data: hoursData,
+                borderColor: '#903465',
+                backgroundColor: 'rgba(144, 52, 101, 0.1)',
+                fill: true,
+                tension: 0.1
+            }]
+        },
+        options: chartOptions
+    });
+
+    // Miles per month chart
+    new Chart(document.getElementById('chart-miles'), {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Miles',
+                data: milesData,
+                borderColor: '#89ae00',
+                backgroundColor: 'rgba(137, 174, 0, 0.1)',
+                fill: true,
+                tension: 0.1
+            }]
+        },
+        options: chartOptions
+    });
+
+    // Average duration with min/max range
+    new Chart(document.getElementById('chart-avg-duration'), {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Max',
+                data: maxData,
+                borderColor: 'rgba(200, 200, 200, 0.5)',
+                backgroundColor: 'rgba(200, 200, 200, 0.2)',
+                fill: true,
+                tension: 0.1,
+                pointRadius: 0
+            }, {
+                label: 'Average',
+                data: avgData,
+                borderColor: '#787af2',
+                backgroundColor: 'rgba(120, 122, 242, 0.1)',
+                fill: false,
+                tension: 0.1
+            }, {
+                label: 'Min',
+                data: minData,
+                borderColor: 'rgba(200, 200, 200, 0.5)',
+                backgroundColor: 'rgba(255, 255, 255, 1)',
+                fill: true,
+                tension: 0.1,
+                pointRadius: 0
+            }]
+        },
+        options: {
+            ...chartOptions,
+            plugins: {
+                legend: {
+                    display: true
+                }
+            },
+            scales: {
+                ...chartOptions.scales,
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Minutes'
+                    }
+                }
+            }
+        }
+    });
+
+    // Heart rate chart
+    new Chart(document.getElementById('chart-hr'), {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Max',
+                data: maxHrData,
+                borderColor: 'rgba(200, 200, 200, 0.5)',
+                backgroundColor: 'rgba(200, 200, 200, 0.2)',
+                fill: true,
+                tension: 0.1,
+                pointRadius: 0
+            }, {
+                label: 'Average',
+                data: avgHrData,
+                borderColor: '#e54c4c',
+                backgroundColor: 'rgba(229, 76, 76, 0.1)',
+                fill: false,
+                tension: 0.1
+            }, {
+                label: 'Min',
+                data: minHrData,
+                borderColor: 'rgba(200, 200, 200, 0.5)',
+                backgroundColor: 'rgba(255, 255, 255, 1)',
+                fill: true,
+                tension: 0.1,
+                pointRadius: 0
+            }]
+        },
+        options: {
+            ...chartOptions,
+            plugins: {
+                legend: {
+                    display: true
+                }
+            },
+            scales: {
+                ...chartOptions.scales,
+                y: {
+                    beginAtZero: false,
+                    title: {
+                        display: true,
+                        text: 'BPM'
+                    }
+                }
+            }
+        }
+    });
+}
+
+fetchData(dataUrl).then(renderCharts);
+</script>
+</body>
+</html>

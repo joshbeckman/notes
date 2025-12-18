@@ -91,6 +91,7 @@ You can read about everything else I use to build things at [/uses](/uses).
 ## Changelog
 
 ### 2025-12-17
+- Add [exercise stats page](/exercise/stats) with line charts for hours, miles, and average duration per month
 - Add monthly aggregate stats (active days, total time, miles) to [exercise index](/exercise)
 
 ### Unreleased

@@ -1,0 +1,32 @@
+---
+permalink: /assets/js/ExerciseStatsData.json
+---
+{
+  "months": [
+    {%- assign exercisePosts = site.categories['exercise'] | sort: 'date' -%}
+    {%- assign postsByMonth = exercisePosts | group_by_exp: "post", "post.date | date: '%Y-%m'" -%}
+    {%- for month in postsByMonth -%}
+    {
+      "month": "{{ month.name }}",
+      "label": "{{ month.items.first.date | date: '%b %Y' }}",
+      "count": {{ month.items.size }},
+      "active_days": {{ month.items | count_active_days }},
+      "total_seconds": {{ month.items | sum_exercise_time }},
+      "total_miles": {{ month.items | sum_miles | round: 2 }},
+      "activities": [
+        {%- for post in month.items -%}
+        {
+          "date": "{{ post.date | date: '%Y-%m-%d' }}",
+          "title": {{ post.title | jsonify }},
+          "seconds": {% assign numeric_time = post.exercise_data.elapsed_time_seconds | default: post.exercise_data.moving_time_seconds %}{% if numeric_time and numeric_time != "" %}{{ numeric_time }}{% else %}{{ post.exercise_data.elapsed_time_in_hours_s | default: post.exercise_data.moving_time_in_hours_s | default: "0s" | parse_time_to_seconds }}{% endif %},
+          "miles": {% assign numeric_miles = post.exercise_data.distance_miles %}{% if numeric_miles and numeric_miles != "" %}{{ numeric_miles | round: 2 }}{% else %}{{ post.exercise_data.distance_in_miles | default: "0mi" | parse_miles | round: 2 }}{% endif %},
+          "avg_hr": {{ post.exercise_data.average_heartrate | default: "0bpm" | remove: "bpm" | plus: 0 }},
+          "max_hr": {{ post.exercise_data.max_heartrate | default: "0bpm" | remove: "bpm" | plus: 0 }},
+          "type": "{{ post.tags.first }}"
+        }{%- unless forloop.last -%},{%- endunless -%}
+        {%- endfor -%}
+      ]
+    }{%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  ]
+}
