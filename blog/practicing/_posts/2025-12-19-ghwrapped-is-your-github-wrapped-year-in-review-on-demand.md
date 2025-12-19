@@ -5,7 +5,7 @@ title: gh-wrapped is Your GitHub Wrapped Year in Review, On Demand
 toc: true
 image: "/assets/images/c00b8275-9b80-41c1-bbea-86bc33607789.png"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115744623800020997
 bluesky_status_url: false
 tags:
 - tools

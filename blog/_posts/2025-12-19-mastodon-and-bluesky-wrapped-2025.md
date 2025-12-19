@@ -5,7 +5,7 @@ title: Mastodon and Bluesky Wrapped 2025
 toc: true
 image: "/assets/images/85f7d141-e1a9-47fd-bbf6-9ea8540e413b.png"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115744623761644291
 bluesky_status_url: false
 tags:
 - social-media
