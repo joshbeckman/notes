@@ -37,6 +37,8 @@ Mastodon seems to me to have become almost exclusively a niche platform for tech
 
 I used to have both apps installed on my phone but this Fall I uninstalled them. I was opening them just to see what was new and to see any notifications. (It's *very* frustrating to me that neither platform has the option to have my interactions/notifications emailed to me. I have to go to their site to check for them.) But inevitably I would scroll for a bit and just see a lot of people complaining about the world (I sympathize) and also complaining about each other in petty ways (I abhor). I always left that interaction in a worse mood than I began it, so I stopped doing it. Now, I just open the websites directly once a week or so, *maybe* I respond to someone, then leave.
 
+For accounts on Bluesky and Mastodon that I really do want to read consistently when they post, I subscribe to their RSS feed in my feed reader. Luckily, both platforms still (and have always) expose RSS feed versions of any account's posts.
+
 ## Bluesky
 
 <img width="1200" height="630" alt="My Bluesky Wrapped 2025 (to date)" src="/assets/images/85f7d141-e1a9-47fd-bbf6-9ea8540e413b.png" />
