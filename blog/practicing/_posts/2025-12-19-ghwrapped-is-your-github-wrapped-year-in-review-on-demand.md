@@ -14,14 +14,14 @@ tags:
 - CLI
 serial_number: 2025.BLG.201
 ---
-Every December, I watch people share their "Spotify/etc. Wrapped" results and wonder when someone will finally build a proper GitHub version. Various "GitHub Wrapped" websites pop up each year, but they always disappoint me:
+Recent Decembers, I watch people share their "Spotify/etc. Wrapped" results and wonder about building a proper GitHub version. Various "GitHub Wrapped" websites pop up each year, but they always fall short for me:
 
-1. They only work for public contributions
-2. They miss gists, repos created, and sponsorship data
-3. They're only available during a narrow window in December
+1. They only work for public contributions, and a lot of mine are now in private repos.
+2. They miss gists, repos created, and sponsorship data, but these are part of how I use GitHub.
+3. They're only available during a narrow window in December or only consider the single year
 4. You can only check your own stats
 
-I got tired of waiting for someone else to solve this, so I built [gh-wrapped](https://github.com/joshbeckman/gh-wrapped) to give you a complete *GitHub Wrapped* on demand.
+I got tired of wondering, so I built [gh-wrapped](https://github.com/joshbeckman/gh-wrapped) to give you a complete *GitHub Wrapped* on demand.
 
 > [!NOTE]
 > `gh-wrapped` is a [GitHub CLI extension](https://docs.github.com/en/github-cli/github-cli/creating-github-cli-extensions) that generates a year-in-review summary of your GitHub activity, inspired by Spotify Wrapped. Get detailed stats on your contributions, activity patterns, top languages, and more—all as formatted markdown.
