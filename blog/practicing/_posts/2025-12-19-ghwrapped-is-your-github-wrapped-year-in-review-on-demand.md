@@ -75,6 +75,9 @@ The tool pulls from GitHub's GraphQL `contributionsCollection` endpoint which is
 
 This was the main reason I built this. GitHub's API provides the total count of private contributions through `restrictedContributionsCount`, which those web-based tools often ignore or can't access. The detailed per-repo and per-language breakdowns only cover public repos (GitHub's API doesn't expose private repo details), but at least your totals reflect reality.
 
+> [!WARNING]
+> GitHub only provides the contribution count (not details on whether they are commits/PRs/etc) for private repos. I tried making it actually crawl through a year’s worth of private repo commits/PRs/etc. to calculate the count, but GitHub API rate limits inevitably make the whole thing come crashing down.
+
 The output clearly labels what's public vs private so you know exactly what you're looking at.
 
 > [!NOTE]
