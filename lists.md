@@ -101,3 +101,4 @@ serial_number: 2024.PAE.007
 - [Seiko SKX Watch Corporation](https://www.seikowatches.com/us-en/products/5sports/srpl85) (the one with rectangular numerals and hands)
 - [Seiko SARB035](https://sixiw.watch/reviews/seiko-sarb035-review-still-worth-it-in-2024/)
 - want: [BR-03 Black Matte from Bell & Ross](https://bellross.com/en-us/collections/br-03/products/br-03-black-matte-rubber-strap?country=US)
+- want: [Marathon GSAR Diver's](https://wornandwound.com/video-enthusiast-spotlight-contemplations-on-time-with-van-neistat-and-the-marathon-gsar-divers-automatic/)
