@@ -21,3 +21,5 @@ It was difficult to get here, and I'm so proud of my team.
 
 > [!NOTE]
 > Full Shopify blog post: [How Shopify Flow Automation Got Faster, Safer, and Smarter in 2025](https://www.shopify.com/blog/flow-automation-updates-2025)
+
+See also the [~10:40 mark in _The Unofficial Shopify Podcast_](https://youtu.be/rd0fiAutj5o?si=bPny0MDbUu1lrLg2&t=638).
