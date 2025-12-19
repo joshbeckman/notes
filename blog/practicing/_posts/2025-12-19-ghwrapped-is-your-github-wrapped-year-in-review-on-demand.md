@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/c00b8275-9b80-41c1-bbea-86bc33607789.png"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115744623800020997
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3macy3beg7y2y
 tags:
 - tools
 - github
