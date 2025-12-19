@@ -68,6 +68,9 @@ The tool pulls from GitHub's GraphQL `contributionsCollection` endpoint which is
 - **GitHub Sponsors** activity (when checking your own stats)
 - **Profile Stats**: stars, followers, following
 
+> [!NOTE]
+> See an example at [this gist of my 20219 GitHub Wrapped](https://gist.github.com/joshbeckman/f6bdac657901e1fe3e862c8e4c0a7d98) generated with this script.
+
 ## Private Contributions
 
 This was the main reason I built this. GitHub's API provides the total count of private contributions through `restrictedContributionsCount`, which those web-based tools often ignore or can't access. The detailed per-repo and per-language breakdowns only cover public repos (GitHub's API doesn't expose private repo details), but at least your totals reflect reality.
