@@ -37,6 +37,7 @@ More crate furniture (or "box furniture") reading/watching:
 - [Tom Sachs speaking at IKEA: My Personal Journey with Chairs](https://www.youtube.com/watch?v=4ivY5imqoNc)
 - [Donald Judd Furniture](https://judd.furniture/)
   - I'd love to make a [Double Back Bench 20](https://judd.furniture/furniture/double-back-bench-20/)
+- ["Nomadic Furniture:" DIY Designs from the 1970s](https://www.core77.com/posts/42562/nomadic-furniture-diy-designs-from-the-1970s)
 - Another I want to make many of: [Berlin Hocker stool](https://hartzivmoebel.blogspot.com/p/berliner-hocker.html) (stackable and composable into so many things!)
 - Another I want to make: [Steltman chair](https://rietveldoriginals.com/en/products/steltman-chair#product-details)
 
