@@ -5,7 +5,7 @@ title: My GitHub Wrapped 2025
 toc: true
 image: "/assets/images/194cb282-c047-4e64-9880-3d6747d755ab.jpeg"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115758767325630185
 bluesky_status_url: false
 tags:
 - github
