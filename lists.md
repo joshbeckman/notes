@@ -79,20 +79,21 @@ serial_number: 2024.PAE.007
 
 - [Original 874® Work Pants : Dickies US](https://www.dickies.com/en-us/products/original-874-r-work-pants-dk0008740dn)
 - [Men's Long Sleeve Cotton Work Shirt : Wrinkle-Resistant : Red Kap®](https://www.redkap.com/mens-long-sleeve-wrinkle-resistant-cotton-work%C2%A0shirt/036394534821.html)
+  - I get mine custom-embroidered
 - [Copperstone Weekender : William Ellery](https://williamellery.co/products/copperstone-weekender-preorder)
-- want: [VICHCRAFT Chainstitch Embroidery](https://www.vichcraft.com/about)
+- Want: [VICHCRAFT Chainstitch Embroidery](https://www.vichcraft.com/about)
 
 ## Writing
 
 - [Pen 400 - Fisher Space Pen](https://www.spacepen.com/shop-space-pens/400-chrome-bullet-space-pen)
 - [P209 Sharp Mechanical Drafting Pencil : Pentel.com – Pentel of America, Ltd.](https://www.pentel.com/products/sharp-mechanical-drafting-pencil?variant=43976381562927)
-  - want: [making it pocket-friendly : r/mechanicalpencils](https://www.reddit.com/r/mechanicalpencils/comments/1fwtizw/comment/lqj8wyl/)
+  - Want to do: [making it pocket-friendly : r/mechanicalpencils](https://www.reddit.com/r/mechanicalpencils/comments/1fwtizw/comment/lqj8wyl/)
 - [Sakura Pigma Micron Pen - Size 10 - 0.6 mm - Black : JetPens](https://www.jetpens.com/Sakura-Pigma-Micron-Pen-Size-10-0.6-mm-Black/pd/31190)
 - [Uni-ball One P Gel Pen - 0.5 mm - Yogurt Body - Black Ink : JetPens](https://www.jetpens.com/Uni-ball-One-P-Gel-Pen-0.5-mm-Yogurt-Body-Black-Ink/pd/36771#index=1)
 - [Rite in the Rain Top Spiral Notebook, 3 x 5, No. 135](https://www.riteintherain.com/3x5-top-spiral-notebook#OR35)
 - [Fox & Poet Notizblock *neon* Din A4](https://www.etsy.com/listing/1501783657/notizblock-neon-din-a4?ref=shop_home_active_5&crt=1&logging_key=52253d09206e1149795948b006b017af9b81dc83%3A1501783657)
-- want: [penco® stationery & supplies](https://penco.jp/)
-- want: [Kaweco Special Mini Mechanical Pencil - 0.9 mm - Black Body : JetPens](https://www.jetpens.com/Kaweco-Special-Mini-Mechanical-Pencil-0.9-mm-Black-Body/pd/8744)
+- Want: [penco® stationery & supplies](https://penco.jp/)
+- Maybe want: [Kaweco Special Mini Mechanical Pencil - 0.9 mm - Black Body : JetPens](https://www.jetpens.com/Kaweco-Special-Mini-Mechanical-Pencil-0.9-mm-Black-Body/pd/8744)
 
 ## Watches
 
@@ -100,5 +101,5 @@ serial_number: 2024.PAE.007
 - [Seiko SARB035](https://sixiw.watch/reviews/seiko-sarb035-review-still-worth-it-in-2024/) (2017)
 - [Hamilton Ventura Quartz Watch](https://www.hamiltonwatch.com/en-us/h24411732-ventura-quartz.html) (2022)
 - [Bulova Lunar Pilot Watch](https://www.bulova.com/us/en/product/96B251.html) (2024)
-- want: [BR-03 Black Matte from Bell & Ross](https://bellross.com/en-us/collections/br-03/products/br-03-black-matte-rubber-strap?country=US)
-- want: [Marathon GSAR Diver's](https://wornandwound.com/video-enthusiast-spotlight-contemplations-on-time-with-van-neistat-and-the-marathon-gsar-divers-automatic/)
+- Want: [BR-03 Black Matte from Bell & Ross](https://bellross.com/en-us/collections/br-03/products/br-03-black-matte-rubber-strap?country=US)
+- Appreciate but probably don't want: [Marathon GSAR Diver's](https://wornandwound.com/video-enthusiast-spotlight-contemplations-on-time-with-van-neistat-and-the-marathon-gsar-divers-automatic/)
