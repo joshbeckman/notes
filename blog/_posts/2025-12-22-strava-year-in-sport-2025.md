@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/c5c47d20-6937-413e-b7ca-3ea1735c1dac.jpeg"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115764434400209358
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3malrm27ufr2e
 tags:
 - exercise
 - data
