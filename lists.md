@@ -101,5 +101,7 @@ serial_number: 2024.PAE.007
 - [Seiko SARB035](https://sixiw.watch/reviews/seiko-sarb035-review-still-worth-it-in-2024/) (2017)
 - [Hamilton Ventura Quartz Watch](https://www.hamiltonwatch.com/en-us/h24411732-ventura-quartz.html) (2022)
 - [Bulova Lunar Pilot Watch](https://www.bulova.com/us/en/product/96B251.html) (2024)
+- Want: [Seiko SNJ025 "Arnie"](https://seikousa.com/products/snj025)
+- Want: [Seiko SPB151 'Captain Willard' Prospex (Black dial)](https://www.hodinkee.com/articles/seiko-spb151-and-spb153-captain-willard-prospex-introducing)
 - Want: [BR-03 Black Matte from Bell & Ross](https://bellross.com/en-us/collections/br-03/products/br-03-black-matte-rubber-strap?country=US)
 - Appreciate but probably don't want: [Marathon GSAR Diver's](https://wornandwound.com/video-enthusiast-spotlight-contemplations-on-time-with-van-neistat-and-the-marathon-gsar-divers-automatic/)
