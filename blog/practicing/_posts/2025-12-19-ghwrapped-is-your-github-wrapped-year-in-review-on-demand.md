@@ -12,6 +12,7 @@ tags:
 - github
 - open-source
 - CLI
+- year-in-review
 serial_number: 2025.BLG.201
 ---
 Recent Decembers, I watch people share their "Spotify/etc. Wrapped" results and wonder about building a proper GitHub version. Various "GitHub Wrapped" websites pop up each year, but they always fall short for me:

@@ -10,6 +10,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ldghregrdp2v
 tags:
 - exercise
 - data
+- year-in-review
 serial_number: 2024.BLG.131
 ---
 Just like [my Apple Music year\-in\-review](https://www.joshbeckman.org/blog/listening/apple-music-replay-2024), [Strava](https://www.strava.com/athletes/beckman_josh) wants to give me an annual aggregation before the year is done\. But here are their highlights \(which I feel must be incorrect, because I *know* I hiked more than 25 miles \- double that in [the Cirque trip](https://www.joshbeckman.org/blog/traveling/cirque-of-the-towers-2024) alone\!\):

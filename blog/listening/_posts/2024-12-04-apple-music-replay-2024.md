@@ -10,6 +10,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ldghrc7m6o2c
 tags:
 - music
 - data
+- year-in-review
 serial_number: 2024.BLG.123
 ---
 It’s still strange to me that Spotify Wrapped and [Apple Music](https://music.apple.com/profile/andjosh) Replay and others prompt me to view my “2024 Listening” well before the year is done\. But here are some highlights from this year’s data:

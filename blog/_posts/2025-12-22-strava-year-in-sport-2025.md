@@ -10,6 +10,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3malrm27ufr2e
 tags:
 - exercise
 - data
+- year-in-review
 serial_number: 2025.BLG.204
 ---
 Just like [my Apple Music year-in-review](https://www.joshbeckman.org/blog/listening/apple-music-replay-2025), [Strava](https://www.strava.com/athletes/beckman_josh) wants to give me an annual aggregation before the year is done. But here are their highlights:

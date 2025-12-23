@@ -11,6 +11,7 @@ tags:
 - github
 - data
 - open-source
+- year-in-review
 serial_number: 2024.BLG.134
 ---
 In the same line as [Apple Music Replay 2024](https://www.joshbeckman.org/blog/listening/apple-music-replay-2024) and [Strava Year in Sport 2024](https://www.joshbeckman.org/blog/strava-year-in-sport-2024) I used [git-wrapped](https://git-wrapped.com/) to generate a 2024 review of my commits on [GitHub](https://github.com/joshbeckman/).
