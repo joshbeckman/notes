@@ -107,9 +107,9 @@ serial_number: 2024.PAE.007
 - [Seiko SNJ025 "Arnie"](https://seikousa.com/products/snj025)
 - Want: [BR-03 Black Matte from Bell & Ross](https://bellross.com/en-us/collections/br-03/products/br-03-black-matte-rubber-strap?country=US)
 - Want: some bright limited-edition Casio G-Shock Frogman (like the *Borneo* or the *Poison Dart*)
+- Want: [MIDO Ocean Star 600 Chronometer](https://www.midowatches.com/us/ocean-star-600-chronometer-m0266081105100.html) or maybe [Mido Ocean Star GMT Special Edition (Pepsi color scheme)](https://teddybaldassarre.com/products/ocean-star-gmt-special-edition) or maybe a decompression/worldtimer?
 - Want: [Doxa SUB 300T Searambler](https://doxawatches.com/products/sub-300t-searambler) (or 300T Professional)
 - Want: [Seiko SPB151 'Captain Willard' Prospex (Black dial)](https://www.hodinkee.com/articles/seiko-spb151-and-spb153-captain-willard-prospex-introducing)
-- Want: [Mido Ocean Star GMT Special Edition (Pepsi color scheme)](https://teddybaldassarre.com/products/ocean-star-gmt-special-edition)
 - Want: [Omega Seamaster](https://www.omegawatches.com/en-us/watch-omega-seamaster-300-co-axial-master-chronometer-41-mm-23430412101001) (300 or Aqua Terra)
 - Appreciate: [Kuoe Kyoto OLD SMITH 90-002 Large - 38mm Automatic No-Date](https://www.kuoe-en.com/product-page/old-smith-90-002-large-version-automatic-no-date)
 - Appreciate the effort but don't want: [Marathon GSAR Diver's](https://wornandwound.com/video-enthusiast-spotlight-contemplations-on-time-with-van-neistat-and-the-marathon-gsar-divers-automatic/)
