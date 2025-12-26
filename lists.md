@@ -104,7 +104,6 @@ serial_number: 2024.PAE.007
 - [Seiko SARB035](https://sixiw.watch/reviews/seiko-sarb035-review-still-worth-it-in-2024/) (2017)
 - [Hamilton Ventura Quartz Watch](https://www.hamiltonwatch.com/en-us/h24411732-ventura-quartz.html) (2022, as a belated wedding commemoration to myself)
 - [Bulova Lunar Pilot Watch](https://www.bulova.com/us/en/product/96B251.html) (2024, to commemorate my move to Senior Staff Software Engineer)
-- [Seiko SNJ025 "Arnie"](https://seikousa.com/products/snj025)
 - Want: [BR-03 Black Matte from Bell & Ross](https://bellross.com/en-us/collections/br-03/products/br-03-black-matte-rubber-strap?country=US)
 - Want: some bright limited-edition Casio G-Shock Frogman (like the *Borneo* or the *Poison Dart*)
 - Want: [MIDO Ocean Star 600 Chronometer](https://www.midowatches.com/us/ocean-star-600-chronometer-m0266081105100.html) or maybe [Mido Ocean Star GMT Special Edition (Pepsi color scheme)](https://teddybaldassarre.com/products/ocean-star-gmt-special-edition) or maybe a decompression/worldtimer?
