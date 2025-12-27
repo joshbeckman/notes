@@ -8,7 +8,7 @@ description:
 rating: 2
 tmdb_id: '83533'
 letterboxd_id: avatar-fire-and-ash
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115790637299785263
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/avatar-fire-and-ash/
 tags:
