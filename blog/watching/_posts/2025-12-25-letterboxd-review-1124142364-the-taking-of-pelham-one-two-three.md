@@ -9,7 +9,7 @@ rating: 3
 tmdb_id: '8333'
 letterboxd_id: the-taking-of-pelham-one-two-three
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115795590087798202
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mazme3mweg2m
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/the-taking-of-pelham-one-two-three/
 tags:
 - movies
