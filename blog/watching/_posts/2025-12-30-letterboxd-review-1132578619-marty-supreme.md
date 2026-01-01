@@ -8,7 +8,7 @@ description:
 rating: 5
 tmdb_id: '1317288'
 letterboxd_id: marty-supreme
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115821770328442200
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/marty-supreme/
 tags:
