@@ -18,4 +18,12 @@ These are the posts I've written on this day in previous years:
 {% endif %}
 {% endfor %}
 
+## Browse nearby days
+
+{% assign today_seconds = site.time | date: "%s" | plus: 0 %}
+{% assign day_seconds = 86400 %}
+<p style="text-align: center;">
+{% for i in (1..5) reversed %}{% assign offset = i | times: day_seconds %}{% assign target_seconds = today_seconds | minus: offset %}{% assign target_date = target_seconds | date: "-%m-%d" %}{% assign display_date = target_seconds | date: "%b %-d" %}<a href="/search?q='{{ target_date }}&keys=date">{{ display_date }}</a> · {% endfor %}<strong>Today</strong>{% for i in (1..5) %} · {% assign offset = i | times: day_seconds %}{% assign target_seconds = today_seconds | plus: offset %}{% assign target_date = target_seconds | date: "-%m-%d" %}{% assign display_date = target_seconds | date: "%b %-d" %}<a href="/search?q='{{ target_date }}&keys=date">{{ display_date }}</a>{% endfor %}
+</p>
+
 Alternatively, you can look through [the daily review](/notes/daily-review) or browse the [heatmap calendar](/heatcal).
