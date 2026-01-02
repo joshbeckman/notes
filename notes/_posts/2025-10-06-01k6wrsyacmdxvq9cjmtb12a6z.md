@@ -12,7 +12,7 @@ source_emoji: "\U0001F310"
 show_book_meta: true
 hide_title: true
 source_url: https://www.youtube.com/watch?v=DLsvKMpSLCE
-serial_number: 2025.NTE.148
+serial_number: 2025.NTE.149
 ---
 You can concentrate on the solo performance, or you can concentrate on the whole thing.
 

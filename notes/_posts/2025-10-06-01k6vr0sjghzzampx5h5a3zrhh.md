@@ -12,7 +12,7 @@ source_emoji: "\U0001F310"
 show_book_meta: true
 hide_title: true
 source_url: https://defector.com/toward-a-theory-of-kevin-roose
-serial_number: 2025.NTE.149
+serial_number: 2025.NTE.150
 ---
 Read this whenever you are in doubt about pursuing goals because of what you think is *moral* or *right* or *correct*, when you question everything in the face of the prominent mouths "getting their bag."
 
