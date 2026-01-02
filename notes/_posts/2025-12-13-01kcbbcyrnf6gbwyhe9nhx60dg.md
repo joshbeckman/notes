@@ -12,7 +12,7 @@ source_emoji: 🌐
 show_book_meta: true
 hide_title: true
 source_url: "https://buttondown.com/monteiro/archive/how-to-bury-your-father/"
-serial_number: 2025.NTE.182
+serial_number: 2025.NTE.183
 ---
 
 Reading this broght tears to my eyes. I’m so lucky to have had a good father. 

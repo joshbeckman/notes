@@ -9,7 +9,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/115327731900796
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3m2jtorhlmr22
 tags:
 - parenting
-serial_number: 2025.NTE.146
+serial_number: 2025.NTE.147
 ---
 We are at dinner with Steve and Heather and, in a quiet moment, Steve leans in to tell me:
 

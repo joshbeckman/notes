@@ -12,7 +12,7 @@ source_emoji: 🌐
 show_book_meta: true
 hide_title: true
 source_url: "https://www.youtube.com/watch?v=nhoffNIvvnw"
-serial_number: 2025.NTE.189
+serial_number: 2025.NTE.190
 ---
 
 This is such a cool inspiration for making a book yourself. I don't think he's a particularly good photographer, but I respect the pursuit of making your own book.

@@ -12,7 +12,7 @@ source_emoji: 🌐
 show_book_meta: true
 hide_title: true
 source_url: "https://walletwallet.alen.ro/"
-serial_number: 2025.NTE.185
+serial_number: 2025.NTE.186
 ---
 
 This is such a cool no-frills way to make one-off digital passes for Apple Wallet. I use this to give my friends key codes to my home and to put random gym/store membership codes into my phone wallet.
