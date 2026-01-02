@@ -10,6 +10,7 @@ class SendMentionsFromRss
     :item_selector,
     :item_href_proc,
     :excluded_url_matcher,
+    :verbose,
     keyword_init: true
   )
 
@@ -29,7 +30,7 @@ class SendMentionsFromRss
       href = config.item_href_proc.call(link)
       Webmention.mentioned_urls(href).each do |url|
         if url.match?(config.excluded_url_matcher)
-          puts "skipping #{url}"
+          puts "skipping #{url}" if config.verbose
           next
         end
 
