@@ -7,12 +7,13 @@ site_config = SendMentionsFromRss::Config.new(
   item_selector: 'entry link',
   item_href_proc: -> (link) { link['href'] },
   excluded_url_matcher: [
-    /www.joshbeckman.org\//,
-    /notes.joshbeckman.org\//,
+    /www.joshbeckman.org/,
+    /notes.joshbeckman.org/,
     /readwise.io\/open\//,
     /readwise.io\/reader\//,
     /s2.googleusercontent.com/,
     /gravatar.com\/avatar/,
+    /indieweb.org\/Webmention/
   ].join('|'),
 )
 SendMentionsFromRss.execute(site_config)
