@@ -3,6 +3,7 @@
 require './utilities/send_mentions_from_rss'
 
 site_config = SendMentionsFromRss::Config.new(
+  verbose: false,
   feed_url: 'https://www.joshbeckman.org/feed.xml',
   item_selector: 'entry link',
   item_href_proc: -> (link) { link['href'] },
