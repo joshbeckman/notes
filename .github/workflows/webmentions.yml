@@ -8,8 +8,8 @@ name: Send webmentions based on RSS entries
 
 on:
   # Runs every day at 5:45 and 17:45 UTC
-  # schedule:
-  #   - cron: '45 5,17 * * *'
+  schedule:
+    - cron: '45 5,17 * * *'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
