@@ -199,7 +199,7 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.6.0)
-    uri (1.0.3)
+    uri (1.0.4)
     webmention (9.0.0)
       http (~> 5.3)
       indieweb-endpoints (~> 10.0)
