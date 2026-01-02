@@ -8,7 +8,7 @@ description:
 rating: 4
 tmdb_id: '996'
 letterboxd_id: double-indemnity
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115823906321242382
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/double-indemnity/
 tags:
