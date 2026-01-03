@@ -5,7 +5,7 @@ title: Deep Dive on Watches
 toc: true
 image: "/assets/images/c07a44bd-b1bf-46ec-b5cf-7b14ed05f51b.jpeg"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115830273633496105
 bluesky_status_url: false
 tags:
 - tools
