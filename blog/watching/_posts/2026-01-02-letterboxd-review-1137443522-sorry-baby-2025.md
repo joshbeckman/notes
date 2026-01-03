@@ -8,7 +8,7 @@ description:
 rating: 4
 tmdb_id: '1205515'
 letterboxd_id: sorry-baby-2025
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115833092065960615
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/sorry-baby-2025/
 tags:
