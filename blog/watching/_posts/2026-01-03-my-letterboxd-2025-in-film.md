@@ -5,7 +5,7 @@ title: My Letterboxd 2025 in Film
 toc: true
 image: "/assets/images/7f159755-7b5c-43c9-bde1-df4ab8c3bc80.png"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115832380818660314
 bluesky_status_url: false
 tags:
 - movies
