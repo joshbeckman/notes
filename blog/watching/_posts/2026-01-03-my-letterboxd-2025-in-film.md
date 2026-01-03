@@ -11,7 +11,7 @@ tags:
 - movies
 - data
 - year-in-review
-serial_number: 2026.BLG.004
+serial_number: 2026.BLG.005
 ---
 Because 2025 is over, I just got my [2025 Letterboxd Summary of movies](https://letterboxd.com/joshbeckman/year/2025/summary/). This was the first year I reviewed every new movie I saw, using the Letterboxd platform (and [pulling the reviews into my site via PESOS](https://www.joshbeckman.org/blog/crossposting-from-letterboxd-to-jekyll)), so I think this is actually a complete picture of *new* movies from my year.
 

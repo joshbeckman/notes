@@ -10,7 +10,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mbizado2r72r
 tags:
 - tools
 - closhing
-serial_number: 2026.BLG.003
+serial_number: 2026.BLG.004
 ---
 Maybe it started when my friend Colin mentioned that Zodiac watches were on sale at Ross department stores because the company was going bankrupt. Or maybe it was when, for some unknown reason, I re-watched [Van Neistat's Marathon GSAR promotional video](https://wornandwound.com/video-enthusiast-spotlight-contemplations-on-time-with-van-neistat-and-the-marathon-gsar-divers-automatic/). But I started wearing [my Seiko SKX](/uses#watches) again and started perusing diver watches again.
 

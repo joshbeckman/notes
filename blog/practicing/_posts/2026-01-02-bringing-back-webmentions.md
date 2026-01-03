@@ -12,7 +12,7 @@ tags:
 - publishing
 - blogs
 - social-networks
-serial_number: 2026.BLG.002
+serial_number: 2026.BLG.003
 ---
 A year and a half ago I [dropped support for webmentions](https://www.joshbeckman.org/blog/dropping-support-for-webmentions) on this blog, but I've brought them back over the last month.
 

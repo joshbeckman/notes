@@ -11,7 +11,7 @@ tags:
 - data
 - personal-blog
 - year-in-review
-serial_number: 2026.BLG.005
+serial_number: 2026.BLG.006
 ---
 2025 was the first full year I had basic analytics on this site ([via Goatcounter](https://www.joshbeckman.org/blog/analytics-experiment-switching-from-tinylitics-to-goatcounter)), so I figured I would review the most popular posts/pages. I also wrote more in 2025 than in (any?) prior years.
 
