@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/7f159755-7b5c-43c9-bde1-df4ab8c3bc80.png"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115832380818660314
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mbjx6lyfwb2q
 tags:
 - movies
 - data
