@@ -26,6 +26,8 @@ This data is [publicly available here](https://joshbeckman.goatcounter.com/?hl-p
 
 ~30,140 visits in the year, with a peak of 7,613 on 2025-08-11.
 
+I published [215 blog posts](https://www.joshbeckman.org/search/?q=*&keys=&type=post&category=blog&after=2024-12-31&before=2026-01-01), [23 replies](https://www.joshbeckman.org/search/?q=*&keys=&type=post&category=replies&after=2024-12-31&before=2026-01-01), [192 notes](https://www.joshbeckman.org/search/?q=*&keys=&type=post&category=notes&after=2024-12-31&before=2026-01-01), [343 exercises](https://www.joshbeckman.org/search/?q=*&keys=&type=post&category=exercise&after=2024-12-31&before=2026-01-01), and [7 proverbs](https://www.joshbeckman.org/search/?q=*&keys=&type=post&category=proverbs&after=2024-12-31&before=2026-01-01). I hope to publish more than that in 2026.
+
 ## Top Posts
 
 | Post | Visits |

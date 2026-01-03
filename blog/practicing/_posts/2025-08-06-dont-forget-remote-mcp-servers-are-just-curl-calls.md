@@ -10,6 +10,7 @@ tags:
 - code-snippets
 - software-engineering
 - llm
+- popular
 serial_number: 2025.BLG.123
 ---
 You can call any [`streamable-http` transport](https://modelcontextprotocol.io/specification/2025-06-18/basic/transports#streamable-http) MCP (Model Context Protocol) [server tool](https://modelcontextprotocol.io/specification/2025-06-18/server/tools) with any HTTP client - even cURL!
