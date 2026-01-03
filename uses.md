@@ -102,3 +102,11 @@ Well, we're gonna have to break this down a bit.
 
 ### Software
 None, yet.
+
+## Watches
+
+- [Seiko SKX173](https://www.theseikoguy.com/watches/skx173/) (2017)
+- [Seiko SARB035](https://sixiw.watch/reviews/seiko-sarb035-review-still-worth-it-in-2024/) (2017)
+- [Hamilton Ventura Quartz Watch](https://www.hamiltonwatch.com/en-us/h24411732-ventura-quartz.html) (2022, as a belated wedding commemoration to myself)
+- [Bulova Lunar Pilot Watch](https://www.bulova.com/us/en/product/96B251.html) (2024, to commemorate my promotion)
+- [Casio G-Shock GWM5610-1](https://www.casio.com/us/watches/gshock/product.GW-M5610-1/) (2026)

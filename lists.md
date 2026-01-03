@@ -100,11 +100,6 @@ serial_number: 2024.PAE.007
 
 ## Watches
 
-- [Seiko SKX173](https://www.theseikoguy.com/watches/skx173/) (2017)
-- [Seiko SARB035](https://sixiw.watch/reviews/seiko-sarb035-review-still-worth-it-in-2024/) (2017)
-- [Hamilton Ventura Quartz Watch](https://www.hamiltonwatch.com/en-us/h24411732-ventura-quartz.html) (2022, as a belated wedding commemoration to myself)
-- [Bulova Lunar Pilot Watch](https://www.bulova.com/us/en/product/96B251.html) (2024, to commemorate my promotion)
-- [Casio G-Shock GWM5610-1](https://www.casio.com/us/watches/gshock/product.GW-M5610-1/)
 - Want: [BR-03 Black Matte from Bell & Ross](https://bellross.com/en-us/collections/br-03/products/br-03-black-matte-rubber-strap?country=US)
 - Want: some bright limited-edition Casio G-Shock Frogman (like the *Borneo* or the *Poison Dart*)
 - Want: [Doxa SUB 300T Searambler](https://doxawatches.com/products/sub-300t-searambler) (or 300 Professional)
