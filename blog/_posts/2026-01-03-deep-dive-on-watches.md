@@ -2,11 +2,7 @@
 layout: Post
 date: '2026-01-03 04:57:19 +0000'
 title: Deep Dive on Watches
-toc: true
 image: "/assets/images/c07a44bd-b1bf-46ec-b5cf-7b14ed05f51b.jpeg"
-description:
-mastodon_social_status_url: false
-bluesky_status_url: false
 tags:
 - tools
 - closhing
