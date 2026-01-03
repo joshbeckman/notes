@@ -34,7 +34,7 @@ I've long wanted to build my own [Rietveld-esque crate stool / table (written u
 
 More crate furniture (or "box furniture") reading/watching:
 - [Reclaiming simplicity, thrift, and utility](https://brimstonesandtreacle.wordpress.com/2012/02/10/reclaiming-simplicity-thrift-and-utility/?__readwiseLocation=)
-- [Tom Sachs speaking at IKEA: My Personal Journey with Chairs](https://www.youtube.com/watch?v=4ivY5imqoNc)
+- [Tom Sachs speaking at IKEA: My Personal Journey with Chairs](https://www.joshbeckman.org/notes/01k2g8ygfag276yj0tw5bb3b4z)
 - [Donald Judd Furniture](https://judd.furniture/)
   - I'd love to make a [Double Back Bench 20](https://judd.furniture/furniture/double-back-bench-20/)
 - ["Nomadic Furniture:" DIY Designs from the 1970s](https://www.core77.com/posts/42562/nomadic-furniture-diy-designs-from-the-1970s)
