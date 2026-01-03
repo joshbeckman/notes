@@ -22,7 +22,7 @@ I start opening dozens of tabs, watching videos, reading histories, paying atten
 
 ![My research scrathpad](/assets/images/c07a44bd-b1bf-46ec-b5cf-7b14ed05f51b.jpeg)
 
-After spending hours diving into options and reviews, I step away and feel like all this is incredibly wasteful - of my time, for now, and possibly of my money. But then I repeat it the next morning. Over the holidays, I have time to waste, so it gets wasted.
+After spending hours diving into options and reviews, I step away and feel like all this is incredibly wasteful - of my time, for now, and possibly of my money. But then I repeat it the next morning. Over the holidays, I have time to waste, so it and I are wasted.
 
 After days of deep research, here's my short list:
 
