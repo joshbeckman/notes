@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/c07a44bd-b1bf-46ec-b5cf-7b14ed05f51b.jpeg"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115830273633496105
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mbizado2r72r
 tags:
 - tools
 - closhing
