@@ -35,6 +35,58 @@ Post = Struct.new(
   :serial_number,
   keyword_init: true
 ) do
+  def self.load(filepath)
+    load!(filepath)
+  rescue ArgumentError, Errno::ENOENT, Psych::SyntaxError
+    nil
+  end
+
+  def self.load!(filepath)
+    content = File.read(filepath)
+    unless content =~ /\A(---\s*\n.*?\n?)^((---|\.\.\.)?\s*$\n?)/m
+      raise ArgumentError, "Invalid post format: missing front matter in #{filepath}"
+    end
+
+    yaml_content = YAML.safe_load(::Regexp.last_match(1), permitted_classes: [Date, Time, DateTime, Symbol]) || {}
+    body = content.sub(/\A---\s*\n.*?\n?^(---|\.\.\.)?\s*$\n?/m, '').strip
+
+    basename = File.basename(filepath, '.md')
+    date_match = basename.match(/^(\d{4}-\d{2}-\d{2})-(.+)$/)
+    slug = date_match ? date_match[2] : basename
+
+    category = filepath.split('/')[-3]
+
+    new(
+      body: body,
+      category: category,
+      canonical: yaml_content['canonical'],
+      description: yaml_content['description'],
+      image: yaml_content['image'],
+      date: yaml_content['date'],
+      imdb_id: yaml_content['imdb_id'],
+      tmdb_id: yaml_content['tmdb_id'],
+      letterboxd_id: yaml_content['letterboxd_id'],
+      in_reply_to: yaml_content['in_reply_to'],
+      hide_title: yaml_content['hide_title'],
+      mastodon_social_status_url: yaml_content['mastodon_social_status_url'],
+      bluesky_status_url: yaml_content['bluesky_status_url'],
+      strava_activity_url: yaml_content['strava_activity_url'],
+      exercise_data: yaml_content['exercise_data']&.transform_keys(&:to_sym),
+      letterboxd_review_url: yaml_content['letterboxd_review_url'],
+      hacker_news_url: yaml_content['hacker_news_url'],
+      rating: yaml_content['rating'],
+      song_link: yaml_content['song_link'],
+      photo_feature: yaml_content['photo_feature'],
+      slug: slug,
+      tags: yaml_content['tags'],
+      title: yaml_content['title'],
+      layout: yaml_content['layout'],
+      youtube_video_id: yaml_content['youtube_video_id'],
+      youtube_video_url: yaml_content['youtube_video_url'],
+      serial_number: yaml_content['serial_number']
+    )
+  end
+
   def movie_cover_image
     key = ENV.fetch('OMDB_TOKEN', nil)
     unless key

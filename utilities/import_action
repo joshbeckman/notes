@@ -7,8 +7,11 @@ require 'readwise'
 require 'time'
 require 'uri'
 require 'yaml'
+require_relative 'models/post'
 
 module ReadwiseExtras
+  POST_TO_SOCIAL_TAG = 'post-to-social'
+
   class Jekyll
     class Error < StandardError; end
 
@@ -50,8 +53,7 @@ module ReadwiseExtras
       return unless should_import_book?(book)
 
       path = "notes/_posts/#{book.formatted_date}-#{book.book_id}.md"
-      serial_number = existing_serial_number(path)
-      File.write(path, book.post_text(serial_number: serial_number))
+      File.write(path, book.post_text(post: Post.load(path)))
     end
 
     def import_book_highlights(book)
@@ -64,33 +66,21 @@ module ReadwiseExtras
       return unless should_import_highlight?(highlight, book)
 
       path = "notes/_posts/#{highlight.formatted_date}-#{highlight.highlight_id}.md"
-      serial_number = existing_serial_number(path)
-      File.write(path, highlight.post_text(book, serial_number: serial_number))
+      File.write(path, highlight.post_text(book, post: Post.load(path)))
     end
 
     def import_document(doc)
       return unless should_import_document?(doc)
 
       path = "notes/_posts/#{doc.formatted_date}-#{doc.id}.md"
-      serial_number = existing_serial_number(path)
-      File.write(path, doc.post_text(serial_number: serial_number))
-    end
-
-    def existing_serial_number(path)
-      return nil unless File.exist?(path)
-
-      content = File.read(path)
-      return nil unless content =~ /\A(---\s*\n.*?\n?)^((---|\.\.\.)\s*$\n?)/m
-
-      yaml_content = YAML.safe_load(::Regexp.last_match(1), permitted_classes: [Date, Time, DateTime, Symbol]) || {}
-      yaml_content['serial_number']
+      File.write(path, doc.post_text(post: Post.load(path)))
     end
   end
 end
 
 module ReadwiseExtras
   module Document
-    def post_text(serial_number: nil)
+    def post_text(post: nil)
       [
         '---',
         "title: \"#{combined_title}\"",
@@ -106,11 +96,24 @@ module ReadwiseExtras
         'show_book_meta: true',
         'hide_title: true',
         (navigable_url? ? "source_url: \"#{source_url}\"" : nil),
-        (serial_number ? "serial_number: #{serial_number}" : nil),
+        (post&.serial_number ? "serial_number: #{post.serial_number}" : nil),
+        social_status_line('bluesky_status_url', post),
+        social_status_line('mastodon_social_status_url', post),
         '---',
         '',
         notes
       ].compact.join("\n")
+    end
+
+    def post_to_social?
+      tags.any? { |t| t['name'] == POST_TO_SOCIAL_TAG }
+    end
+
+    def social_status_line(field, post)
+      return nil unless post_to_social?
+
+      value = post&.send(field)
+      "#{field}: #{value.nil? ? false : value}"
     end
 
     def combined_title
@@ -130,7 +133,7 @@ module ReadwiseExtras
     end
 
     def formatted_tags
-      base_tags = tags.map { |t| t['name'] }
+      base_tags = tags.map { |t| t['name'] }.reject { |t| t == POST_TO_SOCIAL_TAG }
       base_tags << 'inbox' if base_tags.empty?
       base_tags.flatten.join(' ')
     end
@@ -166,7 +169,7 @@ module ReadwiseExtras
   end
 
   module Book
-    def post_text(serial_number: nil)
+    def post_text(post: nil)
       [
         '---',
         "title: \"#{combined_title}\"",
@@ -183,11 +186,24 @@ module ReadwiseExtras
         "source_emoji: #{source_emoji}",
         'show_book_meta: true',
         (navigable_url? ? "source_url: \"#{outbound_url}\"" : nil),
-        (serial_number ? "serial_number: #{serial_number}" : nil),
+        (post&.serial_number ? "serial_number: #{post.serial_number}" : nil),
+        social_status_line('bluesky_status_url', post),
+        social_status_line('mastodon_social_status_url', post),
         '---',
         '',
         note
       ].compact.join("\n")
+    end
+
+    def post_to_social?
+      tags.any? { |t| t['name'] == POST_TO_SOCIAL_TAG }
+    end
+
+    def social_status_line(field, post)
+      return nil unless post_to_social?
+
+      value = post&.send(field)
+      "#{field}: #{value.nil? ? false : value}"
     end
 
     def filtered_cover_image_url
@@ -201,7 +217,9 @@ module ReadwiseExtras
     def formatted_tags
       base_tags = tags.map { |t| t['name'] }
       base_tags.concat(highlights.map { |h| h.tags.map { |ht| ht['name'] } })
-               .flatten.uniq.join(' ')
+      base_tags = base_tags.flatten.uniq.reject { |t| t == POST_TO_SOCIAL_TAG }
+      base_tags << 'inbox' if base_tags.empty?
+      base_tags.join(' ')
     end
 
     def formatted_date
@@ -310,7 +328,7 @@ module ReadwiseExtras
   end
 
   module Highlight
-    def post_text(book, serial_number: nil)
+    def post_text(book, post: nil)
       [
         '---',
         "title: \"#{title(book)}\"",
@@ -328,11 +346,24 @@ module ReadwiseExtras
         "favicon_url: #{book.favicon_url}",
         "source_emoji: #{book.source_emoji}",
         (book.navigable_url? ? "source_url: \"#{book.outbound_url(text_fragment: text)}\"" : nil),
-        (serial_number ? "serial_number: #{serial_number}" : nil),
+        (post&.serial_number ? "serial_number: #{post.serial_number}" : nil),
+        social_status_line('bluesky_status_url', post),
+        social_status_line('mastodon_social_status_url', post),
         '---',
         '',
         formatted_text(book)
       ].compact.join("\n")
+    end
+
+    def post_to_social?
+      tags.any? { |t| t['name'] == POST_TO_SOCIAL_TAG }
+    end
+
+    def social_status_line(field, post)
+      return nil unless post_to_social?
+
+      value = post&.send(field)
+      "#{field}: #{value.nil? ? false : value}"
     end
 
     def title(book)
@@ -340,7 +371,7 @@ module ReadwiseExtras
     end
 
     def formatted_tags(_book)
-      base_tags = tags.map { |t| t['name'] }
+      base_tags = tags.map { |t| t['name'] }.reject { |t| t == POST_TO_SOCIAL_TAG }
       base_tags << 'inbox' if base_tags.empty?
       base_tags.flatten.join(' ')
     end
