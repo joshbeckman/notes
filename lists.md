@@ -100,7 +100,8 @@ serial_number: 2024.PAE.007
 
 ## Watches
 
-- Want: [BR-03 Black Matte from Bell & Ross](https://bellross.com/en-us/collections/br-03/products/br-03-black-matte-rubber-strap?country=US)
+- Want (maybe): [BR-03 Black Matte from Bell & Ross](https://bellross.com/en-us/collections/br-03/products/br-03-black-matte-rubber-strap?country=US)
+- Want: [C60 Trident Lumière from Christopher Ward](https://www.christopherward.com/int/precious-metals/C60-Trident-Lumi%C3%A8re/C60-41C3H31T0KO0-B0.html)
 - Want: some bright limited-edition Casio G-Shock Frogman (like the *Borneo* or the *Poison Dart*)
 - Want: [Doxa SUB 300T Searambler](https://doxawatches.com/products/sub-300t-searambler) (or 300 Professional)
 - Want: [Omega Seamaster](https://www.omegawatches.com/en-us/watch-omega-seamaster-300-co-axial-master-chronometer-41-mm-23430412101001) (300 or Aqua Terra)
