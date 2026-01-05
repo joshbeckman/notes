@@ -9,7 +9,7 @@ rating: 3
 tmdb_id: '639988'
 letterboxd_id: no-other-choice-2025
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115843717857508031
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mboyc6s6zr2m
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/no-other-choice-2025/
 tags:
 - movies
