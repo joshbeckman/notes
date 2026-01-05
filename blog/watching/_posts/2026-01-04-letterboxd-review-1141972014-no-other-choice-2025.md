@@ -19,6 +19,6 @@ tags:
 - culture
 - personal-blog
 - letterboxd
+serial_number: 2026.BLG.007
 ---
-
  <p><img src="https://a.ltrbxd.com/resized/film-poster/5/6/5/9/5/2/565952-no-other-choice-2025-0-600-0-900-crop.jpg?v=87ef42b9f5"/></p> <p>While I did love the cinematography - long moving shots, super-positions, framing and placements - I think this movie muddled itself with too wide of an edit, and the energy that it built up in the beginning had faded out by the end.</p><p>The head-tapping and some of the other body manipulation was incredibly disturbing and effective; Park Chan-Wook can build a world. But I would have loved to see more of a contrast to the main character to emphasize his point, rather than literally speaking the message to the audience multiple times.</p><p>Also: This made me <em>really</em> want to go visit the Korean countryside. It looks beautiful.</p> 
