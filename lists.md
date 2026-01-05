@@ -104,6 +104,7 @@ serial_number: 2024.PAE.007
 - Want: some bright limited-edition Casio G-Shock Frogman (like the *Borneo* or the *Poison Dart*)
 - Want: [Doxa SUB 300T Searambler](https://doxawatches.com/products/sub-300t-searambler) (or 300 Professional)
 - Want: [Omega Seamaster](https://www.omegawatches.com/en-us/watch-omega-seamaster-300-co-axial-master-chronometer-41-mm-23430412101001) (300 or Aqua Terra)
+- Want: [Rolex Oyster Explorer](https://www.rolex.com/en-us/watches/explorer/m124270-0001) or, yeah, I guess [a Submariner](https://www.rolex.com/en-us/watches/submariner/m124060-0001)...
 - Appreciate the story but don't want: [Marathon GSAR Diver's](https://wornandwound.com/video-enthusiast-spotlight-contemplations-on-time-with-van-neistat-and-the-marathon-gsar-divers-automatic/)
 
 ## Kid Stuff
