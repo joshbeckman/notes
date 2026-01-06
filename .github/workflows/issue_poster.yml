@@ -23,6 +23,16 @@ jobs:
     if: ${{ !github.event.issue.pull_request && github.event.comment.user.login == 'joshbeckman' && startsWith(github.event.comment.body, '/post')}}
     runs-on: ubuntu-latest
     steps:
+      - name: Comment run started
+        run: |
+          gh issue comment ${{ github.event.issue.number }} --body "$(cat <<'EOF'
+          🚀 **Post creation started**
+
+          [View workflow run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+          EOF
+          )"
+        env:
+          GH_TOKEN: ${{ github.token }}
       - name: Checkout
         uses: actions/checkout@v6
         with:
@@ -92,6 +102,19 @@ jobs:
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v4
+      - name: Comment on failure
+        if: failure()
+        run: |
+          JOB_URL=$(gh api repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/jobs --jq '.jobs[] | select(.name == "build") | .html_url')
+          gh issue comment ${{ github.event.issue.number }} --body "$(cat <<EOF
+          ❌ **Post creation failed**
+
+          An error occurred during the workflow run. Please check the logs for details:
+          [View job logs]($JOB_URL)
+          EOF
+          )"
+        env:
+          GH_TOKEN: ${{ github.token }}
 
   # Deployment job
   deploy:
