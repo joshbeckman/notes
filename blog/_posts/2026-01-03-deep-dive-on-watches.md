@@ -50,3 +50,5 @@ But while we're dreaming of glamorous waste, here are some others that caught my
 - The [BR-03 Black Matte from Bell & Ross](https://bellross.com/en-us/collections/br-03/products/br-03-black-matte-rubber-strap?country=US) is probably too big and definitely not a good value but damn it looks cool.
 - Some bright limited-edition Casio G-Shock Frogman (like the *Borneo* or the *Poison Dart*) would be cool for probably, like, a day.
 - An [Omega Seamaster](https://www.omegawatches.com/en-us/watch-omega-seamaster-300-co-axial-master-chronometer-41-mm-23430412101001) (300 or Aqua Terra) would be a legacy thing to have and wear and would make me feel like Fox Mulder but is more money than I'd ever want to spend on my wrist.
+
+For now, I'm keeping my "watches I want" list at [Lists#watches](https://www.joshbeckman.org/lists.html#watches).
