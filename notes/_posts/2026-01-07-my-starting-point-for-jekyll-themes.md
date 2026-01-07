@@ -8,7 +8,7 @@ tags:
 - tools
 - open-source
 - jekyll
-serial_number: 2026.NTE.002
+serial_number: 2026.NTE.003
 ---
 When setting up a new site for someone, I peruse [JekyllThemes.io](https://jekyllthemes.io/free) which has a great _free_ section and even more paid ones. They are relatively up-to-date and stylish/modern: good starting points.
 
