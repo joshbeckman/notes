@@ -7,6 +7,7 @@ image: "/assets/images/be03b481-60d3-4a6c-bad3-d372373ef3a1.png"
 tags:
 - tools
 - open-source
+- jekyll
 serial_number: 2026.NTE.002
 ---
 When setting up a new site for someone, I peruse [JekyllThemes.io](https://jekyllthemes.io/free) which has a great _free_ section and even more paid ones. They are relatively up-to-date and stylish/modern: good starting points.
