@@ -4,9 +4,6 @@ date: '2026-01-07 04:33:19 +0000'
 title: My Starting Point for Jekyll Themes
 toc: true
 image: "/assets/images/be03b481-60d3-4a6c-bad3-d372373ef3a1.png"
-description:
-mastodon_social_status_url: false
-bluesky_status_url: false
 tags:
 - tools
 - open-source
