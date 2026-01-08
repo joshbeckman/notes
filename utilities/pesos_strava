@@ -108,13 +108,13 @@ module PESOS
 
     def import_recent_activities
       @client.athlete_activities.map do |activity|
-        import_activity(activity) unless post_exists?(activity) && post_old_enough?(activity)
+        import_activity(activity) if !post_exists?(activity) && activity_old_enough?(activity)
       end
     end
 
     def import_all_activities
       @client.athlete_activities(per_page: 100) do |activity|
-        import_activity(activity) unless post_exists?(activity) && post_old_enough?(activity)
+        import_activity(activity) if !post_exists?(activity) && activity_old_enough?(activity)
       end
     end
 
@@ -126,7 +126,7 @@ module PESOS
       end
     end
 
-    def post_old_enough?(activity)
+    def activity_old_enough?(activity)
       activity.start_date < (Time.now - (24 * 60 * 60))
     end
 
