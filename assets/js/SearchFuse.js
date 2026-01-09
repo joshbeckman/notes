@@ -156,14 +156,6 @@ Fuse = (function(){"use strict";function e(e,t){var n=Object.keys(e);if(Object.g
             countResultsDiv.innerText = results.length.toLocaleString() + ' result' + (results.length != 1 ? 's' : '') + ' found';
             searchResults.appendChild(countResultsDiv);
 
-            if (window.goatcounter && window.goatcounter.count) {
-                window.goatcounter.count({
-                    path: 'search-query',
-                    title: 'Search: ' + input,
-                    event: true
-                });
-            }
-
             if (results.length > 0) {
                 var resultsList = document.createElement('ul');
                 resultsList.classList.add('search-results-list');

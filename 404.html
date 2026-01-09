@@ -22,17 +22,5 @@ title: 404 - Page not found
         document.getElementById("search-form").submit();
     }
   searchInput.value = search;
-
-  (function track404(attempts) {
-    if (window.goatcounter && window.goatcounter.count) {
-      window.goatcounter.count({
-        path: '404-not-found',
-        title: '404: ' + window.location.pathname,
-        event: true
-      });
-    } else if (attempts < 50) {
-      setTimeout(function() { track404(attempts + 1); }, 100);
-    }
-  })(0);
 })();
 </script>
