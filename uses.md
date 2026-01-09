@@ -96,7 +96,8 @@ Well, we're gonna have to break this down a bit.
 ## Carpentry
 
 ### Hardware
-- Dewalt power tools
+- Dewalt 20V brushless power tools
+- Want: [DEWALT 20V Cordless Brushless 6-1/2 in. Sidewinder Style Circular Saw](https://www.homedepot.com/p/DEWALT-20V-MAX-Cordless-Brushless-6-1-2-in-Sidewinder-Style-Circular-Saw-Tool-Only-DCS565B/314001465?MERCH=REC-_-battery_collection-_-322138372-_-1-_-n/a-_-n/a-_-n/a-_-n/a-_-n/a#overlay)
 - Milwaukee bits
 - Black & Decker workmate
 
