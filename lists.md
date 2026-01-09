@@ -101,10 +101,11 @@ serial_number: 2024.PAE.007
 ## Watches
 
 - Want: [Islander Bracelet for Bulova 45mm Blasted Lunar Pilot Models](https://longislandwatch.com/islander-bracelet-for-bulova-45mm-blasted-lunar-pilot-models-on-strap-brac-107/?srsltid=AfmBOoqoEUsYdtvlglY-24Tmk4k_mteJo4ii8Ep_ykleya3BYndQSJ-Q)
+- Want: [Wancher Astronaut](https://wancherwatch.com/collections/24-hour-watch/products/astronaut-24hr-automatic-watch?variant=45507684991283)
 - Want (maybe): [BR-03 Black Matte from Bell & Ross](https://bellross.com/en-us/collections/br-03/products/br-03-black-matte-rubber-strap?country=US)
 - Want: [Seconde Française 19.24 in Anthracite Gray from Beaubleu](https://beaubleu-paris.com/en/products/seconde-francaise-anthracite-gray?variant=48619363107092)
 - Want: [Rivanera in White or Gray from echo/neutra](https://echoneutra.com/products/rivanera-white)
-- Want: [TUDOR Ranger](https://www.tudorwatch.com/en/watches/ranger/m79930-0007)
+- Want: [TUDOR Ranger](https://www.tudorwatch.com/en/watches/ranger/m79930-0001)
 - Want: [C60 Trident Lumière from Christopher Ward](https://www.christopherward.com/int/precious-metals/C60-Trident-Lumi%C3%A8re/C60-41C3H31T0KO0-B0.html)
 - Want: some bright limited-edition Casio G-Shock Frogman (like the *Borneo* or the *Poison Dart*)
 - Want: [Doxa SUB 300T Searambler](https://doxawatches.com/products/sub-300t-searambler) (or 300 Professional)
