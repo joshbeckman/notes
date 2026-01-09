@@ -102,6 +102,7 @@ serial_number: 2024.PAE.007
 
 - Want: [Islander Bracelet for Bulova 45mm Blasted Lunar Pilot Models](https://longislandwatch.com/islander-bracelet-for-bulova-45mm-blasted-lunar-pilot-models-on-strap-brac-107/?srsltid=AfmBOoqoEUsYdtvlglY-24Tmk4k_mteJo4ii8Ep_ykleya3BYndQSJ-Q)
 - Want: [Wancher Astronaut](https://wancherwatch.com/collections/24-hour-watch/products/astronaut-24hr-automatic-watch?variant=45507684991283)
+- Want: [Svalbard Traser GH55 24-hour](https://svalbard.one/24-hour-automatic-watch-Svalbard-Tracer-GH55-p643747612?srsltid=AfmBOor8Ep_W9634iroHb-r2dkfHvQtFCjATI9tvoJObrQz484w1JFRbd8E)
 - Want (maybe): [BR-03 Black Matte from Bell & Ross](https://bellross.com/en-us/collections/br-03/products/br-03-black-matte-rubber-strap?country=US)
 - Want: [Seconde Française 19.24 in Anthracite Gray from Beaubleu](https://beaubleu-paris.com/en/products/seconde-francaise-anthracite-gray?variant=48619363107092)
 - Want: [Rivanera in White or Gray from echo/neutra](https://echoneutra.com/products/rivanera-white)
