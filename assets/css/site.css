@@ -1918,4 +1918,39 @@ details summary:hover {
     background-color: white;
     color: black;
   }
+  #print-footnotes {
+    background: var(--c-bg);
+    page-break-before: always;
+    margin-top: 2em;
+    border-top: 1px solid #ccc;
+    padding-top: 1em;
+  }
+  #print-footnotes h3 {
+    margin-bottom: 0.5em;
+    font-size: 1.2em;
+  }
+  #print-footnotes ol {
+    padding-left: 2em;
+    margin: 0;
+    list-style-type: decimal !important;
+    list-style-position: outside;
+  }
+  #print-footnotes li {
+    margin-bottom: 0.75em;
+    display: list-item !important;
+  }
+  #print-footnotes li > * {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+  .print-footnote-url {
+    word-break: break-all;
+    font-size: 0.85em;
+  }
+  .print-footnote-ref {
+    left: 0.5ch;
+    display: inline !important;
+    text-decoration: none !important;
+  }
 }

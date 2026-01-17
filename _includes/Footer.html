@@ -90,7 +90,6 @@
 </nav>
 </footer>
 <span class="print-only">{{site.title}}: https://{{site.url | domainify}}{{ page.url }}</span>
-<div id="qrcode" class="print-only" style="width: 130px;height: 130px"></div>
 <script async src="/assets/js/lazyload.min.js"></script>
 <script async src="/assets/js/hotkeys.min.js"></script>
 <script data-goatcounter="https://joshbeckman.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
@@ -424,19 +423,89 @@ window.addEventListener('load', function () {
         });
   }
 })();
-window.addEventListener('beforeprint', function() {
+(function preloadQRCode() {
     var script = document.createElement('script');
     script.src = 'https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js';
-    script.addEventListener('load', function() {
-        var qrcode = new QRCode(document.getElementById('qrcode'), {
-          text: document.location.href,
-          width: 128,
-          height: 128,
-          colorDark: '#000',
-          colorLight: '#fff',
-          correctLevel: QRCode.CorrectLevel.H
+    document.body.appendChild(script);
+})();
+window.addEventListener('beforeprint', function() {
+    // Skip if footnotes already generated or QRCode not loaded
+    if (document.getElementById('print-footnotes') || typeof QRCode === 'undefined') {
+        return;
+    }
+
+    // Build list of links: current page first, then all unique anchors
+    var links = [{href: document.location.href, anchor: null, label: 'This page:'}];
+    var seenUrls = new Set([document.location.href]);
+
+    var anchors = document.querySelectorAll('article a[href], .text a[href], .h-entry a[href]');
+    anchors.forEach(function(anchor) {
+        var href = anchor.href;
+        var rawHref = anchor.getAttribute('href');
+        if (rawHref.startsWith('javascript:') || rawHref.startsWith('#') || anchor.closest('.print-hidden')) {
+            return;
+        }
+        if (!seenUrls.has(href)) {
+            seenUrls.add(href);
+            links.push({href: href, anchor: anchor, label: null});
+        }
+    });
+
+    // Create footnotes container
+    var footnotesSection = document.createElement('section');
+    footnotesSection.id = 'print-footnotes';
+    footnotesSection.className = 'print-only';
+    footnotesSection.innerHTML = '<h3>[L]inks</h3>';
+    var footnotesList = document.createElement('ol');
+    footnotesList.start = 0;
+    footnotesSection.appendChild(footnotesList);
+
+    links.forEach(function(link, index) {
+        // Add superscript to anchor if present
+        if (link.anchor) {
+            var sup = document.createElement('sup');
+            sup.className = 'print-footnote-ref print-only';
+            sup.textContent = 'L' + index;
+            link.anchor.appendChild(sup);
+        }
+
+        // Create footnote entry
+        var li = document.createElement('li');
+        li.id = 'print-footnote-' + index;
+        li.value = index;
+
+        var urlSpan = document.createElement('span');
+        urlSpan.className = 'print-footnote-url';
+        urlSpan.innerHTML = (link.label ? '<strong>' + link.label + '</strong> ' : '') + link.href;
+        li.appendChild(urlSpan);
+
+        var qrContainer = document.createElement('div');
+        qrContainer.id = 'print-footnote-qr-' + index;
+        qrContainer.style.width = '64px';
+        qrContainer.style.height = '64px';
+        qrContainer.style.display = 'inline-block';
+        qrContainer.style.verticalAlign = 'middle';
+        qrContainer.style.marginLeft = '8px';
+        li.appendChild(qrContainer);
+
+        footnotesList.appendChild(li);
+
+        new QRCode(qrContainer, {
+            text: link.href,
+            width: 64,
+            height: 64,
+            colorDark: '#000',
+            colorLight: '#fff',
+            correctLevel: QRCode.CorrectLevel.L
         });
     });
-    document.body.appendChild(script);
+
+    // Insert footnotes before the existing footer or at end of body
+    var footer = document.getElementById('footer');
+    if (footer) {
+        footer.parentNode.insertBefore(footnotesSection, footer);
+    } else {
+        document.body.appendChild(footnotesSection);
+    }
 });
 </script>
