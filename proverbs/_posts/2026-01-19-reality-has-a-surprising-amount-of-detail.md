@@ -2,11 +2,6 @@
 layout: Post
 date: '2026-01-19 18:13:43 +0000'
 title: Reality has a surprising amount of detail.
-toc: true
-image:
-description:
-mastodon_social_status_url: false
-bluesky_status_url: false
 tags:
 - blogs
 - writing
