@@ -1,25 +1,4 @@
-{% if include.post.rating == 1 %}
-    &#9733;
-{% endif %}
-{% if include.post.rating == 2 %}
-    &#9733;
-    &#9733;
-{% endif %}
-{% if include.post.rating == 3 %}
-    &#9733;
-    &#9733;
-    &#9733;
-{% endif %}
-{% if include.post.rating == 4 %}
-    &#9733;
-    &#9733;
-    &#9733;
-    &#9733;
-{% endif %}
-{% if include.post.rating == 5 %}
-    &#9733;
-    &#9733;
-    &#9733;
-    &#9733;
-    &#9733;
-{% endif %}
+{% assign rating_doubled = include.post.rating | times: 2 | round %}
+{% assign full_stars = rating_doubled | divided_by: 2 %}
+{% assign has_half = rating_doubled | modulo: 2 %}
+{% for i in (1..full_stars) %}&#9733;{% endfor %}{% if has_half == 1 %}&#189;{% endif %}
