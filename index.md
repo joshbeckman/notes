@@ -1,5 +1,5 @@
 ---
-title: From the Desk of Josh Beckman
+title: Josh Beckman's Organization
 layout: Home
 permalink: "/"
 searchable: true
