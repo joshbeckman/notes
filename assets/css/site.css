@@ -1767,6 +1767,20 @@ div.highlighter-rouge.language-go::before {
 .post-social, .post-network {
   margin: 0 0 1em;
 }
+.social-row {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: start;
+}
+.social-row .social-links {
+  flex: 1;
+  margin: 0;
+}
+.social-row .iine-like-button {
+  flex: 1;
+  text-align: right;
+}
 details {
   border: 1px solid var(--c-text-alt);
   padding: 0.5em 1em;

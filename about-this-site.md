@@ -70,6 +70,8 @@ Popularity is tracked by [Goatcounter](https://www.goatcounter.com/) - public st
 
 Guestbook comments are powered by [Cusdis](https://cusdis.com/).
 
+Post likes are powered by [iine: small web appreciation](https://iine.to/).
+
 Webmentions are received at [webmention.io](https://webmention.io/api/mentions.html?token=4N8Bpl6KX64j8VB4k5A3ww).
 
 Serverless scripts (e.g. for [generating insights](/insight)) are hosted/run by [Val Town](https://www.val.town).
@@ -89,6 +91,9 @@ You can read about everything else I use to build things at [/uses](/uses).
 - Last post date: <time datetime="{{ newest_post.date | date_to_xmlschema }}">{{ newest_post.date | date: "%B %d, %Y" }}</time>
 
 ## Changelog
+
+### 2026-01-20
+- Add like button to posts via [iine](https://iine.to/)
 
 ### 2025-12-17
 - Add [exercise stats page](/exercise/stats) with line charts for hours, miles, and average duration per month

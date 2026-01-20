@@ -1,7 +1,8 @@
 <div class="post-social print-hidden">
   <div class="social-content">
     <h3>Comments &amp; Replies</h3>
-    <ul class="social-links">
+    <div class="social-row">
+      <ul class="social-links">
       {%- if page.letterboxd_review_url -%}
       <li><a class="social-letterboxd" href="{{page.letterboxd_review_url}}" target="_blank">on Letterboxd</a></li>
       {%- endif -%}
@@ -21,8 +22,15 @@
       <li><a class="social-strava" href="{{page.strava_activity_url}}" target="_blank">on Strava</a></li>
       {%- endif -%}
       <li><a class="social-webmentions" href="https://webmention.io/api/mentions.html?token=4N8Bpl6KX64j8VB4k5A3ww&target=https://www.joshbeckman.org{{ page.url }}" target="_blank"><span data-webmention-count data-url="https://www.joshbeckman.org{{ page.url }}">webmentions</span></a></li>
-      <li><a class="social-email" href="/about#active-accounts">via email</a></li>
-    </ul>
+      <li><a class="social-email" href="/about#active-accounts">Reply via email</a></li>
+      </ul>
+      <form class="iine-like-button" action="https://vhiweeypifbwacashxjz.supabase.co/rest/v1/rpc/increment_hits?apikey=sb_publishable_EoB7MFJhCmb6PiAk-GPJ4w_PGhQ44Ru" method="post">
+        <input type="hidden" name="page_slug" value="{{ page.url }}">
+        <button type="submit" class="iine-button" data-icon="❤️" aria-hidden="true">
+          <noscript>❤️</noscript>
+        </button>
+      </form>
+    </div>
     <p>Did you like this post, repost it, or respond to it? Let me know by sending a <a href="https://indieweb.org/Webmention" target="_blank">webmention</a>:
     <br/>
     <form
