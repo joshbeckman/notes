@@ -1781,6 +1781,9 @@ div.highlighter-rouge.language-go::before {
   flex: 1;
   text-align: right;
 }
+.iine-button .icon {
+  vertical-align: middle;
+}
 details {
   border: 1px solid var(--c-text-alt);
   padding: 0.5em 1em;
