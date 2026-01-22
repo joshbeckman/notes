@@ -30,7 +30,7 @@ I wanted to make link-following possible on my site. When someone prints one of 
 
 I wanted to take a similar approach to what Stripe Press does in its books (e.g. [An Elegant Puzzle](https://press.stripe.com/an-elegant-puzzle)): footnotes with full links and QR codes.
 
-![The appendix footnotes in An Elegant puzzle contain links and QR codes](/assets/images/2a3b27e8-1dc5-414f-a914-7f1a38d222c7.jpeg)
+![The appendix footnotes in An Elegant Puzzle contain links and QR codes](/assets/images/2a3b27e8-1dc5-414f-a914-7f1a38d222c7.jpeg)
 
 When you print any page on this site now, every link gets:
 1. A superscript footnote marker (like `L1`, `L2`, etc.)

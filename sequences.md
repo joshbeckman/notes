@@ -15,7 +15,7 @@ The sequences are ordered by length, with the longest first. So far, there are {
 {% for sequence in site.data.sequences %}
 <h2 id="{{sequence.id}}">{{ sequence.topic | default: "Untitled" }} Sequence ({{ sequence.posts.size }} posts) <a href="#{{sequence.id}}">#</a></h2>
 
-Topic: <a href="/search/?q=%27{{ sequence.topic }}&keys=tags" class="">{{ sequence.topic | default: "No topic specified" }}</a>
+Primary topic: <a href="/search/?q=%27{{ sequence.primary_tag }}&keys=tags" class="">{{ sequence.primary_tag | default: "No topic specified" }}</a>
 {% if sequence.start_date and sequence.end_date %}
 *{{ sequence.start_date | date: "%B %Y" }} - {{ sequence.end_date | date: "%B %Y" }}*
 {% endif %}
