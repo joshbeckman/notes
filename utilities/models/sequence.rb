@@ -19,10 +19,27 @@ Sequence = Struct.new(
     posts.flat_map { |post| post.data['tags'] || [] }.uniq.sort
   end
 
-  def topic
-    tag_counts = posts.flat_map { |post| post.data['tags'] || [] }
-                      .each_with_object(Hash.new(0)) { |tag, counts| counts[tag] += 1 }
+  def primary_tag
     tag_counts.max_by { |_tag, count| count }&.first
+  end
+
+  def rare_tag
+    tag_counts.reject { |tag, _| tag == primary_tag }
+              .min_by { |_tag, count| count }&.first
+  end
+
+  def topic
+    return nil if tag_counts.empty?
+    return primary_tag unless rare_tag
+
+    "#{primary_tag} & #{rare_tag}"
+  end
+
+  private
+
+  def tag_counts
+    @tag_counts ||= posts.flat_map { |post| post.data['tags'] || [] }
+                         .each_with_object(Hash.new(0)) { |tag, counts| counts[tag] += 1 }
   end
 
   def start_date

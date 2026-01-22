@@ -142,7 +142,7 @@ module RawContent
     def sequence_exists?(sequences, new_sequence_posts)
       new_urls = new_sequence_posts.map(&:url)
       sequences.any? do |existing_sequence|
-        existing_urls = existing_sequence['posts'].map { |item| item['url'] }
+        existing_urls = existing_sequence.posts.map(&:url)
         existing_urls == new_urls
       end
     end
