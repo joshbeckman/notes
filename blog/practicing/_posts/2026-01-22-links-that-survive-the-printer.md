@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/d3b4eef5-6d42-4ae9-87e0-3fd0df13af74.jpeg"
 description: How I built automatic QR code footnotes so printed pages keep their links.
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115939990318961795
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mczqfop3qp2g
 tags:
 - personal-blog
 - code-snippets
