@@ -35,23 +35,6 @@ Sequence = Struct.new(
     "#{primary_tag} & #{rare_tag}"
   end
 
-  private
-
-  def tag_counts
-    @tag_counts ||= posts.flat_map { |post| post.data['tags'] || [] }
-                         .each_with_object(Hash.new(0)) { |tag, counts| counts[tag] += 1 }
-  end
-
-  def start_date
-    dates = posts.map { |post| post.data['date'] }.compact
-    dates.min
-  end
-
-  def end_date
-    dates = posts.map { |post| post.data['date'] }.compact
-    dates.max
-  end
-
   def to_liquid
     to_h
   end
@@ -70,5 +53,22 @@ Sequence = Struct.new(
       'start_date' => start_date&.iso8601,
       'end_date' => end_date&.iso8601
     }
+  end
+
+  private
+
+  def tag_counts
+    @tag_counts ||= posts.flat_map { |post| post.data['tags'] || [] }
+                         .each_with_object(Hash.new(0)) { |tag, counts| counts[tag] += 1 }
+  end
+
+  def start_date
+    dates = posts.map { |post| post.data['date'] }.compact
+    dates.min
+  end
+
+  def end_date
+    dates = posts.map { |post| post.data['date'] }.compact
+    dates.max
   end
 end
