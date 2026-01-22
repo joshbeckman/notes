@@ -76,6 +76,7 @@
                 loadMastodon();
                 loadHackerNews();
                 loadWebmentions();
+                loadIine();
                 observer.disconnect();
             }
         });
@@ -93,6 +94,19 @@
 
     function pluralize(count, singular, plural) {
         return count === 1 ? singular : (plural || singular + 's');
+    }
+
+    function loadIine() {
+        var script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/gh/welpo/iine@main/iine.mini.js';
+        // on script load, manually fire DOMContentLoaded on document
+        // this needs to be done because we are loading the script dynamically after DOMContentLoaded has already fired and iine relies on that event
+        script.onload = function() {
+            var event = document.createEvent('Event');
+            event.initEvent('DOMContentLoaded', true, true);
+            document.dispatchEvent(event);
+        };
+        document.body.appendChild(script);
     }
 
     function loadWebmentions() {
