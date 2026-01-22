@@ -426,7 +426,6 @@ window.addEventListener('load', function () {
   }
 })();
 window.addEventListener('beforeprint', function() {
-    // Skip if footnotes already generated or QRCode not loaded
     if (document.getElementById('print-footnotes') || typeof QRCode === 'undefined') {
         return;
     }
@@ -471,19 +470,19 @@ window.addEventListener('beforeprint', function() {
         li.id = 'print-footnote-' + index;
         li.value = index;
 
-        var urlSpan = document.createElement('span');
-        urlSpan.className = 'print-footnote-url';
-        urlSpan.innerHTML = (link.label ? '<strong>' + link.label + '</strong> ' : '') + link.href;
-        li.appendChild(urlSpan);
-
         var qrContainer = document.createElement('div');
         qrContainer.id = 'print-footnote-qr-' + index;
         qrContainer.style.width = '64px';
         qrContainer.style.height = '64px';
         qrContainer.style.display = 'inline-block';
         qrContainer.style.verticalAlign = 'middle';
-        qrContainer.style.marginLeft = '8px';
+        qrContainer.style.marginRight = '8px';
         li.appendChild(qrContainer);
+
+        var urlSpan = document.createElement('span');
+        urlSpan.className = 'print-footnote-url';
+        urlSpan.innerHTML = (link.label ? '<strong>' + link.label + '</strong> ' : '') + link.href;
+        li.appendChild(urlSpan);
 
         footnotesList.appendChild(li);
 

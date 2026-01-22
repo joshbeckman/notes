@@ -1661,6 +1661,9 @@ div.highlighter-rouge.language-md::before {
 div.highlighter-rouge.language-sh::before {
   content: "Bash";
 }
+div.highlighter-rouge.language-html::before {
+  content: "HTML";
+}
 div.highlighter-rouge.language-vim::before {
   content: "Vimscript";
 }
