@@ -98,22 +98,6 @@ serial_number: 2024.PAE.007
 - Want: [penco® stationery & supplies](https://penco.jp/)
 - Maybe want: [Kaweco Special Mini Mechanical Pencil - 0.9 mm - Black Body : JetPens](https://www.jetpens.com/Kaweco-Special-Mini-Mechanical-Pencil-0.9-mm-Black-Body/pd/8744)
 
-## Watches
-
-- Want: [Islander Bracelet for Bulova 45mm Blasted Lunar Pilot Models](https://longislandwatch.com/islander-bracelet-for-bulova-45mm-blasted-lunar-pilot-models-on-strap-brac-107/?srsltid=AfmBOoqoEUsYdtvlglY-24Tmk4k_mteJo4ii8Ep_ykleya3BYndQSJ-Q)
-- Want: [Wancher Astronaut](https://wancherwatch.com/collections/24-hour-watch/products/astronaut-24hr-automatic-watch?variant=45507684991283)
-- Want: [Svalbard Traser GH55 24-hour](https://svalbard24.com/24-hour-automatic-watch-Svalbard-Traser-GH55-p642591282)
-- Want (maybe): [BR-03 Black Matte from Bell & Ross](https://bellross.com/en-us/collections/br-03/products/br-03-black-matte-rubber-strap?country=US)
-- Want: [Seconde Française 19.24 in Anthracite Gray from Beaubleu](https://beaubleu-paris.com/en/products/seconde-francaise-anthracite-gray?variant=48619363107092)
-- Want: [Rivanera in White or Gray from echo/neutra](https://echoneutra.com/products/rivanera-white)
-- Want: [TUDOR Ranger](https://www.tudorwatch.com/en/watches/ranger/m79930-0001)
-- Want: [C60 Trident Lumière from Christopher Ward](https://www.christopherward.com/int/precious-metals/C60-Trident-Lumi%C3%A8re/C60-41C3H31T0KO0-B0.html)
-- Want: some bright limited-edition Casio G-Shock Frogman (like the *Borneo* or the *Poison Dart*)
-- Want: [Doxa SUB 300T Searambler](https://doxawatches.com/products/sub-300t-searambler) (or 300 Professional)
-- Want: [Omega Seamaster](https://www.omegawatches.com/en-us/watch-omega-seamaster-300-co-axial-master-chronometer-41-mm-23430412101001) (300 or Aqua Terra)
-- Want: [Rolex Oyster Explorer](https://www.rolex.com/en-us/watches/explorer/m124270-0001) or, yeah, I guess [a Submariner](https://www.rolex.com/en-us/watches/submariner/m124060-0001)...
-- Appreciate the story but don't want: [Marathon GSAR Diver's](https://wornandwound.com/video-enthusiast-spotlight-contemplations-on-time-with-van-neistat-and-the-marathon-gsar-divers-automatic/)
-
 ## Kid Stuff
 - [Pre-owned Girls clothing on Vinted](https://www.vinted.com/catalog/1195-girls-clothing)
 - [REBEL: Score endless deals from top brands](https://fromrebel.com/)
