@@ -38,10 +38,11 @@ class IssuePoster
 
     assets = extract_assets(body)
     assets.map(&:download)
+    syndicate = frontmatter['syndicate'] != false
     post = Post.new(
       body: transform_content(body, assets),
-      mastodon_social_status_url: 'false',
-      bluesky_status_url: 'false',
+      mastodon_social_status_url: syndicate ? 'false' : nil,
+      bluesky_status_url: syndicate ? 'false' : nil,
       category: category,
       in_reply_to: frontmatter['in_reply_to'],
       hide_title: frontmatter['hide_title'],
