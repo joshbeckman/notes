@@ -7,8 +7,8 @@ permalink: "/watches-timepieces/"
 tags:
 - personal-blog
 - tools
+serial_number: 2026.PAE.001
 ---
-
 ## Collection
 
 | | [SKX 173](https://www.theseikoguy.com/watches/skx173/) | [SARB 035](https://sixiw.watch/reviews/seiko-sarb035-review-still-worth-it-in-2024/) | [Ventura](https://www.hamiltonwatch.com/en-us/h24411732-ventura-quartz.html) | [Lunar Pilot](https://www.bulova.com/us/en/product/96B251.html) | [G-Shock GWM5610-1](https://www.casio.com/us/watches/gshock/product.GW-M5610-1/) | [Traser GH55](https://svalbard.watch/pages/Svalbard_Traser_GH55.html) |
