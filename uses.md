@@ -59,6 +59,13 @@ Well, we're gonna have to break this down a bit.
 - Apple Photos
 - Apple iMovie
 
+### Printing
+
+- Parabo Press (use my code `WXSSJX` for a discount on your order)
+  - I have used them for over a decade for large wall art (their Engineer Prints are lovely and huge)
+- [Nations Photo Lab](https://refer.nationsphotolab.com/er54zy4y)
+- [mpix](https://i.refs.cc/NSq0AqDM?smile_ref=eyJzbWlsZV9zb3VyY2UiOiJzbWlsZV91aSIsInNtaWxlX21lZGl1bSI6IiIsInNtaWxlX2NhbXBhaWduIjoicmVmZXJyYWxfcHJvZ3JhbSIsInNtaWxlX2N1c3RvbWVyX2lkIjozNDExMjg4ODc2fQ%3D%3D)
+
 ## Music
 
 ### Hardware

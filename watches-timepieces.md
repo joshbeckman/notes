@@ -34,6 +34,7 @@ tags:
 | Weight | 101g | 138g | — | 107g | 51.7g | 64g (head only) |
 | Acquired | 2017 | 2017 | 2022 | 2024 | 2026 | 2026 |
 | Notes | | | | [Islander Bracelet for Bulova 45mm Blasted Lunar Pilot Models](https://longislandwatch.com/islander-bracelet-for-bulova-45mm-blasted-lunar-pilot-models-on-strap-brac-107/?srsltid=AfmBOoqoEUsYdtvlglY-24Tmk4k_mteJo4ii8Ep_ykleya3BYndQSJ-Q) | | |
+{: .responsive-table}
 
 ## Want
 
@@ -51,11 +52,12 @@ In order of ascending price
 - [Seconde Française 19.24 in Anthracite Gray from Beaubleu](https://beaubleu-paris.com/en/products/seconde-francaise-anthracite-gray?variant=48619363107092)
   - This is an amazing thing to look at, with a floating seconds hand
 - [C60 Trident Lumière from Christopher Ward](https://www.christopherward.com/int/precious-metals/C60-Trident-Lumi%C3%A8re/C60-41C3H31T0KO0-B0.html)
-  - This is a COSC for under $3k with a very modern, super-lume aesthetic. I just kind fee like all that plastic lume looks plastic-y
+  - This is a COSC for under $3k with a very modern, super-lume aesthetic. I just kind feel like all that plastic lume looks plastic-y
 - [TUDOR Ranger](https://www.tudorwatch.com/en/watches/ranger/m79930-0001)
 - [BR-03 Black Matte from Bell & Ross](https://bellross.com/en-us/collections/br-03/products/br-03-black-matte-rubber-strap?country=US)
 - [Rolex Oyster Explorer](https://www.rolex.com/en-us/watches/explorer/m124270-0001)
 - [Omega Seamaster](https://www.omegawatches.com/en-us/watch-omega-seamaster-300-co-axial-master-chronometer-41-mm-23430412101001)
+  - The cheaper version of this is the [Baltic Aquascaphe Classic](https://baltic-watches.com/en/products/aquascaphe-blue-gilt?variant=17494500835399)
 
 ## Appreciate But Probably Wouldn't Like
 
