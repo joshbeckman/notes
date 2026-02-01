@@ -8,7 +8,7 @@ description:
 rating: 2
 letterboxd_id: agatha-christies-seven-dials
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/115994500261013472
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mdrwzy4xjw2i
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/agatha-christies-seven-dials/
 tags:
 - movies
