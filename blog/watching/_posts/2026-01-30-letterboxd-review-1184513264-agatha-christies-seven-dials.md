@@ -7,7 +7,7 @@ image: https://a.ltrbxd.com/resized/film-poster/1/4/8/8/0/2/4/1488024-agatha-chr
 description:
 rating: 2
 letterboxd_id: agatha-christies-seven-dials
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115994500261013472
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/agatha-christies-seven-dials/
 tags:
