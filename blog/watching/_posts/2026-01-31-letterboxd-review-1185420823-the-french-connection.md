@@ -8,7 +8,7 @@ description:
 rating: 4
 tmdb_id: '1051'
 letterboxd_id: the-french-connection
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/115996602810950282
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/the-french-connection/
 tags:
