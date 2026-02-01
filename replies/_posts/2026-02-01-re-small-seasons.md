@@ -7,7 +7,7 @@ image:
 description:
 tags:
 - time
-serial_number: 2026.RPY.001
+serial_number: 2026.RPY.002
 ---
 I really loved reading [On Small Seasons and Long Calendars](https://rosszurowski.com/log/2018/small-seasons-long-calendars) this morning. I felt so vindicated! (Seasonality is [one of my guiding beliefs](https://www.joshbeckman.org/#:~:text=Things%20come%20and%20go%20in%20seasons).) I second the idea that midwestern winters+summers impose a strong seasonality on local life! A favorite of mine in Chicago is [Ice Watch](https://www.joshbeckman.org/notes/478410758).
 
