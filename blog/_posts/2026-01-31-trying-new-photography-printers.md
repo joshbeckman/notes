@@ -9,7 +9,7 @@ tags:
 - photography
 - publishing
 - art
-serial_number: 2026.BLG.010
+serial_number: 2026.BLG.011
 ---
 I've been a *long* time customer of Parabo Press for all my wall art photography prints. I've especially loved their large engineer prints, but I've also extensively printed with their matte fine-art printing. But recently, they've significantly increased their prices, while I have also been wanting to actually print *more* for others in my life.
 
