@@ -258,7 +258,7 @@
             return;
         }
         var url = letterboxd.getAttribute('href');
-        fetch(`https://corsproxy.io/?${encodeURIComponent(url)}`)
+        fetch(`https://api.cors.lol/?url=${encodeURIComponent(url)}`)
             .then(response => response.text())
             .then(html => {
                 var match = html.match(/data-count="(\d+)"/);
