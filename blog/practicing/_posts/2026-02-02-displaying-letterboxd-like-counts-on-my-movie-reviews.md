@@ -5,7 +5,7 @@ title: Displaying Letterboxd Like Counts on My Movie Reviews
 toc: true
 image: "/assets/images/21addc37-7230-4055-97e9-959509301ba3.png"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116003685980532029
 bluesky_status_url: false
 tags:
 - personal-blog
