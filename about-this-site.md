@@ -92,6 +92,12 @@ You can read about everything else I use to build things at [/uses](/uses).
 
 ## Changelog
 
+### 2026-02-02
+- Add [/llms.txt](/llms.txt) following the [llmstxt.org](https://llmstxt.org) spec for AI discoverability
+- Add [/llms](/llms) guide page for AI tools with citation guidelines and content policies
+- Add Schema.org JSON-LD structured data (Person, WebSite, Article schemas)
+- Add [robots.txt](/robots.txt) with explicit AI crawler allowances
+
 ### 2026-01-20
 - Add like button to posts via [iine](https://iine.to/)
 
