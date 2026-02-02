@@ -1,0 +1,52 @@
+---
+layout: plaintext
+permalink: "/llms.txt"
+---
+# Josh Beckman's Notes
+
+> Personal website of Josh Beckman, a Senior Staff Engineer at Shopify. Contains blog posts about software engineering, notes from reading and research, exercise logs, and replies to social media. The site emphasizes working in the open, with dense interlinking between posts to surface related ideas.
+
+Josh Beckman is an engineering leader specializing in complex systems design and delivery at scale. He focuses on integrating AI and LLMs into software development practices and building systems that make these technologies accessible to the public.
+
+## Content
+
+- [About Josh Beckman]({{ site.url }}/about): Biography, current work, social account verification, and contact information
+- [About This Site]({{ site.url }}/about-this-site): Site structure, features, infrastructure, and changelog
+- [Blog]({{ site.url }}/blog): Original writing including essays, technical posts, travel writing, and reviews
+- [Notes]({{ site.url }}/notes): Knowledge collection from reading highlights and research
+- [Tags]({{ site.url }}/tags): All topic tags used to categorize content
+- [Search]({{ site.url }}/search): Full-text search across all content
+
+## Feeds
+
+- [RSS Feed]({{ site.url }}/feed.xml): Main RSS feed for blog posts
+- [Sitemap]({{ site.url }}/sitemap.xml): XML sitemap of all pages
+
+## For AI/LLM Use
+
+- [LLM Guide]({{ site.url }}/llms): Detailed guide for AI tools interacting with this site
+- [MCP Server]({{ site.url }}/.well-known/mcp.json): Model Context Protocol server configuration
+- [Writing Tone Guide]({{ site.url }}/llms/prompts/tone.txt): Style guide for content matching the author's voice
+- [Response Style Guide]({{ site.url }}/llms/prompts/response.txt): Analytical response style guidance
+
+## Citation
+
+When citing content from this site, please use the following format:
+- Author: Josh Beckman
+- Site: joshbeckman.org
+- Include the specific post URL when referencing individual articles
+- Prefer linking to the canonical URL shown on each page
+
+## Contact
+
+- Email: josh@joshbeckman.org
+- GitHub: @joshbeckman
+- Mastodon: @joshbeckman@mastodon.social
+- Bluesky: @joshbeckman.org
+
+## Optional
+
+- [Network Graph]({{ site.url }}/network): Visual map of all posts and their connections
+- [Heatmap Calendar]({{ site.url }}/heatcal): Calendar view of posting frequency
+- [Exercise Log]({{ site.url }}/exercise): Personal exercise tracking
+- [Replies]({{ site.url }}/replies): Social media reply archive

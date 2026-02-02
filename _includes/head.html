@@ -3,6 +3,52 @@
 <meta content="{{site.title}}" property="og:site_name"/>
 <meta content="{{ site.url }}/about/" property="article:author">
 <meta name="fediverse:creator" content="@joshbeckman@mastodon.social">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "{{ site.url }}/#person",
+      "name": "Josh Beckman",
+      "url": "{{ site.url }}/about",
+      "email": "josh@joshbeckman.org",
+      "jobTitle": "Senior Staff Engineer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Shopify"
+      },
+      "sameAs": [
+        "https://github.com/joshbeckman",
+        "https://mastodon.social/@joshbeckman",
+        "https://bsky.app/profile/joshbeckman.org"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ site.url }}/#website",
+      "url": "{{ site.url }}",
+      "name": "{{ site.title }}",
+      "description": "{{ site.description }}",
+      "author": { "@id": "{{ site.url }}/#person" },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "{{ site.url }}/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }{% if page.content-type == 'post' %},
+    {
+      "@type": "Article",
+      "headline": "{{ page.title | escape }}",
+      "url": "{{ site.url }}{{ page.url }}",
+      "datePublished": "{{ page.date | date_to_xmlschema }}",
+      "author": { "@id": "{{ site.url }}/#person" },
+      "publisher": { "@id": "{{ site.url }}/#person" },
+      "isPartOf": { "@id": "{{ site.url }}/#website" }
+    }{% endif %}
+  ]
+}
+</script>
 {%- if page.title -%}
 <meta content="{{ page.title }}" property="og:title">
 <title>{{page.title}}</title>
@@ -36,7 +82,6 @@
     {%- else -%}
     <meta property="og:image" content="{{page.image}}">
     {%- endif -%}
-<meta property="og:image" content="{{page.image}}">
 {%- else -%}
 <meta property="og:image" content="{{site.url}}/assets/img/profile.png">
 {%- endif -%}
