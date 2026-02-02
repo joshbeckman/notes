@@ -437,7 +437,12 @@ window.addEventListener('beforeprint', function() {
     anchors.forEach(function(anchor) {
         var href = anchor.href;
         var rawHref = anchor.getAttribute('href');
-        if (rawHref.startsWith('javascript:') || rawHref.startsWith('#') || anchor.closest('.print-hidden')) {
+        var rawHrefLower = rawHref ? rawHref.toLowerCase() : '';
+        if (rawHrefLower.startsWith('javascript:') ||
+            rawHrefLower.startsWith('data:') ||
+            rawHrefLower.startsWith('vbscript:') ||
+            rawHrefLower.startsWith('#') ||
+            anchor.closest('.print-hidden')) {
             return;
         }
         if (!seenUrls.has(href)) {
