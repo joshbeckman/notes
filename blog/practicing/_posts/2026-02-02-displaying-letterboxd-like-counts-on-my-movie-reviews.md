@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/21addc37-7230-4055-97e9-959509301ba3.png"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116003685980532029
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mdvzl4jnj42n
 tags:
 - personal-blog
 - letterboxd
