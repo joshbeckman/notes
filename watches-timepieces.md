@@ -5,7 +5,7 @@ searchable: true
 toc: true
 permalink: "/watches-timepieces/"
 tags:
-- personal-blog
+- time
 - tools
 serial_number: 2026.PAE.001
 ---
