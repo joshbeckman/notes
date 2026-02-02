@@ -1,6 +1,7 @@
 ---
 layout: plaintext
 permalink: "/llms.txt"
+serial_number: 2026.PAE.002
 ---
 # Josh Beckman's Notes
 
