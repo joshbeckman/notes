@@ -4,9 +4,8 @@ title: Guide for AI and LLMs
 permalink: "/llms/"
 searchable: true
 toc: true
-serial_number: 2026.PAE.002
+serial_number: 2026.PAE.004
 ---
-
 This page provides guidance for AI tools, language models, and automated systems interacting with joshbeckman.org.
 
 ## Quick Reference
