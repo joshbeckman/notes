@@ -75,6 +75,7 @@
                 loadBluesky();
                 loadMastodon();
                 loadHackerNews();
+                loadLetterboxd();
                 loadWebmentions();
                 loadIine();
                 observer.disconnect();
@@ -250,6 +251,25 @@
                 }
             })
             .catch(error => console.error('Error fetching HackerNews item:', error));
+    }
+    function loadLetterboxd() {
+        var letterboxd = document.querySelector('.social-letterboxd');
+        if (!letterboxd) {
+            return;
+        }
+        var url = letterboxd.getAttribute('href');
+        fetch(`https://corsproxy.io/?${encodeURIComponent(url)}`)
+            .then(response => response.text())
+            .then(html => {
+                var match = html.match(/data-count="(\d+)"/);
+                if (match) {
+                    var likes = parseInt(match[1], 10);
+                    if (likes > 0) {
+                        letterboxd.textContent = `${likes} ${pluralize(likes, 'like')} on Letterboxd`;
+                    }
+                }
+            })
+            .catch(error => console.error('Error fetching Letterboxd review:', error));
     }
 })();
 </script>
