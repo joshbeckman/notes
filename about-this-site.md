@@ -2,6 +2,7 @@
 layout: Page
 title: About This Site
 searchable: true
+toc: true
 tags:
 - index
 - personal-blog
