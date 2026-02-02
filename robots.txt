@@ -1,6 +1,7 @@
 ---
 layout: plaintext
 permalink: "/robots.txt"
+serial_number: 2026.PAE.003
 ---
 # robots.txt for joshbeckman.org
 # See https://www.joshbeckman.org/llms.txt for LLM-specific guidance
