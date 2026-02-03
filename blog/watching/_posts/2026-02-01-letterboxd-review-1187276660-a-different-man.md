@@ -9,7 +9,7 @@ rating: 4
 tmdb_id: '989662'
 letterboxd_id: a-different-man
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116005128354526796
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mdwo2zbgn726
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/a-different-man/
 tags:
 - movies
