@@ -69,14 +69,39 @@
     if (!postSocial) {
         return;
     }
+
+    function shouldLoadSocial() {
+        if (window.JoshSettings && typeof window.JoshSettings.shouldLoadSocial === 'function') {
+            return window.JoshSettings.shouldLoadSocial();
+        }
+        return true;
+    }
+
+    function transformMastodonLinks() {
+        if (!window.JoshSettings) return;
+        var instance = window.JoshSettings.getMastodonInstance();
+        if (!instance) return;
+        var mastodonLink = document.querySelector('.social-mastodon');
+        if (mastodonLink) {
+            var originalUrl = mastodonLink.getAttribute('href');
+            mastodonLink.setAttribute('data-original-url', originalUrl);
+            mastodonLink.setAttribute('href', window.JoshSettings.transformMastodonUrl(originalUrl, instance));
+            mastodonLink.setAttribute('title', 'Open on ' + instance);
+        }
+    }
+
+    transformMastodonLinks();
+
     var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
-                loadBluesky();
-                loadMastodon();
-                loadHackerNews();
-                loadLetterboxd();
-                loadWebmentions();
+                if (shouldLoadSocial()) {
+                    loadBluesky();
+                    loadMastodon();
+                    loadHackerNews();
+                    loadLetterboxd();
+                    loadWebmentions();
+                }
                 loadIine();
                 observer.disconnect();
             }

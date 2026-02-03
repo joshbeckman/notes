@@ -80,6 +80,8 @@
             <a class="menu-item-link" href="/anchors" data-label="most linked">Anchors</a>    </div>
 <div class="menu-item">
             <a class="menu-item-link" href="/network" data-label="graph">Network</a>    </div>
+<div class="menu-item">
+            <a class="menu-item-link" href="/settings" data-label="preferences">Settings</a>    </div>
 <div class="menu-item menu-item-with-title">
     <span class="menu-item-title" data-label="build">SITE</span>
   <a class="menu-item-link" href="/about-this-site" data-label="version">{{site.version}}</a>
@@ -90,9 +92,18 @@
 </nav>
 </footer>
 <span class="print-only">{{site.title}}: https://{{site.url | domainify}}{{ page.url }}</span>
+<script src="/assets/js/settings.js"></script>
 <script async src="/assets/js/lazyload.min.js"></script>
 <script async src="/assets/js/hotkeys.min.js"></script>
-<script data-goatcounter="https://joshbeckman.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script>
+if (window.JoshSettings && window.JoshSettings.shouldLoadAnalytics()) {
+    var gc = document.createElement('script');
+    gc.async = true;
+    gc.src = 'https://gc.zgo.at/count.js';
+    gc.dataset.goatcounter = 'https://joshbeckman.goatcounter.com/count';
+    document.body.appendChild(gc);
+}
+</script>
 <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js" async></script>
 <script>
 (function figurePadding() {

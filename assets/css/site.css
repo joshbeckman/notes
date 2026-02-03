@@ -452,6 +452,29 @@ template {
     --c-link-visited: mediumpurple;
   }
 }
+:root[data-color-scheme="dark"] {
+  --c-bg: hsl(0, 0%, 5%);
+  --c-bg-alt: hsl(0, 0%, 18%);
+  --c-text: hsl(0, 0%, 100%);
+  --c-text-alt: hsl(0, 0%, 60%);
+  --c-button: darkblue;
+  --c-link: #6ca0f2;
+  --c-link-visited: mediumpurple;
+}
+:root[data-color-scheme="light"] {
+  --c-bg: hsl(0, 0%, 100%);
+  --c-bg-alt: hsl(0, 0%, 94%);
+  --c-text: hsl(0, 0%, 5%);
+  --c-text-alt: hsl(0, 0%, 50%);
+  --c-button: aliceblue;
+  --c-link: #0969DA;
+  --c-link-visited: rebeccapurple;
+}
+:root[data-reduce-motion="true"] .name-svg path,
+:root[data-reduce-motion="true"] .name-svg circle {
+  stroke-dasharray: none !important;
+  stroke-dashoffset: 0 !important;
+}
 @media (min-width: 900px) {
   :root {
   }
@@ -1914,6 +1937,95 @@ details summary:hover {
       color: #a6e22e;
     }
 }
+/* Settings page styles */
+.settings-field {
+  display: flex;
+  align-items: center;
+  gap: 1ch;
+  margin-bottom: 1em;
+  flex-wrap: wrap;
+}
+.settings-field label {
+  min-width: 18ch;
+  flex-shrink: 0;
+}
+.settings-field input[type="url"],
+.settings-field input[type="text"],
+.settings-field select {
+  font-size: inherit;
+  padding: 0.4rem 1ch;
+  border-radius: 4px;
+  border: 1px solid var(--c-text-alt);
+  color: var(--c-text);
+  background-color: var(--c-bg);
+  flex: 1;
+  min-width: 20ch;
+}
+.settings-field input[type="color"] {
+  width: 3em;
+  height: 2em;
+  padding: 0;
+  border: 1px solid var(--c-text-alt);
+  border-radius: 4px;
+  cursor: pointer;
+}
+.settings-field.settings-checkbox {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+.settings-field.settings-checkbox label {
+  min-width: auto;
+}
+.settings-field.settings-checkbox input[type="checkbox"] {
+  width: 1.2em;
+  height: 1.2em;
+  margin: 0;
+}
+.settings-remote {
+  margin-bottom: 2em;
+}
+.settings-export {
+  margin: 2em 0;
+}
+.settings-export textarea {
+  width: 100%;
+  font-family: "Berkeley Mono", monospace;
+  font-size: 0.9em;
+  padding: 1em;
+  border: 1px solid var(--c-text-alt);
+  border-radius: 4px;
+  background: var(--c-bg);
+  color: var(--c-text);
+  resize: vertical;
+  margin-bottom: 1em;
+}
+.settings-status {
+  margin-top: 1em;
+  padding: 0.5em 0;
+  font-size: 0.9em;
+}
+.settings-status-success {
+  color: var(--c-green);
+}
+.settings-status-error {
+  color: var(--c-red);
+}
+.settings-status-warning {
+  color: var(--c-orange);
+}
+.settings-actions {
+  display: flex;
+  gap: 1em;
+  margin-top: 2em;
+}
+.settings-actions button {
+  padding: 0.5em 2ch;
+}
+#settings-reset {
+  background-color: transparent;
+  border-color: var(--c-text-alt);
+}
+
 @media print {
   header,
   section.related {
