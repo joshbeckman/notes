@@ -93,6 +93,9 @@ You can read about everything else I use to build things at [/uses](/uses).
 
 ## Changelog
 
+### 2026-02-03
+- Add [user preferences settings page](/settings) for customizing site behavior
+
 ### 2026-02-02
 - Add Letterboxd like count display on movie review posts
 - Add [/llms.txt](/llms.txt) following the [llmstxt.org](https://llmstxt.org) spec for AI discoverability
