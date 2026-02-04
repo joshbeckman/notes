@@ -1,16 +1,16 @@
 ---
 layout: Post
 title: Client-Side Encrypted Posts in Jekyll
-mastodon_social_status_url: false
-bluesky_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116014318886744761
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3me2qodwsf42t
 toc: true
 tags:
 - personal-blog
 - security
 - language-javascript
 - jekyll
+serial_number: 2026.BLG.016
 ---
-
 I've been wanting to write more personal things on this site. Not everything needs to be public, but I still want the convenience of having it all in one place - searchable, linkable, backed up in git.
 
 So I built client-side encryption into this site.
