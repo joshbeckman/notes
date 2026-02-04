@@ -9,6 +9,9 @@ tags:
 - tools
 serial_number: 2026.PAE.001
 ---
+
+Watches and timepieces are [beautifully intricate marvels of human intelligence and engineering](https://ciechanow.ski/mechanical-watch/). I have a few because time anchors my life and their mechanisms inspire me.
+
 ## Collection
 
 | | [SKX 173](https://www.theseikoguy.com/watches/skx173/) | [SARB 035](https://sixiw.watch/reviews/seiko-sarb035-review-still-worth-it-in-2024/) | [Ventura](https://www.hamiltonwatch.com/en-us/h24411732-ventura-quartz.html) | [Lunar Pilot](https://www.bulova.com/us/en/product/96B251.html) | [G-Shock GWM5610-1](https://www.casio.com/us/watches/gshock/product.GW-M5610-1/) | [Traser GH55](https://svalbard.watch/pages/Svalbard_Traser_GH55.html) | [Seamaster 300](https://www.omegawatches.com/en-us/watch-omega-seamaster-300-co-axial-master-chronometer-41-mm-23430412103001) |
