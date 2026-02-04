@@ -33,7 +33,14 @@
         {%- assign replaced_content = replaced_content | replace: bracket_link,link_text -%}
     {%- endfor -%}
 
+    {%- if page.encrypted_payload -%}
+<div class="encrypted-content" data-key-id="{{ page.encrypted }}">
+    <script type="application/json" class="encrypted-payload">{{ page.encrypted_payload | jsonify }}</script>
+    <noscript>This content is encrypted and requires JavaScript to decrypt.</noscript>
+</div>
+    {%- else -%}
     {{ replaced_content | wrap_media | inject_anchors }}
+    {%- endif -%}
 <a class="p-author h-card" style="display: none;" href="https://www.joshbeckman.org/about">
     Josh Beckman
 </a>

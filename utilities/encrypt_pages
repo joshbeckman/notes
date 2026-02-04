@@ -1,0 +1,260 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'yaml'
+require 'json'
+require 'openssl'
+require 'base64'
+require 'optparse'
+require 'digest'
+
+module EncryptedPages
+  ITERATIONS = 100_000
+  KEY_LENGTH = 32
+  SALT_LENGTH = 16
+  IV_LENGTH = 12
+  VERIFY_LENGTH = 8
+
+  class Encryptor
+    def initialize
+      @secrets_path = File.join(Dir.pwd, '_secrets.yml')
+      @secrets = load_secrets
+    end
+
+    def encrypt_file(file_path)
+      return unless File.exist?(file_path)
+
+      content = File.read(file_path)
+      return unless has_front_matter?(content)
+
+      front_matter, body = parse_file(content)
+      key_id = front_matter['encrypted']
+      return unless key_id
+
+      return if front_matter['encrypted_payload']
+
+      passphrase = @secrets[key_id.to_s]
+      unless passphrase
+        warn "Error: No passphrase found for key ID '#{key_id}' in _secrets.yml"
+        exit 1
+      end
+
+      encrypted_payload = encrypt_content(body.strip, key_id.to_s, passphrase)
+
+      front_matter['encrypted_payload'] = encrypted_payload
+      new_content = rebuild_file(front_matter, '')
+      File.write(file_path, new_content)
+      puts "Encrypted: #{file_path}"
+    end
+
+    def decrypt_file(file_path)
+      return unless File.exist?(file_path)
+
+      content = File.read(file_path)
+      return unless has_front_matter?(content)
+
+      front_matter, body = parse_file(content)
+      key_id = front_matter['encrypted']
+      return body unless key_id
+
+      payload = front_matter['encrypted_payload']
+      return body unless payload
+
+      passphrase = @secrets[payload['keyId']]
+      unless passphrase
+        warn "Error: No passphrase found for key ID '#{payload['keyId']}' in _secrets.yml"
+        exit 1
+      end
+
+      decrypt_content(payload, passphrase)
+    end
+
+    def decrypt_file_to_stdout(file_path)
+      decrypted = decrypt_file(file_path)
+      puts decrypted if decrypted
+    end
+
+    def check_keys
+      Dir.glob('**/*.{md,html}').each do |file_path|
+        next if file_path.start_with?('_site/', 'vendor/', 'node_modules/')
+
+        content = File.read(file_path)
+        next unless has_front_matter?(content)
+
+        front_matter, = parse_file(content)
+        key_id = front_matter['encrypted']
+        next unless key_id
+
+        unless @secrets[key_id.to_s]
+          warn "Missing passphrase for key ID '#{key_id}' in file: #{file_path}"
+          exit 1
+        end
+      end
+      puts 'All encrypted pages have valid key IDs'
+    end
+
+    def process_staged_files
+      staged_files = `git diff --cached --name-only --diff-filter=ACM`.split("\n")
+
+      staged_files.each do |file_path|
+        next unless file_path.end_with?('.md', '.html')
+        next unless File.exist?(file_path)
+
+        content = File.read(file_path)
+        next unless has_front_matter?(content)
+
+        front_matter, = parse_file(content)
+        next unless front_matter['encrypted']
+
+        encrypt_file(file_path)
+        system('git', 'add', file_path)
+      end
+    end
+
+    private
+
+    def load_secrets
+      unless File.exist?(@secrets_path)
+        warn "Warning: _secrets.yml not found at #{@secrets_path}"
+        return {}
+      end
+
+      YAML.safe_load(File.read(@secrets_path)) || {}
+    end
+
+    def has_front_matter?(content)
+      content =~ /\A---\s*\n/
+    end
+
+    def parse_file(content)
+      if content =~ /\A(---\s*\n.*?\n?)^(---\s*$\n?)/m
+        front_matter_text = ::Regexp.last_match(1)
+        body = ::Regexp.last_match.post_match
+        front_matter = YAML.safe_load(front_matter_text, permitted_classes: [Date, Time, DateTime, Symbol]) || {}
+        [front_matter, body]
+      else
+        [{}, content]
+      end
+    end
+
+    def rebuild_file(front_matter, body)
+      yaml_string = front_matter.to_yaml.gsub(/\A---\s*\n/, '')
+      "---\n#{yaml_string}---\n#{body}\n"
+    end
+
+    def already_encrypted?(body)
+      payload = parse_payload(body)
+      payload && payload['keyId'] && payload['salt'] && payload['iv'] && payload['ciphertext']
+    end
+
+    def parse_payload(body)
+      JSON.parse(body.strip)
+    rescue JSON::ParserError
+      nil
+    end
+
+    def encrypt_content(plaintext, key_id, passphrase)
+      salt = OpenSSL::Random.random_bytes(SALT_LENGTH)
+      iv = OpenSSL::Random.random_bytes(IV_LENGTH)
+
+      key = derive_key(passphrase, salt)
+
+      cipher = OpenSSL::Cipher.new('aes-256-gcm')
+      cipher.encrypt
+      cipher.key = key
+      cipher.iv = iv
+
+      ciphertext = cipher.update(plaintext) + cipher.final
+      auth_tag = cipher.auth_tag
+
+      verify = compute_verify_hash(passphrase, salt)
+
+      {
+        'keyId' => key_id,
+        'salt' => Base64.strict_encode64(salt),
+        'iv' => Base64.strict_encode64(iv),
+        'ciphertext' => Base64.strict_encode64(ciphertext + auth_tag),
+        'verify' => verify
+      }
+    end
+
+    def decrypt_content(payload, passphrase)
+      salt = Base64.strict_decode64(payload['salt'])
+      iv = Base64.strict_decode64(payload['iv'])
+      ciphertext_with_tag = Base64.strict_decode64(payload['ciphertext'])
+
+      verify = compute_verify_hash(passphrase, salt)
+      unless verify == payload['verify']
+        warn 'Error: Verification hash mismatch - wrong passphrase?'
+        exit 1
+      end
+
+      key = derive_key(passphrase, salt)
+
+      ciphertext = ciphertext_with_tag[0...-16]
+      auth_tag = ciphertext_with_tag[-16..]
+
+      cipher = OpenSSL::Cipher.new('aes-256-gcm')
+      cipher.decrypt
+      cipher.key = key
+      cipher.iv = iv
+      cipher.auth_tag = auth_tag
+
+      cipher.update(ciphertext) + cipher.final
+    end
+
+    def derive_key(passphrase, salt)
+      OpenSSL::KDF.pbkdf2_hmac(
+        passphrase,
+        salt: salt,
+        iterations: ITERATIONS,
+        length: KEY_LENGTH,
+        hash: 'SHA256'
+      )
+    end
+
+    def compute_verify_hash(passphrase, salt)
+      Digest::SHA256.hexdigest(passphrase + salt)[0, VERIFY_LENGTH]
+    end
+  end
+end
+
+options = {}
+OptionParser.new do |opts|
+  opts.banner = 'Usage: encrypt_pages [options] [file]'
+
+  opts.on('--staged', 'Process git-staged files and re-stage after encryption') do
+    options[:staged] = true
+  end
+
+  opts.on('--decrypt FILE', 'Output decrypted content to stdout') do |file|
+    options[:decrypt] = file
+  end
+
+  opts.on('--check', 'Verify all key IDs have passphrases') do
+    options[:check] = true
+  end
+
+  opts.on('-h', '--help', 'Show this help message') do
+    puts opts
+    exit
+  end
+end.parse!
+
+encryptor = EncryptedPages::Encryptor.new
+
+if options[:staged]
+  encryptor.process_staged_files
+elsif options[:decrypt]
+  encryptor.decrypt_file_to_stdout(options[:decrypt])
+elsif options[:check]
+  encryptor.check_keys
+elsif ARGV.length == 1
+  encryptor.encrypt_file(ARGV[0])
+else
+  puts 'Usage: encrypt_pages [options] [file]'
+  puts '  --staged          Process git-staged files'
+  puts '  --decrypt FILE    Output decrypted content'
+  puts '  --check           Verify key IDs have passphrases'
+  puts '  <file>            Encrypt specific file in-place'
+end

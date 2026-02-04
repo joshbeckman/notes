@@ -1460,6 +1460,7 @@ cite .u-url, cite .non-url {
 }
 #webmention-form,
 #conversation-form,
+.decrypt-form,
 .searchbar .search-input-container {
   display: flex;
   align-items: center;
@@ -1468,6 +1469,7 @@ cite .u-url, cite .non-url {
 #webmention-form input[type="text"],
 #webmention-form input[type="url"],
 #conversation-form input[type="text"],
+.decrypt-form input[type="password"],
 .searchbar input[type=text] {
   font-size: inherit;
   padding:0.4rem 2.5ch;
@@ -1481,6 +1483,7 @@ cite .u-url, cite .non-url {
 button,
 #webmention-form input[type="submit"],
 #conversation-form input[type="submit"],
+.decrypt-form button,
 .searchbar button[type=submit] {
   padding:0.45rem 2.5ch;
   border-radius: 4px;
@@ -1499,8 +1502,17 @@ button#kill {
 }
 button:hover,
 #conversation-form input[type="submit"]:hover,
+.decrypt-form button:hover,
 .searchbar button[type=submit]:hover {
   cursor: pointer;
+}
+.decrypt-error {
+  color: var(--c-danger, #c00);
+  margin: 0.5rem 0 0 0;
+  display: none;
+}
+.decrypt-hint {
+  margin: 0.5rem 0 0 0;
 }
 .search-results {
   min-height: 10vh;

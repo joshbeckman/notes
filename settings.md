@@ -55,13 +55,19 @@ Load settings from a JSON file you control (e.g., GitHub Gist raw URL):
 </div>
 <p class="small">Disables the logo drawing animation.</p>
 
-## Privacy
+## Privacy {#privacy}
 
 <div class="settings-field settings-checkbox">
     <input type="checkbox" id="settings-disable-analytics" />
     <label for="settings-disable-analytics">Disable analytics</label>
 </div>
 <p class="small">Prevents GoatCounter from tracking page views. Takes effect on next page load.</p>
+
+<div class="settings-field settings-checkbox">
+    <input type="checkbox" id="settings-cache-decryption" />
+    <label for="settings-cache-decryption">Cache decryption passphrases</label>
+</div>
+<p class="small">Stores passphrases in sessionStorage (cleared when tab closes) so you don't re-enter them on each encrypted page. Disable for maximum security.</p>
 
 ## Social
 
@@ -103,6 +109,7 @@ Load settings from a JSON file you control (e.g., GitHub Gist raw URL):
         reduceMotion: document.getElementById('settings-reduce-motion'),
         disableAnalytics: document.getElementById('settings-disable-analytics'),
         disableSocial: document.getElementById('settings-disable-social'),
+        cacheDecryption: document.getElementById('settings-cache-decryption'),
         mastodonInstance: document.getElementById('settings-mastodon-instance'),
         saveBtn: document.getElementById('settings-save'),
         resetBtn: document.getElementById('settings-reset'),
@@ -115,6 +122,7 @@ Load settings from a JSON file you control (e.g., GitHub Gist raw URL):
         elements.reduceMotion.checked = settings.reduceMotion || false;
         elements.disableAnalytics.checked = settings.disableAnalytics || false;
         elements.disableSocial.checked = settings.disableSocialLoading || false;
+        elements.cacheDecryption.checked = settings.cacheDecryptionPassphrase !== false;
         elements.mastodonInstance.value = settings.mastodonInstance || '';
 
         var color = settings.customColor || '#903465';
@@ -141,6 +149,7 @@ Load settings from a JSON file you control (e.g., GitHub Gist raw URL):
             reduceMotion: elements.reduceMotion.checked,
             disableAnalytics: elements.disableAnalytics.checked,
             disableSocialLoading: elements.disableSocial.checked,
+            cacheDecryptionPassphrase: elements.cacheDecryption.checked,
             mastodonInstance: elements.mastodonInstance.value || null
         };
     }
@@ -152,6 +161,7 @@ Load settings from a JSON file you control (e.g., GitHub Gist raw URL):
             reduceMotion: settings.reduceMotion,
             disableAnalytics: settings.disableAnalytics,
             disableSocialLoading: settings.disableSocialLoading,
+            cacheDecryptionPassphrase: settings.cacheDecryptionPassphrase,
             mastodonInstance: settings.mastodonInstance,
             savedAt: settings.savedAt
         };

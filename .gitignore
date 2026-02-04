@@ -19,3 +19,4 @@ node_modules/
 **/.vt/
 
 **/.claude/settings.local.json
+_secrets.yml

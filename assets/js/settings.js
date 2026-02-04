@@ -10,7 +10,8 @@
         mastodonInstance: null,
         colorScheme: 'system',
         reduceMotion: false,
-        disableAnalytics: false
+        disableAnalytics: false,
+        cacheDecryptionPassphrase: false
     };
 
     function loadSettings() {
@@ -91,6 +92,11 @@
         return settings.mastodonInstance;
     }
 
+    function shouldCacheDecryptionPassphrase() {
+        var settings = loadSettings();
+        return settings.cacheDecryptionPassphrase !== false;
+    }
+
     function transformMastodonUrl(originalUrl, userInstance) {
         if (!userInstance || !originalUrl) {
             return originalUrl;
@@ -123,6 +129,7 @@
         apply: applySettings,
         shouldLoadSocial: shouldLoadSocial,
         shouldLoadAnalytics: shouldLoadAnalytics,
+        shouldCacheDecryptionPassphrase: shouldCacheDecryptionPassphrase,
         getMastodonInstance: getMastodonInstance,
         transformMastodonUrl: transformMastodonUrl,
         reset: resetSettings,

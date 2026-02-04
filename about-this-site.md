@@ -94,6 +94,7 @@ You can read about everything else I use to build things at [/uses](/uses).
 ## Changelog
 
 ### 2026-02-03
+- Add [encrypted posts](/blog/encrypted-post) with client-side decryption via [Web Crypto API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API)
 - Add [user preferences settings page](/settings) for customizing site behavior
 
 ### 2026-02-02
