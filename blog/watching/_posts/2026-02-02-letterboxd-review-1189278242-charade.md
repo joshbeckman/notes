@@ -8,7 +8,7 @@ description:
 rating: 2
 tmdb_id: '4808'
 letterboxd_id: charade
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116011491587513463
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/charade/
 tags:
