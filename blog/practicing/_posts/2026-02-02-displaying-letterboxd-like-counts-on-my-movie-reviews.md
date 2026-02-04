@@ -12,7 +12,7 @@ tags:
 - letterboxd
 - jekyll
 - language-javascript
-serial_number: 2026.BLG.014
+serial_number: 2026.BLG.015
 ---
 I've been [crossposting my Letterboxd reviews](https://www.joshbeckman.org/blog/crossposting-from-letterboxd-to-jekyll) to this site for a while now. The posts link back to the original review, but I wanted to show engagement metrics the same way I do for [Mastodon](https://www.joshbeckman.org/blog/pesos-mastodon-to-jekyll), Bluesky, and HackerNews posts. I run this static site on Jekyll so I want to load these in the visitor's browser for efficiency and accuracy.
 
