@@ -11,7 +11,7 @@ tags:
 - journalism
 - united-states
 - state-government
-serial_number: 2026.NTE.015
+serial_number: 2026.NTE.017
 ---
 I have really started to enjoy and learn from the GovTrack posts on this session of U.S. Congress (example: [Will the House End the Shutdown Tomorrow? - GovTrack.us](https://www.govtrack.us/posts/573/2026-02-02_will-the-house-end-the-shutdown-tomorrow)). They write once or twice a week, so the analysis isn't overly hasty or so infrequent to be unhelpful. And I appreciate their wider context on activities. 
 
