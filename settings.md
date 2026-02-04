@@ -6,8 +6,8 @@ emoji: "⚙️"
 tags: index
 toc: true
 searchable: true
+serial_number: 2026.PAE.005
 ---
-
 Your preferences are stored in your browser's localStorage and apply only to this device.
 
 ## Remote Sync (Optional)
