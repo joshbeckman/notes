@@ -2,7 +2,7 @@
 layout: Post
 title: Client-Side Encrypted Posts in Jekyll
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116014318886744761
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3me2qodwsf42t
 toc: true
 tags:
 - personal-blog
