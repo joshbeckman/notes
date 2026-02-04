@@ -59,5 +59,5 @@ Hello, friends. I'm Josh. Read [about me](/about) or [my latest posts](/latest) 
 - **The only thing you can truly control is your own brain** — Focus energy where you have agency. Persistence and determination alone are omnipotent.
 - **Things come and go in seasons** — You don't have to embrace your current season, but recognizing it gives you control.
 
-{% assign month = site.time | date: "%m" | plus: 0 %}
-The season is: {{ site.data.seasons[month].name }} {{ site.data.seasons[month].emoji }}
+{% include CurrentSeason.html %}
+[The season](/season) is: <strong>{{ current_season.name }}</strong> {{ current_season.emoji }}<br/><em>{{ current_season.description }}</em>

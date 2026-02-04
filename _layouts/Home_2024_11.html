@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {%- include head.html -%}
-{% assign month = site.time | date: "%m" | plus: 0 %}
+{% include CurrentSeason.html %}
 {% assign build_time = site.time | date_to_xmlschema %}
 {% assign latest_blog_post = site.categories['blog'] | first %}
 {% assign photo_feature_post = site.categories['blog'] | find_exp: "item", "item.photo_feature" %}
@@ -21,7 +21,7 @@
             I wrote up a bit <a href="/about">about me</a> if we haven't met and you're curious. This is my home online.
             </p>
             <p>
-            I hope you're having a lovely {{ site.data.seasons[month].name }}. {{ site.data.seasons[month].emoji }}
+            I hope you're having a lovely {{ current_season.name }}. {{ current_season.emoji }}
             </p>
             <p>
             <a href="{{ photo_feature_post.url }}">

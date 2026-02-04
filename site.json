@@ -2,9 +2,10 @@
 permalink: '/site.json'
 ---
 {% assign proverb = site.categories['proverbs'] | sample %}
+{% include CurrentSeason.html %}
 {
   "proverb": "{{ proverb.title }}",
-  "season": "{% assign month = site.time | date: "%m" | plus: 0 %}{{ site.data.seasons[month].emoji }}",
+  "season": "{{ current_season.emoji }}",
   "updated": "{{ site.time | date_to_xmlschema }}",
   "version": "{{ site.version }}"
 }

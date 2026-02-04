@@ -1,0 +1,15 @@
+{%- comment -%}
+Finds the current small season from _data/seasons.yml based on today's date.
+Sets: current_season (the matching season object)
+Usage: {% include CurrentSeason.html %}{{ current_season.name }} {{ current_season.emoji }}
+{%- endcomment -%}
+{%- assign current_month = site.time | date: "%m" | plus: 0 -%}
+{%- assign current_day = site.time | date: "%d" | plus: 0 -%}
+{%- assign current_mmdd = current_month | times: 100 | plus: current_day -%}
+{%- assign current_season = site.data.seasons | last -%}
+{%- for season in site.data.seasons -%}
+  {%- assign season_mmdd = season.start_month | times: 100 | plus: season.start_day -%}
+  {%- if season_mmdd <= current_mmdd -%}
+    {%- assign current_season = season -%}
+  {%- endif -%}
+{%- endfor -%}

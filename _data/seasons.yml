@@ -1,26 +1,147 @@
-- name: New Year
+# 24 Sekki - Japanese Small Seasons
+# Each season lasts approximately 15 days
+# Based on https://smallseasons.guide/
+
+- name: Small Cold
   emoji: ❄️
-- name: Frozen Winter
-  emoji: ❄️
-- name: Winter
-  emoji: ❄️
-- name: Early Spring
+  start_month: 1
+  start_day: 6
+  description: Temperatures quickly drop
+
+- name: Big Cold
+  emoji: 🥶
+  start_month: 1
+  start_day: 20
+  description: Ice thickens, hens huddle together
+
+- name: Start of Spring
+  emoji: 🌱
+  start_month: 2
+  start_day: 4
+  description: Ground thaws, fish appear under ice
+
+- name: Rain Waters
+  emoji: 🌧️
+  start_month: 2
+  start_day: 18
+  description: Snow recedes, mist lingers in the air
+
+- name: Insects Awaken
+  emoji: 🐛
+  start_month: 3
+  start_day: 6
+  description: Bugs surface from hibernation
+
+- name: Vernal Equinox
   emoji: 🌸
-- name: Wet Spring
-  emoji: 🌸
-- name: Spring
-  emoji: 🌸
-- name: Breaking Summer
-  emoji: 🌼
-- name: Summer
-  emoji: 🌼
-- name: Hot Summer
-  emoji: 🌼
-- name: Early Autumn
+  start_month: 3
+  start_day: 21
+  description: Sparrows start to nest, cherry blossoms bloom
+
+- name: Clear and Bright
+  emoji: 🌈
+  start_month: 4
+  start_day: 4
+  description: Geese fly north, rainbows appear
+
+- name: Grain Rain
+  emoji: 🌾
+  start_month: 4
+  start_day: 21
+  description: Reeds sprout, rice seedlings grow
+
+- name: Start of Summer
+  emoji: 🐸
+  start_month: 5
+  start_day: 6
+  description: Birds and frogs begin singing
+
+- name: Small Blooming
+  emoji: 🌺
+  start_month: 5
+  start_day: 21
+  description: Flowers bloom, wheat ripens
+
+- name: Seeds and Cereals
+  emoji: 🌿
+  start_month: 6
+  start_day: 5
+  description: Praying mantises hatch, fireflies emerge
+
+- name: Summer Solstice
+  emoji: ☀️
+  start_month: 6
+  start_day: 21
+  description: Longest days, irises bloom
+
+- name: Small Heat
+  emoji: 🌻
+  start_month: 7
+  start_day: 7
+  description: Warm winds blow, young hawks learn to fly
+
+- name: Big Heat
+  emoji: 🔥
+  start_month: 7
+  start_day: 23
+  description: Peak summer heat with heavy rains
+
+- name: Start of Autumn
+  emoji: 🍂
+  start_month: 8
+  start_day: 8
+  description: Cooler winds, thick fogs
+
+- name: Lessening Heat
+  emoji: 🌾
+  start_month: 8
+  start_day: 23
+  description: Rice ripens, summer fades
+
+- name: White Dew
+  emoji: 💧
+  start_month: 9
+  start_day: 7
+  description: Dew drops on grass
+
+- name: Autumnal Equinox
+  emoji: ⚖️
+  start_month: 9
+  start_day: 23
+  description: Day and night equal length, my love's anniversary
+
+- name: Cold Dew
+  emoji: 🦗
+  start_month: 10
+  start_day: 8
+  description: Temperatures drop, crickets stop chirping
+
+- name: Frosting
   emoji: 🍁
-- name: Autumn
-  emoji: 🍁
-- name: Closing Autumn
-  emoji: 🍁
-- name: Early Winter
-  emoji: ❄️
+  start_month: 10
+  start_day: 23
+  description: First frosts, maple leaves turn yellow
+
+- name: Start of Winter
+  emoji: 🧊
+  start_month: 11
+  start_day: 8
+  description: Ground begins to freeze, commerce intensifies for year-end
+
+- name: Small Snow
+  emoji: 🌨️
+  start_month: 11
+  start_day: 23
+  description: Light snow, last leaves fall, a mad rush to finish yearly tasks
+
+- name: Big Snow
+  emoji: ☃️
+  start_month: 12
+  start_day: 8
+  description: Cold sets in, bears hibernate, reflect on the past
+
+- name: Winter Solstice
+  emoji: 🕯️
+  start_month: 12
+  start_day: 22
+  description: Shortest days of the year, work abates, we pull indoors
