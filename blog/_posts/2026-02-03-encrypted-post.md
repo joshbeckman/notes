@@ -7,7 +7,7 @@ toc: true
 tags:
 - personal-blog
 - security
-- javascript
+- language-javascript
 - jekyll
 ---
 

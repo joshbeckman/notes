@@ -25,7 +25,7 @@ Load settings from a JSON file you control (e.g., GitHub Gist raw URL):
 
 <details class="settings-export">
     <summary>Export Settings</summary>
-    <p>Copy this JSON to save in a Gist or other file for syncing across devices:</p>
+    <p>Copy this JSON to save <a href="https://gist.github.com" target="_blank">in a Gist</a> or other file for syncing across devices:</p>
     <textarea id="settings-export-json" readonly rows="8"></textarea>
     <button id="settings-copy-export" type="button">Copy to Clipboard</button>
 </details>
