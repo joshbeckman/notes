@@ -8,6 +8,9 @@ tags:
 - personal-blog
 serial_number: 2025.PAE.001
 ---
+{% include CurrentSeason.html %}
+[The season](/season) is: <strong>{{ current_season.name }}</strong> {{ current_season.emoji }}<br/><em>{{ current_season.description }}</em>
+
 These are the posts I've written on this day in previous years:
 
 {% assign today = site.time | date: "%m-%d" %}
