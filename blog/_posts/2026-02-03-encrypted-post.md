@@ -1,7 +1,7 @@
 ---
 layout: Post
 title: Client-Side Encrypted Posts in Jekyll
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116014318886744761
 bluesky_status_url: false
 toc: true
 tags:
