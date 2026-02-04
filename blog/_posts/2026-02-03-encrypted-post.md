@@ -1,5 +1,9 @@
 ---
+layout: Post
 title: Client-Side Encrypted Posts in Jekyll
+mastodon_social_status_url: false
+bluesky_status_url: false
+toc: true
 tags:
 - personal-blog
 - security
