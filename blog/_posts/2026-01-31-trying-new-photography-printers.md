@@ -25,3 +25,9 @@ So I'm trying out a couple other photo labs after doing a bit of research.
 So, I've selected a varied set of prints that I'm getting printed at both mpix and Nations this week and then I'll compare them to Parabo's on my wall and see if I can save money by going with a different printer. I didn't send to Whitewall because they're more expensive even than what I've been using previously, though they definitely have the most options and seem to have the highest quality. They're good to know about in the future in case I want that.
 
 I chose photos that I want a copy of and I will send the other copies to loved ones, hoping to make their day.
+
+## Shipping Time
+
+So, I ordered from both printers on 2026-01-30.
+
+mpix arrived on 2026-02-03. The photo prints look nice on the front, but the paper is more like traditional photo paper - not the thick cardstock rag that I was getting from Parabo.
