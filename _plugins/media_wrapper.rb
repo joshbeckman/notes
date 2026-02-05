@@ -1,3 +1,5 @@
+require 'cgi'
+
 module Jekyll
   module MediaWrapper
     def wrap_media(content)
@@ -7,9 +9,10 @@ module Jekyll
       content = content.gsub(/<img([^>]+)>/i) do |match|
         img_tag = match
 
-        # Extract alt text for data-tooltip
-        alt_match = img_tag.match(/alt=["']([^"']+)["']/i)
-        alt_text = alt_match ? alt_match[1] : ''
+        # Extract alt text for data-tooltip (handle quote styles separately
+        # so alt text can contain the other quote type)
+        alt_match = img_tag.match(/alt="([^"]*)"/i) || img_tag.match(/alt='([^']*)'/i)
+        alt_text = alt_match ? CGI.escapeHTML(alt_match[1]) : ''
 
         # Add loading="lazy" if not present
         img_tag = img_tag.sub(/<img/i, '<img loading="lazy"') unless img_tag.match?(/loading=/i)
