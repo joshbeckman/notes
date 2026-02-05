@@ -6,7 +6,7 @@ toc: true
 image:
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116020666267363434
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3me5kutnpqu2n
 tags:
 - jekyll
 - code-snippets
