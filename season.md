@@ -1,12 +1,12 @@
 ---
 layout: Page
 title: The Season
-permalink: /season
+permalink: "/season"
 searchable: true
 tags:
 - time
+serial_number: 2026.PAE.006
 ---
-
 {% include CurrentSeason.html %}
 
 Things come and go in seasons. These days, the year unfolds in 24 small seasons, each lasting about 15 days. Right now we're in **{{ current_season.name }}** {{ current_season.emoji }}.
