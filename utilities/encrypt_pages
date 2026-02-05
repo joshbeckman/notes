@@ -13,7 +13,6 @@ module EncryptedPages
   KEY_LENGTH = 32
   SALT_LENGTH = 16
   IV_LENGTH = 12
-  VERIFY_LENGTH = 8
 
   class Encryptor
     def initialize
@@ -167,14 +166,11 @@ module EncryptedPages
       ciphertext = cipher.update(plaintext) + cipher.final
       auth_tag = cipher.auth_tag
 
-      verify = compute_verify_hash(passphrase, salt)
-
       {
         'keyId' => key_id,
         'salt' => Base64.strict_encode64(salt),
         'iv' => Base64.strict_encode64(iv),
-        'ciphertext' => Base64.strict_encode64(ciphertext + auth_tag),
-        'verify' => verify
+        'ciphertext' => Base64.strict_encode64(ciphertext + auth_tag)
       }
     end
 
@@ -182,12 +178,6 @@ module EncryptedPages
       salt = Base64.strict_decode64(payload['salt'])
       iv = Base64.strict_decode64(payload['iv'])
       ciphertext_with_tag = Base64.strict_decode64(payload['ciphertext'])
-
-      verify = compute_verify_hash(passphrase, salt)
-      unless verify == payload['verify']
-        warn 'Error: Verification hash mismatch - wrong passphrase?'
-        exit 1
-      end
 
       key = derive_key(passphrase, salt)
 
@@ -211,10 +201,6 @@ module EncryptedPages
         length: KEY_LENGTH,
         hash: 'SHA256'
       )
-    end
-
-    def compute_verify_hash(passphrase, salt)
-      Digest::SHA256.hexdigest(passphrase + salt)[0, VERIFY_LENGTH]
     end
   end
 end

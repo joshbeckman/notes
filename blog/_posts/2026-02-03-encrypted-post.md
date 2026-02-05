@@ -43,12 +43,11 @@ encrypted_payload:
   salt: p6VhCyW0PcurHoiME9ySwg==
   iv: DfMMwroAoNKdr5UA
   ciphertext: /FcGWHJCVBE8KGYfRoyInrDBEQt2Bk6mqc...
-  verify: 514fdb92
 ```
 
 The **salt** is random bytes used with PBKDF2 to derive the encryption key from the passphrase. The **IV** (initialization vector) ensures that encrypting the same content twice produces different ciphertext - without it, identical plaintexts would produce identical ciphertexts, which leaks information.
 
-The **verify** hash is for better UX: it's the first 8 hex characters of `SHA-256(passphrase + salt)`. Before attempting decryption, the browser computes this from the entered passphrase and compares it. Mismatch? Wrong passphrase - no need to attempt decryption and wait for a cryptographic failure. AES-GCM would eventually reject it anyway (it's authenticated encryption), but the verify hash makes failures faster and error messages clearer.
+Wrong passphrase? AES-GCM is authenticated encryption - it detects tampering and wrong keys automatically. The browser catches the authentication failure and shows a clear error message.
 
 None of these fields help an attacker. Without the passphrase, it's all noise.
 

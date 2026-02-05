@@ -3,7 +3,6 @@
 
     var STORAGE_PREFIX = 'joshbeckman_encrypted:';
     var ITERATIONS = 100000;
-    var VERIFY_LENGTH = 8;
     var markedLoaded = false;
 
     function getStorageKey(keyId) {
@@ -69,15 +68,6 @@
         return bytes.buffer;
     }
 
-    function hexEncode(buffer) {
-        var bytes = new Uint8Array(buffer);
-        var hex = '';
-        for (var i = 0; i < bytes.length; i++) {
-            hex += bytes[i].toString(16).padStart(2, '0');
-        }
-        return hex;
-    }
-
     async function deriveKey(passphrase, salt) {
         var encoder = new TextEncoder();
         var passphraseKey = await crypto.subtle.importKey(
@@ -102,37 +92,23 @@
         );
     }
 
-    async function computeVerifyHash(passphrase, salt) {
-        var encoder = new TextEncoder();
-        var saltBytes = new Uint8Array(salt);
-        var passphraseBytes = encoder.encode(passphrase);
-        var combined = new Uint8Array(passphraseBytes.length + saltBytes.length);
-        combined.set(passphraseBytes);
-        combined.set(saltBytes, passphraseBytes.length);
-
-        var hashBuffer = await crypto.subtle.digest('SHA-256', combined);
-        return hexEncode(hashBuffer).substring(0, VERIFY_LENGTH);
-    }
-
     async function decryptContent(payload, passphrase) {
         var salt = base64ToArrayBuffer(payload.salt);
         var iv = base64ToArrayBuffer(payload.iv);
         var ciphertext = base64ToArrayBuffer(payload.ciphertext);
 
-        var verify = await computeVerifyHash(passphrase, salt);
-        if (verify !== payload.verify) {
-            throw new Error('Wrong passphrase');
-        }
-
         var key = await deriveKey(passphrase, salt);
 
-        var decrypted = await crypto.subtle.decrypt(
-            { name: 'AES-GCM', iv: new Uint8Array(iv) },
-            key,
-            ciphertext
-        );
-
-        return new TextDecoder().decode(decrypted);
+        try {
+            var decrypted = await crypto.subtle.decrypt(
+                { name: 'AES-GCM', iv: new Uint8Array(iv) },
+                key,
+                ciphertext
+            );
+            return new TextDecoder().decode(decrypted);
+        } catch (e) {
+            throw new Error('Wrong passphrase');
+        }
     }
 
     function createInlineForm(element, keyId, payload) {
