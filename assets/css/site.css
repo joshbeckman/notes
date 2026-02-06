@@ -1162,6 +1162,25 @@ body::before {
   left: 0;
   opacity: 0.05;
 }
+.pswp__caption {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 16px;
+    line-height: 1.4;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+    pointer-events: none;
+    z-index: 1;
+}
+.pswp__caption a {
+    color: #fff;
+    text-decoration: underline;
+    pointer-events: auto;
+}
 .row .photos {
   margin: 0 auto;
   max-width: 100%;

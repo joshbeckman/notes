@@ -2,6 +2,7 @@ _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata/
+.jekyll-metadata
 *.DS_Store
 .anthropic_token
 .mapbox_token

@@ -153,7 +153,7 @@ if (document.getElementById("cusdis_thread")) {
   }
 })();
 function prepareImagesForLightbox() {
-    if (window.innerWidth < 1500) {
+    if (window.innerWidth < 1150) {
         return;
     }
     let images = document.querySelectorAll('article section img, header img, .text img');
@@ -167,6 +167,15 @@ function prepareImagesForLightbox() {
         a.classList.add('ps');
         a.dataset.pswpWidth = img.naturalWidth;
         a.dataset.pswpHeight = img.naturalHeight;
+        let figure = img.closest('figure');
+        let captionText = '';
+        if (figure) {
+            let figcaption = figure.querySelector('figcaption');
+            if (figcaption) captionText = figcaption.textContent.trim();
+        }
+        if (!captionText) captionText = img.alt || '';
+        a.dataset.pswpCaption = captionText;
+        a.dataset.pswpCaptionViewLink = img.dataset.pswpCaptionViewLink || '';
         img.parentNode.insertBefore(a, img);
         a.appendChild(img);
     }
@@ -191,6 +200,29 @@ function prepareImagesForLightbox() {
             gallery: 'article section, header, .text',
             children: 'a.ps',
             pswpModule: PhotoSwipe
+        });
+        lightbox.on('uiRegister', function() {
+            lightbox.pswp.ui.registerElement({
+                name: 'caption',
+                order: 9,
+                isButton: false,
+                appendTo: 'root',
+                onInit: function(el, pswp) {
+                    pswp.on('change', function() {
+                        var element = pswp.currSlide.data.element;
+                        if (!element) { return; }
+                        var captionViewLink = element.dataset.pswpCaptionViewLink;
+                        if (captionViewLink) {
+                            var link = document.createElement('a');
+                            link.href = captionViewLink;
+                            link.textContent = element.dataset.pswpCaption || element.title || '';
+                            el.appendChild(link);
+                        } else {
+                            el.innerText = element.dataset.pswpCaption || element.title || '';
+                        }
+                    });
+                }
+            });
         });
         lightbox.init();
       console.log('PhotoSwipe lightbox initialized');
