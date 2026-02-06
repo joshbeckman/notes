@@ -9,7 +9,7 @@ rating: 3
 tmdb_id: '586810'
 letterboxd_id: mars-express
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116022818641562493
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3me6jhome242r
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/mars-express/
 tags:
 - fiction
