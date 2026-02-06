@@ -13,7 +13,7 @@ tags:
 - personal-blog
 - tools
 - language-javascript
-serial_number: 2026.BLG.020
+serial_number: 2026.BLG.021
 ---
 I've been wanting to give visitors more control over how they experience this site. Not everyone wants the same thing from a personal website - some prefer dark mode, some want to disable tracking, and some have their own Mastodon instance they'd rather interact from. So I built a [settings page](/settings/) that stores your preferences in `localStorage` and applies them across the site.
 
