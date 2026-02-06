@@ -169,7 +169,10 @@ module PESOS
       res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
         http.request(request)
       end
-      return unless res.is_a?(Net::HTTPSuccess)
+      unless res.is_a?(Net::HTTPSuccess)
+        puts res.body
+        raise Error, 'Notifications request failed'
+      end
 
       count = JSON.parse(res.body)['count']
       return unless count.positive?

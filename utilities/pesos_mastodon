@@ -150,7 +150,10 @@ module PESOS
       req = Net::HTTP::Get.new(uri)
       req['Authorization'] = "Bearer #{@token}"
       res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) { |http| http.request(req) }
-      return unless res.is_a?(Net::HTTPSuccess)
+      unless res.is_a?(Net::HTTPSuccess)
+        puts res.body
+        raise Error, 'Notifications request failed'
+      end
 
       last_read_id = JSON.parse(res.body).dig('notifications', 'last_read_id')
       return if last_read_id.nil?
@@ -159,7 +162,10 @@ module PESOS
       req = Net::HTTP::Get.new(uri)
       req['Authorization'] = "Bearer #{@token}"
       res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) { |http| http.request(req) }
-      return unless res.is_a?(Net::HTTPSuccess)
+      unless res.is_a?(Net::HTTPSuccess)
+        puts res.body
+        raise Error, 'Notifications request failed'
+      end
 
       count = JSON.parse(res.body).length
       return unless count.positive?
