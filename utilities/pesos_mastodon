@@ -7,9 +7,12 @@ require 'net/http'
 require 'time'
 require_relative 'models/post'
 require_relative 'models/asset'
+require_relative 'pushover'
 
 module PESOS
   class Mastodon
+    include ::Pushover
+
     class Error < StandardError; end
 
     attr_reader :site
@@ -17,6 +20,12 @@ module PESOS
     def initialize
       @site = Jekyll::Site.new(Jekyll.configuration({}))
       @site.read
+      @token = ENV.fetch('MASTODON_SOCIAL_TOKEN', nil)
+      @token ||= begin
+        File.read(File.join(__dir__, '..', '.mastodon_social_token')).strip
+      rescue StandardError
+        nil
+      end
     end
 
     def import_replies
@@ -134,6 +143,30 @@ module PESOS
       asset.standalone_md
     end
 
+    def check_notifications
+      return if @token.nil?
+
+      uri = URI.parse('https://mastodon.social/api/v1/markers?timeline[]=notifications')
+      req = Net::HTTP::Get.new(uri)
+      req['Authorization'] = "Bearer #{@token}"
+      res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) { |http| http.request(req) }
+      return unless res.is_a?(Net::HTTPSuccess)
+
+      last_read_id = JSON.parse(res.body).dig('notifications', 'last_read_id')
+      return if last_read_id.nil?
+
+      uri = URI.parse("https://mastodon.social/api/v1/notifications?min_id=#{last_read_id}&limit=40")
+      req = Net::HTTP::Get.new(uri)
+      req['Authorization'] = "Bearer #{@token}"
+      res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) { |http| http.request(req) }
+      return unless res.is_a?(Net::HTTPSuccess)
+
+      count = JSON.parse(res.body).length
+      return unless count.positive?
+
+      pushover("#{count} unread Mastodon notifications", 'https://mastodon.social/notifications')
+    end
+
     def outbox
       uri = URI.parse('https://mastodon.social/users/joshbeckman/outbox?page=true')
       req = Net::HTTP::Get.new(uri)
@@ -153,3 +186,4 @@ end
 mastodon = PESOS::Mastodon.new
 mastodon.import_replies
 mastodon.import_posts
+mastodon.check_notifications

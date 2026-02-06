@@ -8,6 +8,7 @@ require 'time'
 require_relative 'bluesky/auth'
 require_relative 'models/post'
 require_relative 'models/asset'
+require_relative 'pushover'
 
 module PESOS
   # Pulls in posts and replies from Bluesky
@@ -16,6 +17,7 @@ module PESOS
   # TODO: generate title with LLM for post imports
   class Bluesky
     include ::Bluesky::Auth
+    include ::Pushover
 
     class Error < StandardError; end
 
@@ -160,6 +162,21 @@ module PESOS
       resolve_handle(did) || 'Bluesky'
     end
 
+    def check_notifications
+      uri = URI.parse('https://bsky.social/xrpc/app.bsky.notification.getUnreadCount')
+      request = Net::HTTP::Get.new(uri)
+      request['Authorization'] = "Bearer #{@api_key}"
+      res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
+        http.request(request)
+      end
+      return unless res.is_a?(Net::HTTPSuccess)
+
+      count = JSON.parse(res.body)['count']
+      return unless count.positive?
+
+      pushover("#{count} unread Bluesky notifications", 'https://bsky.app/notifications')
+    end
+
     def outbox
       uri = URI.parse("https://bsky.social/xrpc/app.bsky.feed.searchPosts?author=#{@handle}&q=*")
       request = Net::HTTP::Get.new(uri)
@@ -186,3 +203,4 @@ end
 bluesky = PESOS::Bluesky.new
 bluesky.import_replies
 bluesky.import_posts
+bluesky.check_notifications
