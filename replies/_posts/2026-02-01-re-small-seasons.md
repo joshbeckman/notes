@@ -3,8 +3,7 @@ layout: Post
 date: '2026-02-01 16:13:15 +0000'
 title: 'RE: Small Seasons'
 toc: true
-image:
-description:
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mdsqlk5n6c2h
 tags:
 - time
 serial_number: 2026.RPY.002
