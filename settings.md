@@ -47,7 +47,7 @@ Load settings from a JSON file you control (e.g., GitHub Gist raw URL):
     <input type="color" id="settings-custom-color" value="#903465" />
     <input type="text" id="settings-custom-color-hex" placeholder="#903465" maxlength="7" />
 </div>
-<p class="small">Overrides the default site accent color used for borders and highlights.</p>
+<p class="small">Overrides the default site accent color used for borders and highlights. See the <a href="/style-guide/#colors">style guide</a> for palette suggestions.</p>
 
 <div class="settings-field settings-checkbox">
     <input type="checkbox" id="settings-reduce-motion" />
