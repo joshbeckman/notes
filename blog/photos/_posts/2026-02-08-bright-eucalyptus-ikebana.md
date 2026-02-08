@@ -5,7 +5,7 @@ title: Bright Eucalyptus Ikebana
 toc: true
 image: "/assets/images/36f988a3-40fa-4ce6-8743-79fb3a1878fb.jpeg"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116036247362530689
 bluesky_status_url: false
 tags:
 - flora
