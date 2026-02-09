@@ -132,8 +132,11 @@ Fuse = (function(){"use strict";function e(e,t){var n=Object.keys(e);if(Object.g
             currentInput = input;
             searchResults.innerHTML = '';
             if (input === '') {
+                document.title = 'Search';
                 return;
             }
+
+            document.title = 'Search: ' + input;
 
             var results;
             if (input === '*') {
