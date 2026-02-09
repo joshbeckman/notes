@@ -5,7 +5,7 @@ title: It's Still Very Cold Here
 toc: true
 image: "/assets/images/c8c0e917-4f2e-4cf2-9d14-432ce847f117.jpeg"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116041931949686250
 bluesky_status_url: false
 tags:
 - chicago
