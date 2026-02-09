@@ -93,6 +93,11 @@ You can read about everything else I use to build things at [/uses](/uses).
 
 ## Changelog
 
+### Unreleased
+- `/projects` page
+- podcast rendering
+- [More ideas](https://github.com/joshbeckman/notes/issues?q=is%3Aopen+is%3Aissue+-label%3Apost)
+
 ### 2026-02-03
 - Add [encrypted posts](/blog/encrypted-post) with client-side decryption via [Web Crypto API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API)
 - Add [user preferences settings page](/settings) for customizing site behavior
@@ -110,11 +115,6 @@ You can read about everything else I use to build things at [/uses](/uses).
 ### 2025-12-17
 - Add [exercise stats page](/exercise/stats) with line charts for hours, miles, and average duration per month
 - Add monthly aggregate stats (active days, total time, miles) to [exercise index](/exercise)
-
-### Unreleased
-- `/projects` page
-- podcast rendering
-- [More ideas](https://github.com/joshbeckman/notes/issues?q=is%3Aopen+is%3Aissue+-label%3Apost)
 
 ### 2025-11-29
 - Add advanced search filters: restrict by field (title, content, tags, etc.), document type, category, and date range
