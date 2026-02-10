@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/338712d9-c936-44a5-9d69-8e8abe113f46.jpeg"
 description:
 rating: 4
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116044804568616817
 bluesky_status_url: false
 tags:
 - podroll
