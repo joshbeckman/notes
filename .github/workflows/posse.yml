@@ -109,6 +109,10 @@ jobs:
       - name: Import Mastodon
         id: import_mastodon
         run: bundle exec utilities/pesos_mastodon
+        env:
+          MASTODON_SOCIAL_TOKEN: ${{ secrets.MASTODON_SOCIAL_TOKEN }}
+          PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
+          PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
       - name: Determine if changes were made
         id: any_changes_pesos_mastodon
         run: echo "changed=$(git status --porcelain replies blog assets | wc -l)" >> $GITHUB_OUTPUT
@@ -147,6 +151,8 @@ jobs:
         run: bundle exec utilities/pesos_bluesky
         env:
           BLUESKY_PASSWORD: ${{ secrets.BLUESKY_PASSWORD }}
+          PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
+          PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
       - name: Determine if changes were made
         id: any_changes_pesos_bluesky
         run: echo "changed=$(git status --porcelain replies blog assets | wc -l)" >> $GITHUB_OUTPUT
