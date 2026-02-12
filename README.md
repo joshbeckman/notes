@@ -1,26 +1,27 @@
 # Josh's Notes
 
-[This site](https://notes.joshbeckman.org) is an export and reformatting of my highlights and notes of my online (and some offline) reading ([script here](https://github.com/joshbeckman/notes/blob/master/utilities/import)).
+[This site](https://www.joshbeckman.org) is a personal knowledge garden — a public repository of knowledge, research, and writing that serves as both a personal memory aid and a shared resource. See [About This Site](https://www.joshbeckman.org/about-this-site) for more.
 
-I use it to jostle loose ideas when I'm researching a particular problem in software design or writing topic. I usually either ask it for a random note or search by keyword.
+The site theme was originally forked from [Simply Jekyll](https://github.com/raghudotcc/simply-jekyll) and has been substantially rewritten over time. See the [changelog](https://www.joshbeckman.org/about-this-site#changelog) for recent updates.
 
-The site theme is forked from [Simply Jekyll](https://github.com/raghudotcc/simply-jekyll). See the [changelog](https://www.joshbeckman.org/about-this-site#changelog) for recent updates.
+## Project Structure
 
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/joshbeckman/notes. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
-### Submitting code changes:
-
-- Open a Pull Request
-- Ensure all CI tests pass
-- Await code review
+- `blog/` — Long-form blog articles (Markdown with YAML front matter)
+- `notes/` — Short-form notes, highlights, and research
+- `replies/` — Cross-posted replies from social networks and other sites
+- `exercise/` — Exercise/activity logs
+- `assets/` — CSS, JS, images, and static files
+- `utilities/` — Ruby scripts for POSSE/PESOS syndication, imports, and site tooling
+- `_layouts/`, `_includes/`, `_plugins/`, `_data/` — Jekyll templates and extensions
+- `frametags/` — Content taxonomy pages
 
 ## Development
 
 To set up your environment to develop this site, run `bundle install`.
 
-To import posts from highlight sources, run `./utilities/import`
+The site builds with `bundle exec jekyll build`. Search index is built with `./utilities/build_lunr_index` (Node/Lunr).
+
+To import posts from highlight sources, run `./utilities/import`.
 
 ### Encrypted Posts
 
@@ -57,3 +58,21 @@ Posts can be client-side encrypted so content is only readable with a passphrase
 **Browser behavior:**
 
 Visitors see a passphrase prompt when viewing encrypted pages. By default, passphrases are not cached. Users can enable [sessionStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage) caching in [Settings > Privacy](/settings#privacy) for convenience (clears when tab closes).
+
+## Conventions
+
+- Posts use Markdown with YAML front matter — match the front matter format of sibling files when creating new posts
+- Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/) format
+- Prefer editing existing files over creating new ones
+- Keep changes minimal and focused
+- Do not modify `_config.yml` or workflow files in `.github/workflows/` unless specifically asked
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/joshbeckman/notes. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+
+### Submitting code changes:
+
+- Open a Pull Request
+- Ensure all CI tests pass
+- Await code review
