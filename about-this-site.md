@@ -98,6 +98,9 @@ You can read about everything else I use to build things at [/uses](/uses).
 - podcast rendering
 - [More ideas](https://github.com/joshbeckman/notes/issues?q=is%3Aopen+is%3Aissue+-label%3Apost)
 
+### 2026-02-13
+- Add inline [Chart.js](https://www.chartjs.org/) support via `{% raw %}{% chart %}{% endraw %}` Liquid block tag ([demo](/blog/test#charts))
+
 ### 2026-02-03
 - Add [encrypted posts](/blog/encrypted-post) with client-side decryption via [Web Crypto API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API)
 - Add [user preferences settings page](/settings) for customizing site behavior
