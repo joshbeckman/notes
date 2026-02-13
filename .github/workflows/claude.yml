@@ -31,4 +31,7 @@ jobs:
       - uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          claude_args: "--max-turns 25 --mcp-config .github/mcp.json"
+          claude_args: >-
+            --max-turns 25
+            --mcp-config .github/mcp.json
+            --allowedTools "mcp__josh-notes__*,mcp__josh-beckman-status__*"
