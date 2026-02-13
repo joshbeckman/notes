@@ -1105,8 +1105,14 @@ body::before {
 .text table,
 .text figure,
 .text iframe,
-.text video {
+.text video,
+.text .chart-container {
   grid-column: 1/-1;
+}
+.text .chart-container {
+  background: var(--c-bg);
+  border: 1px solid var(--c-text-alt);
+  padding: 1em;
 }
 /* if one of these diretly follows a h1, add margin-top */
 .text h1 + div.highlighter-rouge,
