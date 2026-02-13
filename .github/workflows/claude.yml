@@ -26,10 +26,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
+      - name: Inject MCP secrets
+        run: sed -i "s/MCP_STATUS_TOKEN/${{ secrets.MCP_STATUS_TOKEN }}/" .github/mcp.json
       - uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          claude_args: "--max-turns 25"
+          claude_args: "--max-turns 25 --mcp-config .github/mcp.json"

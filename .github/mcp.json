@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "josh-notes": {
+      "type": "http",
+      "url": "https://joshbeckman--1818d72637f311f089f39e149126039e.web.val.run/mcp"
+    },
+    "josh-beckman-status": {
+      "type": "http",
+      "url": "https://joshbeckman--5ffab9e262b911f09d000224a6c84d84.web.val.run/mcp",
+      "headers": {
+        "Authorization": "Bearer MCP_STATUS_TOKEN"
+      }
+    }
+  }
+}
