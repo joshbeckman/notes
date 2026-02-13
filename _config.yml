@@ -144,6 +144,7 @@ exclude:
   - .aider.tags.cache.v3/
   - .readwise_token
   - README.md
+  - CLAUDE.md
   - utilities/
   - "*.db"
   - "*.prompt.yml"
