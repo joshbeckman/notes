@@ -9,7 +9,7 @@ rating: 5
 tmdb_id: '545611'
 letterboxd_id: everything-everywhere-all-at-once
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116071625498835808
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3meu72hmqx72m
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/everything-everywhere-all-at-once/
 tags:
 - letterboxd
