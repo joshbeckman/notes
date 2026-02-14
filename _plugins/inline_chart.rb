@@ -14,8 +14,17 @@ module Jekyll
         </div>
         <script>
         (function() {
+          function setChartDefaults() {
+            var style = getComputedStyle(document.documentElement);
+            var textColor = style.getPropertyValue('--c-text').trim();
+            var textAlt = style.getPropertyValue('--c-text-alt').trim();
+            Chart.defaults.color = textColor;
+            Chart.defaults.borderColor = textAlt;
+          }
           function init() {
-            new Chart(document.getElementById('#{chart_id}'), #{config});
+            setChartDefaults();
+            var cfg = #{config};
+            new Chart(document.getElementById('#{chart_id}'), cfg);
           }
           if (typeof Chart !== 'undefined') {
             init();
