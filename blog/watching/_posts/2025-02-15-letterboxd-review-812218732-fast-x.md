@@ -18,4 +18,4 @@ tags:
 - letterboxd
 serial_number: 2025.BLG.024
 ---
- <p><img src="https://a.ltrbxd.com/resized/film-poster/3/2/0/4/8/1/320481-fast-x-0-600-0-900-crop.jpg?v=58239dde0a"/></p> <p>Utterly ridiculous and disjointed. I had to yell at the screen multiple times because gravity kept breaking. </p><p>But the gravity of the situation was never lost of Fab and Furious J Mo who was cut from a wholly different movie.</p> 
+ <p><img src="https://a.ltrbxd.com/resized/film-poster/3/2/0/4/8/1/320481-fast-x-0-600-0-900-crop.jpg?v=58239dde0a"/></p> <p>Utterly ridiculous and disjointed. I had to yell at the screen multiple times because gravity kept breaking. </p><p>But the gravity of the situation was never lost on Fab and Furious J Mo who was cut from a wholly different movie.</p> 
