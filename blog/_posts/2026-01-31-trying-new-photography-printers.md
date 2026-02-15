@@ -30,4 +30,8 @@ I chose photos that I want a copy of and I will send the other copies to loved o
 
 So, I ordered from both printers on 2026-01-30.
 
-mpix arrived on 2026-02-03. The photo prints look nice on the front, but the paper is more like traditional photo paper - not the thick cardstock rag that I was getting from Parabo.
+mpix arrived on 2026-02-03, shipped quickly via FedEx. The photo prints look nice on the front, but the paper is more like traditional photo paper - not the thick cardstock rag that I was getting from Parabo.
+
+Nations arrived on 2026-02-10. It was shipped via USPS, which held it up for multiple days at a processing facility for some unknown reason. These prints look much nicer than those from mpix, for a couple reasons. First, I allowed Nations to "touch up" the files before printing. They _liberally_ brightened them, but I have to agree that _most_ of them look better. I'd rather just learn that I need to brighten them myself, but that was useful. Secondly, they printed on actual photo rag paper. It's not as thick as what I was getting from Parabo, but it's near cardstock, and feels better to touch.
+
+So I'll plan to order my "regular", high-volume prints from Nations and when I want something special I'll try Whitewall to compare to the high-end Parabo.
