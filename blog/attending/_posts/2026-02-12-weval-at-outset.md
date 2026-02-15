@@ -5,7 +5,7 @@ title: Weval at Outset
 toc: true
 image: "/assets/images/7b16c3ed-cc2d-4cfa-bced-566eb50ab889.jpeg"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116076587772204394
 bluesky_status_url: false
 tags:
 - concerts
