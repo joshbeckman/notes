@@ -98,6 +98,9 @@ You can read about everything else I use to build things at [/uses](/uses).
 - podcast rendering
 - [More ideas](https://github.com/joshbeckman/notes/issues?q=is%3Aopen+is%3Aissue+-label%3Apost)
 
+### 2026-02-16
+- Add [iCal feeds](/subscribe#ical-feeds) (`.ics`) for all posts and per-category, with RFC 5545 compliance, geo coordinates, and image references
+
 ### 2026-02-13
 - Add inline [Chart.js](https://www.chartjs.org/) support via `{% raw %}{% chart %}{% endraw %}` Liquid block tag ([demo](/blog/test#charts))
 
