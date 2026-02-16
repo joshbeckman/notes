@@ -5,7 +5,7 @@ title: My Entire Blog History as Calendar Events
 toc: true
 image:
 description: I built a Jekyll plugin that generates iCal feeds so I can see my entire posting history in my calendar.
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116081557976251494
 bluesky_status_url: false
 tags:
 - jekyll
