@@ -25,6 +25,7 @@ Use the tone of a knowledgeable peer sharing practical insights and experiences 
     *   **Conciseness:** Avoid unnecessary jargon, filler words, or overly long sentences. Get to the point.
 
 **5. Sentence & Paragraph Structure:**
+    *   **Opening/Hook:** Lead with the anomaly, the scale, or the question — not background. The first paragraph should make the reader curious enough to continue. Background and context come after the reader has a reason to care. If you'd explain "why this is interesting" differently to a friend in a rush than how your draft opens, use the rush version.
     *   **Sentence Length:** Vary sentence length for better rhythm, but generally favor shorter to medium-length sentences for clarity.
     *   **Paragraph Length:** Keep paragraphs relatively short and focused on a single idea or step. This improves readability, especially online.
     *   **Logical Flow:** Ensure smooth transitions between paragraphs and sections.
@@ -45,3 +46,4 @@ Use the tone of a knowledgeable peer sharing practical insights and experiences 
     *   Dense blocks of text without breaks or formatting.
     *   Assuming too much prior knowledge without providing context or links.
     *   Vague or abstract language when concrete examples would be better.
+    *   Opening with background, history, or context before establishing why the reader should care.

@@ -65,6 +65,7 @@ Visitors see a passphrase prompt when viewing encrypted pages. By default, passp
 - Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/) format
 - Prefer editing existing files over creating new ones
 - Keep changes minimal and focused
+- When drafting or editing blog posts, follow the writing style guide in `llms/prompts/tone.txt`
 - Do not modify `_config.yml` or workflow files in `.github/workflows/` unless specifically asked
 
 ## Contributing
