@@ -4,7 +4,8 @@ date: '2026-02-16 17:00:00 +0000'
 title: My Entire Blog History as Calendar Events
 toc: true
 image:
-description: I built a Jekyll plugin that generates iCal feeds so I can see my entire posting history in my calendar.
+description: I built a Jekyll plugin that generates iCal feeds so I can see my entire
+  posting history in my calendar.
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116081557976251494
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3meym75ojrw23
 tags:
@@ -12,8 +13,8 @@ tags:
 - personal-blog
 - tools
 - time
+serial_number: 2026.BLG.030
 ---
-
 I have over 3,600 posts on this site — blog entries, exercise logs, movie reviews, concert notes — spanning years. I wanted to see all of them on my calendar. Not in a feed reader, where they scroll past and vanish, but on a calendar, where I can see that I ran a half marathon the same week I stopped blogging — or that a burst of note-taking coincided with a conference trip.
 
 RSS couldn't do it. I'd been using [RSS to Cal](https://www.rsstocal.com/) to bridge my feed into my calendar, but RSS only carries the last 25 items. And since the conversion was generic, I couldn't include richer calendar data like GPS coordinates for my exercise posts or feature images.
