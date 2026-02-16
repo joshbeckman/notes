@@ -86,7 +86,7 @@ You can subscribe to any of the feeds from your calendar app:
 
 In Apple Calendar: File > New Calendar Subscription, then paste the URL. In Google Calendar: Other calendars > From URL.
 
-> [!WARN]
+> [!WARNING]
 > The unified feed is ~1.4MB — slightly over Google Calendar's 1MB import limit. The per-category feeds are all well under and are probably more useful for subscribing anyway. Apple Calendar handles the full feed without issue.
 
 > [!NOTE]
