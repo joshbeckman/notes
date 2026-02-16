@@ -6,7 +6,7 @@ toc: true
 image:
 description: I built a Jekyll plugin that generates iCal feeds so I can see my entire posting history in my calendar.
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116081557976251494
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3meym75ojrw23
 tags:
 - jekyll
 - personal-blog
