@@ -93,7 +93,7 @@ plugins:
   - jekyll-redirect-from
     # - jekyll-tidy
 feed:
-  disable_in_development: true
+  disable_in_development: false
   posts_limit: 25
   categories:
     - blog

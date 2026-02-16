@@ -17,6 +17,15 @@ Subscribe to the [unified RSS/Atom feed](/feed.xml) for new posts ~daily. There 
 - [Replies & Threads RSS feed](/feed/replies.xml)
 - [Exercise Log RSS feed](/feed/exercise.xml)
 
+## iCal Feeds
+
+Subscribe to the [unified iCal feed](/feed.ics) to add new posts to your calendar app. There are dedicated feeds for each category:
+- [Blog iCal feed](/feed/blog.ics)
+  - [Blog/Practicing iCal feed](/feed/practicing.ics)
+- [Notes iCal feed](/feed/notes.ics)
+- [Replies & Threads iCal feed](/feed/replies.ics)
+- [Exercise Log iCal feed](/feed/exercise.ics)
+
 ## Email Newsletter
 
 If you prefer email newsletters, subscribe here and you'll receive letters maybe once a month.
