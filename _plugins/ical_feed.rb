@@ -59,7 +59,8 @@ module Jekyll
         lines << "BEGIN:VEVENT"
         lines << "UID:#{ical_escape(post.id)}@joshbeckman.org"
         lines << "DTSTAMP:#{now}"
-        lines << "DTSTART;VALUE=DATE:#{post.date.strftime("%Y%m%d")}"
+        lines << "DTSTART:#{post.date.utc.strftime("%Y%m%dT%H%M%SZ")}"
+        lines << "DTEND:#{(post.date + 3600).utc.strftime("%Y%m%dT%H%M%SZ")}"
         lines << "SUMMARY:#{ical_escape(post.data["title"] || "Untitled")}"
 
         desc = build_description(post)

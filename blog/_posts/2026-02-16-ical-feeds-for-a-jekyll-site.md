@@ -32,7 +32,7 @@ I already have a calendar app open all day, on many devices. Adding my posts the
 
 The plugin is a single `Jekyll::Generator` that runs at build time. It reads the same `feed.categories` config that [jekyll-feed](https://github.com/jekyll/jekyll-feed) uses, so the iCal feeds mirror the RSS feeds exactly: one [unified feed](/feed.ics) and one per category ([blog](/feed/blog.ics), [notes](/feed/notes.ics), [exercise](/feed/exercise.ics), etc.).
 
-Each post becomes a `VEVENT` — an all-day calendar event on the post's publish date. The event includes:
+Each post becomes a `VEVENT` — a one-hour calendar event starting at the post's exact publish timestamp. The event includes:
 
 - **Title and description** — the post title as the event summary, with the description frontmatter (or an auto-generated excerpt) as the event description
 - **URL** — a link back to the post
@@ -47,7 +47,8 @@ posts.each do |post|
   lines << "BEGIN:VEVENT"
   lines << "UID:#{ical_escape(post.id)}@joshbeckman.org"
   lines << "DTSTAMP:#{now}"
-  lines << "DTSTART;VALUE=DATE:#{post.date.strftime("%Y%m%d")}"
+  lines << "DTSTART:#{post.date.utc.strftime("%Y%m%dT%H%M%SZ")}"
+  lines << "DTEND:#{(post.date + 3600).utc.strftime("%Y%m%dT%H%M%SZ")}"
   lines << "SUMMARY:#{ical_escape(post.data["title"] || "Untitled")}"
 
   desc = build_description(post)
