@@ -76,6 +76,8 @@ RSS feeds typically cap at 25 or 50 recent items. That makes sense for RSS — n
 
 This pairs well with the [heatmap calendar](/heatcal) I built last year. That gives a birds-eye visual of posting density, while the iCal feeds let me drill into specific days and see exactly what I was writing about alongside the rest of my life.
 
+Any by including all my Strava history/posts, I can now replace [my exercise journal](/blog/my-exercise-journal) with my calendar. I can see them all alongside the rest of my life.
+
 ## Subscribing
 
 You can subscribe to any of the feeds from your calendar app:
