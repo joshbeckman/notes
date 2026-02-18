@@ -5,7 +5,7 @@ title: Divvy 2025 in Review
 toc: true
 image: "/assets/images/79266feb-73a0-47d8-94fb-d6d8f3718e04.jpeg"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116092894771364700
 bluesky_status_url: false
 tags:
 - year-in-review

@@ -5,7 +5,7 @@ title: Trying Currents
 toc: true
 image: "/assets/images/3ea44bca-2520-45b9-a0e3-3d0d333c705e.png"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116092894737886611
 bluesky_status_url: false
 tags:
 - publishing

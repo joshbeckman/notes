@@ -8,7 +8,7 @@ description:
 rating: 4
 tmdb_id: '592'
 letterboxd_id: the-conversation
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116092894719101239
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/the-conversation/
 tags:
