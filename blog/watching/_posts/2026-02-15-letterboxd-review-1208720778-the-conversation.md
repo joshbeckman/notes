@@ -16,6 +16,6 @@ tags:
 - writing
 - entertainment
 - letterboxd
+serial_number: 2026.BLG.030
 ---
-
  <p><img src="https://a.ltrbxd.com/resized/film-poster/5/1/5/2/9/51529-the-conversation-0-600-0-900-crop.jpg?v=12ad21bbbf"/></p> <p><em>This review may contain spoilers.</em></p> <p>I, too, have been an editor that thought themself a genius, discovering the perfect refinement to create something from nothing, only to find that a crucial nuance was missed, letting it all collapse in delivery.</p><p>Genius gay Gene Hackman was a repressed delight.</p> 

@@ -13,7 +13,7 @@ tags:
 - personal-blog
 - tools
 - time
-serial_number: 2026.BLG.030
+serial_number: 2026.BLG.031
 ---
 I have over 3,600 posts on this site — blog entries, exercise logs, movie reviews, concert notes — spanning years. I wanted to see all of them on my calendar. Not in a feed reader, where they scroll past and vanish, but on a calendar, where I can see that I ran a half marathon the same week I stopped blogging — or that a burst of note-taking coincided with a conference trip.
 
