@@ -5,12 +5,12 @@ title: Trying Currents
 toc: true
 image: "/assets/images/3ea44bca-2520-45b9-a0e3-3d0d333c705e.png"
 description:
-mastodon_social_status_url: false
-bluesky_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116092894737886611
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mf5ncmnyg327
 tags:
 - publishing
 - tools
-serial_number: 2026.NTE.023
+serial_number: 2026.NTE.025
 ---
 Today I'm trying [Current, the new RSS feed reader app by Terry Godier](https://www.terrygodier.com/current) (*beautiful* announcement and explainer post there).
 
