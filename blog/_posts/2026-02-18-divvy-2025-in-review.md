@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/79266feb-73a0-47d8-94fb-d6d8f3718e04.jpeg"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116092894771364700
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mf5ncniymz2z
 tags:
 - year-in-review
 - chicago
