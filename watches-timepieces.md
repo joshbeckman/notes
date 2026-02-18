@@ -26,7 +26,6 @@ Soon, I want to start building more personal [clocks at home](https://www.chrbut
 | Power Reserve | 41 hrs | 50 hrs | — | — | ~11 months (solar) | 41 hrs | 60 hrs |
 | Case Material | Stainless steel | 316L stainless steel | Stainless steel | 316L stainless steel | Resin | 316L stainless steel | Stainless steel |
 | Case Width | 42mm | 38mm | 32mm × 50mm | 45mm | 43.2mm | 40mm | 41mm |
-| Case Width with Bezel | — | — | — | — | — | — | — |
 | Case Thickness | 13.25mm | 11.5mm | 9.27mm | 13.5mm | 12.7mm | 12.85mm | 13.85mm |
 | Lug-to-Lug | 45.5mm | 44.5mm | 50mm | 53mm | 46.7mm | 48mm | 48mm |
 | Lug Width | 22mm | 20mm | 17mm | 20mm | — | 20mm | 21mm |
@@ -49,12 +48,10 @@ In order of ascending price
   - This is a vibrant and heartily-spec'd dive watch with incredible legibility and utility for under $600
 - [Rivanera in White or Gray from echo/neutra](https://echoneutra.com/products/rivanera-white)
   - This is a lovely rectangle case dress watch, art-deco inspired
-- [Squale 1521 Classic](https://www.squale.ch/en/1521-classic-cosc-bracelet)
-  - This is a COSC under $2k, like a super-upgraded SKX
-  - Also consider [the ocean blue version](https://www.squale.ch/en/1521-ocean-cosc-bracelet)
 - [Seconde Française 19.24 in Anthracite Gray from Beaubleu](https://beaubleu-paris.com/en/products/seconde-francaise-anthracite-gray?variant=48619363107092)
   - This is an amazing thing to look at, with a floating seconds hand
 - [BR-03 Black Matte from Bell & Ross](https://bellross.com/en-us/collections/br-03/products/br-03-black-matte-rubber-strap?country=US)
+  - It would be cool to wear an aviation gauge on your wrist.
 
 ## Appreciate But Probably Wouldn't Like
 
@@ -62,8 +59,11 @@ These are the designs that I adore but I probably wouldn't like them in practice
 
 - [Farer Integra Perlarum](https://usd.farer.com/products/perlarum)
   - This is just a beautifully detailed dial, though I probably wouldn't wear it enough to justify it
+- [Squale 1521 Ocean](https://www.squale.ch/en/1521-ocean)
+  - This is a COSC under $2k, like a super-upgraded SKX, with summer color
+  - But I already have a beautiful dive watch
 - [Doxa SUB 300T Searambler](https://doxawatches.com/products/sub-300t-searambler) (or 300 Professional)
-  - I think I would want more lume (especially on the bezel) than this affords
+  - I want more lume (especially on the bezel) than this affords
 - Appreciate the story but don't want: [Marathon GSAR Diver's](https://wornandwound.com/video-enthusiast-spotlight-contemplations-on-time-with-van-neistat-and-the-marathon-gsar-divers-automatic/)
   - Generally I think this is overpriced and I would hate seeing the tritium glow fading over the years while all my luminova watches continue lighting up
 - The cheaper version of the Seamaster 300 is the [Baltic Aquascaphe Classic](https://baltic-watches.com/en/products/aquascaphe-blue-gilt?variant=17494500835399)
