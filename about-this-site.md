@@ -98,6 +98,11 @@ You can read about everything else I use to build things at [/uses](/uses).
 - podcast rendering
 - [More ideas](https://github.com/joshbeckman/notes/issues?q=is%3Aopen+is%3Aissue+-label%3Apost)
 
+### 2026-02-19
+- Redesign homepage: replace beliefs wall with Popular and Recent post sections
+- Move beliefs to dedicated [/beliefs](/beliefs) page
+- New homepage intro paragraph
+
 ### 2026-02-16
 - Add [iCal feeds](/subscribe#ical-feeds) (`.ics`) for all posts and per-category, with RFC 5545 compliance, geo coordinates, and image references
 

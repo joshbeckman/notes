@@ -14,7 +14,6 @@ letterboxd_review_url: https://letterboxd.com/joshbeckman/film/crooked-house-201
 tags:
 - movies
 - entertainment
-- popular
 - letterboxd
 serial_number: 2025.BLG.149
 ---
