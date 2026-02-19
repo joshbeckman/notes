@@ -16,6 +16,6 @@ tags:
 - entertainment
 - art
 - letterboxd
+serial_number: 2026.BLG.032
 ---
-
  <p><img src="https://a.ltrbxd.com/resized/film-poster/4/8/8/1/7/48817-le-samourai-0-600-0-900-crop.jpg?v=11267d74cc"/></p> <p><em>This review may contain spoilers.</em></p> <p>If you spend your days planning the perfect way to kill others, of course you want to control how you die. </p><p>This film removes the sexy glamor of contract killing and casts it in drab moody glamor with a perfect ending.</p> 
