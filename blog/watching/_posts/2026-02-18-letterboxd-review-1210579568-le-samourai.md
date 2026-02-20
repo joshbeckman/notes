@@ -9,7 +9,7 @@ rating: 4
 tmdb_id: '5511'
 letterboxd_id: le-samourai
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116101387002204062
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mfbfymynxw2u
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/le-samourai/
 tags:
 - movies
