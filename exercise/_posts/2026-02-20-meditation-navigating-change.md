@@ -9,7 +9,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/116103502175009
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mfce2at52d2e
 tags:
 - meditation
-serial_number: 2026.ECE.042
+serial_number: 2026.ECE.043
 ---
 I had used Headspace for guided meditation in the past, but this week my health insurer sent me a notification that they now give me a free membership! What a great idea. That prompted me to download it again and restart a hopefully habitual practice. 
 
