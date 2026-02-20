@@ -5,8 +5,8 @@ title: 'Meditation: Navigating Change'
 toc: true
 image: "/assets/images/c4339c9e-07bf-4a68-983e-31603cf9f8c6.png"
 description:
-mastodon_social_status_url: false
-bluesky_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116103502175009319
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mfce2at52d2e
 tags:
 - meditation
 serial_number: 2026.ECE.042
