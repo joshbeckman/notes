@@ -24,8 +24,7 @@ This is the default palette. Often, I'll use these colors as a starting point an
 | Yellow | Kodak yellow (Golden Acrylic Diarylide yellow, #1147-6, series 6) | `#FFCC00` | ![yellow](https://www.thecolorapi.com/id?format=svg&named=false&hex=ffcc00) |
 | Green | [ISO 3864](https://en.wikipedia.org/wiki/ISO_3864) safety green | `#237F52` | ![green](https://www.thecolorapi.com/id?format=svg&named=false&hex=237F52) |
 | Dark Green | Olive Drab #7 | `#3C341F` | ![green](https://www.thecolorapi.com/id?format=svg&named=false&hex=3C341F) |
-| Blue | Science blue | `#0969DA` | ![blue](https://www.thecolorapi.com/id?format=svg&named=false&hex=0969DA) |
-| Dark Blue | police barricade blue | `#004B87` | ![blue](https://www.thecolorapi.com/id?format=svg&named=false&hex=004B87) |
+| Blue | International Klein blue | `#002FA7` | ![blue](https://www.thecolorapi.com/id?format=svg&named=false&hex=002FA7) |
 | Purple | HTML standard mediumpurple | `#9370d8` | ![purple](https://www.thecolorapi.com/id?format=svg&named=false&hex=9370d8) |
 | Josh Purple | Brand purple | `#903465` | ![purple](https://www.thecolorapi.com/id?format=svg&named=false&hex=903465) |
 | Black | Benjamin Moore Impervex latex high gloss metal and wood enamel, black 309 80 | `#151515` | ![black](https://www.thecolorapi.com/id?format=svg&named=false&hex=151515) |

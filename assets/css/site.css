@@ -420,11 +420,10 @@ template {
   --c-yellow: #FFCC00;
   --c-green: #237F52;
   --c-dark-green: #3C341F;
-  --c-blue: #0969DA;
-  --c-dark-blue: #004B87;
+  --c-klein-blue: #002FA7;
   --c-purple: #9370d8;
   --c-josh: #903465;
-  --c-link: #0969DA;
+  --c-link: #002FA7;
   --c-link-visited: rebeccapurple;
   --c-button: aliceblue;
   --f-family: "IBM Plex Sans", Verdana, sans-serif;
@@ -467,7 +466,7 @@ template {
   --c-text: hsl(0, 0%, 5%);
   --c-text-alt: hsl(0, 0%, 50%);
   --c-button: aliceblue;
-  --c-link: #0969DA;
+  --c-link: #002FA7;
   --c-link-visited: rebeccapurple;
 }
 :root[data-reduce-motion="true"] .name-svg path,
