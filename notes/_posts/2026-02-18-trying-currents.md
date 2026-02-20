@@ -24,3 +24,11 @@ Current promises to help you find a hierarchy of what you actually want to read 
 > The subscribe-to-newsletter-as-feed is a *killer* feature in Reader that very well might keep me there instead of Current. I'm kind of hopeful that Current could adopt that feature.
 
 I'll still be actually saving/reading articles in Reader (for highlighting), but maybe Current can provide a better ingestion/browsing system.
+
+## Update 2026-02-20
+
+After trying hard tk use it for a couple days I have to say I'm off Currents.
+
+- It kept pulling in every item from all my RSS feeds, even items from years ago.
+- It didn't encourage me to check leas often; more, in fact, as it surfaced things in surprising order.
+- I should have seen this coming: two apps for reading things is worse than one.  
