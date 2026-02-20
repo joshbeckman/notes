@@ -4,9 +4,8 @@ title: What I Believe
 permalink: "/beliefs/"
 searchable: true
 tags: index
-serial_number: 2026.PAE.001
+serial_number: 2026.PAE.007
 ---
-
 ## On Making
 
 - **Make things. Not too much. Mostly for others** — Our job is to help others. Be of service.
