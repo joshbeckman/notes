@@ -46,8 +46,6 @@ I had seen them open for [Fat Dog at The Empty Bottle](https://www.joshbeckman.o
 
 ## Los Thuthanaka
 
-![Snow falling on Los Thuthanaka](/assets/images/747635e8-e4d5-4c93-a1ec-3ef6e00e5fc4.jpeg)
-
 The final act was interesting for a bit, but there's only so long that I can enjoy drone-noise-dj-loops while standing in the snowfall. Also they ended early, which was weird.
 
 {{ "https://www.youtube.com/watch?v=aVuEQxqL33Y" | youtube_embed }}
