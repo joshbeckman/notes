@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/c2781a7a-51f1-4832-a643-f5d9e29a3356.jpeg"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116116224220315516
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mfhytlaz2n2d
 tags:
 - music
 - chicago
