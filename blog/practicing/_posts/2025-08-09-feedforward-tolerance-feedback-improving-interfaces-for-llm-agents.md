@@ -10,8 +10,8 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lvyclrvl642p
 redirect_from:
 - "/blog/feedforward-tolerance-feedback-improving-interfaces-for-llm-agents"
 tags:
-- AI
-- LLM
+- ai
+- llm
 - safety
 - validation
 - controllability
