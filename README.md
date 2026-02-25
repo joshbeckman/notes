@@ -62,6 +62,7 @@ Visitors see a passphrase prompt when viewing encrypted pages. By default, passp
 ## Conventions
 
 - Posts use Markdown with YAML front matter — match the front matter format of sibling files when creating new posts
+- All tags in YAML front matter MUST be lowercase alphanumeric with hyphens separating logical words (e.g. `ai` not `AI` and `human-psychology` not `human_psychology`)
 - Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/) format
 - Prefer editing existing files over creating new ones
 - Keep changes minimal and focused
