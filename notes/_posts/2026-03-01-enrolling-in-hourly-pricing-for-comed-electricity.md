@@ -7,7 +7,7 @@ image: "/assets/images/e51dac4b-7134-4421-948f-8ec99e8f3d96.png"
 description:
 tags:
 - consumption
-serial_number: 2026.NTE.027
+serial_number: 2026.NTE.028
 ---
 I had somehow just assumed that I was enrolled in [hourly rates for ComEd electricity](https://hourlypricing.comed.com), but I found today that we were not so I've now enrolled us, planning for savings!
 
