@@ -15,37 +15,37 @@
   description: Ice thickens, hens huddle together
 
 - name: Start of Spring
-  marker: "◦"
+  marker: "◇"
   start_month: 2
   start_day: 4
   description: Ground thaws, fish appear under ice
 
 - name: Rain Waters
-  marker: "◦"
+  marker: "◇"
   start_month: 2
   start_day: 18
   description: Snow recedes, mist lingers in the air
 
 - name: Insects Awaken
-  marker: "◦"
+  marker: "◇"
   start_month: 3
   start_day: 6
   description: Bugs surface from hibernation
 
 - name: Vernal Equinox
-  marker: "◦"
+  marker: "◇"
   start_month: 3
   start_day: 21
   description: Sparrows start to nest, cherry blossoms bloom
 
 - name: Clear and Bright
-  marker: "◦"
+  marker: "◇"
   start_month: 4
   start_day: 4
   description: Geese fly north, rainbows appear
 
 - name: Grain Rain
-  marker: "◦"
+  marker: "◇"
   start_month: 4
   start_day: 21
   description: Reeds sprout, rice seedlings grow
