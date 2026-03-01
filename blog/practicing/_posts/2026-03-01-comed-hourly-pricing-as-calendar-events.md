@@ -28,6 +28,9 @@ So I built a small [Val.town server](https://www.val.town/x/joshbeckman/comed-ho
 
 Stable hours produce no event — gaps in the calendar mean the price isn't moving. The sensitivity, lookback window, and lookahead are all configurable via query parameters, so I (or you!) can tune it to only surface the swings I care about.
 
+> [!NOTE]
+> Day-ahead prices aren't always available — ComEd publishes them on their own schedule, typically in the evening for the following day — so the feed only includes forward-looking events when the data is there.
+
 <img width="582" height="355" alt="The pricing changes display in my calendar app" src="/assets/images/7da27360-4fa4-4eb5-8fbb-9aa80f34e9b7.png" />
 
 The next step is pairing this with batteries to buffer my high-draw appliances — grow lights, the computer desk — into cheap hours automatically. For now, just seeing the price rhythm on my calendar alongside everything else is enough to shift my habits. [Everywhere a calendar](/blog/everywhere-a-calendar).
