@@ -7,7 +7,7 @@ image: "/assets/images/7da27360-4fa4-4eb5-8fbb-9aa80f34e9b7.png"
 description: I built an iCal feed of ComEd electricity price changes so I can plan
   around cheap hours from my calendar.
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116152347327783519
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mfy26ioydy2v
 tags:
 - tools
 - consumption
