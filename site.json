@@ -5,7 +5,7 @@ permalink: '/site.json'
 {% include CurrentSeason.html %}
 {
   "proverb": "{{ proverb.title }}",
-  "season": "{{ current_season.emoji }}",
+  "season": "{{ current_season.marker }}",
   "updated": "{{ site.time | date_to_xmlschema }}",
   "version": "{{ site.version }}"
 }

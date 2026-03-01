@@ -24,4 +24,4 @@ Hello, friends. I'm Josh Beckman. I make things — mostly software, mostly for 
 {% endfor %}
 
 {% include CurrentSeason.html %}
-[The season](/season) is: <strong>{{ current_season.name }}</strong> {{ current_season.emoji }}<br/><em>{{ current_season.description }}</em>
+[The season](/season) is: <strong>{{ current_season.name }}</strong> {{ current_season.marker }}<br/><em>{{ current_season.description }}</em>

@@ -9,12 +9,12 @@ serial_number: 2026.PAE.006
 ---
 {% include CurrentSeason.html %}
 
-Things come and go in seasons. These days, the year unfolds in 24 small seasons, each lasting about 15 days. Right now we're in **{{ current_season.name }}** {{ current_season.emoji }}.
+Things come and go in seasons. These days, the year unfolds in 24 small seasons, each lasting about 15 days. Right now we're in **{{ current_season.name }}** {{ current_season.marker }}.
 
 <div class="seasons-grid">
 {% for season in site.data.seasons %}
 <div class="season{% if season.name == current_season.name %} current{% endif %}">
-<span class="emoji">{{ season.emoji }}</span>
+<span class="marker">{{ season.marker }}</span>
 <strong>{{ season.name }}</strong>
 <span class="date">{{ season.start_month }}/{{ season.start_day }}</span>
 <em>{{ season.description }}</em>
@@ -41,8 +41,8 @@ Things come and go in seasons. These days, the year unfolds in 24 small seasons,
   border-width: 2px;
   background: var(--highlight-bg, rgba(0, 102, 204, 0.05));
 }
-.season .emoji {
-  font-size: 1.5rem;
+.season .marker {
+  font-size: 1.25rem;
 }
 .season .date {
   font-size: 0.85rem;
