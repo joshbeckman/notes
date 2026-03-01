@@ -13,3 +13,5 @@ I had somehow just assumed that I was enrolled in [hourly rates for ComEd electr
 
 <img width="792" height="635" alt="Estimated Savings by ComEd" src="/assets/images/e51dac4b-7134-4421-948f-8ec99e8f3d96.png" />
 
+> [!NOTE]
+> They expose this data over a decent [API](https://hourlypricing.comed.com/hp-api/).
