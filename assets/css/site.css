@@ -1279,12 +1279,6 @@ article div.highlight {
 .header .name-svg {
   vertical-align: top;
 }
-a.masthead-home-link {
-  color: #903465 !important;
-}
-.name-svg g path {
-  stroke: #903465;
-}
 
 cite img.source-favicon {
   width: 1.5rem;
