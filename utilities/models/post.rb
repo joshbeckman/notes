@@ -33,6 +33,7 @@ Post = Struct.new(
   :youtube_video_id,
   :youtube_video_url,
   :serial_number,
+  :published,
   keyword_init: true
 ) do
   def self.load(filepath)
@@ -83,7 +84,8 @@ Post = Struct.new(
       layout: yaml_content['layout'],
       youtube_video_id: yaml_content['youtube_video_id'],
       youtube_video_url: yaml_content['youtube_video_url'],
-      serial_number: yaml_content['serial_number']
+      serial_number: yaml_content['serial_number'],
+      published: yaml_content['published']
     )
   end
 
@@ -158,6 +160,7 @@ Post = Struct.new(
     hash['exercise_data'] = exercise_data.transform_keys(&:to_s) if exercise_data
     hash['tags'] = tags if tags&.any?
     hash['serial_number'] = serial_number if serial_number
+    hash['published'] = published unless published.nil?
     hash
   end
 
