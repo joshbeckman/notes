@@ -3,9 +3,19 @@
   Reference
   </h3>
   <ul class="filed">
+      <li class="filed permalink">
+        <a href="{{ page.url }}" class="permalink" title="Permanent link to this page">Permalink</a> (<code>{{page.serial_number}}</code>)
+      </li>
+      <li class="filed date">
+        On
+        <a href="/search/?q=*&type=post&after={{ date_after }}&before={{ date_before }}">
+            <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y, %B %d, %A' }}</time>
+        </a>
+      </li>
       {% if page.categories %}
       {% assign cat_acc = "" %}
       <li class="filed category">
+        In
       {% for category in page.categories %}
           <a href="/{{cat_acc}}{{ category | slugify }}">{{ category  | capitalize }}</a>
             {%- if forloop.last == false -%}
@@ -17,6 +27,7 @@
       {%- endif -%}
       {%- if page.tags.size > 0 -%}
       <li class="filed">
+        Tagged&nbsp;
       {%- for tag in page.tags -%}
           <a href="/search/?q=%27{{ tag }}&keys=tags">{{ tag }}</a>
             {%- if forloop.last == false -%}
@@ -27,28 +38,19 @@
       {% endif %}
       {%- if page.book -%}
       <li class="filed source">
+          From
           <a href="/search/?q=%27{{ page.book }}&keys=book">{{ page.book_title }}</a>
       </li>
       {%- endif -%}
       {%- if page.author_id -%}
       <li class="filed author">
+          By
           <a href="/search/?q=%27{{ page.author_id }}+%7C+%27%22{{page.author}}%22">{{ page.author }}</a>
       </li>
       {%- endif -%}
       {%- if page.date -%}
       {%- assign date_after = page.date | date: '%Y-%m-%d' -%}
       {%- assign date_before = page.date | date: '%s' | plus: 86400 | date: '%Y-%m-%d' -%}
-      <li class="filed date">
-        <a href="/search/?q=*&type=post&after={{ date_after }}&before={{ date_before }}">
-            <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y, %B %d, %A' }}</time>
-        </a>
-      </li>
-      <li class="filed permalink">
-        <a href="{{ page.url }}" class="permalink" title="Permanent link to this page">Permalink</a> to <code>{{page.serial_number}}</code>
-      </li>
-      <li class="filed insight">
-        <a href="/insight?post={{ page.url | url_encode }}" class="insight" title="See if AI has insight about this post">Insight</a>
-      </li>
       {%- endif -%}
       <li class="filed edit print-hidden">
       {%- if page.readwise_url -%}
