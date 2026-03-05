@@ -1,8 +1,11 @@
 ---
 name: Album post template
-about: Draft a music ablum post
+about: Draft a music album post
 title: '[music]'
 ---
+
+<!-- Fill in the frontmatter and content, then comment `/post` to publish. -->
+<!-- See README.md for all supported frontmatter fields. -->
 
 ---
 title: NAME by NAME

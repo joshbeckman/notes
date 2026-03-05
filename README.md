@@ -59,6 +59,41 @@ Posts can be client-side encrypted so content is only readable with a passphrase
 
 Visitors see a passphrase prompt when viewing encrypted pages. By default, passphrases are not cached. Users can enable [sessionStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage) caching in [Settings > Privacy](/settings#privacy) for convenience (clears when tab closes).
 
+## Post Frontmatter
+
+Posts use Markdown with YAML front matter. The following fields are supported when creating posts via the `/post` issue command or directly:
+
+**Required:**
+
+| Field | Description |
+|---|---|
+| `title` | Post title |
+| `category` | Category path (e.g. `blog`, `blog/practicing`, `notes`, `blog/photos`) |
+
+**Optional:**
+
+| Field | Description |
+|---|---|
+| `date` | Publish date, defaults to now. Format: `YYYY-MM-DD` or `YYYY-MM-DD HH:MM:SS` |
+| `tags` | Comma-separated string or YAML array. Auto-suggested if empty |
+| `slug` | URL slug, defaults to slugified title |
+| `description` | Post description/excerpt |
+| `image` | Feature image URL. Auto-set from embedded images, IMDB, or album art |
+| `rating` | Numeric rating (for reviews) |
+| `imdb_id` | IMDB ID (e.g. `tt1234567`) — auto-fetches movie poster |
+| `in_reply_to` | URL this post is replying to |
+| `hide_title` | `true` to hide the title on the page |
+| `song_link` | URL to a song |
+| `photo_feature` | `true` or a URL for photo feature display |
+| `album` | Nested `title` and `artist` fields — auto-fetches album art |
+| `syndicate` | `false` to skip cross-posting to Mastodon/Bluesky (default: `true`) |
+| `published` | `false` to create a draft that won't appear on the live site |
+| `layout` | Page layout, defaults to `Post` |
+| `canonical` | Canonical URL for the post |
+| `encrypted` | Key ID from `_secrets.yml` for client-side encryption |
+
+Embedded images (`![alt](url)`) and GitHub asset videos are downloaded and optimized automatically.
+
 ## Conventions
 
 - Posts use Markdown with YAML front matter — match the front matter format of sibling files when creating new posts
