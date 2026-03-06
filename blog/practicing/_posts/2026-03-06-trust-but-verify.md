@@ -5,7 +5,7 @@ title: Trust But Verify
 toc: true
 image: "/assets/images/955f9c15-077b-4b71-b2ca-0b77b0287e07.png"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116182771886391302
 bluesky_status_url: false
 tags:
 - software-engineering
