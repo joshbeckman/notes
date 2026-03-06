@@ -71,8 +71,6 @@ Popularity is tracked by [Goatcounter](https://www.goatcounter.com/) - public st
 
 Guestbook comments are powered by [Cusdis](https://cusdis.com/).
 
-Post likes are powered by [iine: small web appreciation](https://iine.to/).
-
 Webmentions are received at [webmention.io](https://webmention.io/api/mentions.html?token=4N8Bpl6KX64j8VB4k5A3ww).
 
 Serverless scripts (e.g. for [generating insights](/insight)) are hosted/run by [Val Town](https://www.val.town).
@@ -97,6 +95,9 @@ You can read about everything else I use to build things at [/uses](/uses).
 - `/projects` page
 - podcast rendering
 - [More ideas](https://github.com/joshbeckman/notes/issues?q=is%3Aopen+is%3Aissue+-label%3Apost)
+
+### 2026-03-06
+- Remove iine like button from posts
 
 ### 2026-02-19
 - Redesign homepage: replace beliefs wall with Popular and Recent post sections
