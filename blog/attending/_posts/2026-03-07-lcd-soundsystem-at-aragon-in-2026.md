@@ -5,7 +5,7 @@ title: LCD Soundsystem at Aragon in 2026
 toc: true
 image: "/assets/images/29162046-a8d4-4b1a-9cfa-4d24c38a3e88.jpeg"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116199769332241400
 bluesky_status_url: false
 tags:
 - concerts
