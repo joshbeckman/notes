@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/29162046-a8d4-4b1a-9cfa-4d24c38a3e88.jpeg"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116199769332241400
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mgn43j6txt2e
 tags:
 - concerts
 - aragon-venue
