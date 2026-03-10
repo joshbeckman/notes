@@ -23,3 +23,5 @@ I think _Dance Yrself Clean_ might be the best drop in all of concert music. The
 ![The disco ball spins the crowd](/assets/images/b8238d45-4d9f-4449-b45a-05376a93d55d.gif)
 
 [Automatic](https://automatic.band/) was their opener and I went halfway through their set before realizing that I had listened to their album _[Is It Now?](https://ffm.to/isitnow)_ a **lot** last year. What a lovely surprise.
+
+{{ "https://music.apple.com/us/album/mq9/1819100783?i=1819100785" | itunesify }}
