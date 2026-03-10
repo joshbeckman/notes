@@ -1,4 +1,10 @@
-<div class="post-list-item {% if include.post.image %}lazyload" data-src="{{include.post.image}}{% endif %}">
+{%- if include.post.image -%}
+  {%- assign post_list_image = include.post.image -%}
+{%- else -%}
+  {%- assign post_hex = include.post.url | hex_color -%}
+  {%- assign post_list_image = "https://www.thecolorapi.com/id?format=svg&named=false&hex=" | append: post_hex -%}
+{%- endif -%}
+<div class="post-list-item lazyload" data-src="{{post_list_image}}">
   <div class="post-list-item-details">
     <p class="post-list-item-title">
       <a href="{{include.post.url}}">

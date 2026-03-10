@@ -83,7 +83,8 @@
     <meta property="og:image" content="{{page.image}}">
     {%- endif -%}
 {%- else -%}
-<meta property="og:image" content="{{site.url}}/assets/img/profile.png">
+    {%- assign page_hex = page.url | hex_color -%}
+<meta property="og:image" content="https://www.thecolorapi.com/id?format=svg&named=false&hex={{page_hex}}">
 {%- endif -%}
 <link rel="canonical" href="{{site.url}}{{page.url}}"/>
 <link rel="apple-touch-icon" href="{{site.url}}/assets/img/profile.png">

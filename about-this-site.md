@@ -96,6 +96,10 @@ You can read about everything else I use to build things at [/uses](/uses).
 - podcast rendering
 - [More ideas](https://github.com/joshbeckman/notes/issues?q=is%3Aopen+is%3Aissue+-label%3Apost)
 
+### 2026-03-09
+- Generate unique color backgrounds for posts without images, using URL hash and [The Color API](https://www.thecolorapi.com)
+- Use color image for OpenGraph meta tags on posts without images
+
 ### 2026-03-06
 - Remove iine like button from posts
 
