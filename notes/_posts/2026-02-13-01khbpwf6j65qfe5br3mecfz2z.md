@@ -1,20 +1,19 @@
 ---
-title: "Why the Economy Hasn't Crashed Yet via Hank Green"
+title: Why the Economy Hasn't Crashed Yet via Hank Green
 tags: economics capitalism united-states
 author: Hank Green
 author_id: 03ddf1951441f75263bbd32325940b6c
 book: 01khbpwf6j65qfe5br3mecfz2z
-book_title: "Why the Economy Hasn't Crashed Yet"
+book_title: Why the Economy Hasn't Crashed Yet
 readwise_url: https://read.readwise.io/read/01khbpwf6j65qfe5br3mecfz2z
 image: https://i.ytimg.com/vi/jOR4wuiPeEQ/sddefault.jpg?sqp=-oaymwEmCIAFEOAD8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgSyhCMA8=&rs=AOn4CLBJqIwNYHgrD5mgR5u4kB8hrT9__w
 favicon_url: https://s2.googleusercontent.com/s2/favicons?domain=youtube.com
-source_emoji: 🌐
+source_emoji: "\U0001F310"
 show_book_meta: true
 hide_title: true
-source_url: "https://youtube.com/watch?v=jOR4wuiPeEQ&si=FHireSjFvpqlc1dr"
-serial_number: 2026.NTE.023
+source_url: https://youtube.com/watch?v=jOR4wuiPeEQ&si=FHireSjFvpqlc1dr
+serial_number: 2026.NTE.024
 ---
-
 This video descibes how capitlist, big, companies actually *favor* a currupt strong-man-mentality like Trump. Because it’s cheaper to bribe him for preference than it is to actually maintain and innovate products and services.
 
 > A good capitalist will happily become an oligarch. Because if the other choice is having your competitor become the oligarch, then that's a terrible decision. And you can drift Toward this oligarchy, it's not so much about the money. It's about the consolidation of power.

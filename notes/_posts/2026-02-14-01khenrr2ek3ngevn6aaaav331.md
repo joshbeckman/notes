@@ -1,20 +1,19 @@
 ---
-title: "You are being misled about renewable energy technology. via Technology Connections"
+title: You are being misled about renewable energy technology. via Technology Connections
 tags: united-states renewable-engery
 author: Technology Connections
 author_id: 4c3c9bf0930b2ffb56f36855bd6d4351
 book: 01khenrr2ek3ngevn6aaaav331
-book_title: "You are being misled about renewable energy technology."
+book_title: You are being misled about renewable energy technology.
 readwise_url: https://read.readwise.io/read/01khenrr2ek3ngevn6aaaav331
 image: https://i.ytimg.com/vi/KtQ9nt2ZeGM/sddefault.jpg
 favicon_url: https://s2.googleusercontent.com/s2/favicons?domain=youtube.com
-source_emoji: 🌐
+source_emoji: "\U0001F310"
 show_book_meta: true
 hide_title: true
-source_url: "https://youtube.com/watch?v=KtQ9nt2ZeGM&si=HXSET61Iu3aMl8k0"
-serial_number: 2026.NTE.024
+source_url: https://youtube.com/watch?v=KtQ9nt2ZeGM&si=HXSET61Iu3aMl8k0
+serial_number: 2026.NTE.025
 ---
-
 I know [my dad](https://www.bryanbeckmanfl.com/) has given me this information in bits over the years, but this video was recommended to me recently as a great overview and it did not disappoint. I *really* recommend it, even though it is long! It’s getting me energized to help with [a new project](https://www.pinellasgreenfoundation.org/).
 
 This video gives ammunition and enthusiasm to combat the entrenched and idiotic bias to oil-energy consumption in the US. I watched it in 15-minute chunks while feeding the baby and each section is different and beneficial.
