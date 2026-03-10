@@ -16,7 +16,7 @@ serial_number: 2025.BLG.182
 ---
 A note I found in my journal, from seven years ago, on the day I was summoned to participate in a jury of my peers:
 
-> I have to go to jury duty as a member of this democracy. what if I had a summons to contribute to open source software because I use FOOS?
+> I have to go to jury duty as a member of this democracy. what if I had a summons to contribute to open source software because I use FOSS?
 
 I was _so_ happy to go spend a day exercising my membership in this hallmark of democracy: a participation requirement in return for the benefits I enjoy under due process of the law. Ultimately, I was dismissed because of my connection with the law (several friends and family members practice law).
 
