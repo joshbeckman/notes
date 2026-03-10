@@ -96,6 +96,9 @@ You can read about everything else I use to build things at [/uses](/uses).
 - podcast rendering
 - [More ideas](https://github.com/joshbeckman/notes/issues?q=is%3Aopen+is%3Aissue+-label%3Apost)
 
+### 2026-03-10
+- Remove Cusdis comments widget from posts (no one was leaving comments)
+
 ### 2026-03-09
 - Generate unique color backgrounds for posts without images, using URL hash and [The Color API](https://www.thecolorapi.com)
 

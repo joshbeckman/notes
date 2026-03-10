@@ -46,15 +46,6 @@
       <input id="webmention-target" type="hidden" name="target" value="{{ site.url }}{{ page.url }}" />
     </form>
     </p>
-    <p>or you can <a href="#cusdis" id="cusdis-link">leave a simple comment here</a>.</p>
-    <div id="async_cusdis_thread"
-      data-theme="auto"
-      data-host="https://cusdis.com"
-      data-app-id="0bbb76b5-e971-4d9c-8fa7-a4c9e1ff0984"
-      data-page-id="{{ page.url }}"
-      data-page-url="{{ site.url }}{{ page.url }}"
-      data-page-title="{{ page.title }}"
-    ></div>
   </div>
 </div>
 <script>
@@ -103,13 +94,6 @@
         rootMargin: '50px'
     });
     observer.observe(postSocial);
-
-    var cusdisLink = document.getElementById('cusdis-link');
-    cusdisLink.addEventListener('click', function(event) {
-        event.preventDefault();
-        loadCusdis();
-        cusdisLink.innerText = 'comment here';
-    });
 
     function pluralize(count, singular, plural) {
         return count === 1 ? singular : (plural || singular + 's');
@@ -160,47 +144,6 @@
                 }
             })
             .catch(error => console.error('Error fetching Mastodon status:', error));
-    }
-    function loadCusdis() {
-        var cusdis = document.getElementById('async_cusdis_thread');
-        if (!cusdis) {
-            return;
-        }
-        if (window.goatcounter && window.goatcounter.count) {
-            window.goatcounter.count({ path: 'widget-cusdis-load', title: 'Cusdis comments widget', event: true });
-        }
-        cusdis.id = 'cusdis_thread';
-        var script = document.createElement('script');
-        script.src = 'https://cusdis.com/js/cusdis.es.js';
-        document.body.appendChild(script);
-
-        function adjustIframeHeight(iframe) {
-            var heights = [];
-            function load() {
-                if (!iframe.contentWindow.document.body) {
-                    return setTimeout(load, 500);
-                }
-                var height = iframe.contentWindow.document.body.scrollHeight;
-                // Set the iframe height
-                iframe.style.height = height + 'px';
-                heights.push(height);
-                // if the height has been the same for 1.5 seconds, stop polling
-                if (heights.length > 3 && heights[heights.length - 1] === heights[heights.length - 2] && heights[heights.length - 2] === heights[heights.length - 3]) {
-                    return;
-                }
-                setTimeout(load, 500);
-            };
-            load();
-        }
-        // poll to get the iframe
-        (function waitForIframe() {
-            var myIframe = document.querySelector('#cusdis_thread iframe');
-            if (myIframe) {
-                adjustIframeHeight(myIframe);
-            } else {
-                setTimeout(waitForIframe, 100);
-            }
-        })();
     }
     function loadBluesky() {
         var bluesky = document.querySelector('.social-bluesky');
