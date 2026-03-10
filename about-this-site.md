@@ -98,7 +98,6 @@ You can read about everything else I use to build things at [/uses](/uses).
 
 ### 2026-03-09
 - Generate unique color backgrounds for posts without images, using URL hash and [The Color API](https://www.thecolorapi.com)
-- Use color image for OpenGraph meta tags on posts without images
 
 ### 2026-03-06
 - Remove iine like button from posts
