@@ -6,12 +6,16 @@
       <li class="filed permalink">
         <a href="{{ page.url }}" class="permalink" title="Permanent link to this page">Permalink</a> (<code>{{page.serial_number}}</code>)
       </li>
+      {%- if page.date -%}
+      {%- assign date_after = page.date | date: '%Y-%m-%d' -%}
+      {%- assign date_before = page.date | date: '%s' | plus: 86400 | date: '%Y-%m-%d' -%}
       <li class="filed date">
         On
         <a href="/search/?q=*&type=post&after={{ date_after }}&before={{ date_before }}">
             <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y, %B %d, %A' }}</time>
         </a>
       </li>
+      {%- endif -%}
       {% if page.categories %}
       {% assign cat_acc = "" %}
       <li class="filed category">
@@ -47,10 +51,6 @@
           By
           <a href="/search/?q=%27{{ page.author_id }}+%7C+%27%22{{page.author}}%22">{{ page.author }}</a>
       </li>
-      {%- endif -%}
-      {%- if page.date -%}
-      {%- assign date_after = page.date | date: '%Y-%m-%d' -%}
-      {%- assign date_before = page.date | date: '%s' | plus: 86400 | date: '%Y-%m-%d' -%}
       {%- endif -%}
       <li class="filed edit print-hidden">
       {%- if page.readwise_url -%}
