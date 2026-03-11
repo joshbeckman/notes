@@ -18,6 +18,9 @@
       {%- if page.hacker_news_url -%}
       <li><a class="social-hn" href="{{page.hacker_news_url}}" target="_blank">on HackerNews</a></li>
       {%- endif -%}
+      {%- if page.source_url -%}
+      <li class="social-hn-source-item" style="display:none"><a class="social-hn-source" href="#" target="_blank" data-source-url="{{page.source_url}}"></a></li>
+      {%- endif -%}
       {%- if page.strava_activity_url -%}
       <li><a class="social-strava" href="{{page.strava_activity_url}}" target="_blank">on Strava</a></li>
       {%- endif -%}
@@ -84,6 +87,7 @@
                     loadBluesky();
                     loadMastodon();
                     loadHackerNews();
+                    loadHackerNewsSource();
                     loadLetterboxd();
                     loadWebmentions();
                 }
@@ -199,6 +203,39 @@
                 }
             })
             .catch(error => console.error('Error fetching HackerNews item:', error));
+    }
+    function loadHackerNewsSource() {
+        var hnSourceLink = document.querySelector('.social-hn-source');
+        if (!hnSourceLink) {
+            return;
+        }
+        var sourceUrl = hnSourceLink.getAttribute('data-source-url');
+        if (!sourceUrl || !sourceUrl.match(/^https?:\/\//)) {
+            return;
+        }
+        sourceUrl = sourceUrl.replace(/#:~:text=.*$/, '').replace(/#$/, '');
+        fetch(`https://hn.algolia.com/api/v1/search?query=${encodeURIComponent(sourceUrl)}&restrictSearchableAttributes=url&hitsPerPage=1`)
+            .then(response => response.json())
+            .then(data => {
+                if (!data.hits || data.hits.length === 0) {
+                    return;
+                }
+                var story = data.hits[0];
+                var score = story.points || 0;
+                var comments = story.num_comments || 0;
+                var parts = [];
+
+                if (score > 0) parts.push(`${score} ${pluralize(score, 'vote')}`);
+                if (comments > 0) parts.push(`${comments} ${pluralize(comments, 'comment')}`);
+
+                if (comments > 0) {
+                    var text = parts.join(' and ');
+                    hnSourceLink.textContent = `${text} about the source on HackerNews`;
+                    hnSourceLink.setAttribute('href', `https://news.ycombinator.com/item?id=${story.objectID}`);
+                    hnSourceLink.closest('.social-hn-source-item').style.display = '';
+                }
+            })
+            .catch(error => console.error('Error searching HackerNews for source:', error));
     }
     function loadLetterboxd() {
         var letterboxd = document.querySelector('.social-letterboxd');
