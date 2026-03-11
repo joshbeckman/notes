@@ -20,6 +20,7 @@
       {%- endif -%}
       {%- if page.source_url -%}
       <li class="social-hn-source-item" style="display:none"><a class="social-hn-source" href="#" target="_blank" data-source-url="{{page.source_url}}"></a></li>
+      <li class="social-reddit-source-item" style="display:none"><a class="social-reddit-source" href="#" target="_blank" data-source-url="{{page.source_url}}"></a></li>
       {%- endif -%}
       {%- if page.strava_activity_url -%}
       <li><a class="social-strava" href="{{page.strava_activity_url}}" target="_blank">on Strava</a></li>
@@ -88,6 +89,7 @@
                     loadMastodon();
                     loadHackerNews();
                     loadHackerNewsSource();
+                    loadRedditSource();
                     loadLetterboxd();
                     loadWebmentions();
                 }
@@ -101,6 +103,17 @@
 
     function pluralize(count, singular, plural) {
         return count === 1 ? singular : (plural || singular + 's');
+    }
+
+    function cleanSourceUrl(url) {
+        url = url.replace(/#:~:text=.*$/, '').replace(/#$/, '');
+        try {
+            var u = new URL(url);
+            u.searchParams.delete('si');
+            return u.toString();
+        } catch (e) {
+            return url;
+        }
     }
 
     function loadWebmentions() {
@@ -213,7 +226,7 @@
         if (!sourceUrl || !sourceUrl.match(/^https?:\/\//)) {
             return;
         }
-        sourceUrl = sourceUrl.replace(/#:~:text=.*$/, '').replace(/#$/, '');
+        sourceUrl = cleanSourceUrl(sourceUrl);
         fetch(`https://hn.algolia.com/api/v1/search?query=${encodeURIComponent(sourceUrl)}&restrictSearchableAttributes=url&hitsPerPage=1`)
             .then(response => response.json())
             .then(data => {
@@ -236,6 +249,44 @@
                 }
             })
             .catch(error => console.error('Error searching HackerNews for source:', error));
+    }
+    function loadRedditSource() {
+        var redditLink = document.querySelector('.social-reddit-source');
+        if (!redditLink) {
+            return;
+        }
+        var sourceUrl = redditLink.getAttribute('data-source-url');
+        if (!sourceUrl || !sourceUrl.match(/^https?:\/\//)) {
+            return;
+        }
+        sourceUrl = cleanSourceUrl(sourceUrl);
+        fetch(`https://www.reddit.com/api/info.json?url=${encodeURIComponent(sourceUrl)}`)
+            .then(response => response.json())
+            .then(data => {
+                if (!data.data || !data.data.children || data.data.children.length === 0) {
+                    return;
+                }
+                var best = data.data.children.reduce(function(a, b) {
+                    return (a.data.score + a.data.num_comments) > (b.data.score + b.data.num_comments) ? a : b;
+                });
+                var post = best.data;
+                var score = post.score || 0;
+                var comments = post.num_comments || 0;
+                var subreddit = post.subreddit;
+                var parts = [];
+
+                if (score > 0) parts.push(`${score} ${pluralize(score, 'vote')}`);
+                if (comments > 0) parts.push(`${comments} ${pluralize(comments, 'comment')}`);
+
+                if (comments > 0) {
+                    var text = parts.join(' and ');
+                    var sub = subreddit ? ` in r/${subreddit}` : '';
+                    redditLink.textContent = `${text}${sub} about the source on Reddit`;
+                    redditLink.setAttribute('href', `https://www.reddit.com${post.permalink}`);
+                    redditLink.closest('.social-reddit-source-item').style.display = '';
+                }
+            })
+            .catch(error => console.error('Error searching Reddit for source:', error));
     }
     function loadLetterboxd() {
         var letterboxd = document.querySelector('.social-letterboxd');
