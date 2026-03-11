@@ -1,7 +1,7 @@
 ---
 layout: Post
 date: '2026-03-01 01:15:00 +0000'
-title: ComEd Hourly Pricing as Calendar Events
+title: ComEd Hourly Pricing Calendar
 toc: true
 image: "/assets/images/7da27360-4fa4-4eb5-8fbb-9aa80f34e9b7.png"
 description: I built an iCal feed of ComEd electricity price changes so I can plan
