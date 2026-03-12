@@ -99,8 +99,6 @@ You can read about everything else I use to build things at [/uses](/uses).
 ### v3.5.0 — 2026-03-12
 - Support audio file embeds and podcast feed at /feed/podcast.rss
 
-Closes [#61](https://github.com/joshbeckman/notes/issues/61)
-
 ### v3.4.0 — 2026-03-12
 - feat: add GitHub Action to sync releases to changelog
 - feat: add iCal feed generation for all post categories
