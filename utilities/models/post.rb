@@ -11,6 +11,7 @@ Post = Struct.new(
   :canonical,
   :description,
   :image,
+  :audio,
   :date,
   :imdb_id,
   :tmdb_id,
@@ -63,6 +64,7 @@ Post = Struct.new(
       canonical: yaml_content['canonical'],
       description: yaml_content['description'],
       image: yaml_content['image'],
+      audio: yaml_content['audio'],
       date: yaml_content['date'],
       imdb_id: yaml_content['imdb_id'],
       tmdb_id: yaml_content['tmdb_id'],
@@ -139,8 +141,10 @@ Post = Struct.new(
       'title' => title,
       'toc' => true,
       'image' => image,
+      'audio' => audio,
       'description' => description,
     }
+    hash.delete('audio') if audio.nil?
     hash['hide_title'] = true if hide_title
     hash['canonical'] = canonical if canonical
     hash['rating'] = rating if rating

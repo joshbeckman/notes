@@ -17,6 +17,10 @@ Subscribe to the [unified RSS/Atom feed](/feed.xml) for new posts ~daily. There 
 - [Replies & Threads RSS feed](/feed/replies.xml)
 - [Exercise Log RSS feed](/feed/exercise.xml)
 
+## Podcast Feed
+
+Subscribe to the [podcast RSS feed](/feed/podcast.rss) in any podcast app to listen to audio posts. See also the [Podcasts page](/podcasts) for guest appearances and other podcast listening.
+
 ## iCal Feeds
 
 Subscribe to the [unified iCal feed](/feed.ics) to add new posts to your calendar app. There are dedicated feeds for each category:

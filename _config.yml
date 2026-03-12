@@ -161,6 +161,13 @@ exclude:
 #   - vendor/gems/
 #   - vendor/ruby/
 
+podcast:
+  title: Josh Beckman's Podcast
+  description: Audio posts from joshbeckman.org
+  image: /assets/img/profile.png
+  language: en-us
+  category: Society & Culture
+
 # config jekyll-mastodon_webfinger
 mastodon:
   username: joshbeckman

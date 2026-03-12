@@ -47,6 +47,19 @@ module Jekyll
         HTML
       end
 
+      # Wrap audio tags with figure and div
+      content = content.gsub(%r{<audio([^>]*)>(.*?)</audio>}mi) do |match|
+        audio_tag = match
+
+        <<~HTML
+          <figure class="audio-figure">
+            <div class="audio-wrapper">
+              #{audio_tag}
+            </div>
+          </figure>
+        HTML
+      end
+
       # Handle iframes (like YouTube embeds)
       content = content.gsub(%r{<iframe([^>]+)>(.*?)</iframe>}mi) do |match|
         iframe_tag = match

@@ -51,6 +51,7 @@ class IssuePoster
       photo_feature: frontmatter['photo_feature'],
       date: date,
       image: assets.find(&:image?)&.public_path || frontmatter['image'],
+      audio: assets.find(&:audio?)&.public_path || frontmatter['audio'],
       imdb_id: frontmatter['imdb_id'],
       rating: rating,
       slug: slug,
@@ -83,6 +84,7 @@ class IssuePoster
       category:,
       date:,
       image: assets.find(&:image?)&.public_path,
+      audio: assets.find(&:audio?)&.public_path,
       imdb_id:,
       rating:,
       slug:,
@@ -150,6 +152,8 @@ class IssuePoster
     end
   end
 
+  AUDIO_EXTENSIONS = %w[mp3 m4a wav ogg aac flac].freeze
+
   def extract_assets(content)
     # images are identified by regular markdown image syntax
     images = content.scan(/!\[.*\]\((.*)\)/).flatten.map do |url|
@@ -157,14 +161,16 @@ class IssuePoster
     end.concat(content.scan(/<img .*src="(.*)" \/>/).flatten.map do |url|
       Asset.new(url: url, category: 'images')
     end)
-    # videos are identified by:
-    # - a URI at the start of a line
-    # - the domain is github.com
-    # - the path contains /assets
-    videos = content.scan(%r{^https://github.com/.*/assets/.*$}).flatten.map do |url|
+    # audio and video are GitHub asset URLs at the start of a line;
+    # audio is distinguished from video by file extension
+    github_assets = content.scan(%r{^https://github.com/.*/assets/.*$}).flatten
+    audio = github_assets.select { |url| AUDIO_EXTENSIONS.include?(url.split('.').last.downcase) }.map do |url|
+      Asset.new(url: url, category: 'audio')
+    end
+    videos = github_assets.reject { |url| AUDIO_EXTENSIONS.include?(url.split('.').last.downcase) }.map do |url|
       Asset.new(url: url, category: 'videos')
     end
-    images + videos
+    images + audio + videos
   end
 end
 

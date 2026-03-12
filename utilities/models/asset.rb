@@ -12,6 +12,10 @@ Asset = Struct.new(:url, :category, :path, :alt, keyword_init: true) do
     category == 'videos'
   end
 
+  def audio?
+    category == 'audio'
+  end
+
   def public_path
     "/#{path}"
   end
@@ -19,6 +23,8 @@ Asset = Struct.new(:url, :category, :path, :alt, keyword_init: true) do
   def standalone_md
     if image?
       "![#{alt || 'image'}](#{public_path})"
+    elsif audio?
+      "<audio controls>\n  <source src=\"#{public_path}\" type=\"audio/mpeg\">\n  Your browser does not support the audio element.\n</audio>"
     else
       "<video controls src=\"#{public_path}\"></video>"
     end
