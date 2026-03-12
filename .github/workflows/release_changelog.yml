@@ -1,0 +1,66 @@
+name: Update changelog on release
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  update-changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          ref: master
+
+      - name: Update changelog
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+          RELEASE_BODY: ${{ github.event.release.body }}
+        run: |
+          DATE=$(date -u +%Y-%m-%d)
+
+          # Build the entry to insert as a temp file to avoid
+          # shell quoting issues with multiline content in awk/sed
+          {
+            echo "### ${RELEASE_TAG} — ${DATE}"
+            if [ -n "$RELEASE_BODY" ]; then
+              echo "$RELEASE_BODY"
+            fi
+            echo ""
+          } > /tmp/changelog_entry.md
+
+          # Insert after the Unreleased block (its bullet items + blank line)
+          python3 -c "
+          import sys
+          entry = open('/tmp/changelog_entry.md').read()
+          lines = open('about-this-site.md').readlines()
+          out = []
+          found_unreleased = False
+          inserted = False
+          for line in lines:
+              if line.strip() == '### Unreleased':
+                  found_unreleased = True
+              elif found_unreleased and not inserted and line.strip() == '':
+                  out.append(line)
+                  out.append(entry)
+                  inserted = True
+                  continue
+              out.append(line)
+          sys.stdout.write(''.join(out))
+          " > about-this-site.md.tmp
+          mv about-this-site.md.tmp about-this-site.md
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add about-this-site.md
+          git diff --cached --quiet && exit 0
+          git commit -m "docs: update changelog for ${RELEASE_TAG}"
+          git push
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name }}

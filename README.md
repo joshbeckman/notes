@@ -94,6 +94,17 @@ Posts use Markdown with YAML front matter. The following fields are supported wh
 
 Embedded images (`![alt](url)`) and GitHub asset videos are downloaded and optimized automatically.
 
+## Releases
+
+Create a release via the GitHub UI or CLI. The release notes become a new changelog entry in `about-this-site.md` automatically (via the `release_changelog` workflow).
+
+```sh
+gh release create v3.4.0 --title "v3.4.0" --notes "- Added feature X
+- Fixed bug Y"
+```
+
+The `site.version` displayed on the site is derived from the latest git tag (see `_plugins/site_version.rb`).
+
 ## Conventions
 
 - Posts use Markdown with YAML front matter — match the front matter format of sibling files when creating new posts
