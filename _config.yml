@@ -164,7 +164,7 @@ exclude:
 podcast:
   title: Josh Beckman's Podcast
   description: Audio posts from joshbeckman.org
-  image: /assets/img/profile.png
+  image: /assets/img/profile-podcast.png
   language: en-us
   category: Society & Culture
 
