@@ -96,6 +96,23 @@ You can read about everything else I use to build things at [/uses](/uses).
 - podcast rendering
 - [More ideas](https://github.com/joshbeckman/notes/issues?q=is%3Aopen+is%3Aissue+-label%3Apost)
 
+### v3.4.0 — 2026-03-12
+- feat: add GitHub Action to sync releases to changelog
+- feat: add iCal feed generation for all post categories
+- feat: redesign homepage with Popular and Recent sections
+- feat: add Claude Code GitHub Action for @claude mentions
+- feat: generate color backgrounds for posts without images
+- feat: show HackerNews and Reddit discussion links for note sources
+- feat: add inline Chart.js liquid block tag plugin
+- feat: support `published` frontmatter field in issue poster
+- feat(search): set page title based on search query
+- perf: optimize Jekyll build by rewriting backlinks and enabling YJIT
+- style: replace blue palette with Klein blue
+- style: replace season emoji with minimal geometric markers
+- fix: guard date display in Reference layout
+- fix(ical): use precise timestamps instead of all-day events
+- fix: apply site theme colors to inline charts
+
 ### 2026-03-11
 - Show HackerNews discussion link for note sources (lazy-loaded via Algolia HN Search API)
 - Show Reddit discussion link for note sources (lazy-loaded via Reddit API)
