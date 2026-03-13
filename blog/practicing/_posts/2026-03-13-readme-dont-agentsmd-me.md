@@ -5,7 +5,7 @@ title: README, Don't AGENTS.md Me
 toc: true
 image:
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116222411815106313
 bluesky_status_url: false
 hacker_news_url: https://news.ycombinator.com/item?id=47364095
 tags:
