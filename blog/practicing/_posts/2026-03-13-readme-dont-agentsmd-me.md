@@ -7,6 +7,7 @@ image:
 description:
 mastodon_social_status_url: false
 bluesky_status_url: false
+hacker_news_url: https://news.ycombinator.com/item?id=47364095
 tags:
 - ai
 - tools
