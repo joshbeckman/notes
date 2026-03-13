@@ -6,7 +6,7 @@ toc: true
 image:
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116222411815106313
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mgx5u2elfa2y
 hacker_news_url: https://news.ycombinator.com/item?id=47364095
 tags:
 - ai
