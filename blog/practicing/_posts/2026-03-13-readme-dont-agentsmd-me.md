@@ -14,7 +14,7 @@ tags:
 - software-engineering
 serial_number: 2026.BLG.039
 ---
-This is the place where I rant that [the`AGENTS.md` pattern](https://agents.md/) is a distraction and slows down your software development.
+This is the place where I rant that [the `AGENTS.md` pattern](https://agents.md/) is a distraction and slows down your software development.
 
 The software engineering industry has had a standard of adding a `README.md` file to the root of projects and also the root of any subdirectory of those projects where deemed necessary. These files are easily discoverable by operators of the codebase, and their contents - while not standard - have been embraced as a place to put instructions for patterns and how to operate in the codebase.
 
