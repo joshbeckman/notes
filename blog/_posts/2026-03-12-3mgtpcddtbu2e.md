@@ -5,7 +5,7 @@ title: Post to Bluesky
 toc: true
 image:
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116229475696041272
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mgtpcddtbu2e
 tags:
 - bluesky
