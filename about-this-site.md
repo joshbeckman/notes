@@ -96,6 +96,11 @@ You can read about everything else I use to build things at [/uses](/uses).
 - podcast rendering
 - [More ideas](https://github.com/joshbeckman/notes/issues?q=is%3Aopen+is%3Aissue+-label%3Apost)
 
+### v3.6.0 "organ-stuff" — 2026-03-14
+- Added BIP-39 word-pair codenames for site versions
+- New `utilities/version_name` script for deterministic version naming
+- Changelog entries now include codenames alongside semver tags
+
 ### v3.5.0 — 2026-03-12
 - Support audio file embeds and podcast feed at /feed/podcast.rss
 
