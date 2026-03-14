@@ -12,7 +12,7 @@ tags:
 - ai
 - tools
 - software-engineering
-serial_number: 2026.BLG.039
+serial_number: 2026.BLG.045
 ---
 This is the place where I rant that [the `AGENTS.md` pattern](https://agents.md/) is a distraction and slows down your software development.
 

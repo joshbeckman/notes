@@ -9,8 +9,8 @@ mastodon_social_status_url: false
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mgtpcddtbu2e
 tags:
 - bluesky
+serial_number: 2026.BLG.040
 ---
-
 [https://www.joshbeckman.org/proverbs/by-going-slower-you-will-learn-faster](https://www.joshbeckman.org/proverbs/by-going-slower-you-will-learn-faster)
 
 By going slower, you will learn faster.
