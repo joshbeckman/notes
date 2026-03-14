@@ -51,8 +51,8 @@ jobs:
       - name: Commit changes
         if: steps.any_changes_posse_mastodon.outputs.changed != 0
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "josh@joshbeckman.org"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add blog
           git add notes
           git add replies
@@ -72,8 +72,8 @@ jobs:
       - name: Commit changes
         if: steps.any_changes_posse_bluesky.outputs.changed != 0
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "josh@joshbeckman.org"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add blog
           git add notes
           git add replies
@@ -98,8 +98,8 @@ jobs:
       - name: Commit changes
         if: steps.any_changes_readwise.outputs.changed != 0
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "josh@joshbeckman.org"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add notes
           git add assets
           git commit -m "new(usr): Import Readwise highlights"
@@ -119,8 +119,8 @@ jobs:
       - name: Commit changes
         if: steps.any_changes_pesos_mastodon.outputs.changed != 0
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "josh@joshbeckman.org"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add replies
           git add blog
           git add assets
@@ -137,8 +137,8 @@ jobs:
       - name: Commit changes
         if: steps.any_changes_pesos_letterboxd.outputs.changed != 0
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "josh@joshbeckman.org"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add replies
           git add blog
           git add assets
@@ -159,8 +159,8 @@ jobs:
       - name: Commit changes
         if: steps.any_changes_pesos_bluesky.outputs.changed != 0
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "josh@joshbeckman.org"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add replies
           git add blog
           git add assets
@@ -177,8 +177,8 @@ jobs:
       - name: Commit changes
         if: steps.any_changes_pesos_hn.outputs.changed != 0
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "josh@joshbeckman.org"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add replies
           git add blog
           git add assets
@@ -197,8 +197,8 @@ jobs:
       - name: Commit changes
         if: steps.any_changes_pesos_strava.outputs.changed != 0
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "josh@joshbeckman.org"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add exercise
           git add assets
           git commit -m "new(usr): PESOS Strava"
@@ -214,8 +214,8 @@ jobs:
       - name: Commit changes
         if: steps.any_changes_pesos_youtube.outputs.changed != 0
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "josh@joshbeckman.org"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add replies
           git add blog
           git add assets
@@ -232,8 +232,8 @@ jobs:
       - name: Commit changes
         if: steps.any_changes_serialize.outputs.changed != 0
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "josh@joshbeckman.org"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add \*\*/\*.md
           git commit -m "chg(dev): Serialize"
       - name: Push changes
@@ -248,8 +248,8 @@ jobs:
       - name: Commit changes
         if: steps.any_changes_optimize_images.outputs.changed != 0
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "josh@joshbeckman.org"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add replies
           git add blog
           git add assets
