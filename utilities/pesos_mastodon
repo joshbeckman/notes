@@ -72,26 +72,26 @@ module PESOS
       post.create_file
     end
 
-    def import_post(post)
-      image = find_image(post['object']['attachment'])
+    def import_post(item)
+      image = find_image(item['object']['attachment'])
       canonical = nil
       bluesky_status_url = false
       # lock it down to mastodon if directed at another user
-      if mentions_user?(post)
-        canonical = post['object']['url']
+      if mentions_user?(item)
+        canonical = item['object']['url']
         bluesky_status_url = nil
       end
       post = Post.new(
-        body: post_body(post),
+        body: post_body(item),
         category: 'blog',
-        date: Time.parse(post['published']),
-        mastodon_social_status_url: post['object']['url'],
+        date: Time.parse(item['published']),
+        mastodon_social_status_url: item['object']['url'],
         bluesky_status_url: bluesky_status_url,
         canonical: canonical,
         image: image,
-        slug: post['object']['id'].split('/').last
+        slug: item['object']['id'].split('/').last
       )
-      post.title = post.suggested_title || "Post to #{find_mention_handle(post['object']['tag'])}"
+      post.title = post.suggested_title || "Post to #{find_mention_handle(item['object']['tag'])}"
       post.tags = (post.suggested_tags || []).push('mastodon').uniq
       post.create_file
     end
