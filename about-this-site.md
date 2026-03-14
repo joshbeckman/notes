@@ -82,7 +82,7 @@ You can read about everything else I use to build things at [/uses](/uses).
 {% assign build_time = site.time | date_to_xmlschema %}
 {% assign oldest_post = site.posts | last %}
 {% assign newest_post = site.posts | first %}
-- Site version: {{site.version}}
+- Site version: {{site.version_name}} ({{site.version}})
 - Build time: <time datetime="{{ build_time }}">{{ build_time }}</time>
 - Posts count: {{site.posts.size}}
 - [Tags](/tags) count: {{ site.tags.size }}

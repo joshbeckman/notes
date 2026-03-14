@@ -22,11 +22,12 @@ jobs:
           RELEASE_BODY: ${{ github.event.release.body }}
         run: |
           DATE=$(date -u +%Y-%m-%d)
+          VERSION_NAME=$(./utilities/version_name "${RELEASE_TAG}")
 
           # Build the entry to insert as a temp file to avoid
           # shell quoting issues with multiline content in awk/sed
           {
-            echo "### ${RELEASE_TAG} — ${DATE}"
+            echo "### ${RELEASE_TAG} \"${VERSION_NAME}\" — ${DATE}"
             if [ -n "$RELEASE_BODY" ]; then
               echo "$RELEASE_BODY"
             fi

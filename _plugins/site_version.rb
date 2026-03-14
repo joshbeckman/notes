@@ -1,12 +1,16 @@
 # frozen_string_literal: true
 
 class SiteVersion
+  VERSION_NAME_SCRIPT = File.join(__dir__, '..', 'utilities', 'version_name')
+
   def initialize(site)
     @site = site
   end
 
   def inject
-    @site.config['version'] = ENV.fetch('SITE_VERSION', version)
+    ver = ENV.fetch('SITE_VERSION', version)
+    @site.config['version'] = ver
+    @site.config['version_name'] = `#{VERSION_NAME_SCRIPT} "#{ver}"`.strip
     @site.config['build_time'] = Time.now.utc.iso8601
   end
 

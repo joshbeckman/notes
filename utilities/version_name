@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# Generate a BIP-39 word pair from a version string.
+# Usage: ./utilities/version_name [VERSION]
+# If VERSION is omitted, uses `git describe --tags`.
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+WORDS_FILE="${SCRIPT_DIR}/../_data/bip39.txt"
+
+if [ $# -ge 1 ]; then
+  VERSION="$1"
+else
+  VERSION=$(git describe --tags --long 2>/dev/null | sed 's/\([^-]*-g\)/r\1/' || printf "r%s-g%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)")
+fi
+
+# shasum on macOS, sha256sum on Linux
+if command -v shasum &>/dev/null; then
+  HASH=$(printf '%s' "$VERSION" | shasum -a 256 | cut -d' ' -f1)
+else
+  HASH=$(printf '%s' "$VERSION" | sha256sum | cut -d' ' -f1)
+fi
+I1=$(( 16#${HASH:0:8} % 2048 ))
+I2=$(( 16#${HASH:8:8} % 2048 ))
+
+W1=$(sed -n "$((I1 + 1))p" "$WORDS_FILE")
+W2=$(sed -n "$((I2 + 1))p" "$WORDS_FILE")
+
+echo "${W1}-${W2}"
