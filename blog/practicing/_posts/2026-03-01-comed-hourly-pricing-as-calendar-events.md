@@ -13,7 +13,7 @@ tags:
 - consumption
 - time
 - open-source
-serial_number: 2026.BLG.036
+serial_number: 2026.BLG.034
 ---
 ComEd electricity prices change every hour — sometimes swinging several cents between midnight and mid-afternoon. After [enrolling in hourly pricing](/notes/2026-03-01-enrolling-in-hourly-pricing-for-comed-electricity), I realized I didn't want to check a dashboard to know when power is cheap. I wanted to see it on my calendar, right next to the rest of my day.
 

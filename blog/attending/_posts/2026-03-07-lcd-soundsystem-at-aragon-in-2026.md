@@ -10,7 +10,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mgn43j6txt2e
 tags:
 - concerts
 - aragon-venue
-serial_number: 2026.BLG.038
+serial_number: 2026.BLG.036
 ---
 I've seen LCDS many times before ([previously](https://www.joshbeckman.org/blog/attending/lcd-soundsystem-at-aragon-ballroom)), but not as many as my friend Ned. It's a wonderful experience going to see this band with Ned. He knows how they structure their shows for different countries, he knows what the set will be, he dances more than anyone else in the crowd, and he makes me have the most fun.
 

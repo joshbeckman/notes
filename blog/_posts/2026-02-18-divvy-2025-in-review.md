@@ -11,7 +11,7 @@ tags:
 - year-in-review
 - chicago
 - biking
-serial_number: 2026.BLG.033
+serial_number: 2026.BLG.031
 ---
 Last week I opened the [Divvy](https://divvybikes.com/) (bikeshare system for Chicago) app and they prompted me with a 2025 year-in-review. Strange! A bit late? But I appreciate it all the same.
 

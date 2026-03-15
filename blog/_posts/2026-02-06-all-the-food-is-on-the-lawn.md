@@ -9,7 +9,7 @@ tags:
 - maintenance
 - food
 - chicago
-serial_number: 2026.BLG.022
+serial_number: 2026.BLG.020
 ---
 Today is Friday. On Sunday night, Marybeth opened the fridge and said, "this water is warm."
 

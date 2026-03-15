@@ -11,7 +11,7 @@ tags:
 - music
 - chicago
 - empty-bottle-venue
-serial_number: 2026.BLG.035
+serial_number: 2026.BLG.033
 ---
 Of course we went to [Music Frozen Dancing](https://www.musicfrozendancing.com/) again this year. And this time we got a spot near the front so we could get our faces visible in the annual photo. A fun bit from [last year](https://www.joshbeckman.org/blog/attending/music-frozen-dancing-2025): I'm kinda featured in the homepage video loop (I'm the guy in the bright yellow hat fighting through the crowd to hug his friends).
 

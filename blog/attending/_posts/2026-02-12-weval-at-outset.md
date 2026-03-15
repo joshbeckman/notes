@@ -10,7 +10,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mewfkywpme2g
 tags:
 - concerts
 - outset-venue
-serial_number: 2026.BLG.028
+serial_number: 2026.BLG.026
 ---
 This show was so much better than I had expected!
 

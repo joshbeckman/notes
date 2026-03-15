@@ -12,7 +12,7 @@ tags:
 - llm
 - ai
 - trust
-serial_number: 2026.BLG.037
+serial_number: 2026.BLG.035
 ---
 I've been a huge fan of [webcomic name](https://webcomicname.com/) for years. Every comic ends with "oh no". Perfect.
 
