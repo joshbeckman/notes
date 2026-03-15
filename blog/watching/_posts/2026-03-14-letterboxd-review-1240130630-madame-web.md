@@ -9,7 +9,7 @@ rating: 0
 tmdb_id: '634492'
 letterboxd_id: madame-web
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116235843223789443
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mh54pyvnss2n
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/madame-web/
 tags:
 - letterboxd
