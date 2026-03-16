@@ -8,7 +8,7 @@ description:
 rating: 4
 tmdb_id: '38810'
 letterboxd_id: dogtooth
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116238693326423394
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/dogtooth/
 tags:
