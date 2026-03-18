@@ -9,7 +9,7 @@ description:
 rating: 4
 song_link: https://music.apple.com/us/album/i-know-youre-hurting-everyone-is-hurting-everyone-is/1839481236
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116250745177546933
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mhdqincckv2o
 tags:
 - music
 serial_number: 2026.BLG.040
