@@ -8,7 +8,7 @@ image: "/assets/images/album_art/joshuaidehen-iknowyourehurtingeveryoneishurting
 description:
 rating: 4
 song_link: https://music.apple.com/us/album/i-know-youre-hurting-everyone-is-hurting-everyone-is/1839481236
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116250745177546933
 bluesky_status_url: false
 tags:
 - music
