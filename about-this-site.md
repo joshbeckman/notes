@@ -96,6 +96,13 @@ You can read about everything else I use to build things at [/uses](/uses).
 - podcast rendering
 - [More ideas](https://github.com/joshbeckman/notes/issues?q=is%3Aopen+is%3Aissue+-label%3Apost)
 
+### v3.7.0 "play-blood" — 2026-03-24
+- Added `/suggest` page that generates comment suggestions for any post from three perspectives (proponent, opponent, questioner) using Claude via a new Val Town backend
+- Added `/uncommented` page listing notes with only quoted text and no original commentary, with a Random Note button for quick access
+- Added `utilities/suggest_comments` CLI script for local comment suggestion via qmd + Claude Code
+- New Jekyll plugin flags uncommented notes at build time
+- Val Town backend combines LLM-generated search queries with keyword search for richer related post discovery
+
 ### v3.6.0 "organ-stuff" — 2026-03-14
 - Added BIP-39 word-pair codenames for site versions
 - New `utilities/version_name` script for deterministic version naming
