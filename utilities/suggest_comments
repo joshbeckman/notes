@@ -96,19 +96,20 @@ extract_readwise_url() {
   sed -n '/^readwise_url:/{ s/^readwise_url: *//; p; q; }' "$file"
 }
 
-# Derive the site-relative URL from a post file path.
+SITE_BASE="https://www.joshbeckman.org"
+
+# Derive the absolute site URL from a post file path.
 # Jekyll permalink is /:categories/:title where categories come from the
 # directory structure and title is the slug portion of the filename.
 file_to_site_url() {
   local file="$1"
   local slug
   slug="$(basename "$file" .md | sed 's/^[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}-//')"
-  # Categories come from the directory path before _posts
   local dir
   dir="$(dirname "$file")"
   local categories
   categories="$(echo "$dir" | sed 's|/_posts$||')"
-  echo "/$categories/$slug"
+  echo "$SITE_BASE/$categories/$slug"
 }
 
 # Collect uncommented files
