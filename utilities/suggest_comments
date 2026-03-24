@@ -193,8 +193,8 @@ $rf_body
 "
   done
 
-  # Build the prompt for Claude
-  prompt="You are helping annotate a personal knowledge garden. The following is a highlight/quote that was saved without any commentary:
+  # Shared preamble for all three perspective prompts
+  preamble="You are helping annotate a personal knowledge garden. The following is a highlight/quote that was saved without any commentary:
 
 --- Quote from: $title ---
 $quote_text
@@ -205,7 +205,7 @@ $related_context
 When referencing a related post in your comment, use a markdown link with its site URL. Here are the available links:
 $related_links
 
-Write 1-2 sentences of original insight or commentary connecting this quote to the themes in the related posts. The comment should:
+Write 1-2 sentences of original commentary. The comment should:
 - Be written in first person as the garden's author
 - Draw a specific connection or contrast to ideas in the related posts, linking to them by name
 - Add genuine intellectual value, not just summarize
@@ -214,10 +214,31 @@ Write 1-2 sentences of original insight or commentary connecting this quote to t
 
 Output ONLY the comment text (with markdown links), nothing else."
 
-  suggested="$(claude -p "$prompt" 2>/dev/null || echo "(Claude CLI not available)")"
+  prompt_proponent="$preamble
 
-  # Escape the suggested text for safe embedding in an HTML data attribute
-  escaped_suggested="$(echo "$suggested" | sed 's/&/\&amp;/g; s/"/\&quot;/g; s/</\&lt;/g; s/>/\&gt;/g')"
+Your angle: PROPONENT. Build on and extend the idea. Connect it to supporting evidence from the related posts. Show where this principle has proven true or where it reinforces other ideas in the garden."
+
+  prompt_opponent="$preamble
+
+Your angle: OPPONENT. Push back on or complicate the idea. Identify tensions, exceptions, or counterexamples from the related posts. Where does this principle break down or conflict with other ideas in the garden?"
+
+  prompt_questioner="$preamble
+
+Your angle: QUESTIONER. Open up the idea rather than close it down. Ask what follows from it, what it implies, or what it leaves unanswered. Use the related posts to frame a question worth sitting with."
+
+  # Generate all three perspectives
+  suggested_pro="$(claude -p "$prompt_proponent" 2>/dev/null || echo "(Claude CLI not available)")"
+  suggested_opp="$(claude -p "$prompt_opponent" 2>/dev/null || echo "(Claude CLI not available)")"
+  suggested_que="$(claude -p "$prompt_questioner" 2>/dev/null || echo "(Claude CLI not available)")"
+
+  escape_html() {
+    echo "$1" | sed 's/&/\&amp;/g; s/"/\&quot;/g; s/</\&lt;/g; s/>/\&gt;/g'
+  }
+  copy_button() {
+    local escaped
+    escaped="$(escape_html "$1")"
+    echo "<button onclick=\"navigator.clipboard.writeText(this.getAttribute('data-copy'));this.textContent='Copied!'\" data-copy=\"$escaped\" style=\"cursor:pointer;padding:4px 12px;border:1px solid #ccc;border-radius:4px;background:#f5f5f5;font-size:13px\">Copy</button>"
+  }
 
   # Write this entry to the markdown output
   {
@@ -231,11 +252,23 @@ Output ONLY the comment text (with markdown links), nothing else."
     fi
     echo "> ${quote_text//$'\n'/$'\n> '}"
     echo ""
-    echo "**Suggested comment:**"
+    echo "**Proponent** — builds on the idea"
     echo ""
-    echo "$suggested"
+    echo "$suggested_pro"
     echo ""
-    echo "<button onclick=\"navigator.clipboard.writeText(this.getAttribute('data-copy'));this.textContent='Copied!'\" data-copy=\"$escaped_suggested\" style=\"cursor:pointer;padding:4px 12px;border:1px solid #ccc;border-radius:4px;background:#f5f5f5;font-size:13px\">Copy comment</button>"
+    copy_button "$suggested_pro"
+    echo ""
+    echo "**Opponent** — complicates the idea"
+    echo ""
+    echo "$suggested_opp"
+    echo ""
+    copy_button "$suggested_opp"
+    echo ""
+    echo "**Questioner** — opens up the idea"
+    echo ""
+    echo "$suggested_que"
+    echo ""
+    copy_button "$suggested_que"
     echo ""
   } >> "$OUTPUT_FILE"
 done
