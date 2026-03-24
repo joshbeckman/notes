@@ -1,0 +1,249 @@
+#!/usr/bin/env bash
+# Finds notes/_posts/ files that have only quoted text (no original commentary)
+# and uses qmd + Claude to suggest a starting comment based on related posts.
+# Output is a markdown document opened as an HTML preview.
+#
+# Usage:
+#   ./utilities/suggest_comments           # process up to 5 uncommented notes
+#   ./utilities/suggest_comments -n 10     # process up to 10
+#   ./utilities/suggest_comments FILE      # process a specific file
+#   ./utilities/suggest_comments --dry-run # just list uncommented files
+
+set -euo pipefail
+
+NOTES_DIR="notes/_posts"
+LIMIT=5
+DRY_RUN=false
+SPECIFIC_FILE=""
+OUTPUT_FILE="$(mktemp /tmp/suggest_comments_XXXXXX).md"
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -n) LIMIT="$2"; shift 2 ;;
+    --dry-run) DRY_RUN=true; shift ;;
+    *) SPECIFIC_FILE="$1"; shift ;;
+  esac
+done
+
+# Returns 0 (true) if a note has only quoted text and no original commentary.
+is_uncommented() {
+  local file="$1"
+  local in_frontmatter=true
+  local past_frontmatter=false
+  local frontmatter_count=0
+  local has_non_quote_text=false
+
+  while IFS= read -r line; do
+    if [[ "$line" == "---" ]]; then
+      frontmatter_count=$((frontmatter_count + 1))
+      if [[ $frontmatter_count -ge 2 ]]; then
+        in_frontmatter=false
+        past_frontmatter=true
+      fi
+      continue
+    fi
+
+    if $in_frontmatter; then
+      continue
+    fi
+
+    # Skip empty lines, lines starting with > (blockquotes),
+    # and lines that are part of quoteback HTML divs
+    if [[ -z "$line" || "$line" =~ ^'>' || "$line" =~ ^\<div || "$line" =~ ^\</ ]]; then
+      continue
+    fi
+
+    has_non_quote_text=true
+    break
+  done < "$file"
+
+  if $past_frontmatter && ! $has_non_quote_text; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+# Extract the plain quote text (no HTML) from a note file for use as a search query.
+extract_quote_text() {
+  local file="$1"
+  awk '
+    BEGIN { in_fm=0; fm_count=0 }
+    /^---$/ { fm_count++; if (fm_count>=2) in_fm=1; next }
+    !in_fm { next }
+    /^>/ {
+      line = $0
+      sub(/^>[ ]*/, "", line)
+      # strip HTML tags
+      gsub(/<[^>]*>/, "", line)
+      if (line != "") print line
+    }
+  ' "$file" | head -5
+}
+
+extract_title() {
+  local file="$1"
+  sed -n '/^title:/{ s/^title: *//; s/^["'"'"']//; s/["'"'"']$//; p; q; }' "$file"
+}
+
+extract_tags() {
+  local file="$1"
+  sed -n '/^tags:/{ s/^tags: *//; p; q; }' "$file"
+}
+
+extract_readwise_url() {
+  local file="$1"
+  sed -n '/^readwise_url:/{ s/^readwise_url: *//; p; q; }' "$file"
+}
+
+# Derive the site-relative URL from a post file path.
+# Jekyll permalink is /:categories/:title where categories come from the
+# directory structure and title is the slug portion of the filename.
+file_to_site_url() {
+  local file="$1"
+  local slug
+  slug="$(basename "$file" .md | sed 's/^[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}-//')"
+  # Categories come from the directory path before _posts
+  local dir
+  dir="$(dirname "$file")"
+  local categories
+  categories="$(echo "$dir" | sed 's|/_posts$||')"
+  echo "/$categories/$slug"
+}
+
+# Collect uncommented files
+if [[ -n "$SPECIFIC_FILE" ]]; then
+  if is_uncommented "$SPECIFIC_FILE"; then
+    files=("$SPECIFIC_FILE")
+  else
+    echo "File already has commentary: $SPECIFIC_FILE"
+    exit 0
+  fi
+else
+  files=()
+  for f in "$NOTES_DIR"/*.md; do
+    if is_uncommented "$f"; then
+      files+=("$f")
+    fi
+    if [[ ${#files[@]} -ge $LIMIT ]]; then
+      break
+    fi
+  done
+fi
+
+if [[ ${#files[@]} -eq 0 ]]; then
+  echo "No uncommented notes found."
+  exit 0
+fi
+
+echo "Found ${#files[@]} uncommented note(s)."
+
+if $DRY_RUN; then
+  for f in "${files[@]}"; do
+    echo "  $f — $(extract_title "$f")"
+  done
+  exit 0
+fi
+
+# Start building the markdown output
+echo "# Suggested Comments" > "$OUTPUT_FILE"
+echo "" >> "$OUTPUT_FILE"
+
+for file in "${files[@]}"; do
+  title="$(extract_title "$file")"
+  tags="$(extract_tags "$file")"
+  quote_text="$(extract_quote_text "$file")"
+  readwise_url="$(extract_readwise_url "$file")"
+  site_url="$(file_to_site_url "$file")"
+
+  echo "Processing: $title ..."
+
+  # Use qmd hybrid search (BM25 + vector + reranking) for best relevance
+  search_tags="${tags//-/ }"
+  related_json="$(qmd query "$search_tags" --json -n 8 2>/dev/null || echo "[]")"
+
+  # Convert qmd:// paths to real paths and filter out the current file
+  basename_current="$(basename "$file")"
+  related_files=()
+  while IFS= read -r qmd_path; do
+    [[ -z "$qmd_path" ]] && continue
+    real_path="${qmd_path#qmd://notes/}"
+    real_path="$(echo "$real_path" | sed 's|/posts/|/_posts/|')"
+    [[ "$(basename "$real_path")" == "$basename_current" ]] && continue
+    [[ -f "$real_path" ]] && related_files+=("$real_path")
+    [[ ${#related_files[@]} -ge 5 ]] && break
+  done < <(echo "$related_json" | jq -r '.[].file // empty')
+
+  if [[ ${#related_files[@]} -eq 0 ]]; then
+    echo "  (no related posts found, skipping)"
+    continue
+  fi
+
+  # Build a mapping of related post titles to their site URLs for the prompt
+  related_links=""
+  related_context=""
+  for rf in "${related_files[@]}"; do
+    rf_title="$(extract_title "$rf")"
+    rf_url="$(file_to_site_url "$rf")"
+    rf_body="$(awk 'BEGIN{fm=0;c=0} /^---$/{c++;if(c>=2){fm=1;next}} fm{print}' "$rf")"
+    related_links+="- \"$rf_title\" -> $rf_url"$'\n'
+    related_context+="
+--- Related: $rf_title (site URL: $rf_url) ---
+$rf_body
+"
+  done
+
+  # Build the prompt for Claude
+  prompt="You are helping annotate a personal knowledge garden. The following is a highlight/quote that was saved without any commentary:
+
+--- Quote from: $title ---
+$quote_text
+
+Here are related posts from the same knowledge garden that share themes:
+$related_context
+
+When referencing a related post in your comment, use a markdown link with its site URL. Here are the available links:
+$related_links
+
+Write 1-2 sentences of original insight or commentary connecting this quote to the themes in the related posts. The comment should:
+- Be written in first person as the garden's author
+- Draw a specific connection or contrast to ideas in the related posts, linking to them by name
+- Add genuine intellectual value, not just summarize
+- Be concise and direct
+- Use markdown links when mentioning related posts
+
+Output ONLY the comment text (with markdown links), nothing else."
+
+  suggested="$(claude -p "$prompt" 2>/dev/null || echo "(Claude CLI not available)")"
+
+  # Escape the suggested text for safe embedding in an HTML data attribute
+  escaped_suggested="$(echo "$suggested" | sed 's/&/\&amp;/g; s/"/\&quot;/g; s/</\&lt;/g; s/>/\&gt;/g')"
+
+  # Write this entry to the markdown output
+  {
+    echo "---"
+    echo ""
+    echo "## [$title]($site_url)"
+    echo ""
+    if [[ -n "$readwise_url" ]]; then
+      echo "[Edit on Readwise]($readwise_url)"
+      echo ""
+    fi
+    echo "> ${quote_text//$'\n'/$'\n> '}"
+    echo ""
+    echo "**Suggested comment:**"
+    echo ""
+    echo "$suggested"
+    echo ""
+    echo "<button onclick=\"navigator.clipboard.writeText(this.getAttribute('data-copy'));this.textContent='Copied!'\" data-copy=\"$escaped_suggested\" style=\"cursor:pointer;padding:4px 12px;border:1px solid #ccc;border-radius:4px;background:#f5f5f5;font-size:13px\">Copy comment</button>"
+    echo ""
+  } >> "$OUTPUT_FILE"
+done
+
+echo "" >> "$OUTPUT_FILE"
+echo "---" >> "$OUTPUT_FILE"
+echo "*Generated by \`utilities/suggest_comments\`*" >> "$OUTPUT_FILE"
+
+# Open as HTML preview
+preview-md "$OUTPUT_FILE" 2>/dev/null || open "$OUTPUT_FILE"
+echo "Output saved to $OUTPUT_FILE"
