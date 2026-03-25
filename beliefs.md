@@ -8,9 +8,9 @@ serial_number: 2026.PAE.007
 ---
 ## On Making
 
-- **Make things. Not too much. Mostly for others** — Our job is to help others. Be of service.
-- **Building something means repairing the world around it** — Creation must make the surrounding context more whole. Form, in Context, evaluated against Fit.
-- **Publishing is everything** — Nothing matters until it's in use. Shipping is a feature. Publish to replenish.
+- **Make things. Not too much. Mostly for others** — Our job is to [help others](/blog/ways-im-available-to-help). Be of service.
+- **Building something means repairing the world around it** — Creation must [make the surrounding context more whole](/notes/554808582). [Form, in Context, evaluated against Fit](/notes/475073897).
+- **Publishing is everything** — Nothing matters until it's in use. Shipping is a feature. [Publish to replenish](/blog/reading/after-reading-the-creative-act).
 - **Pour your heart into what you do** — People recognize care when they see it, and they love things that have been loved.
 - **It's not fully shipped until it's fast** — Performance determines whether something is usable.
 - **Before making it better, stop making it worse** — Stabilize before optimizing.
@@ -20,7 +20,7 @@ serial_number: 2026.PAE.007
 
 ## On Craft and Flow
 
-- **Do it right, or you'll need to do it over** — Debt and investment compound faster than you think. Half measures are as bad as nothing at all.
+- **Do it right, or you'll need to do it over** — [Debt and investment compound](/blog/carving-out-tech-investment) faster than you think. Half measures are as bad as nothing at all.
 - **One change makes seven** — Everything is connected; plan accordingly. Favor focus over features. Adding anything dilutes everything else.
 - **Slow is smooth. Smooth is fast** — Rushing creates more problems than it solves. Non-blocking is better than blocking.
 - **Approachable is better than simple** — Easy to start with beats theoretically pure. Practicality beats purity.
@@ -29,10 +29,10 @@ serial_number: 2026.PAE.007
 ## On People, Communication, and Leadership
 
 - **Mind your words, they are important** — Language shapes thought and culture. Speak like a human.
-- **People act on the stories they know** — People do things for reasons. Narrative drives behavior more than facts. Everyone has an incomplete view, but we form complete narratives.
-- **Collaboration through communication** — Work in public. Shared understanding enables shared success. Send messages instead of sharing direct control.
-- **Ask for help with gratitude** — We have the power to help each other; be in collaboration with the world.
-- **Writing stuff down gives you unreasonable influence** — Documentation shapes reality. Writing is thinking.
+- **People act on the stories they know** — People do things for reasons. [Narrative drives behavior](/blog/path-and-the-narrative) more than facts. Everyone has an incomplete view, but we [form complete narratives](/blog/data-opposing-narrative).
+- **Collaboration through communication** — [Work in public](/proverbs/work-in-public). Shared understanding enables shared success. Send messages instead of sharing direct control.
+- **Ask for help with gratitude** — [We have the power to help each other](/notes/455979828); be in collaboration with the world.
+- **Writing stuff down gives you unreasonable influence** — [Documentation shapes reality](/blog/on-theory-building-as-an-engineering-team). Writing is thinking.
 - **"Just" and "easy" are four letter words** — Respect the complexity others face.
 - **Trust accumulates in a "trust battery"** — Every interaction charges or depletes trust.
 - **Peace of mind produces right values, right thoughts, right actions** — Inner state manifests outward.
@@ -50,7 +50,7 @@ serial_number: 2026.PAE.007
 
 - **Go places. Not too much. Mostly self-powered** — You must meet the world to appreciate it and help it.
 - **Working on human thriving is the entire point** — Technology serves humanity, not vice versa.
-- **Anything you do not give freely becomes lost to you** — Generosity creates abundance.
+- **Anything you do not give freely becomes lost to you** — [Generosity creates abundance](/notes/478392367).
 - **Life is a gift meant to be given away** — We mature by finding worthy causes for our time and energy. Parenting is one long gifting of your rights into another.
 - **The only thing you can truly control is your own brain** — Focus energy where you have agency. Persistence and determination alone are omnipotent.
-- **Things come and go in seasons** — You don't have to embrace your current season, but recognizing it gives you control.
+- **Things come and go in seasons** — You don't have to embrace your [current season](/season), but [recognizing it](/replies/re-small-seasons) gives you control.
