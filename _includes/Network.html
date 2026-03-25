@@ -98,7 +98,7 @@ nodeData = nodeData.filter(function (node) {
         },
       },
     physics: {
-      enabled: false,
+      enabled: {% if include.post %}true{% else %}false{% endif %},
     }
   };
   var network = new vis.Network(networkContainer, data, options);
