@@ -448,7 +448,7 @@ template {
     --c-text-alt: hsl(0, 0%, 60%);
     --c-button: darkblue;
     --c-link: #6ca0f2;
-    --c-link-visited: mediumpurple;
+    --c-link-visited: plum;
   }
 }
 :root[data-color-scheme="dark"] {
@@ -458,7 +458,7 @@ template {
   --c-text-alt: hsl(0, 0%, 60%);
   --c-button: darkblue;
   --c-link: #6ca0f2;
-  --c-link-visited: mediumpurple;
+  --c-link-visited: plum;
 }
 :root[data-color-scheme="light"] {
   --c-bg: hsl(0, 0%, 100%);
