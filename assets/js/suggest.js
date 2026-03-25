@@ -75,8 +75,6 @@
 
       var btn = document.createElement("button");
       btn.textContent = "Copy";
-      btn.style.cssText =
-        "cursor:pointer;padding:4px 12px;border:1px solid #ccc;border-radius:4px;background:#f5f5f5;font-size:13px;margin-top:0.5em";
       btn.addEventListener("click", function () {
         navigator.clipboard.writeText(suggestion.markdown);
         btn.textContent = "Copied!";
@@ -87,31 +85,20 @@
       container.appendChild(section);
     });
 
-    // Show related posts and search queries used
-    if (data.relatedPosts && data.relatedPosts.length > 0) {
+    // Show search queries used by the agent
+    if (data.queries && data.queries.length > 0) {
       var details = document.createElement("details");
       var summary = document.createElement("summary");
-      summary.textContent = "Related posts used (" + data.relatedPosts.length + ")";
+      summary.textContent = "Search queries used (" + data.queries.length + ")";
       details.appendChild(summary);
 
       var list = document.createElement("ul");
-      data.relatedPosts.forEach(function (rp) {
+      data.queries.forEach(function (q) {
         var li = document.createElement("li");
-        var a = document.createElement("a");
-        a.href = rp.url;
-        a.textContent = rp.title;
-        a.target = "_blank";
-        li.appendChild(a);
+        li.textContent = q;
         list.appendChild(li);
       });
       details.appendChild(list);
-
-      if (data.queries) {
-        var qp = document.createElement("p");
-        qp.innerHTML =
-          "<em>Search queries: " + data.queries.join("; ") + "</em>";
-        details.appendChild(qp);
-      }
 
       container.appendChild(details);
     }

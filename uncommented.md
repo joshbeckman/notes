@@ -13,7 +13,7 @@ These are notes that contain only a highlight or quote with no original commenta
 
 {% assign uncommented_notes = site.posts | where: "uncommented", true | reverse %}
 
-<button id="random-suggest" style="cursor:pointer;padding:8px 16px;border:1px solid #ccc;border-radius:4px;background:#f5f5f5;font-size:14px;margin-bottom:1em">Random Note</button>
+<button id="random-suggest">Random Note</button>
 <script>
 document.getElementById('random-suggest').addEventListener('click', function() {
   var urls = [{% for post in uncommented_notes %}"{{ post.url | url_encode }}"{% unless forloop.last %},{% endunless %}{% endfor %}];
