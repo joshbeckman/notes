@@ -4,7 +4,6 @@ import { marked } from "npm:marked";
 
 const anthropic = new Anthropic();
 const MODEL = "claude-sonnet-4-6";
-const CLEANUP_MODEL = "claude-haiku-4-5";
 const SITE_URL = "https://www.joshbeckman.org";
 const MAX_TOOL_ROUNDS = 6;
 
@@ -310,30 +309,25 @@ async function agentLoop(
   return { text: cleaned, toolCalls: allToolCalls };
 }
 
-// The agent often includes reasoning before the actual comment.
-// This strips it down to just the comment text containing markdown links.
-async function extractComment(raw: string): Promise<string> {
+// The agent often includes reasoning paragraphs before the actual comment.
+// Extract the longest paragraph containing markdown links — that's the comment.
+function extractComment(raw: string): string {
   const trimmed = raw.trim();
   if (!trimmed) return trimmed;
 
-  // If it's already clean (short, has links, no numbered lists), return as-is
-  const lines = trimmed.split("\n").filter((l) => l.trim());
-  if (lines.length <= 3 && trimmed.includes("](")) return trimmed;
+  // Split into paragraphs (separated by blank lines)
+  const paragraphs = trimmed.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
 
-  // Otherwise, ask a fast model to extract just the comment
-  const response = await anthropic.messages.create({
-    model: CLEANUP_MODEL,
-    max_tokens: 300,
-    messages: [
-      {
-        role: "user",
-        content: `The following text contains a comment about a blog post, possibly mixed with reasoning or analysis. Extract ONLY the final 1-2 sentence comment that contains markdown links. Output nothing else — no preamble, no "Here is the comment". If there is no clear comment, return the last paragraph.
+  // Find paragraphs that contain markdown links
+  const withLinks = paragraphs.filter((p) => p.includes("]("));
 
-${raw}`,
-      },
-    ],
-  });
-  return response.content[0].type === "text" ? response.content[0].text.trim() : raw.trim();
+  if (withLinks.length > 0) {
+    // Return the longest paragraph with links — that's the substantive comment
+    return withLinks.reduce((a, b) => (a.length >= b.length ? a : b));
+  }
+
+  // No links found — return the last paragraph as best guess
+  return paragraphs[paragraphs.length - 1] || trimmed;
 }
 
 export default async function (req: Request): Promise<Response> {
