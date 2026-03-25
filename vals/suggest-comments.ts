@@ -83,6 +83,7 @@ const tools: Anthropic.Messages.Tool[] = [
 let _searchData: Record<string, Post> | null = null;
 let _index: lunr.Index | null = null;
 let _tags: Array<{ name: string; url: string }> | null = null;
+let _toneGuide: string | null = null;
 
 async function getSearchData(): Promise<Record<string, Post>> {
   if (!_searchData) {
@@ -121,6 +122,13 @@ async function getTags(): Promise<Array<{ name: string; url: string }>> {
     _tags = await fetch(`${SITE_URL}/assets/js/tags.json`).then((r) => r.json());
   }
   return _tags!;
+}
+
+async function getToneGuide(): Promise<string> {
+  if (!_toneGuide) {
+    _toneGuide = await fetch(`${SITE_URL}/llms/prompts/tone.txt`).then((r) => r.text());
+  }
+  return _toneGuide!;
 }
 
 function postFilter(post: Post) {
@@ -333,6 +341,7 @@ export default async function (req: Request): Promise<Response> {
   _searchData = null;
   _index = null;
   _tags = null;
+  _toneGuide = null;
 
   const params = new URL(req.url).searchParams;
   const postUrl = params.get("post");
@@ -355,6 +364,7 @@ export default async function (req: Request): Promise<Response> {
 
   const postFullUrl = SITE_URL + post.url;
   const postSummary = `Title: ${post.title}\nURL: ${postFullUrl}\nTags: ${post.tags}\n\nContent:\n${post.content}`;
+  const toneGuide = await getToneGuide();
 
   const systemPrompt = `You are helping annotate a personal knowledge garden at joshbeckman.org. You have access to tools that let you search and read posts in the garden.
 
@@ -372,6 +382,10 @@ Your comment should:
 - Add genuine intellectual value, not just summarize
 - Be concise and direct (1-2 sentences)
 - Use markdown links like [Title](URL) when referencing posts
+
+Follow this writing style guide for tone and voice:
+
+${toneGuide}
 
 CRITICAL FORMAT RULE: Your final response (after you finish using tools) must contain ONLY the 1-2 sentence comment. Nothing else. No "Here is my comment", no "I found that", no numbered lists, no reasoning, no summary of research. Just the comment itself — as if you are typing it directly into the post file.`;
 
