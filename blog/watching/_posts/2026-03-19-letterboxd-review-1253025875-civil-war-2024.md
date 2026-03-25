@@ -9,7 +9,7 @@ rating: 3
 tmdb_id: '929590'
 letterboxd_id: civil-war-2024
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116291773985005805
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mhvxkeef4m25
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/civil-war-2024/
 tags:
 - letterboxd
