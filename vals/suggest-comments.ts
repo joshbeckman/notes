@@ -152,7 +152,38 @@ function formatPost(post: Post): string {
 }
 
 function search(input: string, index: lunr.Index, searchData: Record<string, Post>) {
+  // Try default AND search first
   let results = index.search(input);
+
+  // If AND returned few results, try OR so any matching term scores
+  if (results.length < 3 && input.length > 2) {
+    const tokens = lunr.tokenizer(input).filter((t: lunr.Token) => t.str.length < 20);
+    if (tokens.length > 1) {
+      const orResults = index.query((q: lunr.Query) => {
+        for (const token of tokens) {
+          q.term(token.str, {
+            fields: ["title", "tags"],
+            boost: 10,
+            presence: lunr.Query.presence.OPTIONAL,
+          });
+          q.term(token.str, {
+            fields: ["content"],
+            presence: lunr.Query.presence.OPTIONAL,
+          });
+        }
+      });
+      // Merge: keep AND results first (higher relevance), then add OR results
+      const seen = new Set(results.map((r) => r.ref));
+      for (const r of orResults) {
+        if (!seen.has(r.ref)) {
+          seen.add(r.ref);
+          results.push(r);
+        }
+      }
+    }
+  }
+
+  // Fuzzy fallback for typos/stemming mismatches
   if (results.length === 0 && input.length > 2) {
     const tokens = lunr.tokenizer(input).filter((t: lunr.Token) => t.str.length < 20);
     if (tokens.length > 0) {
@@ -161,6 +192,7 @@ function search(input: string, index: lunr.Index, searchData: Record<string, Pos
       });
     }
   }
+
   return results
     .map((r) => searchData[r.ref])
     .filter((p) => p && postFilter(p));
