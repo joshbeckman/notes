@@ -13,6 +13,6 @@ bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/sunset-boulevard/
 tags:
 - letterboxd
+serial_number: 2026.BLG.042
 ---
-
  <p><img src="https://a.ltrbxd.com/resized/film-poster/5/1/5/2/2/51522-sunset-boulevard-0-600-0-900-crop.jpg?v=75e49b76e3"/></p> <p>It's amazing to watch a silent-film star - who shaped her life and manner into eccentricities, conveying everything in pure visial drama - operate in the real world. The sweeping gestures! The grandiosity! Eyes wide! </p><p>The fact that Gloria Swanson actually plays herself elevates this to near perfection.</p> 
