@@ -28,7 +28,7 @@ const tools: Anthropic.Messages.Tool[] = [
   {
     name: "search_posts",
     description:
-      "Search for posts in the knowledge garden by query text. Returns titles, URLs, tags, and content snippets. Use this to find posts related to specific concepts, themes, or contrasting ideas.",
+      "Search for posts in the knowledge garden by query text. This is a keyword-based search (like Elasticsearch), NOT semantic/embedding search. Use short queries with specific nouns and terms that would literally appear in post text. For example: 'domain events CRUD' not 'how domain events prevent CRUD-shaped thinking'. Try multiple focused queries rather than one complex one. Use the tag filter when you know a relevant tag. Returns titles, URLs, tags, and content snippets.",
     input_schema: {
       type: "object" as const,
       properties: {
