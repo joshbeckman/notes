@@ -3,7 +3,10 @@ import lunr from "https://cdn.skypack.dev/lunr";
 import { marked } from "npm:marked";
 
 const anthropic = new Anthropic();
-const MODEL = "claude-haiku-4-5-20251001";
+const MODEL = "claude-sonnet-4-6";
+const CLEANUP_MODEL = "claude-haiku-4-5";
+const SITE_URL = "https://www.joshbeckman.org";
+const MAX_TOOL_ROUNDS = 6;
 
 type Post = {
   doc: string;
@@ -13,19 +16,294 @@ type Post = {
   url: string;
   type: string;
   date: string;
+  backlinks?: string[];
+  sequences?: Array<{ id: string; topic: string }>;
+  author_id?: string;
+  book?: number | string;
+  image?: string;
 };
 
-type SearchResult = {
-  title: string;
-  content: string;
-  url: string;
-  tags: string;
-  score: number;
-};
+// Tools exposed to the agent, mirroring the MCP server's capabilities
+const tools: Anthropic.Messages.Tool[] = [
+  {
+    name: "search_posts",
+    description:
+      "Search for posts in the knowledge garden by query text. Returns titles, URLs, tags, and content snippets. Use this to find posts related to specific concepts, themes, or contrasting ideas.",
+    input_schema: {
+      type: "object" as const,
+      properties: {
+        query: { type: "string", description: "Search query text" },
+        limit: { type: "number", description: "Max results (1-10, default 5)" },
+        tag: { type: "string", description: "Filter to posts with this tag" },
+        category: {
+          type: "string",
+          enum: ["blog", "notes", "exercise", "replies", "page"],
+          description: "Filter by post category",
+        },
+      },
+      required: ["query"],
+    },
+  },
+  {
+    name: "get_post",
+    description:
+      "Get the full content and metadata of a specific post by its URL path (e.g. /notes/446271384). Use this to read a post in full when you need more context than the search snippet provides.",
+    input_schema: {
+      type: "object" as const,
+      properties: {
+        url: { type: "string", description: "Post URL or path" },
+      },
+      required: ["url"],
+    },
+  },
+  {
+    name: "get_tags",
+    description:
+      "List all tags used in the knowledge garden. Useful for discovering what themes exist.",
+    input_schema: {
+      type: "object" as const,
+      properties: {},
+    },
+  },
+  {
+    name: "search_tags",
+    description:
+      "Search for tags matching a query string. Returns matching tag names.",
+    input_schema: {
+      type: "object" as const,
+      properties: {
+        query: { type: "string", description: "Tag name to search for" },
+      },
+      required: ["query"],
+    },
+  },
+];
+
+// Data cache — loaded once per request
+let _searchData: Record<string, Post> | null = null;
+let _index: lunr.Index | null = null;
+let _tags: Array<{ name: string; url: string }> | null = null;
+
+async function getSearchData(): Promise<Record<string, Post>> {
+  if (!_searchData) {
+    _searchData = await fetch(`${SITE_URL}/assets/js/SearchData.json`).then((r) => r.json());
+  }
+  return _searchData!;
+}
+
+async function getIndex(): Promise<lunr.Index> {
+  if (!_index) {
+    const searchData = await getSearchData();
+    lunr.tokenizer.separator = /[\s/]+/;
+    _index = lunr(function () {
+      this.ref("id");
+      this.field("title");
+      this.field("content");
+      this.field("url");
+      this.field("tags");
+      this.metadataWhitelist = ["position"];
+      for (const i in searchData) {
+        this.add({
+          id: i,
+          title: searchData[i].title,
+          content: searchData[i].content,
+          url: searchData[i].url,
+          tags: searchData[i].tags,
+        });
+      }
+    });
+  }
+  return _index!;
+}
+
+async function getTags(): Promise<Array<{ name: string; url: string }>> {
+  if (!_tags) {
+    _tags = await fetch(`${SITE_URL}/assets/js/tags.json`).then((r) => r.json());
+  }
+  return _tags!;
+}
+
+function postFilter(post: Post) {
+  return post.type === "post" || post.type === "page";
+}
+
+function extractCategory(post: Post): string {
+  if (post.type === "page") return "page";
+  if (post.url?.includes("/notes/")) return "notes";
+  if (post.url?.includes("/exercise/")) return "exercise";
+  if (post.url?.includes("/replies/")) return "replies";
+  return "blog";
+}
+
+function formatPost(post: Post): string {
+  const url = post.url?.startsWith("http") ? post.url : SITE_URL + post.url;
+  return [
+    `# [${post.title}](${url})`,
+    "",
+    post.content?.slice(0, 1000),
+    "",
+    `- tags: ${(post.tags || "").split(" ").join(", ")}`,
+    `- date: ${post.date}`,
+    `- category: ${extractCategory(post)}`,
+    post.backlinks?.length ? `- backlinks: ${post.backlinks.map((b) => SITE_URL + b).join(", ")}` : null,
+  ]
+    .filter(Boolean)
+    .join("\n");
+}
+
+function search(input: string, index: lunr.Index, searchData: Record<string, Post>) {
+  let results = index.search(input);
+  if (results.length === 0 && input.length > 2) {
+    const tokens = lunr.tokenizer(input).filter((t: lunr.Token) => t.str.length < 20);
+    if (tokens.length > 0) {
+      results = index.query((q: lunr.Query) => {
+        q.term(tokens, { editDistance: Math.round(Math.sqrt(input.length / 2 - 1)) });
+      });
+    }
+  }
+  return results
+    .map((r) => searchData[r.ref])
+    .filter((p) => p && postFilter(p));
+}
+
+// Execute a tool call and return the result text
+async function executeTool(name: string, input: Record<string, unknown>): Promise<string> {
+  const searchData = await getSearchData();
+  const index = await getIndex();
+
+  if (name === "search_posts") {
+    const query = input.query as string;
+    const limit = Math.min(Math.max((input.limit as number) || 5, 1), 10);
+    let results = search(query, index, searchData);
+    if (input.tag) results = results.filter((p) => p.tags?.includes(input.tag as string));
+    if (input.category) results = results.filter((p) => extractCategory(p) === input.category);
+    if (results.length === 0) return `No posts found for "${query}".`;
+    return results
+      .slice(0, limit)
+      .map((p) => formatPost(p))
+      .join("\n\n---\n\n");
+  }
+
+  if (name === "get_post") {
+    const url = input.url as string;
+    const db = Object.values(searchData).filter(postFilter);
+    const post = db.find((p) => p.url === url || SITE_URL + p.url === url);
+    if (!post) return `Post "${url}" not found.`;
+    return formatPost(post);
+  }
+
+  if (name === "get_tags") {
+    const tags = await getTags();
+    return tags.map((t) => t.name).sort().join(", ");
+  }
+
+  if (name === "search_tags") {
+    const q = (input.query as string).toLowerCase();
+    const tags = await getTags();
+    const matches = tags.filter((t) => t.name.toLowerCase().includes(q));
+    if (matches.length === 0) return `No tags matching "${q}".`;
+    return matches.slice(0, 20).map((t) => t.name).join(", ");
+  }
+
+  return `Unknown tool: ${name}`;
+}
+
+// Run an agentic tool-use loop until Claude produces a final text response
+async function agentLoop(
+  systemPrompt: string,
+  userMessage: string
+): Promise<{ text: string; toolCalls: Array<{ name: string; input: Record<string, unknown> }> }> {
+  const messages: Anthropic.Messages.MessageParam[] = [
+    { role: "user", content: userMessage },
+  ];
+  const allToolCalls: Array<{ name: string; input: Record<string, unknown> }> = [];
+
+  for (let round = 0; round < MAX_TOOL_ROUNDS; round++) {
+    const response = await anthropic.messages.create({
+      model: MODEL,
+      max_tokens: 1024,
+      system: systemPrompt,
+      tools,
+      messages,
+    });
+
+    // Collect any text and tool_use blocks
+    const textBlocks = response.content.filter((b) => b.type === "text");
+    const toolBlocks = response.content.filter((b) => b.type === "tool_use");
+
+    if (toolBlocks.length === 0) {
+      // No more tool calls — extract just the comment from the response
+      const rawText = textBlocks.map((b) => b.text).join("\n");
+      const cleaned = await extractComment(rawText);
+      return { text: cleaned, toolCalls: allToolCalls };
+    }
+
+    // Add assistant response to messages
+    messages.push({ role: "assistant", content: response.content });
+
+    // Execute all tool calls and add results
+    const toolResults: Anthropic.Messages.ToolResultBlockParam[] = [];
+    for (const block of toolBlocks) {
+      allToolCalls.push({ name: block.name, input: block.input as Record<string, unknown> });
+      const result = await executeTool(block.name, block.input as Record<string, unknown>);
+      toolResults.push({ type: "tool_result", tool_use_id: block.id, content: result });
+    }
+    messages.push({ role: "user", content: toolResults });
+  }
+
+  // Exceeded max rounds — force a final comment with an explicit instruction
+  messages.push({
+    role: "user",
+    content: "You've done enough research. Based on what you've found so far, write your 1-2 sentence comment now. Output ONLY the comment with markdown links — nothing else.",
+  });
+  const finalResponse = await anthropic.messages.create({
+    model: MODEL,
+    max_tokens: 300,
+    system: systemPrompt,
+    messages,
+  });
+  const rawText = finalResponse.content
+    .filter((b) => b.type === "text")
+    .map((b) => b.text)
+    .join("\n");
+  const cleaned = await extractComment(rawText);
+  return { text: cleaned, toolCalls: allToolCalls };
+}
+
+// The agent often includes reasoning before the actual comment.
+// This strips it down to just the comment text containing markdown links.
+async function extractComment(raw: string): Promise<string> {
+  const trimmed = raw.trim();
+  if (!trimmed) return trimmed;
+
+  // If it's already clean (short, has links, no numbered lists), return as-is
+  const lines = trimmed.split("\n").filter((l) => l.trim());
+  if (lines.length <= 3 && trimmed.includes("](")) return trimmed;
+
+  // Otherwise, ask a fast model to extract just the comment
+  const response = await anthropic.messages.create({
+    model: CLEANUP_MODEL,
+    max_tokens: 300,
+    messages: [
+      {
+        role: "user",
+        content: `The following text contains a comment about a blog post, possibly mixed with reasoning or analysis. Extract ONLY the final 1-2 sentence comment that contains markdown links. Output nothing else — no preamble, no "Here is the comment". If there is no clear comment, return the last paragraph.
+
+${raw}`,
+      },
+    ],
+  });
+  return response.content[0].type === "text" ? response.content[0].text.trim() : raw.trim();
+}
 
 export default async function (req: Request): Promise<Response> {
+  // Reset per-request cache
+  _searchData = null;
+  _index = null;
+  _tags = null;
+
   const params = new URL(req.url).searchParams;
-  let postUrl = params.get("post");
+  const postUrl = params.get("post");
   if (!postUrl) {
     return new Response(JSON.stringify({ error: "post parameter is required" }), {
       status: 400,
@@ -33,15 +311,9 @@ export default async function (req: Request): Promise<Response> {
     });
   }
 
-  const postPath = new URL(postUrl).pathname;
-  const searchData = await fetch(
-    "https://www.joshbeckman.org/assets/js/SearchData.json"
-  ).then((res) => res.json());
-  const index = buildIndex(searchData);
-
-  const post = (Object.values(searchData) as Post[]).find(
-    (p) => p.url === postPath
-  );
+  const postPath = postUrl.startsWith("http") ? new URL(postUrl).pathname : postUrl;
+  const searchData = await getSearchData();
+  const post = (Object.values(searchData) as Post[]).find((p) => p.url === postPath);
   if (!post) {
     return new Response(JSON.stringify({ error: "Post not found", postUrl }), {
       status: 404,
@@ -49,186 +321,66 @@ export default async function (req: Request): Promise<Response> {
     });
   }
 
-  // Search strategy: keyword search from tags + LLM-generated queries, then deduplicate
-  const tagKeywords = (post.tags || "").replace(/-/g, " ");
-  const [llmQueries] = await Promise.all([generateSearchQueries(post)]);
+  const postFullUrl = SITE_URL + post.url;
+  const postSummary = `Title: ${post.title}\nURL: ${postFullUrl}\nTags: ${post.tags}\n\nContent:\n${post.content}`;
 
-  const allQueries = [tagKeywords, ...llmQueries].filter(Boolean);
-  const allResults: SearchResult[] = [];
-  const seenUrls = new Set<string>();
-  // Always exclude the post itself
-  seenUrls.add("https://www.joshbeckman.org" + post.url);
+  const systemPrompt = `You are helping annotate a personal knowledge garden at joshbeckman.org. You have access to tools that let you search and read posts in the garden.
 
-  for (const query of allQueries) {
-    const results = search(query, index, searchData).filter(postFilter);
-    for (const result of results) {
-      if (!seenUrls.has(result.url)) {
-        seenUrls.add(result.url);
-        allResults.push(result);
-      }
-    }
-  }
+Your job: given a post, research the garden to find related ideas, then write a 1-2 sentence original comment from a specific perspective.
 
-  const topResults = allResults.slice(0, 10);
+Strategy:
+1. Read the post and understand its core idea
+2. Search for related, contrasting, and adjacent posts using multiple queries — try different angles, not just the obvious keywords
+3. Read any promising posts in full if the search snippets aren't enough
+4. Write your comment with markdown links to the specific related posts you found
 
-  if (topResults.length === 0) {
-    return new Response(
-      JSON.stringify({ error: "No related posts found", post: { title: post.title, url: post.url } }),
-      { status: 200, headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" } }
-    );
-  }
+Your comment should:
+- Be written in first person as the garden's author
+- Draw specific connections or contrasts to posts you found, linking them by title
+- Add genuine intellectual value, not just summarize
+- Be concise and direct (1-2 sentences)
+- Use markdown links like [Title](URL) when referencing posts
 
-  const context = topResults
-    .map((r) => `# [${r.title}](${r.url})\n\n${r.content}`)
-    .join("\n\n");
+CRITICAL FORMAT RULE: Your final response (after you finish using tools) must contain ONLY the 1-2 sentence comment. Nothing else. No "Here is my comment", no "I found that", no numbered lists, no reasoning, no summary of research. Just the comment itself — as if you are typing it directly into the post file.`;
 
-  const relatedLinks = topResults
-    .map((r) => `- "${r.title}" -> ${r.url}`)
-    .join("\n");
+  const angles: Record<string, string> = {
+    proponent:
+      "Your angle: PROPONENT. Build on and extend the idea. Connect it to supporting evidence from the related posts. Show where this principle has proven true or reinforces other ideas in the garden.",
+    opponent:
+      "Your angle: OPPONENT. Push back on or complicate the idea. Identify tensions, exceptions, or counterexamples. Where does this break down or conflict with other ideas in the garden?",
+    questioner:
+      "Your angle: QUESTIONER. Open up the idea. Ask what follows from it, what it implies, or what it leaves unanswered. Frame a question worth sitting with, grounded in what you found in the garden.",
+  };
 
-  // Generate all three perspectives in parallel
-  const [proponent, opponent, questioner] = await Promise.all([
-    generateComment("proponent", post, context, relatedLinks),
-    generateComment("opponent", post, context, relatedLinks),
-    generateComment("questioner", post, context, relatedLinks),
+  // Run all three perspectives in parallel, each with its own agentic loop
+  const [proResult, oppResult, queResult] = await Promise.all(
+    ["proponent", "opponent", "questioner"].map((perspective) =>
+      agentLoop(systemPrompt, `${angles[perspective]}\n\nHere is the post to comment on:\n\n${postSummary}`)
+    )
+  );
+
+  const [proponentHtml, opponentHtml, questionerHtml] = await Promise.all([
+    marked.parse(proResult.text),
+    marked.parse(oppResult.text),
+    marked.parse(queResult.text),
   ]);
 
-  const proponentHtml = await marked.parse(proponent);
-  const opponentHtml = await marked.parse(opponent);
-  const questionerHtml = await marked.parse(questioner);
+  // Collect all unique related posts referenced across tool calls
+  const allToolCalls = [...proResult.toolCalls, ...oppResult.toolCalls, ...queResult.toolCalls];
+  const searchQueries = allToolCalls
+    .filter((tc) => tc.name === "search_posts")
+    .map((tc) => tc.input.query as string);
 
   return new Response(
     JSON.stringify({
-      post: { title: post.title, url: "https://www.joshbeckman.org" + post.url, tags: post.tags },
-      queries: allQueries,
-      relatedPosts: topResults.map((r) => ({ title: r.title, url: r.url })),
+      post: { title: post.title, url: postFullUrl, tags: post.tags, contentHtml: await marked.parse(post.content || "") },
+      queries: [...new Set(searchQueries)],
       suggestions: {
-        proponent: { markdown: proponent, html: proponentHtml },
-        opponent: { markdown: opponent, html: opponentHtml },
-        questioner: { markdown: questioner, html: questionerHtml },
+        proponent: { markdown: proResult.text, html: proponentHtml },
+        opponent: { markdown: oppResult.text, html: opponentHtml },
+        questioner: { markdown: queResult.text, html: questionerHtml },
       },
     }),
     { headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" } }
   );
-}
-
-async function generateSearchQueries(post: Post): Promise<string[]> {
-  const response = await anthropic.messages.create({
-    model: MODEL,
-    max_tokens: 150,
-    messages: [
-      {
-        role: "user",
-        content: `Given this post from a knowledge garden, generate exactly 3 short search queries (one per line) that would find related, contrasting, or adjacent ideas in the same collection. Think about what concepts this connects to, what it argues against, and what it implies.
-
-Title: ${post.title}
-Tags: ${post.tags}
-Content: ${post.content.slice(0, 500)}
-
-Reply with exactly 3 queries, one per line, no numbering or bullets.`,
-      },
-    ],
-  });
-  const text = response.content[0].type === "text" ? response.content[0].text : "";
-  return text.split("\n").map((l) => l.trim()).filter(Boolean).slice(0, 3);
-}
-
-async function generateComment(
-  perspective: "proponent" | "opponent" | "questioner",
-  post: Post,
-  context: string,
-  relatedLinks: string
-): Promise<string> {
-  const angles: Record<string, string> = {
-    proponent:
-      "PROPONENT. Build on and extend the idea. Connect it to supporting evidence from the related posts. Show where this principle has proven true or where it reinforces other ideas.",
-    opponent:
-      "OPPONENT. Push back on or complicate the idea. Identify tensions, exceptions, or counterexamples from the related posts. Where does this principle break down or conflict with other ideas?",
-    questioner:
-      "QUESTIONER. Open up the idea rather than close it down. Ask what follows from it, what it implies, or what it leaves unanswered. Use the related posts to frame a question worth sitting with.",
-  };
-
-  const response = await anthropic.messages.create({
-    model: MODEL,
-    max_tokens: 300,
-    messages: [
-      {
-        role: "user",
-        content: `You are helping annotate a personal knowledge garden. The following is a post that needs commentary:
-
---- Post: ${post.title} ---
-${post.content}
-
-Here are related posts from the same knowledge garden:
-${context}
-
-When referencing a related post, use a markdown link with its URL. Available links:
-${relatedLinks}
-
-Your angle: ${angles[perspective]}
-
-Write 1-2 sentences of original commentary. The comment should:
-- Be written in first person as the garden's author
-- Draw a specific connection or contrast to ideas in the related posts, linking to them by name
-- Add genuine intellectual value, not just summarize
-- Be concise and direct
-- Use markdown links when mentioning related posts
-
-Output ONLY the comment text (with markdown links), nothing else.`,
-      },
-    ],
-  });
-  return response.content[0].type === "text" ? response.content[0].text : "";
-}
-
-function postFilter(post: { title?: string; type?: string }) {
-  return !post.title?.includes("(tag)");
-}
-
-function buildIndex(searchData: Record<string, Post>) {
-  lunr.tokenizer.separator = /[\s/]+/;
-  return lunr(function () {
-    this.ref("id");
-    this.field("title");
-    this.field("content");
-    this.field("url");
-    this.field("tags");
-    this.metadataWhitelist = ["position"];
-
-    for (const i in searchData) {
-      this.add({
-        id: i,
-        title: searchData[i].title,
-        content: searchData[i].content,
-        url: searchData[i].url,
-        tags: searchData[i].tags,
-      });
-    }
-  });
-}
-
-function search(input: string, index: lunr.Index, searchData: Record<string, Post>): SearchResult[] {
-  let results = index.search(input);
-
-  if (results.length === 0 && input.length > 2) {
-    const tokens = lunr.tokenizer(input).filter((token: lunr.Token) => token.str.length < 20);
-    if (tokens.length > 0) {
-      results = index.query((query: lunr.Query) => {
-        query.term(tokens, {
-          editDistance: Math.round(Math.sqrt(input.length / 2 - 1)),
-        });
-      });
-    }
-  }
-
-  return results.map((result) => {
-    const item = searchData[result.ref];
-    return {
-      title: item.title,
-      content: item.content,
-      tags: item.tags,
-      url: "https://www.joshbeckman.org" + item.url,
-      score: result.score,
-    };
-  });
 }

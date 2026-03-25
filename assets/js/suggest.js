@@ -47,8 +47,16 @@
     var anchor = document.createElement("a");
     anchor.href = data.post.url;
     anchor.textContent = data.post.title;
+    anchor.target = "_blank";
     titleEl.innerHTML = "";
     titleEl.appendChild(anchor);
+
+    // Show the post body so we can see what we're commenting on
+    if (data.post.contentHtml) {
+      var postBody = document.createElement("blockquote");
+      postBody.innerHTML = data.post.contentHtml;
+      titleEl.after(postBody);
+    }
 
     var container = document.getElementById("suggestions");
     container.innerHTML = "";
