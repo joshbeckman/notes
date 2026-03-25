@@ -1040,6 +1040,11 @@ body::before {
     margin: 30ch 0;
   }
 }
+@media (max-height: 30rem) {
+  .header {
+    display: none;
+  }
+}
 .content {
   z-index: 10;
   position: relative;
