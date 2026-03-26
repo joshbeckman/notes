@@ -9,7 +9,7 @@ tags:
   - tools
   - open-source
   - personal-blog
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116297433511859354
 bluesky_status_url: false
 category: practicing
 toc: true
