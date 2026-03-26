@@ -1,21 +1,22 @@
 ---
 layout: Post
-date: 2026-03-26 09:40:00
+date: 2026-03-26 09:40:00.000000000 +00:00
 title: Three LLM Agents for My Knowledge Garden
-description: "I built three AI agents that tend my knowledge garden in different ways: one walks in front, one walks behind, and one walks beside me."
+description: 'I built three AI agents that tend my knowledge garden in different ways:
+  one walks in front, one walks behind, and one walks beside me.'
 tags:
-  - ai
-  - writing
-  - tools
-  - open-source
-  - personal-blog
+- ai
+- writing
+- tools
+- open-source
+- personal-blog
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116297433511859354
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mhyhxzycyb23
 category: practicing
 toc: true
-image: /assets/images/critic-cron-email-screenshot.png
+image: "/assets/images/critic-cron-email-screenshot.png"
+serial_number: 2026.PTG.001
 ---
-
 I was lifting weights when I realized my notes had gotten lazy. Long quotes, short thoughts, no connections drawn. I'd saved a quote about the laziness of forwarding raw AI output and left [no thoughts of my own about it](https://www.joshbeckman.org/notes/997876311). I was hoarding links instead of digesting them.
 
 I've been building [this knowledge garden](/blog/opening-up-my-highlights-notes) for years, and the collection has grown to thousands of notes, blog posts, highlights, and replies. The latent connections between them are there - I can feel them, I carry them - but tracing the threads takes work. Finding the right post's URL, copying it, editing the note to include it. It's cumbersome enough that I often don't bother, and the links that would show the connections never get made.
