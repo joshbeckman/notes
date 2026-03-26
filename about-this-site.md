@@ -96,6 +96,19 @@ You can read about everything else I use to build things at [/uses](/uses).
 - podcast rendering
 - [More ideas](https://github.com/joshbeckman/notes/issues?q=is%3Aopen+is%3Aissue+-label%3Apost)
 
+### v3.8.0 "elegant-pull" — 2026-03-26
+- Added [Pre-Read](/pre-read/) page: contextualizes web pages against the knowledge garden using three agentic perspectives (proponent, opponent, questioner) powered by Jina Reader and Claude
+- Upgraded suggest-comments val to agentic tool-use with Sonnet 4.6
+- Added OR fallback to search for broader recall
+- Added runtime tone guide for suggest-comments val
+- Replaced LLM cleanup with deterministic paragraph extraction
+- Improved search tool description for keyword-based queries
+- Added /suggest and /pre-read links to footer
+- Lighter visited links color in dark mode
+- Hide site header on short viewports
+- Added supporting links to beliefs page
+- Enabled physics animation for network graph widget
+
 ### v3.7.0 "play-blood" — 2026-03-24
 - Added `/suggest` page that generates comment suggestions for any post from three perspectives (proponent, opponent, questioner) using Claude via a new Val Town backend
 - Added `/uncommented` page listing notes with only quoted text and no original commentary, with a Random Note button for quick access
