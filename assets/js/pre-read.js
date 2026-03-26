@@ -5,6 +5,9 @@
 
   if (url) {
     hideMenu();
+    if ("Notification" in window && Notification.permission === "default") {
+      Notification.requestPermission();
+    }
     fetchPreRead(url);
   }
 
@@ -16,6 +19,11 @@
   }
   function hideMenu() {
     document.getElementById("preread-menu").style.display = "none";
+  }
+  function notify(body) {
+    if ("Notification" in window && Notification.permission === "granted") {
+      new Notification("Pre-Read", { body: body });
+    }
   }
 
   function fetchPreRead(url) {
@@ -31,6 +39,7 @@
           return;
         }
         renderPreRead(data);
+        notify("Pre-read ready for " + (data.page.title || "page"));
       })
       .catch(function (err) {
         stopLoading();

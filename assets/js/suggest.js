@@ -5,6 +5,9 @@
 
   if (post) {
     hideMenu();
+    if ("Notification" in window && Notification.permission === "default") {
+      Notification.requestPermission();
+    }
     fetchSuggestions(post);
   }
 
@@ -16,6 +19,11 @@
   }
   function hideMenu() {
     document.getElementById("suggest-menu").style.display = "none";
+  }
+  function notify(body) {
+    if ("Notification" in window && Notification.permission === "granted") {
+      new Notification("Suggest Comments", { body: body });
+    }
   }
 
   function fetchSuggestions(post) {
@@ -34,6 +42,7 @@
           return;
         }
         renderSuggestions(data);
+        notify("Suggestions ready for " + (data.post.title || "post"));
       })
       .catch(function (err) {
         stopLoading();
