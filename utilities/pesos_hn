@@ -57,15 +57,27 @@ module PESOS
 
     def outbox
       uri = URI.parse("https://hnrss.org/threads?id=#{@username}")
-      req = Net::HTTP::Get.new(uri)
-      req['Accept'] = 'application/rss+xml'
-      res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
-        http.request(req)
-      end
+      retries = 0
+      max_retries = 3
+      res = nil
 
-      unless res.is_a?(Net::HTTPSuccess)
-        puts res.body
-        raise Error, 'Outbox request failed'
+      loop do
+        req = Net::HTTP::Get.new(uri)
+        req['Accept'] = 'application/rss+xml'
+        res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
+          http.request(req)
+        end
+
+        break if res.is_a?(Net::HTTPSuccess)
+
+        retries += 1
+        if retries >= max_retries
+          puts res.body
+          raise Error, 'Outbox request failed'
+        end
+
+        puts "Outbox request returned #{res.code}, retrying (#{retries}/#{max_retries})..."
+        sleep(retries * 2)
       end
 
       REXML::Document.new(res.body).elements['rss/channel'].elements.map do |item|

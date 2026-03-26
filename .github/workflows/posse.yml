@@ -170,6 +170,7 @@ jobs:
         run: git push
       - name: Import HackerNews
         id: import_hackernews
+        continue-on-error: true
         run: bundle exec utilities/pesos_hn
       - name: Determine if changes were made
         id: any_changes_pesos_hn
