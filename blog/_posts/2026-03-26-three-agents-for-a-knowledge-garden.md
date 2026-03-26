@@ -10,7 +10,7 @@ tags:
   - open-source
   - personal-blog
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116297433511859354
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mhyhxzycyb23
 category: practicing
 toc: true
 image: /assets/images/critic-cron-email-screenshot.png
