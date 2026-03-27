@@ -5,7 +5,8 @@ import { marked } from "npm:marked";
 import { executeTool, tools, getSearchData, formatPost, type Post } from "./search.ts";
 
 const anthropic = new Anthropic();
-const MODEL = "claude-opus-4-6";
+const RESEARCH_MODEL = "claude-sonnet-4-20250514";
+const CRITIQUE_MODEL = "claude-opus-4-6";
 const SITE_URL = "https://www.joshbeckman.org";
 const FEED_URL = `${SITE_URL}/feed.xml`;
 const JINA_BASE = "https://r.jina.ai/";
@@ -115,38 +116,38 @@ async function agentLoop(
     { role: "user", content: userMessage },
   ];
 
+  // Research phase: Sonnet handles tool use to gather additional context
   for (let round = 0; round < MAX_TOOL_ROUNDS; round++) {
     const response = await anthropic.messages.create({
-      model: MODEL,
+      model: RESEARCH_MODEL,
       max_tokens: 4096,
       system: systemPrompt,
       tools: tools as Anthropic.Messages.Tool[],
       messages,
     });
 
-    const textBlocks = response.content.filter((b) => b.type === "text");
     const toolBlocks = response.content.filter((b) => b.type === "tool_use");
 
-    if (toolBlocks.length === 0) {
-      return textBlocks.map((b) => b.text).join("\n").trim();
-    }
+    if (toolBlocks.length === 0) break;
 
     messages.push({ role: "assistant", content: response.content });
 
-    const toolResults: Anthropic.Messages.ToolResultBlockParam[] = [];
-    for (const block of toolBlocks) {
-      const result = await executeToolWithJina(block.name, block.input as Record<string, unknown>);
-      toolResults.push({ type: "tool_result", tool_use_id: block.id, content: result });
-    }
+    const toolResults: Anthropic.Messages.ToolResultBlockParam[] = await Promise.all(
+      toolBlocks.map(async (block) => {
+        const result = await executeToolWithJina(block.name, block.input as Record<string, unknown>);
+        return { type: "tool_result" as const, tool_use_id: block.id, content: result };
+      }),
+    );
     messages.push({ role: "user", content: toolResults });
   }
 
+  // Critique phase: Opus writes the final critique with all gathered context
   messages.push({
     role: "user",
-    content: "You've done enough research. Write your critique now based on what you've found. Output ONLY the critique — nothing else.",
+    content: "Write your critique now based on the post and all the context above. Output ONLY the critique — nothing else.",
   });
   const finalResponse = await anthropic.messages.create({
-    model: MODEL,
+    model: CRITIQUE_MODEL,
     max_tokens: 4096,
     system: systemPrompt,
     messages,
@@ -160,9 +161,7 @@ async function agentLoop(
 
 // --- Critique generation ---
 
-async function buildSystemPrompt(): Promise<string> {
-  const toneGuide = await getToneGuide();
-
+function buildSystemPrompt(toneGuide: string): string {
   return `You are a constructive critic and writing mentor for a personal knowledge garden at joshbeckman.org. You have access to tools that let you search and read posts in the garden, and read external web pages.
 
 Your job: given a post the author has written, research the garden and the post's sources, then write a thorough, constructive critique.
@@ -204,45 +203,37 @@ export async function critiquePost(postUrl: string): Promise<{
   title: string;
   url: string;
   critique: { markdown: string; html: string };
-}> {
-  const systemPrompt = await buildSystemPrompt();
+} | null> {
+  // Fetch tone guide and search data in parallel
+  const [toneGuide, searchData] = await Promise.all([getToneGuide(), getSearchData()]);
+  const systemPrompt = buildSystemPrompt(toneGuide);
 
-  const searchData = await getSearchData();
   const postPath = postUrl.startsWith("http") ? new URL(postUrl).pathname : postUrl;
   const post = (Object.values(searchData) as Post[]).find(
     (p) => p.url === postPath || SITE_URL + p.url === postUrl,
   );
 
-  let userMessage: string;
-  let title: string;
-  let fullUrl: string;
+  if (!post) return null;
 
-  if (post) {
-    title = post.title;
-    fullUrl = SITE_URL + post.url;
-    const postSummary = formatPost(post);
-    const links = extractLinks(post.content || "");
-    const externalLinks = links.filter((l) => !l.includes("joshbeckman.org"));
-    const internalLinks = links.filter((l) => l.includes("joshbeckman.org"));
+  const title = post.title;
+  const fullUrl = SITE_URL + post.url;
+  const postSummary = formatPost(post);
+  const links = extractLinks(post.content || "");
+  const externalLinks = links.filter((l) => !l.includes("joshbeckman.org"));
+  const internalLinks = links.filter((l) => l.includes("joshbeckman.org"));
 
-    userMessage = `Here is the post to critique:\n\n${postSummary}`;
-    if (post.content && post.content.length > 1000) {
-      userMessage += `\n\nFull content:\n${post.content}`;
-    }
-    if (internalLinks.length > 0) {
-      userMessage += `\n\nInternal links found in the post (use get_post to read these):\n${internalLinks.join("\n")}`;
-    }
-    if (externalLinks.length > 0) {
-      userMessage += `\n\nExternal links found in the post (use read_webpage to read these):\n${externalLinks.join("\n")}`;
-    }
-  } else {
-    title = postUrl;
-    fullUrl = postUrl;
-    userMessage = `I couldn't find this post in the garden search index. Use read_webpage to read it, then search the garden for related posts and write your critique.\n\nPost URL: ${postUrl}`;
+  let userMessage = `Here is the post to critique:\n\n${postSummary}`;
+  if (post.content && post.content.length > 1000) {
+    userMessage += `\n\nFull content:\n${post.content}`;
+  }
+  if (internalLinks.length > 0) {
+    userMessage += `\n\nInternal links found in the post (use get_post to read these):\n${internalLinks.join("\n")}`;
+  }
+  if (externalLinks.length > 0) {
+    userMessage += `\n\nExternal links found in the post (use read_webpage to read these):\n${externalLinks.join("\n")}`;
   }
 
   const rawCritique = await agentLoop(systemPrompt, userMessage);
-  // The agent sometimes outputs relative paths — ensure all markdown links use full URLs
   const critiqueMarkdown = rawCritique.replace(/\]\(\//g, `](${SITE_URL}/`);
   const critiqueHtml = await marked.parse(critiqueMarkdown);
 
@@ -299,6 +290,7 @@ export async function processFeed(): Promise<{ processed: string[]; skipped: num
   // Process oldest-first so the pointer advances correctly
   for (const entry of toProcess.reverse()) {
     const result = await critiquePost(entry.url);
+    if (!result) continue;
     await emailCritique(result.title, result.url, result.critique.html);
     processed.push(entry.url);
   }

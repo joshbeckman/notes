@@ -63,6 +63,7 @@ app.get("/critique", async (c) => {
   if (!url) return c.json({ error: "url parameter is required" }, 400);
 
   const result = await critiquePost(url);
+  if (!result) return c.json({ error: "post not found" }, 404);
   return c.json(result);
 });
 
@@ -72,6 +73,7 @@ app.get("/preview", async (c) => {
   if (!url) return c.text("url parameter is required", 400);
 
   const result = await critiquePost(url);
+  if (!result) return c.text("post not found", 404);
 
   return c.html(`<!DOCTYPE html>
 <html>
@@ -106,6 +108,7 @@ app.get("/email", async (c) => {
   if (!url) return c.json({ error: "url parameter is required" }, 400);
 
   const result = await critiquePost(url);
+  if (!result) return c.json({ error: "post not found" }, 404);
   await emailCritique(result.title, result.url, result.critique.html);
   return c.json({ sent: true, title: result.title, url: result.url });
 });
