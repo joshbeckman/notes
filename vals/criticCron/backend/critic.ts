@@ -266,6 +266,52 @@ export async function critiqueDraft(title: string, content: string): Promise<{
   return { title, critique: { markdown: critiqueMarkdown, html: critiqueHtml } };
 }
 
+export type Annotation = {
+  lnum: number;
+  end_lnum?: number;
+  type: "I" | "W" | "E";
+  text: string;
+};
+
+export async function annotate(content: string, critique: string): Promise<Annotation[]> {
+  const numbered = content.split("\n").map((line, i) => `${i + 1}: ${line}`).join("\n");
+
+  const response = await anthropic.messages.create({
+    model: RESEARCH_MODEL,
+    max_tokens: 4096,
+    system: `You map critique feedback onto specific lines in a source document. Given a numbered document and a critique, produce a JSON array of annotations.
+
+Each annotation has:
+- "lnum": the primary line number the feedback applies to
+- "end_lnum": (optional) last line number if the feedback spans a range
+- "type": "I" for suggestions/connections, "W" for writing clarity issues or weak arguments, "E" for factual errors or logical flaws
+- "text": a concise (1-2 sentence) version of the critique point
+
+Guidelines:
+- Map every substantive point from the critique to at least one line
+- IMPORTANT: "lnum" must point to a line with actual text content, never to a blank/empty line. If the nearest line is blank, use the next non-blank line
+- Prefer "I" for most feedback — reserve "W" and "E" for clear problems
+- If a critique point is about the piece overall (structure, missing content), attach it to the most relevant line (e.g. the first line of the section it would belong in)
+- Keep text brief — the full critique is available separately
+
+Output ONLY valid JSON. No markdown fences, no commentary.`,
+    messages: [
+      {
+        role: "user",
+        content: `## Document\n\n${numbered}\n\n## Critique\n\n${critique}`,
+      },
+    ],
+  });
+
+  const text = response.content
+    .filter((b) => b.type === "text")
+    .map((b) => b.text)
+    .join("")
+    .trim();
+
+  return JSON.parse(text);
+}
+
 // --- Email ---
 
 function buildEmailHtml(title: string, url: string, critiqueHtml: string): string {
