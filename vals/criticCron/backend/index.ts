@@ -1,6 +1,6 @@
 import { Hono } from "npm:hono";
 import { resetCache } from "./search.ts";
-import { critiquePost, processFeed, emailCritique } from "./critic.ts";
+import { critiquePost, critiqueDraft, processFeed, emailCritique } from "./critic.ts";
 
 const STYLE_HEAD = `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans+Condensed:wght@600&display=swap">`;
 const BODY_STYLE = `font-family: 'IBM Plex Sans', sans-serif; max-width: 640px; margin: 0 auto; padding: 32px 20px; color: #151515; line-height: 1.6; background-color: #EBEDEA;`;
@@ -37,6 +37,10 @@ app.get("/", (c) => {
     <div style="margin-bottom: 16px;">
       <h2 style="${H2_STYLE}">GET /preview?url=...</h2>
       <p style="color: #666; font-size: 14px;">Ad-hoc critique of a single post. Returns HTML page.</p>
+    </div>
+    <div style="margin-bottom: 16px;">
+      <h2 style="${H2_STYLE}">POST /draft</h2>
+      <p style="color: #666; font-size: 14px;">Critique a draft post. Requires Bearer auth. Body: <code>{"title": "...", "content": "..."}</code></p>
     </div>
   </div>
   <hr style="${HR_STYLE}">
@@ -100,6 +104,23 @@ app.get("/preview", async (c) => {
   </form>
 </body>
 </html>`);
+});
+
+app.post("/draft", async (c) => {
+  const password = Deno.env.get("CRITIC_PASSWORD");
+  const auth = c.req.header("Authorization");
+  if (!password || auth !== `Bearer ${password}`) {
+    return c.json({ error: "unauthorized" }, 401);
+  }
+
+  resetCache();
+  const body = await c.req.json();
+  if (!body.title || !body.content) {
+    return c.json({ error: "title and content are required" }, 400);
+  }
+
+  const result = await critiqueDraft(body.title, body.content);
+  return c.json(result);
 });
 
 app.get("/email", async (c) => {

@@ -240,6 +240,32 @@ export async function critiquePost(postUrl: string): Promise<{
   return { title, url: fullUrl, critique: { markdown: critiqueMarkdown, html: critiqueHtml } };
 }
 
+export async function critiqueDraft(title: string, content: string): Promise<{
+  title: string;
+  critique: { markdown: string; html: string };
+}> {
+  const toneGuide = await getToneGuide();
+  const systemPrompt = buildSystemPrompt(toneGuide);
+
+  const links = extractLinks(content);
+  const externalLinks = links.filter((l) => !l.includes("joshbeckman.org"));
+  const internalLinks = links.filter((l) => l.includes("joshbeckman.org"));
+
+  let userMessage = `Here is a draft post to critique:\n\n# ${title}\n\n${content}`;
+  if (internalLinks.length > 0) {
+    userMessage += `\n\nInternal links found in the post (use get_post to read these):\n${internalLinks.join("\n")}`;
+  }
+  if (externalLinks.length > 0) {
+    userMessage += `\n\nExternal links found in the post (use read_webpage to read these):\n${externalLinks.join("\n")}`;
+  }
+
+  const rawCritique = await agentLoop(systemPrompt, userMessage);
+  const critiqueMarkdown = rawCritique.replace(/\]\(\//g, `](${SITE_URL}/`);
+  const critiqueHtml = await marked.parse(critiqueMarkdown);
+
+  return { title, critique: { markdown: critiqueMarkdown, html: critiqueHtml } };
+}
+
 // --- Email ---
 
 function buildEmailHtml(title: string, url: string, critiqueHtml: string): string {
