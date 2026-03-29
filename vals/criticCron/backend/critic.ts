@@ -272,6 +272,7 @@ export type Annotation = {
   end_lnum?: number;
   type: "I" | "W" | "E";
   text: string;
+  phrase?: string;
 };
 
 export async function annotate(content: string, critique: string): Promise<Annotation[]> {
@@ -287,10 +288,12 @@ Each annotation has:
 - "end_lnum": (optional) last line number if the feedback spans a range
 - "type": "I" for suggestions/connections, "W" for writing clarity issues or weak arguments, "E" for factual errors or logical flaws
 - "text": a concise (1-2 sentence) version of the critique point
+- "phrase": (optional) a short exact substring from the document that this feedback targets — must appear verbatim on the given line. Use this when the feedback is about a specific word, phrase, or sentence rather than the whole line. Omit for general line-level feedback.
 
 Guidelines:
 - Map every substantive point from the critique to at least one line
 - IMPORTANT: "lnum" must point to a line with actual text content, never to a blank/empty line. If the nearest line is blank, use the next non-blank line
+- IMPORTANT: "phrase" must be copied exactly from the document — do not paraphrase or modify it
 - Prefer "I" for most feedback — reserve "W" and "E" for clear problems
 - If a critique point is about the piece overall (structure, missing content), attach it to the most relevant line (e.g. the first line of the section it would belong in)
 - Keep text brief — the full critique is available separately
