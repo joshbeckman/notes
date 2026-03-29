@@ -11,7 +11,8 @@ const SITE_URL = "https://www.joshbeckman.org";
 const FEED_URL = `${SITE_URL}/feed.xml`;
 const JINA_BASE = "https://r.jina.ai/";
 const MAX_TOOL_ROUNDS = 8;
-const BLOB_KEY = "critic_cron_last_processed";
+const BLOB_KEY = "critic_cron_processed_urls";
+const CUTOFF_DATE = "2026-03-28";
 
 type FeedEntry = {
   title: string;
@@ -64,17 +65,17 @@ export async function parseFeed(): Promise<FeedEntry[]> {
   return entries;
 }
 
-export async function getLastProcessedDate(): Promise<string | null> {
+async function getProcessedUrls(): Promise<Set<string>> {
   try {
-    const stored = await blob.getJSON(BLOB_KEY) as { date: string } | null;
-    return stored?.date ?? null;
+    const stored = await blob.getJSON(BLOB_KEY) as string[] | null;
+    return new Set(stored ?? []);
   } catch {
-    return null;
+    return new Set();
   }
 }
 
-export async function setLastProcessedDate(date: string): Promise<void> {
-  await blob.setJSON(BLOB_KEY, { date });
+async function setProcessedUrls(urls: Set<string>): Promise<void> {
+  await blob.setJSON(BLOB_KEY, [...urls]);
 }
 
 // --- Source extraction ---
@@ -346,30 +347,30 @@ export async function processFeed(): Promise<{ processed: string[]; skipped: num
   const entries = await parseFeed();
   if (entries.length === 0) return { processed: [], skipped: 0 };
 
-  const lastDate = await getLastProcessedDate();
-  let toProcess: FeedEntry[];
+  const feedUrls = new Set(entries.map((e) => e.url));
+  const previouslyProcessed = await getProcessedUrls();
 
-  if (!lastDate) {
-    // First run: only process the most recent entry
-    toProcess = [entries[0]];
-  } else {
-    toProcess = entries.filter((e) => new Date(e.published) > new Date(lastDate));
+  // Prune records for posts no longer in the feed
+  const currentProcessed = new Set([...previouslyProcessed].filter((url) => feedUrls.has(url)));
+
+  const eligible = entries.filter(
+    (e) => new Date(e.published) >= new Date(CUTOFF_DATE) && !currentProcessed.has(e.url),
+  );
+
+  if (eligible.length === 0) {
+    await setProcessedUrls(currentProcessed);
+    return { processed: [], skipped: entries.length };
   }
 
-  if (toProcess.length === 0) return { processed: [], skipped: entries.length };
-
   const processed: string[] = [];
-  // Process oldest-first so the pointer advances correctly
-  for (const entry of toProcess.reverse()) {
+  for (const entry of eligible) {
     const result = await critiquePost(entry.url);
     if (!result) continue;
     await emailCritique(result.title, result.url, result.critique.html);
     processed.push(entry.url);
+    currentProcessed.add(entry.url);
   }
 
-  // Update pointer to the most recent entry we saw
-  const newest = entries[0];
-  await setLastProcessedDate(newest.published);
-
-  return { processed, skipped: entries.length - toProcess.length };
+  await setProcessedUrls(currentProcessed);
+  return { processed, skipped: entries.length - eligible.length };
 }
