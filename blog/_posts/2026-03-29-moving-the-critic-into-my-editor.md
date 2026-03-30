@@ -3,6 +3,7 @@ layout: Post
 date: 2026-03-29 21:46:00
 title: "Moving the Critic Into My Editor"
 description: "What if you could have an AI critic semantically linting your writing, inline?"
+image: "/assets/images/critique-ale-display.png"
 tags:
   - ai
   - writing
