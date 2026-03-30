@@ -54,9 +54,24 @@ Ask the user: "Does this capture what you want to say? What would you change?"
 
 Iterate on the pitch until the user is satisfied.
 
+### Phase 3.5: Images
+
+Before drafting, ask the user about images that should accompany the post:
+
+> Do you have any images, photos, screenshots, or diagrams that should go in this post? You can paste paths, URLs, or drag files into the chat.
+
+**Guidance:**
+- If the topic naturally involves visuals (a project demo, a place, a physical object, a diagram, a UI), prompt specifically: "This sounds like it would benefit from a screenshot/photo of X — do you have one?"
+- Ask about a **feature image** for the post header (sets the `image:` front matter field)
+- Ask if any images should be placed inline at specific points in the post
+- If the user provides local file paths, note them for embedding as `![alt text](/assets/images/filename)` in the draft — the build pipeline will handle optimization
+- If the user provides URLs, use them directly
+- If the user says no images, move on — don't push
+- For posts with multiple images, ask about ordering and which sections they belong to
+
 ### Phase 4: Draft
 
-Once the pitch is approved, write the full post as a Markdown file with proper YAML front matter.
+Once the pitch is approved and images are gathered, write the full post as a Markdown file with proper YAML front matter.
 
 **Front matter — always include:**
 - `layout: Post`
