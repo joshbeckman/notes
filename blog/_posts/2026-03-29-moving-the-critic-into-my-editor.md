@@ -1,19 +1,20 @@
 ---
 layout: Post
-date: 2026-03-29 21:46:00
-title: "Moving the Critic Into My Editor"
-description: "What if you could have an AI critic semantically linting your writing, inline?"
+date: 2026-03-29 21:46:00.000000000 +00:00
+title: Moving the Critic Into My Editor
+description: What if you could have an AI critic semantically linting your writing,
+  inline?
 image: "/assets/images/critique-ale-display.png"
 tags:
-  - ai
-  - writing
-  - tools
-  - vim
-  - feedback
+- ai
+- writing
+- tools
+- vim
+- feedback
 category: practicing
 toc: true
+serial_number: 2026.PTG.002
 ---
-
 I was editing [the blog post about my AI writing critic](/blog/practicing/three-agents-for-a-knowledge-garden) (based on the critique it had generated) when I realized I didn't want to be incorporating this feedback *after* I had already published; I wanted the next critique now, against the draft in front of me.
 
 The [Critic agent](/blog/practicing/three-agents-for-a-knowledge-garden#the-critic-walks-beside) I built runs on a cron schedule. It monitors my RSS feed, reads new posts, searches my garden for related writing, and emails me a critique. That's good for reflection. I read the critique over coffee the next morning, think about it, sometimes update the post. But it means publishing first and polishing later. For a post I cared about getting right before it went out, I wanted the feedback loop tighter.
