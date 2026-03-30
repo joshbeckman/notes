@@ -6,7 +6,7 @@ searchable: true
 hide_title: true
 serial_number: 2023.PAE.003
 ---
-Hello, friends. I'm Josh Beckman. I make things — mostly software, mostly for others. This is where I keep years of writing, notes, and reading highlights — a [knowledge garden](/about-this-site) built in the open. [I write](/blog) about software craft, building, and whatever I'm learning. Read [more about me](/about), [what I believe](/beliefs), or [jump to navigation](#footer).
+Hello, friends. I'm Josh Beckman. I make things - mostly software, mostly for others. This is where I keep years of writing, notes, and reading highlights, as a [knowledge garden](/about-this-site) built in the open. [I write](/blog) about software craft, building, and whatever I'm learning. Read [more about me](/about), [what I believe](/beliefs), or [jump to navigation](#footer).
 
 ## Popular
 
