@@ -9,6 +9,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/112641705054000
 tags:
 - walking
 - cooking
+- coffee
 serial_number: 2024.BLG.054
 ---
 I like talking long walks on Sunday. It rests me a bit and rejuvenates my connection to the neighborhood. 

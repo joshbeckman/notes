@@ -8,6 +8,7 @@ tags:
 - photography
 - non-fiction
 - walking
+- coffee
 redirect_from:
 - "/after-reading-kissa-by-kissa"
 - "/after-reading-kissa-by-kissa/"
