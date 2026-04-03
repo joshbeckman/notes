@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/05ae147f-e8ba-4f2e-b320-b2240e826abe.jpeg"
 description:
 rating: 3.5
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116341322505563171
 bluesky_status_url: false
 tags:
 - coffee
