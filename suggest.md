@@ -9,7 +9,7 @@ tags:
 - personal-blog
 - llm
 - ai
-serial_number: 2026.PAE.001
+serial_number: 2026.PAE.008
 ---
 This page generates suggested comments for posts in the knowledge garden from three perspectives. You can [read about how it works](https://www.joshbeckman.org/blog/using-an-llmand-rag-to-wring-insights-from-my-posts).
 

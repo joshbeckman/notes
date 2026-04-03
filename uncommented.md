@@ -7,7 +7,7 @@ searchable: true
 tags:
 - index
 - personal-blog
-serial_number: 2026.PAE.002
+serial_number: 2026.PAE.009
 ---
 These are notes that contain only a highlight or quote with no original commentary. Pick one to [suggest comments](/suggest/) for.
 

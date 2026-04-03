@@ -9,7 +9,7 @@ tags:
 - personal-blog
 - llm
 - ai
-serial_number: 2026.PAE.003
+serial_number: 2026.PAE.010
 ---
 This page pre-reads a web page through the lens of my knowledge garden, surfacing what I've already written about in relation to the piece. Three perspectives — proponent, opponent, and questioner — frame the page against prior notes and posts.
 
