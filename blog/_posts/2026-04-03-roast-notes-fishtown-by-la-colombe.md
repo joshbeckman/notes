@@ -7,7 +7,7 @@ image: "/assets/images/05ae147f-e8ba-4f2e-b320-b2240e826abe.jpeg"
 description:
 rating: 3.5
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116341322505563171
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3milxoglgm72q
 tags:
 - coffee
 serial_number: 2026.BLG.045
