@@ -14,6 +14,8 @@ These are the desks I have worked at over the years.
 
 I spend something like 8 hours every day at a desk, so it's a big part of my life that I'm constantly trying to improve.
 
+{% include ContributionGraph.html category="working" %}
+
 {% assign postsByYear = 
 site.categories['working'] | group_by_exp:"post", "post.date | date: '%Y'" %}
 {% for day in postsByYear %}

@@ -14,6 +14,8 @@ Replies I make on social networks and other external sites, mirrored here for co
 
 ---
 
+{% include ContributionGraph.html category="replies" %}
+
 {% for post in site.categories['replies'] %}
 {%- include PostListItem.html post=post dated=true -%}
 {% endfor %}

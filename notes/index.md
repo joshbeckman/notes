@@ -14,6 +14,8 @@ Or you can start by browsing [my favorites](/search?q=%27favorite&keys=tags) or 
 
 Here are the most recent additions:
 
+{% include ContributionGraph.html category="notes" %}
+
 {% for post in site.categories['notes'] limit: 50 %}
 {%- include PostListItem.html post=post dated=true -%}
 {% endfor %}

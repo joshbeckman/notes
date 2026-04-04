@@ -10,6 +10,8 @@ serial_number: 2025.PAE.008
 ---
 Lessons learned and observations from working in the software engineering industry.
 
+{% include ContributionGraph.html category="practicing" %}
+
 {% assign postsByMonth = 
 site.categories['practicing'] | group_by_exp:"post", "post.date | date: '%Y'" %}
 {% for day in postsByMonth %}

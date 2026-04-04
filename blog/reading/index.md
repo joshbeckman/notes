@@ -33,6 +33,8 @@ I keep this [anitlibrary](/notes/660552124) to allow my interest to project forw
 
 These are books I've read in the past and made notes about.
 
+{% include ContributionGraph.html category="reading" %}
+
 {% assign postsByMonth = 
 site.categories['reading'] | group_by_exp:"post", "post.date | date: '%Y'" %}
 {% for day in postsByMonth %}

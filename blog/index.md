@@ -21,6 +21,8 @@ serial_number: 2024.PAE.001
 
 I have some collections for specific topics (above) or you can browse the full list (below).
 
+{% include ContributionGraph.html category="blog" %}
+
 {% assign postsByMonth = 
 site.categories['blog'] | group_by_exp:"post", "post.date | date: '%Y %B'" %}
 {% for day in postsByMonth %}

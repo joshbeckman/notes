@@ -15,6 +15,8 @@ serial_number: 2024.PAE.009
 ---
 Albums that moved me enough to write about them.
 
+{% include ContributionGraph.html category="listening" %}
+
 {% assign postsByMonth = site.categories['listening'] | group_by_exp:"post", "post.date | date: '%Y'" %}
 {% for day in postsByMonth %}
   <table>

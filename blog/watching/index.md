@@ -12,6 +12,8 @@ serial_number: 2024.PAE.012
 ---
 These are movies I've been watching.
 
+{% include ContributionGraph.html category="watching" %}
+
 {% assign postsByMonth = 
 site.categories['watching'] | group_by_exp:"post", "post.date | date: '%Y %B'" %}
 {% for day in postsByMonth %}

@@ -1,0 +1,92 @@
+{% comment %}
+  Contribution graph for category index pages.
+  Usage: {% include ContributionGraph.html category="blog" %}
+  Renders a GitHub-style contribution heatmap for the last 12 months.
+{% endcomment %}
+{% assign cat = include.category %}
+<div class="contribution-graph" id="contribution-graph-{{ cat }}">
+  <div class="contribution-graph-months"></div>
+  <div class="contribution-graph-grid"></div>
+  <div class="contribution-graph-tooltip"></div>
+</div>
+<script>
+(function() {
+  var dates = [
+    {% assign now_epoch = "now" | date: "%s" | plus: 0 %}{% for post in site.categories[cat] %}{% assign post_epoch = post.date | date: "%s" | plus: 0 %}{% assign post_age = now_epoch | minus: post_epoch %}{% if post_age < 31536000 %}"{{ post.date | date: '%Y-%m-%d' }}",{% endif %}{% endfor %}
+  ];
+  var container = document.getElementById('contribution-graph-{{ cat }}');
+  if (!container || dates.length === 0) return;
+
+  var counts = {};
+  dates.forEach(function(d) { counts[d] = (counts[d] || 0) + 1; });
+
+  var today = new Date();
+  today.setHours(0, 0, 0, 0);
+  var start = new Date(today);
+  start.setFullYear(start.getFullYear() - 1);
+  // align to previous Sunday
+  start.setDate(start.getDate() - start.getDay());
+
+  var grid = container.querySelector('.contribution-graph-grid');
+  var monthsEl = container.querySelector('.contribution-graph-months');
+  var tooltip = container.querySelector('.contribution-graph-tooltip');
+
+  var cells = [];
+  var d = new Date(start);
+  while (d <= today) {
+    var key = d.toISOString().slice(0, 10);
+    var count = counts[key] || 0;
+    var level = count === 0 ? 0 : count === 1 ? 1 : 2;
+    var cell = document.createElement('div');
+    cell.className = 'contrib-cell contrib-level-' + level;
+    cell.dataset.date = key;
+    cell.dataset.count = count;
+    grid.appendChild(cell);
+    cells.push({ date: new Date(d), key: key, count: count, el: cell });
+    d.setDate(d.getDate() + 1);
+  }
+
+  // month labels
+  var totalDays = cells.length;
+  var monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var currentMonth = -1;
+  var monthStarts = [];
+  cells.forEach(function(c, i) {
+    var m = c.date.getMonth();
+    if (m !== currentMonth) {
+      monthStarts.push({ month: m, index: i });
+      currentMonth = m;
+    }
+  });
+  monthStarts.forEach(function(ms, i) {
+    var nextIndex = i + 1 < monthStarts.length ? monthStarts[i + 1].index : totalDays;
+    var widthPct = ((nextIndex - ms.index) / totalDays * 100);
+    if (widthPct < 3) return;
+    var leftPct = (ms.index / totalDays * 100);
+    var span = document.createElement('span');
+    span.textContent = monthNames[ms.month];
+    span.style.left = leftPct + '%';
+    span.style.width = widthPct + '%';
+    monthsEl.appendChild(span);
+  });
+
+  // tooltip
+  grid.addEventListener('mouseover', function(e) {
+    if (!e.target.classList.contains('contrib-cell')) return;
+    var count = e.target.dataset.count;
+    var date = e.target.dataset.date;
+    var label = count === '0' ? 'No posts' : count === '1' ? '1 post' : count + ' posts';
+    tooltip.textContent = label + ' on ' + date;
+    tooltip.classList.add('visible');
+    var rect = e.target.getBoundingClientRect();
+    var containerRect = container.getBoundingClientRect();
+    tooltip.style.left = (rect.left - containerRect.left + rect.width / 2) + 'px';
+    tooltip.style.top = (rect.top - containerRect.top - 28) + 'px';
+  });
+  grid.addEventListener('mouseout', function(e) {
+    if (e.target.classList.contains('contrib-cell')) {
+      tooltip.classList.remove('visible');
+    }
+  });
+})();
+</script>

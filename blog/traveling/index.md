@@ -14,6 +14,8 @@ This is still a work-in-progress.
 
 Probably something like: each post has a latitude and longitude and they're all displayed on a map.
 
+{% include ContributionGraph.html category="traveling" %}
+
 {% assign postsByMonth = 
 site.categories['traveling'] | group_by_exp:"post", "post.date | date: '%Y'" %}
 {% for day in postsByMonth %}

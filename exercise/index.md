@@ -10,6 +10,8 @@ serial_number: 2025.PAE.003
 ---
 My exercise journal, pulled from [Strava](https://www.strava.com/athletes/75003252). See [historical stats](/exercise/stats) for trends over time.
 
+{% include ContributionGraph.html category="exercise" %}
+
 {% assign postsByMonth = 
 site.categories['exercise'] | group_by_exp:"post", "post.date | date: '%Y %B'" %}
 {% for day in postsByMonth %}
