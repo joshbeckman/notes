@@ -96,6 +96,10 @@ You can read about everything else I use to build things at [/uses](/uses).
 - podcast rendering
 - [More ideas](https://github.com/joshbeckman/notes/issues?q=is%3Aopen+is%3Aissue+-label%3Apost)
 
+### v3.9.0 "circle-tribe" — 2026-04-04
+- Added contribution graph (GitHub-style heatmap) to category index pages, inspired by [brandur.org](https://brandur.org/atoms/hb6dolc)
+- Send browser notification when suggest/pre-read results are ready
+
 ### v3.8.0 "elegant-pull" — 2026-03-26
 - Added [Pre-Read](/pre-read/) page: contextualizes web pages against the knowledge garden using three agentic perspectives (proponent, opponent, questioner) powered by Jina Reader and Claude
 - Upgraded suggest-comments val to agentic tool-use with Sonnet 4.6
