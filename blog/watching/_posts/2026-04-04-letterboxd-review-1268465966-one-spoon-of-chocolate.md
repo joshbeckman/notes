@@ -8,7 +8,7 @@ description:
 rating: 2
 tmdb_id: '1290792'
 letterboxd_id: one-spoon-of-chocolate
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116354056849704215
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/one-spoon-of-chocolate/
 tags:
