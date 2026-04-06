@@ -12,7 +12,7 @@ tags:
 - coffee
 serial_number: 2026.BLG.045
 ---
-I don't usually buy from La Colombe, but we were killing time before our favorite fish taco place opened up and I thought I might as well try some Fishtown.
+I don't usually buy from La Colombe, but we were killing time before our favorite fish taco place opened up and I thought I might as well try some [Fishtown](https://www.lacolombe.com/products/fishtown).
 
 ![La Colombe Fishtown beans](/assets/images/05ae147f-e8ba-4f2e-b320-b2240e826abe.jpeg)
 
