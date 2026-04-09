@@ -9,7 +9,7 @@ rating: 5
 tmdb_id: '499'
 letterboxd_id: cleo-from-5-to-7
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116376015357256093
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mj3eouvlq322
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/cleo-from-5-to-7/
 tags:
 - letterboxd
