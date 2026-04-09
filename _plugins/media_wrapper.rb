@@ -38,6 +38,9 @@ module Jekyll
       content = content.gsub(%r{<video([^>]+)>(.*?)</video>}mi) do |match|
         video_tag = match
 
+        # Add loading="lazy" if not present (Chrome 148+, progressive enhancement)
+        video_tag = video_tag.sub(/<video/i, '<video loading="lazy"') unless video_tag.match?(/loading=/i)
+
         <<~HTML
           <figure class="video-figure">
             <div class="video-wrapper">
@@ -50,6 +53,9 @@ module Jekyll
       # Wrap audio tags with figure and div
       content = content.gsub(%r{<audio([^>]*)>(.*?)</audio>}mi) do |match|
         audio_tag = match
+
+        # Add loading="lazy" if not present (Chrome 148+, progressive enhancement)
+        audio_tag = audio_tag.sub(/<audio/i, '<audio loading="lazy"') unless audio_tag.match?(/loading=/i)
 
         <<~HTML
           <figure class="audio-figure">
