@@ -96,6 +96,12 @@ You can read about everything else I use to build things at [/uses](/uses).
 - podcast rendering
 - [More ideas](https://github.com/joshbeckman/notes/issues?q=is%3Aopen+is%3Aissue+-label%3Apost)
 
+### v3.10.0 "crystal-team" — 2026-04-10
+- Added exercise subcategories: posts are now organized by activity type (running, cycling, weight-training, walking, hiking, etc.) with dedicated index pages for each
+- Each subcategory has its own contribution graph and monthly stats
+- Old exercise URLs redirect to new subcategory URLs
+- The Strava importer automatically creates subcategory directories and index pages for new activity types
+
 ### v3.9.0 "circle-tribe" — 2026-04-04
 - Added contribution graph (GitHub-style heatmap) to category index pages, inspired by [brandur.org](https://brandur.org/atoms/hb6dolc)
 - Send browser notification when suggest/pre-read results are ready
