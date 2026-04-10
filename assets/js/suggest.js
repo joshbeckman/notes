@@ -1,14 +1,30 @@
 (function () {
   var suggestUrl = "https://joshbeckman--cc88a93a27c511f1833342dde27851f2.web.val.run";
-  var params = new URLSearchParams(window.location.search);
-  var post = params.get("post");
 
-  if (post) {
-    hideMenu();
-    if ("Notification" in window && Notification.permission === "default") {
-      Notification.requestPermission();
+  function init() {
+    var params = new URLSearchParams(window.location.search);
+    var post = params.get("post");
+
+    var password = params.get("password");
+    var savedPassword = window.JoshSettings && window.JoshSettings.load().gardenPassword;
+    var passwordField = document.querySelector('#suggest-form input[name="password"]');
+    if (passwordField && !password && savedPassword) {
+      passwordField.value = savedPassword;
     }
-    fetchSuggestions(post);
+
+    if (post && (password || savedPassword)) {
+      hideMenu();
+      if ("Notification" in window && Notification.permission === "default") {
+        Notification.requestPermission();
+      }
+      fetchSuggestions(post, password || savedPassword);
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
   }
 
   function startLoading() {
@@ -26,13 +42,13 @@
     }
   }
 
-  function fetchSuggestions(post) {
+  function fetchSuggestions(post, password) {
     startLoading();
     if (!post.startsWith("https://")) {
       post = "https://www.joshbeckman.org" + post;
     }
     var url = suggestUrl + "?post=" + encodeURIComponent(post);
-    fetch(url)
+    fetch(url, { headers: { "Authorization": "Bearer " + password } })
       .then(function (response) { return response.json(); })
       .then(function (data) {
         stopLoading();

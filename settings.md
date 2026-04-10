@@ -69,6 +69,12 @@ Load settings from a JSON file you control (e.g., GitHub Gist raw URL):
 </div>
 <p class="small">Stores passphrases in sessionStorage (cleared when tab closes) so you don't re-enter them on each encrypted page. Disable for maximum security.</p>
 
+<div class="settings-field">
+    <label for="settings-garden-password">Garden password</label>
+    <input type="password" id="settings-garden-password" placeholder="For Suggest Comments & Pre-Read" />
+</div>
+<p class="small">Saved here so you don't have to enter it each time you use <a href="/suggest/">Suggest Comments</a> or <a href="/pre-read/">Pre-Read</a>.</p>
+
 ## Social
 
 <div class="settings-field settings-checkbox">
@@ -110,6 +116,7 @@ Load settings from a JSON file you control (e.g., GitHub Gist raw URL):
         disableAnalytics: document.getElementById('settings-disable-analytics'),
         disableSocial: document.getElementById('settings-disable-social'),
         cacheDecryption: document.getElementById('settings-cache-decryption'),
+        gardenPassword: document.getElementById('settings-garden-password'),
         mastodonInstance: document.getElementById('settings-mastodon-instance'),
         saveBtn: document.getElementById('settings-save'),
         resetBtn: document.getElementById('settings-reset'),
@@ -123,6 +130,7 @@ Load settings from a JSON file you control (e.g., GitHub Gist raw URL):
         elements.disableAnalytics.checked = settings.disableAnalytics || false;
         elements.disableSocial.checked = settings.disableSocialLoading || false;
         elements.cacheDecryption.checked = settings.cacheDecryptionPassphrase !== false;
+        elements.gardenPassword.value = settings.gardenPassword || '';
         elements.mastodonInstance.value = settings.mastodonInstance || '';
 
         var color = settings.customColor || '#903465';
@@ -150,6 +158,7 @@ Load settings from a JSON file you control (e.g., GitHub Gist raw URL):
             disableAnalytics: elements.disableAnalytics.checked,
             disableSocialLoading: elements.disableSocial.checked,
             cacheDecryptionPassphrase: elements.cacheDecryption.checked,
+            gardenPassword: elements.gardenPassword.value || null,
             mastodonInstance: elements.mastodonInstance.value || null
         };
     }

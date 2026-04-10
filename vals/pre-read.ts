@@ -331,7 +331,25 @@ async function fetchPageContent(url: string): Promise<{ title: string; content: 
   };
 }
 
+const CORS_HEADERS: Record<string, string> = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers": "Authorization",
+};
+
 export default async function (req: Request): Promise<Response> {
+  if (req.method === "OPTIONS") {
+    return new Response(null, { status: 204, headers: CORS_HEADERS });
+  }
+
+  const password = (req.headers.get("Authorization") || "").replace(/^Bearer\s+/, "");
+  const expected = Deno.env.get("GARDEN_PASSWORD");
+  if (!expected || password !== expected) {
+    return new Response(JSON.stringify({ error: "Invalid password" }), {
+      status: 401,
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    });
+  }
+
   _searchData = null;
   _index = null;
   _tags = null;
@@ -342,7 +360,7 @@ export default async function (req: Request): Promise<Response> {
   if (!pageUrl) {
     return new Response(JSON.stringify({ error: "url parameter is required" }), {
       status: 400,
-      headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" },
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
     });
   }
 
@@ -350,7 +368,7 @@ export default async function (req: Request): Promise<Response> {
   if (!page.content) {
     return new Response(JSON.stringify({ error: "Could not fetch page content", url: pageUrl }), {
       status: 422,
-      headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" },
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
     });
   }
 
@@ -419,6 +437,6 @@ CRITICAL FORMAT RULE: Your final response (after you finish using tools) must co
         questioner: { markdown: queResult.text, html: questionerHtml },
       },
     }),
-    { headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" } }
+    { headers: { "Content-Type": "application/json", ...CORS_HEADERS } }
   );
 }

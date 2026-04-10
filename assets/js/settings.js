@@ -11,7 +11,8 @@
         colorScheme: 'system',
         reduceMotion: false,
         disableAnalytics: false,
-        cacheDecryptionPassphrase: false
+        cacheDecryptionPassphrase: false,
+        gardenPassword: null
     };
 
     function loadSettings() {

@@ -1,14 +1,30 @@
 (function () {
   var valUrl = "https://joshbeckman--1ba131fe28c011f180b042dde27851f2.web.val.run";
-  var params = new URLSearchParams(window.location.search);
-  var url = params.get("url");
 
-  if (url) {
-    hideMenu();
-    if ("Notification" in window && Notification.permission === "default") {
-      Notification.requestPermission();
+  function init() {
+    var params = new URLSearchParams(window.location.search);
+    var url = params.get("url");
+
+    var password = params.get("password");
+    var savedPassword = window.JoshSettings && window.JoshSettings.load().gardenPassword;
+    var passwordField = document.querySelector('#preread-form input[name="password"]');
+    if (passwordField && !password && savedPassword) {
+      passwordField.value = savedPassword;
     }
-    fetchPreRead(url);
+
+    if (url && (password || savedPassword)) {
+      hideMenu();
+      if ("Notification" in window && Notification.permission === "default") {
+        Notification.requestPermission();
+      }
+      fetchPreRead(url, password || savedPassword);
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
   }
 
   function startLoading() {
@@ -26,10 +42,10 @@
     }
   }
 
-  function fetchPreRead(url) {
+  function fetchPreRead(url, password) {
     startLoading();
     var endpoint = valUrl + "?url=" + encodeURIComponent(url);
-    fetch(endpoint)
+    fetch(endpoint, { headers: { "Authorization": "Bearer " + password } })
       .then(function (response) { return response.json(); })
       .then(function (data) {
         stopLoading();

@@ -15,7 +15,14 @@ This page pre-reads a web page through the lens of my knowledge garden, surfacin
 
 <div id="preread-menu">
 <form id="preread-form" method="GET">
-  <input type="text" name="url" placeholder="https://example.com/article" style="width:100%">
+  <div style="margin-bottom:1em">
+    <label for="preread-url">Page URL</label>
+    <input id="preread-url" type="text" name="url" placeholder="https://example.com/article" style="width:100%;margin-top:0.25em">
+  </div>
+  <div style="margin-bottom:1em">
+    <label for="preread-password">Password</label>
+    <input id="preread-password" type="password" name="password" style="width:100%;margin-top:0.25em">
+  </div>
   <button type="submit">Pre-Read</button>
 </form>
 </div>

@@ -20,7 +20,14 @@ See also: [Uncommented Notes](/uncommented/) for notes that need commentary.
 <summary>Specific Post</summary>
 <p>
 <form id="suggest-form" method="GET">
-  <input type="text" name="post" placeholder="https://www.joshbeckman.org/..." style="width:100%">
+  <div style="margin-bottom:1em">
+    <label for="suggest-post">Post URL</label>
+    <input id="suggest-post" type="text" name="post" placeholder="https://www.joshbeckman.org/..." style="width:100%;margin-top:0.25em">
+  </div>
+  <div style="margin-bottom:1em">
+    <label for="suggest-password">Password</label>
+    <input id="suggest-password" type="password" name="password" style="width:100%;margin-top:0.25em">
+  </div>
   <button type="submit">Suggest Comments</button>
 </form>
 </p>

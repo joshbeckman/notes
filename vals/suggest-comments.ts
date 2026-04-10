@@ -330,7 +330,25 @@ function extractComment(raw: string): string {
   return paragraphs[paragraphs.length - 1] || trimmed;
 }
 
+const CORS_HEADERS: Record<string, string> = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers": "Authorization",
+};
+
 export default async function (req: Request): Promise<Response> {
+  if (req.method === "OPTIONS") {
+    return new Response(null, { status: 204, headers: CORS_HEADERS });
+  }
+
+  const password = (req.headers.get("Authorization") || "").replace(/^Bearer\s+/, "");
+  const expected = Deno.env.get("GARDEN_PASSWORD");
+  if (!expected || password !== expected) {
+    return new Response(JSON.stringify({ error: "Invalid password" }), {
+      status: 401,
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    });
+  }
+
   // Reset per-request cache
   _searchData = null;
   _index = null;
@@ -342,7 +360,7 @@ export default async function (req: Request): Promise<Response> {
   if (!postUrl) {
     return new Response(JSON.stringify({ error: "post parameter is required" }), {
       status: 400,
-      headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" },
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
     });
   }
 
@@ -352,7 +370,7 @@ export default async function (req: Request): Promise<Response> {
   if (!post) {
     return new Response(JSON.stringify({ error: "Post not found", postUrl }), {
       status: 404,
-      headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" },
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
     });
   }
 
@@ -421,6 +439,6 @@ CRITICAL FORMAT RULE: Your final response (after you finish using tools) must co
         questioner: { markdown: queResult.text, html: questionerHtml },
       },
     }),
-    { headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" } }
+    { headers: { "Content-Type": "application/json", ...CORS_HEADERS } }
   );
 }
