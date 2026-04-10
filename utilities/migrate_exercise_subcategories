@@ -1,0 +1,70 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# One-time migration: move exercise posts into subcategory directories
+# based on their sport-type tag (e.g. exercise/_posts/ -> exercise/running/_posts/)
+# and add redirect_from for the old URL.
+
+require 'fileutils'
+require 'yaml'
+
+SPORT_TYPE_TAGS = %w[
+  running cycling swimming weight-training walking hiking
+  skiing snowboarding cross-country-skiing rowing elliptical
+  workout tennis yoga stairstepper highintensityintervaltraining
+  meditation
+].freeze
+
+SOURCE_DIR = File.expand_path('../exercise/_posts', __dir__)
+
+moved = 0
+skipped = 0
+
+Dir.glob(File.join(SOURCE_DIR, '*.md')).each do |filepath|
+  content = File.read(filepath)
+  unless content =~ /\A(---\s*\n.*?\n?)^(---\s*$\n?)/m
+    puts "SKIP (no frontmatter): #{filepath}"
+    skipped += 1
+    next
+  end
+
+  yaml_content = YAML.safe_load(Regexp.last_match(1), permitted_classes: [Date, Time, DateTime, Symbol]) || {}
+  body = content.sub(/\A---\s*\n.*?\n?^---\s*$\n?/m, '')
+
+  tags = yaml_content['tags'] || []
+  sport_tag = tags.find { |t| SPORT_TYPE_TAGS.include?(t) }
+
+  unless sport_tag
+    puts "SKIP (no sport tag): #{File.basename(filepath)} tags=#{tags}"
+    skipped += 1
+    next
+  end
+
+  basename = File.basename(filepath)
+  slug = basename.sub(/^\d{4}-\d{2}-\d{2}-/, '').sub(/\.md$/, '')
+
+  # Add redirect_from for old URL
+  old_url = "/exercise/#{slug}"
+  existing_redirects = yaml_content['redirect_from'] || []
+  unless existing_redirects.include?(old_url)
+    yaml_content['redirect_from'] = existing_redirects + [old_url]
+  end
+
+  # Create target directory
+  target_dir = File.expand_path("../exercise/#{sport_tag}/_posts", __dir__)
+  FileUtils.mkdir_p(target_dir)
+
+  # Write to new location
+  target_path = File.join(target_dir, basename)
+  File.open(target_path, 'w') do |f|
+    f.puts yaml_content.to_yaml
+    f.puts '---'
+    f.write body
+  end
+
+  # Remove old file
+  File.delete(filepath)
+  moved += 1
+end
+
+puts "\nMigration complete: #{moved} moved, #{skipped} skipped"

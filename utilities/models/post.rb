@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'fileutils'
 require 'json'
 require 'net/http'
 require 'uri'
@@ -27,6 +28,7 @@ Post = Struct.new(
   :rating,
   :song_link,
   :photo_feature,
+  :redirect_from,
   :slug,
   :tags,
   :title,
@@ -80,6 +82,7 @@ Post = Struct.new(
       rating: yaml_content['rating'],
       song_link: yaml_content['song_link'],
       photo_feature: yaml_content['photo_feature'],
+      redirect_from: yaml_content['redirect_from'],
       slug: slug,
       tags: yaml_content['tags'],
       title: yaml_content['title'],
@@ -162,6 +165,7 @@ Post = Struct.new(
     hash['youtube_video_id'] = youtube_video_id unless youtube_video_id.nil?
     hash['youtube_video_url'] = youtube_video_url unless youtube_video_url.nil?
     hash['exercise_data'] = exercise_data.transform_keys(&:to_s) if exercise_data
+    hash['redirect_from'] = redirect_from if redirect_from&.any?
     hash['tags'] = tags if tags&.any?
     hash['serial_number'] = serial_number if serial_number
     hash['published'] = published unless published.nil?
@@ -182,6 +186,7 @@ Post = Struct.new(
 
   def create_file
     preserve_serial_number_from_existing_file
+    FileUtils.mkdir_p(File.dirname(filename))
     File.open(filename, 'w') do |file|
       file.puts front_matter.to_yaml
       file.puts '---'

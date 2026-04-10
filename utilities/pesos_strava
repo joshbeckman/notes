@@ -149,14 +149,16 @@ module PESOS
           video = asset.standalone_md
         end
       end
+      tag = sport_type_tag(activity.sport_type)
+      ensure_subcategory_index(tag)
       post = Post.new(
         title: "#{activity.name} #{activity.sport_type_emoji}",
         body: post_body(activity: activity, image: image, video: video),
         date: activity.start_date,
         strava_activity_url: activity.strava_url,
         layout: 'Exercise',
-        category: 'exercise',
-        tags: [sport_type_tag(activity.sport_type)],
+        category: "exercise/#{tag}",
+        tags: [tag],
         slug: activity.id,
         image: image,
         exercise_data: exercise_data(activity)
@@ -219,6 +221,74 @@ module PESOS
         data[:weather] = weather if weather
       end
       data
+    end
+
+    def ensure_subcategory_index(tag)
+      index_path = File.expand_path("../exercise/#{tag}/index.md", __dir__)
+      return if File.exist?(index_path)
+
+      title = tag.split('-').map(&:capitalize).join(' ')
+      FileUtils.mkdir_p(File.dirname(index_path))
+      File.write(index_path, <<~INDEX)
+        ---
+        layout: Page
+        title: #{title}
+        searchable: true
+        categories:
+        - exercise
+        tags:
+        - index
+        ---
+        #{title} activities from my [exercise journal](/exercise), pulled from [Strava](https://www.strava.com/athletes/75003252).
+
+        {% include ContributionGraph.html category="#{tag}" %}
+
+        {% assign postsByMonth =
+        site.categories['#{tag}'] | group_by_exp:"post", "post.date | date: '%Y %B'" %}
+        {% for day in postsByMonth %}
+          {% assign active_days = day.items | count_active_days %}
+          {% assign total_seconds = day.items | sum_exercise_time %}
+          {% assign total_miles = day.items | sum_miles %}
+          <table class="responsive-table">
+              <colgroup>
+                  <col/>
+                  <col style="width: 20ch;"/>
+                  <col style="width: 12ch;"/>
+              </colgroup>
+              <thead>
+                <tr>
+                    <td colspan="1">
+                        <span id="{{ day.name }}">{{ day.name }}</span>
+                    </td>
+                    <td colspan="2">
+                        <span class="monthly-stats">
+                            {{ active_days }} days · {{ total_seconds | format_duration }} · {{ total_miles | format_miles }}
+                        </span>
+                    </td>
+                </tr>
+              </thead>
+          {% for post in day.items %}
+            <tr>
+                <td>
+                  <a href="{{post.url}}">
+                    {{ post.title }}
+                  </a>
+                </td>
+                <td data-label="Date:">
+                    {{ post.date | date: '%d %B %Y' }}
+                </td>
+                <td data-label="{% if post.exercise_data['distance_in_miles'] %}Distance: {% else %}Heart Rate: {% endif %}">
+                    {% if post.exercise_data['distance_in_miles'] %}
+                        {{post.exercise_data['distance_in_miles']}}
+                    {% else %}
+                        {{post.exercise_data['max_heartrate']}}
+                    {% endif %}
+                </td>
+            </tr>
+          {% endfor %}
+          </table>
+        {% endfor %}
+      INDEX
     end
 
     private

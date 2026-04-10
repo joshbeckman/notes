@@ -10,6 +10,21 @@ serial_number: 2025.PAE.003
 ---
 My exercise journal, pulled from [Strava](https://www.strava.com/athletes/75003252). See [historical stats](/exercise/stats) for trends over time.
 
+<div id="toc-and-metadata"><ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="/exercise/running">Running</a></li>
+<li class="toc-entry toc-h2"><a href="/exercise/weight-training">Weight Training</a></li>
+<li class="toc-entry toc-h2"><a href="/exercise/cycling">Cycling</a></li>
+<li class="toc-entry toc-h2"><a href="/exercise/walking">Walking</a></li>
+<li class="toc-entry toc-h2"><a href="/exercise/workout">Workout</a></li>
+<li class="toc-entry toc-h2"><a href="/exercise/hiking">Hiking</a></li>
+<li class="toc-entry toc-h2"><a href="/exercise/tennis">Tennis</a></li>
+<li class="toc-entry toc-h2"><a href="/exercise/yoga">Yoga</a></li>
+<li class="toc-entry toc-h2"><a href="/exercise/rowing">Rowing</a></li>
+<li class="toc-entry toc-h2"><a href="/exercise/stairstepper">Stair Stepper</a></li>
+<li class="toc-entry toc-h2"><a href="/exercise/highintensityintervaltraining">HIIT</a></li>
+<li class="toc-entry toc-h2"><a href="/exercise/meditation">Meditation</a></li>
+</ul></div>
+
 {% include ContributionGraph.html category="exercise" %}
 
 {% assign postsByMonth = 
