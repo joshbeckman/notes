@@ -6,6 +6,7 @@ categories:
 - exercise
 tags:
 - index
+serial_number: 2026.PAE.016
 ---
 Running activities from my [exercise journal](/exercise), pulled from [Strava](https://www.strava.com/athletes/75003252).
 
