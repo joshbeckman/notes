@@ -224,7 +224,7 @@ export async function critiquePost(postUrl: string): Promise<{
   const internalLinks = links.filter((l) => l.includes("joshbeckman.org"));
 
   let userMessage = `Here is the post to critique:\n\n${postSummary}`;
-  if (post.content && post.content.length > 1000) {
+  if (post.content) {
     userMessage += `\n\nFull content:\n${post.content}`;
   }
   if (internalLinks.length > 0) {
