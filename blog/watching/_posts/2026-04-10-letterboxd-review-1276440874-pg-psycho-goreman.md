@@ -9,7 +9,7 @@ rating: 3
 tmdb_id: '670428'
 letterboxd_id: pg-psycho-goreman
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116388030121165654
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mjapgkolyu2a
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/pg-psycho-goreman/
 tags:
 - letterboxd
