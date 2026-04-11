@@ -15,7 +15,6 @@ tags:
 - movies
 - entertainment
 - culture
-- articles-23259660
 - letterboxd
 serial_number: 2025.BLG.166
 ---
