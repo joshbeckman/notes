@@ -9,8 +9,8 @@ tags:
 - automation
 category: practicing
 toc: true
+serial_number: 2026.PTG.003
 ---
-
 Two years ago I wrote [a parser that pulls fun insights out of my Apple Music library](/blog/pulling-fun-insights-out-of-my-apple-music-library) and generates my [Music Listening page](/music). The pipeline worked well but it had an annoying manual step: I had to open Music.app, click File > Library > Export Library, navigate to the right directory, and save the XML file before running the script. It was enough friction that I'd forget to do it for months.
 
 ## The automation
