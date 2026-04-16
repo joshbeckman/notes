@@ -59,6 +59,27 @@ Posts can be client-side encrypted so content is only readable with a passphrase
 
 Visitors see a passphrase prompt when viewing encrypted pages. By default, passphrases are not cached. Users can enable [sessionStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage) caching in [Settings > Privacy](/settings#privacy) for convenience (clears when tab closes).
 
+### Music Listening Stats
+
+The [Music Listening page](https://www.joshbeckman.org/music) is generated from an Apple Music library export. The `export_and_update_music` script automates the full pipeline: it uses macOS GUI scripting to trigger Music.app's File > Library > Export Library, waits for the XML export to complete, then runs the parser to regenerate the page.
+
+```sh
+./utilities/export_and_update_music
+```
+
+**Requirements:**
+- Accessibility permissions (System Settings > Privacy & Security > Accessibility):
+  - Your terminal app (for running manually)
+  - `/usr/bin/env` (for the launchd agent)
+- A logged-in GUI session (the script uses System Events to drive the Music app UI)
+
+A `launchd` agent (`org.joshbeckman.export-music`) runs this weekly. Logs are written to `/tmp/export-music.log`.
+
+```sh
+launchctl list | grep export-music          # Check status
+launchctl start org.joshbeckman.export-music # Run manually
+```
+
 ## Post Frontmatter
 
 Posts use Markdown with YAML front matter. The following fields are supported when creating posts via the `/post` issue command or directly:

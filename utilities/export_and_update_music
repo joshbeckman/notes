@@ -100,6 +100,17 @@ echo "Dated copy saved to $DATED_COPY"
 # Run the update script
 echo "Running update_music..."
 cd "$PROJECT_DIR"
-ruby utilities/update_music
+bundle exec ruby utilities/update_music
+
+# Commit and push any changes to blog/ and assets/
+if git -C "$PROJECT_DIR" diff --quiet blog/ assets/; then
+    echo "No changes to commit."
+else
+    git -C "$PROJECT_DIR" pull --rebase
+    git -C "$PROJECT_DIR" add blog/ assets/
+    git -C "$PROJECT_DIR" commit -m "feat: Update music listening stats"
+    git -C "$PROJECT_DIR" push
+    echo "Changes committed and pushed."
+fi
 
 echo "Done!"
