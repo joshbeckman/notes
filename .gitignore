@@ -15,6 +15,7 @@ _site/
 .bundle/
 vendor/
 Library.xml
+Library-*.xml
 .aider*
 node_modules/
 **/.vt/

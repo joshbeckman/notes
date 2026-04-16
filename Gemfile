@@ -38,3 +38,5 @@ gem 'readwise'
 gem 'strava-ruby-client', git: 'https://github.com/joshbeckman/strava-ruby-client/', branch: 'patch-1'
 
 gem 'jekyll-mastodon_webfinger', '~> 1.0'
+
+gem "sqlite3", "~> 2.9"

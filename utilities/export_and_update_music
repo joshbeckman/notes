@@ -1,0 +1,105 @@
+#!/usr/bin/env bash
+# Automates Apple Music library export via GUI scripting,
+# then runs the update_music script.
+#
+# Requires: Accessibility permissions for Terminal/iTerm
+# (System Settings > Privacy & Security > Accessibility)
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PROJECT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+LIBRARY_FILE="$PROJECT_DIR/Library.xml"
+DATE_SUFFIX=$(date +%Y-%m-%d)
+DATED_COPY="$PROJECT_DIR/Library-${DATE_SUFFIX}.xml"
+
+echo "Exporting Apple Music library to $LIBRARY_FILE ..."
+
+# Remove existing file so we can detect when the new one is fully written
+rm -f "$LIBRARY_FILE"
+
+osascript - "$PROJECT_DIR" <<'APPLESCRIPT'
+on run argv
+    set projectDir to item 1 of argv
+
+    tell application "Music" to activate
+    delay 1
+
+    tell application "System Events"
+        tell process "Music"
+            -- File > Library > Export Library...
+            click menu item "Export Library…" of menu "Library" of menu item "Library" of menu "File" of menu bar 1
+
+            -- Wait for the Save window (it's a standalone window, not a sheet)
+            repeat 30 times
+                if exists window "Save" then exit repeat
+                delay 0.5
+            end repeat
+            if not (exists window "Save") then
+                error "Save dialog did not appear"
+            end if
+
+            tell window "Save"
+                -- Cmd+Shift+G to open Go-to-folder
+                keystroke "g" using {command down, shift down}
+                delay 0.5
+
+                -- Wait for the Go-to-folder sheet within the Save window
+                repeat 10 times
+                    if exists sheet 1 then exit repeat
+                    delay 0.3
+                end repeat
+
+                tell sheet 1
+                    keystroke "a" using {command down}
+                    delay 0.1
+                    keystroke projectDir
+                    delay 0.3
+                    keystroke return
+                end tell
+                delay 1
+
+                -- Filename defaults to "Library.xml" already, but set it to be safe
+                set value of text field 1 to "Library"
+                delay 0.3
+
+                click button "Save"
+            end tell
+        end tell
+    end tell
+end run
+APPLESCRIPT
+
+echo "Waiting for export to complete..."
+
+# Wait for the file to appear and stabilize in size
+sleep 3
+prev_size=0
+stable_count=0
+while [ $stable_count -lt 3 ]; do
+    if [ ! -f "$LIBRARY_FILE" ]; then
+        sleep 1
+        continue
+    fi
+    curr_size=$(stat -f%z "$LIBRARY_FILE" 2>/dev/null || echo 0)
+    if [ "$curr_size" -eq "$prev_size" ] && [ "$curr_size" -gt 0 ]; then
+        stable_count=$((stable_count + 1))
+    else
+        stable_count=0
+    fi
+    prev_size=$curr_size
+    sleep 1
+done
+
+echo "Export complete ($(du -h "$LIBRARY_FILE" | cut -f1) written)"
+
+# Keep a dated copy
+cp "$LIBRARY_FILE" "$DATED_COPY"
+echo "Dated copy saved to $DATED_COPY"
+
+# Run the update script
+echo "Running update_music..."
+cd "$PROJECT_DIR"
+ruby utilities/update_music
+
+echo "Done!"

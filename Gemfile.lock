@@ -191,6 +191,8 @@ GEM
     sass-embedded (1.87.0-x86_64-linux-gnu)
       google-protobuf (~> 4.30)
     securerandom (0.4.1)
+    sqlite3 (2.9.3-arm64-darwin)
+    sqlite3 (2.9.3-x86_64-linux-gnu)
     terminal-table (3.0.2)
       unicode-display_width (>= 1.1.1, < 3)
     tzinfo (2.0.6)
@@ -221,6 +223,7 @@ DEPENDENCIES
   polylines
   readwise
   rubocop
+  sqlite3 (~> 2.9)
   strava-ruby-client!
   webmention
 
