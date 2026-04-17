@@ -102,7 +102,7 @@ jobs:
         run: ./utilities/build_lunr_index
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
       - name: Comment on failure
         if: failure()
         run: |
