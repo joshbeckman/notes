@@ -18,6 +18,7 @@ on:
       - '_includes/**'
       - '_data/**'
       - '_layouts/**'
+      - '.well-known/**'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -88,6 +89,8 @@ jobs:
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v4
+        with:
+          include-hidden-files: true
 
   # Deployment job
   deploy:
