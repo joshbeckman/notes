@@ -46,3 +46,7 @@ Allow: /
 
 User-agent: cohere-ai
 Allow: /
+
+# Content Signals (https://contentsignals.org/)
+# Declaring preferences for AI content usage
+Content-Signal: ai-train=yes, search=yes, ai-input=yes

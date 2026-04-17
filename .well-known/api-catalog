@@ -1,0 +1,29 @@
+---
+layout: plaintext
+permalink: "/.well-known/api-catalog"
+---
+{
+  "linkset": [
+    {
+      "anchor": "https://www.joshbeckman.org/",
+      "service-desc": [
+        {
+          "href": "https://www.joshbeckman.org/.well-known/mcp.json",
+          "type": "application/json"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://www.joshbeckman.org/llms.txt",
+          "type": "text/plain"
+        }
+      ],
+      "describedby": [
+        {
+          "href": "https://www.joshbeckman.org/llms.txt",
+          "type": "text/plain"
+        }
+      ]
+    }
+  ]
+}

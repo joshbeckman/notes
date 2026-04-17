@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "mcp-content",
+      "type": "skill-md",
+      "description": "Search and retrieve blog posts, notes, tags, sequences, and proverbs from joshbeckman.org via MCP",
+      "url": "https://www.joshbeckman.org/.well-known/agent-skills/mcp-content/SKILL.md",
+      "digest": "sha256:7597334927ce54ea29bfa673094785cd8cf52f4cb4c0298ff93bb799eeaaa83e"
+    }
+  ]
+}

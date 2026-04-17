@@ -27,6 +27,9 @@ Josh Beckman is an engineering leader specializing in complex systems design and
 
 - [LLM Guide]({{ site.url }}/llms): Detailed guide for AI tools interacting with this site
 - [MCP Server]({{ site.url }}/.well-known/mcp.json): Model Context Protocol server configuration
+- [MCP Server Card]({{ site.url }}/.well-known/mcp/server-card.json): MCP server capabilities and transport details
+- [API Catalog]({{ site.url }}/.well-known/api-catalog): Machine-readable API discovery (RFC 9727)
+- [Agent Skills]({{ site.url }}/.well-known/agent-skills/index.json): Agent skills discovery index
 - [Writing Tone Guide]({{ site.url }}/llms/prompts/tone.txt): Style guide for content matching the author's voice
 - [Response Style Guide]({{ site.url }}/llms/prompts/response.txt): Analytical response style guidance
 

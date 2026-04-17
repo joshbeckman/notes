@@ -234,6 +234,48 @@ function prepareImagesForLightbox() {
     document.body.appendChild(script2);
 }
 window.addEventListener('load', prepareImagesForLightbox);
+(function webMcpInit() {
+    if (typeof navigator === 'undefined' || !navigator.modelContext) return;
+    navigator.modelContext.provideContext({
+        tools: [
+            {
+                name: "search_site",
+                description: "Search all posts and notes on joshbeckman.org",
+                inputSchema: {
+                    type: "object",
+                    properties: {
+                        query: { type: "string", description: "Search query" }
+                    },
+                    required: ["query"]
+                },
+                execute: async function(params) {
+                    var response = await fetch("/assets/js/SearchData.json");
+                    var docs = await response.json();
+                    var q = params.query.toLowerCase();
+                    var results = [];
+                    for (var id in docs) {
+                        var doc = docs[id];
+                        var text = (doc.title + " " + doc.content + " " + (doc.tags || "")).toLowerCase();
+                        if (text.indexOf(q) !== -1) {
+                            results.push({ title: doc.title, url: doc.url, tags: doc.tags });
+                        }
+                        if (results.length >= 20) break;
+                    }
+                    return JSON.stringify(results);
+                }
+            },
+            {
+                name: "get_page_content",
+                description: "Get the main text content of the current page",
+                inputSchema: { type: "object", properties: {} },
+                execute: async function() {
+                    var article = document.querySelector("article") || document.querySelector(".text") || document.querySelector("main");
+                    return article ? article.innerText : document.body.innerText;
+                }
+            }
+        ]
+    });
+})();
 window.addEventListener('load', function () {
     lazyload();
 });

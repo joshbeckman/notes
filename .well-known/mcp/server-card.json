@@ -1,0 +1,49 @@
+{
+  "serverInfo": {
+    "name": "joshbeckman.org Content",
+    "version": "1.3.0"
+  },
+  "transport": {
+    "type": "streamable-http",
+    "endpoint": "https://joshbeckman--1818d72637f311f089f39e149126039e.web.val.run/mcp"
+  },
+  "capabilities": {
+    "tools": true,
+    "resources": false,
+    "prompts": false
+  },
+  "tools": [
+    {
+      "name": "search_posts",
+      "description": "Search blog posts and notes by query"
+    },
+    {
+      "name": "get_post",
+      "description": "Get a specific post by URL path"
+    },
+    {
+      "name": "get_tags",
+      "description": "List all content tags"
+    },
+    {
+      "name": "search_tags",
+      "description": "Search content tags"
+    },
+    {
+      "name": "get_tag_urls",
+      "description": "Get all URLs for a given tag"
+    },
+    {
+      "name": "get_proverbs",
+      "description": "Get a random selection of proverbs"
+    },
+    {
+      "name": "get_sequences",
+      "description": "List all research sequences"
+    },
+    {
+      "name": "get_sequence",
+      "description": "Get a specific research sequence"
+    }
+  ]
+}
