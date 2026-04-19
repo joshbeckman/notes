@@ -8,6 +8,11 @@ serial_number: 2023.PAE.003
 ---
 Hello, friends. I'm Josh Beckman. I make things - mostly software, mostly for others. This is where I keep years of writing, notes, and reading highlights, as a [knowledge garden](/about-this-site) built in the open. [I write](/blog) about software craft, building, and whatever I'm learning. Read [more about me](/about), [what I believe](/beliefs), or [jump to navigation](#footer).
 
+{% include CurrentSeason.html %}
+[The season](/season) is: <strong>{{ current_season.name }}</strong> {{ current_season.marker }}<br/><em>{{ current_season.description }}</em>
+
+{% include RandomBelief.html %}
+
 ## Popular
 
 {% assign popular_posts = site.tags['popular'] | sort: 'date' | reverse %}
@@ -22,6 +27,3 @@ Hello, friends. I'm Josh Beckman. I make things - mostly software, mostly for ot
 {% for post in site.posts limit:6 %}
   {%- include PostListItem.html post=post dated=true -%}
 {% endfor %}
-
-{% include CurrentSeason.html %}
-[The season](/season) is: <strong>{{ current_season.name }}</strong> {{ current_season.marker }}<br/><em>{{ current_season.description }}</em>

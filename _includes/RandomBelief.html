@@ -1,0 +1,3 @@
+{%- assign beliefs_page = site.pages | where: "permalink", "/beliefs/" | first -%}
+{%- assign belief = beliefs_page.raw_content | random_list_item | remove_first: "- " -%}
+[Today's belief](/beliefs/) is: {{ belief | markdownify | remove: "<p>" | remove: "</p>" }}

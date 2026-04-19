@@ -23,7 +23,7 @@ My email address is `josh@joshbeckman.org`. I strongly prefer email as a communi
 
 > Want help with something? Here are [ways I'm able to help](/blog/ways-im-available-to-help). Or, [book some time to chat](https://cal.com/joshbeckman).
 
-You can read more [about this site](/about-this-site) or the [tools I use](/uses).
+You can read more [about this site](/about-this-site), [what I believe](/beliefs), or the [tools I use](/uses).
 
 ## Support
 
