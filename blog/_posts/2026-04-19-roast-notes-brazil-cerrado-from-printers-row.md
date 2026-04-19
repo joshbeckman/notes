@@ -19,7 +19,7 @@ We walked over as a family on Saturday morning and the roastery was *busy* with 
 
 | Aspects | |
 |---------|-|
-| Roast | Medium |
+| Roast | Medium/Light |
 | Origin | Brazil (Cerrado) |
 | Process | Fully washed & sun dried |
 | Roast Date | 2026-04-15 |
@@ -33,5 +33,5 @@ In the smell, I find sweet walnut and chocolate, really like a candy coffee.
 | Ratio | 1:14 |
 | Water Temp | 199&deg;F |
 
-This smooth brew tastes immediately like baker's chocolate and mandarin orange. With such a deep flavor, it still tastes crip, wafting away off my tongue.
+This smooth brew tastes immediately like baker's chocolate and mandarin orange. With such a deep flavor, it still tastes crisp, wafting off my tongue.
 I really like this one.
