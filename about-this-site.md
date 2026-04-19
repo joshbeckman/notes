@@ -96,6 +96,14 @@ You can read about everything else I use to build things at [/uses](/uses).
 - podcast rendering
 - [More ideas](https://github.com/joshbeckman/notes/issues?q=is%3Aopen+is%3Aissue+-label%3Apost)
 
+### v3.11.0 "runway-brass" — 2026-04-19
+- Feature beliefs page across the site: added to footer navigation, about page, and a random belief on the homepage
+- New `random_list_item` Jekyll filter for sampling markdown list items from any page
+- Tag popular blog posts based on GoatCounter analytics
+- Add agent discovery endpoints (llms.txt, .well-known/ai-plugin.json) and content signals
+- Automate Apple Music library export pipeline
+- Fix .well-known/ deployment to GitHub Pages
+
 ### v3.10.0 "crystal-team" — 2026-04-10
 - Added exercise subcategories: posts are now organized by activity type (running, cycling, weight-training, walking, hiking, etc.) with dedicated index pages for each
 - Each subcategory has its own contribution graph and monthly stats
