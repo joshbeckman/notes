@@ -10,6 +10,7 @@ _site/
 .omdb_token
 .openai_token
 .readwise_token
+.goatcounter_token
 .strava_token
 .strava_token
 .bundle/
