@@ -10,6 +10,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3m7v5gaxov42y
 tags:
 - building
 - folk-creations
+- popular
 serial_number: 2025.BLG.189
 ---
 I bought the instruction zine for [The Studio Stool from Manual](https://www.manual.is/the-studio-stool) months ago and then cut up some 3/4" plywood sometime this summer and finally reorganized enough to finish it yesterday.

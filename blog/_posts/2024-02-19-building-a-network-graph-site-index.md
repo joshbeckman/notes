@@ -10,6 +10,7 @@ tags:
 - personal-blog
 - network-theory
 - taxonomy
+- popular
 serial_number: 2024.BLG.023
 ---
 I had a fun time this morning building a network view/graph for this site\.
