@@ -5,7 +5,7 @@ title: 'Roast Notes: Brazil Cerrado from Printer''s Row'
 toc: true
 image: "/assets/images/L1000405.jpeg"
 rating: 4
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mjuj42yu642p
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116432620676896918
 tags:
 - coffee
