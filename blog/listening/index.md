@@ -2,7 +2,7 @@
 layout: Page
 title: Music Listening
 toc: true
-emoji: "\U0001F3B6"
+emoji: 🎶
 searchable: true
 categories:
 - blog
@@ -10,8 +10,7 @@ tags:
 - music
 - index
 redirect_from:
-- "/music"
-serial_number: 2024.PAE.009
+- /music
 ---
 Albums that moved me enough to write about them.
 
@@ -34,23 +33,23 @@ Albums that moved me enough to write about them.
 ## Listening Stats
 I generate this page from my Apple Music library using [a script I wrote](/blog/pulling-fun-insights-out-of-my-apple-music-library). Feel free to use it, too!
 
-Last updated: 2026-04-16
+Last updated: 2026-04-19
 
 ## Recently Played Albums
 This is a list of the albums I've played recently.
 
 | Art | Artist | Album |
 | --- | ------ | ----- |
+| ![Fcukers - Ö](/assets/images/album_art/fcukers-.jpg) | Fcukers | Ö |
+| ![Lane 8 - Brightest Lights](/assets/images/album_art/lane8-brightestlights.jpg) | Lane 8 | Brightest Lights |
+|  | Ákos Győrfy | Lane 8 Spring 2026 Mixtape (DJ Mix) |
 |  | Alice Coltrane | Daphni Live at FOLD, Nov 22, 2025 (DJ Mix) |
+| ![Robyn - Sexistential](/assets/images/album_art/robyn-sexistential.jpg) | Robyn | Sexistential |
+| ![TOMORA - COME CLOSER](/assets/images/album_art/tomora-comecloser.jpg) | TOMORA | COME CLOSER |
+| ![Joshua Idehen - I know you're hurting, everyone is hurting, everyone is trying, you have got to try](/assets/images/album_art/joshuaidehen-iknowyourehurtingeveryoneishurtingeveryoneistryingyouhavegottotry.jpg) | Joshua Idehen | I know you're hurting, everyone is hurting, everyone is trying, you have got to try |
 |  | Daft Punk | Alexandra Palace, London, Feb 27, 2026 (DJ Mix) |
 | ![Geese - Getting Killed](/assets/images/album_art/geese-gettingkilled.jpg) | Geese | Getting Killed |
 | ![MEG MYERS - Sorry](/assets/images/album_art/megmyers-sorry.jpg) | MEG MYERS | Sorry |
-| ![Joshua Idehen - I know you're hurting, everyone is hurting, everyone is trying, you have got to try](/assets/images/album_art/joshuaidehen-iknowyourehurtingeveryoneishurtingeveryoneistryingyouhavegottotry.jpg) | Joshua Idehen | I know you're hurting, everyone is hurting, everyone is trying, you have got to try |
-| ![Got A Girl - I Love You But I Must Drive Off This Cliff Now (Deluxe Edition)](/assets/images/album_art/gotagirl-iloveyoubutimustdriveoffthiscliffnowdeluxeedition.jpg) | Got A Girl | I Love You But I Must Drive Off This Cliff Now (Deluxe Edition) |
-|  | Lane 8, Le Youth & Jyll | Lane 8 Spring 2026 Mixtape (DJ Mix) |
-| ![Jungle - For Ever](/assets/images/album_art/jungle-forever.jpg) | Jungle | For Ever |
-| ![Vitesse X - This Infinite](/assets/images/album_art/vitessex-thisinfinite.jpg) | Vitesse X | This Infinite |
-|  | Four Tet, Fred again.., Duskus & Skrillex | Fred again.. Rooftop Live (Arun's Roof, London) [DJ Mix] [DJ Mix] |
 
 ## Recently Loved Albums
 This is a list of the albums I've loved recently.
@@ -58,15 +57,15 @@ This is a list of the albums I've loved recently.
 | Art | Artist | Album |
 | ------ | ----- | --------- |
 |  | Fred again.. & Daft Punk | Alexandra Palace, London, Feb 27, 2026 (DJ Mix) |
+|  | Kara-Lis Coverdale | Daphni Live at FOLD, Nov 22, 2025 (DJ Mix) |
 | ![Joshua Idehen - I know you're hurting, everyone is hurting, everyone is trying, you have got to try](/assets/images/album_art/joshuaidehen-iknowyourehurtingeveryoneishurtingeveryoneistryingyouhavegottotry.jpg) | Joshua Idehen | I know you're hurting, everyone is hurting, everyone is trying, you have got to try |
 | ![TOMORA - COME CLOSER](/assets/images/album_art/tomora-comecloser.jpg) | TOMORA | COME CLOSER |
 | ![Pixel Grip - Percepticide: The Death of Reality](/assets/images/album_art/pixelgrip-percepticidethedeathofreality.jpg) | Pixel Grip | Percepticide: The Death of Reality |
 |  | Fred again.. & Young Thug | Apple Music Live: Fred again.. (DJ Mix) |
-|  | Leon Vynehall | Midnight on Rainbow Road - Single |
+| ![Leon Vynehall - Midnight on Rainbow Road - Single](/assets/images/album_art/leonvynehall-midnightonrainbowroadsingle.jpg) | Leon Vynehall | Midnight on Rainbow Road - Single |
 |  | ID | Live at Village Underground, London: Nov 1, 2025 (DJ Mix) |
 | ![Daphni - Butterfly](/assets/images/album_art/daphni-butterfly.jpg) | Daphni | Butterfly |
 | ![Alice Sara Ott - John Field: Complete Nocturnes](/assets/images/album_art/alicesaraott-johnfieldcompletenocturnes.jpg) | Alice Sara Ott | John Field: Complete Nocturnes |
-|  | Four Tet & Burial | Live from Toronto, Canada, Nov 14, 2025 (DJ Mix) |
 
 ## Top Played Tracks
 This is a list of the top played tracks in my library.
@@ -82,7 +81,7 @@ This is a list of the top played tracks in my library.
 | Sylvan Esso | ![Sylvan Esso - Sylvan Esso](/assets/images/album_art/sylvanesso-sylvanesso.jpg) | Come Down | 82 | 4h 1m 59s |
 | Peter Broderick | ![Peter Broderick - Partners](/assets/images/album_art/peterbroderick-partners.jpg) | In a Landscape | 82 | 14h 15m 12s |
 |  | ![ - Her OST](/assets/images/album_art/-herost.jpg) | Song On The Beach | 78 | 4h 36m 29s |
-| Peter Broderick | ![Peter Broderick - How They Are](/assets/images/album_art/peterbroderick-howtheyare.jpg) | Guilt's Tune | 76 | 5h 39m 3s |
+| James Blake | ![James Blake - The Colour in Anything](/assets/images/album_art/jamesblake-thecolourinanything.jpg) | I Need a Forest Fire (feat. Bon Iver) | 76 | 5h 25m 48s |
 
 ## Top Played Albums
 This is a list of the top played albums in my library (by ratio of song plays to songs in the album).
@@ -112,7 +111,7 @@ This is a list of the top played artists in my library (by song plays).
 | Sylvan Esso | 896 | 13 |
 | Caribou | 887 | 9 |
 | Nils Frahm | 860 | 8 |
-| Jungle | 776 | 14 |
+| Jungle | 776 | 13 |
 | José González | 773 | 10 |
 | Shane Carruth | 765 | 51 |
 
@@ -121,13 +120,13 @@ This is a list of the top genres my library (by track count).
 
 | Genre | Track Count | Song Play Count | Total Time |
 | ------ | ---------- | -------------- | --------------- |
-| Electronic | 5277 | 21494 | 415h 15m 23s |
-| Alternative | 4889 | 19512 | 307h 49m 0s |
-| Dance | 3795 | 10092 | 240h 29m 25s |
-| Hip-Hop/Rap | 2769 | 7902 | 150h 47m 22s |
-| Rock | 1659 | 4102 | 113h 41m 15s |
-| Pop | 1363 | 4745 | 88h 49m 56s |
+| Electronic | 5277 | 21506 | 415h 12m 4s |
+| Alternative | 4894 | 19512 | 308h 8m 19s |
+| Dance | 3756 | 10266 | 238h 28m 59s |
+| Hip-Hop/Rap | 2768 | 7902 | 150h 47m 54s |
+| Rock | 1658 | 4102 | 113h 37m 39s |
+| Pop | 1365 | 4749 | 88h 58m 34s |
 | Soundtrack | 1072 | 3508 | 56h 13m 30s |
-| R&B/Soul | 975 | 3201 | 59h 11m 57s |
+| R&B/Soul | 976 | 3201 | 59h 16m 29s |
 | Classical | 881 | 2877 | 63h 33m 9s |
 | Jazz | 863 | 3625 | 82h 21m 28s |

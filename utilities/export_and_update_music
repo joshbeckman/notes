@@ -18,19 +18,34 @@ echo "Exporting Apple Music library to $LIBRARY_FILE ..."
 # Remove existing file so we can detect when the new one is fully written
 rm -f "$LIBRARY_FILE"
 
-osascript - "$PROJECT_DIR" <<'APPLESCRIPT'
+export_music() {
+    osascript - "$PROJECT_DIR" <<'APPLESCRIPT'
 on run argv
     set projectDir to item 1 of argv
 
+    -- Ensure Music is running and frontmost
     tell application "Music" to activate
-    delay 1
+    delay 2
 
     tell application "System Events"
+        -- Wait until Music is the frontmost process
+        repeat 10 times
+            if frontmost of process "Music" then exit repeat
+            tell application "Music" to activate
+            delay 1
+        end repeat
+
         tell process "Music"
+            -- Dismiss any existing modal dialogs
+            if exists window "Save" then
+                click button "Cancel" of window "Save"
+                delay 0.5
+            end if
+
             -- File > Library > Export Library...
             click menu item "Export Library…" of menu "Library" of menu item "Library" of menu "File" of menu bar 1
 
-            -- Wait for the Save window (it's a standalone window, not a sheet)
+            -- Wait for the Save window
             repeat 30 times
                 if exists window "Save" then exit repeat
                 delay 0.5
@@ -69,6 +84,20 @@ on run argv
     end tell
 end run
 APPLESCRIPT
+}
+
+# Retry the GUI export up to 3 times
+for attempt in 1 2 3; do
+    if export_music; then
+        break
+    fi
+    echo "Export attempt $attempt failed, retrying in 5s..."
+    sleep 5
+    if [ "$attempt" -eq 3 ]; then
+        echo "All export attempts failed."
+        exit 1
+    fi
+done
 
 echo "Waiting for export to complete..."
 
