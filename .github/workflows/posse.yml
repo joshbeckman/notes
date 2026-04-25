@@ -108,6 +108,7 @@ jobs:
         run: git push
       - name: Import Mastodon
         id: import_mastodon
+        continue-on-error: true
         run: bundle exec utilities/pesos_mastodon
         env:
           MASTODON_SOCIAL_TOKEN: ${{ secrets.MASTODON_SOCIAL_TOKEN }}
@@ -148,6 +149,7 @@ jobs:
         run: git push
       - name: Import Bluesky
         id: import_bluesky
+        continue-on-error: true
         run: bundle exec utilities/pesos_bluesky
         env:
           BLUESKY_PASSWORD: ${{ secrets.BLUESKY_PASSWORD }}
@@ -208,6 +210,7 @@ jobs:
         run: git push
       - name: Import YouTube
         id: import_youtube
+        continue-on-error: true
         run: bundle exec utilities/pesos_youtube
       - name: Determine if changes were made
         id: any_changes_pesos_youtube
