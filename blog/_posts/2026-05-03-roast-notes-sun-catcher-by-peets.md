@@ -19,7 +19,7 @@ I bought a bag of [Sun Catcher](https://www.peets.com/products/suncatcher) from 
 | Roast | Light |
 | Origin | Brazil, Kenya |
 | Process | Natural and Washed |
-| Roast Date | TODO |
+| Roast Date | 2026-03-06 |
 
 Opening the bag and once brewed, I get smells of mandarin, fresh leather, and wet tree bark. It's darkly sour.
 
@@ -31,3 +31,4 @@ Opening the bag and once brewed, I get smells of mandarin, fresh leather, and we
 | Water Temp | 199&deg;F |
 
 I taste key lime, salt, and caramel. But not much comes to mind, and it's not a strong enough flavor to trigger much of a reaction from my palate, either. Meh.
+I continue to think that the big players make weak flavors.
