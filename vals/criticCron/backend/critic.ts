@@ -12,7 +12,16 @@ const FEED_URL = `${SITE_URL}/feed.xml`;
 const JINA_BASE = "https://r.jina.ai/";
 const MAX_TOOL_ROUNDS = 8;
 const BLOB_KEY = "critic_cron_processed_urls";
+const RECENT_CRITIQUES_KEY = "critic_cron_recent_critiques";
+const RECENT_CRITIQUES_LIMIT = 5;
 const CUTOFF_DATE = "2026-03-28";
+
+type RecentCritique = {
+  title: string;
+  url: string;
+  date: string;
+  headlines: string[];
+};
 
 type FeedEntry = {
   title: string;
@@ -78,6 +87,29 @@ async function setProcessedUrls(urls: Set<string>): Promise<void> {
   await blob.setJSON(BLOB_KEY, [...urls]);
 }
 
+async function getRecentCritiques(): Promise<RecentCritique[]> {
+  try {
+    return (await blob.getJSON(RECENT_CRITIQUES_KEY) as RecentCritique[] | null) ?? [];
+  } catch {
+    return [];
+  }
+}
+
+async function appendRecentCritique(entry: RecentCritique): Promise<void> {
+  const existing = await getRecentCritiques();
+  const next = [...existing.filter((e) => e.url !== entry.url), entry].slice(-RECENT_CRITIQUES_LIMIT);
+  await blob.setJSON(RECENT_CRITIQUES_KEY, next);
+}
+
+function formatRecentCritiques(recent: RecentCritique[]): string {
+  if (recent.length === 0) return "";
+  const blocks = recent.map((r) => {
+    const bullets = r.headlines.map((h) => `- ${h}`).join("\n");
+    return `### [${r.title}](${r.url}) (${r.date})\n${bullets}`;
+  });
+  return `You have recently critiqued these posts. Vary your angles — don't repeat these headline points unless they apply directly and obviously to the new post:\n\n${blocks.join("\n\n")}\n\n---\n\n`;
+}
+
 // --- Source extraction ---
 
 function extractLinks(html: string): string[] {
@@ -112,7 +144,7 @@ async function getToneGuide(): Promise<string> {
 async function agentLoop(
   systemPrompt: string,
   userMessage: string,
-): Promise<string> {
+): Promise<{ critique: string; headlines: string[] }> {
   const messages: Anthropic.Messages.MessageParam[] = [
     { role: "user", content: userMessage },
   ];
@@ -145,7 +177,8 @@ async function agentLoop(
   // Critique phase: Opus writes the final critique with all gathered context
   messages.push({
     role: "user",
-    content: "Write your critique now based on the post and all the context above. Output ONLY the critique — nothing else.",
+    content:
+      "Write your critique now based on the post and all the context above. End with the literal delimiter line `---HEADLINES---` followed by 3-5 short bullets capturing the key angles you took. No preamble before the critique.",
   });
   const finalResponse = await anthropic.messages.create({
     model: CRITIQUE_MODEL,
@@ -153,11 +186,20 @@ async function agentLoop(
     system: systemPrompt,
     messages,
   });
-  return finalResponse.content
+  const raw = finalResponse.content
     .filter((b) => b.type === "text")
     .map((b) => b.text)
     .join("\n")
     .trim();
+
+  const parts = raw.split(/^---HEADLINES---\s*$/m);
+  const critique = parts[0].trim();
+  const headlines = (parts[1] ?? "")
+    .split("\n")
+    .map((l) => l.replace(/^[-*]\s+/, "").trim())
+    .filter(Boolean);
+
+  return { critique, headlines };
 }
 
 // --- Critique generation ---
@@ -197,16 +239,20 @@ Follow this writing style guide for your own tone:
 
 ${toneGuide}
 
-CRITICAL FORMAT RULE: Your final response must contain ONLY the critique. No preamble, no "Here is my critique", no meta-commentary about your process.`;
+CRITICAL FORMAT RULE: Your final response is the critique itself, then a line containing only \`---HEADLINES---\`, then 3-5 short bullets (one per line, prefixed with "- ") that capture the distinct angles your critique took. The headlines feed an internal memory of recent critiques so future runs can vary their angles — make them specific (e.g. "pushed back on tone-flattening in the second half"), not generic ("commented on writing"). No preamble before the critique, no meta-commentary about your process.`;
 }
 
 export async function critiquePost(postUrl: string): Promise<{
   title: string;
   url: string;
   critique: { markdown: string; html: string };
+  headlines: string[];
 } | null> {
-  // Fetch tone guide and search data in parallel
-  const [toneGuide, searchData] = await Promise.all([getToneGuide(), getSearchData()]);
+  const [toneGuide, searchData, recent] = await Promise.all([
+    getToneGuide(),
+    getSearchData(),
+    getRecentCritiques(),
+  ]);
   const systemPrompt = buildSystemPrompt(toneGuide);
 
   const postPath = postUrl.startsWith("http") ? new URL(postUrl).pathname : postUrl;
@@ -223,7 +269,8 @@ export async function critiquePost(postUrl: string): Promise<{
   const externalLinks = links.filter((l) => !l.includes("joshbeckman.org"));
   const internalLinks = links.filter((l) => l.includes("joshbeckman.org"));
 
-  let userMessage = `Here is the post to critique:\n\n${postSummary}`;
+  let userMessage = formatRecentCritiques(recent);
+  userMessage += `Here is the post to critique:\n\n${postSummary}`;
   if (post.content) {
     userMessage += `\n\nFull content:\n${post.content}`;
   }
@@ -234,25 +281,32 @@ export async function critiquePost(postUrl: string): Promise<{
     userMessage += `\n\nExternal links found in the post (use read_webpage to read these):\n${externalLinks.join("\n")}`;
   }
 
-  const rawCritique = await agentLoop(systemPrompt, userMessage);
-  const critiqueMarkdown = rawCritique.replace(/\]\(\//g, `](${SITE_URL}/`);
+  const { critique, headlines } = await agentLoop(systemPrompt, userMessage);
+  const critiqueMarkdown = critique.replace(/\]\(\//g, `](${SITE_URL}/`);
   const critiqueHtml = await marked.parse(critiqueMarkdown);
 
-  return { title, url: fullUrl, critique: { markdown: critiqueMarkdown, html: critiqueHtml } };
+  return {
+    title,
+    url: fullUrl,
+    critique: { markdown: critiqueMarkdown, html: critiqueHtml },
+    headlines,
+  };
 }
 
 export async function critiqueDraft(title: string, content: string): Promise<{
   title: string;
   critique: { markdown: string; html: string };
+  headlines: string[];
 }> {
-  const toneGuide = await getToneGuide();
+  const [toneGuide, recent] = await Promise.all([getToneGuide(), getRecentCritiques()]);
   const systemPrompt = buildSystemPrompt(toneGuide);
 
   const links = extractLinks(content);
   const externalLinks = links.filter((l) => !l.includes("joshbeckman.org"));
   const internalLinks = links.filter((l) => l.includes("joshbeckman.org"));
 
-  let userMessage = `Here is a draft post to critique:\n\n# ${title}\n\n${content}`;
+  let userMessage = formatRecentCritiques(recent);
+  userMessage += `Here is a draft post to critique:\n\n# ${title}\n\n${content}`;
   if (internalLinks.length > 0) {
     userMessage += `\n\nInternal links found in the post (use get_post to read these):\n${internalLinks.join("\n")}`;
   }
@@ -260,11 +314,11 @@ export async function critiqueDraft(title: string, content: string): Promise<{
     userMessage += `\n\nExternal links found in the post (use read_webpage to read these):\n${externalLinks.join("\n")}`;
   }
 
-  const rawCritique = await agentLoop(systemPrompt, userMessage);
-  const critiqueMarkdown = rawCritique.replace(/\]\(\//g, `](${SITE_URL}/`);
+  const { critique, headlines } = await agentLoop(systemPrompt, userMessage);
+  const critiqueMarkdown = critique.replace(/\]\(\//g, `](${SITE_URL}/`);
   const critiqueHtml = await marked.parse(critiqueMarkdown);
 
-  return { title, critique: { markdown: critiqueMarkdown, html: critiqueHtml } };
+  return { title, critique: { markdown: critiqueMarkdown, html: critiqueHtml }, headlines };
 }
 
 export type Annotation = {
@@ -370,6 +424,14 @@ export async function processFeed(): Promise<{ processed: string[]; skipped: num
     const result = await critiquePost(entry.url);
     if (!result) continue;
     await emailCritique(result.title, result.url, result.critique.html);
+    if (result.headlines.length > 0) {
+      await appendRecentCritique({
+        title: result.title,
+        url: result.url,
+        date: entry.published.slice(0, 10),
+        headlines: result.headlines,
+      });
+    }
     processed.push(entry.url);
     currentProcessed.add(entry.url);
   }
