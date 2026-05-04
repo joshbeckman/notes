@@ -5,7 +5,7 @@ title: big Sis and Gelli Haha at Schubas Tavern
 toc: true
 image: "/assets/images/75926015-667b-46c8-8a9e-851508bd28b1.jpeg"
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116514896444630657
 bluesky_status_url: false
 tags:
 - concerts
