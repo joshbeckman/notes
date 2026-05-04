@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/75926015-667b-46c8-8a9e-851508bd28b1.jpeg"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116514896444630657
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mkz2cq66ag2t
 tags:
 - concerts
 - schubas-tavern-venue
