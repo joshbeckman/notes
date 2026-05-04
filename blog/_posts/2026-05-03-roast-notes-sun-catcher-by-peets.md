@@ -8,7 +8,7 @@ rating: 2.5
 tags:
 - coffee
 - roast-notes
-serial_number: 2026.BLG.052
+serial_number: 2026.BLG.053
 ---
 I bought a bag of [Sun Catcher](https://www.peets.com/products/suncatcher) from Peet's this week when I was picking up a quick cup in a rush before work.
 
