@@ -1,6 +1,7 @@
 ---
 layout: plaintext
 permalink: "/.well-known/api-catalog"
+serial_number: 2026.PAE.023
 ---
 {
   "linkset": [
