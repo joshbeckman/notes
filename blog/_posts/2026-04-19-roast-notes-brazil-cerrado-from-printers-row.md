@@ -10,6 +10,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/116432620676896
 tags:
 - coffee
 - chicago
+- roast-notes
 serial_number: 2026.BLG.050
 ---
 I picked up Printer's Row Coffee Co.'s [Brazil Cerrado](https://www.printersrowcoffeeco.com/shop/brazil-cerrado-12oz) only a couple days after it was roasted.

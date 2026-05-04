@@ -10,6 +10,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/116341322505563
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3milxoglgm72q
 tags:
 - coffee
+- roast-notes
 serial_number: 2026.BLG.045
 ---
 I don't usually buy from La Colombe, but we were killing time before our favorite fish taco place opened up and I thought I might as well try some [Fishtown](https://www.lacolombe.com/products/fishtown).

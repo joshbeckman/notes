@@ -11,6 +11,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mitj4d55532d
 tags:
 - coffee
 - chicago
+- roast-notes
 serial_number: 2026.BLG.047
 ---
 I'm very lucky that the closest coffee roastery to me specializes in light roasts, my favorites. I know Printer's Row Coffee Co.'s [Tanzania Kilimanjaro](https://www.printersrowcoffeeco.com/shop/tanzania-kilimanjaro-pb) beans as "the bag with the yellow label," I get their beans so often without thinking.
