@@ -8,10 +8,11 @@ redirect_from:
 - "/five-fun-days"
 - "/five-fun-days/"
 serial_number: 2023.BLG.023
+redirect_to: "https://marybethkram.com/2023/05/12/five-fun-days"
 ---
 📝
 
-Originally sent in email form, now posted in its entirety. Written by [Marybeth Kram]( /author/marybeth/)
+Originally sent in email form, now posted in its entirety. Written by [Marybeth Kram](https://marybethkram.com/)
 
 So Josh and I are doing this 5-day fast-mimicking diet called Prolon, and I thought it would make it slightly more fun (read: less terrible) if I shared my thoughts throughout with my friends/family. It’s essentially a low-calorie diet that’s meant to not trigger your body out of a fasting state, to promote cellular regeneration. It was developed to combat aging.
 
