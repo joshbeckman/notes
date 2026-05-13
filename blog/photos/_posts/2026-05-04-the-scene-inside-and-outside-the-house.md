@@ -7,7 +7,7 @@ image: "/assets/images/fe86dca4-b0f9-4c6c-acc2-a45b8634148e.jpeg"
 description:
 photo_feature: true
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116567217660215411
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mlqbtpkoxg2k
 serial_number: 2026.BLG.054
 ---
 It's May 4th and I'm working from home in the sunshine.
