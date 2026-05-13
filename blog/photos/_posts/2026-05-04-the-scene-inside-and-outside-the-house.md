@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/fe86dca4-b0f9-4c6c-acc2-a45b8634148e.jpeg"
 description:
 photo_feature: true
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116567217660215411
 bluesky_status_url: false
 serial_number: 2026.BLG.054
 ---
