@@ -11,7 +11,7 @@ tags:
 - tools
 - github
 - open-source
-- CLI
+- cli
 - year-in-review
 serial_number: 2025.BLG.201
 ---

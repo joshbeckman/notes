@@ -133,7 +133,7 @@ module ReadwiseExtras
     end
 
     def formatted_tags
-      base_tags = tags.map { |t| t['name'] }.reject { |t| t == POST_TO_SOCIAL_TAG }
+      base_tags = tags.map { |t| t['name'].to_s.downcase }.reject { |t| t == POST_TO_SOCIAL_TAG }
       base_tags << 'inbox' if base_tags.empty?
       base_tags.flatten.join(' ')
     end
@@ -215,8 +215,8 @@ module ReadwiseExtras
     end
 
     def formatted_tags
-      base_tags = tags.map { |t| t['name'] }
-      base_tags.concat(highlights.map { |h| h.tags.map { |ht| ht['name'] } })
+      base_tags = tags.map { |t| t['name'].to_s.downcase }
+      base_tags.concat(highlights.map { |h| h.tags.map { |ht| ht['name'].to_s.downcase } })
       base_tags = base_tags.flatten.uniq.reject { |t| t == POST_TO_SOCIAL_TAG }
       base_tags << 'inbox' if base_tags.empty?
       base_tags.join(' ')
@@ -371,7 +371,7 @@ module ReadwiseExtras
     end
 
     def formatted_tags(_book)
-      base_tags = tags.map { |t| t['name'] }.reject { |t| t == POST_TO_SOCIAL_TAG }
+      base_tags = tags.map { |t| t['name'].to_s.downcase }.reject { |t| t == POST_TO_SOCIAL_TAG }
       base_tags << 'inbox' if base_tags.empty?
       base_tags.flatten.join(' ')
     end
