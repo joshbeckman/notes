@@ -1,0 +1,108 @@
+{% comment %}
+  Calendar grid timeline of the 24 small seasons across the current year.
+  Each day in the year is colored by the season it falls within.
+  Mirrors the layout pattern from ContributionGraph.html.
+{% endcomment %}
+<div class="seasons-timeline" id="seasons-timeline">
+  <div class="seasons-timeline-months"></div>
+  <div class="seasons-timeline-grid"></div>
+  <div class="seasons-timeline-tooltip"></div>
+</div>
+<script>
+(function() {
+  var seasons = [
+    {% for season in site.data.seasons -%}
+    { name: {{ season.name | jsonify }}, marker: {{ season.marker | jsonify }}, month: {{ season.start_month }}, day: {{ season.start_day }}, description: {{ season.description | jsonify }} }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ];
+  // Hue rotates through the color wheel across the year so that adjacent
+  // seasons feel adjacent visually. Cold blues → spring greens → summer
+  // yellows/oranges → autumn reds → winter purples → back to blue.
+  var hues = [220, 210, 170, 155, 140, 125, 110, 95, 60, 50, 40, 30, 22, 14, 6, 358, 348, 335, 315, 295, 275, 258, 242, 230];
+
+  function seasonIndexForDate(date) {
+    var mmdd = (date.getMonth() + 1) * 100 + date.getDate();
+    var idx = seasons.length - 1;
+    for (var i = 0; i < seasons.length; i++) {
+      var sMmdd = seasons[i].month * 100 + seasons[i].day;
+      if (sMmdd <= mmdd) idx = i;
+    }
+    return idx;
+  }
+
+  var container = document.getElementById('seasons-timeline');
+  if (!container) return;
+  var grid = container.querySelector('.seasons-timeline-grid');
+  var monthsEl = container.querySelector('.seasons-timeline-months');
+  var tooltip = container.querySelector('.seasons-timeline-tooltip');
+
+  var today = new Date();
+  today.setHours(0, 0, 0, 0);
+  var year = today.getFullYear();
+  var start = new Date(year, 0, 1);
+  // Align grid start to previous Sunday so weekday rows align cleanly.
+  start.setDate(start.getDate() - start.getDay());
+  var end = new Date(year, 11, 31);
+  end.setDate(end.getDate() + (6 - end.getDay()));
+
+  var monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+  var cells = [];
+  var d = new Date(start);
+  while (d <= end) {
+    var inYear = d.getFullYear() === year;
+    var sIdx = seasonIndexForDate(d);
+    var season = seasons[sIdx];
+    var cell = document.createElement('div');
+    cell.className = 'season-cell';
+    if (!inYear) cell.classList.add('out-of-year');
+    if (d.getTime() === today.getTime()) cell.classList.add('today');
+    cell.style.setProperty('--season-hue', hues[sIdx]);
+    var key = d.toISOString().slice(0, 10);
+    cell.dataset.date = key;
+    cell.dataset.season = season.name;
+    cell.dataset.marker = season.marker;
+    cell.dataset.description = season.description;
+    grid.appendChild(cell);
+    cells.push({ date: new Date(d), el: cell });
+    d.setDate(d.getDate() + 1);
+  }
+
+  var totalDays = cells.length;
+  var currentMonth = -1;
+  var monthStarts = [];
+  cells.forEach(function(c, i) {
+    if (c.date.getFullYear() !== year) return;
+    var m = c.date.getMonth();
+    if (m !== currentMonth) {
+      monthStarts.push({ month: m, index: i });
+      currentMonth = m;
+    }
+  });
+  monthStarts.forEach(function(ms, i) {
+    var nextIndex = i + 1 < monthStarts.length ? monthStarts[i + 1].index : totalDays;
+    var widthPct = ((nextIndex - ms.index) / totalDays * 100);
+    if (widthPct < 3) return;
+    var leftPct = (ms.index / totalDays * 100);
+    var span = document.createElement('span');
+    span.textContent = monthNames[ms.month];
+    span.style.left = leftPct + '%';
+    span.style.width = widthPct + '%';
+    monthsEl.appendChild(span);
+  });
+
+  grid.addEventListener('mouseover', function(e) {
+    if (!e.target.classList.contains('season-cell')) return;
+    var t = e.target;
+    tooltip.textContent = t.dataset.marker + ' ' + t.dataset.season + ' · ' + t.dataset.date;
+    tooltip.classList.add('visible');
+    var rect = t.getBoundingClientRect();
+    var containerRect = container.getBoundingClientRect();
+    tooltip.style.left = (rect.left - containerRect.left + rect.width / 2) + 'px';
+    tooltip.style.top = (rect.top - containerRect.top - 28) + 'px';
+  });
+  grid.addEventListener('mouseout', function(e) {
+    if (e.target.classList.contains('season-cell')) tooltip.classList.remove('visible');
+  });
+})();
+</script>
