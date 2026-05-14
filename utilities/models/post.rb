@@ -166,7 +166,7 @@ Post = Struct.new(
     hash['youtube_video_url'] = youtube_video_url unless youtube_video_url.nil?
     hash['exercise_data'] = exercise_data.transform_keys(&:to_s) if exercise_data
     hash['redirect_from'] = redirect_from if redirect_from&.any?
-    hash['tags'] = tags if tags&.any?
+    hash['tags'] = tags.map { |t| t.to_s.downcase } if tags&.any?
     hash['serial_number'] = serial_number if serial_number
     hash['published'] = published unless published.nil?
     hash
