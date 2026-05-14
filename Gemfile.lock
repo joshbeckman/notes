@@ -207,6 +207,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-24
+  arm64-darwin-25
   x86_64-linux
 
 DEPENDENCIES
@@ -228,4 +229,4 @@ DEPENDENCIES
   webmention
 
 BUNDLED WITH
-   2.5.18
+  4.0.11
