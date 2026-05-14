@@ -124,6 +124,11 @@ Fuse = (function(){"use strict";function e(e,t){var n=Object.keys(e);if(Object.g
 
             var input = searchInput.value;
             var isBang = input.endsWith('!');
+            // The bang must be stripped before searching: Fuse's extended-search
+            // treats a trailing "!" as part of the literal pattern (e.g. "season!"
+            // is fuzzy-matched against "season!"), which reranks results vs. the
+            // bare query and lands "feeling lucky" on the wrong page.
+            var searchQuery = isBang ? input.slice(0, -1).trimEnd() : input;
 
             if (input === currentInput) {
                 return;
@@ -131,7 +136,7 @@ Fuse = (function(){"use strict";function e(e,t){var n=Object.keys(e);if(Object.g
 
             currentInput = input;
             searchResults.innerHTML = '';
-            if (input === '') {
+            if (searchQuery === '') {
                 document.title = 'Search';
                 return;
             }
@@ -139,12 +144,12 @@ Fuse = (function(){"use strict";function e(e,t){var n=Object.keys(e);if(Object.g
             document.title = 'Search: ' + input;
 
             var results;
-            if (input === '*') {
+            if (searchQuery === '*') {
                 results = allDocs.map(function(doc, idx) {
                     return { item: doc, score: 0, refIndex: idx, matches: [] };
                 });
             } else {
-                results = fuse.search(input);
+                results = fuse.search(searchQuery);
                 if (results[0] && results[0].score <= 0.3) {
                     results = results.filter(function(result){
                         return result.score < 0.5;

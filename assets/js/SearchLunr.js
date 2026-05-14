@@ -79,6 +79,11 @@
 
             var input = searchInput.value;
             var isBang = input.endsWith('!');
+            // The bang must be stripped before searching: lunr's tokenizer (with
+            // separator /[\s/]+/) keeps "!" attached to the preceding token, so
+            // searching "the season!" ranks differently than "the season" and the
+            // redirect lands on a different page than the top of normal results.
+            var searchQuery = isBang ? input.slice(0, -1).trimEnd() : input;
             if (input === '') {
                 hideSearch();
             } else {
@@ -93,15 +98,15 @@
 
             currentInput = input;
             searchResults.innerHTML = '';
-            if (input === '') {
+            if (searchQuery === '') {
                 return;
             }
 
-            var results = index.search(input);
+            var results = index.search(searchQuery);
 
-            if ((results.length == 0) && (input.length > 2)) {
-                var tokens = lunr.tokenizer(input).filter(function(token, i){
-                   return token.str.length < 20; 
+            if ((results.length == 0) && (searchQuery.length > 2)) {
+                var tokens = lunr.tokenizer(searchQuery).filter(function(token, i){
+                   return token.str.length < 20;
                 })
 
                 if (tokens.length > 0) {
