@@ -5,8 +5,8 @@ title: Every giant leap is actually a series of small steps.
 toc: true
 image:
 description:
-mastodon_social_status_url: false
-bluesky_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116599901837176058
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mm6scoqswx2e
 tags:
 - exploration
 serial_number: 2026.PVB.005
