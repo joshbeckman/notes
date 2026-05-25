@@ -7,7 +7,7 @@ image: "/assets/images/a0e08528-670d-4bd3-975c-ac882a0b11fd.jpeg"
 description:
 rating: 3
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116636537462003549
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mmp2wp7klz2i
 tags:
 - coffee
 - roast-notes
