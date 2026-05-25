@@ -8,7 +8,7 @@ description:
 rating: 3
 tmdb_id: '687163'
 letterboxd_id: project-hail-mary
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116633908692346938
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/project-hail-mary/
 tags:
