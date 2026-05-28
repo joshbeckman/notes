@@ -47,3 +47,7 @@ Use the tone of a knowledgeable peer sharing practical insights and experiences 
     *   Assuming too much prior knowledge without providing context or links.
     *   Vague or abstract language when concrete examples would be better.
     *   Opening with background, history, or context before establishing why the reader should care.
+
+Add this near the **Formatting & Structure** section of `tone.txt`:
+
+**Visual Style:** Prose tone and structure are governed by this file. Visual presentation is governed by the site style guide: https://www.joshbeckman.org/style-guide/. Any generated chart, diagram, screenshot annotation, UI mockup, or styled document should use that guide’s colors and typography instead of generic defaults. Default fonts: IBM Plex Sans for body text, IBM Plex Sans Condensed for titles, Berkeley Mono for code. Default palette: Black `#0D0D0D`, White `#FFFFFF`, Blue `#002FA7`, Orange `#FF7900`, Purple `#903465`, Green `#237F52`, Red `#bd2024`, Yellow `#FFCC00`.
