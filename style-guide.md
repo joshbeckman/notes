@@ -27,8 +27,8 @@ This is the default palette. Often, I'll use these colors as a starting point an
 | Blue | International Klein blue | `#002FA7` | ![blue](https://www.thecolorapi.com/id?format=svg&named=false&hex=002FA7) |
 | Purple | HTML standard mediumpurple | `#9370d8` | ![purple](https://www.thecolorapi.com/id?format=svg&named=false&hex=9370d8) |
 | Josh Purple | Brand purple | `#903465` | ![purple](https://www.thecolorapi.com/id?format=svg&named=false&hex=903465) |
-| Black | Benjamin Moore Impervex latex high gloss metal and wood enamel, black 309 80 | `#151515` | ![black](https://www.thecolorapi.com/id?format=svg&named=false&hex=151515) |
-| White | Benjamin Moore's Decorator's White | `#EBEDEA` | ![white](https://www.thecolorapi.com/id?format=svg&named=false&hex=ebedea) |
+| Black | Near Black | `#0D0D0D` | ![black](https://www.thecolorapi.com/id?format=svg&named=false&hex=0D0D0D) |
+| White | White | `#FFFFFF` | ![white](https://www.thecolorapi.com/id?format=svg&named=false&hex=ffffff) |
 
 ## Typography
 
