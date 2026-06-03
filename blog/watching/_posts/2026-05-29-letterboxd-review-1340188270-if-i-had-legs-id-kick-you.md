@@ -8,7 +8,7 @@ description:
 rating: 4
 tmdb_id: '1160360'
 letterboxd_id: if-i-had-legs-id-kick-you
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116685628957563237
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/if-i-had-legs-id-kick-you/
 tags:
