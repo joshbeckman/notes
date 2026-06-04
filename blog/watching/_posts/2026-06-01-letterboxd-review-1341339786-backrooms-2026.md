@@ -9,7 +9,7 @@ rating: 3
 tmdb_id: '1083381'
 letterboxd_id: backrooms-2026
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116691211379928082
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mnhdvie3jo2m
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/backrooms-2026/
 tags:
 - letterboxd
