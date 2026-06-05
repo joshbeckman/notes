@@ -13,9 +13,6 @@ tags:
 - time
 - motivation
 - tools
-redirect_from:
-- "/counter-redirect"
-- "/counter-redirect/"
 serial_number: 2025.BLG.058
 ---
 After [I built my little counter](https://www.joshbeckman.org/blog/breathing-life-into-my-little-counter) last year, it got a flurry of attention. It [got pretty large](https://www.joshbeckman.org/replies/113703362386236392) and was killed off a bunch as well. But after a while the attention fell off and I was really the only one tending to it, growing it. And something so big and bold needed more activity.
@@ -27,4 +24,8 @@ So last week, in the spirit of [Time Since Launch (CW&T)](https://cwandt.com/pro
 I like that it turns not on the hour but around halfway between. And the numbers don't align to the normal day time but to maybe some more specific time within me. As it startles me with the loud *flap flap flap* halfway through building something, it reminds me of my own present.
 
 Because I'm a software engineer, I was doing some math to figure out what would fit nicely on the display. Days would be too small a number - boring. Minutes would make it too active a counter - distracting. But hours should fit nicely. As long as I die before I reach 1,140 years old, the hours of my life will fit on the display. I feel like that's a safe bet.
+
+## Update 2026-06-04
+
+I've since [repurposed the display again to show the weather](/blog/my-split-flap-display-now-shows-the-weather).
 
