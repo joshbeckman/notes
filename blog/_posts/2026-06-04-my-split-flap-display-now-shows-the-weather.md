@@ -4,7 +4,7 @@ date: 2026-06-05
 title: My Split-Flap Display Now Shows the Weather
 toc: true
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116696183239418279
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mnjkkf63nn23
 tags:
 - software-engineering
 - tools
