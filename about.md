@@ -40,6 +40,7 @@ If you see an account that looks like it might be me but isn't listed here, plea
 | Mastodon | [@joshbeckman@mastodon.social](https://mastodon.social/@joshbeckman) |
 | Bluesky | [@joshbeckman.org](https://bsky.app/profile/joshbeckman.org) |
 | Letterboxd | [@joshbeckman](https://letterboxd.com/joshbeckman/) |
+| Record Club | [@joshbeckman](https://record.club/joshbeckman) |
 | Apple Music | [@andjosh](https://music.apple.com/profile/andjosh) |
 | YouTube | [@joshbeckmanchannel](https://www.youtube.com/@joshbeckmanchannel) |
 | Strava | [@beckman_josh](https://www.strava.com/athletes/beckman_josh) |
