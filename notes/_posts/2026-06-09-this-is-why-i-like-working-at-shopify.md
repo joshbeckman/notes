@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/d9edc43e-8e73-4d00-ade1-ca8f97e33c77.jpeg"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116720882017844450
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mnujk4kcrm2p
 tags:
 - shopify
 - leadership
