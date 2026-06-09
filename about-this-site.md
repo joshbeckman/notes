@@ -96,6 +96,10 @@ You can read about everything else I use to build things at [/uses](/uses).
 - podcast rendering
 - [More ideas](https://github.com/joshbeckman/notes/issues?q=is%3Aopen+is%3Aissue+-label%3Apost)
 
+### v3.12.0 "nice-ball" — 2026-06-09
+- Import Record Club music reviews into the listening blog (PESOS), with Apple Music streaming links and embeds
+- Add Record Club to the active accounts list and per-post social links
+
 ### v3.11.0 "runway-brass" — 2026-04-19
 - Feature beliefs page across the site: added to footer navigation, about page, and a random belief on the homepage
 - New `random_list_item` Jekyll filter for sampling markdown list items from any page
