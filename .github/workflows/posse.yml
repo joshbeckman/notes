@@ -147,6 +147,24 @@ jobs:
       - name: Push changes
         if: steps.any_changes_pesos_letterboxd.outputs.changed != 0
         run: git push
+      - name: Import Record Club
+        id: import_record_club
+        run: bundle exec utilities/pesos_record_club
+      - name: Determine if changes were made
+        id: any_changes_pesos_record_club
+        run: echo "changed=$(git status --porcelain replies blog assets | wc -l)" >> $GITHUB_OUTPUT
+      - name: Commit changes
+        if: steps.any_changes_pesos_record_club.outputs.changed != 0
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add replies
+          git add blog
+          git add assets
+          git commit -m "new(usr): PESOS Record Club"
+      - name: Push changes
+        if: steps.any_changes_pesos_record_club.outputs.changed != 0
+        run: git push
       - name: Import Bluesky
         id: import_bluesky
         continue-on-error: true

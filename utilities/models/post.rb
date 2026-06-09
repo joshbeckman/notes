@@ -24,6 +24,7 @@ Post = Struct.new(
   :strava_activity_url,
   :exercise_data,
   :letterboxd_review_url,
+  :record_club_url,
   :hacker_news_url,
   :rating,
   :song_link,
@@ -78,6 +79,7 @@ Post = Struct.new(
       strava_activity_url: yaml_content['strava_activity_url'],
       exercise_data: yaml_content['exercise_data']&.transform_keys(&:to_sym),
       letterboxd_review_url: yaml_content['letterboxd_review_url'],
+      record_club_url: yaml_content['record_club_url'],
       hacker_news_url: yaml_content['hacker_news_url'],
       rating: yaml_content['rating'],
       song_link: yaml_content['song_link'],
@@ -161,6 +163,7 @@ Post = Struct.new(
     hash['bluesky_status_url'] = bool_or_string(bluesky_status_url) unless bluesky_status_url.nil?
     hash['strava_activity_url'] = strava_activity_url unless strava_activity_url.nil?
     hash['letterboxd_review_url'] = letterboxd_review_url unless letterboxd_review_url.nil?
+    hash['record_club_url'] = record_club_url unless record_club_url.nil?
     hash['hacker_news_url'] = hacker_news_url unless hacker_news_url.nil?
     hash['youtube_video_id'] = youtube_video_id unless youtube_video_id.nil?
     hash['youtube_video_url'] = youtube_video_url unless youtube_video_url.nil?

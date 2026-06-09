@@ -1,0 +1,172 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'jekyll'
+require 'rexml/document'
+require 'net/http'
+require 'json'
+require 'time'
+require_relative 'models/post'
+
+module PESOS
+  class RecordClub
+    class Error < StandardError; end
+
+    # Record Club mixes review items in with queue/rotation additions in the
+    # same feed. Only the "listened to and rated" items carry a review body and
+    # a star rating, so we anchor on that phrasing to skip the rest.
+    REVIEW_TITLE = /listened to and rated an album: '(.+)' by (.+) - ([★½]+)\z/
+
+    attr_reader :site
+
+    def initialize
+      @site = Jekyll::Site.new(Jekyll.configuration({}))
+      @username = ENV.fetch('RECORD_CLUB_USERNAME', 'joshbeckman')
+      @site.read
+    end
+
+    def import_posts
+      posts = outbox.filter do |item|
+        next false unless item['title']&.match?(REVIEW_TITLE)
+        next false if post_exists?(item['link'])
+
+        true
+      end
+      posts.each { |post| import_post(post) }
+    end
+
+    def post_exists?(url)
+      site.posts.docs.any? do |post|
+        post.data['record_club_url'] == url
+      end
+    end
+
+    def import_post(item)
+      album, artist, stars = item['title'].match(REVIEW_TITLE).captures
+      title = "#{album} by #{artist}"
+      raw_body = item['content'] || item['description']
+      image = find_image(raw_body)
+      body = clean_body(raw_body)
+      release_slug = item['link'].split('/').last
+      apple_url = apple_music_url(artist, album)
+      # Re-add the cover image as a markdown figure at the top with the album
+      # title as alt text, matching the hand-authored listening posts, rather
+      # than leaving the feed's bare alt-less <img> inline mid-body.
+      body = "![#{title}](#{image})\n\n#{body}" if image
+      body = "#{body}\n\n{{ \"#{apple_url}\" | itunesify }}" if apple_url
+      post = Post.new(
+        body: body,
+        category: 'blog/listening',
+        date: Time.parse(item['pubDate']),
+        record_club_url: item['link'],
+        song_link: apple_url,
+        bluesky_status_url: false,
+        mastodon_social_status_url: false,
+        image: image,
+        slug: "record-club-#{release_slug}",
+        title: title,
+        rating: parse_rating(stars)
+      )
+      post.tags = (post.suggested_tags || []).push('music', 'record-club').uniq
+      post.create_file
+    end
+
+    # Record Club's feed carries no streaming links, so resolve an Apple Music
+    # album URL via the iTunes Search API. The URL feeds both the song.link
+    # frontmatter and the itunesify embed in the body. Returns nil rather than
+    # risking a wrong embed when the top result doesn't plausibly match.
+    def apple_music_url(artist, album)
+      uri = URI.parse('https://itunes.apple.com/search')
+      uri.query = URI.encode_www_form(term: "#{artist} #{album}", entity: 'album', limit: 5)
+      res = Net::HTTP.get_response(uri)
+      return nil unless res.is_a?(Net::HTTPSuccess)
+
+      results = JSON.parse(res.body)['results']
+      match = results.find { |r| plausible_match?(r, artist, album) }
+      return nil unless match
+
+      # Strip the query string (e.g. ?uo=4); itunesify keys off an empty query
+      # to render a full-album-height embed rather than a single-track one.
+      url = URI.parse(match['collectionViewUrl'])
+      url.query = nil
+      url.to_s
+    rescue JSON::ParserError, URI::InvalidURIError
+      nil
+    end
+
+    def plausible_match?(result, artist, album)
+      norm = ->(s) { s.to_s.downcase.gsub(/[^a-z0-9]/, '') }
+      r_artist = norm.call(result['artistName'])
+      r_album = norm.call(result['collectionName'])
+      a_artist = norm.call(artist)
+      a_album = norm.call(album)
+      artist_ok = r_artist.include?(a_artist) || a_artist.include?(r_artist)
+      album_ok = r_album.include?(a_album) || a_album.include?(r_album)
+      artist_ok && album_ok
+    end
+
+    # ★ counts as a whole point, the trailing ½ as another half. Anchoring on
+    # these glyphs (rather than a numeric field) because the feed only exposes
+    # the rating rendered as stars in the item title.
+    def parse_rating(stars)
+      stars.count('★') + (stars.include?('½') ? 0.5 : 0)
+    end
+
+    # The feed body leads with the cover image and a "Listened: <date>" line,
+    # both of which we already capture in the image and date frontmatter. Drop
+    # them so the rendered post doesn't duplicate that metadata inline.
+    def clean_body(body)
+      return body if body.nil?
+
+      body
+        .sub(%r{\A\s*<p>\s*<img[^>]*>\s*</p>}, '')
+        .sub(%r{\s*<p>\s*Listened:[^<]*</p>}, '')
+        .strip
+    end
+
+    def find_image(body)
+      return nil if body.nil?
+
+      image = body.scan(/<img src="([^"]+)"/)
+      return nil if image.empty?
+
+      # Drop the ?width= resize param so we keep the full-resolution cover
+      # rather than the feed's downscaled thumbnail.
+      image.first.first.sub(/\?.*\z/, '')
+    end
+
+    def outbox
+      uri = URI.parse("https://record.club/#{@username}/rss")
+      req = Net::HTTP::Get.new(uri)
+      req['Accept'] = 'application/rss+xml'
+      # record.club sits behind Cloudflare, which serves a challenge (and injects
+      # trailing <script> markup) to requests lacking a browser-like User-Agent.
+      req['User-Agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36'
+      res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
+        http.request(req)
+      end
+
+      unless res.is_a?(Net::HTTPSuccess)
+        puts res.body
+        raise Error, 'Outbox request failed'
+      end
+
+      # Trim anything past the closing tag; Cloudflare can append injected markup
+      # after </rss> that would otherwise break the strict XML parser.
+      feed = res.body[/\A.*<\/rss>/m] || res.body
+      REXML::Document.new(feed).elements['rss/channel'].elements.map do |item|
+        next unless item.name == 'item'
+
+        item.elements.each_with_object({}) do |element, hash|
+          # REXML namespaces content:encoded under the local name "encoded";
+          # normalize it to "content" so the importer has one body field.
+          key = element.name == 'encoded' ? 'content' : element.name
+          hash[key] = element.text
+        end
+      end.compact
+    end
+  end
+end
+
+record_club = PESOS::RecordClub.new
+record_club.import_posts
