@@ -7,7 +7,7 @@ image: https://cdn.rcrd.club/releases/ry7v83z9xv4lx9z0.jpg
 description:
 rating: 3
 song_link: https://music.apple.com/us/album/tears-of-injustice/1767824343
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116718812322954604
 bluesky_status_url: false
 record_club_url: https://record.club/joshbeckman/releases/albums/mdou-moctar-tears-of-injustice
 tags:

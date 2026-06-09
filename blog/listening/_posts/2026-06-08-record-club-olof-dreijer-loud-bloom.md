@@ -7,7 +7,7 @@ image: https://cdn.rcrd.club/releases/01d4kvye7pek76m2.jpg
 description:
 rating: 3
 song_link: https://music.apple.com/us/album/loud-bloom/1875081346
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116718812357477703
 bluesky_status_url: false
 record_club_url: https://record.club/joshbeckman/releases/albums/olof-dreijer-loud-bloom
 tags:
