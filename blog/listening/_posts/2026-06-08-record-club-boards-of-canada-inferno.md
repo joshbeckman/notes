@@ -8,7 +8,7 @@ description:
 rating: 3
 song_link: https://music.apple.com/us/album/inferno/1890015523
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116718812267381227
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mntm52ifla2m
 record_club_url: https://record.club/joshbeckman/releases/albums/boards-of-canada-inferno
 tags:
 - music

@@ -8,7 +8,7 @@ description:
 rating: 3
 song_link: https://music.apple.com/us/album/loud-bloom/1875081346
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116718812357477703
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mntm562szg2s
 record_club_url: https://record.club/joshbeckman/releases/albums/olof-dreijer-loud-bloom
 tags:
 - music
