@@ -13,8 +13,8 @@ record_club_url: https://record.club/joshbeckman/releases/albums/nine-inch-noize
 tags:
 - music
 - record-club
+serial_number: 2026.BLG.061
 ---
-
 ![Nine Inch Noize by Nine Inch Noize](https://cdn.rcrd.club/releases/5wyz8dvqnj78xve9.jpg)
 
 <p>Closer and The Warning are absolutely the best songs on the album but the whole thing wrenches itself out of your speakers and greases its way into the dark corners of your mind and it’s so intense and fun.</p>

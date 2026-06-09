@@ -13,8 +13,8 @@ record_club_url: https://record.club/joshbeckman/releases/albums/mdou-moctar-tea
 tags:
 - music
 - record-club
+serial_number: 2026.BLG.063
 ---
-
 ![Tears of Injustice by Mdou Moctar](https://cdn.rcrd.club/releases/ry7v83z9xv4lx9z0.jpg)
 
 <p>This isn’t as exciting as the source album, but the melancholy is the point.</p>
