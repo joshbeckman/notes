@@ -6,7 +6,7 @@ toc: true
 image:
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116727222462309122
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mnxdnfjd7s2m
 tags:
 - funding
 - software-engineering
