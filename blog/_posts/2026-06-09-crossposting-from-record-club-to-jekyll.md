@@ -3,15 +3,16 @@ layout: Post
 date: '2026-06-09 21:30:00 +0000'
 title: Cross-posting From Record Club to Jekyll
 toc: true
-description: Pulling my Record Club album reviews into my site via PESOS, the same way I do with Letterboxd, plus auto-resolving Apple Music links for embeds.
-image: /assets/images/d40ef17f-0261-4c6d-bc05-bf20f80918c3.png
+description: Pulling my Record Club album reviews into my site via PESOS, the same
+  way I do with Letterboxd, plus auto-resolving Apple Music links for embeds.
+image: "/assets/images/d40ef17f-0261-4c6d-bc05-bf20f80918c3.png"
 tags:
 - record-club
 - personal-blog
 - jekyll
 - music
+serial_number: 2026.BLG.065
 ---
-
 I review the movies I watch [on Letterboxd](https://www.joshbeckman.org/blog/crossposting-from-letterboxd-to-jekyll). Now I'm doing the same for the albums I listen to, [on Record Club](https://record.club/joshbeckman). I want to [meet the music-lovers where they are](https://www.joshbeckman.org/blog/gotta-publish-where-the-people-are) and in writing on Letterboxd I've realized that a dedicated platform for a medium encourages me to write and enriches my enjoyment. So, just like with Letterboxd, I'm pulling those reviews back into [my listening blog](https://www.joshbeckman.org/blog/listening/) via PESOS.
 
 ![The Record Club homepage](/assets/images/d40ef17f-0261-4c6d-bc05-bf20f80918c3.png)
