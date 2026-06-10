@@ -5,7 +5,7 @@ title: Open-Source as Corporate Canary
 toc: true
 image:
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116727222462309122
 bluesky_status_url: false
 tags:
 - funding
