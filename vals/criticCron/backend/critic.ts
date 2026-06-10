@@ -14,7 +14,7 @@ const MAX_TOOL_ROUNDS = 8;
 const BLOB_KEY = "critic_cron_processed_urls";
 const RECENT_CRITIQUES_KEY = "critic_cron_recent_critiques";
 const RECENT_CRITIQUES_LIMIT = 5;
-const CUTOFF_DATE = "2026-03-28";
+const CUTOFF_DATE = "2026-06-09";
 
 type RecentCritique = {
   title: string;
@@ -419,23 +419,35 @@ export async function processFeed(): Promise<{ processed: string[]; skipped: num
     return { processed: [], skipped: entries.length };
   }
 
+  // Persist the pruned set before any critique runs so the prune survives even
+  // if the first entry throws or the request times out mid-batch.
+  await setProcessedUrls(currentProcessed);
+
   const processed: string[] = [];
   for (const entry of eligible) {
-    const result = await critiquePost(entry.url);
-    if (!result) continue;
-    await emailCritique(result.title, result.url, result.critique.html);
-    if (result.headlines.length > 0) {
-      await appendRecentCritique({
-        title: result.title,
-        url: result.url,
-        date: entry.published.slice(0, 10),
-        headlines: result.headlines,
-      });
+    try {
+      const result = await critiquePost(entry.url);
+      if (!result) continue;
+      await emailCritique(result.title, result.url, result.critique.html);
+      // Mark processed immediately after the email succeeds. Writing once at the
+      // end means any later failure/timeout discards the whole batch, which makes
+      // the cron re-email the same newest posts every run.
+      currentProcessed.add(entry.url);
+      await setProcessedUrls(currentProcessed);
+      processed.push(entry.url);
+      if (result.headlines.length > 0) {
+        await appendRecentCritique({
+          title: result.title,
+          url: result.url,
+          date: entry.published.slice(0, 10),
+          headlines: result.headlines,
+        });
+      }
+    } catch (err) {
+      // Don't let one bad entry abort the batch and strand the rest unprocessed.
+      console.error(`Failed to critique ${entry.url}:`, err);
     }
-    processed.push(entry.url);
-    currentProcessed.add(entry.url);
   }
 
-  await setProcessedUrls(currentProcessed);
   return { processed, skipped: entries.length - eligible.length };
 }
