@@ -9,7 +9,7 @@ rating: 4
 tmdb_id: '1339713'
 letterboxd_id: obsession-2025
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116737169659419594
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mo3qyuprdv25
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/obsession-2025/
 tags:
 - letterboxd
