@@ -13,7 +13,7 @@ record_club_url: https://record.club/joshbeckman/releases/albums/boards-of-canad
 tags:
 - music
 - record-club
-serial_number: 2026.BLG.062
+serial_number: 2026.BLG.063
 ---
 ![Inferno by Boards of Canada](https://cdn.rcrd.club/releases/z59oke95y70lv6wq.jpg)
 

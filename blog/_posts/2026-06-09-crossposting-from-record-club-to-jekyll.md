@@ -11,7 +11,7 @@ tags:
 - personal-blog
 - jekyll
 - music
-serial_number: 2026.BLG.065
+serial_number: 2026.BLG.066
 ---
 I review the movies I watch [on Letterboxd](https://www.joshbeckman.org/blog/crossposting-from-letterboxd-to-jekyll). Now I'm doing the same for the albums I listen to, [on Record Club](https://record.club/joshbeckman). I want to [meet the music-lovers where they are](https://www.joshbeckman.org/blog/gotta-publish-where-the-people-are) and in writing on Letterboxd I've realized that a dedicated platform for a medium encourages me to write and enriches my enjoyment. So, just like with Letterboxd, I'm pulling those reviews back into [my listening blog](https://www.joshbeckman.org/blog/listening/) via PESOS.
 

@@ -13,7 +13,7 @@ record_club_url: https://record.club/joshbeckman/releases/albums/olof-dreijer-lo
 tags:
 - music
 - record-club
-serial_number: 2026.BLG.064
+serial_number: 2026.BLG.065
 ---
 ![Loud Bloom by Olof Dreijer](https://cdn.rcrd.club/releases/01d4kvye7pek76m2.jpg)
 

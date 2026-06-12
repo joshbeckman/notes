@@ -12,7 +12,7 @@ tags:
 redirect_from:
 - "/counter-redirect"
 - "/counter-redirect/"
-serial_number: 2026.BLG.060
+serial_number: 2026.BLG.061
 ---
 The seven-digit split-flap display in my studio used to count the hours since I was born. Now it shows the forecast: `4077069`, a 40% chance of rain, a high of 77°F, and a low of 69°F.
 
