@@ -9,7 +9,7 @@ rating: 3
 tmdb_id: '9798'
 letterboxd_id: enemy-of-the-state
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116751154051948717
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mobxqaj3xo27
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/enemy-of-the-state/
 tags:
 - letterboxd
