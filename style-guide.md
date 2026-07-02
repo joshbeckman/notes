@@ -120,8 +120,6 @@ Use whitespace as structure. Prefer spacing, rhythm, and simple borders before a
 
 Use durable units. `ch`, `rem`, and line-height-derived spacing often make better layout units than arbitrary pixels because they respond to text.
 
-Avoid full-width prose. A full-browser line of text is usually a bug, even if the page technically looks clean.
-
 ## Links
 
 Links are the main interface. They should be visible, generous, and useful.
