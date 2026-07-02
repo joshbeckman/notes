@@ -5,7 +5,7 @@ import { marked } from "npm:marked";
 import { executeTool, tools, getSearchData, formatPost, type Post } from "./search.ts";
 
 const anthropic = new Anthropic();
-const RESEARCH_MODEL = "claude-sonnet-4-20250514";
+const RESEARCH_MODEL = "claude-sonnet-4-6";
 const CRITIQUE_MODEL = "claude-opus-4-6";
 const SITE_URL = "https://www.joshbeckman.org";
 const FEED_URL = `${SITE_URL}/feed.xml`;
