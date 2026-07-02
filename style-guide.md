@@ -160,9 +160,6 @@ Small symbols can make an interface feel like a notebook or archive. Use them as
 | `#` | Tag, topic, index term |
 | `≈` | Related, nearby, dated, similar |
 | `∈` | Belongs to a collection or section |
-| `≠` | Edit, source, alternate form, difference |
-| `←` / `→` | Previous / next |
-| `●` | Current state, active item, seasonal marker |
 
 Pair symbols with text when the action matters. Symbols should reward repeat readers, not confuse first-time readers.
 
