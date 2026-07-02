@@ -209,6 +209,7 @@ jobs:
         run: git push
       - name: Import Strava
         id: import_strava
+        continue-on-error: true
         run: bundle exec utilities/pesos_strava
         env:
           MAPBOX_TOKEN: ${{ secrets.MAPBOX_TOKEN }}
