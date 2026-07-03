@@ -7,7 +7,7 @@ image: https://cdn.rcrd.club/releases/znp5kgev4g3lvx3q.jpg
 description:
 rating: 3.5
 song_link: https://music.apple.com/us/album/ton-up/1886789573
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116858728694534924
 bluesky_status_url: false
 record_club_url: https://record.club/joshbeckman/releases/albums/gold-panda-ton-up
 tags:
