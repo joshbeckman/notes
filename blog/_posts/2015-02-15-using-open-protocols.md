@@ -15,7 +15,7 @@ When Twitter was gathering steam back in 2009-10, it did so because [tweeting wa
 
 To lay this all out, it seems that some applications are forgoing open standards. To wit, [Flipboard just announced their migration to full-canvas](http://engineering.flipboard.com/2015/02/mobile-web/), leaving text behind and rendering the full context within a canvas. The problem with this should be apparent. It completely eschews accessibility. It seems antithetical to widespread adoption. Twitter left its RSS profile-feeds behind, and [LinkedIn is walling the garden](http://stopusinglinkedin.com).
 
-When I built out the access points for [Narro](http://narro.co), I made sure to include open protocols. It’s built first and foremost around RSS/podcast feed syndication, which means that every iOS user (at least) already has built-in support for offline access. Every email sent includes a plaintext version. The vanilla JavaScript bookmarklet runs on every browser.
+When I built out the access points for [Narro](http://narro.co) (see [thoughts after its release](/blog/thoughts-after-app-release)), I made sure to include open protocols. It’s built first and foremost around RSS/podcast feed syndication, which means that every iOS user (at least) already has built-in support for offline access. Every email sent includes a plaintext version. The vanilla JavaScript bookmarklet runs on every browser.
 
 Why should anyone learn your new app flow? If I can do it all in email, let me do it there. If I can do it all in text messages, let me. Open protocols are easy for you to build into your next application, and your users are already there.
 
