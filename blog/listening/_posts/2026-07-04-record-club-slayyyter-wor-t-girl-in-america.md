@@ -7,7 +7,7 @@ image: https://cdn.rcrd.club/releases/5wyz8d5mrd7kxve9.jpg
 description:
 rating: 4
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116862977657109587
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mptmtqghqt2o
 record_club_url: https://record.club/joshbeckman/releases/albums/slayyyter-wor-t-girl-in-america
 tags:
 - music
