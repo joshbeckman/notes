@@ -36,11 +36,37 @@ Phone client ──┬── GET  /auth    → approval page (password) → auth
 |---|---|
 | `name` | `title` (required unless set in frontmatter) |
 | `content` | body (leading `---` frontmatter block is parsed as overrides) |
-| `category[]` | `tags` |
+| `category[]` | `tags` (auto-suggested via the `tagger` val when none given) |
 | `photo[]` (URL or uploaded file) | inlined `![](…)` + frontmatter `image` |
 | `published` (datetime) | `date` |
 | `mp-slug` | `slug` |
+| `in-reply-to` | `in_reply_to` |
+| `summary` | `description` |
+| `mp-syndicate-to` (`mastodon`/`bluesky`) | sets `*_status_url: false` for POSSE pickup |
 | — (defaults to `blog`) | Jekyll category, override via frontmatter `category:` |
+
+### Config queries
+
+- `?q=config` / `?q=syndicate-to` — advertises the media endpoint and the
+  Mastodon/Bluesky syndication targets (rendered as checkboxes by clients).
+- `?q=category` — serves the site's tag vocabulary (`assets/js/tags.json`) for
+  client-side tag autocomplete.
+
+### Frontmatter passthrough
+
+The leading `---` block in the post body is merged over Micropub props. Two keys
+are *routing only* and never emitted into the post YAML:
+
+- `category` → chooses the directory (`blog`, `blog/working`, `replies`, …)
+- `slug` → chooses the filename
+
+`title`, `date`, `tags`, `image`, `description`, `published`, `layout` are
+handled explicitly. **Every other key you write is passed through verbatim** —
+so `hide_title`, `photo_feature`, `canonical`, `rating`, `song_link`, etc. all
+work with no per-field code, just like issue_post's frontmatter path.
+
+Syndication note: cross-posting is not instant — it rides the POSSE cron
+(~every 3h), which posts to Mastodon/Bluesky and writes the real status URL back.
 
 ## Deploy
 

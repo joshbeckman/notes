@@ -242,6 +242,9 @@ type Parsed = {
   files: File[];
   published?: string;
   slug?: string;
+  inReplyTo?: string;
+  summary?: string;
+  syndicateTo: string[];
   token: string | null;
 };
 
@@ -262,6 +265,9 @@ async function parseRequest(c: any): Promise<Parsed> {
       files: [],
       published: firstValue(props.published),
       slug: firstValue(props["mp-slug"]),
+      inReplyTo: firstValue(props["in-reply-to"]),
+      summary: firstValue(props.summary),
+      syndicateTo: (props["mp-syndicate-to"] || []).map((x: any) => String(x)),
       token,
     };
   }
@@ -281,18 +287,54 @@ async function parseRequest(c: any): Promise<Parsed> {
     files: rawPhotos.filter((v) => v instanceof File) as File[],
     published: (fd.get("published") as string) || undefined,
     slug: (fd.get("mp-slug") as string) || undefined,
+    inReplyTo: (fd.get("in-reply-to") as string) || undefined,
+    summary: (fd.get("summary") as string) || undefined,
+    syndicateTo: [...fd.getAll("mp-syndicate-to[]"), ...fd.getAll("mp-syndicate-to")].filter(
+      (v) => typeof v === "string",
+    ) as string[],
     token,
   };
 }
 
-// Micropub config query: advertises the media endpoint so clients know where
-// to upload photos.
-app.get("/", (c) => {
-  if (c.req.query("q") === "config" || c.req.query("q") === "syndicate-to") {
-    return c.json({
-      "media-endpoint": `${new URL(c.req.url).origin}/media`,
-      "syndicate-to": [],
+// Syndication targets map Micropub uids to the frontmatter flags the existing
+// POSSE cron looks for; setting the field to `false` marks a post for pickup.
+const SYNDICATION_TARGETS = [
+  { uid: "mastodon", name: "Mastodon", field: "mastodon_social_status_url" },
+  { uid: "bluesky", name: "Bluesky", field: "bluesky_status_url" },
+];
+
+// Reuse the site's own tagger val (same one issue_post's suggested_tags hits)
+// so phone posts get auto-tagged when the author supplies none.
+async function suggestTags(content: string): Promise<string[]> {
+  try {
+    const res = await fetch("https://joshbeckman-tagger.web.val.run/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({ content }),
     });
+    const json = await res.json();
+    return Array.isArray(json.suggestedTags) ? json.suggestedTags : [];
+  } catch {
+    return [];
+  }
+}
+
+// Micropub config query: advertises the media endpoint + syndication targets,
+// and serves the site's tag vocabulary for client-side autocomplete.
+app.get("/", async (c) => {
+  const q = c.req.query("q");
+  if (q === "config" || q === "syndicate-to") {
+    const cfg = {
+      "media-endpoint": `${new URL(c.req.url).origin}/media`,
+      "syndicate-to": SYNDICATION_TARGETS.map(({ uid, name }) => ({ uid, name })),
+    };
+    return c.json(q === "syndicate-to" ? { "syndicate-to": cfg["syndicate-to"] } : cfg);
+  }
+  if (q === "category") {
+    const tags = await fetch(`${SITE_URL}/assets/js/tags.json`)
+      .then((r) => r.json())
+      .catch(() => []);
+    return c.json({ categories: tags.map((t: any) => t.name).filter(Boolean) });
   }
   return c.text("Micropub endpoint", 200);
 });
@@ -356,10 +398,26 @@ app.post("/", async (c) => {
   const when = fm.date ? new Date(fm.date) : parsed.published ? new Date(parsed.published) : new Date();
   const { day, full } = formatInTz(isNaN(when.getTime()) ? new Date() : when, SITE_TZ);
   const slug = fm.slug || parsed.slug || slugify(title);
-  const tags = fm.tags
+  let tags: string[] = fm.tags
     ? (Array.isArray(fm.tags) ? fm.tags : String(fm.tags).split(",").map((t) => t.trim()))
     : parsed.categories;
+  if (!tags || tags.length === 0) tags = await suggestTags(`${title}\n${body}`);
   const image = fm.image || (photoPaths.length ? photoPaths[0] : undefined);
+  const description = fm.description ?? parsed.summary;
+  const inReplyTo = fm.in_reply_to ?? parsed.inReplyTo;
+
+  // Generalized passthrough: any frontmatter key the author writes is emitted
+  // verbatim, except the routing keys (category/slug → file path) and the keys
+  // handled explicitly below. This covers issue_post's long tail (hide_title,
+  // photo_feature, canonical, rating, song_link, …) without per-field code.
+  const CONTROL_KEYS = new Set([
+    "category", "slug", "title", "date", "tags", "image", "description",
+    "published", "layout", "in_reply_to",
+  ]);
+  const passthrough: Record<string, any> = {};
+  for (const [k, v] of Object.entries(fm)) {
+    if (!CONTROL_KEYS.has(k)) passthrough[k] = v;
+  }
 
   // Inline the photos above the body, matching set_album_art's prepend style.
   const imageMd = photoPaths.map((p) => `![](${p})`).join("\n");
@@ -372,7 +430,16 @@ app.post("/", async (c) => {
     toc: true,
   };
   if (image) front.image = image;
-  if (fm.description) front.description = fm.description;
+  if (description) front.description = description;
+  if (inReplyTo) front.in_reply_to = inReplyTo;
+  Object.assign(front, passthrough);
+  // Explicit frontmatter flags win; otherwise selected syndication targets set
+  // the POSSE pickup flag.
+  for (const t of SYNDICATION_TARGETS) {
+    if (parsed.syndicateTo.includes(t.uid) && front[t.field] === undefined) {
+      front[t.field] = false;
+    }
+  }
   if (tags && tags.length) front.tags = tags.map((t: string) => String(t).toLowerCase());
   if (fm.published !== undefined) front.published = fm.published;
 
