@@ -1,6 +1,8 @@
 /** @jsxImportSource npm:hono@3/jsx */
 import { Hono } from "npm:hono";
-import { OpenAI } from "npm:openai";
+// Use Val Town's proxied OpenAI credits rather than `npm:openai` + a personal
+// key, which ran out of quota (429) and 500'd every request.
+import { OpenAI } from "https://esm.town/v/std/openai";
 
 const openai = new OpenAI();
 
@@ -12,11 +14,18 @@ type Tag = {
 const app = new Hono();
 app.post("/", async (c) => {
   const formData = await c.req.formData();
-  const content = formData.get("content");
+  const content = String(formData.get("content") || "");
   const tags: Array<Tag> = await fetch("https://www.joshbeckman.org/assets/js/tags.json")
     .then((res) => res.json());
-  const response = await selectTags(content, tags);
-  return c.json({ content, suggestedTags: response });
+  // Degrade to no suggestions rather than 500 so callers (issue_post,
+  // micropub) keep working when the model call fails.
+  let suggestedTags: Array<string> = [];
+  try {
+    suggestedTags = await selectTags(content, tags);
+  } catch (e) {
+    console.error("tagger selectTags failed:", e);
+  }
+  return c.json({ content, suggestedTags });
 });
 
 async function selectTags(content: string, tags: Array<Tag>): Promise<Array<string>> {
@@ -29,8 +38,7 @@ async function selectTags(content: string, tags: Array<Tag>): Promise<Array<stri
     },
     {
       role: "system",
-      content:
-        "Here are the tags you can choose from: " + tagNames.join(", "),
+      content: "Here are the tags you can choose from: " + tagNames.join(", "),
     },
     {
       role: "user",
@@ -41,7 +49,7 @@ async function selectTags(content: string, tags: Array<Tag>): Promise<Array<stri
     messages: messages,
     model: "gpt-4o-mini",
   });
-  const keywords = keywordsCompletion.choices[0].message.content;
+  const keywords = keywordsCompletion.choices[0].message.content || "";
   // only return the tags that are in the list of tags
   return keywords.split(",").map((tag) => tag.trim()).filter((tag) => tagNames.includes(tag));
 }

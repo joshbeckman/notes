@@ -1,6 +1,8 @@
 /** @jsxImportSource npm:hono@3/jsx */
 import { Hono } from "npm:hono";
-import { OpenAI } from "npm:openai";
+// Use Val Town's proxied OpenAI credits rather than `npm:openai` + a personal
+// key, which ran out of quota (429) and 500'd every request.
+import { OpenAI } from "https://esm.town/v/std/openai";
 
 const openai = new OpenAI();
 
@@ -46,7 +48,7 @@ async function selectTitle(content: string, examples: Array<string>): Promise<st
     messages: messages,
     model: "gpt-4o-mini",
   });
-  return keywordsCompletion.choices[0].message.content;
+  return keywordsCompletion.choices[0].message.content || "";
 }
 
 export default app.fetch;
