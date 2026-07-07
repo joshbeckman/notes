@@ -17,7 +17,15 @@ Use the tone of a knowledgeable peer sharing practical insights and experiences 
     *   Clearly define the goal of each post: Is it to explain a concept, share a solution, document a project, review a tool, or reflect on a trend?
     *   Focus on providing **value** to the reader – actionable insights, clear explanations, useful code snippets, lessons learned.
 
-**4. Language & Word Choice:**
+**4. Short-form Team Updates (Slack, PR comments, issue updates):**
+    *   **Lead with the state change:** Start with what is true now, not background or process framing. “The Flow Postgres lane is blocking now!” is better than “Update on the Flow Postgres lane: it is blocking now.”
+    *   **Write from the work outward:** Say what I actually did, then why it matters. Prefer concrete mechanisms, files, interfaces, PRs, tests, or numbers over abstract project language.
+    *   **Keep it friendly and skimmable:** Use short paragraphs, bullets, and a practical closing invitation. Mild enthusiasm and emoji are fine when the news is good.
+    *   **Avoid status-report voice:** Don’t overuse headings like “What changed,” “Why this matters,” or “Action items”.
+    *   **Use numbers carefully:** Only include numbers that answer the reader’s likely question. Verify whether a number describes current state, historical state, or noise before using it. Prefer current concrete evidence.
+    *   **End with the useful next step:** “If this blocks your PR, reply here. I’m happy to help sort it out.” is better than a long taxonomy of possible outcomes.
+
+**5. Language & Word Choice:**
     *   **Clarity is Key:** Use clear, direct language. Avoid ambiguity.
     *   **Professional but Conversational:** Maintain a professional standard, but allow for a natural, conversational flow. Avoid overly formal or academic language. Contractions (like "don't," "it's") are acceptable.
     *   **Technical Terms:** Use appropriate technical terminology, but explain or link to definitions for less common terms or when introducing a concept.
@@ -49,3 +57,6 @@ Use the tone of a knowledgeable peer sharing practical insights and experiences 
     *   Assuming too much prior knowledge without providing context or links.
     *   Vague or abstract language when concrete examples would be better.
     *   Opening with background, history, or context before establishing why the reader should care.
+    *   For Slack/team updates, avoid sounding like an incident status report: Speak like a human.
+        *   Avoid: “This is the follow-through from the first soft-signal rollout: we let it run, bucketed the failures…”
+        *   Prefer: “I created a small adapter interface for MySQL, SQLite, and PostgreSQL specifics, then whittled the skiplist down to five tests.”
