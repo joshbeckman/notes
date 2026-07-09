@@ -16,8 +16,8 @@ tags:
 - writing
 - tools
 - record-club
+serial_number: 2026.BLG.071
 ---
-
 ![Please by DJ Plead](https://cdn.rcrd.club/releases/01d4kvyj0g1k76m2.jpg)
 
 <p>It was calming to play this while working today, but it’ll melt off my brain like rain on my window pane.</p>
