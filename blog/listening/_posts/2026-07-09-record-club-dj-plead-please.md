@@ -12,9 +12,6 @@ bluesky_status_url: false
 record_club_url: https://record.club/joshbeckman/releases/albums/dj-plead-please
 tags:
 - music
-- personal-blog
-- writing
-- tools
 - record-club
 serial_number: 2026.BLG.071
 ---
