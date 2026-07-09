@@ -7,7 +7,7 @@ image: https://cdn.rcrd.club/releases/01d4kvyj0g1k76m2.jpg
 description:
 rating: 2.5
 song_link: https://music.apple.com/us/album/please/1895379422
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116892046428056363
 bluesky_status_url: false
 record_club_url: https://record.club/joshbeckman/releases/albums/dj-plead-please
 tags:
