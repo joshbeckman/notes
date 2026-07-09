@@ -8,7 +8,7 @@ description:
 rating: 2.5
 song_link: https://music.apple.com/us/album/please/1895379422
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116892046428056363
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mqajwrlaxx2l
 record_club_url: https://record.club/joshbeckman/releases/albums/dj-plead-please
 tags:
 - music
