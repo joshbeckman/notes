@@ -18,6 +18,6 @@ tags:
 - cinematography
 - entertainment
 - letterboxd
+serial_number: 2026.BLG.072
 ---
-
  <p><img src="https://a.ltrbxd.com/resized/film-poster/3/1/9/8/5/31985-the-texas-chain-saw-massacre-0-600-0-900-crop.jpg?v=c63b3f1958"/></p> <p>This was scarier than I expected from its 50-year age. And it wasn't from the gore! Sure, Leatherface is scary, but he wasn't the main thing making me recoil. The scary and suspense and disgust and fear was shoved into me by the disturbing characters: the unhinged and understated hitchhiker conversation, the gas-man with half a broomstick and deranged words of encouragement. </p><p>Most of the film is shot from chest-height or lower, which made me feel like I was constantly cowering and hiding behind things in the scene - very effective. </p><p>And finally, kudos to the bone artist who made the shrine room and the human chair. Yikes.</p> 
