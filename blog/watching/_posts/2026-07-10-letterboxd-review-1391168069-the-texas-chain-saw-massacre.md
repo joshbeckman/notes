@@ -9,7 +9,7 @@ rating: 4
 tmdb_id: '30497'
 letterboxd_id: the-texas-chain-saw-massacre
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116903305450605593
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mqfjwojxn62x
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/the-texas-chain-saw-massacre/
 tags:
 - movies
