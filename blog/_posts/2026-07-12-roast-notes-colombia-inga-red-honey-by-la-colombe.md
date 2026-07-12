@@ -9,7 +9,7 @@ tags:
 - coffee
 - roast-notes
 - chicago
-serial_number: 2026.BLG.067
+serial_number: 2026.BLG.073
 ---
 I picked up this bag-in-a-box of La Colombe's [Colombia Inga Red Honey](https://www.lacolombe.com/products/colombia-inga-red-honey?variant=1270715744274) at the La Colombe north of me. I was meeting a past colleague for coffee and a catch-up, our third attempt to make it happen after the first two got disrupted by sick kids and the usual. Steamy summer has settled into Chicago, so I was sweating as I walked up and that tipped me into drinking a cold brew while I was there.
 
