@@ -1,6 +1,6 @@
 import { Hono } from "npm:hono";
 import { resetCache } from "./search.ts";
-import { critiquePost, critiqueDraft, annotate, processFeed, emailCritique } from "./critic.ts";
+import { critiquePost, critiqueDraft, annotate, processFeed, emailCritique, suggestLinks } from "./critic.ts";
 
 const STYLE_HEAD = `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans+Condensed:wght@600&display=swap">`;
 const BODY_STYLE = `font-family: 'IBM Plex Sans', sans-serif; max-width: 640px; margin: 0 auto; padding: 32px 20px; color: #151515; line-height: 1.6; background-color: #EBEDEA;`;
@@ -37,6 +37,10 @@ app.get("/", (c) => {
     <div style="margin-bottom: 16px;">
       <h2 style="${H2_STYLE}">GET /preview?url=...</h2>
       <p style="color: #666; font-size: 14px;">Ad-hoc critique of a single post. Returns HTML page.</p>
+    </div>
+    <div style="margin-bottom: 16px;">
+      <h2 style="${H2_STYLE}">GET /links?url=...</h2>
+      <p style="color: #666; font-size: 14px;">Suggest internal links for a post and open a draft PR. Returns JSON with the PR URL.</p>
     </div>
     <div style="margin-bottom: 16px;">
       <h2 style="${H2_STYLE}">POST /draft</h2>
@@ -104,6 +108,20 @@ app.get("/preview", async (c) => {
   </form>
 </body>
 </html>`);
+});
+
+app.get("/links", async (c) => {
+  resetCache();
+  const url = c.req.query("url");
+  if (!url) return c.json({ error: "url parameter is required" }, 400);
+
+  try {
+    const result = await suggestLinks(url);
+    if (!result.ok) return c.json({ suggested: false, reason: result.reason });
+    return c.json({ suggested: true, prUrl: result.prUrl, insertions: result.insertions });
+  } catch (err) {
+    return c.json({ suggested: false, reason: String(err instanceof Error ? err.message : err) }, 500);
+  }
 });
 
 app.post("/draft", async (c) => {

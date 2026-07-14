@@ -95,6 +95,11 @@ export function formatPost(post: Post): string {
 }
 
 function search(input: string, index: lunr.Index, searchData: Record<string, Post>) {
+  // Lunr's query parser reads `:` as field:term, `~`/`^` as edit-distance/boost,
+  // and leading `+`/`-` as presence — so a raw title like "Better Models: Worse
+  // Tools" throws "unrecognised field". Callers pass free text (post titles,
+  // model queries), not query DSL, so neutralize the operators here.
+  input = input.replace(/[:~^]/g, " ").replace(/(^|\s)[+-]+/g, " ").trim();
   let results = index.search(input);
 
   if (results.length < 3 && input.length > 2) {

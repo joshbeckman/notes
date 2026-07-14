@@ -3,6 +3,7 @@ import { blob } from "https://esm.town/v/std/blob";
 import { email } from "https://esm.town/v/std/email";
 import { marked } from "npm:marked";
 import { executeTool, tools, getSearchData, formatPost, type Post } from "./search.ts";
+import { hasToken, resolveFilePath, getRawFile, openDraftPR } from "./github.ts";
 
 const anthropic = new Anthropic();
 const RESEARCH_MODEL = "claude-sonnet-4-6";
@@ -370,9 +371,374 @@ Output ONLY valid JSON. No markdown fences, no commentary.`,
   return JSON.parse(text);
 }
 
+// --- Link suggestions -> draft PRs ---
+
+// Common sentence-initial / generic capitalized words that aren't worth a
+// focused proper-noun search (they'd just re-surface generic posts).
+const STOPWORD_PROPER = new Set([
+  "the", "this", "that", "there", "then", "these", "those", "and", "but", "for",
+  "with", "from", "into", "unknown", "maybe", "today", "yesterday", "tomorrow",
+  "here", "when", "where", "what", "while", "after", "before", "about", "also",
+  "bopping", "probably", "inside", "good", "felt",
+]);
+
+type LinkInsertion = {
+  old_string: string;
+  new_string: string;
+  target_url: string;
+  target_title: string;
+  why: string;
+};
+
+// Duplicated from search.ts's extractCategory rather than exporting it: keeping
+// this local avoids coupling the link module to search internals for one line.
+function categoryOf(url: string): string {
+  if (url.includes("/notes/")) return "notes";
+  if (url.includes("/exercise/")) return "exercise";
+  if (url.includes("/replies/")) return "replies";
+  return "blog";
+}
+
+// Split frontmatter so the model only edits the body. Editing frontmatter risks
+// corrupting YAML that the model can't see the schema for.
+function splitFrontmatter(raw: string): { front: string; body: string } {
+  const m = raw.match(/^(---\n[\s\S]*?\n---\n)([\s\S]*)$/);
+  if (!m) return { front: "", body: raw };
+  return { front: m[1], body: m[2] };
+}
+
+async function proposeLinkInsertions(
+  title: string,
+  body: string,
+  candidates: Post[],
+): Promise<LinkInsertion[]> {
+  if (candidates.length === 0) return [];
+  const candidateList = candidates
+    .map((p) => `- [${p.title}](${p.url}) — ${(p.content || "").slice(0, 200).replace(/\s+/g, " ")}`)
+    .join("\n");
+
+  const response = await anthropic.messages.create({
+    model: RESEARCH_MODEL,
+    max_tokens: 2048,
+    // Deterministic: link suggestions should be reproducible, and default
+    // sampling made the model flip-flop on obvious named-entity links run to run.
+    temperature: 0,
+    system: `You add internal links between posts in a personal knowledge garden. Given the raw Markdown body of a post and a list of related posts, propose links to weave in where a reader would genuinely benefit — a natural anchor phrase that the target post directly illuminates.
+
+MOST VALUABLE: proper nouns in the body — an album, song, book, film, person, project, tool, or place — where one of the candidate posts IS that thing or is centrally about it. When a post names something the garden has its own post about, link the name. (Example: a workout log that says "listening to Slayyyter" should link "Slayyyter" to the album review of that artist.) These cross-domain links are the whole point; do not skip an obvious named-entity link just because the two posts are in different categories.
+
+Do NOT link a post to near-identical sibling posts (e.g. one workout log to other workout logs) — that's noise.
+
+Link ONLY the author's OWN words. NEVER add a link inside a quoted passage — Markdown blockquote lines starting with "> ", or text inside an embedded <blockquote> — those are someone else's words. If the author's original prose is only a sentence or two around a long quote, confine yourself to that prose.
+
+Only link when the target post is SPECIFICALLY and SUBSTANTIALLY about the anchor. Do not link vague or common conceptual phrases ("proprietary environments", "the tradeoffs", "open source") on loose thematic similarity — that produces links the author will find irrelevant. A good link is one the author would obviously want; when in doubt, skip it.
+
+Return a JSON array of insertions. Each has:
+- "old_string": an EXACT substring copied verbatim from the body that appears exactly ONCE. Keep it short (a few words), and it must be plain text NOT already inside a Markdown link.
+- "new_string": the same text with a Markdown link added, using a site-relative URL, e.g. "the [linchpin idea](/notes/446271384)".
+- "target_url": the site-relative URL of the linked post (e.g. /blog/foo).
+- "target_title": the linked post's title.
+- "why": one sentence on why this link helps the reader.
+
+Rules:
+- Prefer a few high-value links over many weak ones, but always take an obvious named-entity link when one exists. Return [] only if nothing fits.
+- Never link the same anchor twice. Never wrap text already inside a link or inside a heading.
+- old_string MUST appear verbatim and exactly once in the body.
+- Output ONLY valid JSON. No markdown fences, no commentary.`,
+    messages: [
+      {
+        role: "user",
+        content: `## Post: ${title}\n\n### Body\n\n${body}\n\n### Related posts you may link to\n\n${candidateList}`,
+      },
+    ],
+  });
+
+  return parseInsertions(collectText(response));
+}
+
+function collectText(response: Anthropic.Messages.Message): string {
+  return response.content
+    .filter((b) => b.type === "text")
+    .map((b) => (b as { text: string }).text)
+    .join("\n")
+    .trim();
+}
+
+// Tolerate preamble/citations around the array — web_search responses in
+// particular wrap the JSON in prose, so slice to the outermost brackets.
+function parseInsertions(text: string): LinkInsertion[] {
+  const start = text.indexOf("[");
+  const end = text.lastIndexOf("]");
+  if (start === -1 || end <= start) return [];
+  try {
+    const parsed = JSON.parse(text.slice(start, end + 1));
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+// Drop hallucinated or dead URLs before committing them. web_search grounds the
+// model in real results, but a cheap reachability check is worth it since a bad
+// external link is worse than a missing one.
+async function urlResolves(url: string): Promise<boolean> {
+  try {
+    const resp = await fetch(url, {
+      redirect: "follow",
+      headers: { "User-Agent": "Mozilla/5.0 (criticCron link check)" },
+    });
+    return resp.ok;
+  } catch {
+    return false;
+  }
+}
+
+// Find canonical external URLs for works the post names but doesn't link. Uses
+// Anthropic's server-side web_search; failures (e.g. search unavailable) return
+// [] so internal-link suggestions still work.
+async function proposeExternalLinks(title: string, body: string): Promise<LinkInsertion[]> {
+  let response: Anthropic.Messages.Message;
+  try {
+    response = await anthropic.messages.create({
+      model: RESEARCH_MODEL,
+      max_tokens: 2048,
+      temperature: 0,
+      tools: [{ type: "web_search_20250305", name: "web_search", max_uses: 5 } as unknown as Anthropic.Messages.Tool],
+      system: `You find canonical external web URLs for specific works — essays, articles, blog posts, podcast episodes, videos, books, papers — that a post REFERENCES in the author's own words but does not link.
+
+The author writes casual notes that name things without linking them, e.g. "Listening to Zvi's summary and rebuttal to the latest (Plan A) AI futures thinking" or "an interview on Dialectic with Jasmine Sun". Identify the specific referenced work, search the web for its canonical URL, and propose a link on a natural anchor phrase.
+
+Rules:
+- Only propose a link when web_search finds the SPECIFIC referenced work with high confidence — the exact essay/episode/video, not a topic overview, homepage, or search page. If you cannot identify the exact work, skip it.
+- Prefer the primary/canonical source (the author's own blog or Substack, the podcast's episode page, the original video) over aggregators or reposts.
+- Link ONLY the author's OWN words. NEVER add a link inside a quoted passage — Markdown blockquote lines starting with "> ", or text inside an embedded <blockquote>.
+- Choose a concise anchor: a short verbatim substring of the prose that names the work (e.g. "Plan A" or "interview on Dialectic with Jasmine Sun").
+
+Return a JSON array of insertions. Each has:
+- "old_string": an EXACT substring copied verbatim from the body that appears exactly ONCE, not already inside a link.
+- "new_string": the same text with a Markdown link added using the FULL https URL, e.g. "[Plan A](https://thezvi.wordpress.com/2026/07/11/...)".
+- "target_url": the full https URL of the work.
+- "target_title": the work's title.
+- "why": one sentence on why this link helps the reader.
+
+Return [] if no referenced work can be confidently located. Output ONLY the JSON array — no prose, no markdown fences.`,
+      messages: [{ role: "user", content: `## Post: ${title}\n\n### Body\n\n${body}` }],
+    });
+  } catch (err) {
+    console.error("web_search external-link pass failed:", err);
+    return [];
+  }
+
+  const proposed = parseInsertions(collectText(response));
+  // Only keep external (http) targets that actually resolve.
+  const checked = await Promise.all(
+    proposed.map(async (ins) =>
+      ins.target_url?.startsWith("http") && (await urlResolves(ins.target_url)) ? ins : null
+    ),
+  );
+  return checked.filter((x): x is LinkInsertion => x !== null);
+}
+
+// Length-preserving normalization for matching only. Imported posts carry
+// typographic punctuation (’ “ ” — nbsp) that the model reproduces as ASCII, so
+// verbatim indexOf fails. Every substitution is one-char-to-one-char so indices
+// stay aligned with the original text and we can slice the original back out.
+function normalizeForMatch(s: string): string {
+  return s
+    .replace(/[’‘‛]/g, "'")
+    .replace(/[“”]/g, '"')
+    .replace(/[–—]/g, "-")
+    .replace(/\u00a0/g, " ");
+}
+
+function isInsideQuote(body: string, idx: number): boolean {
+  const lineStart = body.lastIndexOf("\n", idx - 1) + 1;
+  const line = body.slice(lineStart, body.indexOf("\n", idx) === -1 ? undefined : body.indexOf("\n", idx));
+  if (/^\s*>/.test(line)) return true; // Markdown blockquote
+  // Embedded HTML quote: an unclosed <blockquote> before the anchor.
+  const before = body.slice(0, idx).toLowerCase();
+  return before.lastIndexOf("<blockquote") > before.lastIndexOf("</blockquote>");
+}
+
+// Apply insertions to the body, keeping only those whose old_string is present
+// exactly once and not inside an existing link. Returns the edited body and the
+// insertions actually applied.
+function applyInsertions(
+  body: string,
+  insertions: LinkInsertion[],
+): { body: string; applied: LinkInsertion[]; rejected: { anchor: string; reason: string }[] } {
+  let out = body;
+  const applied: LinkInsertion[] = [];
+  const rejected: { anchor: string; reason: string }[] = [];
+  for (const ins of insertions) {
+    if (!ins.old_string || !ins.new_string) {
+      rejected.push({ anchor: ins.old_string ?? "(missing)", reason: "missing old_string or new_string" });
+      continue;
+    }
+    const normOld = normalizeForMatch(ins.old_string);
+    const normBody = normalizeForMatch(out); // same length as `out`, so indices align
+    const idx = normBody.indexOf(normOld);
+    if (idx === -1) {
+      rejected.push({ anchor: ins.old_string, reason: "anchor not found verbatim in body" });
+      continue;
+    }
+    if (normBody.indexOf(normOld, idx + 1) !== -1) {
+      rejected.push({ anchor: ins.old_string, reason: "anchor appears more than once (ambiguous)" });
+      continue;
+    }
+    // Never link inside a quoted passage — those are someone else's words, and
+    // the author only wants links added to their own prose.
+    if (isInsideQuote(out, idx)) {
+      rejected.push({ anchor: ins.old_string, reason: "anchor is inside a quoted passage" });
+      continue;
+    }
+    // The model wraps a sub-span of the anchor in one Markdown link; validate it
+    // only ADDS link markup (stripped text must equal the anchor), then rebuild
+    // the edit from the ORIGINAL characters so typographic punctuation is
+    // preserved rather than replaced with the model's ASCII version.
+    const link = ins.new_string.match(/\[([^\]]+)\]\(([^)]+)\)/);
+    const strippedNorm = normalizeForMatch(ins.new_string.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1"));
+    if (!link || strippedNorm !== normOld) {
+      rejected.push({ anchor: ins.old_string, reason: "new_string changes text beyond adding a link" });
+      continue;
+    }
+    const origAnchor = out.slice(idx, idx + normOld.length);
+    const linkStart = link.index!; // offset of "[" == length of plain text before the link
+    const linkTextLen = link[1].length;
+    const replacement =
+      origAnchor.slice(0, linkStart) +
+      `[${origAnchor.slice(linkStart, linkStart + linkTextLen)}](${link[2]})` +
+      origAnchor.slice(linkStart + linkTextLen);
+    out = out.slice(0, idx) + replacement + out.slice(idx + normOld.length);
+    applied.push(ins);
+  }
+  return { body: out, applied, rejected };
+}
+
+export type LinkResult =
+  | { ok: true; prUrl: string; insertions: LinkInsertion[] }
+  | { ok: false; reason: string };
+
+// Gather related garden posts via the same search index the critic uses, then
+// propose + apply link edits and open a draft PR against the source post.
+export async function suggestLinks(postUrl: string): Promise<LinkResult> {
+  if (!hasToken()) return { ok: false, reason: "no GH_NOTES_TOKEN configured" };
+
+  const searchData = await getSearchData();
+  const postPath = postUrl.startsWith("http") ? new URL(postUrl).pathname : postUrl;
+  const post = (Object.values(searchData) as Post[]).find(
+    (p) => p.url === postPath || SITE_URL + p.url === postUrl,
+  );
+  if (!post) return { ok: false, reason: `post not found in search index: ${postPath}` };
+
+  const filePath = await resolveFilePath(post.url);
+  if (!filePath) return { ok: false, reason: `could not resolve repo file for ${post.url}` };
+  const file = await getRawFile(filePath);
+  if (!file) return { ok: false, reason: `could not read ${filePath} from GitHub` };
+
+  const { front, body } = splitFrontmatter(file.content);
+
+  // Seed candidates from title, tags, AND body text. Title+tags alone only find
+  // topically-similar posts; the highest-value links are often cross-domain and
+  // hinge on a proper noun buried in the prose (e.g. a weight-training log that
+  // names the album it mentions), which only a body search surfaces.
+  const bodyText = body
+    .replace(/<[^>]+>/g, " ")
+    .replace(/[#>*_`!\[\]()]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 600);
+  // Proper nouns are searched on their own because a broad body-text query is
+  // dominated by common words (a workout log's "gym/weight/lifts" buries the one
+  // distinctive token "Slayyyter"), truncating the very post worth linking. A
+  // distinctive token gets its own focused search so its target survives.
+  const properNouns = [...new Set((bodyText.match(/\b[A-Z][A-Za-z0-9$'’]{2,}\b/g) ?? []))]
+    .filter((w) => !STOPWORD_PROPER.has(w.toLowerCase()))
+    .slice(0, 8);
+  const broadQueries = [
+    post.title,
+    bodyText,
+    ...(post.tags || "").split(" ").filter(Boolean).slice(0, 4),
+  ].filter(Boolean);
+
+  const seen = new Map<string, Post>();
+  const collect = async (q: string, limit: number) => {
+    const raw = await executeTool("search_posts", { query: q, limit });
+    for (const [, matchPath] of raw.matchAll(/\]\((https?:\/\/[^)]+|\/[^)]+)\)/g)) {
+      const p = (Object.values(searchData) as Post[]).find((x) => SITE_URL + x.url === matchPath || x.url === matchPath);
+      if (p && p.url !== post.url) seen.set(p.url, p);
+    }
+  };
+  // Proper-noun hits first so they claim candidate slots before broad noise.
+  for (const noun of properNouns) await collect(noun, 3);
+  for (const q of broadQueries) await collect(q, 5);
+
+  // Cap same-category candidates. A post's best links are usually cross-domain
+  // (a workout log -> the album it names); without this cap the list fills with
+  // near-identical siblings (12 other workout logs) that bury the one good
+  // target and make even a capable model decline to link anything.
+  const sourceCategory = categoryOf(post.url);
+  let sameCat = 0;
+  const candidates = [...seen.values()]
+    .filter((c) => {
+      if (categoryOf(c.url) !== sourceCategory) return true;
+      return ++sameCat <= 3;
+    })
+    .slice(0, 15);
+
+  // Internal (garden) and external (web) links are independent passes: internal
+  // needs candidates from the index; external only needs the prose + web search.
+  // External must not be gated on internal candidates existing — a workout log
+  // that names a Substack essay has no garden match but a valuable external one.
+  const [internal, external] = await Promise.all([
+    candidates.length > 0 ? proposeLinkInsertions(post.title, body, candidates) : Promise.resolve([]),
+    proposeExternalLinks(post.title, body),
+  ]);
+  // Longest anchor first so the most specific reference claims its span. When an
+  // external "interview on Dialectic with Jasmine Sun" overlaps an internal
+  // "Dialectic", the specific episode link should win over a generic-podcast one
+  // pointing at an unrelated episode.
+  const proposed = [...internal, ...external].sort(
+    (a, b) => (b.old_string?.length ?? 0) - (a.old_string?.length ?? 0),
+  );
+  const { body: newBody, applied, rejected } = applyInsertions(body, proposed);
+  if (applied.length === 0) {
+    const detail = rejected.map((r) => `"${r.anchor}": ${r.reason}`).join("; ");
+    return { ok: false, reason: `no worthwhile links (proposed ${proposed.length}). ${detail}` };
+  }
+
+  const bullets = applied
+    .map((i) => {
+      const target = i.target_url.startsWith("http") ? i.target_url : SITE_URL + i.target_url;
+      const kind = i.target_url.startsWith("http") ? "🌐" : "🔗";
+      return `- ${kind} Link **${i.old_string}** → [${i.target_title}](${target}) — ${i.why}`;
+    })
+    .join("\n");
+  const prBody = `Suggested by criticCron while critiquing [${post.title}](${SITE_URL}${post.url}).\n\n${bullets}\n\nOpened as a draft — review and mark ready to merge, or close.\n\nGenerated-by: AI (criticCron/Anthropic/${RESEARCH_MODEL})`;
+
+  const prUrl = await openDraftPR({
+    path: filePath,
+    sha: file.sha,
+    newContent: front + newBody,
+    branch: `critic/links-${postPath.replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, "")}-${Date.now()}`,
+    commitMessage: `docs: add links to ${post.title}`,
+    title: `Add links to “${post.title}”`,
+    body: prBody,
+  });
+
+  return { ok: true, prUrl, insertions: applied };
+}
+
 // --- Email ---
 
-function buildEmailHtml(title: string, url: string, critiqueHtml: string): string {
+function buildLinkPrHtml(prUrl: string | null): string {
+  if (!prUrl) return "";
+  return `<div style="margin: 16px 0; padding: 12px 16px; background: #f3eef1; border-left: 3px solid #903465;">
+    <p style="margin: 0; font-size: 14px;">🔗 I opened a <a href="${prUrl}" style="color: #903465; text-decoration: underline; font-weight: 600;">draft PR with suggested links</a>. Review and mark ready, or close it.</p>
+  </div>`;
+}
+
+function buildEmailHtml(title: string, url: string, critiqueHtml: string, prUrl: string | null): string {
   return `<!DOCTYPE html>
 <html>
 <head>
@@ -383,6 +749,7 @@ function buildEmailHtml(title: string, url: string, critiqueHtml: string): strin
   <h2 style="font-family: 'IBM Plex Sans Condensed', 'IBM Plex Sans', sans-serif; margin-bottom: 4px;"><a href="${url}" style="color: #903465; text-decoration: underline;">${title}</a></h2>
   <p style="margin-top: 0; color: #666; font-size: 14px;">Critique from your writing mentor</p>
   <hr style="border: none; border-top: 2px solid #903465; margin: 16px 0;">
+  ${buildLinkPrHtml(prUrl)}
   ${critiqueHtml}
   <hr style="border: none; border-top: 1px solid #ddd; margin: 16px 0;">
   <p style="color: #999; font-size: 12px;">Generated by <a href="https://val.town" style="color: #903465;">criticCron</a></p>
@@ -390,8 +757,13 @@ function buildEmailHtml(title: string, url: string, critiqueHtml: string): strin
 </html>`;
 }
 
-export async function emailCritique(title: string, url: string, critiqueHtml: string): Promise<void> {
-  const html = buildEmailHtml(title, url, critiqueHtml);
+export async function emailCritique(
+  title: string,
+  url: string,
+  critiqueHtml: string,
+  prUrl: string | null = null,
+): Promise<void> {
+  const html = buildEmailHtml(title, url, critiqueHtml, prUrl);
   await email({
     subject: `Critique: ${title}`,
     html,
@@ -428,7 +800,16 @@ export async function processFeed(): Promise<{ processed: string[]; skipped: num
     try {
       const result = await critiquePost(entry.url);
       if (!result) continue;
-      await emailCritique(result.title, result.url, result.critique.html);
+      // Link PRs are a best-effort extra; a GitHub failure must not block the
+      // critique email or re-strand the whole batch.
+      let prUrl: string | null = null;
+      try {
+        const links = await suggestLinks(entry.url);
+        prUrl = links.ok ? links.prUrl : null;
+      } catch (err) {
+        console.error(`Link suggestion failed for ${entry.url}:`, err);
+      }
+      await emailCritique(result.title, result.url, result.critique.html, prUrl);
       // Mark processed immediately after the email succeeds. Writing once at the
       // end means any later failure/timeout discards the whole batch, which makes
       // the cron re-email the same newest posts every run.
