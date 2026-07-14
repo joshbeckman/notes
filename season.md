@@ -9,7 +9,7 @@ serial_number: 2026.PAE.006
 ---
 {% include CurrentSeason.html %}
 
-Things come and go in seasons. These days, the year unfolds in 24 small seasons, each lasting about 15 days. Right now we're in **{{ current_season.name }}** {{ current_season.marker }}.
+Things come and go in seasons. These days, the year unfolds in 24 small seasons, each lasting about 15 days. Right now we're in **{{ current_season.name }}** {{ current_season.marker }}. See where it falls among the other cycles of time on the [clocks page](/clocks/#progress).
 
 {% include SeasonsTimeline.html %}
 
