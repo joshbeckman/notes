@@ -2,6 +2,7 @@
 layout: Page
 title: Clocks
 permalink: "/clocks/"
+searchable: true
 emoji: "\U000023F1"
 description: A live-updating view of the current date and time, with progress bars
   and rings tracking how far along we are through the current minute, hour, day, week,
