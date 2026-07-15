@@ -69,6 +69,11 @@ Share your location and this will plot the sun and moon on a 24-hour dial — no
     font-weight: 600;
     margin-left: 0.4rem;
   }
+  .clock-bar-season-link {
+    color: var(--c-link);
+    font-weight: 600;
+    text-decoration: underline;
+  }
   .clock-bar-track {
     height: 0.75rem;
     background: var(--c-bg-alt);
@@ -243,11 +248,17 @@ Share your location and this will plot the sun and moon on a 24-hour dial — no
     values[bar.key] = value;
   });
 
-  // The season value is a link to /season, created once rather than rebuilt
-  // each frame; only its text changes as seasons turn over.
+  // Make the whole "Season" label a link to /season, with a dedicated text node
+  // for the season name so the per-frame text update doesn't clobber the anchor.
+  var seasonNameSpan = values.season.parentNode;
+  seasonNameSpan.textContent = "";
   var seasonLink = document.createElement("a");
   seasonLink.href = "/season";
-  values.season.appendChild(seasonLink);
+  seasonLink.className = "clock-bar-season-link";
+  seasonLink.appendChild(document.createTextNode("Season "));
+  var seasonValue = document.createElement("span");
+  seasonLink.appendChild(seasonValue);
+  seasonNameSpan.appendChild(seasonLink);
 
   // Concentric rings mirror the bars: minute innermost (fastest) to century
   // outermost (slowest), sharing the same progress values.
@@ -422,7 +433,7 @@ Share your location and this will plot the sun and moon on a 24-hour dial — no
     timeEl.textContent = pad(now.getHours()) + ":" + pad(now.getMinutes()) + ":" + pad(now.getSeconds());
 
     var season = seasonInfo(now);
-    seasonLink.textContent = season.marker + " " + season.name;
+    seasonValue.textContent = season.marker + " " + season.name;
 
     var p = progress(now);
     bars.forEach(function (bar) {
