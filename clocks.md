@@ -307,7 +307,12 @@ Share your location and this will plot the sun and moon on a 24-hour dial — no
     var swatch = document.createElement("span");
     swatch.className = "swatch";
     swatch.style.background = color;
-    var text = document.createElement("span");
+    // The season entry links to /season to match the labelled bar above.
+    var text = document.createElement(bar.key === "season" ? "a" : "span");
+    if (bar.key === "season") {
+      text.href = "/season";
+      text.className = "clock-bar-season-link";
+    }
     text.textContent = bar.label;
     li.appendChild(swatch);
     li.appendChild(text);
