@@ -96,6 +96,11 @@ You can read about everything else I use to build things at [/uses](/uses).
 - podcast rendering
 - [More ideas](https://github.com/joshbeckman/notes/issues?q=is%3Aopen+is%3Aissue+-label%3Apost)
 
+### v3.13.0 "ball-glide" — 2026-07-14
+- Added a [clocks page](/clocks/) with a live date and 24-hour time readout.
+- Added progress bars and concentric rings tracking the current minute, hour, day, week, month, season, year, decade, and century. The season bar draws from the same 24 small seasons as the [season page](/season).
+- Added an astronomical section that plots the sun and moon on 24-hour day/night dials, with rise and set times marked and the time each spends above the horizon lit up. It reads your location only with permission, keeps coordinates in the browser, and reappears automatically on return visits.
+
 ### v3.12.0 "nice-ball" — 2026-06-09
 - Import Record Club music reviews into the listening blog (PESOS), with Apple Music streaming links and embeds
 - Add Record Club to the active accounts list and per-post social links
