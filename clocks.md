@@ -430,33 +430,52 @@ Share your location and this will plot the sun and moon on a 24-hour dial — no
     };
   }
 
-  function tick() {
-    var now = new Date();
+  // Writing textContent recreates the node even when the string is unchanged,
+  // which churns layout and (for the season link) cancels clicks by swapping the
+  // node out between mousedown and mouseup. Only write on an actual change.
+  function setText(node, text) {
+    if (node.textContent !== text) node.textContent = text;
+  }
 
-    dateEl.textContent = DAYS[now.getDay()] + ", " +
-      MONTHS[now.getMonth()] + " " + now.getDate() + ", " + now.getFullYear();
-    timeEl.textContent = pad(now.getHours()) + ":" + pad(now.getMinutes()) + ":" + pad(now.getSeconds());
+  // Smooth visuals only: the bar fills and rings advance every frame. These are
+  // width/attribute changes inside fixed-size boxes, so they never reflow the
+  // text rows around them.
+  function animate() {
+    var p = progress(new Date());
+    bars.forEach(function (bar) {
+      var ratio = Math.max(0, Math.min(1, p[bar.key]));
+      fills[bar.key].style.width = (ratio * 100) + "%";
+      var ring = ringFills[bar.key];
+      ring.el.setAttribute("stroke-dashoffset", ring.circumference * (1 - ratio));
+    });
+    requestAnimationFrame(animate);
+  }
+
+  // Text readouts change at most once per second, so update them on that cadence
+  // rather than 60x/sec. Every write is guarded, so slow values (the season, the
+  // year, the decade) touch the DOM only when they genuinely change.
+  function updateText() {
+    var now = new Date();
+    setText(dateEl, DAYS[now.getDay()] + ", " +
+      MONTHS[now.getMonth()] + " " + now.getDate() + ", " + now.getFullYear());
+    setText(timeEl, pad(now.getHours()) + ":" + pad(now.getMinutes()) + ":" + pad(now.getSeconds()));
 
     var season = seasonInfo(now);
-    seasonValue.textContent = season.marker + " " + season.name;
+    setText(seasonValue, season.marker + " " + season.name);
 
     var p = progress(now);
     bars.forEach(function (bar) {
       var ratio = Math.max(0, Math.min(1, p[bar.key]));
-      fills[bar.key].style.width = (ratio * 100) + "%";
-      percents[bar.key].textContent = (ratio * 100).toFixed(1) + "%";
+      setText(percents[bar.key], (ratio * 100).toFixed(1) + "%");
       if (bar.key !== "season") {
-        values[bar.key].textContent = currentValue(bar.key, now);
+        setText(values[bar.key], String(currentValue(bar.key, now)));
       }
-
-      var ring = ringFills[bar.key];
-      ring.el.setAttribute("stroke-dashoffset", ring.circumference * (1 - ratio));
     });
-
-    requestAnimationFrame(tick);
   }
 
-  requestAnimationFrame(tick);
+  requestAnimationFrame(animate);
+  updateText();
+  setInterval(updateText, 1000);
 })();
 </script>
 
