@@ -10,6 +10,8 @@ description: A live-updating view of the current date and time, with progress ba
   sky.
 tags:
 - index
+- time
+- tools
 serial_number: 2026.PAE.011
 ---
 <div id="clocks">
