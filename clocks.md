@@ -3,7 +3,7 @@ layout: Page
 title: Clocks
 permalink: "/clocks/"
 searchable: true
-emoji: "\U000023F1"
+emoji: "⏱"
 description: A live-updating view of the current date and time, with progress bars
   and rings tracking how far along we are through the current minute, hour, day, week,
   month, season, year, decade, and century, plus the sun and moon's position in your
@@ -12,7 +12,7 @@ tags:
 - index
 - time
 - tools
-serial_number: 2026.PAE.011
+serial_number: 2026.PAE.025
 ---
 <div id="clocks">
   <div class="clock-date" id="clock-date">&nbsp;</div>
