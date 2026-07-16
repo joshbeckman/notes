@@ -6,7 +6,7 @@ toc: true
 image: "/assets/images/fdc0737f-9788-43a3-a2b3-c9e365a71923.png"
 description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116930934254514807
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mqrsktmr7x22
 tags:
 - chicago
 - climate-change
