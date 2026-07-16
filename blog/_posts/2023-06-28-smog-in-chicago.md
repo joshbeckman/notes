@@ -1,6 +1,6 @@
 ---
 toc: true
-title: Smog in Chicago
+title: Wildfire Smoke in Chicago
 image: "/assets/images/L1050064.jpeg"
 date: '2023-06-28 04:02:34'
 tags:
@@ -13,7 +13,7 @@ serial_number: 2023.BLG.027
 ---
 <figure class="kg-card kg-image-card"><img src="/assets/images/L1050064.jpeg" /></figure>
 
-Chicago had the worst air quality in the nation today.   
+Chicago had the worst air quality in the nation today. The wildfire smoke from out West has descended.
   
 Walking outside smelled like stinky ash. And the air was hard to breathe, causing us to cough. The sunlight had an eerie yellow tinge, even at noon as I took these photos over lunch while holding my breath in our patio.
 
