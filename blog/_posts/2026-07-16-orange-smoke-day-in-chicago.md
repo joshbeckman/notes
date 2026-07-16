@@ -17,3 +17,6 @@ We're having another wildfire smoke day in Chicago ([previously](https://www.jos
 As I walked my daughter to school this morning I talked to her about how this smoke has floated a thousand miles to end up stuck in our noses here, about how this is a reminder that we are all connected eventually, about how I hope this will bring rain.
 
 <img width="1160" height="752" alt="Screenshot of my weather app showing the 192 air quality level in Chicago in context of North America" src="/assets/images/fdc0737f-9788-43a3-a2b3-c9e365a71923.png" />
+
+> [!NOTE]
+> Update: it got way worse later this morning - now up to 250 AQI!!
