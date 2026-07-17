@@ -8,7 +8,7 @@ description:
 rating: 4
 song_link: https://music.apple.com/us/album/breathe-well/6774972070
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116937284056129702
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mqumseq66l2b
 tags:
 - music
 serial_number: 2026.BLG.075
