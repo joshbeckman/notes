@@ -20,7 +20,7 @@ I think [BROADCASTED](https://aircredits.bandcamp.com/album/broadcasted) was a f
 
 You gotta love when people commit to the bit. Air Credits live in a post-apocalyptic future world and I'm happy to join them for these albums. Or you can let the lyrics wash away and you're left with just good head-bouncing bass and looping samples.
 
-I love listening to these Chicago natives. They master their albums to boom through my home speakers and they put on [a crowd-pumping live show](https://www.joshbeckman.org/blog/attending/ric-wilson-and-air-credits-at-edgewater-music-fest).
+I love listening to these Chicago natives. They master their albums to boom through my home speakers and they put on [a [crowd-pumping live show](/blog/attending/ric-wilson-and-air-credits-at-edgewater-music-fest)](https://www.joshbeckman.org/blog/attending/ric-wilson-and-air-credits-at-edgewater-music-fest).
 
 Favorite tracks:
 - RADIUM
