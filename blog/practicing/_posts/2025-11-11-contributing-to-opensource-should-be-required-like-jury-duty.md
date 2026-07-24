@@ -12,7 +12,7 @@ tags:
 - open-source
 - government
 - popular
-serial_number: 2025.BLG.182
+serial_number: 2025.BLG.181
 ---
 A note I found in my journal, from seven years ago, on the day I was summoned to participate in a jury of my peers:
 

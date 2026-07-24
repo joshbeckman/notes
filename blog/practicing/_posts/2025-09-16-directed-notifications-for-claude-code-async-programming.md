@@ -13,7 +13,7 @@ tags:
 - ai
 - tools
 - popular
-serial_number: 2025.BLG.153
+serial_number: 2025.BLG.152
 ---
 This afternoon I leveled up my [previous Claude Code notifications](https://www.joshbeckman.org/blog/practicing/claude-code-notifications-for-async-programming). Now I have Claude's notifications:
 - grouped by project/directory

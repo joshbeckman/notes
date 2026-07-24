@@ -11,7 +11,7 @@ tags:
 - building
 - folk-creations
 - popular
-serial_number: 2025.BLG.189
+serial_number: 2025.BLG.188
 ---
 I bought the instruction zine for [The Studio Stool from Manual](https://www.manual.is/the-studio-stool) months ago and then cut up some 3/4" plywood sometime this summer and finally reorganized enough to finish it yesterday.
 

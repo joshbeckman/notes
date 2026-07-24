@@ -12,7 +12,7 @@ tags:
 - mastodon
 - bluesky
 - year-in-review
-serial_number: 2025.BLG.200
+serial_number: 2025.BLG.199
 ---
 I've been [syndicating](https://www.joshbeckman.org/blog/rules-for-syndication-on-my-site) my posts [to Bluesky](https://www.joshbeckman.org/blog/crossposting-to-bluesky-from-jekyll) and [to Mastodon](https://www.joshbeckman.org/blog/how-to-crosspost-to-mastodon-with-jekyll) all of 2025. These are the two generalist "social media platforms" that I use [actively](https://www.joshbeckman.org/about/#active-accounts). And by "actively use" I mean:
 - syndicate my blog posts there

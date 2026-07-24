@@ -14,7 +14,7 @@ tags:
 - communication
 - leadership
 - popular
-serial_number: 2025.BLG.167
+serial_number: 2025.BLG.166
 ---
 [Seeing like a software company](https://www.seangoedecke.com/seeing-like-a-software-company/) is the best writing about large-company software engineering I've read in quite a while.
 

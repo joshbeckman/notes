@@ -11,7 +11,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/115586074741105
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3m64kxiaaka2j
 tags:
 - music
-serial_number: 2025.BLG.186
+serial_number: 2025.BLG.185
 ---
 ![Getting Killed by Geese](/assets/images/album_art/geese-gettingkilled.jpg)
 

@@ -12,7 +12,7 @@ tags:
 - data
 - open-source
 - year-in-review
-serial_number: 2025.BLG.203
+serial_number: 2025.BLG.202
 ---
 First I used [git-wrapped.com](https://git-wrapped.com/) again to pull my 2025 stats but then I built [gh-wrapped to give a better overview](https://www.joshbeckman.org/blog/practicing/ghwrapped-is-your-github-wrapped-year-in-review-on-demand). Here's what it gave me for this far through 2025.
 

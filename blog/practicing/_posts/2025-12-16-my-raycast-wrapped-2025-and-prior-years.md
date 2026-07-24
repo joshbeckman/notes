@@ -10,7 +10,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3ma4z26cm7b2r
 tags:
 - tools
 - year-in-review
-serial_number: 2025.BLG.199
+serial_number: 2025.BLG.198
 ---
 I've been using [Raycast](https://www.raycast.com/) on my work and personal computers for over 3 years now and heavily use it ([example](https://www.joshbeckman.org/blog/raycast-snippets-for-conventional-comments-commits)) for text snippets and app/site navigation. It's so much more than an app launcher and still way better than MacOS defaults and the other competition. I heartily recommend it if you're using a Mac.
 

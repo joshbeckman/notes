@@ -11,7 +11,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/115062307815622
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lwtxruxqvr2c
 tags:
 - music
-serial_number: 2025.BLG.134
+serial_number: 2025.BLG.133
 ---
 ![AIN'T NO DAMN WAY! by KAYTRANADA](/assets/images/album_art/kaytranada-aintnodamnway.jpg)
 

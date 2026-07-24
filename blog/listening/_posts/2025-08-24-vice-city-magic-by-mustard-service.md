@@ -11,7 +11,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/115082121940661
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lx4reddxzy2o
 tags:
 - music
-serial_number: 2025.BLG.137
+serial_number: 2025.BLG.136
 ---
 ![Vice City Magic by Mustard Service](/assets/images/album_art/mustardservice-vicecitymagic.jpg)
 

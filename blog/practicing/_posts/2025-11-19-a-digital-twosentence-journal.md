@@ -13,7 +13,7 @@ tags:
 - games
 - note-taking
 - code-snippets
-serial_number: 2025.BLG.185
+serial_number: 2025.BLG.184
 ---
 When Marybeth and I got married, I bought us a [Some Lines A Day notebook from LEUCHTTURM1917](https://www.leuchtturm1917.us/some-lines-a-day.html) and we started filling it with a daily note (one sentence from each of us) on our favorite part of our day. We had been asking each other this nightly for years, and it was a nice physical structure to keep and reflect on those moments. The structure of this notebook is such that each page is a day of the year, with sections for 5 years on that day. By writing any one day, you read through that day on prior years.
 

@@ -12,7 +12,7 @@ tags:
 - github
 - open-source
 - vim
-serial_number: 2025.BLG.202
+serial_number: 2025.BLG.201
 ---
 I've been writing my GitHub issue and PR comments in [neovim](https://neovim.io/) more and more. Sometimes through the `gh` CLI directly, sometimes through interactions with claude-code: both places where I can pop into an `nvim` session to edit lengthy text and then return to context. It's faster to write, I get my keybindings, and I can think more clearly in my own editor.
 

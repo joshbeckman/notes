@@ -11,7 +11,7 @@ tags:
 - ai
 - tools
 - popular
-serial_number: 2025.BLG.119
+serial_number: 2025.BLG.118
 ---
 I'm doing so much asynchronous programming through agents now. While at work I'm generally running one to several agents working on ideas or bugs or monitoring things for me. To avoid having to visit each one to check its status, I'm having them _tell_ me when they need my input.
 

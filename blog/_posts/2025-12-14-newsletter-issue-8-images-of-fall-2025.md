@@ -10,7 +10,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3m7xnshibju2y
 tags:
 - personal-blog
 - publishing
-serial_number: 2025.BLG.197
+serial_number: 2025.BLG.196
 ---
 I do also run a newsletter for this site, and published the latest issue yesterday: _[Images of Fall 2025](https://buttondown.com/andjosh/archive/images-of-fall-2025/)_.
 

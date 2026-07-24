@@ -11,7 +11,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3m7xnsgd23u22
 tags:
 - wintrust-arena-venue
 - concerts
-serial_number: 2025.BLG.196
+serial_number: 2025.BLG.195
 ---
 I've seen [Zeds Dead](https://www.zedsdead.net/) many times now and still they do not disappoint. There's just something undeniably fun and healing to be in a room with other people and feel the air be pushed around you, throbbing with bass, until you're all moving together as one mass.
 

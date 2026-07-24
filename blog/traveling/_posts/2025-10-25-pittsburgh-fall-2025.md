@@ -12,7 +12,7 @@ tags:
 - united-states
 - travel
 - coffee
-serial_number: 2025.BLG.172
+serial_number: 2025.BLG.171
 ---
 ![Eating lunch at Frick Park Market, among beautiful art](/assets/images/73ab7a5e-aa71-46a8-bc42-7d506473b4bc.jpeg)
 
