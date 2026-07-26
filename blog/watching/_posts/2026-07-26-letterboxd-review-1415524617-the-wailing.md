@@ -9,7 +9,7 @@ rating: 3
 tmdb_id: '293670'
 letterboxd_id: the-wailing
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116987542033975249
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mrkwz2rltf2q
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/the-wailing/
 tags:
 - movies
