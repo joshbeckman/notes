@@ -9,7 +9,7 @@ rating: 4
 tmdb_id: '11524'
 letterboxd_id: thief
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/116985524669981116
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mrk2dp2kah2q
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/thief/
 tags:
 - movies
