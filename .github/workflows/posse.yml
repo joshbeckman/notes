@@ -290,7 +290,7 @@ jobs:
         env:
           JEKYLL_ENV: production
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: '18'
           cache: 'npm'
