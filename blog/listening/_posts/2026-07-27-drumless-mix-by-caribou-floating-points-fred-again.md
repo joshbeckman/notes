@@ -7,7 +7,7 @@ image:
 description:
 rating: 4.5
 song_link: https://www.youtube.com/watch?v=TEp-Uk3Dfx4
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/116994624971307354
 bluesky_status_url: false
 tags:
 - music
