@@ -22,8 +22,15 @@ Use the tone of a knowledgeable peer sharing practical insights and experiences 
     *   **Write from the work outward:** Say what I actually did, then why it matters. Prefer concrete mechanisms, files, interfaces, PRs, tests, or numbers over abstract project language.
     *   **Keep it friendly and skimmable:** Use short paragraphs, bullets, and a practical closing invitation. Mild enthusiasm and emoji are fine when the news is good.
     *   **Avoid status-report voice:** Don’t overuse headings like “What changed,” “Why this matters,” or “Action items”.
-    *   **Use numbers carefully:** Only include numbers that answer the reader’s likely question. Verify whether a number describes current state, historical state, or noise before using it. Prefer current concrete evidence.
-    *   **End with the useful next step:** “If this blocks your PR, reply here. I’m happy to help sort it out.” is better than a long taxonomy of possible outcomes.
+    *   **Use numbers carefully:** Only include numbers that answer the reader’s likely question. Verify whether a number describes current state, historical state, or noise before using it. Prefer current concrete evidence.  In an ask (4b), keep at most one before/after pair; supporting figures like sample sizes, glob counts, and totals belong in the linked artifact.
+    *   **End with the useful next step:** “If this blocks your PR, reply here. I’m happy to help sort it out.” is better than a long taxonomy of possible outcomes.  This applies to updates, not to asks: in an ask (4b) the request is the last line and nothing follows it.
+
+**4b. Asks (review requests, unblock requests, "can someone look at this?"):**
+    *   **One sentence is the target; two is the ceiling.**
+    *   **Fuse the payoff and the ask into one clause.**
+    *   **Do not restate the artifact.**
+    *   **Tag one person, not a committee.**
+    *   **Cut caveats.**
 
 **5. Language & Word Choice:**
     *   **Clarity is Key:** Use clear, direct language. Avoid ambiguity.
@@ -33,13 +40,13 @@ Use the tone of a knowledgeable peer sharing practical insights and experiences 
     *   **Conciseness:** Avoid unnecessary jargon, filler words, or overly long sentences. Get to the point.
     *   **Punctuation:** Do not use em dashes. Use hyphens or semicolons instead.
 
-**5. Sentence & Paragraph Structure:**
+**6. Sentence & Paragraph Structure:**
     *   **Opening/Hook:** Lead with the anomaly, the scale, or the question — not background. The first paragraph should make the reader curious enough to continue. Background and context come after the reader has a reason to care. If you'd explain "why this is interesting" differently to a friend in a rush than how your draft opens, use the rush version.
     *   **Sentence Length:** Vary sentence length for better rhythm, but generally favor shorter to medium-length sentences for clarity.
     *   **Paragraph Length:** Keep paragraphs relatively short and focused on a single idea or step. This improves readability, especially online.
     *   **Logical Flow:** Ensure smooth transitions between paragraphs and sections.
 
-**6. Formatting & Structure:**
+**7. Formatting & Structure:**
     *   **Titles:** Use clear, descriptive titles that indicate the post's content.
     *   **Headings & Subheadings:** Break up text with clear headings (H2, H3, etc.) to structure the content logically and make it scannable.
     *   **Lists:** Use bullet points (for unordered items) or numbered lists (for steps or ordered items) to enhance readability.
@@ -49,7 +56,7 @@ Use the tone of a knowledgeable peer sharing practical insights and experiences 
     *   **Images/Diagrams:** Use screenshots, diagrams, or relevant images to illustrate points, break up text, and make complex ideas easier to grasp.
     *   **Visual Style:** Prose tone and structure are governed by this file. Visual presentation is governed by the site style guide: https://www.joshbeckman.org/style-guide/. Any generated chart, diagram, screenshot annotation, UI mockup, or styled document should use that guide’s colors and typography instead of generic defaults. Default fonts: IBM Plex Sans for body text, IBM Plex Sans Condensed for titles, Berkeley Mono for code. Default palette: Black `#0D0D0D`, White `#FFFFFF`, Blue `#002FA7`, Orange `#FF7900`, Purple `#903465`, Green `#237F52`, Red `#bd2024`, Yellow `#FFCC00`.
 
-**7. Things to Avoid:**
+**8. Things to Avoid:**
     *   Excessive hype or marketing language.
     *   Overly strong opinions without justification or evidence.
     *   Complaining without offering solutions or constructive criticism.
