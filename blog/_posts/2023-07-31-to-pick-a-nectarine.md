@@ -32,5 +32,3 @@ But the roots held and the first flower buds stayed and blossomed and more follo
 Confusingly, neither branch was producing anything plum-colored. The fruit from the grafted branch looked almost like apples and, as they grew fat and heavy, they pulled down the branches. I had brace a second stake into the branch to make sure it wouldn't break under the weight. The main trunk was slower to fruit - smaller and fewer blossoms, but those that stuck around to grow were covered in fuzz.
 
 Well, we picked our first fruit from the tree this weekend, from the grafted branch, soft and red. And it wasn't a plum, but it popped with flavor all the same.
-
-<figure class="kg-card kg-video-card"><video controls src="/assets/images/output-1.mp4"></video></figure>
