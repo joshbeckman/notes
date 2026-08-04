@@ -118,6 +118,43 @@ function extractLinks(html: string): string[] {
   return [...new Set(matches.map((m) => m[1]))];
 }
 
+// The model is otherwise blind to embedded images — an exercise log is often
+// mostly a photo of the workout data, so a text-only critique just says "I
+// can't see the image." Pull image URLs from the post's Markdown/HTML (and the
+// frontmatter feature image) so they can be sent as vision blocks. Videos and
+// non-raster assets are skipped; only formats the vision API accepts are kept.
+function extractImageUrls(content: string, fallbackImage?: string): string[] {
+  const urls = new Set<string>();
+  for (const m of content.matchAll(/!\[[^\]]*\]\(([^)\s]+)/g)) urls.add(m[1]);
+  for (const m of content.matchAll(/<img[^>]+src="([^"]+)"/gi)) urls.add(m[1]);
+  if (fallbackImage) urls.add(fallbackImage);
+  return [...urls]
+    .filter((u) => /\.(jpe?g|png|gif|webp)$/i.test(u))
+    .map((u) => (u.startsWith("http") ? u : SITE_URL + u))
+    .slice(0, 5);
+}
+
+// Build the user turn as vision blocks when the post embeds images, otherwise a
+// plain string. The array form is only used when there are images so the common
+// text-only path stays unchanged.
+function buildUserContent(
+  text: string,
+  imageUrls: string[],
+): string | Anthropic.Messages.ContentBlockParam[] {
+  if (imageUrls.length === 0) return text;
+  const noun = imageUrls.length === 1 ? "image" : "images";
+  return [
+    {
+      type: "text",
+      text: `${text}\n\nThe post embeds ${imageUrls.length} ${noun}, shown below. Treat them as part of the post — read what they contain and factor it into your critique.`,
+    },
+    ...imageUrls.map((url) => ({
+      type: "image" as const,
+      source: { type: "url" as const, url },
+    })),
+  ];
+}
+
 async function readExternalPage(url: string): Promise<string> {
   const jinaKey = Deno.env.get("JINA_AI_API_KEY");
   const headers: Record<string, string> = { Accept: "application/json" };
@@ -144,10 +181,10 @@ async function getToneGuide(): Promise<string> {
 
 async function agentLoop(
   systemPrompt: string,
-  userMessage: string,
+  userContent: string | Anthropic.Messages.ContentBlockParam[],
 ): Promise<{ critique: string; headlines: string[] }> {
   const messages: Anthropic.Messages.MessageParam[] = [
-    { role: "user", content: userMessage },
+    { role: "user", content: userContent },
   ];
 
   // Research phase: Sonnet handles tool use to gather additional context
@@ -183,7 +220,7 @@ async function agentLoop(
   });
   const finalResponse = await anthropic.messages.create({
     model: CRITIQUE_MODEL,
-    max_tokens: 4096,
+    max_tokens: 1500,
     system: systemPrompt,
     messages,
   });
@@ -216,7 +253,7 @@ Strategy:
 3. Search the garden for related prior writing — look for posts that support, contradict, or extend this one
 4. Compose your critique
 
-Your critique should cover these areas (skip any that don't apply):
+Pick the 1-3 areas below that matter most for THIS post. Do not march through all of them — a short, pointed critique beats a comprehensive one.
 
 **Argument strength**: Is the reasoning sound? Are there logical gaps, unsupported claims, or unstated assumptions? Where is the argument strongest?
 
@@ -233,8 +270,9 @@ Guidelines:
 - Be constructive — the goal is to help the author grow, not to tear down
 - Use markdown links like [Title](URL) when referencing garden posts or external sources
 - Write in second person ("you wrote...", "your argument...")
-- Keep it concise but thorough — aim for 3-6 paragraphs
+- Be economical: 2-3 tight paragraphs, no more. Lead with your single most important point. Cut hedging, throat-clearing, and meta-commentary about the post's history or your own process
 - Don't summarize the post back to the author — they wrote it, they know what it says
+- A short critique that lands one real observation is worth more than a long one that lists many
 
 Follow this writing style guide for your own tone:
 
@@ -266,6 +304,7 @@ export async function critiquePost(postUrl: string): Promise<{
   const title = post.title;
   const fullUrl = SITE_URL + post.url;
   const postSummary = formatPost(post);
+  const imageUrls = extractImageUrls(post.content || "", post.image);
   const links = extractLinks(post.content || "");
   const externalLinks = links.filter((l) => !l.includes("joshbeckman.org"));
   const internalLinks = links.filter((l) => l.includes("joshbeckman.org"));
@@ -282,7 +321,7 @@ export async function critiquePost(postUrl: string): Promise<{
     userMessage += `\n\nExternal links found in the post (use read_webpage to read these):\n${externalLinks.join("\n")}`;
   }
 
-  const { critique, headlines } = await agentLoop(systemPrompt, userMessage);
+  const { critique, headlines } = await agentLoop(systemPrompt, buildUserContent(userMessage, imageUrls));
   const critiqueMarkdown = critique.replace(/\]\(\//g, `](${SITE_URL}/`);
   const critiqueHtml = await marked.parse(critiqueMarkdown);
 
@@ -302,6 +341,7 @@ export async function critiqueDraft(title: string, content: string): Promise<{
   const [toneGuide, recent] = await Promise.all([getToneGuide(), getRecentCritiques()]);
   const systemPrompt = buildSystemPrompt(toneGuide);
 
+  const imageUrls = extractImageUrls(content);
   const links = extractLinks(content);
   const externalLinks = links.filter((l) => !l.includes("joshbeckman.org"));
   const internalLinks = links.filter((l) => l.includes("joshbeckman.org"));
@@ -315,7 +355,7 @@ export async function critiqueDraft(title: string, content: string): Promise<{
     userMessage += `\n\nExternal links found in the post (use read_webpage to read these):\n${externalLinks.join("\n")}`;
   }
 
-  const { critique, headlines } = await agentLoop(systemPrompt, userMessage);
+  const { critique, headlines } = await agentLoop(systemPrompt, buildUserContent(userMessage, imageUrls));
   const critiqueMarkdown = critique.replace(/\]\(\//g, `](${SITE_URL}/`);
   const critiqueHtml = await marked.parse(critiqueMarkdown);
 

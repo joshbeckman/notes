@@ -11,7 +11,9 @@ Two-model agent loop in `backend/critic.ts`:
 1. **Research phase** — Sonnet 4 runs a tool loop with access to:
    - `search_posts`, `get_post`, `get_tags`, `search_tags` against the site's Lunr search index (`SearchData.json`)
    - `read_webpage` for external links, fetched through [Jina Reader](https://r.jina.ai/)
-2. **Critique phase** — Opus 4 writes the final critique using the gathered context, following the tone guide at `joshbeckman.org/llms/prompts/tone.txt`.
+2. **Critique phase** — Opus 4 writes the final critique using the gathered context, following the tone guide at `joshbeckman.org/llms/prompts/tone.txt`. The prompt keeps critiques short (2-3 paragraphs, one landed point) rather than marching through every rubric area.
+
+Images embedded in the post (`![](...)` Markdown, `<img>` tags, or the frontmatter feature image) are extracted and sent to both models as vision blocks via public URL, so the critic can read a photo of workout data or a screenshot instead of saying "I can't see the image."
 
 The cron handler parses `feed.xml`, filters entries newer than `CUTOFF_DATE` (currently `2026-03-28`), skips anything already in the `critic_cron_processed_urls` blob, critiques each new entry, and emails the result. The processed-URLs set is pruned to whatever is currently in the feed so it doesn't grow without bound.
 
