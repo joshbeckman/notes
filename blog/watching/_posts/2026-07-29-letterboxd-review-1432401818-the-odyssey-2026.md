@@ -8,7 +8,7 @@ description:
 rating: 3
 tmdb_id: '1368337'
 letterboxd_id: the-odyssey-2026
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/117036525787471882
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/the-odyssey-2026/
 tags:
