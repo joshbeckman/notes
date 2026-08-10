@@ -10,7 +10,7 @@ description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113154153883539346
 tags:
 - movies
-serial_number: 2024.BLG.093
+serial_number: 2024.BLG.094
 ---
 ![Beetlejuice Beetlejuice](https://m.media-amazon.com/images/M/MV5BYmRlYzE3ZTYtNjIyZi00MWYyLWEzZDItOWI5NzM1Yjc0NmI5XkEyXkFqcGc@._V1_SX300.jpg)
 

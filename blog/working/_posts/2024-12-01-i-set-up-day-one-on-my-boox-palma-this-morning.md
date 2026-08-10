@@ -10,7 +10,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lcb5ev6c4u2b
 tags:
 - tools
 - writing
-serial_number: 2024.BLG.118
+serial_number: 2024.BLG.119
 ---
 And also connected my mechanical keyboard to the device via bluetooth\. I'm thinking this might be a fun way to journal and draft things away from other distractions and maybe outside in the sun\.
 

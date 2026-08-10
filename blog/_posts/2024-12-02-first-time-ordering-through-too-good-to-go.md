@@ -9,7 +9,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/113590102336048
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lcg6iazb5j2n
 tags:
 - food
-serial_number: 2024.BLG.120
+serial_number: 2024.BLG.121
 ---
 ![](/assets/images/42422E4570714C83A4AD0974AE82FD39.jpeg)
 

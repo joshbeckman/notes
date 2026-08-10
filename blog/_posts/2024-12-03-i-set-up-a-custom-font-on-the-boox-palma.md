@@ -10,7 +10,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lcg6ibdzmt2x
 tags:
 - tools
 - interfaces
-serial_number: 2024.BLG.121
+serial_number: 2024.BLG.122
 ---
 This morning I figured out how to set up [my preferred font](/blog/my-favorite-fonts) \(IBM Plex Sans\) on the Boox Palma\! I had to use their Boox Drop app \(websites accessible on LAN are still amazing to me\) and upload the font files from my computer, but now I’ve got it working like a charm\.
 

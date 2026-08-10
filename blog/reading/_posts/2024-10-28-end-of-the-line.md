@@ -9,7 +9,7 @@ description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113383478072825996
 tags:
 - photography
-serial_number: 2024.BLG.107
+serial_number: 2024.BLG.108
 ---
 ![book on countertop](/assets/images/55bf2a24-66ed-404c-b400-3e5b6a60f4aa.jpeg)
 

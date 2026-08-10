@@ -14,6 +14,6 @@ letterboxd_review_url: https://letterboxd.com/joshbeckman/film/prisoners/
 tags:
 - letterboxd
 - movies
-serial_number: 2024.BLG.138
+serial_number: 2024.BLG.139
 ---
  <p><img src="https://a.ltrbxd.com/resized/sm/upload/iw/eg/4g/nm/3w79tTsv6tmlT8Jww6snyPrgVok-0-600-0-900-crop.jpg?v=778c7ae8b8"/></p> <p>This was incredibly uncomfortable to watch. But once you start on its journey, it compels you to follow it through. And I think it is worth the effort. </p><p>Felt like the first season of True Detective but set in Pennsylvania. Jakey G’s performance was a highlight. </p><p>A lesson/reminder that <a href="https://www.joshbeckman.org/notes/210530915" rel="nofollow">most emergencies require community and calm, not survivalist bunkers</a>.</p> 

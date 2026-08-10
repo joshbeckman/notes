@@ -11,7 +11,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/113542022287290
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lbqt7xkf2s2n
 tags:
 - movies
-serial_number: 2024.BLG.116
+serial_number: 2024.BLG.117
 ---
 A lovely heartfelt self-discovery film for kids. My favorite character was her cat companion - they animated his jumps better than any I've seen before.
 

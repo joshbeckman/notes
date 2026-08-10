@@ -10,7 +10,7 @@ tags:
 - music
 - chicago
 - schubas-tavern-venue
-serial_number: 2024.BLG.090
+serial_number: 2024.BLG.091
 ---
 ![Brothertiger at Schubas](/assets/images/8f56420b-4ae5-4289-b068-64570bfa7522.jpeg)
 

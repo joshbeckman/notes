@@ -10,7 +10,7 @@ tags:
 - tools
 - folk-creations
 - shopify
-serial_number: 2024.BLG.080
+serial_number: 2024.BLG.081
 ---
 This spring I replaced my [Customized Keychron K1](https://www.joshbeckman.org/blog/keyboard-update-customized-keychron-k1) with a customized [Shopify Keychron K3 Pro](https://shopify.supply/products/shopify-keyboard). Mine won't look like the one you can order from the public Shopify store because I got an early employees-only version.
 

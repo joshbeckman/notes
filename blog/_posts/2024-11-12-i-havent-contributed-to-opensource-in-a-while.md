@@ -8,7 +8,7 @@ description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113471243094482622
 tags:
 - open-source
-serial_number: 2024.BLG.111
+serial_number: 2024.BLG.112
 ---
 I was reflecting on [my post about Working In Public](https://www.joshbeckman.org/blog/reading/after-reading-working-in-public) and I realized that I haven’t made and open source contribution to a project in many months now. I mean, I still am an active member of the [F]OSS community- I still operate over a dozen active libraries and tools and services and templates and other repositories, but I haven’t shared anything new in a while - just things in maintenance mode.
 

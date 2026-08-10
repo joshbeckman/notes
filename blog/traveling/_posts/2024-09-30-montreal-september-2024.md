@@ -10,7 +10,7 @@ tags:
 - travel
 - canada
 - shopify
-serial_number: 2024.BLG.100
+serial_number: 2024.BLG.101
 ---
 I got to travel to Montreal this fall for a Shopify burst (meeting with the teams I lead).
 

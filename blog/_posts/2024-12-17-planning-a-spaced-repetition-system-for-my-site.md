@@ -11,7 +11,7 @@ tags:
 - personal-blog
 - memory
 - note-taking
-serial_number: 2024.BLG.133
+serial_number: 2024.BLG.134
 ---
 I think I can build a spaced repetition system on my own site that can replace the one I use on [Readwise](http://readwise.io) right now\. It’s not that I dislike the Readwise tooling, it’s that it doesn’t include *all* of my writing/notes \(e\.g\. blog posts\) and the highlights in Readwise don’t have all the context that I’ve built around them on this site \(e\.g\. backlinks, source linking, [LLM\-aided insights](https://www.joshbeckman.org/blog/using-an-llmand-rag-to-wring-insights-from-my-posts)\)\. 
 

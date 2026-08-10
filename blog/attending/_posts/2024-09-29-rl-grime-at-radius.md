@@ -8,7 +8,7 @@ description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113281555318792828
 tags:
 - music
-serial_number: 2024.BLG.099
+serial_number: 2024.BLG.100
 ---
 ![IMG_3700](/assets/images/79045c0d-9bf5-440e-893d-6c07e1343216.jpeg)
 

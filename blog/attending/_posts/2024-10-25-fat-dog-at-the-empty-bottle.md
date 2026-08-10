@@ -10,7 +10,7 @@ tags:
 - music
 - chicago
 - empty-bottle-venue
-serial_number: 2024.BLG.105
+serial_number: 2024.BLG.106
 ---
 I bought tickets to this show back in June when Bill told me they were coming to Chicago. At the time, the band had only released two songs and I like them, so I bought in.
 

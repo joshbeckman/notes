@@ -10,7 +10,7 @@ tags:
 - work
 - workspaces
 - tools
-serial_number: 2024.BLG.079
+serial_number: 2024.BLG.080
 ---
 I've been going back and forth in my head for the last couple years, bouncing between the dream of a bright coworking space and the lure of my perfected home studio.
 

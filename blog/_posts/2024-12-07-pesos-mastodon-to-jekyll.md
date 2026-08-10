@@ -12,7 +12,7 @@ tags:
 - code-snippets
 - personal-blog
 - jekyll
-serial_number: 2024.BLG.127
+serial_number: 2024.BLG.128
 ---
 As the inverse of how I set up [cross\-posting to Mastodon](https://www.joshbeckman.org/blog/how-to-crosspost-to-mastodon-with-jekyll) for this site \(to ensure that I am publishing on my own site and syndicating elsewhere: POSSE\), I have now set up cross\-posting *from* Mastodon *into* this site\. This inverse \- archiving content from other networks into my home site \- is called Publish Elsewhere Syndicate On Site: PESOS\.
 

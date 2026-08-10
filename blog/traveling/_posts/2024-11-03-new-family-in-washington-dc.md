@@ -9,7 +9,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/113861876301612
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lg6z2lac472w
 tags:
 - travel
-serial_number: 2024.BLG.108
+serial_number: 2024.BLG.109
 ---
 ![Mike and Meg caring](/assets/images/3ef43469-7532-4a5d-8045-576386c713db.jpeg)
 

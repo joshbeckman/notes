@@ -11,7 +11,7 @@ tags:
 - travel
 - united-states
 - exploration
-serial_number: 2024.BLG.110
+serial_number: 2024.BLG.111
 ---
 John wanted to go to Mammoth Cave for the long weekend and I hadn't been since I was a kid so I was happy to join. The drive was terrible because my car broke down in Indianapolis but we persevered and the rainy weather was perfect for hiking underground through miles and miles of the biggest cave system in the world.
 

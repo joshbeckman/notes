@@ -13,7 +13,7 @@ tags:
 - fauna
 - united-states
 - popular
-serial_number: 2024.BLG.086
+serial_number: 2024.BLG.087
 ---
 > [!NOTE]
 > I took a lot of video on this trip. I'm going to edit it into something fun. I'll link that here when it's ready.

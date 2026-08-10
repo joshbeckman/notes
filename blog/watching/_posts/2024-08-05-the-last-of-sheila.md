@@ -10,6 +10,6 @@ description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/112936153860462715
 tags:
 - movies
-serial_number: 2024.BLG.078
+serial_number: 2024.BLG.079
 ---
 I love a murder mystery where everyone is despicable and the characters feel real and the one-liners fly by and they're on a boat and they make me wish I were there.

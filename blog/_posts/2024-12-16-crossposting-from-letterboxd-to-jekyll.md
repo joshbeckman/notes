@@ -12,7 +12,7 @@ tags:
 - personal-blog
 - letterboxd
 - jekyll
-serial_number: 2024.BLG.132
+serial_number: 2024.BLG.133
 ---
 I want to [meet the movie\-lovers where they are](https://www.joshbeckman.org/blog/gotta-publish-where-the-people-are), so I’m going to try writing [my movie journal on Letterboxd](https://letterboxd.com/joshbeckman/). I have friends there already\. Unfortunately, Letterboxd doesn’t have an API to post *from* my site *into* it, so I have to post *there* and pull them in ​*here*​\.
 

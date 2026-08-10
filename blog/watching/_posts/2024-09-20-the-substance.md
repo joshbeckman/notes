@@ -11,7 +11,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/113281555265926
 tags:
 - movies
 - health
-serial_number: 2024.BLG.096
+serial_number: 2024.BLG.097
 ---
 I want to give this movie six stars out of five. I've been imploring everyone who can handle it that they must go see it and bask in its glory.
 

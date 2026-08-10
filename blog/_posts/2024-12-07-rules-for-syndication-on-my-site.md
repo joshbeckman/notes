@@ -13,7 +13,7 @@ tags:
 - social-networks
 - personal-blog
 - popular
-serial_number: 2024.BLG.128
+serial_number: 2024.BLG.129
 ---
 With all my recent [outward](https://www.joshbeckman.org/blog/how-to-crosspost-to-mastodon-with-jekyll) [posting](https://www.joshbeckman.org/blog/crossposting-to-bluesky-from-jekyll) and [inward](https://www.joshbeckman.org/blog/pesos-mastodon-to-jekyll) importing of my writing on various platforms, I should write down how I’m planning all of this\. Otherwise, it could get messy: POSSE and PESOS jangling noisily\.
 

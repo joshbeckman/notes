@@ -10,6 +10,6 @@ description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/112972963164516655
 tags:
 - movies
-serial_number: 2024.BLG.074
+serial_number: 2024.BLG.075
 ---
 It's funny. It's bloody. It made me say "ew". It made me laugh out loud. I think the characters' motivations are dubious. I think it is what I expected.

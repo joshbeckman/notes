@@ -13,7 +13,7 @@ tags:
 - folk-creations
 - workspaces
 - popular
-serial_number: 2024.BLG.140
+serial_number: 2024.BLG.141
 ---
 I always have fun bringing the digital into the physical world\. Things that you can touch and hear give tactile joy \- bonus points if there’s no/low\-power display\. So someone at work posted that [the Shopify Counter](https://shopify.supply/products/shopify-counter) was available for something like 10% of [the manufacturer’s list price](https://www.smiirl.com/en/counter/category/social#buyit), I jumped at the chance to pick one up and hack something together\. By default, the counter guides you to configure sales/orders to display, but we can have more fun than that\.
 

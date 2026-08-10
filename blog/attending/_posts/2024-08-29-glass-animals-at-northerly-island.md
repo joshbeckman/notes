@@ -9,7 +9,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/113069219735103
 tags:
 - music
 - chicago
-serial_number: 2024.BLG.087
+serial_number: 2024.BLG.088
 ---
 ![Glass Animals on the stage at Northerly Island, bathed in green](/assets/images/5198a262-e081-4e83-88d2-3c0512877ba3.jpeg)
 

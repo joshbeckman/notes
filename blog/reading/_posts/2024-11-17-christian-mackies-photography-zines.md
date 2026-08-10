@@ -12,7 +12,7 @@ tags:
 - photography
 - shopify
 - publishing
-serial_number: 2024.BLG.112
+serial_number: 2024.BLG.113
 ---
 [Christian Mackie](https://www.mackiec.xyz) is my coworker at [Shopify](http://shopify.com)\. He’s also a prolific photographer, and one I admire because of how he is able to package his work\.
 

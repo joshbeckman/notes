@@ -11,7 +11,7 @@ tags:
 - publishing
 - social-networks
 - personal-blog
-serial_number: 2024.BLG.125
+serial_number: 2024.BLG.126
 ---
 I have been writing my movie reviews on my personal site but I doubt anyone is reading them\. Instead, I need to make sure they publish somewhere that people will read them\. I *want* people to engage with them, after all\.
 

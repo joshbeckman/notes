@@ -9,7 +9,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/113207946137833
 tags:
 - music
 - chicago
-serial_number: 2024.BLG.097
+serial_number: 2024.BLG.098
 ---
 We went along with friends to [Riot Fest](https://riotfest.org/chicago/lineup/) on Saturday. It was previously farther outside the city but this year they moved it back to Douglas Park inside the city and we have to encourage that.
 

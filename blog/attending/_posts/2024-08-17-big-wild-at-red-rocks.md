@@ -11,7 +11,7 @@ tags:
 - physical-architecture
 - friends
 - travel
-serial_number: 2024.BLG.084
+serial_number: 2024.BLG.085
 ---
 We took a shuttle bus from the train station [in Denver](/blog/traveling/denver-august-2024) out of the city and up the mountain to the best outdoor venue I've ever seen.[^1] Of course, Red Rocks had been built up for me as a bucket-list venue, and it held up. 
 

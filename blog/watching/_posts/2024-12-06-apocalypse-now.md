@@ -12,7 +12,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lcnps2ukfj2p
 tags:
 - war
 - movies
-serial_number: 2024.BLG.124
+serial_number: 2024.BLG.125
 ---
 A man broken by war rides a boat of soldiers up a river to kill another man broken by war\. In the process, all of his companions are killed, and they kill hundreds of innocent people they see on the way\.
 

@@ -8,7 +8,7 @@ description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113304204994700357
 tags:
 - tools
-serial_number: 2024.BLG.092
+serial_number: 2024.BLG.093
 ---
 I just spent a few minutes envisioning myself buying and enjoying a [Work Louder x Figma Creator Micro macro pad](https://worklouder.cc/figma/). I'm not going to buy it.
 

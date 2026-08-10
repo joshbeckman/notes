@@ -10,6 +10,6 @@ description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/112987115327444331
 tags:
 - movies
-serial_number: 2024.BLG.083
+serial_number: 2024.BLG.084
 ---
 This isn't a _good_ movie. It's a fever dream formed from stacking all the previous _Fast & Furious_ stunts together and forcing a thread of a story through them all. It had me yelling and laughing constantly.

@@ -11,7 +11,7 @@ tags:
 - music
 - data
 - year-in-review
-serial_number: 2024.BLG.123
+serial_number: 2024.BLG.124
 ---
 It’s still strange to me that Spotify Wrapped and [Apple Music](https://music.apple.com/profile/andjosh) Replay and others prompt me to view my “2024 Listening” well before the year is done\. But here are some highlights from this year’s data:
 - ~65k min

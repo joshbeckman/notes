@@ -10,7 +10,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lbgrduj2ik2m
 tags:
 - music
 - salt-shed-venue
-serial_number: 2024.BLG.114
+serial_number: 2024.BLG.115
 ---
 ![](/assets/images/D73CD8969CF64F04B7602680754EA3C7.jpeg)
 

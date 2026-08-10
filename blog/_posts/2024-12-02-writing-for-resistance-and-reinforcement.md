@@ -10,7 +10,7 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lciousp3sf2d
 tags:
 - publishing
 - writing
-serial_number: 2024.BLG.119
+serial_number: 2024.BLG.120
 ---
 One of the things I want to do as I continue to embed myself in my personal site is use it to \- in whatever small way \- help others\.
 

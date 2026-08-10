@@ -9,7 +9,7 @@ description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113281555334319046
 tags:
 - live-theater
-serial_number: 2024.BLG.101
+serial_number: 2024.BLG.102
 ---
 <img width="659" alt="Screenshot 2024-10-09 at 22 48 51" src="/assets/images/0623bb69-bb2a-4e1b-9ef9-132698b6ba1e.png">
 

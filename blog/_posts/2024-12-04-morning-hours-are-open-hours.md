@@ -9,7 +9,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/113595759502356
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3lciousuktm2n
 tags:
 - habits
-serial_number: 2024.BLG.122
+serial_number: 2024.BLG.123
 ---
 I’ve gone back \- these past couple weeks \- to waking up with an hour or two to myself before work\. I love how I’ve been feeling, but it shouldn’t be a surprise: I’m a morning person\.
 

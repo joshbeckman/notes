@@ -11,7 +11,7 @@ tags:
 - bluesky
 - code-snippets
 - language-ruby
-serial_number: 2024.BLG.129
+serial_number: 2024.BLG.130
 ---
 Bluesky’s AT Protocol and client app has some interesting choices\. One of them is that links inside posts *don’t* get unfurled into previews/cards\. So when I started [syndicating links to my posts to Bluesky](https://www.joshbeckman.org/blog/crossposting-to-bluesky-from-jekyll), they didn’t really look like much: just truncated blue text\. Because every client has to provide the website preview themselves.
 

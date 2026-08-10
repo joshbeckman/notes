@@ -8,7 +8,7 @@ description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113437269555435263
 tags:
 - united-states
-serial_number: 2024.BLG.109
+serial_number: 2024.BLG.110
 ---
 I'm feeling sick this morning because Trump was re-elected.
 

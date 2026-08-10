@@ -10,7 +10,7 @@ description:
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/113165478608864318
 tags:
 - movies
-serial_number: 2024.BLG.095
+serial_number: 2024.BLG.096
 ---
 Nick took me to go see this at a matinee 70mm showing by the Music Box Theater. It was pretty, and entrancing, and left me torn and questioning who was the _actual_ master and who did I actually want to know and what was _actually_ driving most of the characters.
 

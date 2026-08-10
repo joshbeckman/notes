@@ -11,6 +11,6 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/112944648039784
 tags:
 - movies
 - climate-change
-serial_number: 2024.BLG.081
+serial_number: 2024.BLG.082
 ---
 The movie is not good. We know it's not going to be good. But we know it will be fun. The moralizing is heavy-handed, but not wrong, and yet it is forgotten halfway through. And there are great shots cutting to terrible angles. And the science is laughable - if you can even call it an attempt at science - and the caricatured mayor is a delight and it all falls apart.

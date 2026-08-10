@@ -10,7 +10,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/113097530265816
 song_link: https://music.apple.com/us/album/romanticism/1726216204
 tags:
 - music
-serial_number: 2024.BLG.089
+serial_number: 2024.BLG.090
 ---
 <img width="712" alt="Album art" src="/assets/images/1815acbb-2eeb-4c3c-ade1-af612edfee76.png">
 

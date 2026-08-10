@@ -10,7 +10,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/113281555302715
 tags:
 - movies
 - chicago
-serial_number: 2024.BLG.098
+serial_number: 2024.BLG.099
 ---
 Matt and Brandon and I had a lovely evening of horror short (and a couple feature-length!) films at the Logan Square Theater on the first night of [their annual horror film fest](https://chicagohorrorfilmfest.ticketspice.com/chicago-horror-film-festival).
 

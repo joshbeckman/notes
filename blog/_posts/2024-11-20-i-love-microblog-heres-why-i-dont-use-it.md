@@ -11,7 +11,7 @@ tags:
 - personal-blog
 - social-networks
 - publishing
-serial_number: 2024.BLG.115
+serial_number: 2024.BLG.116
 ---
 I spent last night reactivating my [micro.blog](http://micro.blog/) account and trying to run some imports of my [Jekyll](http://jekyllrb.com/) posts from my main site.
 <img width="222" alt="Screenshot 2024-11-20 at 08 02 59" src="/assets/images/b40df2a3-ce7d-4273-ab07-f9307b74288e.png">

@@ -9,7 +9,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/113383478036384
 tags:
 - music
 - chicago
-serial_number: 2024.BLG.104
+serial_number: 2024.BLG.105
 ---
 ![Justice performing](/assets/images/a1a981e7-47fc-4610-aac6-1d84303d4233.jpeg)
 

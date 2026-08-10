@@ -14,7 +14,7 @@ tags:
 - code-snippets
 - mastodon
 - jekyll
-serial_number: 2024.BLG.106
+serial_number: 2024.BLG.107
 ---
 I publish posts on this site first - Publish On Site Syndicate Elsewhere (POSSE). I want this site to be the canonical source of my writing, the one true place for people (and myself) to read my notes and posts. Social networks come and go, but my site remains. But I want to [get social online](https://www.joshbeckman.org/blog/getting-social-online) and Mastodon is currently in fashion, so I want to show my stuff to people talking in that world.
 
