@@ -5,7 +5,7 @@ title: Dynamicland Is a Practice, Not a Place
 toc: true
 image:
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/117073279032550437
 bluesky_status_url: false
 tags:
 - software-engineering
