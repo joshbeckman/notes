@@ -35,3 +35,7 @@ And they both get to the end state of people building out in the open and sharin
 
 > [!NOTE]
 > See also: [Ambient Co-presence](https://maggieappleton.com/ambient-copresence)
+
+## Update 2026-08-11
+
+Now that I'm a couple years into the agentic-software revolution, I do see that there's something special about having users understand that the actual software they're using is perfectly malleable. When users understand that the tools in their hands can be reshaped ad-hoc and easily, they start interacting with them differently and things diverge rapidly. Something unique to Dynamicland - that we're now catching up to with malleable agentic software - is that physical objects like paper immediately make users feel that way.
