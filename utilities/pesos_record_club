@@ -14,8 +14,10 @@ module PESOS
 
     # Record Club mixes review items in with queue/rotation additions in the
     # same feed. Only the "listened to and rated" items carry a review body and
-    # a star rating, so we anchor on that phrasing to skip the rest.
-    REVIEW_TITLE = /listened to and rated an album: '(.+)' by (.+) - ([★½]+)\z/
+    # a star rating, so we anchor on that phrasing to skip the rest. The release
+    # type varies (album, EP, single, compilation), so match any word there
+    # rather than enumerating types the feed might add later.
+    REVIEW_TITLE = /listened to and rated an? \w+: '(.+)' by (.+) - ([★½]+)\z/
 
     attr_reader :site
 
