@@ -19,6 +19,6 @@ serial_number: 2026.BLG.079
 ---
 ![Lifestyle by Dux Content](https://cdn.rcrd.club/releases/mv6nknr3p20lqxod.jpg)
 
-<p>I found this today and played it on a whim. What a jarring surprise! Originally from 2012, I can hear so much of what True Cuckoo and Disasterpeace and even 100 Gecs would pick up in the next decade.</p><p>The initial half is the most distinct but also the most jarring to my ears. The latter half calms down and escorts you out the irreverent playhouse of musical clash safely.</p>
+<p>I found this today and played it on a whim. What a jarring surprise! Originally from 2012, I can hear so much of what [True Cuckoo](https://www.cuckoo.no/) and [Disasterpeace](https://disasterpeace.com/) and even 100 Gecs would pick up in the next decade.</p><p>The initial half is the most distinct but also the most jarring to my ears. The latter half calms down and escorts you out the irreverent playhouse of musical clash safely.</p>
 
 {{ "https://music.apple.com/us/album/lifestyle/6776669363" | itunesify }}
