@@ -7,7 +7,7 @@ image: https://cdn.rcrd.club/releases/mv6nknr3p20lqxod.jpg
 description:
 rating: 3
 song_link: https://music.apple.com/us/album/lifestyle/6776669363
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/117078977052508797
 bluesky_status_url: false
 record_club_url: https://record.club/joshbeckman/releases/singles/dux-content-lifestyle-2
 tags:
