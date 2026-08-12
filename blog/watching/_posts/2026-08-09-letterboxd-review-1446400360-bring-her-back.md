@@ -9,7 +9,7 @@ rating: 3
 tmdb_id: '1151031'
 letterboxd_id: bring-her-back
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/117081880948875339
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3msutngx7ig22
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/bring-her-back/
 tags:
 - fiction
