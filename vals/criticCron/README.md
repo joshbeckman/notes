@@ -39,9 +39,23 @@ When `GH_NOTES_TOKEN` is set, each cron critique also runs `suggestLinks` (`back
 - **Internal links** (🔗): searches the garden (title, tags, body proper-nouns) for related posts and links named entities the garden already covers. Deterministic (temperature 0).
 - **External links** (🌐): uses Anthropic's server-side `web_search` to find the canonical URL of a work the post *names but doesn't link* (an essay, podcast episode, video, book), then links it. Proposed URLs are reachability-checked before use.
 
+Both passes are shown a **rejection memory**: the bullets and closing comments from recently closed-unmerged `critic/links-*` PRs, fetched once per process. Past rejections are the only labeled signal for what the author doesn't want, so they're fed back as negative examples.
+
+Every surviving proposal then goes through a **verification pass** — a separate call that reads the target post's *full* text (the proposer only sees a 200-char snippet) and answers whether the author would find the link obviously correct. It defaults to no, and specifically rejects vague conceptual anchors, a series/podcast name linked to a different entry in that series, and a person's name linked to a post that merely cites them. A missing link costs nothing; a wrong one costs review time.
+
 The critique email includes a link to the PR. Draft status is the human gate — nothing merges until you mark it ready.
 
-Application safeguards (`applyInsertions`): each edit must add ONLY link markup (stripped text equals the anchor), the anchor must appear exactly once, and it must not fall inside a quoted passage (Markdown `>` or embedded `<blockquote>`). Matching normalizes typographic punctuation (’ “ ” —) so anchors still match imported prose, and the replacement is rebuilt from the original characters. When anchors overlap, the longest (most specific) one wins.
+Application safeguards (`applyInsertions`), each of which exists because a real PR was closed for violating it:
+
+| Check | Rejects |
+|---|---|
+| protected spans | anchors overlapping an existing link, image caption (`![…](…)`), HTML tag, code span, heading, or blockquote |
+| duplicate target | a target URL the body already links |
+| link-only edit | `new_string` that changes text beyond adding link markup |
+| well-formed edit | a replacement that doesn't strip back to the anchor, or a URL that isn't `https://…` or `/…` |
+| unambiguous anchor | anchor text absent, or present more than once |
+
+Spans are recomputed after each applied edit, so a later anchor can't overlap a link an earlier one just added. Matching normalizes typographic punctuation (’ “ ” —) so anchors still match imported prose, and the replacement is rebuilt from the original characters. When anchors overlap, the longest (most specific) one wins.
 
 Mechanics worth knowing:
 

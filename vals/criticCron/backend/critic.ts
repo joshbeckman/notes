@@ -3,7 +3,7 @@ import { blob } from "https://esm.town/v/std/blob";
 import { email } from "https://esm.town/v/std/email";
 import { marked } from "npm:marked";
 import { executeTool, tools, getSearchData, formatPost, type Post } from "./search.ts";
-import { hasToken, resolveFilePath, getRawFile, openDraftPR } from "./github.ts";
+import { hasToken, resolveFilePath, getRawFile, openDraftPR, fetchRejectedLinkPRs } from "./github.ts";
 
 const anthropic = new Anthropic();
 const RESEARCH_MODEL = "claude-sonnet-4-6";
@@ -447,10 +447,28 @@ function splitFrontmatter(raw: string): { front: string; body: string } {
   return { front: m[1], body: m[2] };
 }
 
+// Rejected-PR memory is fetched once per process rather than per post: a feed
+// batch critiques several posts, and the memory is identical for all of them.
+let rejectionMemoryCache: Promise<string> | null = null;
+
+function getRejectionMemory(): Promise<string> {
+  rejectionMemoryCache ??= fetchRejectedLinkPRs().then((prs) => {
+    if (prs.length === 0) return "";
+    const blocks = prs.map((pr) => {
+      const bullets = pr.bullets.map((b) => `  - proposed: ${b}`).join("\n");
+      const said = pr.comments.map((c) => `  - author said: "${c.replace(/\s+/g, " ").slice(0, 300)}"`).join("\n");
+      return [`- ${pr.title}`, bullets, said].filter(Boolean).join("\n");
+    });
+    return `The author REJECTED these past link suggestions. Do not repeat these mistakes — they are the best available evidence of what he does not want:\n\n${blocks.join("\n\n")}\n\n`;
+  }).catch(() => "");
+  return rejectionMemoryCache;
+}
+
 async function proposeLinkInsertions(
   title: string,
   body: string,
   candidates: Post[],
+  rejectionMemory: string,
 ): Promise<LinkInsertion[]> {
   if (candidates.length === 0) return [];
   const candidateList = candidates
@@ -482,13 +500,13 @@ Return a JSON array of insertions. Each has:
 
 Rules:
 - Prefer a few high-value links over many weak ones, but always take an obvious named-entity link when one exists. Return [] only if nothing fits.
-- Never link the same anchor twice. Never wrap text already inside a link or inside a heading.
+- Never link the same anchor twice. Never wrap text already inside a link, an image caption ("![alt](...)"), a heading, or code. Never propose a target URL the body already links.
 - old_string MUST appear verbatim and exactly once in the body.
 - Output ONLY valid JSON. No markdown fences, no commentary.`,
     messages: [
       {
         role: "user",
-        content: `## Post: ${title}\n\n### Body\n\n${body}\n\n### Related posts you may link to\n\n${candidateList}`,
+        content: `${rejectionMemory}## Post: ${title}\n\n### Body\n\n${body}\n\n### Related posts you may link to\n\n${candidateList}`,
       },
     ],
   });
@@ -536,7 +554,7 @@ async function urlResolves(url: string): Promise<boolean> {
 // Find canonical external URLs for works the post names but doesn't link. Uses
 // Anthropic's server-side web_search; failures (e.g. search unavailable) return
 // [] so internal-link suggestions still work.
-async function proposeExternalLinks(title: string, body: string): Promise<LinkInsertion[]> {
+async function proposeExternalLinks(title: string, body: string, rejectionMemory: string): Promise<LinkInsertion[]> {
   let response: Anthropic.Messages.Message;
   try {
     response = await anthropic.messages.create({
@@ -562,7 +580,7 @@ Return a JSON array of insertions. Each has:
 - "why": one sentence on why this link helps the reader.
 
 Return [] if no referenced work can be confidently located. Output ONLY the JSON array — no prose, no markdown fences.`,
-      messages: [{ role: "user", content: `## Post: ${title}\n\n### Body\n\n${body}` }],
+      messages: [{ role: "user", content: `${rejectionMemory}## Post: ${title}\n\n### Body\n\n${body}` }],
     });
   } catch (err) {
     console.error("web_search external-link pass failed:", err);
@@ -600,6 +618,60 @@ function isInsideQuote(body: string, idx: number): boolean {
   return before.lastIndexOf("<blockquote") > before.lastIndexOf("</blockquote>");
 }
 
+// Regions no link may be added to. The proposal prompt already forbids most of
+// these, but prompts don't enforce: the anchor "a crowd-pumping live show" was
+// the visible text of an existing link, and wrapping a span of it produced
+// nested `[a [b](/x)](http...)` markup. Enforce structurally instead of asking.
+function protectedSpans(body: string): { start: number; end: number; label: string }[] {
+  const spans: { start: number; end: number; label: string }[] = [];
+  const push = (re: RegExp, label: string) => {
+    for (const m of body.matchAll(re)) spans.push({ start: m.index!, end: m.index! + m[0].length, label });
+  };
+  // `!?` covers images too — alt text is a caption, not prose to link.
+  push(/!\[[^\]]*\]\([^)]*\)/g, "an image caption");
+  push(/\[[^\]]*\]\([^)]*\)/g, "an existing link");
+  push(/<a\b[^>]*>[\s\S]*?<\/a>/gi, "an existing link");
+  push(/<[^>]+>/g, "an HTML tag");
+  push(/<blockquote[\s\S]*?<\/blockquote>/gi, "a quoted passage");
+  push(/```[\s\S]*?```/g, "a code block");
+  push(/`[^`\n]+`/g, "inline code");
+  push(/^#{1,6} .*$/gm, "a heading");
+  push(/^\s*>.*$/gm, "a quoted passage");
+  push(/https?:\/\/\S+/g, "a bare URL");
+  return spans;
+}
+
+function overlapLabel(
+  spans: { start: number; end: number; label: string }[],
+  start: number,
+  end: number,
+): string | null {
+  const hit = spans.find((s) => start < s.end && end > s.start);
+  return hit ? hit.label : null;
+}
+
+// Every "this link is already there" rejection pointed at a URL the surrounding
+// prose already linked. Compare on a host-agnostic key so /notes/123 matches an
+// absolute https://www.joshbeckman.org/notes/123 already in the body.
+function targetAlreadyPresent(body: string, targetUrl: string): boolean {
+  const key = targetUrl.startsWith("http")
+    ? targetUrl.replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/\/+$/, "")
+    : targetUrl.replace(/\/+$/, "");
+  if (!key || key === "/") return false;
+  return body.includes(key);
+}
+
+// The shape check on `new_string` is not enough: one PR shipped
+// `[[X]((/notes/494760925) rant...](url)` because a permissive regex matched
+// part of the mess. Validate the replacement we actually built by stripping its
+// single link back out — it must reduce exactly to the original anchor.
+function isWellFormedLinkEdit(anchor: string, replacement: string, url: string): boolean {
+  if (!/^(https?:\/\/[^\s()]+|\/[^\s()]+)$/.test(url)) return false;
+  const links = replacement.match(/\[[^\[\]]*\]\([^()\s]+\)/g) ?? [];
+  if (links.length !== 1) return false;
+  return replacement.replace(/\[([^\[\]]*)\]\([^()\s]+\)/, "$1") === anchor;
+}
+
 // Apply insertions to the body, keeping only those whose old_string is present
 // exactly once and not inside an existing link. Returns the edited body and the
 // insertions actually applied.
@@ -632,6 +704,17 @@ function applyInsertions(
       rejected.push({ anchor: ins.old_string, reason: "anchor is inside a quoted passage" });
       continue;
     }
+    // Spans are recomputed per insertion because `out` grows as links land, and
+    // a later anchor must not overlap a link an earlier insertion just added.
+    const label = overlapLabel(protectedSpans(out), idx, idx + normOld.length);
+    if (label) {
+      rejected.push({ anchor: ins.old_string, reason: `anchor overlaps ${label}` });
+      continue;
+    }
+    if (ins.target_url && targetAlreadyPresent(out, ins.target_url)) {
+      rejected.push({ anchor: ins.old_string, reason: `target ${ins.target_url} is already linked in the body` });
+      continue;
+    }
     // The model wraps a sub-span of the anchor in one Markdown link; validate it
     // only ADDS link markup (stripped text must equal the anchor), then rebuild
     // the edit from the ORIGINAL characters so typographic punctuation is
@@ -649,10 +732,69 @@ function applyInsertions(
       origAnchor.slice(0, linkStart) +
       `[${origAnchor.slice(linkStart, linkStart + linkTextLen)}](${link[2]})` +
       origAnchor.slice(linkStart + linkTextLen);
+    if (!isWellFormedLinkEdit(origAnchor, replacement, link[2])) {
+      rejected.push({ anchor: ins.old_string, reason: "edit would produce malformed Markdown" });
+      continue;
+    }
     out = out.slice(0, idx) + replacement + out.slice(idx + normOld.length);
     applied.push(ins);
   }
   return { body: out, applied, rejected };
+}
+
+// The proposer only ever sees a 200-char snippet of each candidate, so it
+// cannot tell whether a note about a podcast is about the *right episode* of
+// that podcast — which is how a "Dialectic" mention got linked to an unrelated
+// Dialectic episode. Re-check each surviving proposal against the target's full
+// text. One small call per proposal, run in parallel; a failure votes no.
+async function verifyInsertion(
+  postTitle: string,
+  body: string,
+  ins: LinkInsertion,
+  searchData: Record<string, Post>,
+  rejectionMemory: string,
+): Promise<boolean> {
+  const idx = normalizeForMatch(body).indexOf(normalizeForMatch(ins.old_string ?? ""));
+  const context = idx === -1 ? body.slice(0, 600) : body.slice(Math.max(0, idx - 300), idx + 300);
+  const target = (Object.values(searchData) as Post[]).find((p) => p.url === ins.target_url);
+  const targetText = target
+    ? `Title: ${target.title}\nURL: ${target.url}\n\n${(target.content || "").slice(0, 3000)}`
+    : `Title: ${ins.target_title}\nURL: ${ins.target_url}\n(external page — judge from the title and URL alone)`;
+
+  try {
+    const response = await anthropic.messages.create({
+      model: RESEARCH_MODEL,
+      max_tokens: 300,
+      temperature: 0,
+      system: `You are the last gate before a link suggestion is committed to someone's personal site. Answer whether the author would find the link OBVIOUSLY correct.
+
+Default to "no". A missing link costs nothing; a wrong one wastes the author's review time.
+
+Answer "no" when:
+- The anchor is a vague or common conceptual phrase ("proprietary environments", "the tradeoffs") linked on thematic similarity.
+- The anchor names a series, podcast, publication, or venue and the target is merely another entry in it rather than the SAME specific work or episode.
+- The anchor is a person's name and the target merely cites or quotes that person rather than being about them.
+- The target restates the anchor's context without specifically illuminating it.
+
+Answer "yes" only when the target IS the named thing, or is centrally and specifically about it.
+
+Output ONLY JSON: {"verdict":"yes"|"no","reason":"one sentence"}`,
+      messages: [{
+        role: "user",
+        content:
+          `${rejectionMemory}## Source post: ${postTitle}\n\n### Anchor text\n${ins.old_string}\n\n### Surrounding prose\n${context}\n\n### Proposed target\n${targetText}\n\n### Proposer's reason\n${ins.why}`,
+      }],
+    });
+    const text = collectText(response);
+    const start = text.indexOf("{");
+    const end = text.lastIndexOf("}");
+    if (start === -1 || end <= start) return false;
+    const parsed = JSON.parse(text.slice(start, end + 1)) as { verdict?: string };
+    return parsed.verdict === "yes";
+  } catch (err) {
+    console.error("link verification failed:", err);
+    return false;
+  }
 }
 
 export type LinkResult =
@@ -730,9 +872,12 @@ export async function suggestLinks(postUrl: string): Promise<LinkResult> {
   // needs candidates from the index; external only needs the prose + web search.
   // External must not be gated on internal candidates existing — a workout log
   // that names a Substack essay has no garden match but a valuable external one.
+  const rejectionMemory = await getRejectionMemory();
   const [internal, external] = await Promise.all([
-    candidates.length > 0 ? proposeLinkInsertions(post.title, body, candidates) : Promise.resolve([]),
-    proposeExternalLinks(post.title, body),
+    candidates.length > 0
+      ? proposeLinkInsertions(post.title, body, candidates, rejectionMemory)
+      : Promise.resolve([]),
+    proposeExternalLinks(post.title, body, rejectionMemory),
   ]);
   // Longest anchor first so the most specific reference claims its span. When an
   // external "interview on Dialectic with Jasmine Sun" overlaps an internal
@@ -741,9 +886,18 @@ export async function suggestLinks(postUrl: string): Promise<LinkResult> {
   const proposed = [...internal, ...external].sort(
     (a, b) => (b.old_string?.length ?? 0) - (a.old_string?.length ?? 0),
   );
-  const { body: newBody, applied, rejected } = applyInsertions(body, proposed);
+  // Verify before applying so a rejected proposal can't claim a span that a
+  // later, better one needs.
+  const verdicts = await Promise.all(
+    proposed.map((ins) => verifyInsertion(post.title, body, ins, searchData, rejectionMemory)),
+  );
+  const verified = proposed.filter((_, i) => verdicts[i]);
+  const { body: newBody, applied, rejected } = applyInsertions(body, verified);
   if (applied.length === 0) {
-    const detail = rejected.map((r) => `"${r.anchor}": ${r.reason}`).join("; ");
+    const detail = [
+      ...rejected.map((r) => `"${r.anchor}": ${r.reason}`),
+      ...proposed.filter((_, i) => !verdicts[i]).map((p) => `"${p.old_string}": failed verification`),
+    ].join("; ");
     return { ok: false, reason: `no worthwhile links (proposed ${proposed.length}). ${detail}` };
   }
 

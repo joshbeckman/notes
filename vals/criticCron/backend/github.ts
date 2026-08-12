@@ -65,6 +65,55 @@ export async function resolveFilePath(postUrl: string): Promise<string | null> {
   return candidates.sort((a, b) => a.length - b.length)[0];
 }
 
+export type RejectedLinkPR = {
+  number: number;
+  title: string;
+  bullets: string[];
+  comments: string[];
+};
+
+// Closed-unmerged link PRs are the only labeled training signal available: the
+// author states why each suggestion was wrong ("already there", "image
+// caption", "not relevant"). Read them back so the proposer and verifier see
+// their own past misfires. Best-effort — an API failure just means no memory.
+export async function fetchRejectedLinkPRs(limit = 8): Promise<RejectedLinkPR[]> {
+  if (!hasToken()) return [];
+  try {
+    const resp = await gh(`/repos/${REPO}/pulls?state=closed&sort=updated&direction=desc&per_page=50`);
+    if (!resp.ok) return [];
+    const prs = await resp.json() as {
+      number: number;
+      title: string;
+      body: string | null;
+      merged_at: string | null;
+      head?: { ref?: string };
+    }[];
+    const rejected = prs
+      .filter((p) => !p.merged_at && (p.head?.ref ?? "").startsWith("critic/links"))
+      .slice(0, limit);
+
+    return await Promise.all(rejected.map(async (pr) => {
+      const bullets = (pr.body ?? "")
+        .split("\n")
+        .filter((l) => /^- (🔗|🌐)/.test(l))
+        .map((l) => l.replace(/^- (🔗|🌐)\s*/, "").trim());
+      // Review comments carry the most precise objections (they're anchored to a
+      // specific hunk), so pull both conversation and review threads.
+      const [issueComments, reviewComments] = await Promise.all([
+        gh(`/repos/${REPO}/issues/${pr.number}/comments?per_page=20`).then((r) => r.ok ? r.json() : []),
+        gh(`/repos/${REPO}/pulls/${pr.number}/comments?per_page=20`).then((r) => r.ok ? r.json() : []),
+      ]) as { user?: { login?: string }; body?: string }[][];
+      const comments = [...issueComments, ...reviewComments]
+        .filter((c) => c.user?.login === ASSIGNEE && c.body)
+        .map((c) => c.body!.trim());
+      return { number: pr.number, title: pr.title, bullets, comments };
+    }));
+  } catch (err) {
+    console.error("fetchRejectedLinkPRs failed:", err);
+    return [];
+  }
+}
+
 export type FileContent = { content: string; sha: string };
 
 export async function getRawFile(path: string): Promise<FileContent | null> {
