@@ -438,7 +438,6 @@ template {
   font-weight: var(--f-weight);
   background: var(--c-bg);
   color: var(--c-text);
-  scroll-behavior: smooth;
 }
 @media (prefers-color-scheme: dark) {
   :root {
