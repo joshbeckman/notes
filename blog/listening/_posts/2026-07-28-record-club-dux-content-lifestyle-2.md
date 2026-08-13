@@ -12,8 +12,6 @@ bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mstkexj2472a
 record_club_url: https://record.club/joshbeckman/releases/singles/dux-content-lifestyle-2
 tags:
 - music
-- popular
-- entertainment
 - record-club
 serial_number: 2026.BLG.079
 ---
