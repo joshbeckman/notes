@@ -15,6 +15,10 @@ Two-model agent loop in `backend/critic.ts`:
 
 Images embedded in the post (`![](...)` Markdown, `<img>` tags, or the frontmatter feature image) are extracted and sent to both models as vision blocks via public URL, so the critic can read a photo of workout data or a screenshot instead of saying "I can't see the image."
 
+Critique emails carry both parts: the styled HTML and a `text/plain` alternative built from the critique markdown. HTML-only left the text part as Val Town's "Email sent from Val Town" placeholder, which is all a text client or a JMAP reader ever sees.
+
+The post under critique is sent once, in full. `formatPost` slices bodies to 1000 characters for search results, and sending that slice alongside the full content once had the critic tell the author his post "appears truncated" — it was the summary that got cut. Truncated bodies are now labeled, and `critiquePost` omits the summary body entirely.
+
 The cron handler parses `feed.xml`, filters entries newer than `CUTOFF_DATE` (currently `2026-03-28`), skips anything already in the `critic_cron_processed_urls` blob, critiques each new entry, and emails the result. The processed-URLs set is pruned to whatever is currently in the feed so it doesn't grow without bound.
 
 To fight repetition, the critic keeps a rolling memory of its last 5 cron critiques in the `critic_cron_recent_critiques` blob. Opus emits a `---HEADLINES---` block after each critique with 3-5 distinct angles it took; those headlines are injected into the user message of subsequent runs so the model can see what it's already said and vary its angles. Only `processFeed` writes to this memory — `/critique`, `/preview`, and `/draft` read it but don't pollute it.

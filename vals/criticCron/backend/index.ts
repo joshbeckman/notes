@@ -164,7 +164,7 @@ app.get("/email", async (c) => {
 
   const result = await critiquePost(url);
   if (!result) return c.json({ error: "post not found" }, 404);
-  await emailCritique(result.title, result.url, result.critique.html);
+  await emailCritique(result.title, result.url, result.critique);
   return c.json({ sent: true, title: result.title, url: result.url });
 });
 

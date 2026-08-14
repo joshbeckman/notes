@@ -78,12 +78,22 @@ function extractCategory(post: Post): string {
   return "blog";
 }
 
-export function formatPost(post: Post): string {
+// `maxContent: 0` omits the body entirely — for callers that append the full
+// content themselves. A silent slice here once made the critic tell the author
+// his post "appears truncated" when it was the summary that got cut, so a cut
+// body is always marked.
+export function formatPost(post: Post, maxContent = 1000): string {
   const url = post.url?.startsWith("http") ? post.url : SITE_URL + post.url;
+  const full = post.content ?? "";
+  const body = maxContent === 0
+    ? null
+    : full.length > maxContent
+    ? `${full.slice(0, maxContent)}… [truncated for this summary — not the end of the post]`
+    : full;
   return [
     `# [${post.title}](${url})`,
     "",
-    post.content?.slice(0, 1000),
+    body,
     "",
     `- tags: ${(post.tags || "").split(" ").join(", ")}`,
     `- date: ${post.date}`,
