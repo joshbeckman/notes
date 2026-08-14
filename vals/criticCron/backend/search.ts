@@ -174,7 +174,10 @@ export async function executeTool(name: string, input: Record<string, unknown>):
     const db = Object.values(searchData).filter(postFilter);
     const post = db.find((p) => p.url === url || SITE_URL + p.url === url);
     if (!post) return `Post "${url}" not found.`;
-    return formatPost(post);
+    // A deliberate request for one post gets a much higher ceiling than a search
+    // result does — the 1000-char list budget exists to fit ten results in a
+    // tool response, and applying it here truncated posts mid-sentence.
+    return formatPost(post, 6000);
   }
 
   if (name === "get_tags") {
