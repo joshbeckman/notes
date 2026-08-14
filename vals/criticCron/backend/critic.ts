@@ -12,6 +12,7 @@ const SITE_URL = "https://www.joshbeckman.org";
 const FEED_URL = `${SITE_URL}/feed.xml`;
 const JINA_BASE = "https://r.jina.ai/";
 const MAX_TOOL_ROUNDS = 8;
+const EXTERNAL_PAGE_LIMIT = 4000;
 const BLOB_KEY = "critic_cron_processed_urls";
 const RECENT_CRITIQUES_KEY = "critic_cron_recent_critiques";
 const RECENT_CRITIQUES_LIMIT = 5;
@@ -163,7 +164,13 @@ async function readExternalPage(url: string): Promise<string> {
   const resp = await fetch(`${JINA_BASE}${url}`, { headers });
   if (!resp.ok) return `Failed to fetch ${url}: ${resp.status}`;
   const data = await resp.json();
-  return data.data?.content?.slice(0, 4000) || "";
+  const content: string = data.data?.content ?? "";
+  if (!content) return "";
+  // Say when the page was cut. An unmarked slice invites the critic to fault the
+  // author for ignoring an argument that was simply past the cutoff.
+  return content.length > EXTERNAL_PAGE_LIMIT
+    ? `${content.slice(0, EXTERNAL_PAGE_LIMIT)}\n\n[Page truncated at ${EXTERNAL_PAGE_LIMIT} characters — the source continues beyond this point. Do not treat what follows the cutoff as absent from the source.]`
+    : content;
 }
 
 // --- Agent loop ---
