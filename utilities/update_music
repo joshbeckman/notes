@@ -3,6 +3,13 @@
 
 require './utilities/apple_music_library_parser'
 
+# Percent widths are unreliable inside auto-sized table cells, so bars get a
+# fixed pixel budget instead.
+def bar(value, max, budget_px: 120)
+  width = [(value * budget_px.to_f / max).round, 2].max
+  "<span style=\"display:inline-block;background:var(--c-link);height:0.75em;width:#{width}px\"></span>"
+end
+
 LIBRARY_FILE = 'Library.xml'
 parser = AppleMusicLibraryParser.new(LIBRARY_FILE)
 
@@ -72,6 +79,16 @@ parser.recently_loved_albums.each do |album|
   file.puts "| #{album.album_art_md} | #{album.artist} | #{album.name} |"
 end
 file.puts
+file.puts '## Forgotten Favorites'
+file.puts 'Loved tracks I haven\'t played in the longest time.'
+file.puts
+file.puts '| Artist | Track | Last Played |'
+file.puts '| ------ | ----- | ----------- |'
+parser.forgotten_loved_tracks(limit: 10).each do |track|
+  last_played = track.play_date_utc ? track.play_date_utc.strftime('%Y-%m-%d') : 'never'
+  file.puts "| #{track.artist} | #{track.name} | #{last_played} |"
+end
+file.puts
 file.puts '## Top Played Tracks'
 file.puts 'This is a list of the top played tracks in my library.'
 file.puts
@@ -114,4 +131,76 @@ parser.top_genres.each do |genre|
   time = genre.total_time / 1000
   time_format = "#{time / 3600}h #{(time % 3600) / 60}m #{time % 60}s"
   file.puts "| #{genre.name} | #{genre.track_count} | #{genre.play_count} | #{time_format} |"
+end
+file.puts
+file.puts '## Play Concentration'
+file.puts 'How unevenly my plays are distributed across the library.'
+file.puts
+concentration = parser.play_concentration
+never = parser.never_played
+file.puts "- #{concentration[:total_plays]} total plays across the library"
+file.puts "- The top 1% of tracks account for #{concentration[:top_1_pct].round}% of all plays"
+file.puts "- The top 5% of tracks account for #{concentration[:top_5_pct].round}% of all plays"
+file.puts "- The top 10% of tracks account for #{concentration[:top_10_pct].round}% of all plays"
+file.puts "- #{never[:count]} tracks (#{never[:pct].round}%) have never been played"
+file.puts
+file.puts '## Library Growth'
+file.puts 'Tracks added to my library by year.'
+file.puts
+file.puts '| Year | Tracks Added | |'
+file.puts '| ---- | ------------ | --- |'
+added_by_year = parser.tracks_added_by_year
+max_added = added_by_year.values.max
+added_by_year.each do |year, count|
+  file.puts "| #{year} | #{count} | #{bar(count, max_added)} |"
+end
+file.puts
+file.puts '## Taste Drift'
+file.puts 'The top genres of the tracks I added each year.'
+file.puts
+file.puts '| Year | Top Genres Added |'
+file.puts '| ---- | ---------------- |'
+parser.top_genres_by_added_year.each do |year, genres|
+  genre_list = genres.map { |genre, count| "#{genre} (#{count})" }.join(' · ')
+  file.puts "| #{year} | #{genre_list} |"
+end
+file.puts
+file.puts '## Library by Release Decade'
+file.puts 'When the music in my library was originally released.'
+file.puts
+file.puts '| Decade | Tracks | Plays | |'
+file.puts '| ------ | ------ | ----- | --- |'
+by_decade = parser.tracks_by_release_decade
+max_decade = by_decade.map { |_, stats| stats[:count] }.max
+by_decade.each do |decade, stats|
+  file.puts "| #{decade}s | #{stats[:count]} | #{stats[:plays]} | #{bar(stats[:count], max_decade)} |"
+end
+file.puts
+file.puts '## One-Hit Wonders'
+file.puts 'Artists where a single track soaks up most of my plays (min. 5 tracks and 100 plays).'
+file.puts
+file.puts '| Artist | The Hit | Hit Plays | All Plays | Share |'
+file.puts '| ------ | ------- | --------- | --------- | ----- |'
+parser.one_hit_wonders.each do |hit|
+  file.puts "| #{hit[:artist]} | #{hit[:track]} | #{hit[:track_plays]} | #{hit[:total_plays]} | #{hit[:share].round}% |"
+end
+file.puts
+file.puts '## Album Loyalty'
+file.puts 'Whether I play an album front-to-back or cherry-pick tracks, measured by how evenly plays spread across its tracks (min. 4 tracks and 5 plays per track on average).'
+loyalty = parser.album_loyalty
+file.puts
+file.puts '### Front-to-Back'
+file.puts
+file.puts '| Artist | Album | Album Plays |'
+file.puts '| ------ | ----- | ----------- |'
+loyalty[:front_to_back].each do |album, _cv|
+  file.puts "| #{album.artist} | #{album.name} | #{album.song_play_count} |"
+end
+file.puts
+file.puts '### Cherry-Picked'
+file.puts
+file.puts '| Artist | Album | Album Plays |'
+file.puts '| ------ | ----- | ----------- |'
+loyalty[:cherry_picked].each do |album, _cv|
+  file.puts "| #{album.artist} | #{album.name} | #{album.song_play_count} |"
 end

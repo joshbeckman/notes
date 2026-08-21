@@ -101,6 +101,95 @@ class AppleMusicLibraryParser
     loved_tracks.sort_by { |t| t.play_date_utc || DateTime.new }.take(limit)
   end
 
+  def tracks_added_by_year
+    @tracks.reject { |t| t.date_added.nil? }
+           .group_by { |t| t.date_added.year }
+           .transform_values(&:count)
+           .sort.to_h
+  end
+
+  def top_genres_by_added_year(top: 3)
+    @tracks.reject { |t| t.date_added.nil? || t.genre.nil? || t.genre.strip.empty? }
+           .group_by { |t| t.date_added.year }
+           .sort
+           .map do |year, tracks|
+      genres = tracks.group_by(&:genre)
+                     .map { |genre, ts| [genre, ts.count] }
+                     .sort_by { |_, count| -count }
+                     .take(top)
+      [year, genres]
+    end
+  end
+
+  def tracks_by_release_decade
+    @tracks.select { |t| t.year&.positive? }
+           .group_by { |t| (t.year / 10) * 10 }
+           .sort
+           .map do |decade, ts|
+      [decade, { count: ts.count, plays: ts.sum { |t| t.play_count || 0 } }]
+    end
+  end
+
+  def play_concentration
+    counts = @tracks.map { |t| t.play_count || 0 }.sort.reverse
+    total = counts.sum
+    share = lambda do |pct|
+      counts.take((counts.size * pct).ceil).sum * 100.0 / total
+    end
+    {
+      total_plays: total,
+      top_1_pct: share.call(0.01),
+      top_5_pct: share.call(0.05),
+      top_10_pct: share.call(0.10)
+    }
+  end
+
+  def never_played
+    count = @tracks.count { |t| (t.play_count || 0).zero? }
+    { count: count, pct: count * 100.0 / @tracks.count }
+  end
+
+  # An artist where one track soaks up most of their plays. min_tracks and
+  # min_plays filter out artists I barely know, which would otherwise all
+  # score 100% and make the list meaningless.
+  def one_hit_wonders(limit: 10, min_tracks: 5, min_plays: 100)
+    @tracks.group_by(&:artist).filter_map do |artist, ts|
+      next if artist.nil? || artist.strip.empty? || ts.count < min_tracks
+
+      total = ts.sum { |t| t.play_count || 0 }
+      next if total < min_plays
+
+      top = ts.max_by { |t| t.play_count || 0 }
+      {
+        artist: artist,
+        track: top.name,
+        track_plays: top.play_count || 0,
+        total_plays: total,
+        share: (top.play_count || 0) * 100.0 / total
+      }
+    end.sort_by { |h| -h[:share] }.take(limit)
+  end
+
+  # Coefficient of variation of per-track plays within an album: low means I
+  # play it front-to-back, high means I cherry-pick. min_mean_plays keeps
+  # barely-played albums (where CV is mostly noise) out of both lists.
+  def album_loyalty(limit: 5, min_tracks: 4, min_mean_plays: 5)
+    scored = @albums.filter_map do |album|
+      counts = album.tracks.map { |t| t.play_count || 0 }
+      next if counts.size < min_tracks
+
+      mean = counts.sum.to_f / counts.size
+      next if mean < min_mean_plays
+
+      stddev = Math.sqrt(counts.sum { |c| (c - mean)**2 } / counts.size)
+      [album, stddev / mean]
+    end
+    {
+      front_to_back: scored.sort_by { |_, cv| cv }.take(limit),
+      cherry_picked: scored.sort_by { |_, cv| -cv }.take(limit)
+    }
+  end
+
   def save_to_database(db_path = 'apple_music_stats.db', export_date = DateTime.now)
     db = Database.new(db_path)
 

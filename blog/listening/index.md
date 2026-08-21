@@ -68,6 +68,22 @@ This is a list of the albums I've loved recently.
 | ![Skrillex & rom - SOMA](/assets/images/album_art/skrillexrom-soma.jpg) | Skrillex & rom | SOMA |
 | ![Air Credits - Breathe Well+](/assets/images/album_art/aircredits-breathewell.jpg) | Air Credits | Breathe Well+ |
 
+## Forgotten Favorites
+Loved tracks I haven't played in the longest time.
+
+| Artist | Track | Last Played |
+| ------ | ----- | ----------- |
+| Vince Staples | Outside! | never |
+| Tame Impala | End Of Summer | never |
+| Vince Staples | Don't Get Chipped | never |
+| Angine de Poitrine | Utzp | never |
+| Vince Staples | FUN! | never |
+| SBTRKT | BACK ON | never |
+| Bleachers | Tiny Moves | never |
+| RY X & Ólafur Arnalds | Oceans | never |
+| Underworld | Two Months Off (Mixed) | never |
+| Dux Content | Business Class | never |
+
 ## Top Played Tracks
 This is a list of the top played tracks in my library.
 
@@ -131,3 +147,109 @@ This is a list of the top genres my library (by track count).
 | R&B/Soul | 1006 | 3201 | 61h 9m 51s |
 | Classical | 881 | 2937 | 63h 33m 9s |
 | Jazz | 870 | 3637 | 82h 50m 33s |
+
+## Play Concentration
+How unevenly my plays are distributed across the library.
+
+- 98295 total plays across the library
+- The top 1% of tracks account for 12% of all plays
+- The top 5% of tracks account for 34% of all plays
+- The top 10% of tracks account for 51% of all plays
+- 10363 tracks (36%) have never been played
+
+## Library Growth
+Tracks added to my library by year.
+
+| Year | Tracks Added | |
+| ---- | ------------ | --- |
+| 2013 | 194 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:6px"></span> |
+| 2014 | 55 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:2px"></span> |
+| 2015 | 698 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:20px"></span> |
+| 2016 | 2078 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:61px"></span> |
+| 2017 | 883 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:26px"></span> |
+| 2018 | 1258 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:37px"></span> |
+| 2019 | 1209 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:35px"></span> |
+| 2020 | 2482 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:72px"></span> |
+| 2021 | 2862 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:83px"></span> |
+| 2022 | 2439 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:71px"></span> |
+| 2023 | 3895 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:114px"></span> |
+| 2024 | 4114 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:120px"></span> |
+| 2025 | 2245 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:65px"></span> |
+| 2026 | 1176 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:34px"></span> |
+
+## Taste Drift
+The top genres of the tracks I added each year.
+
+| Year | Top Genres Added |
+| ---- | ---------------- |
+| 2013 | Classical (61) · Soundtrack (30) · Other (26) |
+| 2014 | Soundtrack (36) · Hip Hop/Rap (2) · Other (1) |
+| 2015 | Alternative (186) · Electronic (114) · Classical (108) |
+| 2016 | Alternative (424) · Electronic (327) · Soundtrack (204) |
+| 2017 | Alternative (138) · Electronic (130) · Soundtrack (109) |
+| 2018 | Alternative (222) · Classical (206) · Hip-Hop/Rap (195) |
+| 2019 | Electronic (360) · Alternative (225) · Hip-Hop/Rap (117) |
+| 2020 | Electronic (472) · Alternative (391) · Hip-Hop/Rap (352) |
+| 2021 | Electronic (572) · Alternative (475) · Dance (466) |
+| 2022 | Alternative (501) · Electronic (425) · Dance (412) |
+| 2023 | Electronic (854) · Alternative (735) · Dance (528) |
+| 2024 | Electronic (811) · Alternative (709) · Dance (658) |
+| 2025 | Electronic (596) · Alternative (472) · Dance (421) |
+| 2026 | Dance (462) · Electronic (304) · Alternative (73) |
+
+## Library by Release Decade
+When the music in my library was originally released.
+
+| Decade | Tracks | Plays | |
+| ------ | ------ | ----- | --- |
+| 1910s | 2 | 0 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:2px"></span> |
+| 1920s | 3 | 0 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:2px"></span> |
+| 1930s | 1 | 0 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:2px"></span> |
+| 1940s | 12 | 16 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:2px"></span> |
+| 1950s | 315 | 1081 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:3px"></span> |
+| 1960s | 825 | 1352 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:7px"></span> |
+| 1970s | 776 | 1114 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:7px"></span> |
+| 1980s | 723 | 1672 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:6px"></span> |
+| 1990s | 1408 | 1866 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:12px"></span> |
+| 2000s | 2922 | 8607 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:25px"></span> |
+| 2010s | 7699 | 40093 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:67px"></span> |
+| 2020s | 13846 | 41326 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:120px"></span> |
+
+## One-Hit Wonders
+Artists where a single track soaks up most of my plays (min. 5 tracks and 100 plays).
+
+| Artist | The Hit | Hit Plays | All Plays | Share |
+| ------ | ------- | --------- | --------- | ----- |
+| Sufjan Stevens | Redford (For Yia-Yia and Pappou) | 87 | 214 | 41% |
+| James Blake | I Need a Forest Fire (feat. Bon Iver) | 76 | 193 | 39% |
+| Keys N Krates | My Night (feat. 070 Shake) | 32 | 112 | 29% |
+| Jamie xx | Gosh | 87 | 306 | 28% |
+| Cosmo Pyke | Wish You Were Gone | 43 | 161 | 27% |
+| DRAMA | Billy | 41 | 162 | 25% |
+| AIR CREDITS | ALL I NEED PT 2 | 30 | 122 | 25% |
+| Devendra Banhart | My Dearest Friend | 40 | 163 | 25% |
+| Jon Brion | Little Person | 37 | 164 | 23% |
+| Alabama Shakes | Sound & Color | 59 | 262 | 23% |
+
+## Album Loyalty
+Whether I play an album front-to-back or cherry-pick tracks, measured by how evenly plays spread across its tracks (min. 4 tracks and 5 plays per track on average).
+
+### Front-to-Back
+
+| Artist | Album | Album Plays |
+| ------ | ----- | ----------- |
+| FKJ & ((( O ))) | Ylang Ylang EP | 45 |
+| Staatsorchester Stuttgart & Dennis Russell Davies | Arvo Pärt: Tabula Rasa | 50 |
+| Best Coast | Make You Mine - EP | 53 |
+| Toro y Moi | Soul Trash | 268 |
+| Beirut | Lon Gisland - EP | 41 |
+
+### Cherry-Picked
+
+| Artist | Album | Album Plays |
+| ------ | ----- | ----------- |
+| Boardwalk | Boardwalk | 84 |
+| Moderat | Moderat (Deluxe Version) | 118 |
+| Jamie xx | In Colour | 168 |
+| Childish Gambino | Because the Internet | 136 |
+| Devendra Banhart | Smokey Rolls Down Thunder Canyon | 100 |
