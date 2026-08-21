@@ -13,15 +13,22 @@ class AppleMusicLibraryParser
 
   def initialize(library_xml_path)
     @plist = Plist.parse_xml(library_xml_path)
-    @tracks ||= parse_tracks(plist['Tracks'])
-    @tracks_by_id ||= tracks.to_h { |t| [t.track_id, t] }
-    @playlists ||= parse_playlists(plist['Playlists'])
-    @artists ||= tracks.group_by(&:artist).map do |artist, tracks|
+    all_tracks = parse_tracks(plist['Tracks'])
+    # Playlist-only entries are catalog tracks referenced by playlists, not
+    # library members; playlists still need to resolve them by ID, but they
+    # would silently inflate every library-wide stat.
+    @tracks_by_id = all_tracks.to_h { |t| [t.track_id, t] }
+    @tracks = all_tracks.reject(&:playlist_only)
+    @playlists = parse_playlists(plist['Playlists'])
+    @artists = tracks.group_by(&:artist).map do |artist, tracks|
       parse_artist(artist, tracks)
     end.reject { |a| a.name.nil? || a.name.strip == '' }
-    @albums ||= tracks.group_by(&:album).map do |album, tracks|
-      parse_album(album, tracks)
-    end.reject { |a| a.name.nil? || a.name.strip == '' }
+    # Keyed by [album artist, album name] because bare album names collide
+    # across artists (ten different "Greatest Hits").
+    @albums_by_key = tracks.group_by { |t| album_key(t) }
+                           .reject { |key, _| key.last.nil? || key.last.strip == '' }
+                           .transform_values { |ts| parse_album(ts) }
+    @albums = @albums_by_key.values
   end
 
   def top_played_tracks(limit: 10)
@@ -86,14 +93,18 @@ class AppleMusicLibraryParser
   end
 
   def recently_loved_albums(limit: 10)
-    loved_tracks.sort_by { |t| t.date_added || DateTime.now }.reverse.map(&:album).uniq.take(limit).map do |name|
-      @albums.find { |a| a.name == name }
-    end
+    loved_tracks.sort_by { |t| t.date_added || DateTime.now }
+                .reverse
+                .map { |t| album_key(t) }
+                .uniq
+                .take(limit)
+                .map { |key| @albums_by_key[key] }
+                .compact
   end
 
   def recently_played_albums(limit: 10)
-    recently_played_playlist.tracks.group_by(&:album).map do |album, tracks|
-      parse_album(album, tracks)
+    recently_played_playlist.tracks.group_by { |t| album_key(t) }.map do |_, tracks|
+      parse_album(tracks)
     end.sort_by { |a| a.play_date_utc || DateTime.new }.reverse.take(limit)
   end
 
@@ -252,9 +263,13 @@ class AppleMusicLibraryParser
 
   private
 
+  def album_key(track)
+    [track.album_artist || track.artist, track.album]
+  end
+
   def parse_artist(artist, tracks)
-    albums = tracks.group_by(&:album).map do |album, tracks|
-      parse_album(album, tracks)
+    albums = tracks.group_by { |t| album_key(t) }.map do |_, tracks|
+      parse_album(tracks)
     end
     Artist.new(
       name: artist,
@@ -267,13 +282,13 @@ class AppleMusicLibraryParser
     )
   end
 
-  def parse_album(album, tracks)
+  def parse_album(tracks)
     Album.new(
-      artist: tracks.first.artist,
+      artist: tracks.first.album_artist || tracks.first.artist,
       date_added: tracks.min_by { |t| t.date_added || DateTime.now }.date_added,
       genre: tracks.first.genre,
       loved: tracks.first.album_loved,
-      name: album,
+      name: tracks.first.album,
       play_date_utc: tracks.max_by { |t| t.play_date_utc || DateTime.new }.play_date_utc,
       rating: tracks.first.album_rating,
       song_play_count: tracks.sum { |t| t.play_count || 0 },

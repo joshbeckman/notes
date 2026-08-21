@@ -24,6 +24,16 @@ let lovedIDs: Set<NSNumber> = Set(
         .items.map { $0.persistentID } ?? []
 )
 
+// allMediaItems includes catalog tracks referenced only by playlists (e.g.
+// favorited-from-catalog duplicates). The old XML export marked these
+// "Playlist Only"; membership in the distinguished Music playlist is the
+// only way the framework distinguishes real library members.
+let libraryIDs: Set<NSNumber> = Set(
+    lib.allPlaylists
+        .first { $0.distinguishedKind == .kindMusic }?
+        .items.map { $0.persistentID } ?? []
+)
+
 func hexID(_ n: NSNumber) -> String {
     String(format: "%016llX", n.uint64Value)
 }
@@ -46,6 +56,9 @@ for t in songs {
         "Loved": lovedIDs.contains(t.persistentID),
         "Favorited": lovedIDs.contains(t.persistentID),
     ]
+    if !libraryIDs.isEmpty && !libraryIDs.contains(t.persistentID) {
+        d["Playlist Only"] = true
+    }
     if let v = t.artist?.name { d["Artist"] = v }
     if let v = t.album.title { d["Album"] = v }
     if let v = t.album.albumArtist { d["Album Artist"] = v }

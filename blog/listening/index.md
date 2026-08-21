@@ -42,13 +42,13 @@ This is a list of the albums I've played recently.
 | Art | Artist | Album |
 | --- | ------ | ----- |
 | ![Jungle - Sunshine](/assets/images/album_art/jungle-sunshine.jpg) | Jungle | Sunshine |
-|  | KAYTRANADA | Sunshine Stereo 4.0 World Cup Edition (DJ Mix) |
+| ![Jungle - Sunshine Stereo 4.0 World Cup Edition (DJ Mix)](/assets/images/album_art/jungle-sunshinestereo40worldcupeditiondjmix.jpg) | Jungle | Sunshine Stereo 4.0 World Cup Edition (DJ Mix) |
 | ![Major Lazer - Get Free (feat. Amber Coffman) - Single](/assets/images/album_art/majorlazer-getfreefeatambercoffmansingle.jpg) | Major Lazer | Get Free (feat. Amber Coffman) - Single |
-|  | Avus | Balance 005 (Mixed by James Holden) [Mixed Version] |
+| ![James Holden - Balance 005 (Mixed by James Holden) [Mixed Version]](/assets/images/album_art/jamesholden-balance005mixedbyjamesholdenmixedversion.jpg) | James Holden | Balance 005 (Mixed by James Holden) [Mixed Version] |
 | ![Barry Can't Swim - Loner](/assets/images/album_art/barrycantswim-loner.jpg) | Barry Can't Swim | Loner |
 | ![Rival Consoles - Landscape from Memory](/assets/images/album_art/rivalconsoles-landscapefrommemory.jpg) | Rival Consoles | Landscape from Memory |
 | ![ex_libris - ex_libris 002 (feat. A Made Up Sound) - EP](/assets/images/album_art/exlibris-exlibris002featamadeupsoundep.jpg) | ex_libris | ex_libris 002 (feat. A Made Up Sound) - EP |
-|  | LonewOlf | Four Tet Live at Glastonbury Festival 2025 |
+|  | Four Tet | Four Tet Live at Glastonbury Festival 2025 |
 | ![Jungle - For Ever](/assets/images/album_art/jungle-forever.jpg) | Jungle | For Ever |
 | ![Gelli Haha - Switcheroo](/assets/images/album_art/gellihaha-switcheroo.jpg) | Gelli Haha | Switcheroo |
 
@@ -57,15 +57,15 @@ This is a list of the albums I've loved recently.
 
 | Art | Artist | Album |
 | ------ | ----- | --------- |
-| ![Vince Staples - FM!](/assets/images/album_art/vincestaples-fm.jpg) | Vince Staples | FM! |
+| ![The Avalanches - Since I Left You (20th Anniversary Deluxe Edition)](/assets/images/album_art/theavalanches-sinceileftyou20thanniversarydeluxeedition.jpg) | The Avalanches | Since I Left You (20th Anniversary Deluxe Edition) |
 | ![Jungle - Sunshine](/assets/images/album_art/jungle-sunshine.jpg) | Jungle | Sunshine |
 | ![Dux Content - Lifestyle](/assets/images/album_art/duxcontent-lifestyle.jpg) | Dux Content | Lifestyle |
 | ![Vince Staples - Cry Baby](/assets/images/album_art/vincestaples-crybaby.jpg) | Vince Staples | Cry Baby |
 | ![Gold Panda - TON  UP](/assets/images/album_art/goldpanda-tonup.jpg) | Gold Panda | TON  UP |
 | ![LinLin - DISCO INFERNO](/assets/images/album_art/linlin-discoinferno.jpg) | LinLin | DISCO INFERNO |
 | ![Slayyyter - WOR$T GIRL IN AMERICA](/assets/images/album_art/slayyyter-wortgirlinamerica.jpg) | Slayyyter | WOR$T GIRL IN AMERICA |
-|  | SOPHIE | Pride 2025 (DJ Mix) |
-| ![Skrillex & rom - SOMA](/assets/images/album_art/skrillexrom-soma.jpg) | Skrillex & rom | SOMA |
+|  | Rebecca Black | Pride 2025 (DJ Mix) |
+| ![Skrillex - SOMA](/assets/images/album_art/skrillex-soma.jpg) | Skrillex | SOMA |
 | ![Air Credits - Breathe Well+](/assets/images/album_art/aircredits-breathewell.jpg) | Air Credits | Breathe Well+ |
 
 ## Forgotten Favorites
@@ -95,10 +95,10 @@ This is a list of the top played tracks in my library.
 | Jamie xx | ![Jamie xx - In Colour](/assets/images/album_art/jamiexx-incolour.jpg) | Gosh | 87 | 7h 1m 54s |
 | Sufjan Stevens | ![Sufjan Stevens - Greetings from Michigan - The Great Lake State (Deluxe Version)](/assets/images/album_art/sufjanstevens-greetingsfrommichiganthegreatlakestatedeluxeversion.jpg) | Redford (For Yia-Yia and Pappou) | 87 | 2h 56m 54s |
 | Reptile Youth | ![Reptile Youth - Away - EP](/assets/images/album_art/reptileyouth-awayep.jpg) | Arab Spring Break, Pt. 2 | 86 | 7h 22m 48s |
-| Peter Broderick | ![Peter Broderick - Partners](/assets/images/album_art/peterbroderick-partners.jpg) | In a Landscape | 82 | 14h 15m 12s |
 | Sylvan Esso | ![Sylvan Esso - Sylvan Esso](/assets/images/album_art/sylvanesso-sylvanesso.jpg) | Come Down | 82 | 4h 1m 59s |
+| Peter Broderick | ![Peter Broderick - Partners](/assets/images/album_art/peterbroderick-partners.jpg) | In a Landscape | 82 | 14h 15m 12s |
 |  | ![ - Her OST](/assets/images/album_art/-herost.jpg) | Song On The Beach | 78 | 4h 36m 29s |
-| Peter Broderick | ![Peter Broderick - How They Are](/assets/images/album_art/peterbroderick-howtheyare.jpg) | Guilt's Tune | 76 | 5h 39m 3s |
+|  | ![ - Her OST](/assets/images/album_art/-herost.jpg) | Photograph | 76 | 3h 8m 48s |
 
 ## Top Played Albums
 This is a list of the top played albums in my library (by ratio of song plays to songs in the album).
@@ -123,12 +123,12 @@ This is a list of the top played artists in my library (by song plays).
 | ------ | -------------- | --------------- |
 | Four Tet | 1186 | 10 |
 | Oddisee | 1083 | 8 |
-| KAYTRANADA | 983 | 13 |
+| KAYTRANADA | 984 | 13 |
 | Peter Broderick | 930 | 33 |
 | Sylvan Esso | 896 | 13 |
 | Caribou | 891 | 9 |
 | Nils Frahm | 860 | 8 |
-| Jungle | 830 | 12 |
+| Jungle | 833 | 12 |
 | José González | 773 | 10 |
 | Shane Carruth | 765 | 51 |
 
@@ -137,25 +137,25 @@ This is a list of the top genres my library (by track count).
 
 | Genre | Track Count | Song Play Count | Total Time |
 | ------ | ---------- | -------------- | --------------- |
-| Electronic | 5489 | 22087 | 426h 50m 23s |
-| Alternative | 4856 | 19645 | 305h 20m 58s |
-| Dance | 3965 | 11045 | 248h 59m 53s |
-| Hip-Hop/Rap | 2758 | 8117 | 150h 9m 15s |
-| Rock | 1701 | 4166 | 117h 0m 11s |
-| Pop | 1403 | 4825 | 90h 52m 17s |
-| Soundtrack | 1074 | 3510 | 56h 19m 53s |
-| R&B/Soul | 1006 | 3201 | 61h 9m 51s |
-| Classical | 881 | 2937 | 63h 33m 9s |
-| Jazz | 870 | 3637 | 82h 50m 33s |
+| Electronic | 5141 | 22087 | 401h 15m 32s |
+| Alternative | 4552 | 19645 | 285h 14m 0s |
+| Dance | 3493 | 11064 | 218h 0m 38s |
+| Hip-Hop/Rap | 2317 | 8117 | 126h 48m 45s |
+| Rock | 1541 | 4166 | 107h 0m 25s |
+| Pop | 1220 | 4825 | 79h 34m 37s |
+| Classical | 847 | 2937 | 60h 33m 24s |
+| Soundtrack | 833 | 3510 | 43h 13m 30s |
+| Jazz | 795 | 3637 | 77h 2m 43s |
+| R&B/Soul | 747 | 3201 | 43h 52m 54s |
 
 ## Play Concentration
 How unevenly my plays are distributed across the library.
 
-- 98295 total plays across the library
-- The top 1% of tracks account for 12% of all plays
-- The top 5% of tracks account for 34% of all plays
-- The top 10% of tracks account for 51% of all plays
-- 10363 tracks (36%) have never been played
+- 98314 total plays across the library
+- The top 1% of tracks account for 11% of all plays
+- The top 5% of tracks account for 32% of all plays
+- The top 10% of tracks account for 48% of all plays
+- 7201 tracks (28%) have never been played
 
 ## Library Growth
 Tracks added to my library by year.
@@ -175,7 +175,7 @@ Tracks added to my library by year.
 | 2023 | 3895 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:114px"></span> |
 | 2024 | 4114 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:120px"></span> |
 | 2025 | 2245 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:65px"></span> |
-| 2026 | 1176 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:34px"></span> |
+| 2026 | 1177 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:34px"></span> |
 
 ## Taste Drift
 The top genres of the tracks I added each year.
@@ -195,7 +195,7 @@ The top genres of the tracks I added each year.
 | 2023 | Electronic (854) · Alternative (735) · Dance (528) |
 | 2024 | Electronic (811) · Alternative (709) · Dance (658) |
 | 2025 | Electronic (596) · Alternative (472) · Dance (421) |
-| 2026 | Dance (462) · Electronic (304) · Alternative (73) |
+| 2026 | Dance (462) · Electronic (304) · Alternative (74) |
 
 ## Library by Release Decade
 When the music in my library was originally released.
@@ -205,15 +205,15 @@ When the music in my library was originally released.
 | 1910s | 2 | 0 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:2px"></span> |
 | 1920s | 3 | 0 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:2px"></span> |
 | 1930s | 1 | 0 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:2px"></span> |
-| 1940s | 12 | 16 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:2px"></span> |
-| 1950s | 315 | 1081 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:3px"></span> |
-| 1960s | 825 | 1352 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:7px"></span> |
-| 1970s | 776 | 1114 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:7px"></span> |
-| 1980s | 723 | 1672 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:6px"></span> |
-| 1990s | 1408 | 1866 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:12px"></span> |
-| 2000s | 2922 | 8607 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:25px"></span> |
-| 2010s | 7699 | 40093 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:67px"></span> |
-| 2020s | 13846 | 41326 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:120px"></span> |
+| 1940s | 8 | 16 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:2px"></span> |
+| 1950s | 293 | 1081 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:3px"></span> |
+| 1960s | 669 | 1352 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:7px"></span> |
+| 1970s | 658 | 1114 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:6px"></span> |
+| 1980s | 664 | 1672 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:7px"></span> |
+| 1990s | 1164 | 1866 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:11px"></span> |
+| 2000s | 2616 | 8607 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:26px"></span> |
+| 2010s | 7124 | 40094 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:70px"></span> |
+| 2020s | 12196 | 41344 | <span style="display:inline-block;background:var(--c-link);height:0.75em;width:120px"></span> |
 
 ## One-Hit Wonders
 Artists where a single track soaks up most of my plays (min. 5 tracks and 100 plays).
@@ -238,18 +238,18 @@ Whether I play an album front-to-back or cherry-pick tracks, measured by how eve
 
 | Artist | Album | Album Plays |
 | ------ | ----- | ----------- |
-| FKJ & ((( O ))) | Ylang Ylang EP | 45 |
-| Staatsorchester Stuttgart & Dennis Russell Davies | Arvo Pärt: Tabula Rasa | 50 |
+| ford. | Intermission Broadcast (DJ Mix) | 126 |
+| Gidon Kremer, Keith Jarrett & The 12 Cellists of the Berlin Philharmonic Orchestra | Arvo Pärt: Tabula Rasa | 50 |
+| FKJ | Ylang Ylang EP | 45 |
 | Best Coast | Make You Mine - EP | 53 |
 | Toro y Moi | Soul Trash | 268 |
-| Beirut | Lon Gisland - EP | 41 |
 
 ### Cherry-Picked
 
 | Artist | Album | Album Plays |
 | ------ | ----- | ----------- |
 | Boardwalk | Boardwalk | 84 |
+| Philip Glass | Solo Piano | 72 |
 | Moderat | Moderat (Deluxe Version) | 118 |
-| Jamie xx | In Colour | 168 |
 | Childish Gambino | Because the Internet | 136 |
-| Devendra Banhart | Smokey Rolls Down Thunder Canyon | 100 |
+| Jamie xx | In Colour | 168 |
