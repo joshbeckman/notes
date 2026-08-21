@@ -2,6 +2,7 @@
 layout: Page
 title: Talks
 image: "/assets/images/talks.jpeg"
+searchable: true
 tags:
 - communication
 - index
