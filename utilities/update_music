@@ -6,7 +6,12 @@ require './utilities/apple_music_library_parser'
 LIBRARY_FILE = 'Library.xml'
 parser = AppleMusicLibraryParser.new(LIBRARY_FILE)
 
-file = File.open('blog/listening/index.md', 'w')
+PAGE_PATH = 'blog/listening/index.md'
+# The serial number is assigned by utilities/serialize after the fact, so a
+# regeneration must carry it forward or it would be silently dropped.
+serial_number = File.read(PAGE_PATH)[/^serial_number: .+$/] if File.exist?(PAGE_PATH)
+
+file = File.open(PAGE_PATH, 'w')
 file.puts '---'
 file.puts 'layout: Page'
 file.puts 'title: Music Listening'
@@ -20,6 +25,7 @@ file.puts '- music'
 file.puts '- index'
 file.puts 'redirect_from:'
 file.puts '- /music'
+file.puts serial_number if serial_number
 file.puts '---'
 file.puts <<~LIQUID
   Albums that moved me enough to write about them.

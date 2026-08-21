@@ -2,7 +2,7 @@
 layout: Page
 title: Music Listening
 toc: true
-emoji: "\U0001F3B6"
+emoji: 🎶
 searchable: true
 categories:
 - blog
@@ -10,7 +10,7 @@ tags:
 - music
 - index
 redirect_from:
-- "/music"
+- /music
 serial_number: 2024.PAE.009
 ---
 Albums that moved me enough to write about them.
@@ -34,38 +34,39 @@ Albums that moved me enough to write about them.
 ## Listening Stats
 I generate this page from my Apple Music library using [a script I wrote](/blog/pulling-fun-insights-out-of-my-apple-music-library). Feel free to use it, too!
 
-Last updated: 2026-07-06
+Last updated: 2026-08-20
 
 ## Recently Played Albums
 This is a list of the albums I've played recently.
 
 | Art | Artist | Album |
 | --- | ------ | ----- |
-| ![Anish Kumar - AK Cuts: Vol. 3 - EP](/assets/images/album_art/anishkumar-akcutsvol3ep.jpg) | Anish Kumar | AK Cuts: Vol. 3 - EP |
-| ![Slayyyter - WOR$T GIRL IN AMERICA](/assets/images/album_art/slayyyter-wortgirlinamerica.jpg) | Slayyyter | WOR$T GIRL IN AMERICA |
-| ![Gold Panda - TON  UP](/assets/images/album_art/goldpanda-tonup.jpg) | Gold Panda | TON  UP |
-| ![DJ Plead - Relentless Trills](/assets/images/album_art/djplead-relentlesstrills.jpg) | DJ Plead | Relentless Trills |
-| ![Metronomy - The English Riviera](/assets/images/album_art/metronomy-theenglishriviera.jpg) | Metronomy | The English Riviera |
-| ![LinLin - DISCO INFERNO](/assets/images/album_art/linlin-discoinferno.jpg) | LinLin | DISCO INFERNO |
+| ![Jungle - Sunshine](/assets/images/album_art/jungle-sunshine.jpg) | Jungle | Sunshine |
 |  | KAYTRANADA | Sunshine Stereo 4.0 World Cup Edition (DJ Mix) |
-| ![Talking Heads - The Best of Talking Heads (Remastered)](/assets/images/album_art/talkingheads-thebestoftalkingheadsremastered.jpg) | Talking Heads | The Best of Talking Heads (Remastered) |
 | ![Major Lazer - Get Free (feat. Amber Coffman) - Single](/assets/images/album_art/majorlazer-getfreefeatambercoffmansingle.jpg) | Major Lazer | Get Free (feat. Amber Coffman) - Single |
+|  | Avus | Balance 005 (Mixed by James Holden) [Mixed Version] |
+| ![Barry Can't Swim - Loner](/assets/images/album_art/barrycantswim-loner.jpg) | Barry Can't Swim | Loner |
+| ![Rival Consoles - Landscape from Memory](/assets/images/album_art/rivalconsoles-landscapefrommemory.jpg) | Rival Consoles | Landscape from Memory |
+| ![ex_libris - ex_libris 002 (feat. A Made Up Sound) - EP](/assets/images/album_art/exlibris-exlibris002featamadeupsoundep.jpg) | ex_libris | ex_libris 002 (feat. A Made Up Sound) - EP |
+|  | LonewOlf | Four Tet Live at Glastonbury Festival 2025 |
+| ![Jungle - For Ever](/assets/images/album_art/jungle-forever.jpg) | Jungle | For Ever |
+| ![Gelli Haha - Switcheroo](/assets/images/album_art/gellihaha-switcheroo.jpg) | Gelli Haha | Switcheroo |
 
 ## Recently Loved Albums
 This is a list of the albums I've loved recently.
 
 | Art | Artist | Album |
 | ------ | ----- | --------- |
+| ![Vince Staples - FM!](/assets/images/album_art/vincestaples-fm.jpg) | Vince Staples | FM! |
+| ![Jungle - Sunshine](/assets/images/album_art/jungle-sunshine.jpg) | Jungle | Sunshine |
+| ![Dux Content - Lifestyle](/assets/images/album_art/duxcontent-lifestyle.jpg) | Dux Content | Lifestyle |
+| ![Vince Staples - Cry Baby](/assets/images/album_art/vincestaples-crybaby.jpg) | Vince Staples | Cry Baby |
 | ![Gold Panda - TON  UP](/assets/images/album_art/goldpanda-tonup.jpg) | Gold Panda | TON  UP |
+| ![LinLin - DISCO INFERNO](/assets/images/album_art/linlin-discoinferno.jpg) | LinLin | DISCO INFERNO |
 | ![Slayyyter - WOR$T GIRL IN AMERICA](/assets/images/album_art/slayyyter-wortgirlinamerica.jpg) | Slayyyter | WOR$T GIRL IN AMERICA |
-|  | Hannah Montana | Pride 2025 (DJ Mix) |
-|  | Skrillex & Nitepunk | SOMA |
+|  | SOPHIE | Pride 2025 (DJ Mix) |
+| ![Skrillex & rom - SOMA](/assets/images/album_art/skrillexrom-soma.jpg) | Skrillex & rom | SOMA |
 | ![Air Credits - Breathe Well+](/assets/images/album_art/aircredits-breathewell.jpg) | Air Credits | Breathe Well+ |
-| ![Nine Inch Nails & Boys Noize - Nine Inch Noize](/assets/images/album_art/nineinchnailsboysnoize-nineinchnoize.jpg) | Nine Inch Nails & Boys Noize | Nine Inch Noize |
-| ![Paul Simon - The Essential Paul Simon](/assets/images/album_art/paulsimon-theessentialpaulsimon.jpg) | Paul Simon | The Essential Paul Simon |
-| ![Olof Dreijer - Loud Bloom](/assets/images/album_art/olofdreijer-loudbloom.jpg) | Olof Dreijer | Loud Bloom |
-| ![bassvictim - Forever](/assets/images/album_art/bassvictim-forever.jpg) | bassvictim | Forever |
-|  | GRiZ & Levity | Pop Off - Single |
 
 ## Top Played Tracks
 This is a list of the top played tracks in my library.
@@ -75,13 +76,13 @@ This is a list of the top played tracks in my library.
 | Duster | ![Duster - Stratosphere](/assets/images/album_art/duster-stratosphere.jpg) | Gold Dust | 94 | 3h 17m 17s |
 | Peter Broderick | ![Peter Broderick - How They Are](/assets/images/album_art/peterbroderick-howtheyare.jpg) | Pulling the Rain | 92 | 8h 23m 21s |
 | Still Woozy | ![Still Woozy - Lucy (feat. Odie) - Single](/assets/images/album_art/stillwoozy-lucyfeatodiesingle.jpg) | Lucy (feat. Odie) | 90 | 3h 33m 45s |
-| Sufjan Stevens | ![Sufjan Stevens - Greetings from Michigan - The Great Lake State (Deluxe Version)](/assets/images/album_art/sufjanstevens-greetingsfrommichiganthegreatlakestatedeluxeversion.jpg) | Redford (For Yia-Yia and Pappou) | 87 | 2h 56m 54s |
 | Jamie xx | ![Jamie xx - In Colour](/assets/images/album_art/jamiexx-incolour.jpg) | Gosh | 87 | 7h 1m 54s |
+| Sufjan Stevens | ![Sufjan Stevens - Greetings from Michigan - The Great Lake State (Deluxe Version)](/assets/images/album_art/sufjanstevens-greetingsfrommichiganthegreatlakestatedeluxeversion.jpg) | Redford (For Yia-Yia and Pappou) | 87 | 2h 56m 54s |
 | Reptile Youth | ![Reptile Youth - Away - EP](/assets/images/album_art/reptileyouth-awayep.jpg) | Arab Spring Break, Pt. 2 | 86 | 7h 22m 48s |
 | Peter Broderick | ![Peter Broderick - Partners](/assets/images/album_art/peterbroderick-partners.jpg) | In a Landscape | 82 | 14h 15m 12s |
 | Sylvan Esso | ![Sylvan Esso - Sylvan Esso](/assets/images/album_art/sylvanesso-sylvanesso.jpg) | Come Down | 82 | 4h 1m 59s |
 |  | ![ - Her OST](/assets/images/album_art/-herost.jpg) | Song On The Beach | 78 | 4h 36m 29s |
-|  | ![ - Her OST](/assets/images/album_art/-herost.jpg) | Photograph | 76 | 3h 8m 48s |
+| Peter Broderick | ![Peter Broderick - How They Are](/assets/images/album_art/peterbroderick-howtheyare.jpg) | Guilt's Tune | 76 | 5h 39m 3s |
 
 ## Top Played Albums
 This is a list of the top played albums in my library (by ratio of song plays to songs in the album).
@@ -90,7 +91,7 @@ This is a list of the top played albums in my library (by ratio of song plays to
 | --- | ------ | ----- | --------------- | --------- |
 | ![Shane Carruth - Upstream Color (Original Motion Picture Score)](/assets/images/album_art/shanecarruth-upstreamcolororiginalmotionpicturescore.jpg) | Shane Carruth | Upstream Color (Original Motion Picture Score) | 51 | 765 |
 | ![Peter Broderick - Partners](/assets/images/album_art/peterbroderick-partners.jpg) | Peter Broderick | Partners | 40 | 319 |
-| ![Ahmad Jamal Trio - Ahmad Jamal At The Pershing: But Not for Me](/assets/images/album_art/ahmadjamaltrio-ahmadjamalatthepershingbutnotforme.jpg) | Ahmad Jamal Trio | Ahmad Jamal At The Pershing: But Not for Me | 38 | 304 |
+| ![Ahmad Jamal Trio - Ahmad Jamal At The Pershing: But Not for Me](/assets/images/album_art/ahmadjamaltrio-ahmadjamalatthepershingbutnotforme.jpg) | Ahmad Jamal Trio | Ahmad Jamal At The Pershing: But Not for Me | 39 | 311 |
 | ![Peter Broderick - How They Are](/assets/images/album_art/peterbroderick-howtheyare.jpg) | Peter Broderick | How They Are | 37 | 259 |
 | ![Sylvan Esso - Sylvan Esso](/assets/images/album_art/sylvanesso-sylvanesso.jpg) | Sylvan Esso | Sylvan Esso | 37 | 365 |
 | ![Daniel Caesar - Freudian](/assets/images/album_art/danielcaesar-freudian.jpg) | Daniel Caesar | Freudian | 36 | 364 |
@@ -104,14 +105,14 @@ This is a list of the top played artists in my library (by song plays).
 
 | Artist | Song Play Count | Song Play Ratio |
 | ------ | -------------- | --------------- |
-| Four Tet | 1186 | 9 |
+| Four Tet | 1186 | 10 |
 | Oddisee | 1083 | 8 |
-| KAYTRANADA | 964 | 13 |
+| KAYTRANADA | 983 | 13 |
 | Peter Broderick | 930 | 33 |
 | Sylvan Esso | 896 | 13 |
-| Caribou | 890 | 9 |
+| Caribou | 891 | 9 |
 | Nils Frahm | 860 | 8 |
-| Jungle | 789 | 13 |
+| Jungle | 830 | 12 |
 | José González | 773 | 10 |
 | Shane Carruth | 765 | 51 |
 
@@ -120,13 +121,13 @@ This is a list of the top genres my library (by track count).
 
 | Genre | Track Count | Song Play Count | Total Time |
 | ------ | ---------- | -------------- | --------------- |
-| Electronic | 5397 | 21900 | 422h 52m 31s |
-| Alternative | 4894 | 19616 | 308h 10m 16s |
-| Dance | 3867 | 10701 | 243h 0m 3s |
-| Hip-Hop/Rap | 2775 | 7985 | 150h 28m 47s |
-| Rock | 1690 | 4165 | 116h 15m 38s |
-| Pop | 1393 | 4804 | 90h 26m 26s |
-| Soundtrack | 1074 | 3509 | 56h 19m 53s |
-| R&B/Soul | 1001 | 3203 | 60h 50m 29s |
-| Classical | 881 | 2877 | 63h 33m 9s |
-| Jazz | 870 | 3630 | 82h 57m 27s |
+| Electronic | 5489 | 22087 | 426h 50m 23s |
+| Alternative | 4856 | 19645 | 305h 20m 58s |
+| Dance | 3965 | 11045 | 248h 59m 53s |
+| Hip-Hop/Rap | 2758 | 8117 | 150h 9m 15s |
+| Rock | 1701 | 4166 | 117h 0m 11s |
+| Pop | 1403 | 4825 | 90h 52m 17s |
+| Soundtrack | 1074 | 3510 | 56h 19m 53s |
+| R&B/Soul | 1006 | 3201 | 61h 9m 51s |
+| Classical | 881 | 2937 | 63h 33m 9s |
+| Jazz | 870 | 3637 | 82h 50m 33s |

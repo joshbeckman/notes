@@ -61,17 +61,15 @@ Visitors see a passphrase prompt when viewing encrypted pages. By default, passp
 
 ### Music Listening Stats
 
-The [Music Listening page](https://www.joshbeckman.org/music) is generated from an Apple Music library export. The `export_and_update_music` script automates the full pipeline: it uses macOS GUI scripting to trigger Music.app's File > Library > Export Library, waits for the XML export to complete, then runs the parser to regenerate the page.
+The [Music Listening page](https://www.joshbeckman.org/music) is generated from an Apple Music library export. The `export_and_update_music` script automates the full pipeline: it reads the library directly via the `iTunesLibrary` framework (`utilities/export_music_library.swift`), writes a `Library.xml`-compatible plist, then runs the parser to regenerate the page.
 
 ```sh
 ./utilities/export_and_update_music
 ```
 
 **Requirements:**
-- Accessibility permissions (System Settings > Privacy & Security > Accessibility):
-  - Your terminal app (for running manually)
-  - `/usr/bin/env` (for the launchd agent)
-- A logged-in GUI session (the script uses System Events to drive the Music app UI)
+- Media & Apple Music permission (System Settings > Privacy & Security > Media & Apple Music) for the invoking process (terminal app, or the launchd agent's interpreter)
+- Xcode Command Line Tools (the export script is compiled on the fly with `swift`)
 
 A `launchd` agent (`org.joshbeckman.export-music`) runs this weekly. Logs are written to `/tmp/export-music.log`.
 
