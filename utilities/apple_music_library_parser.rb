@@ -97,8 +97,19 @@ class AppleMusicLibraryParser
     end.sort_by { |a| a.play_date_utc || DateTime.new }.reverse.take(limit)
   end
 
+  # Favoriting from the Apple Music catalog can create a second, zero-play
+  # media item for a track already in the library, and plays on other devices
+  # don't reliably sync a local play count. Deduping by artist+name (keeping
+  # the most-played copy) and requiring a real play date keeps both kinds of
+  # phantom "never played" rows out of the list.
   def forgotten_loved_tracks(limit: 10)
-    loved_tracks.sort_by { |t| t.play_date_utc || DateTime.new }.take(limit)
+    loved_keys = loved_tracks.map { |t| [t.artist, t.name] }.uniq
+    @tracks.group_by { |t| [t.artist, t.name] }
+           .values_at(*loved_keys)
+           .map { |dupes| dupes.max_by { |t| t.play_count || 0 } }
+           .select { |t| t.play_date_utc && (t.play_count || 0).positive? }
+           .sort_by(&:play_date_utc)
+           .take(limit)
   end
 
   def tracks_added_by_year

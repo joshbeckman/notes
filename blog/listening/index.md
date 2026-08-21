@@ -73,16 +73,16 @@ Loved tracks I haven't played in the longest time.
 
 | Artist | Track | Last Played |
 | ------ | ----- | ----------- |
-| Vince Staples | Outside! | never |
-| Tame Impala | End Of Summer | never |
-| Vince Staples | Don't Get Chipped | never |
-| Angine de Poitrine | Utzp | never |
-| Vince Staples | FUN! | never |
-| SBTRKT | BACK ON | never |
-| Bleachers | Tiny Moves | never |
-| RY X & Ólafur Arnalds | Oceans | never |
-| Underworld | Two Months Off (Mixed) | never |
-| Dux Content | Business Class | never |
+| Romare | Down the Line (It Takes a Number) | 2016-01-27 |
+| Misun | Promise Me (The Hood Internet Remix) | 2016-02-15 |
+| Scarlett Johansson & Joaquin Phoenix | The Moon Song (Film Version) | 2016-02-24 |
+| SBTRKT | Higher | 2016-02-27 |
+| SBTRKT & Sampha | Trials of the Past | 2016-02-27 |
+| Radiohead | The Daily Mail | 2016-03-03 |
+| Dave Matthews & Tim Reynolds | Two Step (Live) | 2016-03-07 |
+| Devendra Banhart | Rosa | 2016-04-28 |
+| Active Child | Hanging On | 2016-05-20 |
+| Duke Ellington | Little African Flower | 2016-06-06 |
 
 ## Top Played Tracks
 This is a list of the top played tracks in my library.
