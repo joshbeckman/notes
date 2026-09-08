@@ -8,7 +8,7 @@ description:
 rating: 4
 tmdb_id: '1240889'
 letterboxd_id: teenage-sex-and-death-at-camp-miasma
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/117236075465690756
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/teenage-sex-and-death-at-camp-miasma/
 tags:
