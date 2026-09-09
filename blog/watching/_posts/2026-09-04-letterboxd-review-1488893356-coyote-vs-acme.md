@@ -9,7 +9,7 @@ rating: 4
 tmdb_id: '1204680'
 letterboxd_id: coyote-vs-acme
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/117241735039824364
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mv3tcoom7f2r
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/coyote-vs-acme/
 tags:
 - movies
