@@ -16,6 +16,6 @@ tags:
 - entertainment
 - art
 - letterboxd
+serial_number: 2026.BLG.083
 ---
-
  <p><img src="https://a.ltrbxd.com/resized/film-poster/1/0/8/9/0/8/8/1089088-coyote-vs-acme-0-600-0-900-crop.jpg?v=735eb10cc7"/></p> <p>I think Will Forte really sold the story well. That and the puppy-dog eyes of Wile E. Coyote had the audience bought in on every turn. </p><p>Slapstick humor can be such a high art!</p> 
