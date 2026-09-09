@@ -8,7 +8,7 @@ description:
 rating: 3
 tmdb_id: '1184941'
 letterboxd_id: blue-heron
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/117241735068862823
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/blue-heron/
 tags:
