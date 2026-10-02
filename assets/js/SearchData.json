@@ -38,10 +38,12 @@ permalink: /assets/js/SearchData.json
   {% endif %}
   {% endfor %}
   {%- for post in site.posts -%}
+    {%- capture post_meta -%}{%- include PostMeta.html post=post -%}{%- endcapture -%}
     "{{ i }}": {
        "doc":  {{ post.title | escape | jsonify }},
        "title": {{ post.title | jsonify }},
        "content": {{ post.raw_content | jsonify }},
+       "meta": {{ post_meta | strip_html | normalize_whitespace | jsonify }},
        "tags": {{ post.tags | join: " " | jsonify }},
        "date": "{{ post.date | date_to_xmlschema }}",
        "book": {{ post.book | jsonify }},

@@ -1,0 +1,20 @@
+{%- comment -%}
+Renders the metadata blocks a post displays (rating, source, exercise stats,
+weather) for any post passed in — not just the page being rendered.
+
+Every metadata include reads the ambient `page`, so shadowing it here is what
+lets the feed and the search index reuse the exact same markup the layouts use,
+instead of a second copy that would drift. `assign` is scoped to this include,
+so the caller's `page` is untouched.
+
+ExerciseMeta has no guard of its own (the Exercise layout only ever calls it for
+exercise posts), so it needs one here or every other post gets an empty table.
+{%- endcomment -%}
+{%- assign page = include.post | default: page -%}
+{%- include BookMeta.html -%}
+{%- include ReviewMeta.html -%}
+{%- include InReplyTo.html -%}
+{%- if page.exercise_data -%}
+{%- include ExerciseMeta.html -%}
+{%- include WeatherMeta.html -%}
+{%- endif -%}
