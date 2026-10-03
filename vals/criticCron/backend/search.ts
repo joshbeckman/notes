@@ -15,6 +15,10 @@ export type Post = {
   author_id?: string;
   book?: number | string;
   image?: string;
+  // Rating, exercise stats, and weather as the post page displays them. Absent
+  // on posts with none, and absent entirely from indexes built before the site
+  // shipped it, so every read has to tolerate undefined.
+  meta?: string;
 };
 
 let _searchData: Record<string, Post> | null = null;
@@ -98,6 +102,10 @@ export function formatPost(post: Post, maxContent = 1000): string {
     `- tags: ${(post.tags || "").split(" ").join(", ")}`,
     `- date: ${post.date}`,
     `- category: ${extractCategory(post)}`,
+    // The rating and workout stats a reader sees; the body alone doesn't carry
+    // them, so a critique of a review or an exercise log was judging a post
+    // without its most explicit claims.
+    post.meta ? `- meta: ${post.meta}` : null,
     post.backlinks?.length ? `- backlinks: ${post.backlinks.map((b) => SITE_URL + b).join(", ")}` : null,
   ]
     .filter(Boolean)

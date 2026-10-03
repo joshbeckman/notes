@@ -18,6 +18,10 @@ type Post = {
   date: string;
   doc: string;
   image: string;
+  // Rating, exercise stats, and weather as the post page displays them. Absent
+  // on posts with none, and absent entirely from indexes built before the site
+  // shipped it, so every read has to tolerate undefined.
+  meta?: string;
   tags: string;
   title: string;
   type: string;
@@ -58,6 +62,7 @@ function search(input: string, index: lunr.Index, searchData: Record<string, Pos
     return {
       title: item.title,
       content: item.content,
+      meta: item.meta,
       type: item.type,
       url: item.url.startsWith("http") ? item.url : SITE_URL + item.url,
       book: item.book,
@@ -81,6 +86,7 @@ function formatPage(page: Post) {
         page.content,
         "",
         "metadata:",
+        (page.meta ? `- meta: ${page.meta}` : null),
         `- date: ${page.date}`,
         `- tags: ${(page.tags || "").split(" ").join(", ")}`,
         `- author_id: ${page.author_id}`,
@@ -300,7 +306,8 @@ Metadata:
 - backklinks: a comma-separated set of post URLs that link to this post, if any.
 - image: the URL of the feature image associated with the post, if any.
 - relevance: a score indicating how relevant the post is to the search query, defaults to 1 if not present.
-- category: available categories are: blog, notes, exercise, replies, and page.`,
+- category: available categories are: blog, notes, exercise, replies, and page.
+- meta: the post's displayed metadata (a star rating, exercise stats, weather), when it has any.`,
       {
         query: z.string().optional(), 
         limit: z.number().min(1, "value must be at least 1").max(10, "value must be at most 10").default(3).optional(),
