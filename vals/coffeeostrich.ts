@@ -7,6 +7,8 @@ const openai = new OpenAI();
 type Post = {
   title: string;
   content: string;
+  // Rating, exercise stats, and weather as the post page displays them.
+  meta?: string;
   url: string;
 };
 
@@ -58,7 +60,7 @@ function buildContext(topic: string, index, searchData): string {
     .filter(postFilter);
   return posts
     .slice(0, 5)
-    .map((result) => `[${result.title}](${result.url}): ${result.content}`)
+    .map((result) => [`[${result.title}](${result.url}): ${result.content}`, result.meta].filter(Boolean).join("\n\n"))
     .join("\n\n");
 }
 

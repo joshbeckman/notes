@@ -21,6 +21,8 @@ type Post = {
   author_id?: string;
   book?: number | string;
   image?: string;
+  // Rating, exercise stats, and weather as the post page displays them.
+  meta?: string;
 };
 
 const tools: Anthropic.Messages.Tool[] = [
@@ -152,6 +154,7 @@ function formatPost(post: Post): string {
     `- tags: ${(post.tags || "").split(" ").join(", ")}`,
     `- date: ${post.date}`,
     `- category: ${extractCategory(post)}`,
+    post.meta ? `- meta: ${post.meta}` : null,
     post.backlinks?.length ? `- backlinks: ${post.backlinks.map((b) => SITE_URL + b).join(", ")}` : null,
   ]
     .filter(Boolean)

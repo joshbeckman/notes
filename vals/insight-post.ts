@@ -8,6 +8,8 @@ type Post = {
   doc: string;
   title: string;
   content: string;
+  // Rating, exercise stats, and weather as the post page displays them.
+  meta?: string;
   tags: string;
   url: string;
   type: string;
@@ -133,7 +135,7 @@ function buildContext(topic: string, index, searchData, post: Post): string {
     .filter((result) => result.url !== post.url);
   return posts
     .slice(0, 10)
-    .map((result) => `# [${result.title}](${result.url})\n\n${result.content}`)
+    .map((result) => [`# [${result.title}](${result.url})`, result.content, result.meta].filter(Boolean).join("\n\n"))
     .join("\n\n");
 }
 

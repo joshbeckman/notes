@@ -9,6 +9,8 @@ const model = "claude-3-5-sonnet-20240620";
 type Entry = {
   title: string;
   content: string;
+  // Rating, exercise stats, and weather as the post page displays them.
+  meta?: string;
   date: string;
   type: string;
   url: string;
@@ -122,11 +124,11 @@ async function summarizeTopic(topic: string, post: Entry, search): Promise<strin
   }
 
   const research = related.slice(0, maxRelated).map((result) => {
-    return [`# [${result.title}](${result.url})`, `${result.content}`].join("\n\n");
+    return [`# [${result.title}](${result.url})`, `${result.content}`, result.meta].filter(Boolean).join("\n\n");
   }).join("\n\n");
   const context = [
     `I did a bunch of previous research and found these posts related to "${topic}":\n\n${research}`,
-    `Now I found this new post:\n\n# [${post.title}](${post.url})\n\n${post.content}`,
+    `Now I found this new post:\n\n# [${post.title}](${post.url})\n\n${[post.content, post.meta].filter(Boolean).join("\n\n")}`,
   ].join("\n\n");
   const question =
     `How does this post complement the related posts? How does it contrast?`;
@@ -157,11 +159,11 @@ async function summarizeTag(tag: string, post: Entry, search): Promise<string> {
   }
 
   const research = related.slice(0, maxRelated).map((result) => {
-    return [`# [${result.title}](${result.url})`, `${result.content}`].join("\n\n");
+    return [`# [${result.title}](${result.url})`, `${result.content}`, result.meta].filter(Boolean).join("\n\n");
   }).join("\n\n");
   const context = [
     `I did a bunch of previous research and found these posts tagged with "${tag}":\n\n${research}`,
-    `Now I found this new post:\n\n# [${post.title}](${post.url})\n\n${post.content}`,
+    `Now I found this new post:\n\n# [${post.title}](${post.url})\n\n${[post.content, post.meta].filter(Boolean).join("\n\n")}`,
   ].join("\n\n");
   const question =
     `How is this post different from the related posts? How is it similar? What insights can you provide?`;

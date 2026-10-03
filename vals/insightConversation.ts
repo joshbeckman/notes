@@ -12,6 +12,8 @@ type Message = {
 type Post = {
   title: string;
   content: string;
+  // Rating, exercise stats, and weather as the post page displays them.
+  meta?: string;
   url: string;
 };
 
@@ -70,7 +72,7 @@ function buildContext(topic: string, index, searchData): string {
   return search(topic, index, searchData)
     .filter(postFilter)
     .slice(0, 3)
-    .map((result) => `[${result.title}](${result.url}): ${result.content}`)
+    .map((result) => [`[${result.title}](${result.url}): ${result.content}`, result.meta].filter(Boolean).join("\n\n"))
     .join("\n\n");
 }
 
