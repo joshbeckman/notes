@@ -137,6 +137,7 @@ function search(input: string, index, searchData) {
     return {
       title: item.title,
       content: item.content,
+      meta: item.meta,
       url: "https://www.joshbeckman.org" + item.url,
       score: result.score,
       match: result.matchData.metadata,
