@@ -1,11 +1,10 @@
 console.log(`${new Date().toISOString()} Interpreting`);
 import { Hono } from 'npm:hono';
 import { toFetchResponse, toReqRes } from "npm:fetch-to-node";
-import { z } from "npm:zod@3.25.75";
+import { z } from "npm:zod";
 import lunr from "https://cdn.skypack.dev/lunr";
 import { StreamableHTTPServerTransport } from "npm:@modelcontextprotocol/sdk/server/streamableHttp.js";
 import { McpServer, ResourceTemplate } from "npm:@modelcontextprotocol/sdk/server/mcp.js";
-// import { AuthInfo } from "npm:@modelcontextprotocol/sdk/server/auth/types.js";
 console.log(`${new Date().toISOString()} Loaded libraries`);
 
 const SITE_URL = "https://www.joshbeckman.org";
@@ -86,11 +85,11 @@ function formatPage(page: Post) {
         page.content,
         "",
         "metadata:",
-        (page.meta ? `- meta: ${page.meta}` : null),
         `- date: ${page.date}`,
         `- tags: ${(page.tags || "").split(" ").join(", ")}`,
         `- author_id: ${page.author_id}`,
         `- category: ${page.category}`,
+        (page.meta ? `- meta: ${page.meta}` : null),
         (page.backlinks?.length > 0 ? `- backlinks: ${page.backlinks.map((b) => SITE_URL + b).join(", ")}` : null),
         (page.sequences?.length > 0 ? `- sequences: ${page.sequences.map(seq => `[Sequence ${seq.id} on ${seq.topic}](${SITE_URL}/sequences#${seq.id})`).join(", ")}` : null),
         (page.book ? `- book_id: ${page.book}` : null),
@@ -134,16 +133,24 @@ async function setupMcpServer(): Promise<McpServer> {
   // Create a new MCP server
   const server = new McpServer({
     name: "joshbeckman.org Content",
-    version: "1.2.0",
+    version: "1.3.0",
     description: "MCP server that provides access to the posts and data on the website joshbeckman.org. It includes tools for searching and reading posts, getting proverbs, and more. Use it to access the published work, thoughts, and data of Josh Beckman.",
-  },
-  { capabilities: { logging: {} } });
+  });
 
   try {
-    server.tool(
+    server.registerTool(
         "get_proverbs",
-        "Retrieve Josh's favorite proverbs. Proverbs are short, pithy sayings that express a general truth or piece of advice that Josh holds dear. They serve as anchors for decisions and hold value. There are dozens of proverbs.",
-        { limit: z.number().optional() },
+        {
+            description: "Retrieve Josh's favorite proverbs. Proverbs are short, pithy sayings that express a general truth or piece of advice that Josh holds dear. They serve as anchors for decisions and hold value. There are dozens of proverbs.",
+            inputSchema: { limit: z.number().optional() },
+            annotations: {
+                title: "Get Proverbs",
+                readOnlyHint: true,
+                destructiveHint: false,
+                idempotentHint: false,
+                openWorldHint: false,
+            },
+        },
         async ({ limit }) => {
             console.log(`${new Date().toISOString()} Fetching proverbs data`);
             const proverbs = await fetch("https://www.joshbeckman.org/assets/js/proverbs.json").then((res) => res.json());
@@ -157,15 +164,24 @@ async function setupMcpServer(): Promise<McpServer> {
             };
         }
     );
-    server.tool(
+    server.registerTool(
         "get_sequences",
-        "Retrieve post sequences from the site. Sequences are groups of related posts that link, one to the next, forming a chain of thought on a tag. There are dozens of sequences.",
-        { limit: z.number().optional(), tag: z.string() },
+        {
+            description: "Retrieve post sequences from the site. Sequences are groups of related posts that link, one to the next, forming a chain of thought on a tag. There are dozens of sequences.",
+            inputSchema: { limit: z.number().optional(), tag: z.string().optional() },
+            annotations: {
+                title: "Get Sequences",
+                readOnlyHint: true,
+                destructiveHint: false,
+                idempotentHint: true,
+                openWorldHint: false,
+            },
+        },
         async ({ limit, tag }) => {
             console.log(`${new Date().toISOString()} Fetching sequences data for tag: ${tag}`);
             const sequences = await fetch("https://www.joshbeckman.org/assets/js/sequences.json").then((res) => res.json());
             const results = sequences
-                .filter((seq: any) => seq.topic == tag)
+                .filter((seq: any) => seq.topic.toLowerCase().includes(tag ? tag.toLowerCase() : ""))
                 .slice(0, limit || 100);
             console.log(`${new Date().toISOString()} Sequences data fetched`);
             if (results.length == 0) {
@@ -181,10 +197,19 @@ async function setupMcpServer(): Promise<McpServer> {
             };
         }
     );
-    server.tool(
+    server.registerTool(
         "get_sequence",
-        "Retrieve a specific post sequence by its ID. Sequences are groups of related posts that link, one to the next, forming a chain of thought on a tag.",
-        { id: z.string() },
+        {
+            description: "Retrieve a specific post sequence by its ID. Sequences are groups of related posts that link, one to the next, forming a chain of thought on a tag.",
+            inputSchema: { id: z.string() },
+            annotations: {
+                title: "Get Sequence",
+                readOnlyHint: true,
+                destructiveHint: false,
+                idempotentHint: true,
+                openWorldHint: false,
+            },
+        },
         async ({ id }) => {
             console.log(`${new Date().toISOString()} Fetching sequence data for ID: ${id}`);
             const sequences = await fetch("https://www.joshbeckman.org/assets/js/sequences.json").then((res) => res.json());
@@ -201,10 +226,19 @@ async function setupMcpServer(): Promise<McpServer> {
             };
         }
     );
-    server.tool(
+    server.registerTool(
         "search_tags",
-        "Search for tags used on the site. Tags are used to categorize posts and can be used to find related content. There are hundreds of tags.",
-        { query: z.string(), limit: z.number().optional() },
+        {
+            description: "Search for tags used on the site. Tags are used to categorize posts and can be used to find related content. There are hundreds of tags.",
+            inputSchema: { query: z.string(), limit: z.number().optional() },
+            annotations: {
+                title: "Search Tags",
+                readOnlyHint: true,
+                destructiveHint: false,
+                idempotentHint: true,
+                openWorldHint: false,
+            },
+        },
         async ({ query, limit }) => {
             console.log(`${new Date().toISOString()} Fetching tags data for search`);
             const tags = await fetch("https://www.joshbeckman.org/assets/js/tags.json").then((res) => res.json());
@@ -228,10 +262,19 @@ async function setupMcpServer(): Promise<McpServer> {
             };
         }
     );
-    server.tool(
+    server.registerTool(
         "get_tag_urls",
-        "Get the URLs of provided tags. This tool takes a list of tag names and returns their corresponding URLs on the site, where a user can see posts with that tag. It's useful for sharing links to sets of posts sharing the same tag.",
-        { tags: z.array(z.string()) },
+        {
+            description: "Get the URLs of provided tags. This tool takes a list of tag names and returns their corresponding URLs on the site, where a user can see posts with that tag. It's useful for sharing links to sets of posts sharing the same tag.",
+            inputSchema: { tags: z.array(z.string()) },
+            annotations: {
+                title: "Get Tag URLs",
+                readOnlyHint: true,
+                destructiveHint: false,
+                idempotentHint: true,
+                openWorldHint: false,
+            },
+        },
         async ({ tags }) => {
             console.log(`${new Date().toISOString()} Fetching tags data`);
             const sourceTags = await fetch("https://www.joshbeckman.org/assets/js/tags.json")
@@ -252,10 +295,18 @@ async function setupMcpServer(): Promise<McpServer> {
             };
         }
     );
-    server.tool(
+    server.registerTool(
         "get_tags",
-        "Get a list of all tags used on the site. Tags are used to categorize posts and can be used to find related content.",
-        {},
+        {
+            description: "Get a list of all tags used on the site. Tags are used to categorize posts and can be used to find related content.",
+            annotations: {
+                title: "Get Tags",
+                readOnlyHint: true,
+                destructiveHint: false,
+                idempotentHint: true,
+                openWorldHint: false,
+            },
+        },
         async () => {
             console.log(`${new Date().toISOString()} Fetching tags data`);
             const tags = await fetch("https://www.joshbeckman.org/assets/js/tags.json")
@@ -269,10 +320,19 @@ async function setupMcpServer(): Promise<McpServer> {
             };
         }
     );
-    server.tool(
+    server.registerTool(
         "get_post",
-        "Get the full content and metadata of a specific post by its URL. This tool fetches the post data from the site and returns it in a structured format, including title, content, date, tags, author, and more.",
-        { url: z.string() },
+        {
+            description: "Get the full content and metadata of a specific post by its URL. This tool fetches the post data from the site and returns it in a structured format, including title, content, date, tags, author, and more.",
+            inputSchema: { url: z.string() },
+            annotations: {
+                title: "Get Post",
+                readOnlyHint: true,
+                destructiveHint: false,
+                idempotentHint: true,
+                openWorldHint: false,
+            },
+        },
         async ({ url }) => {
             console.log(`${new Date().toISOString()} Fetching post data for URL: ${url}`);
             const searchData = await fetch("https://www.joshbeckman.org/assets/js/SearchData.json").then((res) => res.json());
@@ -293,9 +353,10 @@ async function setupMcpServer(): Promise<McpServer> {
             };
         }
     );
-    server.tool(
+    server.registerTool(
       "search_posts",
-      `Search for posts on the site, filtering by various metadata and attributes. This tool allows you to search for posts by query, limit the number of results (default: 3), filter by tag, date range, author, book, and category. There are thousands of posts.
+      {
+        description: `Search for posts on the site, filtering by various metadata and attributes. This tool allows you to search for posts by query, limit the number of results (default: 3), filter by tag, date range, author, book, and category. There are thousands of posts.
 
 Metadata:
 - author_id: the ID assigned to the author of the post, defaults to "joshbeckman" if not present. Multiple posts can have the same author ID.
@@ -308,16 +369,24 @@ Metadata:
 - relevance: a score indicating how relevant the post is to the search query, defaults to 1 if not present.
 - category: available categories are: blog, notes, exercise, replies, and page.
 - meta: the post's displayed metadata (a star rating, exercise stats, weather), when it has any.`,
-      {
-        query: z.string().optional(), 
-        limit: z.number().min(1, "value must be at least 1").max(10, "value must be at most 10").default(3).optional(),
-        excludePostUrls: z.array(z.string()).optional(),
-        tag: z.string().optional(),
-        startDate: z.string().optional(),
-        endDate: z.string().optional(),
-        author_id: z.string().optional(),
-        book: z.string().optional(),
-        category: z.enum(["blog", "notes", "exercise", "replies", "page"]).optional()
+        inputSchema: {
+          query: z.string().optional(),
+          limit: z.number().min(1, "value must be at least 1").max(10, "value must be at most 10").default(3).optional(),
+          excludePostUrls: z.array(z.string()).optional(),
+          tag: z.string().optional(),
+          startDate: z.string().optional(),
+          endDate: z.string().optional(),
+          author_id: z.string().optional(),
+          book: z.string().optional(),
+          category: z.enum(["blog", "notes", "exercise", "replies", "page"]).optional()
+        },
+        annotations: {
+            title: "Search Posts",
+            readOnlyHint: true,
+            destructiveHint: false,
+            idempotentHint: true,
+            openWorldHint: false,
+        },
       },
       async ({ query, limit, excludePostUrls, tag, startDate, endDate, author_id, book, category }) => {
         console.log(`${new Date().toISOString()} loading search data`);
@@ -397,23 +466,91 @@ Metadata:
 const server = await setupMcpServer();
 const app = new Hono();
 
+// ---------- No-op OAuth flow for Claude.ai Custom Connectors ----------
+// Claude.ai requires the full OAuth discovery + registration flow to
+// complete even for public/authless MCP servers. These endpoints implement
+// a minimal passthrough OAuth that auto-approves everything.
+
+function baseUrl(reqUrl: string): string {
+  const u = new URL(reqUrl);
+  return `${u.protocol}//${u.host}`;
+}
+
+// RFC 9728 — Protected Resource Metadata
+app.get("/.well-known/oauth-protected-resource", (c) => {
+  const base = baseUrl(c.req.url);
+  return c.json({
+    resource: `${base}/mcp`,
+    authorization_servers: [base],
+  });
+});
+app.get("/.well-known/oauth-protected-resource/mcp", (c) => {
+  const base = baseUrl(c.req.url);
+  return c.json({
+    resource: `${base}/mcp`,
+    authorization_servers: [base],
+  });
+});
+
+// RFC 8414 — OAuth Authorization Server Metadata
+app.get("/.well-known/oauth-authorization-server", (c) => {
+  const base = baseUrl(c.req.url);
+  return c.json({
+    issuer: base,
+    authorization_endpoint: `${base}/authorize`,
+    token_endpoint: `${base}/token`,
+    registration_endpoint: `${base}/register`,
+    response_types_supported: ["code"],
+    grant_types_supported: ["authorization_code"],
+    token_endpoint_auth_methods_supported: ["none"],
+    code_challenge_methods_supported: ["S256"],
+  });
+});
+
+// RFC 7591 — Dynamic Client Registration
+app.post("/register", async (c) => {
+  const body = await c.req.json();
+  return c.json({
+    client_id: "public",
+    client_name: body.client_name || "MCP Client",
+    redirect_uris: body.redirect_uris || [],
+    grant_types: ["authorization_code"],
+    response_types: ["code"],
+    token_endpoint_auth_method: "none",
+  }, { status: 201 });
+});
+
+// OAuth authorize — redirect back immediately with a dummy code
+app.get("/authorize", (c) => {
+  const redirectUri = c.req.query("redirect_uri");
+  const state = c.req.query("state");
+  if (!redirectUri) {
+    return c.text("Missing redirect_uri", 400);
+  }
+  const url = new URL(redirectUri);
+  url.searchParams.set("code", "public-noop");
+  if (state) url.searchParams.set("state", state);
+  return c.redirect(url.toString(), 302);
+});
+
+// OAuth token — return a dummy bearer token
+app.post("/token", async (c) => {
+  return c.json({
+    access_token: "public",
+    token_type: "Bearer",
+    expires_in: 3600,
+  });
+});
+// ---------- End no-op OAuth flow ----------
+
 app.post("/mcp", async (c) => {
   const { req, res } = toReqRes(c.req.raw);
 
-  // Disabling auth for now
-  // if (!req.headers.authorization) {
-  //   return c.json(
-  //     {
-  //       jsonrpc: "2.0",
-  //       error: {
-  //         code: -32603,
-  //         message: "Authorization header is required",
-  //       },
-  //       id: null,
-  //     },
-  //     { status: 401 }
-  //   );
-  // }
+  // Claude.ai sends Accept: */* which the SDK rejects because it does a
+  // literal string check for "application/json" and "text/event-stream".
+  if (req.headers.accept?.includes("*/*")) {
+    req.headers.accept = "application/json, text/event-stream";
+  }
 
   try {
     const transport: StreamableHTTPServerTransport =
@@ -421,13 +558,14 @@ app.post("/mcp", async (c) => {
         sessionIdGenerator: undefined,
       });
 
-    // Added for extra debuggability
     transport.onerror = console.error.bind(console);
 
-    // Disabling auth for now
-    // req.auth = { token: req.headers["authorization"]?.split(" ")[1] } as AuthInfo;
-
     console.log(`${new Date().toISOString()} Received MCP request`);
+    // Pre-set the negotiated protocol version on the response so it
+    // survives the toFetchResponse conversion even if the transport
+    // doesn't set it for non-initialize requests.
+    res.setHeader("mcp-protocol-version", req.headers["mcp-protocol-version"] || "2025-06-18");
+
     await server.connect(transport);
     await transport.handleRequest(req, res, await c.req.json());
     console.log(`${new Date().toISOString()} MCP request handled`);
@@ -435,7 +573,6 @@ app.post("/mcp", async (c) => {
     res.on("close", () => {
       console.log(`${new Date().toISOString()} Request closed`);
       transport.close();
-      server.close();
     });
 
     return toFetchResponse(res);

@@ -77,8 +77,8 @@ async function generateInsight(post: Post, context: string): Promise<Array<Messa
   ];
   const completion = await openai.chat.completions.create({
     messages: messages,
-    model: "gpt-4o-mini",
-    max_tokens: 2000,
+    model: "gpt-5-mini",
+    max_completion_tokens: 2000,
   });
   return messages.concat([completion.choices[0].message]);
 }
@@ -97,8 +97,8 @@ async function selectKeywords(question: string): Promise<string> {
   ];
   const keywordsCompletion = await openai.chat.completions.create({
     messages: messages,
-    model: "gpt-4o-mini",
-    max_tokens: 30,
+    model: "gpt-5-mini",
+    max_completion_tokens: 30,
   });
   const keywords = keywordsCompletion.choices[0].message.content;
   return keywords;
@@ -122,8 +122,8 @@ async function suggestTags(content: string): Promise<Array<string>> {
   ];
   const keywordsCompletion = await openai.chat.completions.create({
     messages: messages,
-    model: "gpt-4o-mini",
-    max_tokens: 100,
+    model: "gpt-5-nano",
+    max_completion_tokens: 100,
   });
   const suggestedTags = keywordsCompletion.choices[0].message.content.split(",").map((tag) => tag.trim());
   return suggestedTags.filter((tag) => tagNames.includes(tag));
