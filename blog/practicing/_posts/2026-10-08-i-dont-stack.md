@@ -5,7 +5,7 @@ title: I Don't Stack
 toc: true
 image:
 description:
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/117407192678989659
 bluesky_status_url: false
 tags:
 - software-engineering
