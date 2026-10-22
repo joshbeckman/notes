@@ -39,4 +39,4 @@ gem 'strava-ruby-client', git: 'https://github.com/joshbeckman/strava-ruby-clien
 
 gem 'jekyll-mastodon_webfinger', '~> 1.0'
 
-gem "sqlite3", "~> 2.9"
+gem "sqlite3", "~> 2.10"
