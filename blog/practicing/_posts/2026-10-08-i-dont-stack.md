@@ -9,7 +9,7 @@ mastodon_social_status_url: https://mastodon.social/@joshbeckman/117407192678989
 bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mxfcm6ufpt22
 tags:
 - software-engineering
-serial_number: 2026.BLG.086
+serial_number: 2026.BLG.088
 ---
 I don't develop [pull requests in stacks](https://docs.github.com/en/pull-requests/how-tos/stacked-pull-requests). Never have.
 

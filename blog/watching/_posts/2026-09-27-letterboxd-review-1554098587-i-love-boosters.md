@@ -15,6 +15,6 @@ tags:
 - movies
 - entertainment
 - letterboxd
+serial_number: 2026.BLG.087
 ---
-
  <p><img src="https://a.ltrbxd.com/resized/film-poster/1/1/1/0/8/1/0/1110810-i-love-boosters-0-600-0-900-crop.jpg?v=a760551168"/></p> <p>Similar to the last film I watched from this director, I loved it but it couldn’t land the plane. The world building is beautiful and the sets and costumes are what I want to live in, but ultimately the attempted moralizing at the end didn’t feel earned to me. </p><p>Lakeith Stanfield can have my soul any time.</p> 
