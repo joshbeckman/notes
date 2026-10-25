@@ -8,7 +8,7 @@ description:
 rating: 3
 tmdb_id: '1227877'
 letterboxd_id: i-love-boosters
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/117503970009197036
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/i-love-boosters/
 tags:
