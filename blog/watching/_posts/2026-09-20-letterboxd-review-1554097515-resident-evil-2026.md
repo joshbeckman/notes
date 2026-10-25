@@ -9,7 +9,7 @@ rating: 3
 tmdb_id: '1423191'
 letterboxd_id: resident-evil-2026
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/117503969977190981
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3myqbvdnnqd26
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/resident-evil-2026/
 tags:
 - movies
