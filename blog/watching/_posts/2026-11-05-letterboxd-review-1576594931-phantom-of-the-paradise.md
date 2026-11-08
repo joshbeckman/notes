@@ -9,7 +9,7 @@ rating: 4
 tmdb_id: '27327'
 letterboxd_id: phantom-of-the-paradise
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/117580730242098373
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3mzsepuwxjj2k
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/phantom-of-the-paradise/
 tags:
 - movies
