@@ -8,7 +8,7 @@ description:
 rating: 5
 tmdb_id: '1765072'
 letterboxd_id: you-can-see-everything
-mastodon_social_status_url: false
+mastodon_social_status_url: https://mastodon.social/@joshbeckman/117580730190960676
 bluesky_status_url: false
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/you-can-see-everything/
 tags:
