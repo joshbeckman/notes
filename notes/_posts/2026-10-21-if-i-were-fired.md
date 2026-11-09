@@ -7,7 +7,7 @@ image:
 description:
 tags:
 - management
-serial_number: 2026.NTE.067
+serial_number: 2026.NTE.068
 ---
 > If I were fired and someone new was brought in, what is the first thing they would do?
 
