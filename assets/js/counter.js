@@ -1,7 +1,7 @@
 let counter = document.getElementById('counter');
 let grow = document.getElementById('grow');
 let kill = document.getElementById('kill');
-let url = 'https://joshbeckman-counterservice.web.val.run';
+let url = 'https://counter.joshbeckman.org';
 let number = 0;
 (function updateCounter() {
     fetch(`${url}/increment`, { method: 'POST' })

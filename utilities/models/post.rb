@@ -110,7 +110,7 @@ Post = Struct.new(
   end
 
   def suggested_title
-    request = Net::HTTP::Post.new(URI.parse('https://joshbeckman-titler.web.val.run'))
+    request = Net::HTTP::Post.new(URI.parse('https://titler.joshbeckman.org'))
     request.content_type = 'application/x-www-form-urlencoded'
     content = "#{title}\n#{body}"
     request.set_form_data('content' => content)
@@ -123,7 +123,7 @@ Post = Struct.new(
   end
 
   def suggested_tags
-    request = Net::HTTP::Post.new(URI.parse('https://joshbeckman-tagger.web.val.run'))
+    request = Net::HTTP::Post.new(URI.parse('https://tagger.joshbeckman.org'))
     request.content_type = 'application/x-www-form-urlencoded'
     content = "#{title}\n#{body}"
     request.set_form_data('content' => content)
