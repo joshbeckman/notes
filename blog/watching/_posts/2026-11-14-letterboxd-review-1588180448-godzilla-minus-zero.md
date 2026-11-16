@@ -9,7 +9,7 @@ rating: 2
 tmdb_id: '1381071'
 letterboxd_id: godzilla-minus-zero
 mastodon_social_status_url: https://mastodon.social/@joshbeckman/117623222883439388
-bluesky_status_url: false
+bluesky_status_url: https://bsky.app/profile/joshbeckman.org/post/3n2falbeqc226
 letterboxd_review_url: https://letterboxd.com/joshbeckman/film/godzilla-minus-zero/
 tags:
 - movies
