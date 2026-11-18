@@ -323,7 +323,7 @@ module PESOS
     end
 
     def token
-      uri = URI.parse('https://joshbeckman-stravaoauthclient.web.val.run/token')
+      uri = URI.parse('https://strava.joshbeckman.org/token')
       request = Net::HTTP::Get.new(uri)
       request.content_type = 'application/json'
       req_options = {
