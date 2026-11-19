@@ -40,6 +40,7 @@
                 this.field('content');
                 this.field('url');
                 this.field('tags');
+                this.field('strength');
                 this.metadataWhitelist = ['position']
 
                 for (var i in docs) {
@@ -49,6 +50,7 @@
                         content: docs[i].content,
                         url: docs[i].url,
                         tags: docs[i].tags,
+                        strength: docs[i].strength || '',
                     });
                 }
             });

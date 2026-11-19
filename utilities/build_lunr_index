@@ -19,8 +19,10 @@ try {
     this.field('author_id');
     this.field('book');
     this.field("image");
+    this.field("strength");
     documents.forEach(function (doc) {
-      this.add(doc);
+      // Lunr rejects a null field value; posts without recorded sets carry null.
+      this.add({ ...doc, strength: doc.strength || "" });
     }, this);
   });
   const outputDir = path.dirname(OUTPUT_FILE);

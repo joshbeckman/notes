@@ -39,10 +39,19 @@ permalink: /assets/js/SearchData.json
   {% endfor %}
   {%- for post in site.posts -%}
     {%- capture post_meta -%}{%- include PostMeta.html post=post -%}{%- endcapture -%}
+    {%- capture strength_text -%}
+      {%- for set in post.exercise_data.strength_exercises -%}
+        {{ set.exercise_name }}{% if set.weight.value %} {{ set.weight.value }}{% endif %}{% if set.reps.value %} x{{ set.reps.value }}{% endif %}{% if set.duration.value %} {{ set.duration.value }}{% endif %};{% unless forloop.last %} {% endunless %}
+      {%- endfor -%}
+    {%- endcapture -%}
+    {%- assign strength_suffix = "" -%}
+    {%- if strength_text != "" -%}
+      {%- assign strength_suffix = " Exercises: " | append: strength_text | strip -%}
+    {%- endif -%}
     "{{ i }}": {
        "doc":  {{ post.title | escape | jsonify }},
        "title": {{ post.title | jsonify }},
-       "content": {{ post.raw_content | jsonify }},
+       "content": {{ post.raw_content | append: strength_suffix | jsonify }},
        "meta": {{ post_meta | strip_html | normalize_whitespace | jsonify }},
        "tags": {{ post.tags | join: " " | jsonify }},
        "date": "{{ post.date | date_to_xmlschema }}",
@@ -59,6 +68,8 @@ permalink: /assets/js/SearchData.json
             {{ b.url | jsonify }}{%- unless forloop.last -%},{%- endunless -%}
             {% endfor %}
        ],
+       "strength": {% if strength_text != "" %}{{ strength_text | strip | jsonify }}{% else %}null{% endif %},
+       "strength_sets": {% if post.exercise_data.strength_exercises %}{{ post.exercise_data.strength_exercises | jsonify }}{% else %}null{% endif %},
        "type": "post",
        "url": "{{ post.url }}"
     }{%- unless forloop.last -%},{%- endunless -%}{%- assign i = i | plus: 1 -%}
