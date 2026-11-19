@@ -88,7 +88,7 @@ Fuse = (function(){"use strict";function e(e,t){var n=Object.keys(e);if(Object.g
             .then(function(responseText) {
             var docs = JSON.parse(responseText);
             var searchParams = getSearchParams();
-            var keys = ['title', 'content', 'tags', 'url', 'date', 'book', 'author_id'];
+            var keys = ['title', 'content', 'tags', 'url', 'date', 'book', 'author_id', 'strength'];
             if (searchParams.keys) {
               keys = searchParams.keys.split(',');
             }
