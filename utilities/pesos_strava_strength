@@ -1,0 +1,99 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# Backfills exercise sets into existing weight-training posts from the Strava MCP
+# relay (https://github.com/joshbeckman/strava-mcp). New activities get the data
+# from utilities/pesos_strava at import time; this fills in the history.
+#
+#   STRAVA_MCP_WORKER_URL=... STRAVA_MCP_WORKER_SECRET=... bundle exec utilities/pesos_strava_strength
+#
+# DRY=1 prints what it would change without writing.
+
+require 'date'
+require 'json'
+require 'net/http'
+require 'uri'
+require 'yaml'
+
+ROOT = File.expand_path('..', __dir__)
+URL = ENV['STRAVA_MCP_WORKER_URL']
+SECRET = ENV['STRAVA_MCP_WORKER_SECRET']
+DRY = ENV['DRY'] == '1'
+BATCH = 100
+
+abort 'set STRAVA_MCP_WORKER_URL and STRAVA_MCP_WORKER_SECRET' unless URL && SECRET
+
+# Posts store front matter, then body. Keep both; only exercise_data changes.
+def split(src)
+  match = src.match(/\A---\n(.*?)\n---\n(.*)\z/m)
+  return nil unless match
+
+  data = YAML.safe_load(match[1], permitted_classes: [Date, Time])
+  return nil unless data.is_a?(Hash)
+
+  [data, match[2]]
+end
+
+# The MCP server rate-limits, and the relay reports it as 429. Back off and retry;
+# a whole run is a few batches, so a minute of waiting is cheaper than a manual rerun.
+def fetch_sets(ids, attempts: 4)
+  uri = URI.parse("#{URL}/strength?ids=#{ids.join(',')}")
+  attempt = 0
+  loop do
+    attempt += 1
+    request = Net::HTTP::Get.new(uri)
+    request['Authorization'] = "Bearer #{SECRET}"
+    res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == 'https') do |http|
+      http.request(request)
+    end
+    if res.code == '429' && attempt < attempts
+      wait = 15 * attempt
+      puts "rate limited, waiting #{wait}s (attempt #{attempt}/#{attempts})"
+      sleep wait
+      next
+    end
+    abort "relay failed: #{res.code} #{res.body}" unless res.is_a?(Net::HTTPSuccess)
+
+    parsed = JSON.parse(res.body)
+    abort "relay returned #{parsed.class}: #{res.body[0, 200]}" unless parsed.is_a?(Array)
+
+    return parsed.to_h { |w| [w['activity_id'].to_s, w['exercise_sets'] || []] }
+  end
+end
+
+paths = Dir.glob(File.join(ROOT, 'exercise', 'weight-training', '_posts', '*.md')).sort
+pending = {}
+paths.each do |path|
+  id = File.basename(path, '.md')[/-(\d+)\z/, 1]
+  next unless id
+
+  data, = split(File.read(path))
+  next unless data
+
+  exercises = data['exercise_data'].is_a?(Hash) ? data['exercise_data']['strength_exercises'] : nil
+  pending[path] = id if exercises.nil? || exercises.empty?
+end
+
+puts "#{pending.size} posts without sets, of #{paths.size} weight-training posts"
+written = 0
+skipped = 0
+pending.each_slice(BATCH) do |slice|
+  sets_by_id = fetch_sets(slice.map { |_, id| id })
+  slice.each do |path, id|
+    sets = sets_by_id[id] || []
+    if sets.empty? || (sets.length == 1 && sets.first['exercise_name'] == 'Unknown')
+      skipped += 1
+      next
+    end
+    data, body = split(File.read(path))
+    data['exercise_data']['strength_exercises'] = sets
+    if DRY
+      puts "would add #{sets.length} sets to #{File.basename(path)}"
+    else
+      File.write(path, "#{data.to_yaml}---\n#{body}")
+    end
+    written += 1
+  end
+end
+
+puts "#{DRY ? 'would write' : 'wrote'} #{written} posts, skipped #{skipped} without recorded sets"

@@ -220,7 +220,49 @@ module PESOS
         weather = Models::Weather.fetch_conditions(lat, lng, activity.start_date)
         data[:weather] = weather if weather
       end
+      strength = strength_sets(activity)
+      data[:strength_exercises] = strength if strength
       data
+    end
+
+    # Strava's REST API has no exercise breakdown. The sets only exist behind the
+    # Strava MCP server, reached through the relay Worker in
+    # https://github.com/joshbeckman/strava-mcp. Returns nil when the activity has
+    # no recorded sets, or when the relay is not configured.
+    def strength_sets(activity)
+      return unless activity.sport_type.to_s == 'WeightTraining'
+      return if mcp_worker_url.nil? || mcp_worker_secret.nil?
+
+      uri = URI.parse("#{mcp_worker_url}/strength?ids=#{activity.id}")
+      request = Net::HTTP::Get.new(uri)
+      request['Authorization'] = "Bearer #{mcp_worker_secret}"
+      res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == 'https') do |http|
+        http.request(request)
+      end
+
+      unless res.is_a?(Net::HTTPSuccess)
+        puts "Strength lookup failed for #{activity.id}: #{res.code} #{res.body}"
+        return
+      end
+
+      workouts = JSON.parse(res.body)
+      sets = workouts.is_a?(Array) ? workouts.first&.fetch('exercise_sets', nil) : nil
+      return if sets.nil? || sets.empty?
+      # A single "Unknown" set means the session was recorded as heart rate only.
+      return if sets.length == 1 && sets.first['exercise_name'] == 'Unknown'
+
+      sets
+    rescue StandardError => e
+      puts "Strength lookup error for #{activity.id}: #{e.class}: #{e.message}"
+      nil
+    end
+
+    def mcp_worker_url
+      ENV['STRAVA_MCP_WORKER_URL']
+    end
+
+    def mcp_worker_secret
+      ENV['STRAVA_MCP_WORKER_SECRET']
     end
 
     def ensure_subcategory_index(tag)

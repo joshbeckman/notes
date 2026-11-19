@@ -1,0 +1,27 @@
+{%- if page.exercise_data['strength_exercises'] -%}
+<table class="exercise-metadata exercise-strength">
+  <thead>
+    <tr>
+      <td colspan="4">
+        Exercises
+      </td>
+    </tr>
+    <tr>
+      <td>Exercise</td>
+      <td>Weight</td>
+      <td>Reps</td>
+      <td>Time</td>
+    </tr>
+  </thead>
+  <tbody>
+    {%- for set in page.exercise_data['strength_exercises'] %}
+    <tr>
+      <td>{{ set['exercise_name'] }}</td>
+      <td>{{ set['weight']['value'] }}</td>
+      <td>{{ set['reps']['value'] }}</td>
+      <td>{{ set['duration']['value'] }}</td>
+    </tr>
+    {%- endfor %}
+  </tbody>
+</table>
+{%- endif -%}

@@ -213,6 +213,8 @@ jobs:
         run: bundle exec utilities/pesos_strava
         env:
           MAPBOX_TOKEN: ${{ secrets.MAPBOX_TOKEN }}
+          STRAVA_MCP_WORKER_URL: ${{ vars.STRAVA_MCP_WORKER_URL }}
+          STRAVA_MCP_WORKER_SECRET: ${{ secrets.STRAVA_MCP_WORKER_SECRET }}
       - name: Determine if changes were made
         id: any_changes_pesos_strava
         run: echo "changed=$(git status --porcelain exercise assets | wc -l)" >> $GITHUB_OUTPUT
